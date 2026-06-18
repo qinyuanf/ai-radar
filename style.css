@@ -1,19 +1,47 @@
-:root{--bg:#0f1115;--card:#181b22;--line:#262a33;--fg:#e7e9ee;--mut:#8a92a3;--acc:#4a9eff}
+:root{
+  --parchment:#f5f4ed; --ivory:#faf9f5; --sand:#e8e6dc;
+  --border:#e8e6dc; --border-soft:#e5e3d8;
+  --brand:#1b365d; --brand-tint:#eef2f7; --tag:#e4ecf5;
+  --near-black:#141413; --dark-warm:#3d3d3a; --olive:#504e49; --stone:#6b6a64;
+  --serif:Charter,Georgia,"TsangerJinKai02","Source Han Serif SC","Songti SC",Palatino,serif;
+  --whisper:0 4px 24px rgba(0,0,0,.05);
+}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;max-width:760px;margin:0 auto;padding:0 16px 60px}
-header{padding:28px 0 16px;position:sticky;top:0;background:var(--bg);z-index:5}
-h1{font-size:22px;letter-spacing:.5px}
-.sub{color:var(--mut);font-size:13px;margin-top:4px}
-.bar{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:12px;flex-wrap:wrap}
-nav button{background:none;border:1px solid var(--line);color:var(--mut);padding:6px 14px;border-radius:18px;cursor:pointer;font-size:13px;margin-right:6px}
-nav button.on{color:#fff;border-color:var(--acc);background:rgba(74,158,255,.12)}
-select{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
-.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
-.item h3{font-size:16px}
-.item h3 a{color:var(--acc);text-decoration:none}
-.meta{color:var(--mut);font-size:12px;margin:4px 0 10px}
-.item p{margin:4px 0;font-size:14px}
-.item .k{color:var(--mut)}
-.empty{color:var(--mut);text-align:center;padding:60px 0}
-footer{color:var(--mut);font-size:12px;text-align:center;padding:30px 0;border-top:1px solid var(--line);margin-top:30px}
-footer a{color:var(--mut)}
+body{
+  background:var(--parchment);color:var(--near-black);
+  font:16px/1.55 var(--serif);
+  max-width:720px;margin:0 auto;padding:0 24px 80px;
+  -webkit-font-smoothing:antialiased;text-wrap:pretty;
+}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+header{padding:40px 0 16px;position:sticky;top:0;background:var(--parchment);z-index:10}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:linear-gradient(var(--parchment),transparent);pointer-events:none}
+h1{font-size:30px;font-weight:500;letter-spacing:.01em;text-wrap:balance}
+.sub{color:var(--olive);font-size:14px;margin-top:6px}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px;flex-wrap:wrap}
+nav button{
+  background:none;border:none;color:var(--stone);
+  padding:4px 0;margin-right:24px;cursor:pointer;
+  font-family:inherit;font-size:15px;border-bottom:2px solid transparent;
+}
+nav button.on{color:var(--brand);font-weight:500;border-bottom-color:var(--brand)}
+select{background:transparent;color:var(--olive);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-family:inherit;font-size:14px}
+select[hidden]{display:none}
+.item{background:var(--ivory);border:1px solid var(--border-soft);border-radius:8px;padding:16px 20px;margin-bottom:14px;transition:box-shadow .4s cubic-bezier(.22,1,.36,1)}
+.item:hover{box-shadow:var(--whisper)}
+.item h3{font-size:19px;font-weight:500;line-height:1.3;text-wrap:balance;display:flex;gap:10px}
+.rank{color:var(--brand);font-variant-numeric:tabular-nums;flex:none}
+.item h3 a{color:var(--near-black);text-decoration:none;border-bottom:1px solid transparent}
+.item h3 a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+.meta{color:var(--stone);font-size:13px;margin:7px 0 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag{background:var(--tag);color:var(--brand);border-radius:999px;padding:1px 9px;font-variant-numeric:tabular-nums}
+.meta .src{color:var(--stone)}
+.item p{margin:5px 0;font-size:15px;color:var(--olive)}
+.item .k{color:var(--brand);font-weight:500}
+.empty{color:var(--stone);text-align:center;min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.empty b{color:var(--olive);font-weight:500}
+footer{color:var(--stone);font-size:13px;text-align:center;padding:36px 0;border-top:1px solid var(--border);margin-top:36px}
+footer a{color:var(--brand);text-decoration:none}
+main{animation:rise .5s cubic-bezier(.22,1,.36,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(8px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){main{animation:none}.item{transition:none}}
