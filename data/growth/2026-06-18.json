@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 33700,
+    "trend": "+6855/week",
+    "what": "一行CLI让AI agent免API费读取和搜索Twitter、Reddit、YouTube、GitHub、B站、小红书等全网内容",
+    "why": "v1.5.0引入多后端路由和健康自检，把agent联网从碎片化工具整合成统一能力层",
+    "insight": "agent的能力上限取决于它能触达的信息面，零成本联网抽象层是agent系统工程化的关键基础设施"
+  },
+  {
+    "rank": 2,
+    "repo": "NVIDIA/SkillSpector",
+    "url": "https://github.com/NVIDIA/SkillSpector",
+    "stars": 7700,
+    "trend": "+5257/week",
+    "what": "对AI agent的skill做静态分析+LLM语义审计，覆盖16类安全风险中的64种漏洞模式",
+    "why": "NVIDIA率先用两阶段检测(AST静态+LLM语义)把agent安全从口号变成工具链",
+    "insight": "当agent系统开始加载第三方skill时，skill准入审计必须像npm audit一样成为CI流水线标配"
+  },
+  {
+    "rank": 3,
+    "repo": "perplexityai/bumblebee",
+    "url": "https://github.com/perplexityai/bumblebee",
+    "stars": 4500,
+    "trend": "5月22日开源后快速增长",
+    "what": "只读扫描开发者机器上的npm/PyPI/Go modules/MCP配置/浏览器扩展，匹配已知供应链攻击指纹",
+    "why": "Perplexity内部安全工具开源，零依赖纯Go单二进制，首个明确覆盖MCP配置安全审计的扫描器",
+    "insight": "MCP让agent接入外部工具的同时也打开了新攻击面，开发环境供应链安全审计需要把MCP配置纳入扫描范围"
+  },
+  {
+    "rank": 4,
+    "repo": "antoinezambelli/forge",
+    "url": "https://github.com/antoinezambelli/forge",
+    "stars": 2100,
+    "trend": "v0.7.5(6月12日)发布后加速增长",
+    "what": "为本地小模型tool-calling加guardrails，让8B模型在26场景eval中从个位数提升到84%",
+    "why": "不靠换大模型，在agent loop外加可靠性中间件，证明小模型+结构化约束能逼近大模型效果",
+    "insight": "成本敏感的agent部署场景，与其用更贵的模型不如在tool-calling链路上加guardrails中间层提升可靠性"
+  },
+  {
+    "rank": 5,
+    "repo": "statewright/statewright",
+    "url": "https://github.com/statewright/statewright",
+    "stars": 403,
+    "trend": "v1.1.0(6月1日)发布，HN热议",
+    "what": "用状态机定义agent在每个工作流阶段能调用哪些工具，agents are suggestions states are laws",
+    "why": "Rust实现，在SWE-bench子集上让本地模型从20%通过率提升到100%",
+    "insight": "状态机是控制agent行为边界最简洁的形式化方法，比prompt约束更硬也更可审计"
+  }
+]

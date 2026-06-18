@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 196000,
+    "trend": "v0.16.0 Surface Release(6月5日)",
+    "what": "自进化agent，内建skill学习循环、跨session记忆检索、cron调度，支持多通道消息网关",
+    "why": "v0.16.0推出原生桌面应用和管理面板(MCP catalog/webhook/memory配置)，从终端工具进化为全平台agent操作系统",
+    "insight": "agent从CLI走向桌面和多通道网关的路径揭示了agent产品化需要运行时+记忆+分发渠道三位一体"
+  },
+  {
+    "rank": 2,
+    "repo": "anomalyco/opencode",
+    "url": "https://github.com/anomalyco/opencode",
+    "stars": 176000,
+    "trend": "v1.17.8(6月17日)，月活750万",
+    "what": "开源AI coding agent，支持75+模型提供商，读写模式分离(planning mode只读探索代码)",
+    "why": "star数超过Gemini CLI和Codex成为开源agent第一，昨日刚发新版，825个release持续高频迭代",
+    "insight": "model-agnostic架构是coding agent赢得开发者信任的关键，锁定单一模型供应商的agent长期竞争处于劣势"
+  },
+  {
+    "rank": 3,
+    "repo": "karpathy/autoresearch",
+    "url": "https://github.com/karpathy/autoresearch",
+    "stars": 87400,
+    "trend": "139个PR，社区活跃迭代中",
+    "what": "给AI agent一个单卡LLM训练环境，自主修改代码、训练5分钟、评估、循环迭代，用program.md交互",
+    "why": "Karpathy亲自下场做自主科研agent，开创agent做ML实验的范式，社区参与度极高",
+    "insight": "agent自主做实验的核心不是训练能力而是假设-实验-评估闭环的工程化，program.md作为交互协议值得借鉴"
+  },
+  {
+    "rank": 4,
+    "repo": "addyosmani/agent-skills",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "stars": 62600,
+    "trend": "+11684/week",
+    "what": "为AI coding agent编码24个生产级工程技能，覆盖需求定义、规划、构建、验证、评审、发布六阶段",
+    "why": "Google Chrome团队Addy Osmani出品，把资深工程师最佳实践编码成可复用skill模板，本周新增star破万",
+    "insight": "agent skill的真正价值不在于调用工具而在于编码领域专家的工作流和质量门禁，这是agent从demo走向生产的关键"
+  },
+  {
+    "rank": 5,
+    "repo": "badlogic/pi-mono",
+    "url": "https://github.com/badlogic/pi-mono",
+    "stars": 63700,
+    "trend": "v0.79.6(6月16日)，232个release",
+    "what": "全栈agent工具包monorepo，统一LLM API+agent loop+TUI/Web UI+coding agent CLI+Slack bot+vLLM pods",
+    "why": "libGDX作者出品，232个release保持高频迭代，两天前刚发新版，agent全链路打包进一个monorepo",
+    "insight": "agent基础设施碎片化是当前最大痛点，pi的monorepo策略提供了统一LLM接口+运行时+UI+部署的全栈收敛解法"
+  }
+]
