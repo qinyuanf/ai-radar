@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Radar · 每日 AI Agent 情报</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>AI Radar</h1>
+  <p class="sub">每日 AI Agent 情报 · 技术日报 / 增长榜 / 热门榜</p>
+  <div class="bar">
+    <nav id="tabs">
+      <button data-feed="report" class="on">技术日报</button>
+      <button data-feed="growth">Github 增长榜</button>
+      <button data-feed="hot">Github 热门榜</button>
+    </nav>
+    <select id="date"></select>
+  </div>
+</header>
+<main id="list"><p class="empty">加载中…</p></main>
+<footer>数据每日自动更新 · 源 <a href="https://github.com/qinyuanf/ai-radar">github.com/qinyuanf/ai-radar</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
