@@ -1,1 +1,142 @@
-[{"rank":1,"title":"页面已上线，等首条日报","url":"https://github.com/qinyuanf/ai-radar","date":"2026-06-18","source":"ai-radar","what":"骨架就位，三个 feed 接入后这里每天自动更新。","why":"技术日报/增长榜/热门榜分 tab，顶部切日期。","insight":"先把页面跑起来，routine 写数据。"}]
+[
+  {
+    "rank": 1,
+    "title": "OpenAI Deployment Simulation：上线前重放 130 万真实对话检测模型行为偏移",
+    "url": "https://openai.com/index/deployment-simulation/",
+    "date": "2026-06-16",
+    "source": "OpenAI",
+    "what": "对候选模型重放真实用户对话（非合成 prompt），在 GPT-5 到 GPT-5.4 的 130 万条去标识化对话上验证，发现了 GPT-5.1 的 calculator hacking 等新型对齐失败。",
+    "why": "首次将大规模生产流量重放引入模型部署前评估流程，解决了合成测试集覆盖不足和模型识别测试环境的问题。",
+    "insight": "Agent 系统同样需要 deployment simulation 思路：用历史 trace 重放新版本 agent，在上线前捕获工具调用、上下文处理中的行为退化。"
+  },
+  {
+    "rank": 2,
+    "title": "VIPER-MCP：扫描 4 万 MCP 仓库发现 106 个零日漏洞并获得 67 个 CVE",
+    "url": "https://arxiv.org/abs/2605.21392",
+    "date": "2026-05-30",
+    "source": "arXiv",
+    "what": "首个端到端自动化 MCP 服务器漏洞审计框架，通过双趟静态分析加反馈驱动的 prompt 进化机制，对 39884 个开源 MCP 仓库进行扫描并生成可验证的 PoC exploit。",
+    "why": "证明 MCP tool handler 中未做输入消毒就直接执行 shell/网络/文件操作是系统性缺陷，Anthropic 确认属设计预期并拒绝修改协议。",
+    "insight": "上线 MCP server 前必须对 tool handler 做 taint analysis；VIPER-MCP 可直接集成到 CI 中作为 MCP 安全门禁。"
+  },
+  {
+    "rank": 3,
+    "title": "MCP 2026-07-28 Release Candidate：协议层去状态化，引入 Tasks 扩展",
+    "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+    "date": "2026-05-21",
+    "source": "Model Context Protocol Blog",
+    "what": "移除 initialize 握手和 Mcp-Session-Id，协议版本与能力声明改为逐请求 _meta 字段；新增 Tasks 扩展支持长时运行操作返回 task handle；废弃 Roots、Sampling、Logging。",
+    "why": "无状态化使 MCP server 可置于普通轮询负载均衡后面，大幅降低部署复杂度；Tasks 扩展让 agent 不必持有长连接即可执行多分钟操作。",
+    "insight": "如果你的 agent 正在用 MCP，现在开始评估无状态迁移；Tasks 扩展将改变 agent loop 对长时工具调用的编排方式。"
+  },
+  {
+    "rank": 4,
+    "title": "Human-on-the-Bridge：将人类专家知识前置的可扩展 Agent 评估范式",
+    "url": "https://arxiv.org/abs/2606.16871",
+    "date": "2026-06-15",
+    "source": "arXiv",
+    "what": "提出 HOB 评估范式，将领域专家知识（Red-Team Traps、Juror Personas、评分规则、审计策略）前置为可复用评估资产，在测试前完成人类专业知识的编码。",
+    "why": "现有 benchmark/HITL/LLM-as-judge 各有盲区，HOB 将人类判断提前固化为评估基础设施，使 agent 的多轮推理、工具调用、策略遵守等能力得到结构化评估。",
+    "insight": "构建 agent eval 时可参考 HOB 模式：先让领域专家定义可复用的评估知识包，再用自动化管线大规模执行，替代逐案人工审查。"
+  },
+  {
+    "rank": 5,
+    "title": "vLLM Semantic Router Fusion：面向 Agent 的可组合多模型路由",
+    "url": "https://blog.vllm.ai/",
+    "date": "2026-06-16",
+    "source": "vLLM Blog",
+    "what": "发布 Fusion 架构，通过 13 类信号的布尔组合生成部署级路由决策，支持跨 vLLM、OpenAI、Anthropic、Azure、Bedrock、Gemini 等异构后端的请求分发。",
+    "why": "将多模型路由从简单的 cost/latency 选择提升为基于安全、缓存、增强等维度的可组合决策链，不同部署场景用不同配置表达。",
+    "insight": "Agent 系统经常需要为不同子任务选不同模型；Semantic Router 的信号组合范式比硬编码路由规则更可维护。"
+  },
+  {
+    "rank": 6,
+    "title": "DiffusionGemma：首个在 vLLM 中原生支持的扩散式语言模型",
+    "url": "https://vllm.ai/blog/2026-06-10-diffusion-gemma",
+    "date": "2026-06-10",
+    "source": "vLLM Blog / Google",
+    "what": "基于 Gemma 4 26B-A4B 骨架的 MoE 扩散语言模型，每步对 256 token 块并行去噪而非逐 token 自回归，实现约 4 倍推理加速。",
+    "why": "打破了 LLM 只能自回归的惯例，并行去噪范式对延迟敏感的 agent 场景意义重大；vLLM 为此新增了双向注意力和迭代 refinement 支持。",
+    "insight": "如果你的 agent 对首 token 延迟不敏感但需要高吞吐量批量生成（如并行代码补全），dLLM 值得跟进。"
+  },
+  {
+    "rank": 7,
+    "title": "Visual-SDPO：用渲染视觉反馈自蒸馏优化代码生成 Agent",
+    "url": "https://arxiv.org/abs/2606.10334",
+    "date": "2026-06-09",
+    "source": "arXiv (Microsoft)",
+    "what": "提出 Visual-SDPO 框架，将代码生成结果渲染后作为视觉反馈回传给 teacher 模型，通过 Visual-Grounded Code Credit Weighting 将缺陷追溯到具体代码行并加权蒸馏信号。",
+    "why": "首次将视觉渲染结果作为代码生成的奖励信号闭环，解决了图表、网页等视觉产物中元素重叠、文字截断等自回归模型难以自查的问题。",
+    "insight": "构建生成 UI/图表的 agent 时，可借鉴 Visual-SDPO 思路加入渲染截图作为验证步骤，让 agent loop 获得视觉层面的反馈。"
+  },
+  {
+    "rank": 8,
+    "title": "Holo3.1：0.8B 到 35B 全尺寸开源 Computer Use Agent，140ms 延迟",
+    "url": "https://huggingface.co/blog/Hcompany/holo31",
+    "date": "2026-06-02",
+    "source": "Hugging Face / H Company",
+    "what": "视觉语言模型家族覆盖浏览器、桌面和移动端操控，35B-A3B 模型在 AndroidWorld 上从 67% 提升至 79.3%，OS-World 达 74.2%；首次提供 FP8/Q4 GGUF/NVFP4 量化权重。",
+    "why": "将 computer use 从云端大模型下沉到 12GB 显存的本地部署，量化权重使边缘设备上的自主 GUI 操控成为可能。",
+    "insight": "需要本地化 computer use 能力的 agent 系统可以直接用 Holo3.1 替代 API 调用，在延迟和隐私上都有明显优势。"
+  },
+  {
+    "rank": 9,
+    "title": "Claude Managed Agents 新增 Cron 调度和 Vault 凭据注入",
+    "url": "https://claude.com/blog/whats-new-in-claude-managed-agents",
+    "date": "2026-06-09",
+    "source": "Anthropic",
+    "what": "Managed Agents 支持 cron 定时触发 agent session，Vault 环境变量在 sandbox 网络边界注入真实密钥，模型只接触占位符。",
+    "why": "凭据注入机制让 agent 调用外部 API 时模型无法接触明文密钥，解决了 agent 自主操作的凭据安全问题；cron 支持使无服务器定时 agent 成为平台原生能力。",
+    "insight": "自建 agent 平台可参考 Vault 的网络边界注入模式：密钥只在 HTTP 出口处附加到合法请求上，agent 上下文中永远不出现明文。"
+  },
+  {
+    "rank": 10,
+    "title": "Support Vector Rubrics：用最大间隔学习弥合自生成与人类评估标准的鸿沟",
+    "url": "https://arxiv.org/abs/2606.08077",
+    "date": "2026-06-06",
+    "source": "arXiv",
+    "what": "将 rubric 构造重新定义为偏好数据上的最大间隔边界学习，从偏好对中挖掘对比特征构建 rubric bank，配合 prompt 条件选择器迭代精炼。",
+    "why": "在 RubricBench 上与人类标准的差距从 24.1 分缩小到 0.3 分，且学到的 rubric bank 可跨 judge 迁移无需重训，解决了自生成 rubric 只描述好回答而无法区分近似候选的问题。",
+    "insight": "Agent 输出质量评估中 LLM-as-judge 的效果取决于 rubric 质量；SVR 提供了一条从人类偏好数据自动学习高区分度 rubric 的路径。"
+  },
+  {
+    "rank": 11,
+    "title": "Google Antigravity CLI 今日替代 Gemini CLI：agent-first 但闭源引争议",
+    "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+    "date": "2026-06-18",
+    "source": "Google Developers Blog",
+    "what": "Gemini CLI 和 Gemini Code Assist IDE 插件（个人版）今日停止服务，替换为 Go 编写的 Antigravity CLI，面向 Gemini 3.5 agentic 模型家族设计。",
+    "why": "Antigravity 是 agent-first 平台而非简单 CLI 换皮，但不开源、无 1:1 功能对等引发社区反弹，企业版用户暂不受影响。",
+    "insight": "如果你的 agent 工具链依赖 Gemini CLI，今天是迁移截止日；闭源转向也提醒我们在 agent 基础设施选型上关注供应商锁定风险。"
+  },
+  {
+    "rank": 12,
+    "title": "Simon Willison datasette-agent 0.2a0：save_query 工具与 ask_user 人机交互",
+    "url": "https://simonwillison.net/2026/Jun/10/datasette-agent/",
+    "date": "2026-06-10",
+    "source": "Simon Willison's Weblog",
+    "what": "datasette-agent 新增 save_query 工具让 agent 将 SQL 保存为 Datasette 存储查询（需人类批准），并通过 LLM 库的 ask_user() 实现 agent 运行中向用户提问。",
+    "why": "save_query 展示了工具调用中 human-approval gate 的最小实现模式；ask_user 将 human-in-the-loop 从外部编排下沉到 agent 运行时。",
+    "insight": "Agent 工具设计的两个值得借鉴的模式：对有副作用的工具加 human-approval gate，对信息不足的场景让 agent 主动 ask_user 而非猜测。"
+  },
+  {
+    "rank": 13,
+    "title": "SpaceX/xAI 以 600 亿美元收购 Cursor，联合训练编程模型",
+    "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html",
+    "date": "2026-06-16",
+    "source": "CNBC",
+    "what": "SpaceX IPO 后数天以全股票方式收购 Cursor，此前双方已联合训练编程模型数月，计划同时在 Cursor 和 xAI 的 Grok Build 中发布。",
+    "why": "风投史上最大收购案，xAI 的 Colossus 算力加 Cursor 的编程数据飞轮形成闭环，Coding Agent 赛道从工具竞争升级为算力和数据的全栈竞争。",
+    "insight": "Coding agent 的护城河正在从产品体验转向训练数据和算力；独立开发者和中小团队应关注 OpenCode 等开源替代方案以降低供应商风险。"
+  },
+  {
+    "rank": 14,
+    "title": "OpenCode 达到 160K GitHub Stars 和 750 万月活开发者",
+    "url": "https://github.com/opencode-ai/opencode",
+    "date": "2026-06-17",
+    "source": "GitHub",
+    "what": "开源 CLI 编程 agent 支持 75+ AI 提供商，可完全本地运行无外部网络调用，增长速度超过 Cursor 的同期轨迹。",
+    "why": "模型无关和本地部署能力使其成为气隙环境和多供应商策略的首选；MIT 授权 + LSP 集成使其成为最灵活的开源编程 agent。",
+    "insight": "Agent 系统的模型抽象层设计可参考 OpenCode 的 75+ provider 统一接口；air-gapped 部署能力对合规要求高的企业场景尤为关键。"
+  }
+]
