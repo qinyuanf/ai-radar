@@ -4,32 +4,44 @@
   --brand:#1b365d; --brand-tint:#eef2f7; --tag:#e4ecf5;
   --near-black:#141413; --dark-warm:#3d3d3a; --olive:#504e49; --stone:#6b6a64;
   --serif:Charter,Georgia,"TsangerJinKai02","Source Han Serif SC","Songti SC",Palatino,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --whisper:0 4px 24px rgba(0,0,0,.05);
 }
 *{box-sizing:border-box;margin:0}
 body{
   background:var(--parchment);color:var(--near-black);
-  font:16px/1.55 var(--serif);
+  font:15px/1.65 var(--sans);
   max-width:720px;margin:0 auto;padding:0 24px 80px;
   -webkit-font-smoothing:antialiased;text-wrap:pretty;
+  text-autospace:normal;text-spacing-trim:normal;
 }
 :focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
 header{padding:40px 0 16px;position:sticky;top:0;background:var(--parchment);z-index:10}
 header::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:linear-gradient(var(--parchment),transparent);pointer-events:none}
-h1{font-size:30px;font-weight:500;letter-spacing:.01em;text-wrap:balance}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+h1{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:.01em;text-wrap:balance}
 .sub{color:var(--olive);font-size:14px;margin-top:6px}
-.bar{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px;flex-wrap:wrap}
+nav{display:flex;margin-top:22px}
 nav button{
   background:none;border:none;color:var(--stone);
   padding:4px 0;margin-right:24px;cursor:pointer;
   font-family:inherit;font-size:15px;border-bottom:2px solid transparent;
 }
 nav button.on{color:var(--brand);font-weight:500;border-bottom-color:var(--brand)}
-select{background:transparent;color:var(--olive);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-family:inherit;font-size:14px}
-select[hidden]{display:none}
-.item{background:var(--ivory);border:1px solid var(--border-soft);border-radius:8px;padding:16px 20px;margin-bottom:14px;transition:box-shadow .4s cubic-bezier(.22,1,.36,1)}
-.item:hover{box-shadow:var(--whisper)}
-.item h3{font-size:19px;font-weight:500;line-height:1.3;text-wrap:balance;display:flex;gap:10px}
+.picker{position:relative;flex:none}
+.picker[hidden]{display:none}
+.pk-btn{display:flex;align-items:center;gap:7px;background:var(--ivory);color:var(--olive);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font:inherit;font-size:14px;font-variant-numeric:tabular-nums;cursor:pointer;transition:border-color .2s}
+.pk-btn:hover{border-color:var(--brand)}
+.pk-chev{color:var(--stone);transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.pk-btn[aria-expanded=true] .pk-chev{transform:rotate(180deg);color:var(--brand)}
+.pk-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:20;margin:0;padding:5px;list-style:none;min-width:140px;max-height:280px;overflow-y:auto;background:var(--ivory);border:1px solid var(--border);border-radius:10px;box-shadow:var(--whisper)}
+.pk-menu[hidden]{display:none}
+.pk-menu li{padding:8px 12px;border-radius:6px;font-size:14px;color:var(--olive);font-variant-numeric:tabular-nums;cursor:pointer}
+.pk-menu li:hover{background:var(--brand-tint)}
+.pk-menu li.on{color:var(--brand);font-weight:500;background:var(--brand-tint)}
+.item{padding:24px 0;border-bottom:1px solid var(--border)}
+.item:last-child{border-bottom:none}
+.item h3{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.35;text-wrap:balance;display:flex;gap:10px}
 .rank{color:var(--brand);font-variant-numeric:tabular-nums;flex:none}
 .item h3 a{color:var(--near-black);text-decoration:none;border-bottom:1px solid transparent}
 .item h3 a:hover{color:var(--brand);border-bottom-color:var(--brand)}
@@ -45,3 +57,15 @@ footer a{color:var(--brand);text-decoration:none}
 main{animation:rise .5s cubic-bezier(.22,1,.36,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(8px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){main{animation:none}.item{transition:none}}
+@media(max-width:600px){
+  body{padding:0 18px 56px;font-size:15px}
+  header{padding:28px 0 12px}
+  h1{font-size:24px}
+  .sub{font-size:13px}
+  nav{margin-top:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav button{margin-right:20px;padding:6px 0;white-space:nowrap}
+  .item{padding:20px 0}
+  .item h3{font-size:17px}
+  .item p{font-size:14px}
+}
