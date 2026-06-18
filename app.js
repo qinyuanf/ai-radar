@@ -22,7 +22,7 @@ function syncURL() {
 }
 
 async function init() {
-  manifest = await fetch('data/manifest.json').then(r => r.json()).catch(() => ({}));
+  manifest = await fetch(`data/manifest.json?t=${Date.now()}`).then(r => r.json()).catch(() => ({}));
   const wantDate = readURL();
   document.querySelectorAll('#tabs button').forEach(b =>
     b.onclick = () => { feed = b.dataset.feed; mark(); load(); });
@@ -57,7 +57,7 @@ async function load() {
     box.innerHTML = `<p class="empty"><b>${LABEL[feed]}还没有数据</b>每日自动更新，首批数据生成中。</p>`;
     return;
   }
-  const items = await fetch(`data/${feed}/${d}.json`).then(r => r.json()).catch(() => []);
+  const items = await fetch(`data/${feed}/${d}.json?t=${Date.now()}`).then(r => r.json()).catch(() => []);
   box.innerHTML = items.map(x => `
     <div class="item">
       <h3><span class="rank">${x.rank}</span><a href="${x.url}" target="_blank" rel="noopener">${x.repo || x.title}</a></h3>
