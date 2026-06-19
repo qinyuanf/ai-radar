@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "chopratejas/headroom",
+    "url": "https://github.com/chopratejas/headroom",
+    "stars": 34697,
+    "trend": "本周+14266，连续两周登顶GitHub Trending，v0.26.0(6月16日)",
+    "what": "Netflix高级工程师开源的上下文压缩层，用6种压缩引擎在工具输出到达LLM前削减60-95% token",
+    "why": "Uber等企业coding agent月费超$1500的成本压力催化需求，可作为library/proxy/MCP server三种形态即插即用",
+    "insight": "context engineering的核心瓶颈已从如何获取信息转向如何压缩信息，token压缩中间件应成为agent系统架构的标准层"
+  },
+  {
+    "rank": 2,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 99495,
+    "trend": "v0.13.0-0.13.2(6月8-12日连发)，逼近10万star",
+    "what": "让AI agent像人一样操作浏览器，自动化网页交互，支持自定义工具扩展",
+    "why": "v0.13用Rust重写核心推出针对前沿模型优化的全新beta agent，性能和可靠性同步提升",
+    "insight": "浏览器agent的工程化重点正从功能覆盖转向运行时性能，Rust核心重写说明agent执行层需要系统级语言来满足延迟和可靠性要求"
+  },
+  {
+    "rank": 3,
+    "repo": "OpenHands/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "stars": 77680,
+    "trend": "v1.8.0(6月10日)，Series A融资$18.8M",
+    "what": "自主AI软件工程平台，端到端写代码、跑测试、做部署，支持云端持续运行不依赖本地机器",
+    "why": "v1.8.0大版本叠加Series A融资，与Daytona集成实现90ms沙盒启动，是开源SWE agent中商业化进展最快的项目",
+    "insight": "SWE agent竞争已进入基础设施阶段，agent差异化不再是模型能力而是执行环境的安全性、速度和可持续运行能力"
+  },
+  {
+    "rank": 4,
+    "repo": "mem0ai/mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "stars": 58880,
+    "trend": "v2.0.7(6月17日)，$24M Series A，star持续攀升",
+    "what": "统一向量搜索、知识图谱和KV缓存三种存储的通用agent记忆层，一个API给agent加持久化记忆",
+    "why": "v2.0.7持续迭代，TypeScript SDK和OpenCode集成同步发布，star从年初4.8万攀升至5.9万增长未见放缓",
+    "insight": "agent记忆不是单一技术问题，需要向量、图和KV三种范式协同才能同时满足语义检索、关系推理和快速读写的需求"
+  },
+  {
+    "rank": 5,
+    "repo": "langfuse/langfuse",
+    "url": "https://github.com/langfuse/langfuse",
+    "stars": 29349,
+    "trend": "v3.192(6月18日今日发布)，高频迭代",
+    "what": "基于OpenTelemetry的开源AI工程平台，覆盖LLM追踪、评估、prompt管理、数据集实验，集成主流框架",
+    "why": "6月密集发布AI SDK v7 beta、MCP管理evaluator、Scores API v3，东京Region上线满足日本数据合规，开源agent可观测赛道的领先者",
+    "insight": "agent系统生产化的最大障碍是不可观测，OTel原生的追踪+评估闭环是agent从实验走向生产的必备基础设施"
+  }
+]

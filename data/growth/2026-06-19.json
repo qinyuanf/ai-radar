@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 36895,
+    "trend": "+36895/7天(6月12日创建)",
+    "what": "给AI coding agent注入YAGNI极简主义规则集，让agent按梯度判断是否跳过、用stdlib、用已有依赖，最后才写最少代码",
+    "why": "benchmark显示80-94%代码量削减和42-75%成本节约，兼容Claude Code/Codex/Gemini CLI等主流agent，一周成为GitHub新仓库之王",
+    "insight": "agent写代码的最大问题不是能力不足而是过度工程化，约束agent的输出量比提升其生成能力更能提高生产可用性"
+  },
+  {
+    "rank": 2,
+    "repo": "XiaomiMiMo/MiMo-Code",
+    "url": "https://github.com/XiaomiMiMo/MiMo-Code",
+    "stars": 9790,
+    "trend": "+9790/9天(6月10日创建)",
+    "what": "小米开源的终端AI coding agent，自带MiMo Auto零配置通道免费接入MiMo-V2.5多模态模型，内建跨session持久记忆系统",
+    "why": "提出模型与agent协同进化理念，在200+步超长任务上超过Claude Code，VentureBeat确认其长任务能力领先",
+    "insight": "coding agent的天花板不在单步指令执行，而在长任务中保持上下文连贯和自主纠错的能力，模型和harness需要联合优化"
+  },
+  {
+    "rank": 3,
+    "repo": "omnigent-ai/omnigent",
+    "url": "https://github.com/omnigent-ai/omnigent",
+    "stars": 3811,
+    "trend": "+3811/8天(6月11日创建)",
+    "what": "Databricks创始人Matei Zaharia开源的元harness，一层抽象统一编排Claude Code、Codex、Cursor、Pi等多个coding agent，内建策略引擎和沙盒",
+    "why": "Polly示例展示不写代码的tech lead agent模式，把任务并行分配给不同vendor的coding子agent再交叉vendor审查diff",
+    "insight": "agent厂商锁定已经是现实问题，元harness让团队在多个agent间热切换而不改工作流，这是企业级agent采用的关键基础设施层"
+  },
+  {
+    "rank": 4,
+    "repo": "nexu-io/html-video",
+    "url": "https://github.com/nexu-io/html-video",
+    "stars": 3297,
+    "trend": "+3297/23天(5月27日创建)",
+    "what": "让coding agent用HTML/CSS/数据直接在本地生成MP4视频，21套模板，支持AI配乐，可插拔渲染引擎，Apache-2.0无每次渲染费",
+    "why": "填补了agent输出模态的空白，agent之前只能输出代码和文本，现在可以编程化生成视频内容",
+    "insight": "agent的价值不止于代码生成，扩展输出模态(视频、图表、设计稿)是agent从开发工具走向通用生产力工具的路径"
+  },
+  {
+    "rank": 5,
+    "repo": "kenn-io/agentsview",
+    "url": "https://github.com/kenn-io/agentsview",
+    "stars": 2866,
+    "trend": "近期加速增长，本周入选Repo Radar",
+    "what": "单二进制Go程序扫描本地所有coding agent的session文件，同步到SQLite，提供Web UI和CLI查看跨agent的token消耗、成本和session分析",
+    "why": "支持20+种agent，查询速度比重新解析原始文件快100倍以上，获implicator.ai本周热门推荐",
+    "insight": "当团队同时使用多个coding agent时，统一的成本和session可观测层是控制支出和评估agent ROI的前提"
+  }
+]
