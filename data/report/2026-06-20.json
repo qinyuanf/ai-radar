@@ -1,0 +1,132 @@
+[
+  {
+    "rank": 1,
+    "title": "MCP Enterprise-Managed Authorization 稳定版：Okta ID-JAG 实现 Agent 工具零触达 OAuth",
+    "url": "https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/",
+    "date": "2026-06-18",
+    "source": "Model Context Protocol Blog",
+    "what": "MCP 协议正式发布 Enterprise-Managed Authorization（EMA）扩展，管理员通过 Okta 的 Cross App Access 一次性配置 MCP server 访问权限，员工首次登录 Claude/VS Code 即自动继承，无需逐应用 OAuth 弹窗。",
+    "why": "将 MCP 工具授权从个人 OAuth 提升到企业 IdP 集中管控，7 家 MCP provider（Asana、Atlassian、Canva、Figma、Linear 等）首批支持，解决了 agent 在企业环境中大规模使用外部工具的身份治理瓶颈。",
+    "insight": "企业级 agent 系统的 tool use 层应设计 IdP 集中授权而非逐用户 OAuth；EMA 的 ID-JAG 模式可作为自建 agent 平台工具授权的参考架构。"
+  },
+  {
+    "rank": 2,
+    "title": "What makes a harness a harness：Agent Harness 的充要条件形式化定义",
+    "url": "https://arxiv.org/abs/2606.10106",
+    "date": "2026-06-11",
+    "source": "arXiv",
+    "what": "通过概念分析方法，区分 agent harness 与 framework、SDK、IDE 插件、编排器等易混淆概念，给出 harness 的充要条件参考定义，使术语在工程和学术中一致使用。",
+    "why": "harness 一词在社区中被过度宽泛使用（有时指 Claude Code 整个产品，有时指 SWE-bench 评估脚手架），首次建立了可操作的排除/纳入判据。",
+    "insight": "团队内部讨论 agent 架构时应明确 harness 的边界定义，避免将 harness 优化与框架选型、模型改进混为一谈。"
+  },
+  {
+    "rank": 3,
+    "title": "Harness-1：20B 开源搜索 Agent，通过状态外化 Harness 实现长程检索 RL 训练",
+    "url": "https://arxiv.org/abs/2606.02373",
+    "date": "2026-06-01",
+    "source": "arXiv",
+    "what": "将搜索 agent 的簿记状态（候选池、证据链、验证记录）外化到 harness 环境侧，策略模型只负责语义决策（搜什么、保留什么、何时停止），20B 模型在 8 个检索基准上平均 curated recall 达 0.730，超过次优开源搜索 agent 11.4 分。",
+    "why": "证明将状态管理从 policy 移出到 harness 可显著提升 RL 训练效率，模型不再需要在 token 层面学习可恢复的簿记操作。",
+    "insight": "设计搜索类 agent 时，将可确定性恢复的状态（候选列表、进度标记）交给 harness 管理，让 LLM 专注于需要推理的决策，可降低训练难度并提升可靠性。"
+  },
+  {
+    "rank": 4,
+    "title": "Agent Memory：有状态长程工作负载的首次系统级画像",
+    "url": "https://arxiv.org/abs/2606.06448",
+    "date": "2026-06-04",
+    "source": "arXiv",
+    "what": "提出 agent 记忆系统的四轴分类法，构建 phase-aware profiling harness 将成本归因到 construction、retrieval、generation 三个阶段，在两个 benchmark suite 上画像了 10 个代表性记忆系统。",
+    "why": "首次从系统层面（而非算法层面）量化 agent 记忆的读写路径成本分布，揭示设计选择如何在写入和读取之间转移开销。",
+    "insight": "优化 agent 记忆系统时不应只看检索准确率，还需 profile 写入路径的构建成本；不同记忆架构的读写成本分布差异可能比检索质量差异更显著。"
+  },
+  {
+    "rank": 5,
+    "title": "From Agent Traces to Trust：证据追溯与执行溯源统一框架综述",
+    "url": "https://arxiv.org/abs/2606.04990",
+    "date": "2026-06-16",
+    "source": "arXiv",
+    "what": "定义执行溯源为 agent 执行的类型化图，证据追溯为其在证据支持关系上的投影，将检索锚定、声明支持、工具调用安全、记忆谱系、可观测性、调试、审计、恢复统一到一个框架中。",
+    "why": "首次将 agent 系统中分散的可信度问题（幻觉溯源、工具调用安全、记忆污染等）纳入统一的溯源图模型，为 agent 审计提供了理论基础。",
+    "insight": "生产 agent 系统应从第一天起记录结构化执行溯源图而非扁平日志，这样才能在出问题时追溯到具体的检索、工具调用或记忆注入环节。"
+  },
+  {
+    "rank": 6,
+    "title": "SWE-Explore：将 Coding Agent 的仓库探索能力从补丁生成中独立评估",
+    "url": "https://arxiv.org/abs/2606.07297",
+    "date": "2026-06-08",
+    "source": "arXiv",
+    "what": "构建 848 实例、10 种语言、203 个开源仓库的 benchmark，要求 explorer 在固定行预算内返回排序后的相关代码区域列表，ground truth 从独立成功解决同一 issue 的 agent 轨迹中蒸馏得出。",
+    "why": "SWE-bench 将探索和补丁生成耦合评估，无法分辨 agent 是因为找不到相关代码还是因为生成能力不足而失败；SWE-Explore 首次隔离评估了这一关键能力。",
+    "insight": "改进 coding agent 性能时应先诊断是探索不足还是生成不足；SWE-Explore 可作为 agent 仓库导航能力的独立回归测试。"
+  },
+  {
+    "rank": 7,
+    "title": "AI Agents Enable Adaptive Computer Worms：自主推理型蠕虫的概念验证",
+    "url": "https://arxiv.org/abs/2606.03811",
+    "date": "2026-06-02",
+    "source": "arXiv (University of Toronto)",
+    "what": "用本地部署的开源 LLM 驱动蠕虫原型，在 33 台混合设备（Windows、Linux、IoT）的封闭实验室中实现 73.8% 的自主利用率，蠕虫能对每台目标实时推理并生成定制攻击策略。",
+    "why": "攻击者边际成本为零（窃取被感染机器的算力运行 LLM），集中式安全管控（服务拒绝、限速）对开源模型驱动的威胁结构性失效。",
+    "insight": "Agent 系统的安全模型不能假设攻击者需要 API 访问；开源模型加 agent 推理能力使自适应攻击的门槛大幅降低，防御侧需从签名匹配转向行为检测。"
+  },
+  {
+    "rank": 8,
+    "title": "Silent Failure in LLM Agent Systems：熵增原理与自主 Agent 的必然失序",
+    "url": "https://arxiv.org/abs/2606.08162",
+    "date": "2026-06-06",
+    "source": "arXiv",
+    "what": "基于 4 万次受控实验和 10 万次生产交互，归纳 LLM agent 系统在 6 个生命周期层的 22 种内在属性，提出静默失败不是 bug 而是语言自主系统缺乏外部确定性约束时的必然后果，以熵增公式 S(t)=S₀·e^(αt) 建模。",
+    "why": "将 agent 静默失败从个案修复提升为系统性理论，意味着仅靠更好的 prompt 和 guardrail 无法根除失败，需要引入外部确定性锚点。",
+    "insight": "Agent 系统架构中应主动引入确定性检查点（类型检查、断言、外部验证器）作为熵减手段，而非依赖模型自身的一致性。"
+  },
+  {
+    "rank": 9,
+    "title": "Channel Fracture：多 Agent 编排系统中跨 Agent 记忆注入的架构盲区",
+    "url": "https://arxiv.org/abs/2606.04896",
+    "date": "2026-06-04",
+    "source": "arXiv",
+    "what": "在 LangGraph、AutoGen、CrewAI 和自定义编排框架上实验，发现 cron 调度的 agent 因硬编码的记忆隔离守卫而无法向目标 agent 写入持久记忆，跨 agent 记忆注入在 5 跳内信息损失超过 30%。",
+    "why": "暴露了多 agent 系统中一个被忽视的系统性缺陷：编排框架的记忆隔离机制虽然保护了安全性，但也阻断了合法的跨 agent 知识共享。",
+    "insight": "构建多 agent 系统时需显式设计跨 agent 记忆通道并测试其保真度，不能假设框架默认支持 agent 间的知识传递。"
+  },
+  {
+    "rank": 10,
+    "title": "DeepMind 联合 Schmidt Sciences 等发起 1000 万美元多 Agent 安全研究基金",
+    "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+    "date": "2026-06-11",
+    "source": "Google DeepMind",
+    "what": "Google DeepMind、Schmidt Sciences、Cooperative AI Foundation、ARIA 和 Google.org 联合发起最高 1000 万美元的全球研究资助，聚焦大规模多 agent 系统的群体行为安全，单项资助 30 万至 100 万美元，8 月 8 日截止申请。",
+    "why": "将多 agent 安全从单体对齐问题扩展到群体涌现行为研究，关注当数百万异构 agent 跨数字环境交互时的协调、谈判和博弈风险。",
+    "insight": "如果你的 agent 系统涉及多 agent 协作，当前是申请研究资助的窗口期；多 agent 涌现行为的安全问题将成为下一阶段的工程挑战。"
+  },
+  {
+    "rank": 11,
+    "title": "Claude Code 嵌套 Sub-Agent 支持 5 层深度及 fallbackModel 配置",
+    "url": "https://code.claude.com/docs/en/whats-new",
+    "date": "2026-06-12",
+    "source": "Anthropic",
+    "what": "Sub-agent 可递归生成子 agent 直到 5 层硬上限，将嘈杂的探索性工作逐层推离主对话；新增 fallbackModel 配置支持最多 3 个按序回退的模型，提升 agent session 在模型不可用时的韧性。",
+    "why": "5 层嵌套使 Claude Code 可编排更复杂的分治任务（如大规模重构中的模块级子任务），fallbackModel 解决了单一模型依赖的可用性风险。",
+    "insight": "利用嵌套 sub-agent 时需警惕上下文稀释问题；fallbackModel 的多级降级模式可推广到任何需要高可用的 agent 系统。"
+  },
+  {
+    "rank": 12,
+    "title": "From Failed Trajectories to Reliable LLM Agents：六层 Harness 缺陷诊断与修复",
+    "url": "https://arxiv.org/abs/2606.06324",
+    "date": "2026-06-04",
+    "source": "arXiv",
+    "what": "将 agent harness 分解为执行环境、工具接口、上下文与记忆、生命周期编排、可观测性、验证与评估六层，从失败轨迹中定位具体层的缺陷并生成作用域精确的修复方案。",
+    "why": "现有 agent 自改进方法基于最终结果做广泛调整，本文首次实现了从失败轨迹到具体 harness 层缺陷的因果归因。",
+    "insight": "Agent 故障排查应按 harness 层分层诊断（是工具接口返回了错误格式，还是上下文窗口溢出，还是编排逻辑重试失败），而非笼统地调 prompt。"
+  },
+  {
+    "rank": 13,
+    "title": "AutoMEM：自管理工具接口的 Agentic Memory 在跨场景泛化中表现最优",
+    "url": "https://arxiv.org/abs/2606.04315",
+    "date": "2026-06-03",
+    "source": "arXiv",
+    "what": "在单轮 QA、多会话对话、agent 轨迹 QA、记忆压力测试、长程 agent 任务五类场景上对比 8 个记忆系统，发现自管理纯文本存储的 agentic harness 跨场景排名最佳，据此提出 AutoMEM。",
+    "why": "颠覆了复杂记忆架构（图数据库、向量索引）优于简单方案的直觉，证明赋予 agent 对存储和检索的主动控制权比被动管线中的精巧索引更重要。",
+    "insight": "Agent 记忆系统设计的优先级应是赋予 agent 主动的读写控制能力，而非一味堆叠复杂的后端索引结构。"
+  }
+]
