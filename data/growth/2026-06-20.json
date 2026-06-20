@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "Plaer1/junction",
+    "url": "https://github.com/Plaer1/junction",
+    "stars": 513,
+    "trend": "+513/3天(6月17日创建)",
+    "what": "VS Code聊天侧边栏，让本地AI coding agent(Ollama等)直接在编辑器内交互，无需云端订阅",
+    "why": "创建仅3天即破500 star，填补了VS Code原生chat UI与本地开源agent之间的连接空白",
+    "insight": "coding agent的用户体验不只是终端CLI，IDE原生集成是降低本地agent使用门槛的关键入口，值得关注agent-IDE桥接层的设计"
+  },
+  {
+    "rank": 2,
+    "repo": "JimLiu/baoyu-design",
+    "url": "https://github.com/JimLiu/baoyu-design",
+    "stars": 1630,
+    "trend": "+1630/13天(6月7日创建)",
+    "what": "把Claude Design的UI设计能力变成本地Agent Skill，让Cursor/Claude Code等coding agent直接生成原型图、线框图、演示幻灯片，输出自包含HTML",
+    "why": "无需claude.ai/design即可让agent做设计，证明agent技能不只限于代码生成，设计输出是可行的扩展方向",
+    "insight": "agent的能力边界正从代码向设计、文档、视觉产物延伸，Skill化封装是让领域能力可复用可组合的正确抽象层级"
+  },
+  {
+    "rank": 3,
+    "repo": "superloglabs/superlog",
+    "url": "https://github.com/superloglabs/superlog",
+    "stars": 897,
+    "trend": "+897/18天(6月2日创建)",
+    "what": "基于OpenTelemetry的开源可观测工具，让AI agent自动分析告警日志并生成修复代码，闭环自愈",
+    "why": "把observability和agent action连成闭环，agent不只是告诉你哪里出了问题，而是直接帮你修",
+    "insight": "可观测+自动修复的闭环是agent在运维场景中真正落地的形态，比单纯的LLM告警分析多了执行层"
+  },
+  {
+    "rank": 4,
+    "repo": "tastyeffectco/sandboxd",
+    "url": "https://github.com/tastyeffectco/sandboxd",
+    "stars": 676,
+    "trend": "+676/17天(6月3日创建)",
+    "what": "一条命令启动自托管开发沙盒，带预览URL，Go单二进制，无需Kubernetes，专为coding agent和SaaS工厂设计",
+    "why": "agent需要安全隔离的执行环境，sandboxd用最简方案解决了agent sandbox的部署复杂度问题",
+    "insight": "coding agent安全执行的瓶颈不是沙盒技术本身，而是部署和管理沙盒的运维成本，轻量级sandbox基础设施是刚需"
+  },
+  {
+    "rank": 5,
+    "repo": "Kaelio/ktx",
+    "url": "https://github.com/Kaelio/ktx",
+    "stars": 1308,
+    "trend": "+1308/41天(5月10日创建)",
+    "what": "数据分析agent的可执行上下文层，将语义层定义、业务wiki、数据字典以git文件方式管理，通过MCP和CLI让agent精确查询企业数据",
+    "why": "解决了数据agent最核心的问题：没有业务上下文的SQL生成不可靠，ktx让agent理解指标、维度和业务规则后再写查询",
+    "insight": "数据领域agent准确性的关键不是模型能力而是上下文工程，语义层+业务wiki+验证三层架构是垂直agent可靠落地的范式"
+  }
+]

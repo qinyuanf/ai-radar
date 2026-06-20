@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "openai/codex",
+    "url": "https://github.com/openai/codex",
+    "stars": 92186,
+    "trend": "Rust重写alpha每日发版，v0.142.0-alpha.7(6月20日)",
+    "what": "OpenAI的终端coding agent，正在用Rust重写核心以提升性能，保持每日alpha发版节奏",
+    "why": "从Node到Rust的重写说明coding agent竞争已进入执行层性能军备赛，每日发版密度在主流agent中最高",
+    "insight": "当agent核心逻辑需要处理高频tool-calling和并发沙盒时，系统级语言重写是不可避免的工程选择"
+  },
+  {
+    "rank": 2,
+    "repo": "CopilotKit/CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "stars": 35317,
+    "trend": "v1.61.0(6月19日)，AG-UI Protocol推出Bot/Slack集成",
+    "what": "Agent前端技术栈，AG-UI Protocol定义agent与UI的事件通信标准，支持React/Angular/Mobile/Slack等多端",
+    "why": "v1.61同日发布bot和bot-slack包，agent从Web端扩展到Slack等消息平台，AG-UI正在成为agent-frontend通信的事实标准",
+    "insight": "agent与用户交互的协议层(AG-UI)和agent与工具交互的协议层(MCP)同样重要，前端标准化是agent产品化的必备基础设施"
+  },
+  {
+    "rank": 3,
+    "repo": "crewAIInc/crewAI",
+    "url": "https://github.com/crewAIInc/crewAI",
+    "stars": 53998,
+    "trend": "v1.14.8(6月18日)，持续高频迭代",
+    "what": "基于角色的多agent协作框架，让多个专业agent以crew形式分工协作完成复杂任务",
+    "why": "v1.14.x系列密集发布修复和优化，54k star稳居multi-agent框架第一梯队，社区活跃度未见衰减",
+    "insight": "multi-agent编排的核心挑战不是创建单个agent，而是定义agent间的任务分配、信息流转和质量把关机制"
+  },
+  {
+    "rank": 4,
+    "repo": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 135344,
+    "trend": "v2.11.0(6月19日)，13.5万star",
+    "what": "Agent的网页上下文API，大规模搜索、抓取和交互网页，输出clean markdown/JSON/截图等agent友好格式",
+    "why": "v2.11.0昨日发布，star超13万进入GitHub前100，作为agent联网基础设施层的地位已经确立",
+    "insight": "agent系统的网页理解能力取决于context ingestion层的质量，专业的网页结构化工具比让agent直接解析HTML可靠得多"
+  },
+  {
+    "rank": 5,
+    "repo": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "stars": 105415,
+    "trend": "v0.47.0(6月18日)，10.5万star",
+    "what": "Google开源的终端AI agent，内建搜索、文件操作、shell命令、MCP支持、headless模式和自定义扩展",
+    "why": "v0.47两天前发布，star已超Codex逼近OpenCode，终端coding agent三强格局(OpenCode/Gemini CLI/Codex)正式形成",
+    "insight": "终端agent的竞争验证了model-agnostic和vendor-specific两条路线并存，选择哪条取决于团队对模型锁定的容忍度"
+  }
+]
