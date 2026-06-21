@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "stars": 137000,
+    "trend": "周增+11370，v1.0(6月)发布",
+    "what": "面向真实工程师的agent技能集，包含TDD、架构改进、代码审查等生产级工程技能",
+    "why": "v1.0引入progressive disclosure机制，先加载短摘要再按需拉取完整skill body，token成本直降63%",
+    "insight": "agent skill系统的设计需要考虑加载策略，懒加载加摘要索引模式在skill数量膨胀后比全量注入更可持续"
+  },
+  {
+    "rank": 2,
+    "repo": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "stars": 87600,
+    "trend": "v0.2.5(5月11日)，持续攀升至87k",
+    "what": "模拟真实交易公司组织架构的多agent框架，基本面分析师、情绪分析师、技术分析师、交易员、风控经理各司其职",
+    "why": "v0.2.5加入GPT-5.5覆盖和Qwen/GLM双区域支持，multi-provider战略让用户按region选模型，金融agent赛道star增长曲线最陡",
+    "insight": "多agent系统的组织架构设计可以直接映射真实团队的分工协作模式，角色拆分越贴近业务现实越容易设计正确"
+  },
+  {
+    "rank": 3,
+    "repo": "warpdotdev/warp",
+    "url": "https://github.com/warpdotdev/warp",
+    "stars": 62100,
+    "trend": "5月开源后从0涨至62k，v0.2026.06.03",
+    "what": "Rust写的agentic开发环境，从终端进化而来，内建coding agent并可原生运行Claude Code、Codex、Gemini CLI等外部agent",
+    "why": "首个完整开源的agent运行平台，OpenAI作为founding sponsor，70万开发者基础叠加开源带来社区效应让star一个月突破6万",
+    "insight": "agent需要的不只是CLI入口，而是一个完整的开发环境运行时，终端只是agent运行时的一种形态"
+  },
+  {
+    "rank": 4,
+    "repo": "ruvnet/ruflo",
+    "url": "https://github.com/ruvnet/ruflo",
+    "stars": 60600,
+    "trend": "v3.12.4(6月18日)，4个月从14k涨至60k",
+    "what": "Claude的元harness，编排100加专业agent形成swarm，Rust/WASM内核做路由，支持自学习路由策略和MCP协议",
+    "why": "v3.12.4刚修补CWE-78安全漏洞，1539个release保持极端高频迭代，从Claude Flow改名后增长反而加速",
+    "insight": "围绕单一模型供应商做深度编排依然有巨大市场空间，swarm级别的agent路由和安全加固是meta-harness的核心壁垒"
+  },
+  {
+    "rank": 5,
+    "repo": "web-infra-dev/midscene",
+    "url": "https://github.com/web-infra-dev/midscene",
+    "stars": 13800,
+    "trend": "v1.9.7(6月17日)，179个release高频迭代",
+    "what": "纯视觉驱动的跨平台UI自动化，用自然语言描述每一步操作，基于截图定位元素而非DOM选择器，覆盖Web/Android/iOS/桌面端",
+    "why": "纯vision-based方案不依赖DOM结构，在Canvas和自定义控件场景下比selector-based方案更鲁棒，持续集成更多多模态模型",
+    "insight": "UI agent的未来是纯视觉方案而非DOM解析，视觉方案天然跨平台且对任意UI技术栈通用"
+  }
+]

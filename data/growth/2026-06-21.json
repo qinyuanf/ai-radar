@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "pewdiepie-archdaemon/odysseus",
+    "url": "https://github.com/pewdiepie-archdaemon/odysseus",
+    "stars": 75100,
+    "trend": "3周从0涨至75k，周均约25000",
+    "what": "自托管AI工作空间，整合agent对话、深度研究、代码编写、邮件日历、本地模型服务和持久记忆于一体",
+    "why": "PewDiePie出品，5月31日创建，将ChatGPT/Claude的全部能力以AGPL开源打包到用户自有硬件上运行，1571个commit证明不是玩票",
+    "insight": "自托管AI workspace的爆发说明开发者对数据主权和离线可用性的刚需已经足够大，agent系统如果不能支持完全本地部署就会丢失这个用户群"
+  },
+  {
+    "rank": 2,
+    "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+    "stars": 12400,
+    "trend": "v0.4.20(6月19日)，持续高频发版",
+    "what": "79个可组合skill编排自主ML研究全生命周期，Claude Code执行研究任务，外部LLM做对抗审查，两个模型互相辩论互相纠错",
+    "why": "把上交大ARIS论文落地为无框架依赖的纯Markdown skill集，W1-W6七个工作流覆盖从idea到会议投稿的完整科研闭环",
+    "insight": "跨模型对抗审查是自主研究agent突破self-review盲区的关键设计，比单模型自检可靠度高一个量级"
+  },
+  {
+    "rank": 3,
+    "repo": "virattt/dexter",
+    "url": "https://github.com/virattt/dexter",
+    "stars": 27100,
+    "trend": "v1.0.0(6月15日)发布后加速增长",
+    "what": "自主金融研究agent，将复杂金融问题自动分解为结构化研究任务，接入实时行情数据，自验证加迭代精炼输出数据驱动结论",
+    "why": "Claude Code for Finance，v1.0标志从实验转入生产就绪，467个commit积累的金融领域工具链是硬壁垒",
+    "insight": "垂直agent的核心竞争力不在通用推理能力而在领域工具链的深度集成和输出自验证机制"
+  },
+  {
+    "rank": 4,
+    "repo": "open-multi-agent/open-multi-agent",
+    "url": "https://github.com/open-multi-agent/open-multi-agent",
+    "stars": 6400,
+    "trend": "4月创建，v1.8.0(6月19日)，12个release持续迭代",
+    "what": "TypeScript原生多agent编排框架，给一个目标自动分解为task DAG，并行执行独立任务，支持checkpoint恢复和流式进度",
+    "why": "goal-first不写编排图的范式，填补了TypeScript生态中缺少成熟multi-agent原生方案的空白",
+    "insight": "multi-agent编排正从手动定义拓扑转向声明式目标分解，这降低了agent系统的组装复杂度但对coordinator agent的规划能力要求更高"
+  },
+  {
+    "rank": 5,
+    "repo": "AI45Lab/AgentDoG",
+    "url": "https://github.com/AI45Lab/AgentDoG",
+    "stars": 628,
+    "trend": "AgentDoG 1.5(5月28日)，多尺寸诊断模型发布",
+    "what": "三维风险分类法对agent轨迹做细粒度安全诊断，提供0.8B到8B多尺寸guardrail模型和ATBench评估基准",
+    "why": "不是二元安全标签，而是在agent执行轨迹上定位到具体root cause和失败模式，同时提供SFT加RL训练pipeline让团队定制安全诊断模型",
+    "insight": "agent安全正在从粗粒度黑名单过滤走向轨迹级因果诊断，这是agent系统在受监管行业落地的前提条件"
+  }
+]
