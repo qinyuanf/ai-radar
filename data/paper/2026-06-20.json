@@ -1,16 +1,6 @@
 [
   {
     "rank": 1,
-    "title": "MCP Enterprise-Managed Authorization 稳定版：Okta ID-JAG 实现 Agent 工具零触达 OAuth",
-    "url": "https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/",
-    "date": "2026-06-18",
-    "source": "Model Context Protocol Blog",
-    "what": "MCP 协议正式发布 Enterprise-Managed Authorization（EMA）扩展，管理员通过 Okta 的 Cross App Access 一次性配置 MCP server 访问权限，员工首次登录 Claude/VS Code 即自动继承，无需逐应用 OAuth 弹窗。",
-    "why": "将 MCP 工具授权从个人 OAuth 提升到企业 IdP 集中管控，7 家 MCP provider（Asana、Atlassian、Canva、Figma、Linear 等）首批支持，解决了 agent 在企业环境中大规模使用外部工具的身份治理瓶颈。",
-    "insight": "企业级 agent 系统的 tool use 层应设计 IdP 集中授权而非逐用户 OAuth；EMA 的 ID-JAG 模式可作为自建 agent 平台工具授权的参考架构。"
-  },
-  {
-    "rank": 2,
     "title": "What makes a harness a harness：Agent Harness 的充要条件形式化定义",
     "url": "https://arxiv.org/abs/2606.10106",
     "date": "2026-06-11",
@@ -20,7 +10,7 @@
     "insight": "团队内部讨论 agent 架构时应明确 harness 的边界定义，避免将 harness 优化与框架选型、模型改进混为一谈。"
   },
   {
-    "rank": 3,
+    "rank": 2,
     "title": "Harness-1：20B 开源搜索 Agent，通过状态外化 Harness 实现长程检索 RL 训练",
     "url": "https://arxiv.org/abs/2606.02373",
     "date": "2026-06-01",
@@ -30,7 +20,7 @@
     "insight": "设计搜索类 agent 时，将可确定性恢复的状态（候选列表、进度标记）交给 harness 管理，让 LLM 专注于需要推理的决策，可降低训练难度并提升可靠性。"
   },
   {
-    "rank": 4,
+    "rank": 3,
     "title": "Agent Memory：有状态长程工作负载的首次系统级画像",
     "url": "https://arxiv.org/abs/2606.06448",
     "date": "2026-06-04",
@@ -40,7 +30,7 @@
     "insight": "优化 agent 记忆系统时不应只看检索准确率，还需 profile 写入路径的构建成本；不同记忆架构的读写成本分布差异可能比检索质量差异更显著。"
   },
   {
-    "rank": 5,
+    "rank": 4,
     "title": "From Agent Traces to Trust：证据追溯与执行溯源统一框架综述",
     "url": "https://arxiv.org/abs/2606.04990",
     "date": "2026-06-16",
@@ -50,7 +40,7 @@
     "insight": "生产 agent 系统应从第一天起记录结构化执行溯源图而非扁平日志，这样才能在出问题时追溯到具体的检索、工具调用或记忆注入环节。"
   },
   {
-    "rank": 6,
+    "rank": 5,
     "title": "SWE-Explore：将 Coding Agent 的仓库探索能力从补丁生成中独立评估",
     "url": "https://arxiv.org/abs/2606.07297",
     "date": "2026-06-08",
@@ -60,7 +50,7 @@
     "insight": "改进 coding agent 性能时应先诊断是探索不足还是生成不足；SWE-Explore 可作为 agent 仓库导航能力的独立回归测试。"
   },
   {
-    "rank": 7,
+    "rank": 6,
     "title": "AI Agents Enable Adaptive Computer Worms：自主推理型蠕虫的概念验证",
     "url": "https://arxiv.org/abs/2606.03811",
     "date": "2026-06-02",
@@ -70,7 +60,7 @@
     "insight": "Agent 系统的安全模型不能假设攻击者需要 API 访问；开源模型加 agent 推理能力使自适应攻击的门槛大幅降低，防御侧需从签名匹配转向行为检测。"
   },
   {
-    "rank": 8,
+    "rank": 7,
     "title": "Silent Failure in LLM Agent Systems：熵增原理与自主 Agent 的必然失序",
     "url": "https://arxiv.org/abs/2606.08162",
     "date": "2026-06-06",
@@ -80,7 +70,7 @@
     "insight": "Agent 系统架构中应主动引入确定性检查点（类型检查、断言、外部验证器）作为熵减手段，而非依赖模型自身的一致性。"
   },
   {
-    "rank": 9,
+    "rank": 8,
     "title": "Channel Fracture：多 Agent 编排系统中跨 Agent 记忆注入的架构盲区",
     "url": "https://arxiv.org/abs/2606.04896",
     "date": "2026-06-04",
@@ -90,27 +80,7 @@
     "insight": "构建多 agent 系统时需显式设计跨 agent 记忆通道并测试其保真度，不能假设框架默认支持 agent 间的知识传递。"
   },
   {
-    "rank": 10,
-    "title": "DeepMind 联合 Schmidt Sciences 等发起 1000 万美元多 Agent 安全研究基金",
-    "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
-    "date": "2026-06-11",
-    "source": "Google DeepMind",
-    "what": "Google DeepMind、Schmidt Sciences、Cooperative AI Foundation、ARIA 和 Google.org 联合发起最高 1000 万美元的全球研究资助，聚焦大规模多 agent 系统的群体行为安全，单项资助 30 万至 100 万美元，8 月 8 日截止申请。",
-    "why": "将多 agent 安全从单体对齐问题扩展到群体涌现行为研究，关注当数百万异构 agent 跨数字环境交互时的协调、谈判和博弈风险。",
-    "insight": "如果你的 agent 系统涉及多 agent 协作，当前是申请研究资助的窗口期；多 agent 涌现行为的安全问题将成为下一阶段的工程挑战。"
-  },
-  {
-    "rank": 11,
-    "title": "Claude Code 嵌套 Sub-Agent 支持 5 层深度及 fallbackModel 配置",
-    "url": "https://code.claude.com/docs/en/whats-new",
-    "date": "2026-06-12",
-    "source": "Anthropic",
-    "what": "Sub-agent 可递归生成子 agent 直到 5 层硬上限，将嘈杂的探索性工作逐层推离主对话；新增 fallbackModel 配置支持最多 3 个按序回退的模型，提升 agent session 在模型不可用时的韧性。",
-    "why": "5 层嵌套使 Claude Code 可编排更复杂的分治任务（如大规模重构中的模块级子任务），fallbackModel 解决了单一模型依赖的可用性风险。",
-    "insight": "利用嵌套 sub-agent 时需警惕上下文稀释问题；fallbackModel 的多级降级模式可推广到任何需要高可用的 agent 系统。"
-  },
-  {
-    "rank": 12,
+    "rank": 9,
     "title": "From Failed Trajectories to Reliable LLM Agents：六层 Harness 缺陷诊断与修复",
     "url": "https://arxiv.org/abs/2606.06324",
     "date": "2026-06-04",
@@ -120,7 +90,7 @@
     "insight": "Agent 故障排查应按 harness 层分层诊断（是工具接口返回了错误格式，还是上下文窗口溢出，还是编排逻辑重试失败），而非笼统地调 prompt。"
   },
   {
-    "rank": 13,
+    "rank": 10,
     "title": "AutoMEM：自管理工具接口的 Agentic Memory 在跨场景泛化中表现最优",
     "url": "https://arxiv.org/abs/2606.04315",
     "date": "2026-06-03",

@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "title": "Less Context, Better Agents: 企业级 Tool-Using Agent 的高效上下文工程",
+    "url": "https://arxiv.org/abs/2606.10209",
+    "date": "2026-06-08",
+    "source": "arXiv",
+    "what": "微软研究团队在 Dynamics 365 Finance 场景下，对比四种上下文工程配置（完整历史、最近5轮工具调用、自动摘要窗口等）在 GPT-5 上的表现，发现裁剪上下文到近 5 轮工具调用即可在 50 任务基准上达到与全量上下文相当的效果，同时大幅降低推理成本。",
+    "why": "首次在真实企业 MCP 工具链上定量比较上下文工程策略，证明 verbose 工具响应是 Agent 可靠性和成本的主要瓶颈。",
+    "insight": "在生产 Agent 系统中应优先投资上下文裁剪和摘要管线，而非盲目扩大上下文窗口。"
+  },
+  {
+    "rank": 2,
+    "title": "Can LLM Agents Infer World Models? 用自动机学习评估 Agent 环境建模能力",
+    "url": "https://arxiv.org/abs/2606.16576",
+    "date": "2026-06-15",
+    "source": "arXiv",
+    "what": "提出 Agentic Automata Learning 评估框架，让 Agent 通过成员查询和等价查询交互式发现隐藏的确定性有限自动机（DFA），以此量化 Agent 从环境交互中推断世界模型的能力。结果显示推理模型显著强于非推理模型，但随 DFA 复杂度上升性能急剧下降。",
+    "why": "提供了一个复杂度可控、有经典算法基线的 Agent 环境推理评估方法，填补了 Agent world model 推断能力的定量评估空白。",
+    "insight": "在设计需要环境理解的 Agent 时，推理模型是必选项，但当前模型在复杂环境中仍存在查询规划和证据整合的系统性缺陷。"
+  },
+  {
+    "rank": 3,
+    "title": "MemToolAgent: 通过环境和用户反馈增强 Agent 工具使用的记忆框架",
+    "url": "https://arxiv.org/abs/2606.07909",
+    "date": "2026-06-10",
+    "source": "arXiv (AWS AI)",
+    "what": "AWS AI 提出 MemToolAgent，利用环境反馈和用户反馈构建工具使用记忆，使 Agent 在后续任务中能检索相关经验改善工具选择和调用策略，在长程任务中提升工具使用准确率。",
+    "why": "将记忆系统与工具使用深度绑定，记忆不再仅存储对话历史而是存储工具交互经验，是 memory + tool use 交叉方向的代表工作。",
+    "insight": "在 Agent 系统中为工具调用建立专用记忆层（而非仅靠对话上下文），可有效减少重复试错和 API 浪费。"
+  },
+  {
+    "rank": 4,
+    "title": "EvoArena: 追踪 LLM Agent 记忆演化的评估框架",
+    "url": "https://arxiv.org/abs/2606.13681",
+    "date": "2026-06-15",
+    "source": "arXiv",
+    "what": "提出 EvoArena 框架用于追踪和评估 LLM Agent 在持续交互中的记忆演化过程，关注 Agent 如何在多轮交互中更新、遗忘和重组记忆内容。",
+    "why": "现有 Agent 记忆评估多为静态快照，EvoArena 首次关注记忆的动态演化轨迹，更贴近真实长程 Agent 的运行特征。",
+    "insight": "长期运行的 Agent 系统需要监控记忆漂移和退化，EvoArena 的评估方法可用于构建记忆质量的持续观测管线。"
+  },
+  {
+    "rank": 5,
+    "title": "Benchmarking LLM Agents on Meta-Analysis：442 篇 Nature 论文的 Agent 评估基准",
+    "url": "https://arxiv.org/abs/2606.17041",
+    "date": "2026-06-17",
+    "source": "arXiv",
+    "what": "构建 MetaSyn 数据集，包含 442 篇 Nature Portfolio 期刊的专家标注元分析，每条配备研究问题、PI/ECO 标准和 14 万篇 PubMed 检索语料，用于评估 LLM Agent 执行复杂研究综合任务的能力。",
+    "why": "将 Agent 评估从代码生成扩展到学术研究综合这一高度结构化的知识密集型任务，提供了可复现的端到端研究 Agent 基准。",
+    "insight": "科研 Agent 是 RAG + tool use + 长上下文的综合考验，此基准可用于评估企业知识密集型 Agent 的上限。"
+  },
+  {
+    "rank": 6,
+    "title": "Scaling Self-Evolving Agents via Parametric Memory (TMEM)",
+    "url": "https://arxiv.org/abs/2606.04536",
+    "date": "2026-06-05",
+    "source": "arXiv",
+    "what": "提出 TMEM 自演化参数记忆框架，Agent 不仅将历史压缩为显式记忆，还通过轻量在线更新将蒸馏监督吸收进 LoRA 权重，实现记忆的参数化快速读取，在多跳推理和长程任务中持续自我改进。",
+    "why": "将 Agent 记忆从外部检索推向参数化存储，用 LoRA 在线更新实现记忆的即时编码，是 Agent 自演化方向的新范式。",
+    "insight": "参数化记忆可以绕过检索延迟和上下文窗口限制，适合需要快速响应且知识持续积累的 Agent 场景。"
+  }
+]

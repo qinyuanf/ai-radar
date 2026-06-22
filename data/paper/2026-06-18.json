@@ -1,0 +1,42 @@
+[
+  {
+    "rank": 1,
+    "title": "VIPER-MCP：扫描 4 万 MCP 仓库发现 106 个零日漏洞并获得 67 个 CVE",
+    "url": "https://arxiv.org/abs/2605.21392",
+    "date": "2026-05-30",
+    "source": "arXiv",
+    "what": "首个端到端自动化 MCP 服务器漏洞审计框架，通过双趟静态分析加反馈驱动的 prompt 进化机制，对 39884 个开源 MCP 仓库进行扫描并生成可验证的 PoC exploit。",
+    "why": "证明 MCP tool handler 中未做输入消毒就直接执行 shell/网络/文件操作是系统性缺陷，Anthropic 确认属设计预期并拒绝修改协议。",
+    "insight": "上线 MCP server 前必须对 tool handler 做 taint analysis；VIPER-MCP 可直接集成到 CI 中作为 MCP 安全门禁。"
+  },
+  {
+    "rank": 2,
+    "title": "Human-on-the-Bridge：将人类专家知识前置的可扩展 Agent 评估范式",
+    "url": "https://arxiv.org/abs/2606.16871",
+    "date": "2026-06-15",
+    "source": "arXiv",
+    "what": "提出 HOB 评估范式，将领域专家知识（Red-Team Traps、Juror Personas、评分规则、审计策略）前置为可复用评估资产，在测试前完成人类专业知识的编码。",
+    "why": "现有 benchmark/HITL/LLM-as-judge 各有盲区，HOB 将人类判断提前固化为评估基础设施，使 agent 的多轮推理、工具调用、策略遵守等能力得到结构化评估。",
+    "insight": "构建 agent eval 时可参考 HOB 模式：先让领域专家定义可复用的评估知识包，再用自动化管线大规模执行，替代逐案人工审查。"
+  },
+  {
+    "rank": 3,
+    "title": "Visual-SDPO：用渲染视觉反馈自蒸馏优化代码生成 Agent",
+    "url": "https://arxiv.org/abs/2606.10334",
+    "date": "2026-06-09",
+    "source": "arXiv (Microsoft)",
+    "what": "提出 Visual-SDPO 框架，将代码生成结果渲染后作为视觉反馈回传给 teacher 模型，通过 Visual-Grounded Code Credit Weighting 将缺陷追溯到具体代码行并加权蒸馏信号。",
+    "why": "首次将视觉渲染结果作为代码生成的奖励信号闭环，解决了图表、网页等视觉产物中元素重叠、文字截断等自回归模型难以自查的问题。",
+    "insight": "构建生成 UI/图表的 agent 时，可借鉴 Visual-SDPO 思路加入渲染截图作为验证步骤，让 agent loop 获得视觉层面的反馈。"
+  },
+  {
+    "rank": 4,
+    "title": "Support Vector Rubrics：用最大间隔学习弥合自生成与人类评估标准的鸿沟",
+    "url": "https://arxiv.org/abs/2606.08077",
+    "date": "2026-06-06",
+    "source": "arXiv",
+    "what": "将 rubric 构造重新定义为偏好数据上的最大间隔边界学习，从偏好对中挖掘对比特征构建 rubric bank，配合 prompt 条件选择器迭代精炼。",
+    "why": "在 RubricBench 上与人类标准的差距从 24.1 分缩小到 0.3 分，且学到的 rubric bank 可跨 judge 迁移无需重训，解决了自生成 rubric 只描述好回答而无法区分近似候选的问题。",
+    "insight": "Agent 输出质量评估中 LLM-as-judge 的效果取决于 rubric 质量；SVR 提供了一条从人类偏好数据自动学习高区分度 rubric 的路径。"
+  }
+]

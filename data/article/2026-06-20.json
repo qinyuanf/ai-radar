@@ -1,0 +1,32 @@
+[
+  {
+    "rank": 1,
+    "title": "MCP Enterprise-Managed Authorization 稳定版：Okta ID-JAG 实现 Agent 工具零触达 OAuth",
+    "url": "https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/",
+    "date": "2026-06-18",
+    "source": "Model Context Protocol Blog",
+    "what": "MCP 协议正式发布 Enterprise-Managed Authorization（EMA）扩展，管理员通过 Okta 的 Cross App Access 一次性配置 MCP server 访问权限，员工首次登录 Claude/VS Code 即自动继承，无需逐应用 OAuth 弹窗。",
+    "why": "将 MCP 工具授权从个人 OAuth 提升到企业 IdP 集中管控，7 家 MCP provider（Asana、Atlassian、Canva、Figma、Linear 等）首批支持，解决了 agent 在企业环境中大规模使用外部工具的身份治理瓶颈。",
+    "insight": "企业级 agent 系统的 tool use 层应设计 IdP 集中授权而非逐用户 OAuth；EMA 的 ID-JAG 模式可作为自建 agent 平台工具授权的参考架构。"
+  },
+  {
+    "rank": 2,
+    "title": "DeepMind 联合 Schmidt Sciences 等发起 1000 万美元多 Agent 安全研究基金",
+    "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+    "date": "2026-06-11",
+    "source": "Google DeepMind",
+    "what": "Google DeepMind、Schmidt Sciences、Cooperative AI Foundation、ARIA 和 Google.org 联合发起最高 1000 万美元的全球研究资助，聚焦大规模多 agent 系统的群体行为安全，单项资助 30 万至 100 万美元，8 月 8 日截止申请。",
+    "why": "将多 agent 安全从单体对齐问题扩展到群体涌现行为研究，关注当数百万异构 agent 跨数字环境交互时的协调、谈判和博弈风险。",
+    "insight": "如果你的 agent 系统涉及多 agent 协作，当前是申请研究资助的窗口期；多 agent 涌现行为的安全问题将成为下一阶段的工程挑战。"
+  },
+  {
+    "rank": 3,
+    "title": "Claude Code 嵌套 Sub-Agent 支持 5 层深度及 fallbackModel 配置",
+    "url": "https://code.claude.com/docs/en/whats-new",
+    "date": "2026-06-12",
+    "source": "Anthropic",
+    "what": "Sub-agent 可递归生成子 agent 直到 5 层硬上限，将嘈杂的探索性工作逐层推离主对话；新增 fallbackModel 配置支持最多 3 个按序回退的模型，提升 agent session 在模型不可用时的韧性。",
+    "why": "5 层嵌套使 Claude Code 可编排更复杂的分治任务（如大规模重构中的模块级子任务），fallbackModel 解决了单一模型依赖的可用性风险。",
+    "insight": "利用嵌套 sub-agent 时需警惕上下文稀释问题；fallbackModel 的多级降级模式可推广到任何需要高可用的 agent 系统。"
+  }
+]

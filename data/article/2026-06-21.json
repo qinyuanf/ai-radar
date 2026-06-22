@@ -11,36 +11,6 @@
   },
   {
     "rank": 2,
-    "title": "Meta Context Engineering via Agentic Skill Evolution (ICML 2026)",
-    "url": "https://arxiv.org/abs/2601.21557",
-    "date": "2026-01-29",
-    "source": "arXiv / ICML 2026",
-    "what": "提出双层优化框架 MCE，meta-agent 通过 agentic crossover 搜索历史技能谱系进化 context engineering 策略，base-agent 将 context 作为可学习文件和代码进行优化，在金融/化学/医学/法律/AI安全五个领域离线平均相对提升 89.1%。",
-    "why": "将 context engineering 从手工启发式提升到可学习、可进化的系统性方法，训练速度比 ACE 基线快 13.6 倍，context 长度自适应覆盖 1.5K 到 86K token。",
-    "insight": "Agent 系统的 context 组装逻辑不应硬编码，MCE 的双层进化模式为 context engineering 自动化提供了可落地的参考架构。"
-  },
-  {
-    "rank": 3,
-    "title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design (EMNLP 2026)",
-    "url": "https://arxiv.org/abs/2606.19758",
-    "date": "2026-06-19",
-    "source": "arXiv / EMNLP 2026",
-    "what": "提出基于技能关联图的多 agent 组合设计方法，通过 skill-incidence graph 建模 agent 技能之间的依赖和互补关系，支持自动化的 agent 团队组装。",
-    "why": "将多 agent 编排从人工指定角色转为基于技能图的自动组合，使 agent 团队设计可量化、可搜索。",
-    "insight": "构建多 agent 系统时可将技能建模为图结构而非扁平列表，利用图拓扑自动发现最优 agent 组合和任务分配方案。"
-  },
-  {
-    "rank": 4,
-    "title": "SkillHone: Continual Agent Skill Evolution Through Persistent Decision History",
-    "url": "https://arxiv.org/abs/2606.08671",
-    "date": "2026-06-07",
-    "source": "arXiv (Tencent WeChat AI)",
-    "what": "提出保留完整诊断/修订/证据/结果决策历史的 agent skill 持续进化框架，角色分离的子 agent 在 practice probes 上运行候选技能并基于先前决策提出修订，支持跨会话技能精炼。",
-    "why": "现有方法只保留最终技能产物丢弃决策过程，SkillHone 首次将完整的修订谱系作为后续 agent 理解和改进技能的关键输入。",
-    "insight": "Agent 技能库应保留版本化的修订历史而非只存最终版本，这样新 agent 才能理解为什么某个技能长成了现在的样子。"
-  },
-  {
-    "rank": 5,
     "title": "Salesforce Agentforce Multi-Agent Orchestration GA: Atlas 3.0 + A2A + MCP 三协议联动",
     "url": "https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release",
     "date": "2026-06-15",
@@ -50,7 +20,7 @@
     "insight": "A2A 解决 agent 间发现与委派，MCP 解决 agent 与工具连接，两者在编排层的统一是企业级多 agent 系统的必经路径。"
   },
   {
-    "rank": 6,
+    "rank": 3,
     "title": "Cognizant Neuro SAN: 开源多 Agent 编排框架 + ServiceNow AI Agent 互操作",
     "url": "https://github.com/cognizant-ai-lab/neuro-san-studio",
     "date": "2026-06-18",
@@ -60,7 +30,7 @@
     "insight": "评估多 agent 框架时应关注其 agent 发现和注册机制是否为动态的，静态配置的编排器在 agent 规模扩大后将成为瓶颈。"
   },
   {
-    "rank": 7,
+    "rank": 4,
     "title": "GPT-5.6 canary model ID 出现在 Codex 路由日志",
     "url": "https://wavespeed.ai/blog/posts/gpt-5-6-canary-leak-what-we-know/",
     "date": "2026-06-19",
@@ -70,7 +40,7 @@
     "insight": "Agent 模型的灰度发布应优先在 agentic workload 上做 canary testing，因为 agent 场景的多轮工具调用对模型行为变化最敏感。"
   },
   {
-    "rank": 8,
+    "rank": 5,
     "title": "美国政府出口管制令：Anthropic 暂停 Fable 5 和 Mythos 5 全球访问",
     "url": "https://www.anthropic.com/news/fable-mythos-access",
     "date": "2026-06-13",
@@ -80,27 +50,7 @@
     "insight": "依赖单一前沿模型的 agent 系统面临突发政策风险，架构层必须支持模型热切换和多模型降级策略。"
   },
   {
-    "rank": 9,
-    "title": "Mesh Inference: A Formal Model of Collective Intelligence Without a Center",
-    "url": "https://arxiv.org/abs/2606.19537",
-    "date": "2026-06-19",
-    "source": "arXiv",
-    "what": "提出去中心化集体智能的形式化模型，定义无中心节点的 mesh 推理拓扑，为多 agent 系统在无编排器条件下的协作提供数学基础。",
-    "why": "现有多 agent 框架几乎全部依赖中心编排器，本文首次给出去中心化 agent 推理的形式化条件和收敛性分析。",
-    "insight": "当编排器成为单点故障或性能瓶颈时，mesh 推理模式提供了一种可探索的替代架构。"
-  },
-  {
-    "rank": 10,
-    "title": "RACL: Reasoning-Agent Control Layers for Continuous Metaheuristic Learning",
-    "url": "https://arxiv.org/abs/2606.20142",
-    "date": "2026-06-19",
-    "source": "arXiv",
-    "what": "提出在 agent 推理链路中插入控制层的方法，将元启发式学习信号持续注入 reasoning agent 的决策过程，使 agent 在运行时动态调整推理策略。",
-    "why": "将控制论思想具体化为 agent 推理链的可插拔模块，而非仅停留在框架层面的调度优化。",
-    "insight": "Agent 系统中推理与控制的解耦值得探索，可插拔的控制层可以让同一 agent 在不同任务类型下采用不同的推理深度和策略。"
-  },
-  {
-    "rank": 11,
+    "rank": 6,
     "title": "Anthropic Mythos Preview 网络安全能力评估：自主 0-day 发现与 72.4% 利用成功率",
     "url": "https://red.anthropic.com/2026/mythos-preview/",
     "date": "2026-04-08",
@@ -110,17 +60,7 @@
     "insight": "Agent 系统的安全评估需要考虑 agent 本身成为攻击工具的可能性，防御侧应预设 agent 级别的对手能力而非传统脚本级别。"
   },
   {
-    "rank": 12,
-    "title": "Agent Skill Evaluation and Evolution: Frameworks and Benchmarks",
-    "url": "https://arxiv.org/abs/2606.11435",
-    "date": "2026-06-12",
-    "source": "arXiv",
-    "what": "系统综述 agent 技能的评估与进化方法，建立覆盖技能获取、组合、迁移、退化检测四个维度的评估框架，并提供跨领域的 benchmark suite。",
-    "why": "将 agent 技能从静态资产重新定义为有生命周期的动态对象，首次提出技能退化检测作为评估维度。",
-    "insight": "生产 agent 系统应定期评估已有技能的退化程度，技能不是学会就永远可用的，环境变化和模型更新都可能导致技能失效。"
-  },
-  {
-    "rank": 13,
+    "rank": 7,
     "title": "Nobel 化学奖得主 John Jumper 离开 DeepMind 加入 Anthropic",
     "url": "https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html",
     "date": "2026-06-19",

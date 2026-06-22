@@ -1,26 +1,6 @@
 [
   {
     "rank": 1,
-    "title": "HarnessX：可组合、自适应、可进化的 Agent Harness 工厂",
-    "url": "https://arxiv.org/abs/2606.14249",
-    "date": "2026-06-17",
-    "source": "arXiv",
-    "what": "提出将 agent harness（prompt、工具、记忆、控制流）视为可组合原语，通过替换代数拼装并以 AEGIS 多智能体进化引擎从 trace 驱动自适应，同时把轨迹反馈回模型训练。",
-    "why": "在 ALFWorld、GAIA、WebShop、SWE-bench Verified 等五个基准上平均提升 14.5%（最高 44.0%），首次系统性证明 agent 性能提升不必来自模型规模，harness 组合与进化是可行的正交杠杆。",
-    "insight": "构建 agent 系统时应将 harness 视为可版本化的工程制品而非一次性脚手架，用 trace 驱动的自动进化替代手工调 prompt。"
-  },
-  {
-    "rank": 2,
-    "title": "Self-Harness：Agent 自主优化自身运行框架",
-    "url": "https://arxiv.org/abs/2606.09498",
-    "date": "2026-06-08",
-    "source": "arXiv",
-    "what": "提出 Self-Harness 范式，让 LLM agent 通过 Weakness Mining、Harness Proposal、Proposal Validation 三阶段循环自主改进自身 harness，无需人类工程师或更强外部模型。",
-    "why": "MiniMax M2.5 从 40.5% 提升至 61.9%（+52.6%），Qwen3.5-35B 从 23.8% 升至 38.1%（+60.1%），证明 agent 可以参与重塑自己的运行环境而非被动受限。",
-    "insight": "在生产环境中可为 agent 加入周期性自我诊断与 harness 迭代机制，让系统根据执行弱点自动演进而非等待人工调优。"
-  },
-  {
-    "rank": 3,
     "title": "Claude Code Artifacts：将编码会话转为可共享的实时交互页面",
     "url": "https://claude.com/blog/artifacts-in-claude-code",
     "date": "2026-06-18",
@@ -30,27 +10,7 @@
     "insight": "Agent 系统设计应考虑输出的可消费性，不仅为自动化设计也为人类可观测性设计；Artifacts 模式可推广到任何需要将 agent 工作可视化呈现的场景。"
   },
   {
-    "rank": 4,
-    "title": "Scaling Laws for Agent Harnesses via Effective Feedback Compute",
-    "url": "https://arxiv.org/abs/2605.29682",
-    "date": "2026-05-30",
-    "source": "arXiv",
-    "what": "定义 Effective Feedback Compute（EFC）度量 agent harness 产生的有效闭环反馈量，发现 EFC 解释性能变异的 R²=0.94，而原始 token 消耗仅 R²=0.33。",
-    "why": "在固定预算下，改善反馈质量可将成功率从 0.27 提升至 0.90，证明 harness 扩展取决于反馈效率而非原始计算量，为 agent 系统优化提供了理论基础。",
-    "insight": "优化 agent 性能时应关注 harness 产生的有效反馈密度而非简单增加重试次数或 token 预算，在固定成本下提升反馈质量是更高效的路径。"
-  },
-  {
-    "rank": 5,
-    "title": "From Model Scaling to System Scaling：将 Harness 作为 Agent AI 的一等设计对象",
-    "url": "https://arxiv.org/abs/2605.26112",
-    "date": "2026-05-28",
-    "source": "arXiv",
-    "what": "系统性地定义了 agent 性能取决于模型能力、编排、验证、协调和开销的联合扩展，识别出 context governance、trustworthy memory、dynamic skill routing 三大 harness 瓶颈。",
-    "why": "首次将 harness 研究从零散的工程实践提升为有体系的学术领域，明确提出 scaling the harness 与 scaling the model 同等重要。",
-    "insight": "Agent 工程团队应将 harness 的 context 治理、记忆可信度、技能路由作为独立的工程问题建设，而非全部依赖模型能力提升。"
-  },
-  {
-    "rank": 6,
+    "rank": 2,
     "title": "Microsoft Agents Rule of Two：Claude Code GitHub Action CI/CD 攻击面分析",
     "url": "https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case/",
     "date": "2026-06-05",
@@ -60,17 +20,7 @@
     "insight": "在 CI/CD 中集成 agent 时必须审计每个工具的沙箱边界，对 Read 类看似无害的工具同样需要限制敏感路径；Rule of Two 应作为 agent 权限设计的基线规则。"
   },
   {
-    "rank": 7,
-    "title": "RHO：从无标注历史轨迹自监督优化 Agent Harness",
-    "url": "https://arxiv.org/abs/2606.05922",
-    "date": "2026-06-05",
-    "source": "arXiv",
-    "what": "提出 Retrospective Harness Optimization，从历史轨迹中选取困难任务 coreset 并行重跑，通过自验证和自一致性生成候选 harness 更新，以成对自偏好选择最优方案。",
-    "why": "解决了 harness 优化依赖标注验证集的瓶颈，在软件工程、技术工作、知识工作三个领域验证了完全自监督的 harness 迭代路径。",
-    "insight": "生产环境中可落地 RHO 模式：定期从历史执行轨迹中抽取困难样本，让 agent 自行对比优化 harness，实现无人工介入的持续改进。"
-  },
-  {
-    "rank": 8,
+    "rank": 3,
     "title": "NVIDIA SkillSpector v2：AI Agent 技能安全扫描器",
     "url": "https://github.com/NVIDIA/SkillSpector",
     "date": "2026-06-17",
@@ -80,7 +30,7 @@
     "insight": "在使用第三方 agent skill/MCP tool 前应将 SkillSpector 集成到安装前门禁中，与 VIPER-MCP 形成互补的 agent 供应链安全体系。"
   },
   {
-    "rank": 9,
+    "rank": 4,
     "title": "GitHub Security Validation for Third-Party Coding Agents GA",
     "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents/",
     "date": "2026-06-09",
@@ -90,7 +40,7 @@
     "insight": "使用 coding agent 的团队应启用此功能作为最低安全基线，同时关注 agent 是否能自动修复扫描发现的问题而非仅报告。"
   },
   {
-    "rank": 10,
+    "rank": 5,
     "title": "Codex Computer Use + Memories 扩展至欧洲",
     "url": "https://developers.openai.com/codex/changelog",
     "date": "2026-06-16",
@@ -100,7 +50,7 @@
     "insight": "Agent 系统的记忆功能在不同法规环境下的隐私合规策略值得关注；Codex 的 opt-in Memories 模式提供了一个合规设计参考。"
   },
   {
-    "rank": 11,
+    "rank": 6,
     "title": "Google Chrome Auto-Browse：Agentic Browsing 落地 Android",
     "url": "https://blog.google/products-and-platforms/products/chrome/bringing-chrome-ai-to-android/",
     "date": "2026-06-18",
@@ -110,17 +60,7 @@
     "insight": "Web 应用需要为 agent 流量做适配，传统的反爬虫策略和基于人类行为假设的 UX 设计将面临根本性挑战。"
   },
   {
-    "rank": 12,
-    "title": "Polar：在任意 Harness 上大规模执行 Agentic RL",
-    "url": "https://arxiv.org/abs/2605.24220",
-    "date": "2026-05-26",
-    "source": "arXiv",
-    "what": "将 agent harness 视为黑盒，通过代理 LLM API 调用记录 token 级交互并重建训练轨迹，每个 rollout 节点并行管理预热、执行、重建和评估，支持异步对接任意训练器。",
-    "why": "用简单 GRPO 在 SWE-Bench Verified 上分别在 Codex/Claude Code/Qwen Code/Pi 四种 harness 上将 Qwen3.5-4B 提升了 22.6/4.8/0.6/6.2 分，验证了 harness 无关的 RL 训练可行性。",
-    "insight": "Agent RL 训练不必绑定特定 harness，Polar 的黑盒代理模式让团队可以在生产 harness 上直接采集训练数据，而非维护独立的训练环境。"
-  },
-  {
-    "rank": 13,
+    "rank": 7,
     "title": "Cloudflare 报告：Bot 流量（57.5%）首次超过人类流量，Agentic AI 是主因",
     "url": "https://searchengineland.com/cloudflare-bots-webpage-requests-479608",
     "date": "2026-06-05",

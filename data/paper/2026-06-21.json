@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "title": "Meta Context Engineering via Agentic Skill Evolution (ICML 2026)",
+    "url": "https://arxiv.org/abs/2601.21557",
+    "date": "2026-01-29",
+    "source": "arXiv / ICML 2026",
+    "what": "提出双层优化框架 MCE，meta-agent 通过 agentic crossover 搜索历史技能谱系进化 context engineering 策略，base-agent 将 context 作为可学习文件和代码进行优化，在金融/化学/医学/法律/AI安全五个领域离线平均相对提升 89.1%。",
+    "why": "将 context engineering 从手工启发式提升到可学习、可进化的系统性方法，训练速度比 ACE 基线快 13.6 倍，context 长度自适应覆盖 1.5K 到 86K token。",
+    "insight": "Agent 系统的 context 组装逻辑不应硬编码，MCE 的双层进化模式为 context engineering 自动化提供了可落地的参考架构。"
+  },
+  {
+    "rank": 2,
+    "title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design (EMNLP 2026)",
+    "url": "https://arxiv.org/abs/2606.19758",
+    "date": "2026-06-19",
+    "source": "arXiv / EMNLP 2026",
+    "what": "提出基于技能关联图的多 agent 组合设计方法，通过 skill-incidence graph 建模 agent 技能之间的依赖和互补关系，支持自动化的 agent 团队组装。",
+    "why": "将多 agent 编排从人工指定角色转为基于技能图的自动组合，使 agent 团队设计可量化、可搜索。",
+    "insight": "构建多 agent 系统时可将技能建模为图结构而非扁平列表，利用图拓扑自动发现最优 agent 组合和任务分配方案。"
+  },
+  {
+    "rank": 3,
+    "title": "SkillHone: Continual Agent Skill Evolution Through Persistent Decision History",
+    "url": "https://arxiv.org/abs/2606.08671",
+    "date": "2026-06-07",
+    "source": "arXiv (Tencent WeChat AI)",
+    "what": "提出保留完整诊断/修订/证据/结果决策历史的 agent skill 持续进化框架，角色分离的子 agent 在 practice probes 上运行候选技能并基于先前决策提出修订，支持跨会话技能精炼。",
+    "why": "现有方法只保留最终技能产物丢弃决策过程，SkillHone 首次将完整的修订谱系作为后续 agent 理解和改进技能的关键输入。",
+    "insight": "Agent 技能库应保留版本化的修订历史而非只存最终版本，这样新 agent 才能理解为什么某个技能长成了现在的样子。"
+  },
+  {
+    "rank": 4,
+    "title": "Mesh Inference: A Formal Model of Collective Intelligence Without a Center",
+    "url": "https://arxiv.org/abs/2606.19537",
+    "date": "2026-06-19",
+    "source": "arXiv",
+    "what": "提出去中心化集体智能的形式化模型，定义无中心节点的 mesh 推理拓扑，为多 agent 系统在无编排器条件下的协作提供数学基础。",
+    "why": "现有多 agent 框架几乎全部依赖中心编排器，本文首次给出去中心化 agent 推理的形式化条件和收敛性分析。",
+    "insight": "当编排器成为单点故障或性能瓶颈时，mesh 推理模式提供了一种可探索的替代架构。"
+  },
+  {
+    "rank": 5,
+    "title": "RACL: Reasoning-Agent Control Layers for Continuous Metaheuristic Learning",
+    "url": "https://arxiv.org/abs/2606.20142",
+    "date": "2026-06-19",
+    "source": "arXiv",
+    "what": "提出在 agent 推理链路中插入控制层的方法，将元启发式学习信号持续注入 reasoning agent 的决策过程，使 agent 在运行时动态调整推理策略。",
+    "why": "将控制论思想具体化为 agent 推理链的可插拔模块，而非仅停留在框架层面的调度优化。",
+    "insight": "Agent 系统中推理与控制的解耦值得探索，可插拔的控制层可以让同一 agent 在不同任务类型下采用不同的推理深度和策略。"
+  },
+  {
+    "rank": 6,
+    "title": "Agent Skill Evaluation and Evolution: Frameworks and Benchmarks",
+    "url": "https://arxiv.org/abs/2606.11435",
+    "date": "2026-06-12",
+    "source": "arXiv",
+    "what": "系统综述 agent 技能的评估与进化方法，建立覆盖技能获取、组合、迁移、退化检测四个维度的评估框架，并提供跨领域的 benchmark suite。",
+    "why": "将 agent 技能从静态资产重新定义为有生命周期的动态对象，首次提出技能退化检测作为评估维度。",
+    "insight": "生产 agent 系统应定期评估已有技能的退化程度，技能不是学会就永远可用的，环境变化和模型更新都可能导致技能失效。"
+  }
+]

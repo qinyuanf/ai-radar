@@ -7,26 +7,33 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>AI Radar · 每日 AI Agent 情报</title>
-<link rel="stylesheet" href="style.css?v=20260618">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css?v=20260622f">
 </head>
 <body>
 <header>
   <div class="top">
     <h1>AI Radar</h1>
     <div id="date" class="picker" hidden>
+      <button type="button" id="prev" class="pk-nav" aria-label="前一天">‹</button>
       <button type="button" class="pk-btn" aria-haspopup="listbox" aria-expanded="false"><span class="pk-val"></span><svg class="pk-chev" width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" id="next" class="pk-nav" aria-label="后一天">›</button>
       <ul class="pk-menu" role="listbox" hidden></ul>
     </div>
   </div>
-  <p class="sub">每日 AI Agent 情报 · 技术日报 / 增长榜 / 热门榜</p>
+  <p class="sub">每日 AI Agent 情报 · 高质量文章 / 论文 / 增长榜 / 热门榜</p>
   <nav id="tabs" role="tablist" aria-label="情报分类">
-    <button data-feed="report" class="on" role="tab" aria-selected="true">技术日报</button>
+    <button data-feed="article" class="on" role="tab" aria-selected="true">高质量文章</button>
+    <button data-feed="paper" role="tab" aria-selected="false">论文</button>
     <button data-feed="growth" role="tab" aria-selected="false">Github 增长榜</button>
     <button data-feed="hot" role="tab" aria-selected="false">Github 热门榜</button>
+    <button data-feed="fav" role="tab" aria-selected="false">★ 收藏</button>
   </nav>
 </header>
 <main id="list" aria-live="polite"><p class="empty">加载中…</p></main>
 <footer>数据每日自动更新 · 源 <a href="https://github.com/qinyuanf/ai-radar">github.com/qinyuanf/ai-radar</a></footer>
-<script src="app.js?v=20260618"></script>
+<script src="app.js?v=20260622f"></script>
 </body>
 </html>
