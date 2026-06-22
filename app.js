@@ -26,8 +26,8 @@ function syncURL() {
 }
 
 async function loadFavs() {
-  const rows = await sb('favorites?select=url,title,feed,data').then(r => r.json()).catch(() => []);
-  favs = new Map((Array.isArray(rows) ? rows : []).map(x => [x.url, x.data || x]));
+  const rows = await sb('favorites?select=url,data&order=marked_at.desc').then(r => r.json()).catch(() => []);
+  favs = new Map((Array.isArray(rows) ? rows : []).map(x => [x.url, x.data]));
 }
 async function toggleFav(x) {
   if (favs.has(x.url)) {
@@ -36,7 +36,7 @@ async function toggleFav(x) {
   } else {
     const data = { ...x, feed };
     favs.set(x.url, data);
-    await sb('favorites', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates' }, body: JSON.stringify({ url: x.url, title: x.repo || x.title, feed, data }) });
+    await sb('favorites', { method: 'POST', body: JSON.stringify({ url: x.url, data }) });
   }
 }
 
