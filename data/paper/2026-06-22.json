@@ -1,62 +1,82 @@
 [
   {
     "rank": 1,
-    "title": "Less Context, Better Agents: 企业级 Tool-Using Agent 的高效上下文工程",
-    "url": "https://arxiv.org/abs/2606.10209",
-    "date": "2026-06-08",
+    "title": "Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2606.20493",
+    "date": "2026-06-18",
     "source": "arXiv",
-    "what": "微软研究团队在 Dynamics 365 Finance 场景下，对比四种上下文工程配置（完整历史、最近5轮工具调用、自动摘要窗口等）在 GPT-5 上的表现，发现裁剪上下文到近 5 轮工具调用即可在 50 任务基准上达到与全量上下文相当的效果，同时大幅降低推理成本。",
-    "why": "首次在真实企业 MCP 工具链上定量比较上下文工程策略，证明 verbose 工具响应是 Agent 可靠性和成本的主要瓶颈。",
-    "insight": "在生产 Agent 系统中应优先投资上下文裁剪和摘要管线，而非盲目扩大上下文窗口。"
+    "what": "在三Agent对照实验中发现LLM评估器的系统性偏差通过Agent交互网络传播并放大，提出形式化的传染网络框架量化偏差扩散速率和收敛模式。",
+    "why": "首次将多Agent系统中的评估器偏差传播形式化为网络扩散过程，揭示单个有偏差评估器可污染整个Agent网络的系统性风险。",
+    "insight": "构建多Agent评估流水线时应使用多个独立评估器并监控它们之间的一致性，而非依赖单个LLM-as-judge。"
   },
   {
     "rank": 2,
-    "title": "Can LLM Agents Infer World Models? 用自动机学习评估 Agent 环境建模能力",
-    "url": "https://arxiv.org/abs/2606.16576",
-    "date": "2026-06-15",
+    "title": "LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents",
+    "url": "https://arxiv.org/abs/2606.20529",
+    "date": "2026-06-18",
     "source": "arXiv",
-    "what": "提出 Agentic Automata Learning 评估框架，让 Agent 通过成员查询和等价查询交互式发现隐藏的确定性有限自动机（DFA），以此量化 Agent 从环境交互中推断世界模型的能力。结果显示推理模型显著强于非推理模型，但随 DFA 复杂度上升性能急剧下降。",
-    "why": "提供了一个复杂度可控、有经典算法基线的 Agent 环境推理评估方法，填补了 Agent world model 推断能力的定量评估空白。",
-    "insight": "在设计需要环境理解的 Agent 时，推理模型是必选项，但当前模型在复杂环境中仍存在查询规划和证据整合的系统性缺陷。"
+    "what": "提出推理时方法为工具调用Agent维护显式状态账本记录观测到的事实、约束和条件，并在执行工具调用前检查策略约束，在四个客服领域提升pass-k指标，在严格多试一致性指标下增益最显著。",
+    "why": "将隐式的上下文状态管理转为显式账本，系统性解决状态陈旧和策略违规两大工具调用核心故障模式，无需修改模型权重。",
+    "insight": "生产级客服Agent应在harness层维护独立状态账本并进行策略前检，而非期待模型每次从原始上下文重建状态。"
   },
   {
     "rank": 3,
-    "title": "MemToolAgent: 通过环境和用户反馈增强 Agent 工具使用的记忆框架",
-    "url": "https://arxiv.org/abs/2606.07909",
-    "date": "2026-06-10",
-    "source": "arXiv (AWS AI)",
-    "what": "AWS AI 提出 MemToolAgent，利用环境反馈和用户反馈构建工具使用记忆，使 Agent 在后续任务中能检索相关经验改善工具选择和调用策略，在长程任务中提升工具使用准确率。",
-    "why": "将记忆系统与工具使用深度绑定，记忆不再仅存储对话历史而是存储工具交互经验，是 memory + tool use 交叉方向的代表工作。",
-    "insight": "在 Agent 系统中为工具调用建立专用记忆层（而非仅靠对话上下文），可有效减少重复试错和 API 浪费。"
+    "title": "Probe-and-Refine Tuning of Repository Guidance for Coding Agents",
+    "url": "https://arxiv.org/abs/2606.20512",
+    "date": "2026-06-18",
+    "source": "arXiv",
+    "what": "提出探测精炼调优框架自动生成和迭代优化AGENTS.md仓库指导文件：用合成bug-fix探针诊断现有指导缺陷并修补，在SWE-bench Verified上将Qwen3.5-35B解决率从25.5%提升至33.0%，提升来自覆盖率增加而非精度改善。",
+    "why": "首次实验证明AGENTS.md指导质量是决定性变量，并提供了无需Agent循环即可自动优化指导文件的可操作流程。",
+    "insight": "与其手写AGENTS.md，不如用合成探针自动迭代优化，可系统性提升Coding Agent在复杂仓库中的文件定位覆盖率。"
   },
   {
     "rank": 4,
-    "title": "EvoArena: 追踪 LLM Agent 记忆演化的评估框架",
-    "url": "https://arxiv.org/abs/2606.13681",
-    "date": "2026-06-15",
+    "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
+    "url": "https://arxiv.org/abs/2606.19704",
+    "date": "2026-06-18",
     "source": "arXiv",
-    "what": "提出 EvoArena 框架用于追踪和评估 LLM Agent 在持续交互中的记忆演化过程，关注 Agent 如何在多轮交互中更新、遗忘和重组记忆内容。",
-    "why": "现有 Agent 记忆评估多为静态快照，EvoArena 首次关注记忆的动态演化轨迹，更贴近真实长程 Agent 的运行特征。",
-    "insight": "长期运行的 Agent 系统需要监控记忆漂移和退化，EvoArena 的评估方法可用于构建记忆质量的持续观测管线。"
+    "what": "基于一个MCP工业Agent基准的14项并行实现研究，发现现有静态排行榜仅覆盖真实部署场景的4-5个维度，提出预测效度框架评估基准能否有效预测真实部署性能。",
+    "why": "从测量Agent表现升级到测量基准本身的预测能力，揭示了现有LLM评估生态的元层面缺陷。",
+    "insight": "选型时除了看基准分数还要评估基准的预测效度，一个覆盖真实MCP工具交互的内部基准可能比通用基准更有参考价值。"
   },
   {
     "rank": 5,
-    "title": "Benchmarking LLM Agents on Meta-Analysis：442 篇 Nature 论文的 Agent 评估基准",
-    "url": "https://arxiv.org/abs/2606.17041",
+    "title": "RODS: Reward-Driven Online Data Synthesis for Multi-Turn Tool-Use Agents",
+    "url": "https://arxiv.org/abs/2606.19047",
     "date": "2026-06-17",
     "source": "arXiv",
-    "what": "构建 MetaSyn 数据集，包含 442 篇 Nature Portfolio 期刊的专家标注元分析，每条配备研究问题、PI/ECO 标准和 14 万篇 PubMed 检索语料，用于评估 LLM Agent 执行复杂研究综合任务的能力。",
-    "why": "将 Agent 评估从代码生成扩展到学术研究综合这一高度结构化的知识密集型任务，提供了可复现的端到端研究 Agent 基准。",
-    "insight": "科研 Agent 是 RAG + tool use + 长上下文的综合考验，此基准可用于评估企业知识密集型 Agent 的上限。"
+    "what": "发现GRPO梯度信号集中在rollout奖励方差最高的任务，提出RODS在线框架利用该方差信号动态合成信息量最大的多轮工具调用训练样本，突破静态数据集迅速耗尽有效梯度的瓶颈。",
+    "why": "首次从Popoviciu上界理论解释静态工具调用数据集快速失效的原因，并给出基于奖励方差的在线数据合成方法。",
+    "insight": "训练多轮工具调用Agent时，奖励方差是数据价值的天然代理指标，在线合成高方差样本比扩大静态数据集更高效。"
   },
   {
     "rank": 6,
-    "title": "Scaling Self-Evolving Agents via Parametric Memory (TMEM)",
-    "url": "https://arxiv.org/abs/2606.04536",
-    "date": "2026-06-05",
+    "title": "Runtime Compliance Verification for AI Agents",
+    "url": "https://arxiv.org/abs/2606.19242",
+    "date": "2026-06-17",
     "source": "arXiv",
-    "what": "提出 TMEM 自演化参数记忆框架，Agent 不仅将历史压缩为显式记忆，还通过轻量在线更新将蒸馏监督吸收进 LoRA 权重，实现记忆的参数化快速读取，在多跳推理和长程任务中持续自我改进。",
-    "why": "将 Agent 记忆从外部检索推向参数化存储，用 LoRA 在线更新实现记忆的即时编码，是 Agent 自演化方向的新范式。",
-    "insight": "参数化记忆可以绕过检索延迟和上下文窗口限制，适合需要快速响应且知识持续积累的 Agent 场景。"
+    "what": "针对通过工具调用、函数调用和多轮对话处理个人数据的AI Agent，提出基于GDPR要求的运行时合规验证框架，超越现有仅依赖离线红队或静态提示审查的方式。",
+    "why": "首次将GDPR合规验证从模型训练阶段迁移到Agent运行时，为企业部署提供处理个人数据的动态法律合规保障。",
+    "insight": "在企业Agent harness层添加运行时合规拦截比依赖模型自身遵从性更可靠，监管场景下不可跳过此层。"
+  },
+  {
+    "rank": 7,
+    "title": "ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents",
+    "url": "https://arxiv.org/abs/2606.18037",
+    "date": "2026-06-16",
+    "source": "arXiv",
+    "what": "针对使用MCP从多异构来源获取信息的LLM Agent，提出溯源感知事实性验证，不仅检验答案是否有证据支持，还追踪每条证据是否被正确归因到正确来源。",
+    "why": "发现标准事实性指标无法处理多来源混合证据的MCP场景，溯源追踪是MCP工具使用事实性的必要补充维度。",
+    "insight": "高风险MCP Agent（医疗、法律）应在工具结果聚合层添加溯源追踪，防止跨来源证据混淆导致的幻觉性引用。"
+  },
+  {
+    "rank": 8,
+    "title": "PACMS: Submodular Context Selection as a Pluggable Engine for LLM Agents",
+    "url": "https://arxiv.org/abs/2606.20047",
+    "date": "2026-06-18",
+    "source": "arXiv",
+    "what": "将子模块优化应用于Agent上下文窗口管理：从对话历史、持久记忆、工具调用结果等多个方向同时填充的上下文中，以子模块函数选择边际信息增益最大的token子集。",
+    "why": "首次将子模块选择的边际效益递减属性形式化应用于Agent多来源上下文压缩，比贪心截断更有原则性且可即插即用。",
+    "insight": "将PACMS作为可插拔引擎替换现有Agent框架中的上下文截断策略，无需改动模型即可系统性提升长对话中的信息密度。"
   }
 ]

@@ -1,72 +1,62 @@
 [
   {
     "rank": 1,
-    "title": "Google DeepMind 发布 AI Control Roadmap：当对齐失败时，纵深防御接管",
-    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
-    "date": "2026-06-18",
-    "source": "Google DeepMind Blog",
-    "what": "DeepMind 发布首份 AI 控制路线图，将 Agent 安全建模为纵深防御问题而非单一对齐问题，提出 15 项系统级防御措施，包括委托协议、信誉系统、异步监控和三层安全框架（单 Agent、多 Agent、生态系统），并在内部部署了一套异步监控原型来审查 coding agent 轨迹。",
-    "why": "首次将 Agent 安全从模型层拉升到系统架构层面，明确提出把未信任 Agent 当做内部威胁来建模，配套 PDF 提供了可操作的威胁分类法。",
-    "insight": "构建 Agent 系统时应参照此路线图在 harness 层设置评估、主动监控、干预三阶段防线，而非仅依赖模型对齐。"
+    "title": "Patterns for Building Cybersecurity Evals",
+    "url": "https://eugeneyan.com/writing/cybersecurity-evals/",
+    "date": "2026-06-21",
+    "source": "Eugene Yan",
+    "what": "系统梳理安全漏洞发现与利用评估的四大基本原语（环境、任务、Agent、评分），归纳构建网络安全eval的通用模式，涵盖从CTF到真实漏洞利用的递进设计，并讨论防守方和攻击方视角的基准差异。",
+    "why": "将网络安全eval从分散的实验经验提炼为可复用的设计模式，是目前最系统的安全能力评估方法论。",
+    "insight": "构建Agent安全eval时，攻守分离是核心设计原则，防守方指标和攻击方指标需分别建模，不可混用同一基准。"
   },
   {
     "rank": 2,
-    "title": "SWE-bench 2026 实测：Scaffold 对分数的影响远超模型本身",
-    "url": "https://www.digitalapplied.com/blog/swe-bench-verified-june-2026-benchmark-vs-scaffolding-analysis",
-    "date": "2026-06-20",
-    "source": "Digital Applied",
-    "what": "深度分析 SWE-bench Verified 和 SWE-bench Pro 排行榜发现：厂商自报分数与标准化 scaffold 分数之间存在 17-21 个百分点的系统性差距（如 Anthropic 自报 Opus 4.8 为 69.2%，Scale 标准化跑出 51.9%），100 个上榜模型中仅 1 个有独立验证。",
-    "why": "定量揭示了 Agent harness/scaffold 对 coding benchmark 的决定性影响，厂商分数不可直接对比。",
-    "insight": "选型 coding agent 时必须关注 scaffold 实现细节而非模型裸分，自建 eval harness 是保证可复现性的关键。"
+    "title": "Sakana Fugu: One Model to Command Them All",
+    "url": "https://sakana.ai/fugu-release/",
+    "date": "2026-06-22",
+    "source": "Sakana AI",
+    "what": "Sakana AI 发布 Fugu，一个通过RL训练的多Agent编排基础模型：7B参数的Fugu学习何时委托、Agent如何通信及如何合并输出，动态调度GPT-5、Claude、Gemini等前沿模型，在SWE-Pro、GPQA-D和ALE-Bench上超越任何单个前沿模型。",
+    "why": "首个将多Agent编排本身作为可训练基础模型的商业产品，基于Trinity和Conductor两篇ICLR 2026论文，提供OpenAI兼容API。",
+    "insight": "多Agent编排的下一步不是更复杂的手工路由规则，而是将编排逻辑本身训练为学习策略，Fugu给出了可商用的参考实现。"
   },
   {
     "rank": 3,
-    "title": "depthfirst 自主安全 Agent 用 $1000 在 FFmpeg 中发现 21 个零日漏洞",
-    "url": "https://depthfirst.com/research/21-zero-days-in-ffmpeg",
-    "date": "2026-06-06",
-    "source": "depthfirst",
-    "what": "安全初创公司 depthfirst 的自主 AI Agent 扫描 FFmpeg 约 150 万行 C 代码，发现 21 个零日漏洞（含一个 183 字节即可触发 RCE 的堆溢出），部分漏洞潜伏长达 23 年，全程耗费约 $1000。",
-    "why": "将自主漏洞发现的成本门槛从企业级工具降至千元级，首次在百万行级真实代码库上验证 Agent 端到端自主发现能力。",
-    "insight": "Agent 安全能力既是防守武器也是攻击面，构建 Agent 系统时需同时考虑防御和被利用的双重场景。"
+    "title": "Project Fetch Phase Two: Claude Opus 4.7 Programs Robots 20x Faster Than Humans",
+    "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+    "date": "2026-06-18",
+    "source": "Anthropic Frontier Red Team",
+    "what": "测试 Claude Opus 4.7 在 Claude Code 内对机器狗编程：完成全部四项任务比有Claude辅助的人类团队快18.9倍、比无辅助团队快37.7倍，生成代码量少10倍，但精确移动沙滩球的物理操控任务仍未完成。",
+    "why": "首次在真实机器人编程场景（非合成基准）上量化前沿Coding Agent的自主执行能力，20x加速比提供了真实能力基线。",
+    "insight": "Coding Agent在有限感知反馈的物理控制任务上仍有系统性瓶颈，当前能力边界在写对代码而非通过传感器反馈闭环控制。"
   },
   {
     "rank": 4,
-    "title": "Z.ai 开源 GLM-5.2：753B MoE 模型 MIT 协议开放权重",
-    "url": "https://simonwillison.net/2026/Jun/17/glm-52/",
-    "date": "2026-06-17",
-    "source": "Simon Willison",
-    "what": "中国 AI 实验室 Z.ai 以 MIT 协议开放 GLM-5.2 全部权重，模型为 753B 参数 MoE（40B 激活），支持 100 万 token 上下文窗口，在多个长程编码基准上以 1/6 成本接近 GPT-5.5 水平。",
-    "why": "目前开放权重中最强的纯文本 LLM，MIT 协议无区域和用途限制，Artificial Analysis 排名第一。",
-    "insight": "Agent 系统可用 GLM-5.2 构建低成本自托管方案，100 万上下文窗口适合长程多轮工具调用场景。"
+    "title": "Building Reliable Agentic AI Systems",
+    "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
+    "date": "2026-06-16",
+    "source": "Martin Fowler / Thoughtworks",
+    "what": "Bayer AG与Thoughtworks联合构建制药研究Agent系统PRINCE的工程复盘：以上下文工程（针对不同Agent阶段注入不同信息）和harness工程（LangGraph控制层定义组件权限、失败重试、状态持久化）为核心，实现从关键词搜索到可起草监管文件的智能研究助手。",
+    "why": "迄今最详尽的生产级多Agent系统工程案例，将上下文工程和harness工程从概念落地为可借鉴的具体实践。",
+    "insight": "为不同Agent阶段定制上下文而非统一注入，是减少上下文污染和提升可调试性的关键工程决策。"
   },
   {
     "rank": 5,
-    "title": "JetBrains Junie Coding Agent 正式发布 GA 版本",
-    "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
-    "date": "2026-06-17",
-    "source": "JetBrains Blog",
-    "what": "JetBrains 将 AI coding agent Junie 从 Beta 推向 GA，基于 ACP（Agent Communication Protocol）重建 IDE 集成，新增通过真实调试器进行的 Agentic Debugging，支持 IntelliJ 全家桶和独立 CLI，可接入 Anthropic/OpenAI/Google/xAI 或本地模型（Ollama/LM Studio）。",
-    "why": "首个深度集成 IDE 调试器的 coding agent GA 版本，ACP 协议为 IDE 内 Agent 通信建立了新标准。",
-    "insight": "Coding agent 正从终端工具进化为 IDE 原生能力，ACP 协议值得关注是否会成为 IDE 侧的 MCP。"
+    "title": "When I Reject AI Code Even If It Works",
+    "url": "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/",
+    "date": "2026-06-19",
+    "source": "Vinicius Brasil (HN 219pts)",
+    "what": "讨论Coding Agent生成大量代码后的审查瓶颈：随着实现速度提升，真正的认知负担转移到代码审查，作者提出三条拒绝原则——不理解的代码、引入不必要复杂度的代码、削弱可读性的代码——即使能通过测试也拒绝。",
+    "why": "切中当前Agent工程中最被忽视的瓶颈：验证和审查能力的扩展，而非生成能力，在HN引发大量讨论。",
+    "insight": "在Agent系统中，代码生成速度的提升需要配套的人工审查协议，否则积累的不可理解代码会成为后续迭代的隐性技术债。"
   },
   {
     "rank": 6,
-    "title": "xAI Grok 4.3 登陆 Amazon Bedrock：推理优先模型 + Mantle 推理引擎",
-    "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/grok-amazon-bedrock/",
-    "date": "2026-06-15",
-    "source": "AWS",
-    "what": "xAI 首次通过 Amazon Bedrock 分发 Grok 4.3，100 万 token 上下文，支持可配置推理强度（none/low/medium/high）、工具调用和结构化输出，定价 $1.25/$2.50 per M tokens，搭载 Mantle 推理引擎优化性价比。",
-    "why": "xAI 首次进入 Bedrock 生态，可配置推理强度机制让 Agent 开发者可根据任务复杂度动态调整推理成本。",
-    "insight": "多模型 Agent 架构现在可在 Bedrock 上混用 Claude、GPT、Grok 进行 router 调度，推理强度可配置是成本优化的新杠杆。"
-  },
-  {
-    "rank": 7,
-    "title": "Gemini 3.5 Pro 即将 GA：200 万 token 上下文 + Deep Think 推理模式",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-    "date": "2026-06-22",
-    "source": "Google Blog",
-    "what": "Google I/O 发布的 Gemini 3.5 Pro 目前仍处于 Vertex AI 有限预览阶段，预计本周（6月22-26日）开放 GA，主打 200 万 token 上下文窗口和 Deep Think 推理模式，定位取代原 Ultra 层级处理最困难的推理和长上下文任务。",
-    "why": "200 万 token 原生上下文将是商用模型中最大的窗口，Deep Think 推理模式是 Google 在 reasoning 方向的正式产品化。",
-    "insight": "200 万 token 上下文可能改变 Agent RAG 架构的必要性边界，部分检索需求可直接用长上下文替代。"
+    "title": "Temporary Cloudflare Accounts for AI Agents",
+    "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/",
+    "date": "2026-06-21",
+    "source": "Simon Willison",
+    "what": "介绍Cloudflare新功能：无需账户即可通过CLI部署Workers应用并获得60分钟临时沙盒环境，专为AI Agent动态部署Web服务设计，支持一键转永久项目，作者用GPT-5.5测试验证了端到端流程。",
+    "why": "为Agent动态创建隔离环境提供了极低摩擦的基础设施原语，将Agent启动自己的沙盒服务从复杂运维变为单次CLI调用。",
+    "insight": "临时沙盒环境是Agent安全执行用户任务的关键基础设施，Cloudflare此方向值得在Agent harness设计中纳入考量。"
   }
 ]
