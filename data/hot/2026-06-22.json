@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 194000,
+    "trend": "v2.26.8 (Jun 19) star 增速强劲",
+    "what": "Fair-code 工作流自动化平台，400+ 集成，AI Agent node 已成为平台使用量最高的组件，Agent 365 让 agent 直接进入 Microsoft 应用。",
+    "why": "AI Agent node 封装了 chat model + system prompt + memory + tools 四件套，大量团队从固定脚本迁移到推理驱动的工作流，实际采用量激增。",
+    "insight": "Agent 的大规模落地不一定靠开发者手写，可视化编排加预置 agent node 的组合正在吃掉长尾自动化场景。"
+  },
+  {
+    "rank": 2,
+    "repo": "vercel-labs/agent-browser",
+    "url": "https://github.com/vercel-labs/agent-browser",
+    "stars": 36700,
+    "trend": "v0.29.0 (Jun 21) 4个月翻倍",
+    "what": "Rust 原生的 AI agent 浏览器自动化 CLI，通过 CDP 直连 Chrome，内置 MCP stdio server，支持所有主流 coding agent。",
+    "why": "在 browser-use 证明方向后，Vercel 以 Rust 性能和 token 效率切入，从 2 月 17k 涨到 36.7k，87 个版本密集迭代。",
+    "insight": "Browser agent 的竞争焦点已从能不能用转向 token 效率和延迟，Rust 重写是性能敏感型 agent 工具的趋势。"
+  },
+  {
+    "rank": 3,
+    "repo": "huggingface/smolagents",
+    "url": "https://github.com/huggingface/smolagents",
+    "stars": 27900,
+    "trend": "v1.26.0 年内 10 倍增长",
+    "what": "极简 code-first agent 库，核心路由逻辑压缩到约 1000 行 Python，agent 以原生 Python 代码片段为行动单元，支持沙箱执行。",
+    "why": "在 agent 框架越做越重的趋势下反其道行之，code-as-action 范式让 agent 的行为可调试可审计，从 3k 涨到 28k。",
+    "insight": "Agent 不一定需要复杂的 DAG 或 JSON schema，让模型直接写可执行代码再在沙箱里跑是更自然的 tool use 范式。"
+  },
+  {
+    "rank": 4,
+    "repo": "livekit/agents",
+    "url": "https://github.com/livekit/agents",
+    "stars": 11100,
+    "trend": "v1.6.2 (Jun 19) 持续密集发版",
+    "what": "实时语音 AI agent 框架，支持构建能看、能听、能理解的多模态对话 agent，Python 原生。",
+    "why": "语音 agent 从概念验证进入生产部署期，LiveKit 凭借实时通信基础设施优势成为该赛道开源标杆。",
+    "insight": "语音 agent 的核心壁垒不在 LLM 能力而在端到端延迟控制，选择在实时基础设施层构建 agent 框架比在 LLM 框架上叠加语音更务实。"
+  },
+  {
+    "rank": 5,
+    "repo": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 146000,
+    "trend": "v1.14.2 每周 50+ commit 持续高活跃",
+    "what": "生产级 agentic workflow 开发平台，可视化拖拽构建 RAG + agent 工作流，支持 100+ LLM 供应商，新增 Supervisor agent 模式协调多个子 agent。",
+    "why": "Supervisor agent mode 支持多子 agent 并行和协调，标志着平台从单 agent 工作流进入多 agent 编排阶段，企业生产采用带动新一轮关注。",
+    "insight": "Multi-agent 编排的落地路径正从框架代码转向可视化平台，降低门槛的同时需要解决子 agent 间的状态同步和错误传播问题。"
+  }
+]

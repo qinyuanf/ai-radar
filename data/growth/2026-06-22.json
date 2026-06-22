@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "stars": 10400,
+    "trend": "+6372 stars/week",
+    "what": "用 tree-sitter 把代码库索引为持久化知识图谱的 MCP server，支持 158 种语言，查询响应亚毫秒级，单个 C 静态二进制零依赖。",
+    "why": "把 code intelligence 从 IDE 插件搬到 MCP 协议层，任何 coding agent 接入即获得全仓库级别的调用链和符号关系感知能力。",
+    "insight": "Agent 的代码理解上限取决于 context 质量而非 token 数量，将代码索引做成 MCP tool 是比塞文件更高效的 context engineering 路径。"
+  },
+  {
+    "rank": 2,
+    "repo": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "stars": 8800,
+    "trend": "+2867 stars/week",
+    "what": "首个开源 agentic 视频生产系统，12 条流水线、52 个工具、500+ agent skill，从调研脚本到资产生成到剪辑合成全链路由 agent 编排。",
+    "why": "把 agent 编排模式从代码分析延伸到创意内容生产，用质量门和预算控制让视频制作可复现可约束。",
+    "insight": "垂直领域 agent 的关键不是通用能力强，而是 pipeline 拆解到位且每一步有明确的质量判定标准。"
+  },
+  {
+    "rank": 3,
+    "repo": "withastro/flue",
+    "url": "https://github.com/withastro/flue",
+    "stars": 6300,
+    "trend": "+1272 stars/week",
+    "what": "TypeScript sandbox agent 框架，内置安全沙箱、持久执行引擎、工具编排和 Slack/GitHub/Discord 多通道部署能力。",
+    "why": "由 Astro 团队出品，把 agent 的沙箱隔离和持久状态管理做成框架级原语，而非让开发者自行拼装。",
+    "insight": "Agent 生产化的两大痛点是执行隔离和状态持久化，框架层面原生解决比应用层补丁更可靠。"
+  },
+  {
+    "rank": 4,
+    "repo": "IBM/mcp-context-forge",
+    "url": "https://github.com/IBM/mcp-context-forge",
+    "stars": 3900,
+    "trend": "v1.0.3 (Jun 10) 持续增长",
+    "what": "MCP/A2A/REST/gRPC 统一网关，在所有 agent 工具调用前加入集中式发现、鉴权、可观测和护栏管理，40+ 插件生态。",
+    "why": "把 API gateway 模式引入 agent tool calling，agent 不再直连服务而是通过统一代理层，IBM 级别的企业治理思路。",
+    "insight": "当 agent 调用的工具数量超过个位数时，工具注册发现和统一鉴权网关会变成刚需基础设施。"
+  },
+  {
+    "rank": 5,
+    "repo": "future-agi/future-agi",
+    "url": "https://github.com/future-agi/future-agi",
+    "stars": 1200,
+    "trend": "v0.5.8 (Jun 8) 快速爬升",
+    "what": "开源 agent 全生命周期平台，集成 simulation、eval（50+ metrics）、guardrails（18 个安全扫描器）、gateway（29k QPS）和 prompt 优化。",
+    "why": "将 eval、observability、guardrails 做成一个自托管平台而非分散工具链，OpenTelemetry 原生覆盖 50+ 框架。",
+    "insight": "Agent 开发正从跑通 demo 转向生产级可观测，eval 和 guardrails 一体化是效率拐点。"
+  }
+]
