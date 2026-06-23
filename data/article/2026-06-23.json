@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "title": "Gray Swan: AI Security Red-Teaming at Scale",
+    "url": "https://www.latent.space/p/gray-swan",
+    "date": "2026-06-22",
+    "source": "Latent Space Podcast",
+    "what": "深度访谈 Gray Swan 创始人 Zico Kolter 和 Matt Fredrikson，揭示 AI 安全的「致命三元组」（不可信数据摄入 + 私密信息访问 + 数据外泄能力），介绍 Shade 自动红队模型和 Cygnal 护栏模型，披露 15000 人社区竞技场数据。",
+    "why": "首次系统阐述 LLM 安全区别于传统网络安全的核心原因：LLM 是「可被欺骗的异类智能体」，其失败模式与人类相似，需要全新的安全心智模型。",
+    "insight": "在构建 Agent 系统时，凡是同时满足三元组三个条件的架构（如接入互联网的 RAG + 私有数据库 + 有外部 API 调用权的 Agent）必须在设计阶段引入护栏层，而不是等事后打补丁。"
+  },
+  {
+    "rank": 2,
+    "title": "Prompt Injection as Role Confusion",
+    "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+    "date": "2026-06-22",
+    "source": "Simon Willison's Weblog",
+    "what": "介绍 Charles Ye 等人研究：LLM 依赖「写作风格」而非标签解析来感知角色边界，攻击者通过 CoT 伪造（模仿 <think> 风格注入用户消息）可将越狱成功率从接近 0 推高到 60%；去风格化可将成功率压回 10%。",
+    "why": "提供了提示注入的机制级解释——角色感知是风格驱动而非结构驱动——为防御设计指出了根本方向：训练真正的角色感知而非依赖格式。",
+    "insight": "Agent 工具调用结果进入上下文时，任何「看起来像系统指令」的文本都可能绕过角色标签，因此需要在运行时对工具返回内容做隔离处理，而不只是依赖系统提示的权威性。"
+  },
+  {
+    "rank": 3,
+    "title": "Codex-maxxing for long-running work",
+    "url": "https://openai.com/index/codex-maxxing-long-running-work/",
+    "date": "2026-06-22",
+    "source": "OpenAI Blog",
+    "what": "OpenAI 官方总结将 Codex 用于长期任务的实战技巧：将目标分解为可验证步骤、用 Skills 打包可复用工作流、通过远程控制从手机端审批/调整进行中的长运行任务，以及如何管理跨 workstream 的上下文连续性。",
+    "why": "首篇来自 OpenAI 官方的 Codex agent loop 工程实践文档，实质上是对「harness engineering」模式的规范化，补充了之前缺失的 long-horizon 任务编排方法论。",
+    "insight": "「Skills 复用 + 远程审批检查点 + 可验证步骤分解」三者结合构成了一个轻量级 Agent harness，适用于任何需要人机协同推进的长任务场景。"
+  },
+  {
+    "rank": 4,
+    "title": "MosaicLeaks: Can your research agent keep a secret?",
+    "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+    "date": "2026-06-18",
+    "source": "HuggingFace Blog",
+    "what": "揭示「马赛克效应」：深度研究 Agent 在混合私有文档与公开检索时，单条 web 查询无害但查询日志整体可暴露私密事实；定义三类泄漏（意图/答案/全信息），并提出 PA-DR 训练框架在保持任务成功率（58.7%）的同时将泄漏率从 51.7% 降至 9.9%。",
+    "why": "首次量化研究 RAG Agent 的查询日志隐私风险，证明仅靠提示词不能解决泄漏问题，必须通过训练引入隐私奖励信号。",
+    "insight": "在构建企业级 RAG Agent 时，web 搜索查询本身就是一个信息泄漏面，隐私保护必须内建到 Agent 的训练目标中，而不是在查询前做内容过滤。"
+  },
+  {
+    "rank": 5,
+    "title": "Is it agentic enough? Benchmarking open models on your own tooling",
+    "url": "https://huggingface.co/blog/is-it-agentic-enough",
+    "date": "2026-06-18",
+    "source": "HuggingFace Blog",
+    "what": "提出 agent-eval harness，从 Bare/Clone/Skill 三层评估 transformers 等库对不同规模模型的 agent 友好度，发现同一 CLI+文档改动对大模型有效但使小模型（Qwen3-14B）准确率从 100% 崩溃到 0%，揭示「agent-facing API 必须跨模型规模评测」。",
+    "why": "将 Agent 的工具使用效率（而非只是答案正确性）作为库 API 设计的核心评估指标，提出了一套可复用的 agent eval 方法论。",
+    "insight": "向 Agent 暴露新工具或文档时，必须在多个模型规模上做回归测试——同一文档对小模型可能产生「文档即可执行工具」的幻觉，这是 SDK 设计中一个常被忽视的 agent 安全问题。"
+  },
+  {
+    "rank": 6,
+    "title": "Agentic Resource Discovery: Let agents search",
+    "url": "https://huggingface.co/blog/agentic-resource-discovery-launch",
+    "date": "2026-06-17",
+    "source": "HuggingFace Blog",
+    "what": "微软、谷歌、HuggingFace 等联合发布 ARD 开放规范：Agent 通过 ai-catalog.json 静态清单 + POST /search 动态注册表在运行时按意图发现工具/技能/其他 Agent，将 selection 逻辑从 LLM 移到注册表，支持 MCP Server 和 HF Spaces 等媒体类型。",
+    "why": "ARD 是继 MCP 之后第一个跨大厂联合推进的 Agent 工具发现标准，将「先安装再使用」模式升级为「意图驱动的运行时发现」，从协议层解决了工具蔓延问题。",
+    "insight": "ARD 的注册表设计把发布者身份、合规认证、代表性查询等信号纳入工具排序，意味着未来 Agent 工具生态将出现类似 App Store 的信誉分层，早期适配 ARD 的工具会获得发现优势。"
+  }
+]

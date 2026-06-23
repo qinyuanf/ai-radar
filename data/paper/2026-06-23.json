@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs",
+    "url": "https://arxiv.org/abs/2606.20243",
+    "date": "2026-06-18",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "提出 Phoenix 多智能体系统，由 Planner/Reproducer/Coder/Tester/Failure-Analyst/PR-Agent 六个专业体协同，通过 GitHub webhook 状态机管理流转，在 SWE-bench Lite 子集上以 7 层安全控制实现 75% oracle 解决率且零回归。",
+    "why": "首个在真实 PR 生命周期全流程（triage → patch → merge）嵌入分层安全控制的 SWE 多智能体架构，且在 42 个真实 issue 上验证了 100% 正确性保留。",
+    "insight": "状态机驱动的 webhook 协调比中心调度器更适合长尾 CI/CD 场景，Failure-Analyst 作为独立节点可大幅减少定位错误路径的 token 浪费。"
+  },
+  {
+    "rank": 2,
+    "title": "Multi-Agent Transactive Memory",
+    "url": "https://arxiv.org/abs/2606.19911",
+    "date": "2026-06-18",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "提出 MATM 框架，Producer Agent 将执行轨迹写入共享存储库，Consumer Agent 检索后直接复用，无需协同训练，在 ALFWorld 和 WebArena 上降低了交互步数并提升任务成功率。",
+    "why": "把 RAG 从单智能体扩展到种群级别，将过去被丢弃的推理轨迹变成可检索的群体经验库，实现零训练开销的跨体知识迁移。",
+    "insight": "构建多 Agent 系统时，轨迹存储层的设计（索引粒度、相似度函数）直接决定消费端能否精准复用经验，值得独立抽象为基础设施。"
+  },
+  {
+    "rank": 3,
+    "title": "GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents",
+    "url": "https://arxiv.org/abs/2606.18829",
+    "date": "2026-06-17",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "构建面向医疗/教育/职场等多用户场景的 GateMem 基准，从 utility、access-control compliance、reliable deletion 三维评估现有记忆方案，发现长上下文提示在治理得分最高但 token 代价巨大，检索类方案仍存在信息泄漏。",
+    "why": "首个系统量化「多主体共享记忆」治理能力的基准，揭示当前记忆系统在访问控制与定向删除上存在根本性安全缺口。",
+    "insight": "生产级 Agent 如果共享记忆层，必须在设计阶段区分实体作用域隔离和基于策略的访问路由，而不是靠提示词事后打补丁。"
+  },
+  {
+    "rank": 4,
+    "title": "Continual Self-Improvement with Lightweight Experiential Latent Memories",
+    "url": "https://arxiv.org/abs/2606.17803",
+    "date": "2026-06-16",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "将模型推理轨迹转化为软提示记忆（约 0.001% 参数量），用多数投票自动生成奖励信号并在线更新，在数学推理基准上媲美全参数离线训练，且通过模块化设计避免灾难性遗忘。",
+    "why": "极低参数开销实现了在线自我改进闭环，无需人工标注，突破了 RLVR 依赖离线数据管道的限制。",
+    "insight": "这种「即时推理→压缩记忆→轻量更新」的模式可直接嫁接到 Agent 的工具调用后处理阶段，使 Agent 从每次失败中持续学习。"
+  },
+  {
+    "rank": 5,
+    "title": "A Technical Taxonomy of LLM Agent Communication Protocols",
+    "url": "https://arxiv.org/abs/2606.19135",
+    "date": "2026-06-17",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "对 9 个开源通信协议（含 MCP、A2A 等）按 counterparty/payload/interaction-state/discovery/schema-flexibility 五个维度分类，发现 A2A 类协议趋向混合载荷+持久会话，并预测短期内出现统一协议、长期演进为联邦分层协议栈。",
+    "why": "首篇系统比较当前主流 Agent 通信协议并给出选型框架的分类学研究，填补了 MCP/A2A 论文层出不穷但缺乏横向对比的空白。",
+    "insight": "在设计多 Agent 系统时，协议的 schema 灵活性和 discovery 机制是最容易被忽视却影响最大的扩展性因素，建议优先按这两个维度做选型。"
+  },
+  {
+    "rank": 6,
+    "title": "WorldLines: Benchmarking and Modeling Long-Horizon Stateful Embodied Agents",
+    "url": "https://arxiv.org/abs/2606.18847",
+    "date": "2026-06-17",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "提出 WorldLines 家庭场景基准，构建含对话/动作/设备状态变更的跨时间轨迹，并提出 ObsMem 框架维护可见性感知记忆和动作原生状态轨迹，同时给出 Memory QA 和 Embodied Task Planning 两类评测。",
+    "why": "现有基准要么只测语言检索、要么只测短时体化任务，WorldLines 首次将长期记忆与具身规划在动态状态变化场景中联合评测。",
+    "insight": "ObsMem 的「可见性感知」设计提示：Agent 记忆不应只存储事实，还需记录「何时以何种视角获取」的元信息，才能正确推理部分可观测场景。"
+  },
+  {
+    "rank": 7,
+    "title": "SproutRAG: Attention-Guided Tree Search with Progressive Embeddings for Long-Document RAG",
+    "url": "https://arxiv.org/abs/2606.18381",
+    "date": "2026-06-16",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "利用 Transformer 注意力头识别文档语义结构，将 chunk 组织为二叉树并用分层 beam search 检索，端到端联合优化 embedding 和树结构，在科学/法律/开放领域基准上平均提升 6.1% 信息效率。",
+    "why": "索引阶段完全不调用 LLM，仅依赖注意力模式构建层次结构，在保持低成本的同时实现多粒度检索。",
+    "insight": "对于需要跨不同粒度召回的 RAG 系统（段落级 vs. 文档级），基于注意力的树结构比固定 chunk 分割更能适应文档的自然语义边界。"
+  }
+]
