@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "stars": 18800,
+    "trend": "+6700 stars/week",
+    "what": "817 条结构化网络安全 workflow，遵循 agentskills.io 标准，YAML 元数据 30 token 可扫全库，支持 Claude Code/Codex/Cursor/Gemini CLI 等 26+ 平台渐进式加载技能。",
+    "why": "v1.3.0 于 6 月 22 日发布，覆盖 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS 六大框架，创建于 2026 年 3 月，三个月内涨至 1.88 万 star 且连日高速增长。",
+    "insight": "技能库的价值取决于 token 效率和可安装性，agentskills.io 标准用 YAML frontmatter 实现亚秒级技能发现是个值得在私有技能市场中复用的设计模式。"
+  },
+  {
+    "rank": 2,
+    "repo": "rohitg00/agentmemory",
+    "url": "https://github.com/rohitg00/agentmemory",
+    "stars": 23700,
+    "trend": "Trendshift 认证 / 持续高速增长",
+    "what": "专为 coding agent 设计的持久化记忆层：自动捕获工具调用观测值并压缩为可搜索记忆，在未来会话中注入相关上下文，95.2% 检索准确率（LongMemEval-S），92% token 节省。",
+    "why": "v0.9.27 于 6 月 7 日发布，提供 53 个 MCP 工具，支持 Claude Code/Copilot/Cursor 等 30+ agent，Trendshift 认证带动病毒式传播，单个静态二进制零外部数据库依赖。",
+    "insight": "让 agent 不再向用户重新解释上下文，本质是把对话历史转化为结构化检索索引，MCP 接口让任意 agent 以最低集成成本获得持久记忆能力。"
+  },
+  {
+    "rank": 3,
+    "repo": "jamiepine/voicebox",
+    "url": "https://github.com/jamiepine/voicebox",
+    "stars": 32300,
+    "trend": "+3700 stars/week",
+    "what": "本地优先的开源 AI 语音工作室：声音克隆、23 种语言 TTS（7 个引擎）、全局热键听写、多轨时间线编辑，内置 MCP server 让任意 agent 单次工具调用即可语音输出。",
+    "why": "在 GitHub 日榜稳定 +529 star/天，MCP 集成使 Claude Code/Cursor/Cline 可直接调用 voicebox.speak()，语音 I/O 从独立应用转为 agent 基础设施推动本轮关注。",
+    "insight": "语音能力做成 MCP tool 而非独立 app 是正确架构方向，agent 获得语音 I/O 无需感知底层引擎，是 computer use agent 进入多模态交互阶段的基础组件。"
+  },
+  {
+    "rank": 4,
+    "repo": "palmier-io/palmier-pro",
+    "url": "https://github.com/palmier-io/palmier-pro",
+    "stars": 7400,
+    "trend": "6 月 22 日 GitHub 全站 #1 trending",
+    "what": "Swift 原生 macOS AI 视频编辑器，内置生成式 AI（Seedance/Kling 模型），暴露 MCP server 让 Claude Code/Codex/Cursor 直接在同一时间线上协作剪辑和生成素材。",
+    "why": "v0.3.6 于 6 月 22 日发布，跃升 GitHub 全站日榜第一，把「AI agent 协作剪辑」从概念变为可用工具，GPLv3 开源（AI 处理部分除外），Apple Silicon 原生。",
+    "insight": "让 coding agent 拥有视频编辑能力的最短路径是暴露带时间线语义的 MCP server，而不是重写视频引擎，工具能力扩展可以外包给专业领域应用。"
+  },
+  {
+    "rank": 5,
+    "repo": "StarTrail-org/PixelRAG",
+    "url": "https://github.com/StarTrail-org/PixelRAG",
+    "stars": 3500,
+    "trend": "发布即病毒，VentureBeat/Digg 报道推动激增",
+    "what": "把文档渲染为截图再用 Qwen3-VL-Embedding 检索的像素原生 RAG 系统，已预索引 828 万维基页面，内置 Claude Code 插件，比文本 RAG 在纯文本 QA 上高 18.1%、降低 agent token 成本 10 倍。",
+    "why": "伯克利 Sky Computing Lab（Apache Spark 创始人 Matei Zaharia 团队）出品，2026 年 5 月底发布，VentureBeat 等主流媒体报道带动连日快速增长，附论文 PDF。",
+    "insight": "解析失败是 RAG 的主要误差来源，用视觉模型直接读截图绕过解析层是工程上的降维打击，Claude Code 插件形态说明学术系统正在以 agent tool 方式落地。"
+  }
+]

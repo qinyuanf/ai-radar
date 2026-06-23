@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "stars": 73300,
+    "trend": "v2.0 全面重写后登顶 GitHub Trending，+738 star/天",
+    "what": "开源长视野 SuperAgent harness，编排多个子 agent 并行执行研究、编码、创作任务，内置持久化记忆、沙箱隔离和可扩展 skill 模块，基于 LangChain/LangGraph 构建。",
+    "why": "2026 年 2 月 28 日 v2.0 从零重写（与 v1.x 无公共代码），登顶 GitHub Trending，7.33 万 star 和 9.9k fork 体现深度社区采用，成为 deep research agent 参考实现。",
+    "insight": "长视野任务分解的关键是子 agent 间的状态隔离和记忆共享边界，DeerFlow 的沙箱 + 持久记忆架构为需要跨小时级别任务的 production agent 提供了可参考的设计蓝图。"
+  },
+  {
+    "rank": 2,
+    "repo": "earendil-works/pi",
+    "url": "https://github.com/earendil-works/pi",
+    "stars": 64800,
+    "trend": "v0.79.10 发布于 6 月 22 日，日均 +349 star",
+    "what": "统一 LLM API + agent runtime + TUI 库 + 交互式 coding agent CLI 四合一工具包，支持 OpenAI/Anthropic/Google 等多供应商，内置容器化沙箱选项，TypeScript 实现。",
+    "why": "v0.79.10 于 6 月 22 日发布（4672 次 commit），covering 了从本地开发到生产部署的全链路，作者公开 pi-mono 工作会话作为 agent 使用示例，形成独特的学习内容生态。",
+    "insight": "把 LLM 路由、工具调用、状态管理和 TUI 做成一个包而非四个库，降低了 coding agent 的集成门槛，但同时也意味着需要评估单包依赖的稳定性风险。"
+  },
+  {
+    "rank": 3,
+    "repo": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "stars": 45900,
+    "trend": "v3.23.0 发布于 6 月 20 日，近期 +1525 star 增量",
+    "what": "LLM 驱动的多市场股票智能分析系统：15 种内置策略、多轮 agent 对话分析、多供应商 LLM 路由（Claude/GPT/Gemini/DeepSeek/Ollama），GitHub Actions 零成本定时推送至微信/飞书/Telegram。",
+    "why": "v3.23.0 于 6 月 20 日发布，加入 multi-agent 模式、预算管理和 agent 策略对话功能，财务垂直 agent 从单轮查询进化为持续运行的分析系统，NGJOO 近期增量排名前列。",
+    "insight": "垂直 agent 的商业价值在于把领域知识（交易策略）和 agent 能力（数据获取、多轮推理）结合，GitHub Actions 作为 agent 调度器是零基础设施成本的有效替代方案。"
+  },
+  {
+    "rank": 4,
+    "repo": "HKUDS/nanobot",
+    "url": "https://github.com/HKUDS/nanobot",
+    "stars": 44600,
+    "trend": "v0.2.2 发布于 2026 年 6 月 23 日（今日），6 月内 20+ 版本密集迭代",
+    "what": "超轻量级个人 AI agent：WebUI + 聊天集成 + 工具调用 + 记忆系统 + 模型路由，小核心 + 实用组件设计，非技术用户可一键设置，企业可 Docker/Linux 服务部署。",
+    "why": "今日发布 v0.2.2，6 月内近乎每日更新（20+ 版本），近期加入 WebUI 转录、Python SDK 增强、自动化管理、供应商改进，4.46 万 star 和 7.9k fork 验证广泛社区需求。",
+    "insight": "「真正可拥有的个人 AI agent」是个有力的差异化定位，小核心 + 实用模块的架构比大而全的框架更容易被用户在本地实际运行起来。"
+  },
+  {
+    "rank": 5,
+    "repo": "openai/openai-agents-python",
+    "url": "https://github.com/openai/openai-agents-python",
+    "stars": 27300,
+    "trend": "v0.17.6 发布于 6 月 19 日，103 个版本密集发版",
+    "what": "OpenAI 官方 Python multi-agent workflow SDK：handoff（agent 间任务移交）、guardrails（输入输出护栏）、tracing（内置追踪调试），兼容 100+ 非 OpenAI LLM。",
+    "why": "v0.17.6 于 6 月 19 日发布，103 个版本迭代速度领先，「multi-agent workflows」定位明确，兼容性扩展到 100+ LLM 驱动跨供应商采用，官方出品信任背书强。",
+    "insight": "Handoff 机制把 multi-agent 编排从图式依赖转为明确的任务移交语义，比 DAG 更接近人类委托工作的心智模型，是值得在自建框架中借鉴的抽象设计。"
+  }
+]
