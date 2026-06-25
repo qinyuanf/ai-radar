@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "stars": 83600,
+    "trend": "83.6k star，6 月多渠道集成更新持续增长",
+    "what": "开源 RAG 引擎融合 agent 能力：深度文档理解（OCR/图表/非结构化）+ 模板化智能分块 + 可编排 agent 工作流，6 月新增 Feishu/Discord/Telegram/Line 多聊天渠道接入。",
+    "why": "83.6k star + 9.7k fork 是国产开源 RAG 最高；6 月多渠道发布将 RAG 输出扩展到 IM 生态，DeepSeek v4 + Gemini 3 Pro + MinerU 文档解析持续跟进前沿，近期 star 增势稳健。",
+    "insight": "RAG 与 agent 融合的路径：把 RAG 做成 agent 的工具调用而非输入预处理，ragflow 的「可编排工作流」体现这一架构演进，值得关注其 agent 编排 API 设计。"
+  },
+  {
+    "rank": 2,
+    "repo": "block/goose",
+    "url": "https://github.com/block/goose",
+    "stars": 50100,
+    "trend": "v1.38.0（6 月 17 日），加入 Linux Foundation Agentic AI",
+    "what": "Rust 实现的原生开源 AI agent：桌面 App + CLI + API 三合一，支持 15+ LLM 供应商、70+ MCP 扩展，已加入 Linux Foundation Agentic AI Foundation，可复用现有 Claude/GPT 订阅。",
+    "why": "6 月 17 日发布 v1.38.0 并加入 Linux Foundation，社区治理规范化是重大里程碑；50.1k star + 5.3k fork 验证广泛采用，Rust 实现 + 标准化治理 + MCP 生态三重可信度。",
+    "insight": "Rust 实现 + Linux Foundation 治理 + 70+ MCP 扩展是技术可信度三件套：评估 open agent 基础设施时，工业级语言 + 中立基金会 + 协议标准三者齐备值得重点关注。"
+  },
+  {
+    "rank": 3,
+    "repo": "agno-agi/agno",
+    "url": "https://github.com/agno-agi/agno",
+    "stars": 40800,
+    "trend": "40.8k star，202 个版本持续迭代，从 phidata 升级重品牌",
+    "what": "开源 agent 平台 SDK（原 phidata）：生产 API（50+ 端点，SSE/WebSocket）+ 100+ 工具集成 + session/memory/knowledge/traces 存储 + JWT RBAC 多租户 + Slack/Telegram/Discord/WhatsApp 多渠道。",
+    "why": "从 phidata 更名为 agno 后定位从「框架」升级为「agent 平台基础设施」，202 个版本迭代密度高；50+ 生产 API 端点和多租户安全明显区分于 LangChain 等框架级项目。",
+    "insight": "「20 行代码启动，生产 API 开箱即用」的组合降低了从原型到部署的迁移成本；如果 agent 需要多租户隔离和审计日志，agno 的基础设施层比自建省 6-8 周工程量。"
+  },
+  {
+    "rank": 4,
+    "repo": "microsoft/qlib",
+    "url": "https://github.com/microsoft/qlib",
+    "stars": 45100,
+    "trend": "45.1k star，+496 stars/week，RD-Agent 驱动持续增长",
+    "what": "微软开源量化投资研究平台，集成 RD-Agent（LLM 自主 R&D 系统）自动化因子挖掘、模型优化和数据驱动研究，支持 RL 执行策略和 45+ 量化模型（LightGBM/LSTM/Transformer）。",
+    "why": "RD-Agent 集成后从「量化工具库」演进为「AI 自主科研 agent」平台，论文 R&D-Agent-Quant 展示 agent 全自动量化流水线；本周 +496 star 增势持续，是 AI 垂直 agent 金融领域最强开源实现。",
+    "insight": "量化研究自动化是「循环 agent」绝佳场景：agent 提假说 → 代码回测验证 → 迭代改进，qlib+RD-Agent 的实现是对强化循环 agent 设计的具体参考架构。"
+  },
+  {
+    "rank": 5,
+    "repo": "koala73/worldmonitor",
+    "url": "https://github.com/koala73/worldmonitor",
+    "stars": 59600,
+    "trend": "+2899 stars/week，v2.5.23",
+    "what": "AI 驱动的全球实时情报仪表盘：500+ 新闻源 + 本地 LLM（Ollama）合成摘要 + 3D/WebGL 双地图 + 国家不稳定性指数 + 29 交易所金融雷达，Tauri 2 桌面 App，零 API Key。",
+    "why": "本周 +2899 star 增速领先，59.6k star 证明「本地 AI 驱动数据监控」赛道的真实需求；本地 LLM 方案解决情报数据隐私顾虑，6 种站点变体 + 24 语言 + RTL 支持体现工程深度。",
+    "insight": "大量数据源 → LLM 合成 → 结构化情报是「数据摄入 agent」标准模式；worldmonitor 把这套流水线做成本地零成本桌面工具，对构建私有数据情报 agent 有直接参考价值。"
+  }
+]
