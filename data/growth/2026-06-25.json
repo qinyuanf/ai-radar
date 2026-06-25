@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "stablyai/orca",
+    "url": "https://github.com/stablyai/orca",
+    "stars": 6800,
+    "trend": "+1397 stars/week",
+    "what": "针对多 coding agent 并行调度的 ADE，在隔离 git worktree 中同时运行多个 agent 并比对输出，含 WebGL 终端、移动端监控伴侣和 GitHub/Linear 原生集成。",
+    "why": "v1.4.97 于 6 月 24 日发布（649 个版本），本周 +1397 star 增速在 <10k 仓库中领先；把「让多 agent 竞争同一任务」从 CI 理念落地为交互式 IDE，命中 agent 并行开发核心痛点。",
+    "insight": "把 git worktree 当 agent 隔离单元是低成本高收益的设计：不需要容器，天然支持 diff 对比，在自建 multi-agent coding 系统中值得复用这一抽象。"
+  },
+  {
+    "rank": 2,
+    "repo": "interviewstreet/hiring-agent",
+    "url": "https://github.com/interviewstreet/hiring-agent",
+    "stars": 2200,
+    "trend": "+902 stars/week（增速 41%）",
+    "what": "HackerRank 开源的 AI 简历评估 pipeline：PDF 转 markdown → LLM 结构化提取工作/教育/技能 → GitHub 贡献分析 → 跨维度评分，支持本地 Ollama 和 Google Gemini 双后端。",
+    "why": "本周 +902 star 对总量 2.2k 增速超 40%；MIT 开源 + HackerRank 背书使其成为 HR 垂直 agent 领域少见的有真实生产场景的参考实现，1423+ 测试覆盖度高于同类。",
+    "insight": "垂直 agent 的门槛在领域评分逻辑而非 LLM 调用：把 GitHub 贡献分析接入评分管道是值得借鉴的「外部信号增强」设计模式。"
+  },
+  {
+    "rank": 3,
+    "repo": "lastmile-ai/mcp-agent",
+    "url": "https://github.com/lastmile-ai/mcp-agent",
+    "stars": 8400,
+    "trend": "MCP 协议爆发期持续稳定增长",
+    "what": "用 MCP 协议实现 Anthropic「构建高效 agent」论文全部模式：map-reduce、router、orchestrator、evaluator-optimizer、swarm，内置 Temporal 持久化执行和 OpenTelemetry 可观测。",
+    "why": "MCP 在 2026 年已被 Anthropic/OpenAI/Microsoft/Google 捐赠给 Linux Foundation 成为 agent 工具调用事实标准；mcp-agent 是将 MCP 和经典 agent 模式结合最完整的开源库。",
+    "insight": "asyncio 到 Temporal 持久化无需改 API 的设计说明：agent 状态持久化应作为基础设施而非业务逻辑，建框架时最好一开始就预留 durable execution 接口。"
+  },
+  {
+    "rank": 4,
+    "repo": "pydantic/pydantic-ai",
+    "url": "https://github.com/pydantic/pydantic-ai",
+    "stars": 18000,
+    "trend": "v2.0.0 于 6 月 23 日发布，本周 star 激增",
+    "what": "Pydantic 团队出品的 Python agent 框架：类型安全 + FastAPI 风格 DI + 20+ 模型供应商 + MCP 集成 + Logfire 可观测，v2.0.0 引入持久化执行、图支持和 YAML/JSON agent 定义。",
+    "why": "v2.0.0 昨日（6 月 23 日）发布；Pydantic 是 OpenAI SDK/FastAPI/LangChain 的基础验证层，pydantic-ai 把「类型安全」引入 agent 开发，270 个版本密集迭代，v2.0.0 是里程碑式发布。",
+    "insight": "把依赖注入和类型验证原语带进 agent 框架让 IDE 能对 agent 上下文做静态分析：这对大型 agent 系统可维护性是结构性提升，值得评估是否替代现有框架。"
+  },
+  {
+    "rank": 5,
+    "repo": "topoteretes/cognee",
+    "url": "https://github.com/topoteretes/cognee",
+    "stars": 21600,
+    "trend": "持续增长，Claude Code 集成驱动社区活跃",
+    "what": "开源 AI 记忆平台：将输入构建为自托管知识图谱，remember/recall/forget/improve 四个原语，支持 Claude Code 集成、多 LLM 供应商和 Docker/Cloud 多部署模式。",
+    "why": "Agent 长期记忆成为基础设施刚需；cognee 用向量嵌入 + 图推理 + 认知科学本体构建记忆，与 mem0 的差异在于结构化知识图而非纯向量，Claude Code 原生集成驱动社区增长。",
+    "insight": "记忆系统的核心不是存储而是「可解释检索」：知识图谱比向量库多一层结构语义，在需要推理记忆关系的 agent 场景中图结构优于纯相似度检索。"
+  }
+]
