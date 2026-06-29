@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "How agents are transforming work",
+    "url": "https://openai.com/index/how-agents-are-transforming-work/",
+    "date": "2026-06-25",
+    "source": "OpenAI Blog",
+    "what": "OpenAI 公开了内部 Codex agent 的采用数据：Research 部门中位输出 token 量自 2025 年 11 月起增长 56 倍，工程师 99% 的输出 token 来自 Codex 而非 ChatGPT，非开发者用户增长达 137-189 倍。",
+    "why": "这是 agent 规模化采用的一手量化证据，首次以内部数据级别揭示 AI agent 正如何替代对话式 AI 成为主要交互范式。",
+    "insight": "agent 已不是实验品，而是占据企业 AI 输出算力绝大多数份额的生产工具，基础设施和治理体系需匹配这一规模。"
+  },
+  {
+    "rank": 2,
+    "title": "[AINews] It's Meta-Harness Summer",
+    "url": "https://www.latent.space/p/ainews-its-meta-harness-summer",
+    "date": "2026-06-25",
+    "source": "Latent Space",
+    "what": "记录了同一周内五个不相关公司（Databricks Omnigent、Zed ACP、Vercel HarnessAgent、Cloudflare Flue、Conductor）同时发布"元 harness"产品的现象，并分析其背后的工程趋势：模型商品化后，harness 层成为竞争焦点。",
+    "why": "首次将"元 harness 夏天"作为技术浪潮命名，清晰定位了 2026 年 agent 技术栈的演进方向：从单 agent harness 到多 agent 统一控制层。",
+    "insight": "现在构建 agent 系统的核心竞争力已从模型选型转移到 harness 设计：上下文管理、工具编排、权限与审计。"
+  },
+  {
+    "rank": 3,
+    "title": "Previewing GPT-5.6 Sol: a next-generation model",
+    "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+    "date": "2026-06-26",
+    "source": "OpenAI Blog",
+    "what": "预览 GPT-5.6 三模型系列（Sol/Terra/Luna），Sol 在 Terminal-Bench 2.1 上刷新 SoTA；引入"ultra 模式"——单请求内自动编排子 agent 以加速复杂任务；定价 $5/$30 per M tokens。",
+    "why": "ultra 模式将多 agent 编排内化为模型特性，标志着 agent orchestration 从外部 harness 向模型原生能力的迁移。",
+    "insight": "评估新模型时需区分 ultra 模式（自动 multi-agent）与单模型能力，否则 benchmark 数字不具可比性。"
+  },
+  {
+    "rank": 4,
+    "title": "Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding",
+    "url": "https://deep-reinforce.com/ornith_1_0.html",
+    "date": "2026-06-25",
+    "source": "DeepReinforce Blog",
+    "what": "DeepReinforce 发布开源 Ornith-1.0 系列（9B/31B/35B MoE/397B MoE），RL 训练中模型同时学习生成解决方案和优化引导自身的 scaffold，397B 版本在 SWE-Bench Verified 达 82.4，超过 Claude Opus 4.7（80.8）。",
+    "why": "首次让模型自身学习改进 RL scaffold 而非依赖人工设计的 harness，将 scaffold 优化纳入训练循环本身。",
+    "insight": "agent 系统中 scaffold/harness 是瓶颈，让模型参与 scaffold 设计是提升效果的新思路，值得在私有系统中探索类似机制。"
+  },
+  {
+    "rank": 5,
+    "title": "What happened after 2,000 people tried to hack my AI assistant",
+    "url": "https://www.fernandoi.cl/posts/hackmyclaw/",
+    "date": "2026-06-26",
+    "source": "fernandoi.cl (Fernando Irarrázaval)",
+    "what": "回顾 HackMyClaw 实验：6000 封攻击邮件、2000+ 人尝试提示注入攻击一个基于 Claude Opus 4.6 的邮件 AI 助手，结果没有人成功泄露 secrets.env，并分析了最有效的攻击手法与防御设计。",
+    "why": "提供了大规模真实 prompt injection 红队的第一手数据，是少数有统计规模的 agent 安全实验记录。",
+    "insight": "仅靠系统 prompt 中简短的安全指令即可抵御大量攻击，但这也说明 Claude 本身的训练承担了大量安全工作，换模型需重新评估。"
+  },
+  {
+    "rank": 6,
+    "title": "Incident Report: CVE-2026-LGTM",
+    "url": "https://nesbitt.io/2026/06/26/incident-report-cve-2026-lgtm.html",
+    "date": "2026-06-26",
+    "source": "Andrew Nesbitt (nesbitt.io)",
+    "what": "以虚构但高度真实的安全事件报告形式，描述一个恶意 npm 包通过 #fefefe 隐写文本骗过 7 层 AI 安全门后进入生产，AI SOC 平台随后被 C2 服务器骗得将攻击 IP 加入出站白名单。",
+    "why": "生动展示了 AI 安全审查链中的系统性失败模式：每层 AI 的失败原因不同但都通过，暴露了 AI-gated pipeline 的连锁脆弱性。",
+    "insight": "给 agent pipeline 增加更多 AI 审查层不等于提高安全性——如果每一层都可以被独立欺骗，整体反而更脆弱。"
+  },
+  {
+    "rank": 7,
+    "title": "Thinking to recall: How reasoning unlocks parametric knowledge in LLMs",
+    "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
+    "date": "2026-06-24",
+    "source": "Google Research Blog",
+    "what": "Google Research 发现，推理模型在扩展思考过程中会主动激活参数中存储的知识，而标准提示无法触达这些知识——即"推理解锁记忆"现象。",
+    "why": "为推理模型（thinking models）在知识密集任务中的超预期表现提供了机制性解释，改变了对 RAG vs 参数知识的权衡认知。",
+    "insight": "对于知识密集型 agent 任务，给模型留出推理空间可能比增加 RAG 检索更有效，值得在具体场景中对比测试。"
+  }
+]
