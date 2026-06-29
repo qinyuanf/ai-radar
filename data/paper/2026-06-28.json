@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
+    "url": "https://arxiv.org/abs/2606.26356",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI / ICML 2026 Workshop FAGEN",
+    "what": "发现并量化了模块化 prompt 系统的隐蔽失效模式:修改某一 prompt 模块会无声地改变其他模块的行为,即使模块之间不共享变量或可执行依赖。",
+    "why": "首次将这一现象命名为 Instruction Bleed 并提供系统测量框架,揭示 prompt 组合导致的语义串扰是一类独立于代码耦合的新型 bug。",
+    "insight": "凡是使用 system prompt 分段拼接(如 role + tools + memory + constraints)的 agent,都应建立 prompt 模块隔离测试流程,变更一个模块必须回归测试其他模块的行为。"
+  },
+  {
+    "rank": 2,
+    "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+    "url": "https://arxiv.org/abs/2606.26300",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI / Qwen Team",
+    "what": "系统研究了 coding agent 的四类奖励机制(测试验证器、评分验证器、用户即验证器、agent 即验证器),证明随着策略能力提升,没有任何固定奖励函数能持续有效。",
+    "why": "将'验证比生成更容易'的经典直觉彻底反转,提出 Verification Horizon 概念:当模型足够强时,生成正确答案反而比验证正确答案更容易。",
+    "insight": "为 coding agent 设计 RL 训练时,奖励函数必须与策略能力同步演化,否则会在 horizon 边界处遭遇奖励崩溃,不能用静态 test pass rate 作为长期奖励信号。"
+  },
+  {
+    "rank": 3,
+    "title": "SKILL-DISCO: Distilling and Compiling Agent Traces into Reusable Procedural Skills",
+    "url": "https://arxiv.org/abs/2606.26669",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "将 agent 历史执行轨迹蒸馏并编译为可复用的程序化技能(procedural skills),避免相似任务的重复推理开销。",
+    "why": "从轨迹到技能的编译路径将知识从'每次运行时重新推导'转变为'调用已学程序',在成本和速度上有质的差异。",
+    "insight": "长期运行的生产 agent 应维护一个技能注册表,把高频成功轨迹提炼成确定性子例程,这既是 memory 的一种形式,也是 latency 优化的核心杠杆。"
+  },
+  {
+    "rank": 4,
+    "title": "Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents",
+    "url": "https://arxiv.org/abs/2606.26806",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "论证长期运行 agent 的瓶颈不在于检索能力(memory access),而在于哪些经验应被固化进模型参数(memory depth),提出选择性参数整合方案。",
+    "why": "首次将 agent 内存问题解耦为访问速度和整合深度两个正交维度,指出 RAG 只解决了前者。",
+    "insight": "构建 stateful agent 时,应区分'查询时注入的工作记忆'和'需要参数化的长效知识',对后者设计定期 fine-tune 或 LoRA 更新管道。"
+  },
+  {
+    "rank": 5,
+    "title": "Semantic Early-Stopping for Iterative LLM Agent Loops",
+    "url": "https://arxiv.org/abs/2606.27009",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "为 Writer-Critic 等迭代式 multi-agent 循环提出语义早停准则,取代现有固定迭代次数的终止策略。",
+    "why": "语义收敛检测比固定轮次更精准:既避免欠迭代导致质量不足,也避免过迭代造成冗余计算和语义漂移。",
+    "insight": "设计 agent loop 时应将停止条件从'跑 N 轮'升级为'检测语义稳定性',可用嵌入相似度或 diff 熵作为轻量代理信号。"
+  },
+  {
+    "rank": 6,
+    "title": "Detecting and Controlling Sycophancy with Cascading Linear Features",
+    "url": "https://arxiv.org/abs/2606.26155",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "通过激活空间中的级联线性特征方法,同时检测并主动控制模型的谄媚行为(sycophancy),无需额外训练。",
+    "why": "将 sycophancy 从难以量化的行为现象转化为可操作的激活方向,实现推理时实时干预,比 RLHF 事后纠偏更灵活。",
+    "insight": "在对话质量敏感的 agent(如 code review bot)中,可以把反谄媚激活方向作为推理时 steering vector 加入,防止模型因用户持续追问而改变正确判断。"
+  },
+  {
+    "rank": 7,
+    "title": "Autoformalization of Agent Instructions into Policy-as-Code",
+    "url": "https://arxiv.org/abs/2606.26649",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "将自然语言 agent 指令自动形式化为可验证的 policy-as-code,替代依赖概率护栏(probabilistic guardrails)的传统方案。",
+    "why": "形式化策略可做静态检查和运行时证明,比'加一段 prompt 说不能做 X'的概率性限制有更强的可审计性和可靠性。",
+    "insight": "高风险 agent(如自动化运维、金融交易)应在 harness 层引入形式化策略核,将关键约束从 prompt 层迁移到可验证的代码层。"
+  },
+  {
+    "rank": 8,
+    "title": "The Capability Frontier: Benchmarks Miss 82% of Model Performance",
+    "url": "https://arxiv.org/abs/2606.26836",
+    "date": "2026-06-27",
+    "source": "arxiv cs.AI",
+    "what": "证明现有 benchmark 仅报告单模型单次运行准确率,系统性低估真实能力,经过多次采样与最优选取后,可恢复被遗漏的 82% 性能空间。",
+    "why": "将这一偏差命名为 Capability Frontier,并给出校正方法,从根本上影响模型对比和 agent 能力评估的方法论。",
+    "insight": "设计 agent eval 时,单次通过率(pass@1)是悲观下界,应同时报告 pass@k 和最优采样分布,并将 inference budget 显式纳入评估条件。"
+  }
+]
