@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "Kilo-Org/kilocode",
+    "url": "https://github.com/Kilo-Org/kilocode",
+    "stars": 24600,
+    "trend": "+2906 stars/week，v7.3.54 发布于 6-23，439 次发版",
+    "what": "开源 agentic 工程平台，支持 VS Code/JetBrains/CLI 三端，接入 500+ 模型零加价，专项 agent 分别负责代码生成/规划/调试/审查，任务途中可切换模型，含 MCP marketplace 扩展能力。",
+    "why": "本周 +2906 star 在 25k 量级项目中增速领先，daily 发版节奏和 JetBrains 原生支持与 OpenCode 形成差异化，fork 起家但已建立独立用户生态，是编程 agent IDE 集成的重要参考。",
+    "insight": "coding agent 差异化已从「用哪个 LLM」转移到「上下文传递策略和任务中途模型切换能力」，kilocode 的多 agent 分工模式值得在自建 SWE agent 时评估职责边界划分。"
+  },
+  {
+    "rank": 2,
+    "repo": "mastra-ai/mastra",
+    "url": "https://github.com/mastra-ai/mastra",
+    "stars": 25500,
+    "trend": "6-24 发版，16154 commits，1.8k dependents，30万+/周 npm 下载",
+    "what": "TypeScript 原生 agent 框架，40+ 模型供应商路由、自主 agent、图工作流、human-in-the-loop、内置可观测与评估，YC W25，1.0 于 2026-01 发布后持续密集迭代。",
+    "why": "6-24 最新发版，1.8k dependents 和 300k 周 npm 下载验证大规模采用，与 pydantic-ai 并列形成 Python/TS agent 框架双雄，成为前端工程师进入 agent 开发的主路径。",
+    "insight": "TypeScript agent 框架成熟意味着前端工程师可在原有技术栈内构建生产级 agent，评估框架时语言生态匹配度是隐性决策成本，选错会显著增加团队上手和运维负担。"
+  },
+  {
+    "rank": 3,
+    "repo": "bytedance/UI-TARS-desktop",
+    "url": "https://github.com/bytedance/UI-TARS-desktop",
+    "stars": 37200,
+    "trend": "v0.3.0+，3.7k forks，2026 年持续活跃",
+    "what": "开源多模态 agent 桌面套件，包含 Agent TARS（通用 agent，GUI 自动化 + VLM + MCP 工具）和 UI-TARS Desktop（用视觉语言模型通过自然语言控制电脑和浏览器），TypeScript 实现。",
+    "why": "computer use 赛道最高星标，v0.3+ 持续迭代；Agent TARS 用 VLM 直接操作原生 GUI 绕开 DOM/API 依赖，是评估屏幕感知 agent 可行性最完整的开源参考，3.7k fork 证明企业级采用。",
+    "insight": "DOM 解析 vs 屏幕像素感知是 GUI agent 架构核心分叉，DOM 精准但依赖页面结构，VLM 泛用但对推理质量更敏感，UI-TARS 是评估「VLM agent 在复杂 UI 上容错率」的重要基准。"
+  },
+  {
+    "rank": 4,
+    "repo": "alibaba/page-agent",
+    "url": "https://github.com/alibaba/page-agent",
+    "stars": 19900,
+    "trend": "+1072 stars/week，v1.10.0 发布于 6-15，33 次发版",
+    "what": "JavaScript 页内 GUI agent，无需浏览器扩展或 headless 浏览器，直接在网页内用自然语言控制 UI，NPM/CDN 嵌入即用，可选 MCP server 支持跨页任务，支持接入自有 LLM。",
+    "why": "「在 SaaS 产品里内嵌 AI 副驾驶」比 browser-use 进程外方案部署成本更低，阿里出品 + 纯前端 TypeScript 实现 + v1.10.0 持续迭代，是页内 agent 领域当前最完整的开源实现。",
+    "insight": "把 agent 能力内嵌进产品而非以外部 bot 附加，能获得更一致的 DOM 上下文和更低延迟，page-agent 的页内共享状态模式在构建产品内嵌 agent 时应优先于进程外方案评估。"
+  },
+  {
+    "rank": 5,
+    "repo": "google-research/timesfm",
+    "url": "https://github.com/google-research/timesfm",
+    "stars": 25600,
+    "trend": "+3040 stars/week，v2.0.1 发布于 6-11，AGENTS.md 于 3-2026 加入",
+    "what": "Google Research 预训练时序基础模型（200M 参数，16k 上下文），零样本 1000 步预测和分位数预测，v2.0 新增 LoRA 微调 + HuggingFace Transformers 集成，提供 Vertex AI Docker 化 agentic 端点。",
+    "why": "本周 +3040 star 是时序模型增速最快；AGENTS.md + Vertex AI agentic calling 端点使其从 ML 模型库升级为 data agent 可直接 tool call 的预测服务，是数据/金融 agent 工具链的重要组件。",
+    "insight": "把 ML 模型包装为 agent 可调用的工具而非内嵌是正确的职责分离，timesfm 的 Vertex AI agentic endpoint 是「model-as-tool」模式的参考实现，值得在数据分析 agent 工具链设计中推广。"
+  }
+]
