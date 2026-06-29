@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "MemPalace/mempalace",
+    "url": "https://github.com/MemPalace/mempalace",
+    "stars": 56700,
+    "trend": "v3.5.0（6月23日），96.6% R@5，35 MCP tools",
+    "what": "开源 AI 记忆系统：以宫殿层级（wing/room/drawer）组织对话历史，语义检索 + 时序实体关系图，默认 ChromaDB 可换 SQLite/Qdrant/PostgreSQL，35 个 MCP 工具直连 Claude Code/Cursor，零 API 调用。",
+    "why": "v3.5.0 六月底发布，96.6% R@5 超越所有主流对比方案且无需调用 LLM；走知识图谱路线而非纯向量，结构语义更利于「记住关系」的复杂 agent 场景，35 个 MCP 工具标志记忆系统正升级为独立基础设施。",
+    "insight": "35 个 MCP 工具直接挂载的设计说明记忆应该被作为 sidecar 服务而非内嵌模块规划，agent 内存服务化后可跨多个 agent 复用同一知识图谱，是 multi-agent 记忆共享的最小成本方案。"
+  },
+  {
+    "rank": 2,
+    "repo": "opendatalab/MinerU",
+    "url": "https://github.com/opendatalab/MinerU",
+    "stars": 71000,
+    "trend": "v3.4（6月18日）+ v3.3（6月11日），+2,855 stars/week",
+    "what": "开源文档解析引擎，PDF/DOCX/PPTX/XLSX/图片转结构化 Markdown/JSON，VLM+OCR 双路解析覆盖表格图表盲区，109 语言支持，原生集成 LangChain/Dify/FastGPT 和 MCP server。",
+    "why": "六月连发 v3.3（VLM 升级）和 v3.4（OCR 升级），双周迭代节奏领跑文档解析赛道；71k star 本周仍 +2,855，是 RAG/agent 数据摄入层最成熟的开源实现。",
+    "insight": "文档解析是 RAG 和 agent 数据摄入的隐形瓶颈，VLM+OCR 双路专门处理表格/图表等 OCR 盲区，在企业 agent 落地中替换 LangChain 默认简单 loader 可显著提升非结构化数据的召回质量。"
+  },
+  {
+    "rank": 3,
+    "repo": "BerriAI/litellm",
+    "url": "https://github.com/BerriAI/litellm",
+    "stars": 51800,
+    "trend": "v1.90.0（6月27日），A2A + MCP 支持，1380 releases",
+    "what": "统一 LLM 网关：100+ 供应商 OpenAI 格式统一调用、虚拟 Key 管理、花费追踪、负载均衡、护栏，v1.90.0 新增 A2A（Agent-to-Agent）协议和 MCP 集成，2.2 万项目依赖。",
+    "why": "v1.90.0 昨日发布，A2A 协议支持让 LiteLLM 从「LLM 路由层」升维为「agent 通信中台」；1380 个发布版本 + 2.2 万依赖项是 agent 基础设施栈中渗透率最高的 LLM 中间件。",
+    "insight": "LiteLLM 加入 A2A 意味着 agent 间通信可复用已有的 LLM 路由基础设施，在 multi-agent 系统中通过 LiteLLM 做 agent 发现和路由比自建 A2A hub 成本低一个量级。"
+  },
+  {
+    "rank": 4,
+    "repo": "open-webui/open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "stars": 143000,
+    "trend": "v0.9.6（6月1日），163 releases，20.6k forks",
+    "what": "自托管 AI 平台，兼容 Ollama 和全部 OpenAI 兼容 API：多模型对话、RAG（9 种向量库）、Web 浏览、图像生成、语音/视频通话、OpenTelemetry 可观测、LDAP/SCIM 2.0/SSO 企业认证一体集成。",
+    "why": "v0.9.x 系列持续加入企业级功能（SCIM 2.0/多租户/LDAP），向「私有化 AI 企业平台」全面升级；143k star 是本地/私有化 agent 基础设施里星数最高的开源项目，6 月初发布持续驱动增长。",
+    "insight": "Open WebUI 的「多模型+RAG+工具+观测」全家桶表明企业 agent 选型正从单一框架转向一体化平台，在私有化部署场景中可直接作为 agent 操作界面和统一流量入口。"
+  },
+  {
+    "rank": 5,
+    "repo": "comet-ml/opik",
+    "url": "https://github.com/comet-ml/opik",
+    "stars": 20000,
+    "trend": "v2.1.5（6月26日），500+ releases，50+ framework integrations",
+    "what": "开源 LLM/agent 可观测平台：全链路追踪（LLM 调用 + agent 行为）、LLM-as-a-judge 自动评估、生产监控规则引擎、Prompt Playground，50+ 框架集成，可 Kubernetes 自托管。",
+    "why": "v2.1.5 昨日发布，500+ 发布版本在可观测赛道迭代最密集；LLM-as-a-judge 评估 + 生产告警 + CI/CD 集成三合一是 eval/trace 方向最完整的开源实现之一，刚突破 2 万 star 新里程碑。",
+    "insight": "agent 上线后「不知道哪里出了问题」是最常见工程痛点，Opik 的全链路追踪把 agent 每一跳调用做成可回溯调试快照，在系统测试阶段引入追踪比上线后排查省力一个数量级。"
+  }
+]
