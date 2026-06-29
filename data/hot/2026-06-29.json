@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "NanmiCoder/MediaCrawler",
+    "url": "https://github.com/NanmiCoder/MediaCrawler",
+    "stars": 54052,
+    "trend": "+2472 stars/week，本周 Python 热榜 #7",
+    "what": "覆盖微信/小红书/抖音/快手/B 站/微博/百度贴吧的多平台社交媒体爬虫，支持帖子、评论、视频、直播数据采集，内置 IP 代理池和 Cookie 池。",
+    "why": "社交媒体数据是 AI agent 执行竞争情报、舆情监控、内容研究的核心原材料，本周 +2472 star 显示 agent 驱动数据采集需求显著上升，国内平台覆盖度无对手。",
+    "insight": "给 agent 系统配备结构化社交媒体数据接入层，远比让 agent 直接用 browser-use 爬页面更稳定，专用爬虫工具做数据层、agent 做分析层的分工值得在系统设计时明确。"
+  },
+  {
+    "rank": 2,
+    "repo": "lightpanda-io/browser",
+    "url": "https://github.com/lightpanda-io/browser",
+    "stars": 31500,
+    "trend": "+1800 stars/week，专为 AI 自动化设计的替代浏览器",
+    "what": "用 Zig 从零构建的 AI 专用无头浏览器，比 Chrome 快 11 倍、内存降低 9 倍，兼容 Playwright/Puppeteer API，不依赖 Chromium 完整安装。",
+    "why": "随着 browser agent 任务规模化，Chromium 的内存和启动时间成为成本瓶颈；lightpanda 提供 drop-in 替代让 browser agent 系统运营成本可降一个数量级，受大量 agent 基础设施团队关注。",
+    "insight": "Browser agent 在规模化时的主要成本不是 LLM token 而是浏览器实例开销，基础设施层的 10 倍性能差异在大规模并发 agent 部署中直接转化为运营成本，值得早期评估替换。"
+  },
+  {
+    "rank": 3,
+    "repo": "aider-chat/aider",
+    "url": "https://github.com/aider-chat/aider",
+    "stars": 32000,
+    "trend": "+1500 stars/week，每周更新 SWE-bench 成绩，持续领跑",
+    "what": "终端 AI 结对编程工具，git 原生集成，支持跨文件多模型协作修改，repo-map 模式理解大型代码仓库，200+ 支持模型，公开每个模型的 SWE-bench 基准数据。",
+    "why": "aider 是最早做 git-native coding agent 的项目之一，每周公开更新 SWE-bench 分数并对比不同模型表现，形成强工程师社区口碑；近期 Claude Opus 加持后基准分再度提升引发新一波关注。",
+    "insight": "Coding agent 的竞争力核心是 repo map 质量和 edit 格式准确率，aider 公开的 benchmark 方法论值得借鉴：把 SWE-bench 子集作为每次发版的自动回归测试是工程化的正确姿势。"
+  },
+  {
+    "rank": 4,
+    "repo": "kyegomez/swarms",
+    "url": "https://github.com/kyegomez/swarms",
+    "stars": 20500,
+    "trend": "+1600 stars/week，v7.x 企业级重架构后增速加快",
+    "what": "生产级 Python multi-agent 框架，200+ 预置 agent 角色、20+ 编排拓扑（流水线/群集/树形等），内置并发执行、持久化记忆、工具注册、日志和 OpenTelemetry 监控。",
+    "why": "v7 完全重写后专注企业生产场景，补充了之前缺失的可靠性和可观测能力；同期 AI agent 工程化需求爆发，swarms 的成熟度正好契合窗口，近期被多个企业团队选为生产编排层。",
+    "insight": "Multi-agent 框架的核心壁垒不是编排模式种类而是生产可靠性：并发安全、任务重试、部分失败恢复这三项才是决定能否上生产的关键指标，选型时优先考察这些能力。"
+  },
+  {
+    "rank": 5,
+    "repo": "skyvern-automate/skyvern",
+    "url": "https://github.com/skyvern-automate/skyvern",
+    "stars": 20800,
+    "trend": "+1400 stars/week，企业版发布后开源版同步获得更多 workflow 能力",
+    "what": "基于视觉加 LLM 的浏览器 computer use agent，用截图和无障碍树替代 CSS 选择器做跨页面自动化，内置任务中断恢复、2FA 处理和密码管理集成。",
+    "why": "Skyvern 把 computer use 从演示级推向生产级的关键是中断恢复和 2FA 处理；企业版发布后开源版同步获得更多 workflow 编排能力，应用场景从内部工具扩展到外部流程自动化，用户数快速增长。",
+    "insight": "Browser agent 做生产化的难点不是点击准确率而是异常处理：弹窗、2FA、超时、页面跳转每一项都需要专门策略，Skyvern 的异常处理模式值得在自建 computer use 系统中参考。"
+  }
+]
