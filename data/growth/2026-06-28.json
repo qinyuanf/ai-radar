@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "kunchenguid/no-mistakes",
+    "url": "https://github.com/kunchenguid/no-mistakes",
+    "stars": 3816,
+    "trend": "+2,229 stars/week（+59%），v1.31.2（6月27日）",
+    "what": "在本地 git push 路径插入 AI 验证代理，自动触发代码审查、测试、文档、lint 四步流水线再放行推送，支持作为 Claude/Copilot 等 coding agent 的 skill 调用。",
+    "why": "把「agent 做完任务再人工确认」的人机协作模式固化进 git 工作流，本周增速 59% 领跑全站；Go 实现零依赖，v1.31.2 于 6 月 27 日发布持续高频迭代。",
+    "insight": "用 git 钩子在本地拦截 agent 输出是低延迟质量门的有效方案，把验证前置到推送阶段比依赖 CI 回滚省去大量上下文切换代价。"
+  },
+  {
+    "rank": 2,
+    "repo": "BuilderIO/agent-native",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "stars": 2730,
+    "trend": "+1,474 stars/week（+54%），722 个发布版本",
+    "what": "让 agent 和 UI 互为一等公民的应用框架：同一套 Action 定义同时暴露给界面、HTTP、CLI 和 AI agent，内置 skills/memory/observability，支持 Claude/Cursor 等多模型集成。",
+    "why": "彻底颠覆「agent 在侧边栏聊天」的旧范式，让 agent 直接操控应用内部逻辑；722 个发布版本说明工程迭代极度活跃，本周 +54% 增速验证市场共鸣。",
+    "insight": "把 Action 同时注册为 UI 事件和 agent 工具是实现 agent-native 架构的核心抽象，新应用设计时让 agent 访问路径与用户访问路径共享同一 API 层可大幅降低 computer use 接入成本。"
+  },
+  {
+    "rank": 3,
+    "repo": "aws/agent-toolkit-for-aws",
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "stars": 1484,
+    "trend": "+524 stars/week（+35%），Apache-2.0",
+    "what": "AWS 官方出品，将 300+ AWS 服务打包为 MCP server、agent skill 和 plugin，覆盖 CDK/无服务器/容器/存储/Bedrock Agent，支持 Claude Code/Codex/Cursor/Kiro 直接挂载。",
+    "why": "第一个覆盖 300+ 服务的云厂商官方 MCP 工具套件，AWS 直接背书 + Apache-2.0 开源，把云基础设施对 agent 的接入摩擦降到接近零。",
+    "insight": "云厂商开始把 MCP 作为 agent 接入标配，直接挂载官方 toolkit 比手写 SDK 封装节省认证/错误处理/限速重试的大量工程量，是 cloud-native agent 的最短路径。"
+  },
+  {
+    "rank": 4,
+    "repo": "microsoft/agent-framework",
+    "url": "https://github.com/microsoft/agent-framework",
+    "stars": 11700,
+    "trend": "dotnet-1.11.1（6月25日），97 releases，2026年全新建库",
+    "what": "微软将 AutoGen 与 Semantic Kernel 统一重写为生产级多 agent 框架，Python（51%）和 .NET/C#（46%）双栈，内置编排、中间件、多 LLM 供应商支持和 OpenTelemetry 可观测，1.0 于 4 月发布。",
+    "why": "AutoGen（59k star）+ Semantic Kernel（28k star）双线合并后微软 agent 生态从分裂走向统一；6 月 BUILD 大会加入 Skills 支持和标准化 agent 生命周期管理，推动社区迁移热潮。",
+    "insight": "MAF 的中间件系统实现了「横切关注点（鉴权/限流/审计）不污染 agent 业务逻辑」，是企业级 agent 系统把基础设施与 agent 逻辑解耦的可参考范式。"
+  },
+  {
+    "rank": 5,
+    "repo": "google-labs-code/design.md",
+    "url": "https://github.com/google-labs-code/design.md",
+    "stars": 22363,
+    "trend": "+6,014 stars/week，v0.3.0 alpha（6月15日），仅 40 commits",
+    "what": "Google Labs 提出的设计系统描述规范：YAML 设计 token + Markdown 设计理念合为单文件，让 coding agent 理解并一致地应用视觉设计系统，附带 CLI lint/diff 工具和 Tailwind/W3C Design Tokens 导出。",
+    "why": "当 coding agent 接管前端开发，设计系统成为「agent 上下文」而非人类文档；仅 40 个 commit 的 alpha 项目单周斩获 6,014 star，说明设计工程化与 agent 结合的需求被严重低估。",
+    "insight": "把设计 token 格式化为机器可读规范是 context engineering 在 UI 垂直领域的直接应用，将设计约束注入 agent 系统提示比每次手写 CSS 指令更可靠且可复用。"
+  }
+]
