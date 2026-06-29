@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "google-labs-code/design.md",
+    "url": "https://github.com/google-labs-code/design.md",
+    "stars": 21300,
+    "trend": "+4618/week，v0.3.0 发布于 2026-06-15，仅 40 commits",
+    "what": "定义 YAML+Markdown 混合格式规范，让 coding agent 能稳定解读并应用视觉设计系统（颜色/排版/间距/组件）",
+    "why": "Google Labs 背书，切中 coding agent 生成 UI 时缺乏一致设计语言的痛点，极少 commits 已成业界事实格式",
+    "insight": "给 agent 的输入越结构化幻觉就越少，DESIGN.md 是 context engineering→格式标准化思路的典型实践"
+  },
+  {
+    "rank": 2,
+    "repo": "BuilderIO/agent-native",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "stars": 2547,
+    "trend": "+1569/week（环比增 62%），@agent-native/skills@0.2.147 发布于 2026-06-27",
+    "what": "提供原语让应用的操作（action）同时暴露给 UI、agent、API、MCP、CLI，无需为每个入口单独实现",
+    "why": "解决 agent-native 应用 action 逻辑分散多层的维护难题，内置可观测性和权限控制，BuilderIO 出品可信度高",
+    "insight": "构建 agent 系统时操作定义和权限边界应从设计阶段就与 UI 共享，而不是事后桥接"
+  },
+  {
+    "rank": 3,
+    "repo": "aws/agent-toolkit-for-aws",
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "stars": 1361,
+    "trend": "+349/week，Apache-2.0，94 commits 持续演进",
+    "what": "AWS 官方 MCP server 集合与 agent skills 包，覆盖 CDK/CloudFormation/无服务器/存储/可观测等核心云服务",
+    "why": "AWS 首次为 AI coding agent 发布官方基础设施操控工具，与 Claude Code/Codex/Cursor/Kiro 原生集成",
+    "insight": "云厂商官方 MCP server 的出现意味着 agent 直接操作生产基础设施已从实验走向有保障路径，安全边界定义是下一个关键问题"
+  },
+  {
+    "rank": 4,
+    "repo": "benchflow-ai/skillsbench",
+    "url": "https://github.com/benchflow-ai/skillsbench",
+    "stars": 1400,
+    "trend": "v1.1 发布于 2026-06 月，429 commits，53 个 PR 活跃",
+    "what": "首个专门评测 AI agent 在 skills 组合调用上表现的基准测试，覆盖 GPT-5.5/Claude Opus/Gemini 3.1 Pro，当前 SOTA 低于 50%",
+    "why": "随着 skills/MCP 生态爆炸，量化「agent 能不能真正用好工具」的需求强烈，这是目前唯一专门针对该能力的 benchmark",
+    "insight": "评测 agent 工具调用能力时单测 function call 准确率远不够，skill 组合与多步规划才是真正的能力瓶颈"
+  },
+  {
+    "rank": 5,
+    "repo": "VoltAgent/voltagent",
+    "url": "https://github.com/VoltAgent/voltagent",
+    "stars": 9800,
+    "trend": "v2.8.0 发布于 2026-06-23，692 次发布，1727 commits",
+    "what": "TypeScript 全栈 agent 框架，内置工作流引擎、多 agent supervisor 协同、MCP 集成、RAG、语音和 guardrails，配套 VoltOps 可观测控制台",
+    "why": "v2.8.0 新增 supervisor 多 agent 协调能力，把构建和运维 agent 合并在一个产品里，持续 v2.x 迭代节奏快",
+    "insight": "agent 框架竞争正从功能广度转向可观测性深度，谁能让工程师看清 agent 行为谁就赢得生产部署"
+  }
+]
