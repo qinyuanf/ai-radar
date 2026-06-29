@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "altic-dev/FluidVoice",
+    "url": "https://github.com/altic-dev/FluidVoice",
+    "stars": 3799,
+    "trend": "+900 stars/week，曾登 GitHub 全站日榜 #1（3月）",
+    "what": "macOS 本地离线语音听写 app，Parakeet STT 引擎全程不联网，支持全局热键触发和本地 AI 后处理润色，首次启动一键完成模型下载。",
+    "why": "隐私合规压力上升背景下本地 STT 需求爆发，Parakeet 速度首次真正追平商业 API，开源策略迅速使其成为 macOS 离线语音 agent 基础设施首选。",
+    "insight": "语音输入做成本地工具而非云服务不只是隐私问题，还能规避网络延迟和 API 配额，是给 agent 系统添加语音 I/O 运维成本最低的路径。"
+  },
+  {
+    "rank": 2,
+    "repo": "browser-use/video-use",
+    "url": "https://github.com/browser-use/video-use",
+    "stars": 11152,
+    "trend": "+1800 stars/week，browser-use 生态扩展项",
+    "what": "将 browser-use 浏览器 agent 框架扩展到视频编辑领域，让 AI agent 通过自然语言指令在时间线上剪辑、裁剪、合并视频文件。",
+    "why": "借助 browser-use 用户基础快速冷启动，同时验证了浏览器 agent 抽象可跨媒体类型复用的可能，视频创作自动化成新热点。",
+    "insight": "把 agent action 空间从 DOM 操作泛化到视频时间线操作，核心挑战不是 LLM 能力而是如何设计可被 agent 消费的媒体操作 schema。"
+  },
+  {
+    "rank": 3,
+    "repo": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "stars": 14407,
+    "trend": "+2100 stars/week，HKUDS 实验室出品",
+    "what": "个人交易 multi-agent 系统，多个 agent 分别执行基本面、技术面、情绪面研究，通过 swarm 投票机制聚合决策，支持 10+ 券商 API 和策略回测。",
+    "why": "「vibe coding」模式迁移到量化交易，用 agent 群体决策替代单一规则策略，HKUDS 学术背景加完整回测框架赋予可信度，填补开源金融 multi-agent 空白。",
+    "insight": "让多 agent 各持不同分析视角并通过投票聚合结论，比单 agent 综合分析更能对抗 LLM 确认偏误，这一模式可泛化到任何高风险决策场景。"
+  },
+  {
+    "rank": 4,
+    "repo": "TEN-framework/ten-framework",
+    "url": "https://github.com/TEN-framework/ten-framework",
+    "stars": 16800,
+    "trend": "+2400 stars/week，v1.0 发布后语音 agent 赛道聚焦",
+    "what": "专为实时低延迟语音 agent 设计的开源运行时，C++/Go/Python/JS 多语言 SDK，支持 Gemini Realtime、OpenAI Realtime API，内置 RTC 集成和多模态流水线。",
+    "why": "实时语音 agent 的工程要求远高于普通 LLM 调用，TEN 是目前唯一专门解决端到端延迟问题的开源框架，v1.0 发布后生产可用性大幅提升，引发语音 agent 开发者集中迁移。",
+    "insight": "实时语音 agent 的核心约束是端到端延迟而非 token 速率，需要在协议栈层面（RTC+流式推理）而非应用层解决，框架选型时应优先考量底层延迟架构。"
+  },
+  {
+    "rank": 5,
+    "repo": "usestrix/strix",
+    "url": "https://github.com/usestrix/strix",
+    "stars": 26796,
+    "trend": "+3200 stars/week，1.17 亿美元 A 轮融资引发关注",
+    "what": "开源 AI 安全 agent 系统，自主发现、验证、修复应用漏洞，内置渗透测试 agent 团队，支持对 web 应用、API 和云基础设施的持续自动化安全测试。",
+    "why": "1.17 亿美元融资宣布后开源策略引发大量关注，将安全渗透测试 agent 化是迄今最具说服力的垂直 agent 用例之一，大量企业安全团队正在跟进评估。",
+    "insight": "安全测试是 agent 自主执行效果最可量化的领域，漏洞有无比代码质量更容易客观验证，把 agent 用于安全 red-team 既是强价值主张也是天然的 benchmark 场景。"
+  }
+]
