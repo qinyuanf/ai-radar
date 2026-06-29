@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 201000,
+    "trend": "+6,500 stars/week，v0.17.0（6月19日）",
+    "what": "自改进 agent 框架：自动从经验创建 skills、跨 session 持久记忆、内置 cron 调度，支持 200+ 模型和 Telegram/Discord/Slack 等 IM 平台接入。",
+    "why": "v0.17.0（6 月 19 日）引入升级版 memory 系统并支持 Fable 5 等新模型，引发大批用户迁移和社区讨论，日增稳定在 900+，成为成熟 agent 框架中近期增量最大的项目之一。",
+    "insight": "从经验自动创建 skills 代表 agent 从 zero-shot 向 in-context 自适应进化的关键范式转变，是 memory-augmented agent 的实用先例。"
+  },
+  {
+    "rank": 2,
+    "repo": "garrytan/gstack",
+    "url": "https://github.com/garrytan/gstack",
+    "stars": 114118,
+    "trend": "+7,000 stars/week",
+    "what": "23 个 Claude Code slash-command skills，模拟 CEO、设计师、工程经理、QA、发版经理等完整角色，覆盖从立项到发布的完整开发冲刺流程。",
+    "why": "YC CEO Garry Tan 公开分享 810× 代码产出增长的具体数据和方法论，在 Hacker News、X 持续发酵，成为 skills-based multi-role agent 实际价值的标志性验证案例。",
+    "insight": "将专业角色知识编码为可复用 skill 比裸 prompt engineering 更稳定、更可审计，是规模化 agent 工程的核心设计模式。"
+  },
+  {
+    "rank": 3,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 38665,
+    "trend": "+6,915 stars/week（+18%），v1.5.0（6月11日）",
+    "what": "零 API 费用的统一 CLI 工具层，让 AI agent 读取 Twitter、Reddit、YouTube、Bilibili、LinkedIn、RSS 等平台内容，含多后端自动故障转移。",
+    "why": "v1.5.0（6 月 11 日）覆盖微信生态和小红书，正成为 open-internet agent 的事实标准接入层，本周被多个主流 agent 框架列为推荐集成工具。",
+    "insight": "互联网访问应作为 agent 的可组合能力层而非硬编码工具，统一接口+后端透明切换才是正确的抽象层级，避免与特定平台 API 强耦合。"
+  },
+  {
+    "rank": 4,
+    "repo": "addyosmani/agent-skills",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "stars": 65981,
+    "trend": "+5,073 stars/week（+8%），v0.6.2（6月11日）",
+    "what": "面向 coding agent 的 24 个生产级工程 skills，覆盖 Define→Plan→Build→Verify→Review→Ship 全生命周期，适配 Claude Code、Cursor、Gemini CLI 等主流平台。",
+    "why": "v0.6.2（6 月 11 日）新增 /webperf 和 /code-simplify，Chrome DevRel 负责人 Addy Osmani 持续更新引发 coding agent 最佳实践讨论，本周热度创新高。",
+    "insight": "agent skills 应内置反理性化表格强制执行质量门禁而非依赖模型自律，这一设计让 skill 质量可审计、可追溯。"
+  },
+  {
+    "rank": 5,
+    "repo": "asgeirtj/system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "stars": 45423,
+    "trend": "+2,681 stars/week",
+    "what": "收录 Claude Fable 5、Opus 4.8、GPT-5.5、Gemini 3.5 Flash、GitHub Copilot 等主流 AI 系统真实 system prompt 的公开存档集合。",
+    "why": "6 月 24 日刚新增 Fable 5 和 Opus 4.8 的完整 system prompt，因新一代模型发布再度引爆讨论，成为解析前沿模型设计哲学的第一手材料。",
+    "insight": "研究真实 system prompt 的 constraint 架构和 persona 结构是优化 agent 指令工程的最直接参考，尤其在设计 safety guardrail 时有据可循。"
+  }
+]
