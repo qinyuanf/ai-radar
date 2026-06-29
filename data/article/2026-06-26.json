@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Scaling Laws, Carefully",
+    "url": "https://lilianweng.github.io/posts/2026-06-24-scaling-laws/",
+    "date": "2026-06-24",
+    "source": "Lil'Log (Lilian Weng)",
+    "what": "系统梳理深度学习 scaling law 的数学基础，重新审视 Chinchilla 最优计算分配公式，讨论不同任务类型（推理、知识、代码）下模型规模 N 与数据规模 D 权衡的精确性与局限。",
+    "why": "以严谨数学视角校正业界对 scaling law 的直觉性误用，指出多数实验结论对不确定性过度自信，最优点因任务类型显著偏移。",
+    "insight": "在规划预训练计算分配时应从任务导向的 scaling 公式出发而非经验惯例，推理密集型任务的最优 N/D 比可能与通常假设差距显著。"
+  },
+  {
+    "rank": 2,
+    "title": "Introducing Computer Use in Gemini 3.5 Flash",
+    "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+    "date": "2026-06-24",
+    "source": "Google DeepMind Blog",
+    "what": "将 computer use 能力正式整合进 Gemini 3.5 Flash 生产模型，支持浏览器、移动端和桌面环境，内置针对 prompt injection 的对抗训练，并提供企业级用户确认机制。",
+    "why": "computer use 从独立实验模型变为主力推理模型的标配，标志该能力从研究阶段进入规模化生产部署。",
+    "insight": "将 anti-prompt-injection 训练和用户确认机制内置到模型层而非应用层，是 computer use agent 走向生产的必要路径。"
+  },
+  {
+    "rank": 3,
+    "title": "How Agents Are Transforming Work",
+    "url": "https://openai.com/index/how-agents-are-transforming-work",
+    "date": "2026-06-25",
+    "source": "OpenAI Blog",
+    "what": "披露 OpenAI 内部 agent 采用数据：Codex 用量 56 倍增长（2025年11月至2026年6月），非开发者用量增长 137-189 倍，agent 占内部员工输出 token 的 85%，企业营收达总营收 40%。",
+    "why": "首次以真实内部数据量化「agent 成为主要 AI 交互界面」的转变，打破 agent 仅限开发者使用的认知，提供生产部署规模的有力参考。",
+    "insight": "agent 扩散的瓶颈正从「能否使用」转向「如何验证和信任」，eval 和 audit 基础设施的优先级随之大幅提升。"
+  },
+  {
+    "rank": 4,
+    "title": "[AINews] It's Meta-Harness Summer",
+    "url": "https://www.latent.space/p/ainews-its-meta-harness-summer",
+    "date": "2026-06-25",
+    "source": "Latent Space",
+    "what": "分析「meta harness」浪潮：Databricks Omnigent、Vercel Eve、Anthropic Slack integration 等产品正在被数千家 AI 原生公司独立重新发明，目标是将不同 coding/knowledge agent 纳入统一的安全、可移植、可扩展架构。",
+    "why": "将业界分散的 harness 工程实践命名为「Meta-Harness Summer」，指出下一个 MCP 量级的开放协议正在 harness 层形成。",
+    "insight": "与其为每个 agent 自建 harness，不如押注开放 meta-harness 协议以避免重复造轮子和供应商锁定，这将是继 MCP 之后 agent 基础设施的下一个关键层。"
+  },
+  {
+    "rank": 5,
+    "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+    "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
+    "date": "2026-06-24",
+    "source": "Google Research Blog",
+    "what": "发现 LLM 的推理步骤（CoT/thinking）能解锁模型在直接问答时无法激活的参数化知识，reasoning 过程充当「知识检索触发器」而非仅仅规划步骤。",
+    "why": "揭示 thinking 对知识提取的增益机制，为推理模型在知识密集任务上显著超越 instruct 模型提供了可信的机理解释。",
+    "insight": "对需要深层知识调用的 RAG 或 agent 任务，在 retrieval 之前给模型明确的「思考空间」可能显著提升参数化知识的召回质量。"
+  },
+  {
+    "rank": 6,
+    "title": "Which Tokens Does a Hybrid Model Predict Better?",
+    "url": "https://huggingface.co/blog/allenai/hybrid-token-prediction",
+    "date": "2026-06-25",
+    "source": "Hugging Face Blog (AI2)",
+    "what": "在数据、分词器、训练配方一致的控制条件下，细粒度比较 OLMo 3（纯 Transformer）与 OLMo Hybrid（SSM+Attention）在 token 类型级别的预测差异，量化 hybrid 架构优势的实际来源。",
+    "why": "首次将「hybrid 模型更好」从 benchmark 数字落实到 token 级机制分析，区分架构固有优势与训练差异的贡献。",
+    "insight": "架构选型时不应只看整体 benchmark，token 级优势分析能揭示特定任务（长程依赖 vs 局部模式）上的真实权衡，指导在 agent 系统中选择合适的底层模型。"
+  },
+  {
+    "rank": 7,
+    "title": "AI and Liability",
+    "url": "https://simonwillison.net/2026/Jun/25/ai-and-liability/",
+    "date": "2026-06-25",
+    "source": "Simon Willison's Weblog",
+    "what": "评述德国法院裁定 Google 对 AI Overview 错误负责的判决，引用 Bruce Schneier 观点：AI agent 是部署方的代理人，其法律责任应与雇用人类执行同等任务对等。",
+    "why": "将「谁为 AI 决策负责」从抽象讨论具体化为已有司法判决，标志 AI 责任追究进入实质阶段。",
+    "insight": "构建 agent 系统时应在设计阶段明确哪些决策需要人工确认，并留存完整可审计的 trace，这既是工程最佳实践也正在成为法律义务。"
+  }
+]
