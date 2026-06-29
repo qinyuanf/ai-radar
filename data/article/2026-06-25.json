@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
+    "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
+    "date": "2026-06-23",
+    "source": "HuggingFace Blog / IBM Research",
+    "what": "展示了 24 个基于 CUGA 轻量 harness 的可运行 Agent 应用,覆盖多类真实场景",
+    "why": "提供无重框架锁定的具体 Agent 构建模式,比框架文档更直接",
+    "insight": "轻量 harness 配合具体示例比重框架更快落地,优先参考可运行示例而非概念文档"
+  },
+  {
+    "rank": 2,
+    "title": "Insights on Indirect Prompt Injection (Gray Swan)",
+    "url": "https://www.latent.space/p/gray-swan",
+    "date": "2026-06-22",
+    "source": "Latent Space",
+    "what": "Gray Swan CEO Matt Fredrikson 与 OpenAI 董事 Zico Kolter 深度解析 AI 安全为何不是「加了 AI 的网络安全」,重点分析 Agentic 间接注入",
+    "why": "系统阐述了 Agentic 系统中间接注入攻击与经典提示注入的本质区别",
+    "insight": "Agent 每经过一个工具边界就产生一个新的信任边界,间接注入的防御必须在 harness 层系统性实现"
+  },
+  {
+    "rank": 3,
+    "title": "Codex-maxxing for long-running work",
+    "url": "https://openai.com/index/codex-maxxing-long-running-work",
+    "date": "2026-06-22",
+    "source": "OpenAI Blog",
+    "what": "OpenAI 官方梳理了利用 Codex Agent 高效完成长期多步编码项目的模式与技巧",
+    "why": "首个官方指南,系统化长时运行 Coding Agent 的任务分解与检查点策略",
+    "insight": "长运行编码 Agent 需要显式的任务分解、进度持久化和错误恢复机制,而非单轮超长上下文"
+  },
+  {
+    "rank": 4,
+    "title": "Prompt Injection as Role Confusion",
+    "url": "https://role-confusion.github.io/",
+    "date": "2026-06-24",
+    "source": "ICML 2026 / role-confusion.github.io",
+    "what": "ICML 2026 录用论文:提示注入攻击由 LLM 无法区分消息角色(role confusion)驱动,可用于解释注入成功的机制条件",
+    "why": "首次给出提示注入的机制性解释,可预测攻击何时成功并指导防御设计",
+    "insight": "系统/用户/工具消息的角色边界是注入攻击的核心攻击面,角色混淆理论为 Agent harness 的防御设计提供了理论基础"
+  },
+  {
+    "rank": 5,
+    "title": "NVIDIA Agent Toolkit: Open Models, Tools, Skills, Secure Runtime for AI Agents",
+    "url": "https://blogs.nvidia.com/blog/nvidia-agent-toolkit-open-models-tools-skills-secure-runtime-ai-agents/",
+    "date": "2026-06-24",
+    "source": "NVIDIA Blog",
+    "what": "NVIDIA 发布开放模块化 Agent 工具包,含模型、工具、技能库和安全运行时,面向企业级 Agent 部署",
+    "why": "提供标准化、可组合的企业 Agent 运行时架构,补充了安全隔离层",
+    "insight": "企业 Agent 落地需要专用安全运行时而非裸 API,该工具包展示了行业向标准化 Agent runtime 演进的方向"
+  },
+  {
+    "rank": 6,
+    "title": "Introducing Claude Tag",
+    "url": "https://www.anthropic.com/news/introducing-claude-tag",
+    "date": "2026-06-24",
+    "source": "Anthropic",
+    "what": "Anthropic 推出 Claude Tag,支持在 Slack 频道中 @Claude 并赋予其工具、数据和代码库访问权限",
+    "why": "首个原生集成到协作工具的多渠道 Agent 部署方案,Agent 直接在团队工作流中行动",
+    "insight": "协作原生的 Agent 部署改变了人机交互模式,团队工作流嵌入是 Agent 产品化的重要路径"
+  },
+  {
+    "rank": 7,
+    "title": "Mistral OCR 4: SOTA OCR for Document Intelligence",
+    "url": "https://mistral.ai/news/ocr-4/",
+    "date": "2026-06-24",
+    "source": "Mistral AI",
+    "what": "Mistral 发布 OCR 4,支持 170 种语言、带边界框的布局保留 OCR,提供自托管部署选项",
+    "why": "当前最强文档 OCR 能力,可本地化部署且保留结构信息",
+    "insight": "高质量文档解析是文档处理 Agent 流水线的上游瓶颈,自托管 OCR 降低了敏感文档处理的合规风险"
+  },
+  {
+    "rank": 8,
+    "title": "OpenAI and Broadcom unveil LLM-optimized inference chip (Jalapeño)",
+    "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+    "date": "2026-06-24",
+    "source": "OpenAI",
+    "what": "OpenAI 与 Broadcom 联合发布专为 LLM 推理优化的定制芯片 Jalapeño",
+    "why": "LLM 推理专用芯片是降低 Agent 运行成本和延迟的底层路径",
+    "insight": "推理芯片专项优化将直接改变 Agent 服务的成本结构,长期影响模型选型和规模化部署策略"
+  }
+]
