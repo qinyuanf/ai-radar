@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "microsoft/markitdown",
+    "url": "https://github.com/microsoft/markitdown",
+    "stars": 160000,
+    "trend": "上周 +15015，2900+ 个项目依赖，v0.1.x 2026-05 发布",
+    "what": "Python 工具库，将 PDF/Word/Excel/PPT/图片/音频/YouTube URL 等几乎所有格式转换为 Markdown，专为 LLM 消费优化",
+    "why": "RAG pipeline 文档预处理的事实标准，v2 支持插件架构后被更多 agent 框架集成，agent 内容摄取场景爆发带动新一轮 +15k 关注",
+    "insight": "context engineering 的第一步是把异构数据规范化为 LLM 友好格式，markitdown 是这一层最成熟的开源实现"
+  },
+  {
+    "rank": 2,
+    "repo": "asgeirtj/system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "stars": 46400,
+    "trend": "本周 +2864，最新更新 2026-06-27（Claude Fable 5/GPT-5.5/Gemini 3.5）",
+    "what": "持续收集 Anthropic/OpenAI/Google/xAI/Microsoft 主要 AI 产品 system prompt，涵盖 Claude Code、Codex、Gemini CLI 等 coding agent",
+    "why": "Washington Post 报道引爆关注，28+ AI 工具 system prompt 公开对比库，对 prompt 工程师和安全研究者实用价值高",
+    "insight": "分析各厂 coding agent 的 system prompt 结构差异可直接学到安全边界划定、工具调用规范、上下文分配等工程决策"
+  },
+  {
+    "rank": 3,
+    "repo": "lfnovo/open-notebook",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "stars": 33500,
+    "trend": "v1.10.0 发布于 2026-06-18，38 次发布，797 commits，87 个 open issues",
+    "what": "完全本地、多模型、开源的 NotebookLM 替代品，支持 PDF/视频/音频/网页上传、多说话人播客生成、跨内容智能搜索",
+    "why": "Google 限制部分地区访问后需求爆发，v1.10.0 改进音频生成并支持 Ollama 本地模型，接入 18+ AI 提供商包括完全离线运行",
+    "insight": "deep research agent 的用户侧接口不止是 chat，notebook 式「汇聚材料→AI 提炼→播客输出」工作流范式值得在 agent 产品中复用"
+  },
+  {
+    "rank": 4,
+    "repo": "supermemoryai/supermemory",
+    "url": "https://github.com/supermemoryai/supermemory",
+    "stars": 27700,
+    "trend": "上周 +2992，supermemory-server v0.0.3 发布于 2026-06-13，LongMemEval/LoCoMo/ConvoMem 三榜第一",
+    "what": "AI 记忆与上下文层，自动从对话中提取事实、维护用户画像、处理知识更新与矛盾消解，以 MCP server/浏览器插件/本地二进制多形式提供",
+    "why": "三个主流 memory 基准夺冠后引发社区关注，v0.0.3 服务端简化自托管，成为 coding agent persistent memory 的热门选择",
+    "insight": "agent memory 的核心难点不是存储而是「何时注入何种记忆」，supermemory 的矛盾消解机制给出了一个工程可参考的答案"
+  },
+  {
+    "rank": 5,
+    "repo": "JCodesMore/ai-website-cloner-template",
+    "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+    "stars": 21400,
+    "trend": "本周 +3906，支持 Claude Code/Copilot/Cursor 等 11+ agent 平台",
+    "what": "Next.js 模板实现五阶段 agentic pipeline（侦察→基础架构→组件规格→并行构建→组装），用 AI coding agent 将现有网站逆向为现代代码库",
+    "why": "将多 coding agent 的 parallel 构建与质量 oracle 验证结合的具体实现，本周因技术博文引用再次爆量 +3.9k",
+    "insight": "website cloner 的五阶段 pipeline 是通用「逆向工程→多 agent 并行实现→组装验证」模式，可迁移到代码迁移和重构场景"
+  }
+]
