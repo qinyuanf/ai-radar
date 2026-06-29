@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Using Local Coding Agents",
+    "url": "https://magazine.sebastianraschka.com/p/using-local-coding-agents",
+    "date": "2026-06-27",
+    "source": "Sebastian Raschka Newsletter",
+    "what": "深度评测用开源权重模型(如 Qwen、Llama)在本地 coding harness 中替代 Claude Code / Codex 订阅的实际效果,覆盖延迟、成本和代码质量对比。",
+    "why": "首篇从工程师视角系统比较本地 vs. 云端 coding agent 的实用评测,数据来自实际工程任务而非玩具 benchmark。",
+    "insight": "对成本敏感或数据保密的团队,本地 coding agent 已是可行选项,但 harness 设计(工具集成、上下文管理)的质量差距比模型本身更关键。"
+  },
+  {
+    "rank": 2,
+    "title": "Previewing GPT-5.6 Sol: a next-generation model",
+    "url": "https://openai.com/index/previewing-gpt-5-6-sol",
+    "date": "2026-06-26",
+    "source": "OpenAI Blog",
+    "what": "OpenAI 发布 GPT-5.6 系列(Sol 旗舰/Terra 均衡/Luna 快速),引入 max reasoning effort 和 ultra mode(内置子 agent 调度),限制预览向约 20 家政府批准机构开放。",
+    "why": "Sol 首次将多级子 agent 编排内置为模型原生能力而非外部框架,标志着推理模型与 agent runtime 的边界正式融合。",
+    "insight": "模型侧内置 agent 调度意味着应用层不再需要手动管理 subagent fan-out,但也意味着对推理成本的控制粒度将从 token 级下移到 task 级,计费模型会变。"
+  },
+  {
+    "rank": 3,
+    "title": "What happened after 2,000 people tried to hack my AI assistant",
+    "url": "https://www.fernandoi.cl/posts/hackmyclaw/",
+    "date": "2026-06-26",
+    "source": "fernandoi.cl (via Simon Willison)",
+    "what": "作者公开邀请 2000+ 人对其法律 AI 助手发起 prompt injection 攻击,记录攻击类型分布、成功率及最有效的防御模式。",
+    "why": "真实规模对抗测试数据稀缺;本文提供了最常见的 7 类注入模式及其成功率,比学术论文更贴近生产环境。",
+    "insight": "任何面向用户的 agent 都应在上线前主动组织红队测试,本文的攻击分类可直接用作 agent security eval 的测试用例清单。"
+  },
+  {
+    "rank": 4,
+    "title": "Incident Report: CVE-2026-LGTM",
+    "url": "https://nesbitt.io/2026/06/26/incident-report-cve-2026-lgtm.html",
+    "date": "2026-06-26",
+    "source": "nesbitt.io (via Simon Willison)",
+    "what": "以事故报告格式描述一个假想但极具教育性的场景:AI code review bot 被恶意 PR 注入指令后自动批准了包含后门的代码。",
+    "why": "以叙事形式将 prompt injection + 自动化 CI 权限两种已知风险组合成具体攻击链,比抽象警告更能促使工程师采取行动。",
+    "insight": "凡是让 agent 拥有'批准/合并/部署'等不可逆权限的系统,必须在 harness 层强制加入人工确认步骤,不能仅依赖模型的内容判断。"
+  },
+  {
+    "rank": 5,
+    "title": "[AINews] It's Meta-Harness Summer",
+    "url": "https://www.latent.space/p/ainews-its-meta-harness-summer",
+    "date": "2026-06-25",
+    "source": "Latent Space",
+    "what": "梳理了本周密集发布的五款 meta-harness 产品(Databricks Omnigent、Vercel HarnessAgent、Zed ACP、Cloudflare Flue、Conductor),定义 meta-harness 为统一管理多个 agent harness 的控制层。",
+    "why": "将这一趋势命名为 Meta-Harness Summer,类比 Kubernetes 之于容器:模型商品化后,竞争已上移至 harness 层,再上移至 harness-of-harnesses 层。",
+    "insight": "构建 agent 基础设施时应预留 meta-harness 接入点,避免被单一 harness 锁定;Kubernetes 的经验表明,控制平面标准化后迁移成本极高。"
+  },
+  {
+    "rank": 6,
+    "title": "How agents are transforming work",
+    "url": "https://openai.com/index/how-agents-are-transforming-work",
+    "date": "2026-06-25",
+    "source": "OpenAI Blog",
+    "what": "公布 OpenAI 内部 Codex 使用数据:自 2025 年 11 月以来,工程团队中位输出 token 量增长 27 倍,法律团队增长 13 倍,研究团队增长 56 倍。",
+    "why": "罕见的真实生产级 agent 规模数据,证明 agent 输出规模已达到传统人工不可比拟的量级,且不同职能部门增速差异显著。",
+    "insight": "研究型任务(56x)比执行型任务(13x)增速更快,说明 agent 在开放式探索场景的价值远超结构化流程自动化,应优先在知识探索类工作流中引入 agent。"
+  },
+  {
+    "rank": 7,
+    "title": "Introducing computer use in Gemini 3.5 Flash",
+    "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+    "date": "2026-06-24",
+    "source": "Google DeepMind Blog",
+    "what": "将 computer use 能力原生集成进 Gemini 3.5 Flash(而非单独模型),通过针对性对抗训练缓解 prompt injection 攻击,并提供企业级安全选项。",
+    "why": "将 computer use 从独立模型变为基础模型能力,意味着速度和成本将大幅下降,同时首次在 Flash 级模型上提供生产可用的安全防护。",
+    "insight": "Computer use 进入 Flash 级模型后,成本障碍消除,集成门槛将大幅降低;应开始评估哪些 desktop/browser 操作流程可在未来 3-6 个月内通过 computer use agent 自动化。"
+  }
+]
