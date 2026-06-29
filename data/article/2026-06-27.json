@@ -15,8 +15,8 @@
     "url": "https://www.latent.space/p/ainews-its-meta-harness-summer",
     "date": "2026-06-25",
     "source": "Latent Space",
-    "what": "记录了同一周内五个不相关公司（Databricks Omnigent、Zed ACP、Vercel HarnessAgent、Cloudflare Flue、Conductor）同时发布"元 harness"产品的现象，并分析其背后的工程趋势：模型商品化后，harness 层成为竞争焦点。",
-    "why": "首次将"元 harness 夏天"作为技术浪潮命名，清晰定位了 2026 年 agent 技术栈的演进方向：从单 agent harness 到多 agent 统一控制层。",
+    "what": "记录了同一周内五个不相关公司（Databricks Omnigent、Zed ACP、Vercel HarnessAgent、Cloudflare Flue、Conductor）同时发布元 harness产品的现象，并分析其背后的工程趋势：模型商品化后，harness 层成为竞争焦点。",
+    "why": "首次将元 harness 夏天作为技术浪潮命名，清晰定位了 2026 年 agent 技术栈的演进方向：从单 agent harness 到多 agent 统一控制层。",
     "insight": "现在构建 agent 系统的核心竞争力已从模型选型转移到 harness 设计：上下文管理、工具编排、权限与审计。"
   },
   {
@@ -25,7 +25,7 @@
     "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
     "date": "2026-06-26",
     "source": "OpenAI Blog",
-    "what": "预览 GPT-5.6 三模型系列（Sol/Terra/Luna），Sol 在 Terminal-Bench 2.1 上刷新 SoTA；引入"ultra 模式"——单请求内自动编排子 agent 以加速复杂任务；定价 $5/$30 per M tokens。",
+    "what": "预览 GPT-5.6 三模型系列（Sol/Terra/Luna），Sol 在 Terminal-Bench 2.1 上刷新 SoTA；引入ultra 模式——单请求内自动编排子 agent 以加速复杂任务；定价 $5/$30 per M tokens。",
     "why": "ultra 模式将多 agent 编排内化为模型特性，标志着 agent orchestration 从外部 harness 向模型原生能力的迁移。",
     "insight": "评估新模型时需区分 ultra 模式（自动 multi-agent）与单模型能力，否则 benchmark 数字不具可比性。"
   },
@@ -65,7 +65,7 @@
     "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
     "date": "2026-06-24",
     "source": "Google Research Blog",
-    "what": "Google Research 发现，推理模型在扩展思考过程中会主动激活参数中存储的知识，而标准提示无法触达这些知识——即"推理解锁记忆"现象。",
+    "what": "Google Research 发现，推理模型在扩展思考过程中会主动激活参数中存储的知识，而标准提示无法触达这些知识——即推理解锁记忆现象。",
     "why": "为推理模型（thinking models）在知识密集任务中的超预期表现提供了机制性解释，改变了对 RAG vs 参数知识的权衡认知。",
     "insight": "对于知识密集型 agent 任务，给模型留出推理空间可能比增加 RAG 检索更有效，值得在具体场景中对比测试。"
   }
