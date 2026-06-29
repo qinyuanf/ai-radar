@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "[AINews] OpenAI GPT-5.6 Sol / Terra / Luna — restricted to trusted partners",
+    "url": "https://www.latent.space/p/ainews-openai-gpt-56-sol-terra-luna",
+    "date": "2026-06-27",
+    "source": "Latent Space (swyx & Alessio)",
+    "what": "本周 AI 工程情报汇总：OpenAI 向约 20 家政府审批合作方预览 GPT-5.6 三档模型（Sol/Terra/Luna），同期 Databricks Omnigent、Zed ACP、Vercel HarnessAgent、Cloudflare Flue、Conductor 等元框架（meta-harness）在同一周集中发布，标志 meta-harness 成为独立产品层。",
+    "why": "首次将「coding agent 之上的元框架层」命名并聚焦，清晰记录 meta-harness summer 的产品地图。",
+    "insight": "meta-harness 层正在成为工程师的新竞争区域，自建 agent 系统需要预留与该层对接的接口。"
+  },
+  {
+    "rank": 2,
+    "title": "Anthropic Economic Index report: Cadences",
+    "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
+    "date": "2026-06-26",
+    "source": "Anthropic Research",
+    "what": "9700 名受访者 + Claude 使用数据联合分析：发现工作相关请求在周末下降、早晨看新闻、凌晨 5 点睡眠建议峰值、报税季激增等时间节律，并发现高自动化场景的用户对职业前景更乐观而非更悲观。",
+    "why": "首个将 AI 使用时间节律与真实世界事件对齐的大规模研究，反驳了「自动化必然引发就业恐慌」的直觉。",
+    "insight": "设计 agent 调度策略时应根据职业类型和时间节律差异化配置可用性与预取上下文。"
+  },
+  {
+    "rank": 3,
+    "title": "How Claude Code is used in practice",
+    "url": "https://www.anthropic.com/research/claude-code-expertise",
+    "date": "2026-06-16",
+    "source": "Anthropic Research",
+    "what": "对约 40 万次 Claude Code 会话进行隐私保护分析：用户主导 70% 的规划决策，Claude 主导 80% 的执行决策；专家用户的会话成功率（28-33%）明显高于新手（15%）；Claude 在同一用户的 follow-up 指令中承担更多工作。",
+    "why": "首次大规模量化 agentic coding 中人机决策分工比例，用真实数据回答「人应该介入哪个层次」。",
+    "insight": "提升 agent 成功率的关键不是 Claude 能力本身，而是用户能否在正确抽象层（规划层）介入。"
+  },
+  {
+    "rank": 4,
+    "title": "What happened after 2,000 people tried to hack my AI assistant",
+    "url": "https://simonwillison.net/2026/Jun/26/hack-my-ai-assistant/",
+    "date": "2026-06-26",
+    "source": "Simon Willison",
+    "what": "Simon Willison 公开让 2000 名参与者对自己的 AI 助手进行对抗性攻击，汇报攻击成功模式、常见漏洞类型和防御有效性，涵盖提示注入、越权指令、身份伪装等真实攻击向量。",
+    "why": "首个由作者公开邀请对抗性测试并系统汇报结果的生产 AI 助手安全研究。",
+    "insight": "生产 AI 助手的安全边界测试应在上线前进行「公开对抗性红队」，内部测试远不足以覆盖真实攻击面。"
+  },
+  {
+    "rank": 5,
+    "title": "Accelerating Gemini Nano models on Pixel with frozen Multi-Token Prediction",
+    "url": "https://research.google/blog/accelerating-gemini-nano-models-on-pixel-with-frozen-multi-token-prediction/",
+    "date": "2026-06-26",
+    "source": "Google Research",
+    "what": "在 Pixel 9 端侧部署中，将多 token 预测（MTP）头单独训练后冻结，推理时无需额外训练即可实现 2 倍速度提升且质量无损失。",
+    "why": "冻结 MTP 头方案打破了「多 token 预测需要联合训练才有效」的假设，开辟端侧低成本加速路径。",
+    "insight": "端侧 agent 的推理延迟可通过后置冻结 MTP 头实现一半压缩，无需重新训练基础模型。"
+  },
+  {
+    "rank": 6,
+    "title": "Run a vLLM Server on HF Jobs in One Command",
+    "url": "https://huggingface.co/blog/vllm-jobs",
+    "date": "2026-06-26",
+    "source": "Hugging Face Blog",
+    "what": "`hf jobs run` 命令集成 vLLM Docker 镜像，支持 GPU flavor 选择和端口暴露，一条命令启动 OpenAI 兼容推理服务，适合 eval、批量推理和快速测试场景，a10g-large 实例 $1.50/小时。",
+    "why": "将 vLLM 部署从多步 DevOps 压缩到单行命令，降低 eval 基础设施的搭建门槛。",
+    "insight": "快速启停的按需推理服务是 agent eval 迭代速度的关键基础设施，这个方案值得集成进 CI 流程。"
+  },
+  {
+    "rank": 7,
+    "title": "Incident Report: CVE-2026-LGTM",
+    "url": "https://simonwillison.net/2026/Jun/26/incident-report/",
+    "date": "2026-06-26",
+    "source": "Simon Willison",
+    "what": "分析 CVE-2026-LGTM 安全事件：AI 辅助代码审查工具系统性地批准了含漏洞的代码，揭示 AI 代码审查在特定模式下的盲点以及过度依赖 AI 审查的机构风险。",
+    "why": "首次将 AI 代码审查失效纳入 CVE 级安全事件，为「AI 审查能力边界」提供真实案例。",
+    "insight": "AI 代码审查 agent 需要针对高危模式（如权限提升、隐式信任）设置独立的人工复查门控。"
+  }
+]
