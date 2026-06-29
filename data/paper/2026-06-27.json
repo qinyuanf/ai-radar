@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+    "url": "https://arxiv.org/abs/2606.26300",
+    "date": "2026-06-26",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "系统性分析了 coding agent 奖励函数的盲点：随着模型生成能力增强，每类验证器（测试、静态分析、执行沙箱）都存在无法覆盖的边角情形，验证难度正在超越生成难度。",
+    "why": "首次将"验证视界"（Verification Horizon）作为独立问题提出，打破"验证比生成容易"的经典假设，对 RL-for-coding 研究方向有重大影响。",
+    "insight": "设计 agent RL 流水线时，reward signal 的覆盖率和可靠性比模型能力更值得投入，盲目堆叠测试验证器无法解决根本问题。"
+  },
+  {
+    "rank": 2,
+    "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
+    "url": "https://arxiv.org/abs/2606.26356",
+    "date": "2026-06-26",
+    "source": "arxiv cs.AI",
+    "what": "将 prompt 多模块组合中出现的"修改一个模块、悄然改变其他模块行为"这一现象形式化为"组合行为泄漏"（CBL），并追踪根因至 Transformer 自注意力的架构非隔离性。",
+    "why": "首次对 prompt 组合系统中的跨模块干扰给出理论框架，区别于过去笼统讨论 prompt 冲突的工程经验。",
+    "insight": "多 agent / 多系统 prompt 架构中，prompt 模块之间没有真正的隔离——任何模块改动都需要做全局回归测试。"
+  },
+  {
+    "rank": 3,
+    "title": "Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It",
+    "url": "https://arxiv.org/abs/2606.26027",
+    "date": "2026-06-26",
+    "source": "arxiv cs.AI / HuggingFace Papers",
+    "what": "实验记录了多步工具调用 RL 训练中的"灾难性崩溃"（工具调用结构突然失效），分析根因并证明引入监督信号（密集中间奖励）可稳定训练。",
+    "why": "直接解释了工具调用 agent 用纯 RL 训练时的常见训练失稳现象，提出实用修复方案。",
+    "insight": "为 agent 添加 RL 训练时，稀疏末轨奖励几乎必然失稳，需要在 harness 层设计密集中间监督信号。"
+  },
+  {
+    "rank": 4,
+    "title": "OPID: On-Policy Skill Distillation for Agentic Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2606.26790",
+    "date": "2026-06-25",
+    "source": "HuggingFace Papers",
+    "what": "提出在 agent RL 训练中，用 on-policy 自蒸馏提供 token 级密集监督，而无需外部技能记忆或特权上下文，解决稀疏轨迹奖励指导不足的问题。",
+    "why": "在不依赖人工标注或外部技能库的前提下，为 agentic RL 引入密集监督信号，是 self-distillation 方向的新实践。",
+    "insight": "把 on-policy 蒸馏集成进 agent 训练循环，可作为替代复杂 reward shaping 的轻量方案。"
+  },
+  {
+    "rank": 5,
+    "title": "GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2606.24551",
+    "date": "2026-06-25",
+    "source": "HuggingFace Papers",
+    "what": "构建了跨 18 个应用、440 个桌面任务的匹配基准，将 GUI（纯截图）与 CLI（技能调用）两类 computer-use agent 在相同条件下对比，量化了各自的执行瓶颈。",
+    "why": "过去 GUI/CLI 对比因任务集和评价方式不同而无法公平比较；本文首次提供受控的同规格对比数据。",
+    "insight": "为 computer-use agent 选型提供了量化依据：纯截图方案和技能调用方案的瓶颈不同，需根据任务类型选择。"
+  },
+  {
+    "rank": 6,
+    "title": "Life After Benchmark Saturation: A Case Study of CORE-Bench",
+    "url": "https://arxiv.org/abs/2606.26158",
+    "date": "2026-06-26",
+    "source": "arxiv cs.AI",
+    "what": "以 CORE-Bench 为例，指出准确率饱和后基准不应简单被淘汰，而应研究六个额外维度：构造效度漏洞（捷径）、分布外泛化、效率、可靠性以及模型与 scaffold 的相对贡献。",
+    "why": "对"准确率饱和即退役基准"的主流做法提出系统性批判，提供了更全面的 agent 评估框架。",
+    "insight": "eval 设计时不能只看准确率——scaffold 贡献度、效率与稳定性是衡量 agent 真实能力的关键维度。"
+  },
+  {
+    "rank": 7,
+    "title": "Detecting and Controlling Sycophancy with Cascading Linear Features",
+    "url": "https://arxiv.org/abs/2606.26155",
+    "date": "2026-06-26",
+    "source": "arxiv cs.AI",
+    "what": "通过对比样本提取激活空间中的线性"奉承特征"，实现了对模型谄媚行为的检测与激活引导控制，并揭示了奉承特征与拒绝/人格特征之间的级联依赖关系。",
+    "why": "将机械可解释性方法直接用于对齐控制，是 sycophancy 问题首个基于特征工程的可操控解决方案。",
+    "insight": "若要在 agent 部署中减少奉承输出，激活引导比 RLHF 微调更精准且无需重新训练。"
+  }
+]
