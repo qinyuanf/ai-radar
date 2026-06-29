@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "NVIDIA/SkillSpector",
+    "url": "https://github.com/NVIDIA/SkillSpector",
+    "stars": 9876,
+    "trend": "+2,849 stars/week（+29%）",
+    "what": "对 AI agent skills 包做两阶段漏洞扫描：静态 AST 分析快速标记，可选 LLM 语义层降低误报，覆盖提示注入、数据外泄等 65 类漏洞模式。",
+    "why": "基于 42,447 个 skills 的实证研究显示 26.1% 含漏洞、5.2% 疑似恶意，agent skill 供应链安全话题本周集中爆发，大量 agent 平台开始引用此工具做入库审计。",
+    "insight": "skills/tools 已成为新的供应链攻击面，在 agent 平台设计中应内置 skill 审计流水线而非依赖人工审查。"
+  },
+  {
+    "rank": 2,
+    "repo": "stablyai/orca",
+    "url": "https://github.com/stablyai/orca",
+    "stars": 6330,
+    "trend": "+1,216 stars/week（+19%），v1.4.94（6月23日）",
+    "what": "在独立 git worktree 里并行调度 30+ 种 coding agent（Claude Code、Codex、OpenCode 等），提供桌面+移动统一控制面板和 SSH 远程 worktree 支持。",
+    "why": "v1.4.94 于 6 月 23 日刚发布，以 ADE（Agent Development Environment）定位切入替代传统 IDE 的新赛道，每日发版节奏驱动持续上涨。",
+    "insight": "multi-agent 并行开发时 worktree 隔离是防止 agent 互相污染的核心基础设施，这一设计值得直接借鉴到自建 orchestration 中。"
+  },
+  {
+    "rank": 3,
+    "repo": "revfactory/harness",
+    "url": "https://github.com/revfactory/harness",
+    "stars": 7452,
+    "trend": "+900 stars/week（+12%）",
+    "what": "Claude Code 插件，根据项目描述自动生成领域专属 agent 团队及配套 skills，内置 Pipeline、Fan-out、专家池等 6 种协作拓扑模式。",
+    "why": "在 agent 团队编排逐渐成为工程标配的节点上，填补了从描述到 multi-agent 拓扑的最后一公里，小样本实验声称代码质量提升 60%，Apache 2.0 开源。",
+    "insight": "配置驱动生成 multi-agent topology 是降低系统复杂度、加速落地的有效抽象层，agent 团队架构是高度可抽象的工程 pattern。"
+  },
+  {
+    "rank": 4,
+    "repo": "Kilo-Org/kilocode",
+    "url": "https://github.com/Kilo-Org/kilocode",
+    "stars": 24231,
+    "trend": "+4,206 stars/week（+17%），v7.3.54（6月23日）",
+    "what": "跨 VS Code、JetBrains 和 CLI 的全能 coding agent，支持 500+ 模型动态切换、并行多 agent、CI/CD 无人值守模式（--auto 标志）。",
+    "why": "v7.3.54 于 6 月 23 日发布，v7.x 重架构后性能大幅提升推动新一轮增长，以多 IDE+多模型+多 agent 并行区别于单一绑定策略。",
+    "insight": "coding agent 平台竞争已从能否运行进入并行度、模型数量、延迟的工程化指标赛道，agent 编排效率成为核心差异点。"
+  },
+  {
+    "rank": 5,
+    "repo": "JCodesMore/ai-website-cloner-template",
+    "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+    "stars": 18588,
+    "trend": "+5,800 stars/week（+31%）",
+    "what": "5 步 agentic pipeline：截图→提取设计 token→生成组件规格→git worktree 并行构建→可视化对比组装，将任意 URL 反向工程为 Next.js 代码仓库。",
+    "why": "成为 multi-agent + parallel worktree 典型实用案例的参考范本，本周被大量讨论 agent 工程模式的博客和视频引用，引发新一轮病毒式传播。",
+    "insight": "worktree 并行构建+视觉验证的反向工程 pipeline 模式可迁移到任何需要多模块并行生成的 agent 场景，是 fan-out 编排的具体应用示范。"
+  }
+]
