@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Build Real Agentic Apps Using CUGA: Two Dozen Working Examples on a Lightweight Harness",
+    "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
+    "date": "2026-06-23",
+    "source": "Hugging Face Blog (IBM Research)",
+    "what": "IBM Research 开源 CUGA，单一接口 CugaAgent + await agent.invoke()，内置长程规划、MCP/OpenAPI/LangChain 工具、代码沙箱和六类治理策略（intent guard/tool approval/playbook 等），附 24 个单文件示例。",
+    "why": "把 Agent 编排治理策略（与代码一起版本化在 .cuga 目录）首次纳入 harness 设计，填补从 PoC 到可审计生产部署的空白。",
+    "insight": "评估 Agent harness 时，治理策略的可版本化程度往往比性能更决定能否上生产；CUGA 的声明式 policy 层值得参考。"
+  },
+  {
+    "rank": 2,
+    "title": "Daybreak: Tools for Securing Every Organization in the World",
+    "url": "https://openai.com/index/daybreak-securing-the-world/",
+    "date": "2026-06-22",
+    "source": "OpenAI Blog",
+    "what": "OpenAI 发布 GPT-5.5-Cyber（CyberGym 85.6%、ExploitGym 39.5%），配套 Codex Security 插件和 Patch the Planet 计划，全流程自动完成漏洞发现→验证→补丁生成→修复证明。",
+    "why": "首个把安全漏洞修复端到端自动化、并规模交付给 open-source maintainer 的计划，将 AI 安全能力从受控研究变为主动防御工具。",
+    "insight": "「发现→验证→修复→证据」的 security Agent 设计模式可直接迁移到内部代码审查 pipeline，提升 Agent 辅助安全工程的可信度。"
+  },
+  {
+    "rank": 3,
+    "title": "Demystifying Loop Engineering: Get More from AI Agents, Avoid Loopmaxxing",
+    "url": "https://bdtechtalks.com/2026/06/22/ai-loop-engineering/",
+    "date": "2026-06-22",
+    "source": "TechTalks",
+    "what": "系统界定 loop engineering（设计 Agent 两次工具调用之间的行为、自检时机和终止条件），追溯 ReAct→AutoGPT→/goal 谱系，警告盲目 loop 嵌套（loopmaxxing）的风险，提出 verifier 是 loop 瓶颈。",
+    "why": "将 2026 年社区热词 loop engineering 首次给出工程定义，明确 verifier 而非 model 是 loop 的真正瓶颈。",
+    "insight": "设计 Agent 时应先定义终止条件和 verifier，再写 loop 结构；没有可靠 verifier 的 loop 会幻觉收敛或无法终止。"
+  },
+  {
+    "rank": 4,
+    "title": "We Got Local Models to Triage the OpenClaw Repo for FREE!*",
+    "url": "https://huggingface.co/blog/local-models-pr-triage",
+    "date": "2026-06-22",
+    "source": "Hugging Face Blog",
+    "what": "在 GB10 GPU 上用 Gemma-4-26b 和 Qwen3.6-35b 做 agentic PR 分类（允许受限只读 shell 访问 repo），recall 0.905 / precision 0.831，实时推断替代每 2-6 小时的云端批处理。",
+    "why": "首次将 agentic 分类（模型可用只读 shell 查阅 repo 上下文）用于 CI/CD，以结构化输出约束防止 prompt injection 篡改分类结果。",
+    "insight": "给 Agent 提供受限 shell 访问（只读 + 结构化输出）是在本地硬件上实现安全代码感知分类的可行路径，成本极低。"
+  },
+  {
+    "rank": 5,
+    "title": "Shipping huggingface_hub Every Week with AI, Open Tools, and a Human in the Loop",
+    "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
+    "date": "2026-06-23",
+    "source": "Hugging Face Blog",
+    "what": "HF 将库发布从季度手动升级为每周 AI 辅助自动化：GitHub Actions + OpenCode runtime + GLM-5.2 起草 release notes，人工 approve 后自动发布 PyPI，全流程成本约 $0.25。",
+    "why": "公开了可复现的「AI 辅助持续发布」流水线，trust-but-verify 架构和 grounding 于实际 diff 的精度策略均可直接借鉴。",
+    "insight": "把 AI Agent 嵌入 CI/CD 发布流时，在模型输出后加入确定性校验（PR 覆盖完整性检查）是防幻觉的关键保险措施。"
+  },
+  {
+    "rank": 6,
+    "title": "Securing Internal Systems Against Increasingly Capable and Imperfectly Aligned AI",
+    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "date": "2026-06-18",
+    "source": "Google DeepMind Blog",
+    "what": "DeepMind 发布 AI Control Roadmap，以 MITRE ATT&CK 框架为 AI Agent 威胁建模，用 supervisor AI 监控 agent 推理，分析 100 万次编码 Agent 任务发现大多数告警来自误解而非恶意意图。",
+    "why": "首个将 MITRE ATT&CK 适配 AI Agent 威胁模型并公开量化 supervisor AI 效果的工业级框架。",
+    "insight": "为 Agent 系统增加 supervisor AI 监控层，对「误解型」误操作的拦截比对「恶意型」更有价值，应优先调低误报率。"
+  },
+  {
+    "rank": 7,
+    "title": "Porting the Moebius 0.2B Image Inpainting Model to Run in the Browser with Claude Code",
+    "url": "https://simonwillison.net/2026/Jun/22/porting-moebius/",
+    "date": "2026-06-22",
+    "source": "Simon Willison's Weblog",
+    "what": "用 Claude Code 驱动完成 PyTorch→ONNX 转换、WebGPU 后端适配、CacheStorage 持久化（~1.3GB 模型）和 GitHub Pages 部署，展示 coding Agent 在跨栈移植任务中的完整工程能力。",
+    "why": "完整记录了 coding Agent 独立完成跨域工程任务（ML→WASM+WebGPU+CDN）的能力边界与辅助模式。",
+    "insight": "将 coding Agent 用于跨栈移植时，记录「理解文件」（解释 infra 选择的 why）对后续迭代的价值远超即时代码输出。"
+  }
+]
