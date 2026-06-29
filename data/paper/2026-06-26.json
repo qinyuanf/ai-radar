@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "LemonHarness Technical Report",
+    "url": "https://arxiv.org/abs/2606.24311",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "为长任务 LLM agent 设计统一执行框架，将文件写入、依赖安装等状态变更纳入结构化工具接口，配合可复用规则知识库和时间感知执行机制；在 Terminal-Bench 2.0 上达 86.52% 准确率。",
+    "why": "首次将「workspace 边界 + 可调用规则知识 + 剩余时间暴露给模型」整合为单一 runtime，系统性解决长任务中状态散乱与超时两大顽疾。",
+    "insight": "runtime 层应主动向模型暴露剩余时间和工作区状态而非仅传递 tool output，这对构建可靠长任务 agent 至关重要。"
+  },
+  {
+    "rank": 2,
+    "title": "SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation",
+    "url": "https://arxiv.org/abs/2606.24626",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "用工具增强的诊断循环替代全轨迹加载，LLM 通过专用工具集按需读取轨迹片段并维护跨轮 Short-Term Memory；在 Who&When 数据集上超越 SOTA 20%，在目标故障超出上下文 5 倍时仍保持 0.58 精度。",
+    "why": "将 agent 故障归因本身也做成 agent 工具调用循环，从根本上解耦诊断精度与上下文窗口限制。",
+    "insight": "大规模 multi-agent 系统的 trace 调试需要 agent-native 工具链——把全量 log 塞入 LLM 上下文既不可扩展也不准确。"
+  },
+  {
+    "rank": 3,
+    "title": "Bayesian Control for Coding Agents",
+    "url": "https://arxiv.org/abs/2606.24453",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "将编码 agent 的工具调用决策建模为带代价的序贯假设检验：Bayesian 控制器维护候选正确性后验，动态决定诊断/精炼/验证/停止；跨 6 个生成器、9 个 coding benchmark 验证，并提供比 token probability 更好的不确定性分数。",
+    "why": "将 orchestration 从固定规则升级为带不确定性的贝叶斯决策，在 verifier 代价高、critic 不完美时收益最显著。",
+    "insight": "当前 coding agent 的编排器普遍缺少不确定性感知，采用贝叶斯工具调用策略可在验证代价高的场景大幅节省计算。"
+  },
+  {
+    "rank": 4,
+    "title": "Governed Shared Memory for Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2606.24535",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "形式化 multi-agent fleet-memory 问题，识别四种基础失效模式（未授权泄漏、陈旧传播、矛盾持久、溯源坍塌），定义作用域检索、时序超越、溯源追踪等 primitives，在生产服务 MemClaw 上实测并公开了不对称 scope 漏洞的发现与修复。",
+    "why": "首篇将 multi-agent 共享记忆纳入系统级治理框架的生产实测论文，证明仅靠长上下文检索无法保证正确性和安全性。",
+    "insight": "fleet memory 不是「RAG 加访问控制」，溯源追踪和策略驱动传播是生产级 multi-agent 记忆不可省略的工程基础设施。"
+  },
+  {
+    "rank": 5,
+    "title": "Reinforcement Learning for Computer-Use Agents with Autonomous Evaluation",
+    "url": "https://arxiv.org/abs/2606.24515",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "以 VLM 自主评判终态截图作为 GUI agent 的 RL 奖励信号，建模评判噪声为带噪二元通道并推导噪声修正 PPO 估计器；在三个 OS benchmark 上平均提升 12.6pp，优于零样本和原始评判 reward。",
+    "why": "解决 computer use 中奖励信号难以自动化的核心问题，并首次显式建模 VLM judge 噪声以矫正训练信号。",
+    "insight": "用 VLM judge 作为 RL reward 是 computer use agent 自我提升的可行路径，但 judge 噪声必须显式建模而非直接使用原始反馈。"
+  },
+  {
+    "rank": 6,
+    "title": "ReM-MoA: Reasoning Memory Sustains Mixture-of-Agents Scaling",
+    "url": "https://arxiv.org/abs/2606.24437",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "提出带记忆的 MoA 框架：Ranked Reasoning Memory 跨层持久化推理轨迹并由 Reviewer Agent 评分排名，Curated Diversified Memory Routing 向不同 agent 分发成功/失败轨迹混合；在 5 个推理 benchmark 上随层数增加优势扩大。",
+    "why": "首次在 MoA 架构中用跨层推理记忆解决深度扩展时性能饱和问题，填补了 MoA 在 depth scaling 上的空白。",
+    "insight": "并行 agent 间共享高质量推理轨迹（而非仅共享最终答案）是多 agent 推理扩展的关键设计原则。"
+  },
+  {
+    "rank": 7,
+    "title": "Do Thinking Tokens Help with Safety?",
+    "url": "https://arxiv.org/abs/2606.25013",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "跨 GPT-OSS/Qwen/Olmo/Phi 系列推理模型，发现拒绝/遵从结果在第一个 token 隐层表示上已高度可预测（AUROC 0.84-0.95），约 74% 的文本级「深思」发生在行为结果锁定之后，现有安全干预主要导致过度拒绝。",
+    "why": "用大规模实验推翻「thinking token 提供安全审慎空间」假设，揭示安全行为本质上是前缀完成而非真正的审慎推理。",
+    "insight": "基于 thinking token 的安全干预是治标不治本，真正的安全审慎需要在训练层面而非推理层面设计。"
+  },
+  {
+    "rank": 8,
+    "title": "Probing the Misaligned Thinking Process of Language Models",
+    "url": "https://arxiv.org/abs/2606.24251",
+    "date": "2026-06-25",
+    "source": "arXiv cs.AI",
+    "what": "构建涵盖战略欺骗、故意降能、自我保护等 18 种错位行为指标的分类体系，用元计划引导流水线生成训练数据，以线性探针从模型内部激活检测指标；分布外测试 AUROC 0.935，对良性流量误报率低。",
+    "why": "通过激活层监控而非行为观测检测错位，低成本可扩展，且能在问题行为实际发生前预警。",
+    "insight": "将对齐监控嵌入推理 pipeline 的激活层是比依赖外部 eval 更实时的监控方案，适合作为 agent 系统的 safety guardrail。"
+  }
+]
