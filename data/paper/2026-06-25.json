@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Bayesian control for coding agents",
+    "url": "https://arxiv.org/abs/2606.24453",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "将编码 Agent 的工具编排问题形式化为代价敏感的贝叶斯顺序假设检验,动态决策是收集证据、精化候选还是停止验证",
+    "why": "首次用显式不确定性建模替代固定规则编排,在 6 个生成器上一致优于启发式策略",
+    "insight": "正式量化编排不确定性而非依赖固定规则,是高可靠性编码 Agent 的关键基础设施"
+  },
+  {
+    "rank": 2,
+    "title": "Governed Shared Memory for Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2606.24535",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "形式化了多 Agent LLM 系统的 fleet-memory 问题,识别出 4 类根本性故障模式,并提出 MemClaw 实现显式治理原语",
+    "why": "首个系统性规范多 Agent 记忆治理的研究,明确定义 scoped retrieval、temporal supersession、provenance tracking、policy-governed propagation 四项原语",
+    "insight": "无治理的共享记忆会必然触发这 4 类故障,Agent 平台设计应在早期引入显式内存策略层"
+  },
+  {
+    "rank": 3,
+    "title": "GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2606.24551",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "构建了 440 个桌面任务的匹配基准,在相同目标、初始状态和验证器条件下对比 GUI-only 与 CLI skill-mediated 两类 computer-use Agent",
+    "why": "首次在控制任务/状态/验证器变量后,干净地分离交互模态对性能的影响",
+    "insight": "模态选择对 computer-use Agent 性能有可测量的实质影响,应基于任务类型而非惯例决定"
+  },
+  {
+    "rank": 4,
+    "title": "Reinforcement Learning for Computer-Use Agents with Autonomous Evaluation",
+    "url": "https://arxiv.org/abs/2606.24515",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "提出 RL 微调框架,用自主视觉语言 VLM 评估器作为奖励信号训练 computer-use Agent,无需手工设计奖励函数",
+    "why": "用 VLM 作为任务评判器,使 CUA 的 RL 训练可扩展到任意新应用而无需人工标注",
+    "insight": "VLM-as-critic 使 computer-use Agent 可在新应用上自举 RL 训练,显著降低 GUI Agent 的训练成本"
+  },
+  {
+    "rank": 5,
+    "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+    "url": "https://arxiv.org/abs/2606.23927",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "提出基于图表示的动态红队测试方法,支持跨异构 Agentic 系统的统一安全评估",
+    "why": "专门捕获多步自主 Agent 的攻击向量,而非复用静态 LLM 评估框架",
+    "insight": "Agent 安全评估需要专为 Agent 构建的框架,静态 LLM 红队方法无法覆盖 Agent 的工具链攻击面"
+  },
+  {
+    "rank": 6,
+    "title": "ReM-MoA: Reasoning Memory Sustains Mixture-of-Agents Scaling",
+    "url": "https://arxiv.org/abs/2606.24437",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "为 Mixture-of-Agents 架构引入 Ranked Reasoning Memory,持久化跨层推理轨迹并通过比较式 Reviewer 排序,解决深度扩展时的性能饱和问题",
+    "why": "首次从机制上解释 MoA 为何随深度增加而饱和,并通过持久记忆修复该问题",
+    "insight": "多 Agent 推理流水线的瓶颈在记忆而非模型数量,持久化跨层推理轨迹是扩展多 Agent 系统的关键"
+  },
+  {
+    "rank": 7,
+    "title": "LemonHarness Technical Report",
+    "url": "https://arxiv.org/abs/2606.24311",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "报告了一个为 LLM Agent 设计的工作空间边界管理系统,在多轮长任务中追踪状态变更并限制文件系统扩散",
+    "why": "直接解决生产编码 Agent 中未约束状态变更导致的工作区混乱问题",
+    "insight": "工作区隔离是可靠长运行 Agent 的基础设施前提,应在 Agent harness 层而非应用层实现"
+  },
+  {
+    "rank": 8,
+    "title": "Beyond Trajectory Imitation: Strategy-Guided Policy Optimization for LLM Reasoning",
+    "url": "https://arxiv.org/abs/2606.24064",
+    "date": "2026-06-24",
+    "source": "arxiv cs.AI",
+    "what": "提出 SGPO,用策略级引导替代实例级轨迹模仿来蒸馏 LLM 推理能力,迁移可复用的问题求解策略而非具体解法步骤",
+    "why": "策略级迁移比轨迹级模仿具有更强的泛化性,减少对特定实例的过拟合",
+    "insight": "推理能力蒸馏应传递策略而非答案路径,这对构建可靠的推理 Agent 和蒸馏训练管道均有直接指导意义"
+  }
+]
