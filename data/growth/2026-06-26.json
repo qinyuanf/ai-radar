@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "BuilderIO/agent-native",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "stars": 2300,
+    "trend": "+1588 stars/week (+68%)",
+    "what": "提供 agent-native 应用框架原语：共享 action、SQL 状态、身份、tool、skill、job 和 UI surface，让 agent 与 UI 作为等权公民共享实时状态，含邮件/日历/设计等生产级模板。",
+    "why": "今日（6-26）发布 @0.77.18，「一次定义 work，从 UI/agent/API/MCP/A2A/CLI 全部复用」精准击中 agent-native 软件架构缺失层，单周 +68% 涨幅创 BuilderIO 历史最快。",
+    "insight": "agent-native 的核心抽象不是聊天框而是共享 action + 持久状态，这与「给现有 app 加 AI 功能」是截然不同的架构起点，应从 action schema 先于 UI 来建模 agent 系统。"
+  },
+  {
+    "rank": 2,
+    "repo": "google-labs-code/design.md",
+    "url": "https://github.com/google-labs-code/design.md",
+    "stars": 19300,
+    "trend": "+2691 stars/week，仅 40 commits、4 次发版",
+    "what": "定义 DESIGN.md 格式规范，双层结构（YAML 设计 token + Markdown 设计理念），让编程 agent 能读懂并一致应用设计系统，含 CLI lint/diff/export/spec 命令和 WCAG 对比度校验。",
+    "why": "从零冲至 19k 仅靠 4 次发版，Google Labs 背书填补「设计系统 → coding agent 可读格式」空白，有望成为 Figma token 与 agent 代码生成之间的标准桥接层。",
+    "insight": "agent 生成 UI 代码的一致性瓶颈不在 LLM 能力而在设计规范的机器可读性，DESIGN.md 的 lint/WCAG 校验思路可直接复用到 UI agent 的输出验证管道中。"
+  },
+  {
+    "rank": 3,
+    "repo": "diegosouzapw/OmniRoute",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "stars": 6900,
+    "trend": "v3.8.36 发布于 6-25，4522 commits",
+    "what": "免费 AI 网关，单端点聚合 231+ 供应商（50+ 免费），自动 fallback、15 种路由策略、15-95% token 压缩（RTK/Caveman），内置 87 工具 MCP server 和 A2A JSON-RPC 协议。",
+    "why": "昨日新版本发布，token 成本管控成刚需背景下「不改业务代码切供应商 + 压缩 + 故障转移」价值主张精准命中 agent infra 开发者，本地/Docker/PWA 多部署形态降低接入门槛。",
+    "insight": "token 压缩和多供应商 fallback 属于基础设施职责，不应内嵌在 agent 业务逻辑里，网关层统一处理后 agent 代码更干净也更易测试。"
+  },
+  {
+    "rank": 4,
+    "repo": "xbtlin/ai-berkshire",
+    "url": "https://github.com/xbtlin/ai-berkshire",
+    "stars": 2000,
+    "trend": "2026-04-07 发布，303 forks，实盘验证 +69%（2024）",
+    "what": "基于 Claude Code Skills 的价值投资研究框架，16 个专项 Skill，4 个 agent 并行执行巴菲特/芒格/段永平/李录视角后由主 agent 综合并强制输出定论，含行业漏斗/盈利回顾/新闻脉冲等工具。",
+    "why": "303 forks 对 2k star 项目异常高，有实盘验证（2024 +69%、2025 YTD +66%），是金融垂直 agent 少见的有真实业绩支撑的参考实现，「强制二元结论」设计有别于模糊分析型 agent。",
+    "insight": "让多 agent 持相互对立视角并强制输出二元结论能有效抑制 LLM 首鼠两端倾向，这个模式可泛化到任何需要强决策输出的垂直 agent 场景（法律/医疗/产品评审）。"
+  },
+  {
+    "rank": 5,
+    "repo": "aws/agent-toolkit-for-aws",
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "stars": 1100,
+    "trend": "AWS 官方新仓库，持续更新，Python + TypeScript",
+    "what": "AWS 官方发布的 agent 工具集：覆盖 300+ AWS 服务的 MCP server、针对 Claude Code/Cursor/Codex 的预构建插件，含 serverless/容器/存储/可观测领域 skill 包，内置 CloudTrail audit 和 IAM condition key。",
+    "why": "AWS 官方直接维护的 MCP 工具集 API 覆盖度和权限模型远超社区实现，内置安全审计能力是企业级 agent 接入云基础设施的刚需，是当前 300+ AWS 服务的最权威 agent 接入层。",
+    "insight": "用官方 SDK MCP server 而非自写封装接入云服务商，省去大量 API schema 维护成本，且官方实现在权限粒度和错误处理上更可靠，应优先于社区封装纳入 agent 工具链评估。"
+  }
+]
