@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Self-Compacting Language Model Agents",
+    "url": "https://arxiv.org/abs/2606.23525",
+    "date": "2026-06-22",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "提出 SelfCompact 框架，给模型配备 compaction tool + rubric，让模型自主决定何时压缩 agent trace，在六个 benchmark 上节省 30-70% token，数学题提升最多 18.1 点。",
+    "why": "把 context 管理从外部固定阈值触发升级为模型内生的元认知行为，首次量化了「在哪里压缩」的策略性价值。",
+    "insight": "长程 Agent 中，让模型持有 compaction tool 并遵循显式 rubric，比外部 chunking 更内聚；rubric 是关键可调旋钮，值得在自己的任务域上单独消融。"
+  },
+  {
+    "rank": 2,
+    "title": "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
+    "url": "https://arxiv.org/abs/2606.23654",
+    "date": "2026-06-22",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "从真实企业工作会话提取 852 个可复现任务，最强 harness-model 组合得分仅 0.663，强调评估必须同时报告 harness 配置、制品质量、成本与运行时。",
+    "why": "首个从生产工作会话（而非合成任务）构建的企业 Agent 基准，揭示当前最优模型在真实职场工作流中仍远未达标。",
+    "insight": "harness 配置是与模型同等重要的评估维度；同一模型在不同 harness 下表现差异巨大，发布评估结果时必须锁定 harness。"
+  },
+  {
+    "rank": 3,
+    "title": "Training Open Models for Agentic Phone Use",
+    "url": "https://arxiv.org/abs/2606.23049",
+    "date": "2026-06-22",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "PhoneBuddy 方案：SFT + 真实设备 RL + mock app RL 混合训练，benchmark 从 60.3% 提升至 83.2%，发现 mock 训练是真实 RL 的互补而非替代。",
+    "why": "首个系统量化 real-app RL 与 mock-app RL 互补关系的手机 Agent 训练研究，兼顾数据可扩展性与泛化能力。",
+    "insight": "训练 computer-use Agent 时，构建可重置 mock 环境扩充轨迹、再用真实环境精调，是当前最实用的数据飞轮路径。"
+  },
+  {
+    "rank": 4,
+    "title": "CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents",
+    "url": "https://arxiv.org/abs/2606.22883",
+    "date": "2026-06-22",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "多维能力分类体系 + Docker 化验证过滤约 2/3 候选，生成 CLI-Universe-6K，Qwen3-32B 微调后在 Terminal-Bench 2.0 达 33.4%，创开源同规模模型新高。",
+    "why": "第一个系统化解决终端 Agent 训练数据稀缺问题的可验证合成引擎，数据质量由执行结果而非人工标注保证。",
+    "insight": "可执行验证（pass/fail）比 LLM-as-judge rubric 更可靠，Terminal Agent 数据管道可直接复用此模式。"
+  },
+  {
+    "rank": 5,
+    "title": "PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems",
+    "url": "https://arxiv.org/abs/2606.22388",
+    "date": "2026-06-21",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "327 任务跨 1665 工具，引入 blocking 机制模拟工具失效，GPT-5.4 无障碍准确率 51.90%、最严重 blocking 下崩溃至 11.36%。",
+    "why": "首个在千级工具生态下系统量化规划韧性的 benchmark，blocking 机制首次量化工具失效对 Agent 的级联影响。",
+    "insight": "实际部署中工具经常不稳定；Agent 规划层显式引入 fallback 路径和工具失效信号，比依赖模型自发恢复更可靠。"
+  },
+  {
+    "rank": 6,
+    "title": "EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory",
+    "url": "https://arxiv.org/abs/2606.21649",
+    "date": "2026-06-19",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "动态嵌入模型维护持续更新的 latent memory 生成自适应表示，memory queue + segment-batching 加速 3.8x，在超出训练窗口 10x 的上下文仍保持泛化。",
+    "why": "首次将嵌入本身变为有状态过程，为 RAG 与 Agent 记忆带来序列感知，打破静态嵌入只能孤立编码片段的限制。",
+    "insight": "为 Agent 构建长期记忆时，有状态嵌入可替换静态向量数据库，对滚动对话和长文档场景提升最为显著。"
+  },
+  {
+    "rank": 7,
+    "title": "World Action Models: A Survey",
+    "url": "https://arxiv.org/abs/2606.20781",
+    "date": "2026-06-18",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "以「生成什么」×「结构组件」两维分类综述世界动作模型（WAM），厘清 WAM 与视频生成系统的边界，提炼出「生成更少未来但保留控制所需」的关键设计趋势。",
+    "why": "首个完整梳理 WAM 领域的调研，将表示深度与计算延迟的权衡显式化，为 embodied agent 研究提供路线图。",
+    "insight": "为 Agent 选型世界模型时，优先 latent future 路径而非 rendered video，在效率与控制精度间取得更好折衷。"
+  },
+  {
+    "rank": 8,
+    "title": "OpenRath: Session-Centered Runtime State for Agent Systems",
+    "url": "https://arxiv.org/abs/2606.19409",
+    "date": "2026-06-17",
+    "source": "arXiv / HuggingFace Papers",
+    "what": "借鉴 PyTorch 设计，以 Session 作为一等运行时值，集中追踪对话块、沙箱位置、血统元数据、token 用量与工具证据，支持分支、重放与审计。",
+    "why": "把 Agent 运行时状态从分散的外部日志提升为可组合的一等对象，让 fork/merge/replay 成为显式原语而非事后重建。",
+    "insight": "构建 Agent harness 时，将 session 状态内聚为单一可序列化对象，是实现可观测性、断点续跑和调试的最低成本基础。"
+  }
+]
