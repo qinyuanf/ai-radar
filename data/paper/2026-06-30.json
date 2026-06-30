@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "On the Inseparability of Instructions and Data in Shared-Embedding Sequence Models",
+    "url": "https://arxiv.org/abs/2606.27567",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "从信息论角度证明：在共享嵌入架构中，指令与数据边界不可分，提示注入（prompt injection）对任意此类模型均无法从架构层根除。",
+    "why": "首次将提示注入定性为可证明的结构性缺陷而非实现 bug，颠覆了"更好的 prompt 过滤可以解决问题"的普遍假设。",
+    "insight": "Agent 安全设计必须在系统层面将工具调用结果与系统指令物理隔离，或引入专用可信执行环境，而非寄望于模型侧过滤。"
+  },
+  {
+    "rank": 2,
+    "title": "Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents",
+    "url": "https://arxiv.org/abs/2606.27472",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "识别并量化 LLM Agent 在多轮跨会话中用旧记忆覆盖新事实的 Memory-Update Gap 问题，并给出专项训练方法 Supersede。",
+    "why": "首次将"知新不废旧"这一 Agent 失效模式定义为可测量的具体缺陷，为记忆系统工程提供了精确的失效画像。",
+    "insight": "给 Agent 配记忆系统时，必须加入专门的 "事实覆盖可信度" 评分机制，仅靠 RAG 检索相关文档不能解决记忆更新问题。"
+  },
+  {
+    "rank": 3,
+    "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+    "url": "https://arxiv.org/abs/2606.28270",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "针对具备持久记忆、工具使用和多 Agent 协作能力的自主 Agent，提出完整的 "免疫系统" 安全架构，含威胁分类法和工程规范。",
+    "why": "首次将网络安全纵深防御思想完整移植到 Agent 运行时，超越单点 guardrail 视角，给出系统级安全架构。",
+    "insight": "Agent 安全需要类操作系统的多层实时监控与隔离，这套架构可作为构建 Agent 平台时的安全基线参考。"
+  },
+  {
+    "rank": 4,
+    "title": "Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning",
+    "url": "https://arxiv.org/abs/2606.27483",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出统一 Agentic 训练范式，让 LLM Agent 内化未来状态预测能力（世界模型），在长视野序列决策中主动规划而非被动响应。",
+    "why": "将世界模型从外挂组件变为模型内部能力，无需额外推理步骤即可前瞻规划，实验显示显著减少幻觉在步骤间的传播。",
+    "insight": "长视野 Agent 任务的核心瓶颈是缺乏内隐世界模型；用此范式微调 base model 比 prompt-level 方案更可靠且无推理开销。"
+  },
+  {
+    "rank": 5,
+    "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
+    "url": "https://arxiv.org/abs/2606.27814",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "针对长视野交互任务的小型 LLM Agent 训练，提出退火策略在快速模仿学习与奖励驱动策略改进之间动态平衡，解决小模型 on-policy 不稳定问题。",
+    "why": "首次系统解决小模型多轮 Agent 任务中 on-policy 蒸馏不稳定问题，兼顾收敛速度和最终性能。",
+    "insight": "部署轻量 Agent 的最佳实践：先用蒸馏快速初始化，再用退火 RL 微调，优于从头 RL 也优于纯 SFT。"
+  },
+  {
+    "rank": 6,
+    "title": "Retroactive Advantage Correction: Closed-Form V-Trace Bias Correction for Delay-Aware RLHF",
+    "url": "https://arxiv.org/abs/2606.27580",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "针对代码执行验证器、人工评审等异步奖励延迟场景，推导出闭合形式的 V-Trace 偏差校正，使 RLHF 在延迟奖励下保持无偏估计。",
+    "why": "首次给出适用于生产级异步 RLHF pipeline 的解析纠偏方案，无需额外采样或近似即可消除延迟引入的策略偏移。",
+    "insight": "在 Agent 训练中接入代码执行或慢速 judge 时，直接应用此校正项可避免因奖励延迟导致的策略漂移。"
+  },
+  {
+    "rank": 7,
+    "title": "Tandem Reinforcement Learning with Verifiable Rewards",
+    "url": "https://arxiv.org/abs/2606.28166",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出 Tandem RLVR 框架，将弱学习器与强学习器串联共同优化，在可验证奖励场景下达到专家级推理表现，显著优于单独 RLVR。",
+    "why": "RLVR 领域首次引入 Tandem 串联机制，通过弱模型分担探索成本解决奖励稀疏和探索效率低的核心问题。",
+    "insight": "为 Agent 构建推理能力时，轻量模型生成候选、重量模型验证打分的 Tandem 架构可大幅降低训练成本。"
+  },
+  {
+    "rank": 8,
+    "title": "Towards Evaluation of Implicit Software World Models in Coding LLMs",
+    "url": "https://arxiv.org/abs/2606.27406",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出专项评估框架，测量 Coding LLM 是否真正理解代码运行行为（软件世界模型），而非仅生成语法正确的代码。",
+    "why": "揭示当前 Coding LLM 在 SWE-bench 得分较高但软件语义理解存在系统性缺失，指出下一代 eval 的关键方向。",
+    "insight": "评估 Coding Agent 时须加入程序语义理解的专项测试，单靠任务通过率无法暴露世界模型盲区，影响 Agent 可靠性。"
+  }
+]
