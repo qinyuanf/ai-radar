@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "chopratejas/headroom",
+    "url": "https://github.com/chopratejas/headroom",
+    "stars": 53900,
+    "trend": "v0.28.0（2026-06-29）158 个版本活跃迭代",
+    "what": "AI agent 工作流的 context 压缩层，提供库/代理/MCP 三种接入方式，对 JSON/代码/散文分别用专项算法，在保持答案质量的前提下将 token 用量削减 60-95%。",
+    "why": "v0.28.0 昨日（2026-06-29）刚发布，GSM8K/TruthfulQA 验证压缩不损精度，CCR 协议支持跨 agent 共享可逆压缩缓存，本月增速持续加快。",
+    "insight": "token 压缩不是裁剪内容而是改变表达密度，CCR 可逆压缩协议为多 agent 共享上下文提供了新的基础设施范式。"
+  },
+  {
+    "rank": 2,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 101000,
+    "trend": "v0.13.2（2026-06-12）架构级重写",
+    "what": "让网站对 AI agent 可访问的浏览器自动化框架，v0.13 引入 Rust 核心和针对前沿模型优化的浏览器 harness，配备持久工具和类 coding agent 的恢复循环。",
+    "why": "101k stars 仍在加速，v0.13 是架构级重写（Rust core + 持久工具 + 恢复循环），Claude Code skill 集成和统一 ChatBrowserUse 接口已于 6 月上线。",
+    "insight": "browser agent 成熟的标志是将操作空间正规化为持久工具并加入恢复循环，这条路径与 coding agent 的演进轨迹高度一致。"
+  },
+  {
+    "rank": 3,
+    "repo": "mem0ai/mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "stars": 59700,
+    "trend": "2026-04 重大算法更新，6 月 Node SDK v3.0.12",
+    "what": "AI agent 的通用记忆平台，最新算法采用 ADD-only 单遍提取机制（含实体链接和时序推理），在 LoCoMo 达 91.6、LongMemEval 达 94.8。",
+    "why": "2026 年 4 月重大算法更新后基准分分别提升 20 点和 27 点，Node SDK v3.0.12 于 6 月发布，59.7k stars 仍高速增长，agent 无需注册即可接入记忆层。",
+    "insight": "记忆算法从多次读写转向 ADD-only 单遍提取是系统设计的质变，时序推理内置到记忆层会直接改善 agent 的长期规划质量。"
+  },
+  {
+    "rank": 4,
+    "repo": "msitarzewski/agency-agents",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "stars": 119000,
+    "trend": "+1425/天",
+    "what": "232 个专业化 AI agent（工程/设计/营销/法律/医疗等 16 个部门），每个 agent 具备独立人格和领域深度工作流，一键支持 Claude Code、Copilot、Cursor、Aider 等 14+ 平台。",
+    "why": "+1,425/天持续增速，多语言（中/英/葡/俄等）社区版本同步维护，无正式 release 但社区贡献覆盖真实生产场景，全站每日热榜第 2 位。",
+    "insight": "232 个专业 agent 的分工模型表明，领域工作流的可组合性比通用能力更能产生生产价值，这是垂直 agent 平台产品化的具体参考。"
+  },
+  {
+    "rank": 5,
+    "repo": "heygen-com/hyperframes",
+    "url": "https://github.com/heygen-com/hyperframes",
+    "stars": 32200,
+    "trend": "+2375/周，v0.7.20（2026-06）",
+    "what": "将 HTML/CSS/动画确定性渲染为 MP4 视频的开源框架，设计为 agent 原生架构，提供 19 个 agent 技能包，支持 GSAP/Lottie/Three.js 等主流动画引擎。",
+    "why": "本周 +2,375，v0.7.20 于 6 月发布（259 个版本持续迭代），\"same input = same output\" 的确定性保证使其适合 CI/CD 管线，32k stars 仍在快速增长。",
+    "insight": "确定性渲染管线是 agent 生成视频内容的关键基础，HTML as input 比专有格式更容易被 LLM 生成和验证，这是 agent-native 媒体工具的正确设计方向。"
+  }
+]
