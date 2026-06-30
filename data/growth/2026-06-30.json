@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "stars": 28635,
+    "trend": "+17483/周",
+    "what": "世界首个开源 agent 视频制作系统，含 12 条生产流水线、52 个工具和 500+ agent 技能，自然语言指令驱动从选材到剪辑的完整流程。",
+    "why": "本周单周 +17,483 stars 创历史新高，纯免费方案（FFmpeg + 公开素材库）无需任何付费 API 即可跑通。",
+    "insight": "视频生产流程可被分解为可读 YAML 技能文件，skill 文件的可读性是让模型真正掌握复杂创意工作流的关键。"
+  },
+  {
+    "rank": 2,
+    "repo": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "stars": 21511,
+    "trend": "+9899/周",
+    "what": "将整个代码库索引为持久知识图谱的 MCP 服务器，支持 158 种语言，让 coding agent 通过图查询理解代码架构而非逐文件读取。",
+    "why": "本周 +9,899，C 语言实现零依赖单静态二进制，28M 行 Linux 内核 3 分钟建索引，token 消耗降低 99%，v0.8.1 于 2026-06-12 发布。",
+    "insight": "把代码库变成可查询的知识图谱而非原始文件流，是 agent 在大型 monorepo 中持续工作的可扩展路径。"
+  },
+  {
+    "rank": 3,
+    "repo": "0xNyk/council-of-high-intelligence",
+    "url": "https://github.com/0xNyk/council-of-high-intelligence",
+    "stars": 1923,
+    "trend": "+331/天",
+    "what": "将 18 个独立 AI 人格（Feynman、Kahneman、Torvalds 等）跨 Claude/OpenAI/Gemini/Ollama 分布，三轮辩论结构协同分析复杂决策。",
+    "why": "今日趋势 +331/天，强制异见机制（dissent quota + novelty gate）确保不同 LLM 提供商贡献真正差异化观点，v1.1.0 于 2026-05-21 发布。",
+    "insight": "跨模型异构 panel 而非同质投票是破解 LLM 群体性盲点的有效结构，dissent quota 设计值得在 multi-agent 评审系统中借鉴。"
+  },
+  {
+    "rank": 4,
+    "repo": "Unclecheng-li/VulnClaw",
+    "url": "https://github.com/Unclecheng-li/VulnClaw",
+    "stars": 1162,
+    "trend": "+129/天",
+    "what": "基于 AI Agent + MCP 工具链的渗透测试 CLI，自然语言输入驱动信息收集、漏洞发现、漏洞利用、报告生成全流程，支持 13 个 LLM 提供商和 21 个内置渗透技能。",
+    "why": "v0.3.2 于 2026-06-28 刚发布，目标驱动求解引擎替代固定轮次流程，内置证据验证防止 flag 幻觉，今日进入 GitHub 全站趋势榜。",
+    "insight": "高风险 agent 流程必须有结果验证闭环，evidence-based 幻觉防止机制对安全、医疗等零容错场景具有普遍参考价值。"
+  },
+  {
+    "rank": 5,
+    "repo": "ruvnet/RuVector",
+    "url": "https://github.com/ruvnet/RuVector",
+    "stars": 4300,
+    "trend": "近期稳步上升",
+    "what": "Rust 实现的高性能实时自学习向量 + 图神经网络内存数据库，为 AI agent 提供语义检索、关系推理和自适应记忆能力，支持 ONNX/LLM 推理接口。",
+    "why": "v0.latest 于 2026-06-17 发布，36 个版本持续迭代，将向量库与 GNN 关系学习合并进单一 Rust 系统，延迟极低适合 planning 循环实时调用。",
+    "insight": "向量检索与图神经网络融合代表 agent 记忆的下一代范式，Rust 实现的低延迟使其在需要实时知识推理的规划循环中具有独特优势。"
+  }
+]
