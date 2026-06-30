@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "[AINews] Claude Tag: Multiplayer, Proactive, Persistent Agents in Slack",
+    "url": "https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive",
+    "date": "2026-06-24",
+    "source": "Latent Space",
+    "what": "Anthropic 在 Slack 推出 Claude Tag 功能，实现多用户会话感知、主动触发（Proactive）和跨会话持久记忆（Persistent），标志着对话 AI 向常驻 Ambient Agent 迈进。",
+    "why": "首次将 Proactive + Persistent 两种 Agent 模式组合落地于真实生产协作工具，是 Agent 运行时从请求驱动向事件驱动演进的早期信号。",
+    "insight": "企业 Agent 部署的下一步工程挑战是 Proactive 触发逻辑和跨会话状态管理，Slack 集成给出了一个可参考的运行时模型。"
+  },
+  {
+    "rank": 2,
+    "title": "Import AI 463: Self-improving robots; a 10k Chinese GPU cluster; and an elegiac essay for the human era",
+    "url": "https://jack-clark.net/2026/06/29/import-ai-463-self-improving-robots-a-10k-chinese-gpu-cluster-and-an-elegiac-essay-for-the-human-era/",
+    "date": "2026-06-29",
+    "source": "Import AI (jack-clark.net)",
+    "what": "重点报道 NVIDIA ENPIRE——把 Coding Agent 闭环自改进模式迁移到物理机器人的 harness 框架，含环境自动重置、策略改进、评估和结果报告四个模块。",
+    "why": "ENPIRE 将软件 Agent 的 harness 工程思路完整复制到机器人，证明 Agent loop 的架构抽象可跨模态直接复用。",
+    "insight": "自改进 Agent 的核心工程是环境重置与自动评估，ENPIRE 的四模块分解可作为物理世界 Agent harness 的参考架构。"
+  },
+  {
+    "rank": 3,
+    "title": "[AINews] OpenAI reports median internal Codex output tokens grew 56x in Research since Nov 2025",
+    "url": "https://www.latent.space/p/ainews-openai-reports-median-internal",
+    "date": "2026-06-26",
+    "source": "Latent Space",
+    "what": "OpenAI 披露内部 Codex Agent 真实使用数据：研究部门输出 tokens 中位数 56 倍增长，客服 32 倍，工程 27 倍，法务 13 倍，均自 2025 年 11 月起计。",
+    "why": "罕见的内部 AI 实际采用率数据，是 Coding Agent 在真实工程场景中上量速度的最直接公开证据。",
+    "insight": "研究和工程部门 token 消耗增速超出预期，意味着 Agent 任务复杂度快速增加，context 管理和推理成本优化的优先级应该提前。"
+  },
+  {
+    "rank": 4,
+    "title": "Introducing Omnigent: The Open-Source Meta-Harness for AI Agents",
+    "url": "https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents",
+    "date": "2026-06-13",
+    "source": "Databricks Blog",
+    "what": "Databricks 开源 Omnigent（Apache 2.0），位于 Claude Code、Codex、自定义 Agent 之上的 Meta-Harness，统一处理上下文管理、工具设计、沙箱隔离、权限控制和审计日志。",
+    "why": "首个生产级开源 Meta-Harness，将 Agent 舰队治理（governance）从各家自研状态推进到有参考实现的标准化阶段。",
+    "insight": "多 Agent 系统需要独立于具体 Agent 实现之外的治理层；Omnigent 的权限和审计模块可直接作为自建 Agent 平台的安全基线。"
+  },
+  {
+    "rank": 5,
+    "title": "Meet EverOS: An Open Source Markdown-First Agent Memory Runtime With Hybrid BM25 + Vector Retrieval and Self-Evolving Skills",
+    "url": "https://www.marktechpost.com/2026/06/29/meet-everos-an-open-source-markdown-first-agent-memory-runtime-with-hybrid-bm25-vector-retrieval-and-self-evolving-skills/",
+    "date": "2026-06-29",
+    "source": "Marktechpost",
+    "what": "EverMind 开源 EverOS，以 Markdown 为基本存储格式，结合 BM25 + 向量双路检索，并支持技能自演化（Self-Evolving Skills）的 Agent 记忆运行时。",
+    "why": "将工具知识（技能）与情景记忆统一到同一可读存储格式，并引入技能自演化机制，是工程化 Agent 记忆的新范式。",
+    "insight": "Markdown 格式的记忆对人类可审计、对 LLM 天然友好；构建 Agent 记忆时优先选择可直接检查的格式而非纯向量 embedding。"
+  },
+  {
+    "rank": 6,
+    "title": "全球首个隐空间世界模型：打通长时序双向物理因果链",
+    "url": "https://www.qbitai.com/2026/06/439891.html",
+    "date": "2026-06-29",
+    "source": "量子位",
+    "what": "报道全球首个在隐空间（Latent Space）中构建的世界模型，可同时建模长时序正向物理动态和反向因果链，应用于机器人和自动驾驶。",
+    "why": "隐空间世界模型无需解码到像素即可推理物理因果，推理速度和泛化性大幅优于像素级模型，开启新的 embodied AI 路线。",
+    "insight": "为具身 Agent 选世界模型时，隐空间表示比像素级预测更适合长视野规划任务，值得跟进其开源代码和复现进展。"
+  },
+  {
+    "rank": 7,
+    "title": "LLM Research Papers 2026, Part 1: Models, Training, Agents, and Reasoning",
+    "url": "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
+    "date": "2026-06-06",
+    "source": "Sebastian Raschka's Magazine",
+    "what": "系统梳理 2026 年 1-5 月 LLM 研究论文，覆盖新模型架构、训练方法、Agent 框架和推理能力提升的重要进展，由实践者视角精选。",
+    "why": "信噪比远高于自动聚合的半年度综述，是快速补齐前半年进展并识别可落地研究成果的首选参考。",
+    "insight": "对照此综述可清晰识别哪些 2026 上半年研究已可工程落地、哪些仍有系统化差距，帮助排定 Agent 改进优先级。"
+  }
+]
