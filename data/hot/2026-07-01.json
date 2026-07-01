@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 243000,
+    "trend": "+890/day | v6.1.0 Jun 30 | 618 commits",
+    "what": "面向 coding agent 的可组合 skill 框架与软件开发方法论，内置头脑风暴→规划→TDD 开发→Review→集成全流程，兼容 Claude Code/Cursor/Copilot/Codex 等平台。",
+    "why": "v6.1.0 于 6 月 30 日刚刚发布，是 2026 年增长最快的 agent 框架之一，Marketplace 分发模式让 skill 跨团队复用，社区生态形成正循环每日近千星持续增长。",
+    "insight": "把软件工程最佳实践编码成 agent 可执行的 skill，说明 agent 的工程纪律问题正在从提示词层转向外部约束框架来解决，这是 coding agent 工具化的成熟标志。"
+  },
+  {
+    "rank": 2,
+    "repo": "tauricresearch/tradingagents",
+    "url": "https://github.com/tauricresearch/tradingagents",
+    "stars": 90000,
+    "trend": "90k+星 | v0.3.0 Jun 22 | 近期持续增量",
+    "what": "模拟真实交易公司架构的多 agent 框架：基本面/情绪/新闻/技术分析师 agent + 牛熊研究员 + 交易员 + 风险管理层协同决策，基于 LangGraph 构建。",
+    "why": "v0.3.0 扩展至 NVIDIA/Kimi/Groq/Mistral/Bedrock 多供应商并引入 FRED/Polymarket 数据源，社区将其作为 multi-agent 编排的教学标准案例广泛引用，近期增量稳定可观。",
+    "insight": "角色专职化 + LangGraph 检查点恢复的架构是处理长时序决策任务的成熟范式，其 agent 间辩论机制（牛熊研究员对抗验证）值得借鉴到任何需要对抗验证的 agent 场景。"
+  },
+  {
+    "rank": 3,
+    "repo": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "stars": 75600,
+    "trend": "+1,898/week | DeerFlow 2.0.0 Jun 25 | 2,408 commits",
+    "what": "字节跳动开源的长时域 SuperAgent，能在沙盒中自主完成需数分钟到数小时的研究/编码/创作任务，集成记忆、工具、subagent 协调和消息网关。",
+    "why": "DeerFlow 2.0 是对 v1 的完全重写，6 月 25 日发布后再次登顶 GitHub Trending，延续了 2 月首发时登上单日第一的热度，大版本更新带动新一轮显著星增。",
+    "insight": "长时域任务的沙盒 + 记忆 + subagent 三件套协同是第一代长时域 agent 架构的瓶颈所在，DeerFlow 2.0 完全重写的决策值得研究其架构演化路径。"
+  },
+  {
+    "rank": 4,
+    "repo": "langchain-ai/langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "stars": 36200,
+    "trend": "36k+星 | v1.2.7 Jun 30 | Klarna/Replit/Elastic 生产在用",
+    "what": "低层级有状态 agent 编排框架，提供持久化执行（故障自恢复）、human-in-the-loop、长短期记忆系统、流式输出，是 LangChain 生态的 agent 运行时核心。",
+    "why": "v1.2.7 于 6 月 30 日发布，持续的企业级采用（Klarna、Replit、Elastic）推动每周稳定增量，Klarna 等头部公司的生产案例成为社区强力背书。",
+    "insight": "有状态图 + 可恢复检查点的编排模型正成为 agent runtime 的标配，构建需要跨多步骤持久化上下文的 agent 应优先考虑这类框架而非自建状态管理。"
+  },
+  {
+    "rank": 5,
+    "repo": "ChromeDevTools/chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "stars": 44800,
+    "trend": "44.8k星 | v1.4.0 Jun 23 | 47+工具",
+    "what": "Chrome 官方团队出品的 MCP 服务器，将 DevTools 47+ 工具（网络检查、性能分析、内存调试、DOM 操作、输入自动化）直接暴露给 Claude/Cursor/Copilot 等 coding agent。",
+    "why": "v1.4.0 于 6 月 23 日发布，Chrome 官方背书可信度远超第三方方案，coding agent 调试 web 应用的刚需推动快速传播，962 次提交说明持续高强度维护。",
+    "insight": "Chrome 官方把 DevTools 协议封装成 MCP 标准，意味着 browser agent 的工具层正被浏览器厂商原生接管，未来 computer use agent 可直接依赖这个官方接口。"
+  }
+]
