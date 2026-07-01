@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "\"It's Hard to Eval\" Is a Product Smell",
+    "url": "https://hamel.dev/blog/posts/eval-smell/",
+    "date": "2026-06-29",
+    "source": "hamel.dev",
+    "what": "Hamel Husain 论证:当团队说\"这个 AI 产品很难 eval\"时,这不是技术问题而是产品设计问题,给出三个重设计案例。",
+    "why": "把 eval 困难从工具问题重新定义为产品信号:如果人无法快速验证输出,用户同样无法信任它。",
+    "insight": "构建 agent 时先问\"SME 能在 30 秒内判断这个输出对不对?\",不能就先修产品再做 eval。"
+  },
+  {
+    "rank": 2,
+    "title": "Forward Deployed Engineers and the future of software engineering",
+    "url": "https://www.latent.space/p/forward-deployed-engineers-aiewf",
+    "date": "2026-07-01",
+    "source": "latent.space",
+    "what": "深度访谈探讨 Forward Deployed Engineer 新角色如何将 AI agent 能力直接嵌入企业客户的运营流程。",
+    "why": "揭示 2026 年企业 AI 落地的主要瓶颈:技术栈已成熟,关键差距在于理解客户业务过程并完成最后一公里 agent 集成。",
+    "insight": "agent 系统的实际交付需要\"懂业务的 AI 工程师\"深驻客户,纯平台化 SaaS 难以覆盖长尾企业集成需求。"
+  },
+  {
+    "rank": 3,
+    "title": "Claude Sonnet 5",
+    "url": "https://www.anthropic.com/news/claude-sonnet-5",
+    "date": "2026-06-30",
+    "source": "anthropic.com",
+    "what": "Anthropic 发布 Claude Sonnet 5,性能接近 Opus 4.8,定价 $3/$15 per M token,成为 Free/Pro 默认模型并集成进 Claude Code。",
+    "why": "以中间层价格提供接近顶级的 agent 能力,将高性能 coding agent 的运行成本降低约 5 倍。",
+    "insight": "Claude Sonnet 5 的定价和 Claude Code 默认切换是实际 agent 系统部署的决策点,直接影响成本估算和模型选型。"
+  },
+  {
+    "rank": 4,
+    "title": "Have your agent record video demos of its work with shot-scraper video",
+    "url": "https://simonwillison.net/2026/Jun/30/shot-scraper-video/",
+    "date": "2026-06-30",
+    "source": "simonwillison.net",
+    "what": "shot-scraper 1.10 新增 video 命令,通过 YAML storyboard 驱动 Playwright 录制 agent 浏览器操作过程的演示视频。",
+    "why": "让 agent 的执行过程可视化可回放,解决 computer-use agent 调试时执行过程难以追溯的实践痛点。",
+    "insight": "给 agent 每次重要运行录制 trace 视频是廉价且有效的 eval 辅助手段,尤其适用于 UI 操作类 agent。"
+  },
+  {
+    "rank": 5,
+    "title": "Ahmad Osman on why local AI is catching up",
+    "url": "https://www.latent.space/p/ahmad-osman-local-ai",
+    "date": "2026-06-30",
+    "source": "latent.space",
+    "what": "访谈 Ollama 核心成员 Ahmad Osman,量化分析本地模型在编码、隐私场景下与闭源 API 模型的差距收窄情况。",
+    "why": "2026 年本地模型在延迟、隐私、成本三维度上均有实质性改善,对特定 agent 场景已具备竞争力。",
+    "insight": "agent harness 设计时应为本地推理预留接口,边缘/私有部署会成为部分企业 agent 的首选拓扑。"
+  },
+  {
+    "rank": 6,
+    "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
+    "url": "https://huggingface.co/blog/ibm-research/scarfbench",
+    "date": "2026-06-30",
+    "source": "huggingface.co/blog",
+    "what": "IBM Research 发布 ScarfBench,34 个真实企业 Java 应用、204 个跨框架迁移任务,最优 coding agent 通过率仅 15.3%。",
+    "why": "首个专注于企业级 Java 框架迁移的 agent benchmark,揭示 coding agent 在长依赖链、复杂配置迁移上的巨大差距。",
+    "insight": "SWE-bench 式评估不覆盖企业遗留代码迁移场景,ScarfBench 是更接近企业实际 ROI 计算的参照基准。"
+  },
+  {
+    "rank": 7,
+    "title": "Featuring Every Eval Ever Results on Hugging Face Model Pages",
+    "url": "https://huggingface.co/blog/eee-community-evals",
+    "date": "2026-06-30",
+    "source": "huggingface.co/blog",
+    "what": "HuggingFace 在所有模型页面集成 Every Eval Ever 社区评测结果,任何人可提交和展示自定义 benchmark 跑分。",
+    "why": "将 eval 基础设施民主化,让私有 benchmark 和社区 eval 与官方跑分平等展示,降低模型选型中的信息不对称。",
+    "insight": "可把团队自研的 agent task eval 直接挂到 HF 模型页面,省去自建排行榜的成本并借助社区持续更新对比数据。"
+  }
+]
