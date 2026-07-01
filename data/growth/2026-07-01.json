@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "google/agents-cli",
+    "url": "https://github.com/google/agents-cli",
+    "stars": 4200,
+    "trend": "+~1k/week | v0.6.1 Jun 28 | 25%周涨幅",
+    "what": "Google Cloud 官方 CLI，让 Claude Code/Codex 等 coding agent 能在 Google Cloud 上创建、评估和部署 AI agent，内置 Agent Development Kit 技能体系。",
+    "why": "Google 官方下场为 coding agent 提供 Cloud 端部署工具链，v0.6.1 在 6 月 28 日发布后快速进入 GitHub Trending，是 cloud-native agent 基础设施的关键信号。",
+    "insight": "官方厂商提供 agent 部署 CLI 意味着云端 agent 基础设施进入标准化阶段，构建 agent 系统时可直接复用这套 skill 体系而无需自建部署层。"
+  },
+  {
+    "rank": 2,
+    "repo": "BrowserMCP/mcp",
+    "url": "https://github.com/BrowserMCP/mcp",
+    "stars": 6700,
+    "trend": "新项目快速增长 | 热门 MCP browser 工具",
+    "what": "MCP 服务器 + Chrome 扩展，让 VS Code/Claude/Cursor/Windsurf 等 AI 应用直接操控用户已有浏览器（含登录态）执行自动化任务，本地执行不向远端发数据。",
+    "why": "复用真实浏览器指纹规避反爬检测，无需为每次自动化单独处理 OAuth，是目前最实用的 MCP 浏览器方案之一，被社区大量推荐。",
+    "insight": "基于用户现有登录态的 MCP 浏览器方案让 agent 绕开 OAuth 流程直接操作，这是把 web automation 从沙盒浏览器搬到生产账户的关键工程跨越。"
+  },
+  {
+    "rank": 3,
+    "repo": "Robbyant/lingbot-map",
+    "url": "https://github.com/Robbyant/lingbot-map",
+    "stars": 8900,
+    "trend": "+1,388/week | 16%周涨幅",
+    "what": "基于 Geometric Context Transformer 的流式 3D 场景重建基础模型，从视频流实时（20 FPS）重建点云地图并同步估计相机姿态，支持超万帧长序列。",
+    "why": "具身 AI 和机器人领域急需轻量实时 3D 感知底座，在 KITTI/Oxford Spires 标准基准上表现突出，本周登上 GitHub 涨幅榜引发关注。",
+    "insight": "实时流式 3D 重建是机器人 agent 的感知底层，这类把视频转为结构化空间表示的基础模型将成为 embodied agent 工具链的标配组件。"
+  },
+  {
+    "rank": 4,
+    "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "stars": 23500,
+    "trend": "+4,109/week | 17%周涨幅 | v1.3.0 Jun 22",
+    "what": "817 个覆盖 29 个安全领域的结构化网络安全技能库，映射 MITRE ATT&CK/D3FEND/NIST CSF 等 6 大框架，供 Claude Code 等 AI agent 执行渗透测试、威胁狩猎等安全工作流。",
+    "why": "AI agent 大量接入生产系统后安全需求激增，本项目把专家级安全 playbook 结构化成 agent 可消费的 skill 格式，v1.3.0 发布后获安全社区热传。",
+    "insight": "把专业安全框架翻译成 agent 可执行的 skill，是「安全即代码」的 agent 化演进，为构建安全 AI agent 工具链提供了现成的知识表示参考。"
+  },
+  {
+    "rank": 5,
+    "repo": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "stars": 52500,
+    "trend": "+5,806/week | v3.24.1 Jun 28",
+    "what": "LLM 驱动的多市场股票分析 agent，自动聚合 A 股/港股/美股/日韩市场实时行情与新闻，生成带买卖建议的日报并推送到微信/飞书/Telegram 等渠道。",
+    "why": "支持 15+ 交易策略、GitHub Actions 零成本定时运行、15 个 LLM 供应商，v3.24.1 持续迭代功能完整度高，散户开发者大量 fork 自用，本周星增最猛。",
+    "insight": "多数据源聚合 + 策略推理 + 通知分发三层架构是垂直域 agent 的最小可用形态，其工作流设计是拆解垂直 agent 架构模式的典型样本。"
+  }
+]
