@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Recursive Self-Evolving Agents via Held-Out Selection",
+    "url": "https://arxiv.org/abs/2606.28374",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出无需权重更新、通过演化自然语言制品(workflow/playbook)使 LLM agent 自我改进的框架,用 held-out 验证集选优防止过拟合。",
+    "why": "首次系统性地把 held-out selection 引入 agent artifact 演化,解决了自我提升过拟合到可见样本的核心问题。",
+    "insight": "agent harness 的迭代优化路径:把 playbook/prompt 当可演化制品,用独立验证集控制演化方向,比 reflection 更可靠。"
+  },
+  {
+    "rank": 2,
+    "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+    "url": "https://arxiv.org/abs/2606.28733",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "系统评估 LLM agent 在目标不明确或不可达时是否能正确弃权而非强行完成任务,引入\"弃权率\"指标。",
+    "why": "发现主流 agent 在模糊任务上强行完成率远高于应该放弃的比例,揭示 agent loop 的一个关键失效模式。",
+    "insight": "设计 agent 控制流时必须把\"识别不可完成目标并终止\"纳入显式分支,否则 agent 会产生幻觉性完成。"
+  },
+  {
+    "rank": 3,
+    "title": "Agent Safety Is Action Alignment",
+    "url": "https://arxiv.org/abs/2606.28739",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "论证 agent 安全不是输出对齐问题而是动作对齐问题:现有 RLHF/DPO 优化的是对话输出分布,无法约束工具调用序列。",
+    "why": "给出行动空间上的形式化框架,明确区分\"好的回答\"和\"安全的动作\",指出 tool use 场景下两者不等价。",
+    "insight": "评估 agent 安全时要在动作序列层面建 trace-level eval,而不是只看最终输出是否合规。"
+  },
+  {
+    "rank": 4,
+    "title": "Preventing Error Propagation in Multi-Agent AI through Runtime Monitoring",
+    "url": "https://arxiv.org/abs/2606.29026",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "为多 agent 推理链路设计运行时监控层,检测 agent 间推理迹传递时引入的错误并在传播前拦截,误答率最高降低 40%。",
+    "why": "实验显示错误可在 agent 间通信中雪球式放大,独立监控层是比每个 sub-agent 自我纠错更有效的防线。",
+    "insight": "multi-agent 系统需要一个独立的监控 agent 层作为运行时 guard,可在 harness 层实现而无需修改各 sub-agent。"
+  },
+  {
+    "rank": 5,
+    "title": "Selective Memory Retention for Long-Horizon LLM Agents",
+    "url": "https://arxiv.org/abs/2606.29178",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出 TraceRetain 框架,用成功率、访问频次、冗余度等可解释特征对 agent 外部记忆条目打分并自动淘汰低价值记忆。",
+    "why": "bounded memory 配合选择性保留策略在不修改模型权重的前提下显著优于无差别保存所有历史的基线。",
+    "insight": "agent memory 需要主动管理策略而非无限追加,淘汰维度的可解释性方便调试 long-horizon 任务中的失忆问题。"
+  },
+  {
+    "rank": 6,
+    "title": "Agent-Computer Observation Interfaces Enable Dynamic Computer Use",
+    "url": "https://arxiv.org/abs/2606.29472",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "类比 SWE-agent action interface,系统研究 computer-use agent 的观察接口设计,提出动态观察接口让 agent 按需选择截图、DOM、文本等模态。",
+    "why": "动态接口使 agent 在不同页面状态下选择最高信噪比的观察方式,在 OSWorld 上成功率有显著提升。",
+    "insight": "computer-use agent 的观察接口是与动作接口同等重要的设计轴,值得专门调优而非简单固定为全屏截图。"
+  },
+  {
+    "rank": 7,
+    "title": "OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks",
+    "url": "https://arxiv.org/abs/2606.29537",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "发布 OSWorld2.0 基准,引入多步跨应用任务和状态恢复检查点,暴露现有 frontier agent 在长时域规划和跨应用状态保持上的瓶颈,最好模型成功率低于 30%。",
+    "why": "OSWorld 1.0 被顶级 agent 逐渐饱和,2.0 更贴近真实复杂度,揭示长时域 context engineering 是关键缺口。",
+    "insight": "computer-use 仍远未解决,长时域跨应用状态管理是关键瓶颈,值得投入新的 context 压缩与恢复方案。"
+  },
+  {
+    "rank": 8,
+    "title": "Process Advantage Signal Shaping: A Paradigm-Agnostic Middleware for Process-Supervised RL in LLM Reasoners",
+    "url": "https://arxiv.org/abs/2606.29296",
+    "date": "2026-06-30",
+    "source": "arxiv cs.AI",
+    "what": "提出 PASS 中间件,在 GRPO 等过程监督 RL 框架中对 PRM 给出的中间步奖励做置信度加权和分布校正,消除 PRM 噪声对 policy 更新的干扰。",
+    "why": "无需修改 PRM 本身,仅在信号路径中插入轻量中间件即可在多个推理 benchmark 上提升 GRPO 稳定性和最终准确率。",
+    "insight": "过程奖励信号质量直接决定 reasoning RL 上限,在 harness 层做信号整形比重新训练 PRM 更具工程可行性。"
+  }
+]
