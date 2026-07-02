@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "ClawArena-Team: Benchmarking Subagent Orchestration and Dynamic Workflows in Language-Model Agents",
+    "url": "https://arxiv.org/abs/2606.31174",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "设计了专门测试 LLM 主-子 Agent 编排和动态工作流的 benchmark,覆盖 orchestrator 并行派发、异步聚合等场景。",
+    "why": "现有 benchmark 假设单 agent 线性执行,ClawArena-Team 首次系统量化了 orchestrator 在动态子任务调度和结果聚合中的失败模式。",
+    "insight": "上线多 agent 系统前,用专项编排 benchmark 找主控模型的调度盲区比只跑端到端成功率更有针对性。"
+  },
+  {
+    "rank": 2,
+    "title": "What Drives Interactive Improvement from Feedback?",
+    "url": "https://arxiv.org/abs/2606.30774",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "在多轮 agent 设置中,将\"有效反馈\"与\"重复采样运气\"对最终准确率的贡献进行量化分离。",
+    "why": "证明大量所谓\"反馈驱动的提升\"实际来自重采样效应,并提供可复现的分离实验方法。",
+    "insight": "设计 agent eval 时,必须用控制了 resampling 的基线才能真正衡量 feedback loop 的独立价值。"
+  },
+  {
+    "rank": 3,
+    "title": "ACE: Pluggable Adaptive Context Elasticizer across Agents",
+    "url": "https://arxiv.org/abs/2606.31564",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "提出可插入任意 agent 的上下文弹性压缩模块,动态管理随任务轮次膨胀的 trajectory 长度。",
+    "why": "不修改 agent 内部架构,作为外挂组件在 context window 压力下智能裁剪并保留关键轨迹信息。",
+    "insight": "长任务 agent 的 context 管理作为独立插件比硬编码截断策略更灵活且可跨系统复用。"
+  },
+  {
+    "rank": 4,
+    "title": "AgentBound: Verifiable Behavioral Governance for Autonomous AI Agents",
+    "url": "https://arxiv.org/abs/2606.30970",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "提出基于可验证合约的 agent 行为约束框架,在 runtime 层对财务、通信等高风险动作做边界验证。",
+    "why": "与依赖身份联邦的现有方案不同,AgentBound 在执行层而非 prompt 层实施约束,能捕获越权动作。",
+    "insight": "生产级 agent 的合规治理需要在 harness 层引入可验证行为边界,仅靠 prompt 级安全指令不够可靠。"
+  },
+  {
+    "rank": 5,
+    "title": "The Past Is Prologue: A Plug-in Controller for Selective Updates in Sequentially Evolving LLM Memory",
+    "url": "https://arxiv.org/abs/2606.31121",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "设计插件式控制器,在记忆写入前验证新记忆是否切实提升后续任务表现,不合格则不写入。",
+    "why": "传统 agent memory 只管写入内容,不管写入后的效用,本文首次把记忆写入建模为收益验证决策问题。",
+    "insight": "长期运行 agent 引入选择性记忆门控可有效防止知识污染和记忆膨胀,尤其在多任务串联场景下。"
+  },
+  {
+    "rank": 6,
+    "title": "ReGRPO: Reflection-Augmented Policy Optimization for Tool-Using Agents",
+    "url": "https://arxiv.org/abs/2606.31392",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "为多模态工具调用 VLM 设计带反思机制的 GRPO 训练方法,在 RL 循环中引入显式错误归因 trace。",
+    "why": "同时解决现有工具 agent RL 训练的两个常见缺陷:缺乏监督微调基础和无反思机制。",
+    "insight": "训练 tool-using agent 时,把 reflection trace 作为中间 reward 信号比单纯依赖最终结果奖励更稳定。"
+  },
+  {
+    "rank": 7,
+    "title": "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
+    "url": "https://arxiv.org/abs/2606.31478",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "为自主研究 agent 的实验失败恢复提出多假设并行归因机制,替代单次反思的主流范式。",
+    "why": "实验表明单次反思后 agent 常锁定错误归因路径,多假设并行验证显著提升失败恢复成功率。",
+    "insight": "设计带自我修复能力的 agent loop 时,单条 reflection 不够,需显式生成多个失败假设并行验证后再决策。"
+  },
+  {
+    "rank": 8,
+    "title": "RoPoLL: Robust Panel of LLM Judges",
+    "url": "https://arxiv.org/abs/2606.30931",
+    "date": "2026-07-01",
+    "source": "arxiv cs.AI",
+    "what": "用 Huber 污染模型形式化分析 LLM 评审团(Panel of LLM Judges)的统计行为并推导鲁棒集成的理论边界。",
+    "why": "首次为 PoLL 评估范式建立严格统计理论,解释了多 judge 集成在何种条件下优于单 judge。",
+    "insight": "用 LLM as judge 做 eval 时,多 judge 投票不只是取多数,judge 多样性和偏差分布同样关键需纳入设计。"
+  }
+]
