@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "stars": 30923,
+    "trend": "+12,624/周 (+41%)",
+    "what": "首个开源 Agentic 视频制作系统，12 条 pipeline、52 个工具、500+ agent 技能，将 Claude Code/Codex 变成全流程视频制作台",
+    "why": "把 coding agent 技能系统嫁接到创意生产领域，昨日仍在合并新 pipeline（animated drawing、ink-theater），17 位贡献者持续推进",
+    "insight": "技能复用+工具编排是 agent 扩展新领域的通用路径，创意内容生产只是开始"
+  },
+  {
+    "rank": 2,
+    "repo": "DeusData/codebase-memory-mcp",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "stars": 23842,
+    "trend": "+9,697/周 (+40%)",
+    "what": "高性能 MCP server，tree-sitter 将代码库索引为持久知识图谱，158 种语言、亚毫秒 AST 查询，相比 grep 方案减少 99% token 消耗",
+    "why": "直击 coding agent 最大成本痛点：context window token 浪费；与 Claude Code/Codex/Gemini CLI/Aider 等 11 个主流工具深度集成",
+    "insight": "给 agent 装持久化结构化代码大脑，比靠 grep 临时喂 context 更可持续、更省钱"
+  },
+  {
+    "rank": 3,
+    "repo": "Unclecheng-li/VulnClaw",
+    "url": "https://github.com/Unclecheng-li/VulnClaw",
+    "stars": 1585,
+    "trend": "+949/周 (+60%)",
+    "what": "AI Agent 驱动的自动化渗透测试 CLI，内置 21 个安全技能 + MCP 工具链，覆盖侦察、漏洞利用到生成报告的完整 pentest 流程",
+    "why": "6 月 28 日刚发 v1.0.0，MCP 工具链架构让安全工具可被任何 agent 调用，是网安垂直领域涨幅最快的新项目",
+    "insight": "MCP 工具化是把传统安全工具接入 agent 体系的最低摩擦路径，垂直场景的 agent 化正在提速"
+  },
+  {
+    "rank": 4,
+    "repo": "google/agents-cli",
+    "url": "https://github.com/google/agents-cli",
+    "stars": 4583,
+    "trend": "+1,468/周 (+32%)",
+    "what": "Google 官方 CLI，让 coding assistant 一键创建、评估和部署 Google Cloud 上的 AI agents，基于 ADK + Gemini Enterprise Agent Platform",
+    "why": "7 月 1 日刚发 v1.0.0 GA，一周连发三版本（v0.6.0→v0.6.1→v1.0.0），是 Google 官方押注 MCP/agent 基础设施赛道的明确信号",
+    "insight": "大厂官方 CLI 把云服务包装成 agent 可调用工具集，是 cloud-native agent 落地的标准范式"
+  },
+  {
+    "rank": 5,
+    "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "stars": 23791,
+    "trend": "+3,367/周 (+14%)",
+    "what": "结构化网安技能知识库，817 个技能横跨 29 个安全领域，映射到 6 大框架（MITRE ATT&CK v19.1、NIST CSF 2.0、MITRE ATLAS 等），为 AI agent 设计",
+    "why": "上周发布 v1.3.0 纳入最新 MITRE ATT&CK v19.1，解决了安全场景 agent 知识准确性与可审计性问题",
+    "insight": "给 agent 注入领域专家知识库比靠 pretraining 记住漏洞细节更可靠、可验证"
+  }
+]
