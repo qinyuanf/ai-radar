@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 48374,
+    "trend": "+8,791/周",
+    "what": "统一 CLI 让 AI agent 零 API 费用读写 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书，多后端路由自动 failover",
+    "why": "解决 agent 互联网信息获取的核心瓶颈：无需购买各平台 API Key；v1.5.0 后 65 个 PR 等待合并，社区贡献持续涌入",
+    "insight": "标准化互联网信息读取接口是 agent 能力下限，比向量 RAG 更靠近实时世界"
+  },
+  {
+    "rank": 2,
+    "repo": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "stars": 53093,
+    "trend": "+4,994/周",
+    "what": "LLM 驱动的多市场股票分析系统，覆盖 A 股/港股/美股/日股/韩股，每日自动生成投资信号并推送到微信/飞书/Telegram/邮件",
+    "why": "v3.24.1（6 月 28 日）持续更新，847 次 commit、28 个 release；46k fork 远超 53k star，说明大量用户跑自己的私有实例",
+    "insight": "定时数据采集 + LLM 分析 + 多渠道推送是金融垂直 agent 的最小可行产品结构"
+  },
+  {
+    "rank": 3,
+    "repo": "jamiepine/voicebox",
+    "url": "https://github.com/jamiepine/voicebox",
+    "stars": 36735,
+    "trend": "+2,960/周",
+    "what": "本地优先 AI 语音工作室（Tauri 桌面应用），支持 7 个 TTS 引擎、23 种语言语音克隆，内置 Whisper 全局听写，含 MCP 接口供 agent 调用",
+    "why": "6 月 30 日新增 AMD ROCm GPU 加速，覆盖 Apple Silicon（MLX）+ NVIDIA + AMD 三大硬件平台；MCP 接口使其可作为 agent 语音输出模块直接挂载",
+    "insight": "本地运行语音 I/O + MCP 暴露接口，是语音 agent 和 embodied agent 的可插拔构建块"
+  },
+  {
+    "rank": 4,
+    "repo": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "stars": 75800,
+    "trend": "v2.0.0 完全重写 (6月25日)，今日仍在提交",
+    "what": "ByteDance 开源长时 SuperAgent 框架，v2.0 重写带来沙箱隔离 subagent 并行架构、持久记忆、技能库和消息网关（Telegram/Slack/飞书/微信）",
+    "why": "v2.0.0 是地基级重写，subagent 并行+沙箱隔离是核心升级；今天（7 月 2 日）仍有 commit，社区热度重燃",
+    "insight": "长时自主任务需要 subagent 并行+上下文隔离，DeerFlow v2 提供了可落地的工程参考"
+  },
+  {
+    "rank": 5,
+    "repo": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "stars": 90200,
+    "trend": "v0.3.0 发布 (6月22日)，90k star",
+    "what": "多 agent 金融交易框架，模拟交易公司结构：基本面分析师、情绪分析师、技术分析师、交易员、风险经理 agent 协同辩论后投票决策",
+    "why": "v0.3.0（6 月 22 日）扩展 NVIDIA/Kimi/Groq/Mistral/Bedrock provider 和 FRED/Polymarket 数据源；90.2k star、17.4k fork 社区体量持续扩大",
+    "insight": "金融决策需要多视角对抗验证，role-specialization multi-agent 比单 agent 提供更好的误差校正机制"
+  }
+]
