@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "title": "Autoresearch: The feedback loop behind self-improving agents",
+    "url": "https://www.latent.space/p/autoresearch-introspection",
+    "date": "2026-07-01",
+    "source": "latent.space",
+    "what": "深度分析自改进 agent 的内省与反馈回路设计模式,区分执行层自省与策略层自改进两个维度。",
+    "why": "将 autoresearch 实践归纳为具体的反馈拓扑结构,是目前关于 agent 自我改进最系统的工程层分析。",
+    "insight": "构建自改进 agent 时,执行层反思和策略层更新需要分开设计,而不是用同一个 reflection 机制通吃。"
+  },
+  {
+    "rank": 2,
+    "title": "How Cursor deploys AI inside the enterprise",
+    "url": "https://www.latent.space/p/cursor-forward-deployed-engineers",
+    "date": "2026-07-01",
+    "source": "latent.space",
+    "what": "记录 Cursor 通过 Forward Deployed Engineer 角色将 AI 编码工具深度集成进不同企业代码库和工作流的实践。",
+    "why": "首次披露 Cursor 企业部署的组织模式和技术挑战,是 AI coding agent 规模化落地的一手工程案例。",
+    "insight": "企业级 coding agent 部署的核心瓶颈是上下文定制和信任建立,需要专门角色负责而非纯自助接入。"
+  },
+  {
+    "rank": 3,
+    "title": "\"It's Hard to Eval\" Is a Product Smell",
+    "url": "https://hamel.dev/blog/posts/eval-smell/",
+    "date": "2026-06-29",
+    "source": "hamel.dev",
+    "what": "论证\"很难做 eval\"本身就是产品定义模糊的信号,并给出从模糊需求倒推出可测评标准的方法论。",
+    "why": "把 eval 困难重新定性为产品问题而非技术问题,角度新颖且有大量实际 LLM 产品的观察佐证。",
+    "insight": "当团队说\"我们的任务没法 eval\"时,往往是功能定义还不够清晰,应该先固化成功标准再写代码。"
+  },
+  {
+    "rank": 4,
+    "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
+    "url": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
+    "date": "2026-06-30",
+    "source": "Google DeepMind Blog",
+    "what": "发布 Nano Banana 2 Lite(端侧)和 Gemini Omni Flash(云端)两款效率优先模型并开放开发者访问。",
+    "why": "Nano Banana 2 Lite 专为端侧 agent 场景设计,延迟显著低于云端方案且支持离线运行。",
+    "insight": "端侧 agent 已成为独立产品赛道,选底层模型时需明确是云端高质量还是端侧低延迟的场景取舍。"
+  },
+  {
+    "rank": 5,
+    "title": "Hugging Face and Cerebras bring Gemma 4 to real-time voice AI",
+    "url": "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
+    "date": "2026-07-01",
+    "source": "Hugging Face Blog",
+    "what": "Cerebras 推理硬件加速开源 Gemma 4 模型,实现低于 200ms 端到端延迟的实时语音交互。",
+    "why": "首次在开源模型上达到商业级语音 agent 所需的延迟指标,证明开源技术栈语音 agent 的可行性。",
+    "insight": "语音 agent 的延迟瓶颈已被专用推理硬件打破,构建低延迟语音交互无需依赖专有闭源模型。"
+  },
+  {
+    "rank": 6,
+    "title": "OpenSquilla 发布 0.4.0:AI 写代码首次能\"自我验证\"",
+    "url": "https://www.qbitai.com/2026/07/441240.html",
+    "date": "2026-07-01",
+    "source": "量子位",
+    "what": "报道 OpenSquilla 0.4.0 新增代码自我验证能力,coding agent 写完代码后自动执行并检验输出正确性。",
+    "why": "将验证循环内置进 coding agent runtime,无需人工介入即可检测生成代码是否符合预期行为。",
+    "insight": "coding agent 的下一阶段不只是生成更好的代码,而是把执行-验证回路内化为 runtime 能力标配。"
+  },
+  {
+    "rank": 7,
+    "title": "Loop 世界模型论文登顶 Hugging Face,来自中国一家初创",
+    "url": "https://www.qbitai.com/2026/07/441225.html",
+    "date": "2026-07-01",
+    "source": "量子位",
+    "what": "报道中国初创公司发布的 Loop 隐空间世界模型,该论文在 Hugging Face 登上热榜并获多位知名投资人关注。",
+    "why": "Loop 通过隐空间建模实现长时序双向物理因果链预测,为具身 agent 的内部世界模型提供新技术路线。",
+    "insight": "世界模型作为 agent 的内部物理仿真器正从学术走向产品,值得跟踪其在具身和规划型 agent 中的集成进展。"
+  }
+]
