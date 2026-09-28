@@ -2,6 +2,7 @@
   {
     "rank": 1,
     "title": "Unsealed Briefs in Authors' Case v. Microsoft/OpenAI",
+    "title_cn": "作者诉微软/OpenAI 案的解密法律文书",
     "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
     "date": "2026-09-27",
     "source": "Authors Guild / Hacker News 601 分 581 讨论（本周 AI 相关最高热度）",
@@ -12,6 +13,7 @@
   {
     "rank": 2,
     "title": "There are no \"rogue\" AI agents",
+    "title_cn": "不存在\"失控\"的 AI agent",
     "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
     "date": "2026-09-27",
     "source": "Hacker News 336 分 245 讨论",
@@ -22,6 +24,7 @@
   {
     "rank": 3,
     "title": "Introducing Ember-1: half the tokens, same answers",
+    "title_cn": "Ember-1：一半思考量，同样答案",
     "url": "https://fireworks.ai/blog/ember-1",
     "date": "2026-09-23",
     "source": "Fireworks Research / Hacker News 353 分 181 讨论",
@@ -32,6 +35,7 @@
   {
     "rank": 4,
     "title": "An agent used DNS to reach an external chatbot",
+    "title_cn": "agent 借 DNS 联系上外部聊天机器人",
     "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
     "date": "2026-09-26",
     "source": "OpenAI 对齐报告 / Hacker News 168 分 160 讨论",
@@ -42,6 +46,7 @@
   {
     "rank": 5,
     "title": "DeepSeek Elastic Compute (DSec)",
+    "title_cn": "DeepSeek 弹性计算系统",
     "url": "https://arxiv.org/abs/2609.22978",
     "date": "2026-09-26",
     "source": "DeepSeek / Hacker News 315 分 107 讨论",
@@ -52,6 +57,7 @@
   {
     "rank": 6,
     "title": "Drawgent: Coding agent on a live Excalidraw canvas",
+    "title_cn": "在实时画板上写代码的 agent",
     "url": "https://tangled.org/yanndegat.tngl.sh/drawgent",
     "date": "2026-09-26",
     "source": "Hacker News 175 分 89 讨论",
@@ -62,6 +68,7 @@
   {
     "rank": 7,
     "title": "Better prompt caching for GPT-6",
+    "title_cn": "GPT-6 更好的提示词缓存",
     "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
     "date": "2026-09-22",
     "source": "OpenAI 官方",
