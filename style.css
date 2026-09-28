@@ -42,7 +42,7 @@ nav button.on{color:var(--brand);font-weight:500;border-bottom-color:var(--brand
 .pk-menu li:hover{background:var(--brand-tint)}
 .pk-menu li.on{color:var(--brand);font-weight:500;background:var(--brand-tint)}
 .item{position:relative;padding:24px 0;border-bottom:1px solid var(--border)}
-.thumb{float:right;width:200px;margin:30px 0 14px 18px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--ivory);box-shadow:var(--whisper)}
+.thumb{display:block;width:auto;margin:10px 0 14px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--ivory);box-shadow:var(--whisper);clear:both}
 .thumb img{display:block;width:100%;height:auto}
 .item:last-child{border-bottom:none}
 .star{position:absolute;top:24px;right:0;background:none;border:none;cursor:pointer;font-size:20px;line-height:1;color:var(--stone);padding:2px 4px;transition:color .15s,transform .15s}
@@ -67,7 +67,7 @@ main{animation:rise .5s cubic-bezier(.22,1,.36,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(8px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){main{animation:none}.item{transition:none}}
 @media(max-width:600px){
-  .thumb{float:none;width:auto;margin:0 0 14px}
+  .thumb{margin:9px 0 12px}
   body{padding:0 18px 28px;font-size:15px}
   header{padding:28px 0 12px}
   h1{font-size:24px}
