@@ -53,6 +53,7 @@ nav button.on{color:var(--brand);font-weight:500;border-bottom-color:var(--brand
 .meta{color:var(--stone);font-size:13px;margin:7px 0 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .tag{background:var(--tag);color:var(--brand);border-radius:999px;padding:1px 9px;font-variant-numeric:tabular-nums}
 .meta .src{color:var(--stone)}
+.tcn{margin:3px 0 0;padding-right:30px;font-size:14.5px;line-height:1.45;color:var(--stone)}
 .item p{margin:5px 0;font-size:15px;color:var(--olive)}
 .item .k{color:var(--brand);font-weight:500}
 .empty{color:var(--stone);text-align:center;min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:6px}
