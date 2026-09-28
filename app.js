@@ -81,6 +81,7 @@ function step(dir) {
 const card = x => `
   <div class="item">
     <button class="star ${favs.has(x.url) ? 'on' : ''}" data-u="${encodeURIComponent(x.url)}" aria-label="收藏">${favs.has(x.url) ? '★' : '☆'}</button>
+    ${x.image ? `<a class="thumb" href="${x.url}" target="_blank" rel="noopener"><img src="${x.image}" alt="" loading="lazy" onerror="this.closest('.thumb').remove()"></a>` : ''}
     <h3><span class="rank">${x.rank || ''}</span><a href="${x.url}" target="_blank" rel="noopener">${x.repo || x.title}${x.title_cn ? ` <span class="tcn">· ${x.title_cn}</span>` : ''}</a></h3>
     <div class="meta">
       ${x.stars ? `<span class="tag">★ ${kfmt(x.stars)}</span>` : ''}
