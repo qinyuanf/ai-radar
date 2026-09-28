@@ -2,6 +2,7 @@
   {
     "rank": 1,
     "title": "Stale-Document Poisoning: When Outdated Retrieval Overrides Correct Model Answers",
+    "title_cn": "陈旧文档投毒：过期检索压过正确答案",
     "url": "https://arxiv.org/abs/2609.31342",
     "date": "2026-09-25",
     "source": "arxiv cs.CL",
@@ -12,6 +13,7 @@
   {
     "rank": 2,
     "title": "Mutable Transcripts: Mitigating Context Pollution through Editable Conversation State",
+    "title_cn": "可变会话记录：用可编辑状态控制上下文污染",
     "url": "https://arxiv.org/abs/2609.31354",
     "date": "2026-09-25",
     "source": "arxiv cs.AI",
@@ -22,6 +24,7 @@
   {
     "rank": 3,
     "title": "Beyond Approved Actions: Runtime Validation of Persistent Outcomes in Agent Workflows",
+    "title_cn": "超越已批准动作：运行时校验持久化结果",
     "url": "https://arxiv.org/abs/2609.31301",
     "date": "2026-09-25",
     "source": "arxiv cs.SE",
@@ -32,6 +35,7 @@
   {
     "rank": 4,
     "title": "AgentXploit: Autonomous Repository-to-Runtime Red-Teaming for AI Agents",
+    "title_cn": "从代码仓到运行时的 agent 自主红队",
     "url": "https://arxiv.org/abs/2609.31318",
     "date": "2026-09-25",
     "source": "arxiv cs.CR",
@@ -42,6 +46,7 @@
   {
     "rank": 5,
     "title": "A Safety-Bounded SDC-to-MCP Gateway for Medical AI Agents",
+    "title_cn": "带安全边界的医疗设备 MCP 网关",
     "url": "https://arxiv.org/abs/2609.31358",
     "date": "2026-09-25",
     "source": "arxiv cs.DC",
@@ -52,6 +57,7 @@
   {
     "rank": 6,
     "title": "MA-WAM: Multi-Agent World-Action Model for Test-Time Planning",
+    "title_cn": "多智能体世界-动作模型（推理期规划）",
     "url": "https://arxiv.org/abs/2609.31281",
     "date": "2026-09-25",
     "source": "arxiv cs.AI",
@@ -62,6 +68,7 @@
   {
     "rank": 7,
     "title": "Programs-of-Layers in LLMs through the Lens of Cortical Areas",
+    "title_cn": "大模型中的\"层程序\"",
     "url": "https://arxiv.org/abs/2609.31360",
     "date": "2026-09-25",
     "source": "arxiv cs.AI",
@@ -72,6 +79,7 @@
   {
     "rank": 8,
     "title": "Softmax Reparameterization for Output-Head Quantization",
+    "title_cn": "面向输出层量化的 Softmax 重参数化",
     "url": "https://arxiv.org/abs/2609.31291",
     "date": "2026-09-25",
     "source": "arxiv cs.LG",
