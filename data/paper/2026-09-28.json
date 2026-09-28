@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Stale-Document Poisoning: When Outdated Retrieval Overrides Correct Model Answers",
+    "url": "https://arxiv.org/abs/2609.31342",
+    "date": "2026-09-25",
+    "source": "arxiv cs.CL",
+    "what": "实验证明：只要检索到过期文档，模型就会放弃本身正确的答案。论文把这种情况作为独立失效模式提出\"陈旧文档投毒\"。",
+    "why": "知识库答错但模型本来会答对，是检索增强系统最常见的事故之一，此前只被当成脏数据问题，没有单独量化过。",
+    "insight": "上线检索增强系统时，文档版本和时效要参与排序与过滤，并保留一条兜底：检索结果置信度低时允许模型使用内部知识。"
+  },
+  {
+    "rank": 2,
+    "title": "Mutable Transcripts: Mitigating Context Pollution through Editable Conversation State",
+    "url": "https://arxiv.org/abs/2609.31354",
+    "date": "2026-09-25",
+    "source": "arxiv cs.AI",
+    "what": "把对话状态从只追加的日志改成可编辑的结构，通过改写和删除来控制上下文污染，减少长会话里的错误累积。",
+    "why": "长会话上下文膨胀是 agent 稳定性的头号问题，直接对应运行时的上下文裁剪与记忆写入策略。",
+    "insight": "会话状态应该做成可写数据而不是只增日志。工程含义很具体：给 agent 一个\"改写和撤销自己的记忆\"的接口，而不是一路追加。"
+  },
+  {
+    "rank": 3,
+    "title": "Beyond Approved Actions: Runtime Validation of Persistent Outcomes in Agent Workflows",
+    "url": "https://arxiv.org/abs/2609.31301",
+    "date": "2026-09-25",
+    "source": "arxiv cs.SE",
+    "what": "指出 agent 工作流里\"动作被批准\"不等于\"结果正确\"，提出在运行时校验持久化产生的实际后果。",
+    "why": "和数字员工场景高度贴合：工具调用被批准之后照样可能写坏数据，现有审批只控制动作、不看结果。",
+    "insight": "关键写操作需要补一层结果校验（回读比对预期）。审批只能表达意图，不能代替事实确认，这条可以直接落到发布与数据修改流程里。"
+  },
+  {
+    "rank": 4,
+    "title": "AgentXploit: Autonomous Repository-to-Runtime Red-Teaming for AI Agents",
+    "url": "https://arxiv.org/abs/2609.31318",
+    "date": "2026-09-25",
+    "source": "arxiv cs.CR",
+    "what": "面向上线前授权审计的自动化红队：在拿到代码仓和受控环境的前提下，从代码层的路径穿越、命令注入一直打到运行时的工具滥用。",
+    "why": "它把 agent 安全问题拆成\"对抗内容改变工具调用\"和\"周边软件本身有漏洞\"两类，并给出可自动执行的白盒审计流程，比事后贴提示词补丁可靠。",
+    "insight": "agent 的越权一半来自它自己，一半来自它调用的普通代码。上线前的安全检查必须同时覆盖工具链的软件漏洞，只审提示词注入是漏掉大半。"
+  },
+  {
+    "rank": 5,
+    "title": "A Safety-Bounded SDC-to-MCP Gateway for Medical AI Agents",
+    "url": "https://arxiv.org/abs/2609.31358",
+    "date": "2026-09-25",
+    "source": "arxiv cs.DC",
+    "what": "把医疗设备数据标准接进 MCP 网关，让 agent 能读设备状态、调设备能力，同时对可能产生的效果加确定性约束。",
+    "why": "这是把 MCP 从\"给模型接工具\"推进到\"接有物理后果的设备\"的实例，高安全行业的接入方式第一次有了可参考的设计。",
+    "insight": "工具协议越靠近真实动作，越不能只靠模型自律。正确的做法是在网关层写死可执行范围，把\"能不能做\"从模型判断变成协议判断。"
+  },
+  {
+    "rank": 6,
+    "title": "MA-WAM: Multi-Agent World-Action Model for Test-Time Planning",
+    "url": "https://arxiv.org/abs/2609.31281",
+    "date": "2026-09-25",
+    "source": "arxiv cs.AI",
+    "what": "多智能体协作需要各 agent 同时执行联合动作，每个动作都会改变其他 agent 的观察和响应。论文提出用统一的世界-动作模型预测联合动作的团队收益，而不是把单 agent 世界模型简单套用。",
+    "why": "它正面处理了多 agent 系统最难的一点：一个 agent 的动作会改变别人的处境，逐个预测会互相打脸。",
+    "insight": "多 agent 编排不稳的根因常常是各自假设环境不变。工程上可行的折中是：把联合动作的预测放到协调层，别让每个子 agent 自己猜别人。"
+  },
+  {
+    "rank": 7,
+    "title": "Programs-of-Layers in LLMs through the Lens of Cortical Areas",
+    "url": "https://arxiv.org/abs/2609.31360",
+    "date": "2026-09-25",
+    "source": "arxiv cs.AI",
+    "what": "常规推理是固定深度、固定顺序走完所有层，与输入难度无关。论文借鉴大脑用丘脑做中枢按需路由信息的机制，给 transformer 加上可编排层执行顺序的结构。",
+    "why": "如果层执行能按难度编排，推理成本就能随任务复杂度伸缩，这和本周 Ember-1 压缩思考 token 是同一个方向的两条路。",
+    "insight": "推理成本的下降路径正在从\"少想几步\"扩展到\"少走几层\"。做容量规划时，不要把单次调用成本和模型大小绑死，新机制会让同样质量的价格继续下探。"
+  },
+  {
+    "rank": 8,
+    "title": "Softmax Reparameterization for Output-Head Quantization",
+    "url": "https://arxiv.org/abs/2609.31291",
+    "date": "2026-09-25",
+    "source": "arxiv cs.LG",
+    "what": "大词表让输出层成为小模型推理的主要开销。提出训练后重参数化：量化前给每行输出减去词表行均值的标量倍，系数按验证集 KL 选定，兼容多种量化方案。",
+    "why": "端侧小模型的显存压力很多来自输出层而不是主干，这是一个训练后就能做、不改架构就能省下成本的实用技巧。",
+    "insight": "优化推理成本时先量一次各层显存占比再动手。词表大、模型小的场景，动输出层的收益可能远大于量化主干。"
+  }
+]
