@@ -5,8 +5,9 @@ const sb = async (path, opt = {}) => {
   try {
     r = await fetch(`${SB_URL}/rest/v1/${path}`, { ...opt, headers: { apikey: SB_KEY, 'Content-Type': 'application/json', ...opt.headers } });
   } catch (e) {
-    throw new Error('连不上收藏服务（网络不通或服务域名无法解析）');
+    throw new Error('连不上收藏服务（网络不通、被代理拦截或服务域名无法解析）');
   }
+  if (!r) throw new Error('收藏请求未发出（被浏览器或网络环境拦截）');
   if (!r.ok) {
     let d = '';
     try { d = (await r.text()).replace(/\s+/g, ' ').trim().slice(0, 120); } catch (e) {}
@@ -14,7 +15,7 @@ const sb = async (path, opt = {}) => {
   }
   return r;
 };
-let favsOnline = true, favsError = '';
+let favsOnline = true, favsError = '', favDismissed = false;
 
 const FEEDS = ['article', 'paper', 'growth', 'hot'];
 const LABEL = { article: '高质量文章', paper: '论文', growth: '增长榜', hot: '热门榜', fav: '收藏' };
@@ -49,15 +50,20 @@ function notify(msg, kind) {
 function syncFavStatus() {
   const el = document.getElementById('favstatus');
   if (!el) return;
-  el.hidden = favsOnline;
-  if (!favsOnline) el.textContent = `云端收藏暂不可用：${favsError}。收藏操作不会被保存，恢复后端后这里会自动消失。`;
+  el.hidden = favsOnline || favDismissed;
+  if (el.hidden) return;
+  el.textContent = `云端收藏暂不可用：${favsError}。收藏不会被保存，恢复后自动消失。`;
+  const x = document.createElement('button');
+  x.className = 'bx'; x.setAttribute('aria-label', '关闭提示'); x.textContent = '×';
+  x.onclick = () => { el.hidden = true; };
+  el.appendChild(x);
 }
 async function loadFavs() {
   try {
     const r = await sb('favorites?select=url,data&order=marked_at.desc');
     const rows = await r.json();
     favs = new Map((Array.isArray(rows) ? rows : []).map(x => [x.url, x.data]));
-    favsOnline = true; favsError = '';
+    favsOnline = true; favsError = ''; favDismissed = false;
   } catch (e) {
     favs = new Map(); favsOnline = false; favsError = e.message;
   }
