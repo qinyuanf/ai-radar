@@ -1,6 +1,20 @@
 const SB_URL = 'https://idfbjcloyxuxbuheekzm.supabase.co';
 const SB_KEY = 'sb_publishable_fjqAxsSMdohSyYg80OOZ_A_OZRnX8Dg';
-const sb = (path, opt = {}) => fetch(`${SB_URL}/rest/v1/${path}`, { ...opt, headers: { apikey: SB_KEY, 'Content-Type': 'application/json', ...opt.headers } });
+const sb = async (path, opt = {}) => {
+  let r;
+  try {
+    r = await fetch(`${SB_URL}/rest/v1/${path}`, { ...opt, headers: { apikey: SB_KEY, 'Content-Type': 'application/json', ...opt.headers } });
+  } catch (e) {
+    throw new Error('连不上收藏服务（网络不通或服务域名无法解析）');
+  }
+  if (!r.ok) {
+    let d = '';
+    try { d = (await r.text()).replace(/\s+/g, ' ').trim().slice(0, 120); } catch (e) {}
+    throw new Error(`收藏服务返回 ${r.status}${d ? ' · ' + d : ''}`);
+  }
+  return r;
+};
+let favsOnline = true, favsError = '';
 
 const FEEDS = ['article', 'paper', 'growth', 'hot'];
 const LABEL = { article: '高质量文章', paper: '论文', growth: '增长榜', hot: '热门榜', fav: '收藏' };
@@ -25,24 +39,45 @@ function syncURL() {
   history.replaceState(null, '', `${location.pathname}?${p}`);
 }
 
+function notify(msg, kind) {
+  let t = document.getElementById('toast');
+  if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast'; document.body.appendChild(t); }
+  t.textContent = msg; t.dataset.kind = kind || 'err'; t.hidden = false;
+  clearTimeout(notify._h);
+  notify._h = setTimeout(() => { t.hidden = true; }, 4200);
+}
+function syncFavStatus() {
+  const el = document.getElementById('favstatus');
+  if (!el) return;
+  el.hidden = favsOnline;
+  if (!favsOnline) el.textContent = `云端收藏暂不可用：${favsError}。收藏操作不会被保存，恢复后端后这里会自动消失。`;
+}
 async function loadFavs() {
-  const rows = await sb('favorites?select=url,data&order=marked_at.desc').then(r => r.json()).catch(() => []);
-  favs = new Map((Array.isArray(rows) ? rows : []).map(x => [x.url, x.data]));
+  try {
+    const r = await sb('favorites?select=url,data&order=marked_at.desc');
+    const rows = await r.json();
+    favs = new Map((Array.isArray(rows) ? rows : []).map(x => [x.url, x.data]));
+    favsOnline = true; favsError = '';
+  } catch (e) {
+    favs = new Map(); favsOnline = false; favsError = e.message;
+  }
 }
 async function toggleFav(x) {
   if (favs.has(x.url)) {
-    favs.delete(x.url);
     await sb(`favorites?url=eq.${encodeURIComponent(x.url)}`, { method: 'DELETE' });
+    favs.delete(x.url);
   } else {
     const data = { ...x, feed };
-    favs.set(x.url, data);
     await sb('favorites', { method: 'POST', body: JSON.stringify({ url: x.url, data }) });
+    favs.set(x.url, data);
   }
+  favsOnline = true; favsError = '';
 }
 
 async function init() {
   manifest = await fetch(`data/manifest.json?t=${Date.now()}`).then(r => r.json()).catch(() => ({}));
   await loadFavs();
+  syncFavStatus();
   const wantDate = readURL();
   document.querySelectorAll('#tabs button').forEach(b =>
     b.onclick = () => { feed = b.dataset.feed; mark(); load(); });
@@ -99,7 +134,10 @@ async function load() {
   let items;
   if (feed === 'fav') {
     items = [...favs.values()];
-    if (!items.length) { box.innerHTML = `<p class="empty"><b>还没有收藏</b>点卡片右上角 ☆ 收藏，跨设备同步。</p>`; return; }
+    if (!items.length) {
+      box.innerHTML = `<p class="empty"><b>还没有收藏</b>${favsOnline ? '点卡片右上角 ☆ 收藏，跨设备同步。' : '云端收藏暂不可用，详见顶部提示。'}</p>`;
+      return;
+    }
   } else {
     const d = document.getElementById('date').value;
     if (!d) { box.innerHTML = `<p class="empty"><b>${LABEL[feed]}还没有数据</b>每日自动更新，首批数据生成中。</p>`; return; }
@@ -109,7 +147,19 @@ async function load() {
   box.querySelectorAll('.star').forEach(b => b.onclick = async () => {
     const url = decodeURIComponent(b.dataset.u);
     const x = items.find(i => i.url === url);
-    await toggleFav(x); load();
+    if (!x) { notify('这条内容暂时无法收藏（缺少地址）', 'err'); return; }
+    b.disabled = true;
+    try {
+      await toggleFav(x);
+      notify(favs.has(url) ? '已收藏' : '已取消收藏', 'ok');
+    } catch (e) {
+      favsOnline = false; favsError = e.message;
+      notify(`收藏失败：${e.message}`, 'err');
+    } finally {
+      b.disabled = false;
+      syncFavStatus();
+      load();
+    }
   });
 }
 init();
