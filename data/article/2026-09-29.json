@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "Sonnet 5.5",
+    "title_cn": "Claude Sonnet 5.5 发布",
+    "url": "https://www.anthropic.com/claude-sonnet-5-5",
+    "date": "2026-09-29",
+    "source": "Hacker News 575 points / 397 comments",
+    "what": "Anthropic 于 2026-09-28 发布 Claude Sonnet 5.5，官方称比 Sonnet 5 快 30% 以上、成本低 30%，在代码与协作场景有显著提升。",
+    "why": "HN 上 575 赞、397 条评论，是当日模型圈最受关注的发布，开发者关心其实际编码与 Agent 能力。",
+    "insight": "做 Agent 工程时可优先在编码、长上下文协作任务上评测 Sonnet 5.5，关注其 cost/latency 与上一代的真实差距。",
+    "image": "images/2026-09-29/sonnet-5-5.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "AI companies in race to demonstrate their model most threatening to humanity",
+    "title_cn": "AI 公司竞相展示模型最威胁人类",
+    "url": "https://thecivilian.co.nz/2026/09/27/ai-companies-in-fierce-arms-race-to-demonstrate-their-model-is-the-most-existentially-threatening-to-humanity/",
+    "date": "2026-09-29",
+    "source": "Hacker News 426 points / 384 comments",
+    "what": "评论文章指出，AI 公司正把“模型有多危险”当作营销卖点，把安全叙事从“可控”转向“最致命”。",
+    "why": "426 赞、384 评论，说明业界对“安全即公关”现象的批评获得强烈共鸣。",
+    "insight": "做企业级 Agent 时，应把安全评估与营销话术分开，建立可审计的风险分级而不是追逐惊悚能力演示。",
+    "image": "images/2026-09-29/ai-companies-in-race-to-demonstrate-their-model-.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "The problem is not AI code, but not knowing about system architecture or intent",
+    "title_cn": "问题不在 AI 代码，而在不懂架构与意图",
+    "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
+    "date": "2026-09-29",
+    "source": "Hacker News 347 points / 224 comments",
+    "what": "作者认为，AI 生成代码本身不是核心问题，真正的问题是团队缺乏系统架构与业务意图的理解，导致“没有计划”。",
+    "why": "347 赞、224 评论，切中当前“AI 写代码快但系统越来越乱”的普遍焦虑。",
+    "insight": "引入 AI 编程助手时，应同步强化设计文档、架构评审和代码所有权，否则生成速度会加速技术债务。",
+    "image": "images/2026-09-29/the-problem-is-not-ai-code-but-not-knowing-about.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "It's Time to Investigate the AI Labs",
+    "title_cn": "是时候调查 AI 实验室了",
+    "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+    "date": "2026-09-29",
+    "source": "Hacker News 281 points / 105 comments",
+    "what": "Cal Newport 呼吁对 AI 实验室的具体项目、安全流程和内部意识形态展开独立调查，而不是让私营企业单方面定义公众对 AI 的认知。",
+    "why": "281 赞、105 评论，反映公众与学界对 AI 实验室透明度和监管缺位的持续担忧。",
+    "insight": "企业部署外部大模型时，应要求供应商提供安全评估、数据处理和模型能力的可验证信息，降低合规风险。",
+    "image": "images/2026-09-29/it-s-time-to-investigate-the-ai-labs.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Prompting Claude Opus 5.5",
+    "title_cn": "Claude Opus 5.5 提示工程指南",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+    "date": "2026-09-29",
+    "source": "Hacker News 195 points / 218 comments",
+    "what": "Anthropic 官方发布的 Claude Opus 5.5 提示工程文档，涵盖针对该模型的最佳提示实践与注意事项。",
+    "why": "195 赞、218 评论，开发者高度关注新模型的 prompt 调优与能力边界。",
+    "insight": "迁移到 Sonnet/Opus 5.5 时，应重新跑一遍关键 prompt 的回归测试，官方建议不一定直接适配现有业务场景。",
+    "image": "images/2026-09-29/prompting-claude-opus-5-5.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+    "title_cn": "SNL 专访 Anthropic CEO 谈 AI 威胁",
+    "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+    "date": "2026-09-29",
+    "source": "Hacker News 191 points / 103 comments",
+    "what": "周六夜现场 Weekend Update 片段中，Anthropic CEO Dario Amodei 谈论 AI 对人类的潜在威胁，引发对 AI 安全话语大众化的讨论。",
+    "why": "191 赞、103 评论，AI 安全议题进入主流娱乐节目，说明其社会关注度在上升。",
+    "insight": "AI 安全叙事正在从学术圈进入大众媒体，企业在对外沟通时需更谨慎地平衡能力展示与风险披露。"
+  },
+  {
+    "rank": 7,
+    "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
+    "title_cn": "AI 中的快思考与慢思考：元认知作用",
+    "url": "https://arxiv.org/abs/2110.01834",
+    "date": "2026-09-29",
+    "source": "Hacker News 170 points / 75 comments",
+    "what": "2021 年的论文提出借鉴卡尼曼“快慢系统”理论构建多智能体架构：快系统利用经验、慢系统负责推理，以改善 AI 决策。",
+    "why": "170 赞、75 评论，说明“元认知 + 快慢系统”这一经典思路在今日 Agent 设计讨论中重新受到关注。",
+    "insight": "设计复杂 Agent 时可尝试显式区分“快速反应模块”与“慢速反思模块”，在延迟与准确率之间做可配置权衡。"
+  }
+]

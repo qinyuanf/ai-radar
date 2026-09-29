@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "stars": 390743,
+    "trend": "首日快照：总 390743★，2026-09-29 有提交",
+    "what": "跨平台自主 AI Agent 框架，宣称可在任何 OS 上直接执行复杂任务，强调“能真正做事”的 Agent 能力。",
+    "why": "39 万星且仍在活跃提交，近一周代码持续更新，是当前 GitHub 上最受关注的 Agent 类仓库之一。",
+    "insight": "做数字员工/Agent 工程时可关注其任务拆解、工具调用与跨平台执行抽象，但需验证实际落地稳定性。",
+    "image": "images/2026-09-29/openclaw-openclaw.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 292522,
+    "trend": "首日快照：总 292522★，2026-09-29 有提交",
+    "what": "面向软件开发的 Agentic Skills 框架与方法论，尝试把 AI 能力组织成可复用、可组合的技能单元。",
+    "why": "29 万星、一周内仍有提交，说明社区对其“把 Agent 能力工程化”的方向持续投入。",
+    "insight": "技能化封装是 Agent 落地的关键方向，可借鉴其 skill 定义与编排方式，避免每个任务都从零写 prompt。",
+    "image": "images/2026-09-29/obra-superpowers.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 206230,
+    "trend": "首日快照：总 206230★，2026-09-29 有提交",
+    "what": "支持自托管与云端的可视化工作流自动化平台，内置 AI 节点，可连接 400+ 服务进行编排。",
+    "why": "20 万星、近期持续提交，是企业把 AI 能力接入现有系统链路的高热度低代码方案。",
+    "insight": "做 Agent 集成时可参考其节点化编排思路，把 LLM 调用、RAG、工具执行拆成可复用节点。",
+    "image": "images/2026-09-29/n8n-io-n8n.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Significant-Gravitas/AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "stars": 187596,
+    "trend": "首日快照：总 187596★，2026-09-29 有提交",
+    "what": "早期自主 AI Agent 代表项目，提供让 LLM 自主设定目标并调用工具完成任务的框架与 SDK。",
+    "why": "18 万星、近一周仍有提交，说明 Agent 自主执行这一赛道仍有持续迭代与社区关注。",
+    "insight": "关注其从“演示级 Agent”向工程化 SDK 的演进，可为自主任务执行模块提供设计反例与参考。",
+    "image": "images/2026-09-29/significant-gravitas-autogpt.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ollama/ollama",
+    "url": "https://github.com/ollama/ollama",
+    "stars": 181873,
+    "trend": "首日快照：总 181873★，2026-09-29 有提交",
+    "what": "本地运行大模型的命令行工具与运行时，支持 Kimi、DeepSeek、Qwen、Gemma 等多种模型一键拉取与推理。",
+    "why": "18 万星且保持活跃提交，是本地模型部署与 Agent 私有化推理的事实标准工具之一。",
+    "insight": "做本地 Agent 或数据不外流场景时，可优先评估 ollama 的模型兼容性与 API 对接成本。",
+    "image": "images/2026-09-29/ollama-ollama.jpg"
+  }
+]

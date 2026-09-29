@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "jev-chat/jev-chat-jarvis",
+    "url": "https://github.com/jev-chat/jev-chat-jarvis",
+    "stars": 6935,
+    "trend": "2026-09-19 后新建，8 天内 6935★",
+    "what": "手机端对话副驾：通过屏幕阅读理解 QQ / X / 飞书聊天上下文，生成候选回复并一键填入，发送前由用户确认。",
+    "why": "9 月 21 日新建后 8 天内冲到近 7000 星，说明“屏幕感知 + 聊天辅助”这一落地形态引发高度关注。",
+    "insight": "做移动端数字员工/助手时可参考其非侵入式屏幕读取方案，但需评估隐私合规与平台限制。",
+    "image": "images/2026-09-29/jev-chat-jev-chat-jarvis.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "yetone/magpie",
+    "url": "https://github.com/yetone/magpie",
+    "stars": 1607,
+    "trend": "2026-09-19 后新建，6 天内 1607★",
+    "what": "菜单栏里的 Agent 模型聚合器，可在同一入口切换 Codex、Claude Code、DeepSeek 等多种 coding agent。",
+    "why": "6 天内 1600+ 星，反映开发者希望把分散的 coding agent 统一到一个本地入口的需求。",
+    "insight": "Agent 工具碎片化是痛点，统一入口/快捷键调度值得在内部开发工具中借鉴。",
+    "image": "images/2026-09-29/yetone-magpie.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "nokia-applied-research/AnyJev",
+    "url": "https://github.com/nokia-applied-research/AnyJev",
+    "stars": 880,
+    "trend": "2026-09-19 后新建，8 天内 880★",
+    "what": "诺基亚应用研究出品，尝试把任意 LLM 改造成带类型决策与真实概率输出的 Jev 风格决策模型，无需训练。",
+    "why": "8 天内 880 星，说明“让 LLM 输出结构化、可解释决策”的轻量改造思路受到关注。",
+    "insight": "做 Agent 决策层时可关注其概率输出与类型约束机制，用于降低幻觉导致的错误执行。",
+    "image": "images/2026-09-29/nokia-applied-research-anyjev.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "jev-chat/jev-chat-windows",
+    "url": "https://github.com/jev-chat/jev-chat-windows",
+    "stars": 653,
+    "trend": "2026-09-19 后新建，8 天内 653★",
+    "what": "Windows 端聊天辅助：窗口截图 + 本地离线 OCR 读取对方消息，经本地模型判断意图后生成 3 条候选回复。",
+    "why": "与 jarvis 同源、同周期快速增长，说明同一产品形态在跨桌面平台的复制潜力。",
+    "insight": "桌面端 Agent 可优先考虑离线 OCR + 本地小模型判断的隐私友好架构。",
+    "image": "images/2026-09-29/jev-chat-jev-chat-windows.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Alex314618-create/JevRev",
+    "url": "https://github.com/Alex314618-create/JevRev",
+    "stars": 613,
+    "trend": "2026-09-19 后新建，8 天内 613★",
+    "what": "围绕 LLM + Jev workflow 的个人效率工具，强调把决策模型嵌入日常知识工作流。",
+    "why": "8 天内 600+ 星，显示 Jev 概念下的个人 Agent 工作流正在快速涌现。",
+    "insight": "可跟踪其 workflow 定义方式，判断是否能把“决策模型 + 个人知识库”复用到内部效率工具。",
+    "image": "images/2026-09-29/alex314618-create-jevrev.jpg"
+  }
+]

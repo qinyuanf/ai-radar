@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Transfer Learning for Edge Classification on Dynamic Text-Attributed Graphs",
+    "title_cn": "动态文本属性图边分类的迁移学习",
+    "url": "http://arxiv.org/abs/2609.32849v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32849",
+    "what": "提出动态文本属性图（DyTAG）边分类的迁移学习协议，解决现有方法在分布偏移下过度拟合域特定结构、时序和语义模式的问题。",
+    "why": "2026-09-26 发表于 arXiv，面向知识图谱、社交关系等动态图数据的跨域泛化，与 Agent 记忆/关系推理直接相关。",
+    "insight": "做需要长期关系记忆的 Agent 时，可关注其跨域图表示学习方法，避免模型过拟合到当前业务场景的图结构。"
+  },
+  {
+    "rank": 2,
+    "title": "Scanning While Imagining: A Scene-Graph World Model for Robotic Ultrasound Navigation",
+    "title_cn": "机器人超声导航的场景图世界模型",
+    "url": "http://arxiv.org/abs/2609.32837v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32837",
+    "what": "提出 SonoGraph-WM，用场景图表示解剖结构及其空间关系，让机器人在超声检查中预判探头移动带来的视图变化。",
+    "why": "2026-09-26 发表于 arXiv，把世界模型引入医疗机器人导航，展示了结构化表示在物理交互任务中的价值。",
+    "insight": "Agent 与物理世界交互时可借鉴“场景图 + 预测模型”的范式，把感知输入转成结构化可推理的状态表示。"
+  },
+  {
+    "rank": 3,
+    "title": "Radiomap Blind Prediction under Incomplete Observation: Error Characterization and Correctable Propagation-Prior Learning",
+    "title_cn": "不完全观测下的无线地图盲预测",
+    "url": "http://arxiv.org/abs/2609.32836v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32836",
+    "what": "建立无线电地图盲预测的理论框架，识别不完全观测下的确定性误差，并提出可修正的传播先验学习方法。",
+    "why": "2026-09-26 发表于 arXiv，虽然偏无线通信，但其“不完全观测下的误差刻画”思路对 Agent 感知补全有参考价值。",
+    "insight": "Agent 在信息不完整场景做决策时，可参考其显式建模观测缺口与可修正误差的方法，避免把缺失信息当确定性事实。"
+  },
+  {
+    "rank": 4,
+    "title": "FinancialAuditBench: Benchmark Construction under Differential Privacy Using Real-World Priors",
+    "title_cn": "差分隐私下基于真实先验的金融审计基准",
+    "url": "http://arxiv.org/abs/2609.32835v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32835",
+    "what": "面向金融服务中 AI agent 的审计需求，提出结合差分隐私与真实世界先验的 benchmark，解决隐私敏感数据难以直接评测的问题。",
+    "why": "2026-09-26 发表于 arXiv，直接面向金融 Agent 的可部署边界与人工复核需求。",
+    "insight": "在高合规领域部署 Agent 时，应建立类似“可部署任务边界 + 人工接管机制”的评测体系，而不是只看端到端准确率。"
+  },
+  {
+    "rank": 5,
+    "title": "Improving LLM Collaboration via Multi-Agent Preference Learning",
+    "title_cn": "基于多智能体偏好学习提升 LLM 协作",
+    "url": "http://arxiv.org/abs/2609.32827v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32827",
+    "what": "将偏好学习扩展到多智能体系统，用比较式人类或 AI 反馈替代精确可聚合的奖励函数，以改善多 LLM 协作。",
+    "why": "2026-09-26 发表于 arXiv，直接回应多 Agent 协作中“奖励难设计、难聚合”的核心痛点。",
+    "insight": "做多 Agent 协作系统时，可尝试用成对偏好反馈替代复杂奖励设计，降低标注与工程成本。"
+  },
+  {
+    "rank": 6,
+    "title": "The Decomposition Tax: LLM Pipelines Lose Up to 40 Accuracy Points at Their Own Interfaces",
+    "title_cn": "分解税：LLM 流水线在接口处丢失 40 分准确率",
+    "url": "http://arxiv.org/abs/2609.32825v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32825",
+    "what": "发现四阶段 LLM 流水线在接口处最多损失 40.5 个准确率点，提出“分解税”概念并量化其对多阶段 Agent 系统的影响。",
+    "why": "2026-09-26 发表于 arXiv，21 个开源模型、GSM-Hard 与 MATH-500 上的系统实验，结论对 Agent 流水线设计有警示意义。",
+    "insight": "设计多步骤 Agent 时，应把“阶段间信息损失”作为独立风险度量，必要时保留原始问题上下文或合并阶段。"
+  },
+  {
+    "rank": 7,
+    "title": "Routing Drift Alone Does Not Diagnose Failure in Merged MoE LLMs",
+    "title_cn": "路由漂移本身不能诊断合并 MoE LLM 的失效",
+    "url": "http://arxiv.org/abs/2609.32821v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32821",
+    "what": "研究模型合并后 MoE LLM 的专家路由漂移现象，指出路由漂移并不等同于路由失效，并给出判断修复时需要的证据。",
+    "why": "2026-09-26 发表于 arXiv，覆盖 DeepSeekMoE、OLMoE、Qwen3-MoE，对模型合并与 MoE 路由诊断有实际指导。",
+    "insight": "做模型合并或专家路由调优时，不要仅凭路由分布变化就判定失败，需要建立下游任务指标与路由行为的联合诊断。"
+  },
+  {
+    "rank": 8,
+    "title": "Rank Collapse Is Recoverable, Growing $|Q|$ Is Not: Out-of-Sample Early Warning for Value Divergence in High-UTD Soft Actor-Critic",
+    "title_cn": "秩崩溃可恢复，Q 值发散不可恢复：高 UTD SAC 值发散的样本外预警",
+    "url": "http://arxiv.org/abs/2609.32819v1",
+    "date": "2026-09-26",
+    "source": "arXiv 2609.32819",
+    "what": "区分强化学习中的两种可塑性损失：表示秩崩溃与 Q 值幅度发散，发现秩崩溃仍可学习，而 Q 值增长是真正的训练守卫触发信号。",
+    "why": "2026-09-26 发表于 arXiv，为 RL agent 的训练稳定性提供了更细粒度的诊断依据。",
+    "insight": "训练 RL-based Agent 时，监控 Q 值幅度比监控表示活跃单元数更关键，可把后者从训练终止条件中降级。"
+  }
+]
