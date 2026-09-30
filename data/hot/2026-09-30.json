@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "stars": 166826,
+    "trend": "首日快照：总 166826★，2026-09-30 有提交",
+    "what": "Hugging Face 的模型定义与训练框架，覆盖文本、视觉、音频与多模态模型，是社区加载、微调开源模型的标准入口。",
+    "why": "16.6 万★且 2026-09-30 仍有提交；新开源模型的兼容适配基本先落到这里，是生态更新最活跃的基础库之一。",
+    "insight": "评估新开源模型时先查它是否已合并支持，能省掉自写加载与权重转换代码的成本；优先级高于看模型卡宣传。",
+    "image": "images/2026-09-30/huggingface-transformers.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "open-webui/open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "stars": 153567,
+    "trend": "首日快照：总 153567★，2026-09-29 有提交",
+    "what": "自托管的 AI 对话界面，支持 Ollama 与 OpenAI 等多家接口，可作为团队内部的统一模型入口。",
+    "why": "15.3 万★、2026-09-29 有提交；企业要搭内网大模型入口时，它是被验证最多的开源选项。",
+    "insight": "内部工具若需要“类 ChatGPT 界面 + 自有模型/API”，先评估 open-webui 再决定是否自研，能省掉多模型接入与权限层开发。",
+    "image": "images/2026-09-30/open-webui-open-webui.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "stars": 147281,
+    "trend": "首日快照：总 147281★，2026-09-29 有提交",
+    "what": "老牌 Agent 工程平台，提供链式编排、工具调用、记忆与多模型接入的抽象层。",
+    "why": "14.7 万★、2026-09-29 有提交；在 Agent 框架竞争激烈的当下仍是使用面最广的工程化选择。",
+    "insight": "参考其 tool / retriever / memory 等接口抽象比直接绑定其运行时更稳：这些概念已成事实标准，按它们设计自己的模块便于日后替换实现。",
+    "image": "images/2026-09-30/langchain-ai-langchain.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "github/spec-kit",
+    "url": "https://github.com/github/spec-kit",
+    "stars": 139455,
+    "trend": "首日快照：总 139455★，2026-09-29 有提交",
+    "what": "GitHub 官方的规范驱动开发（SDD）工具包，帮助团队把“先写规范、再落代码”的流程工具化。",
+    "why": "13.9 万★、2026-09-29 有提交；“让 AI 按规范写代码”的流程被大规模关注，且由 GitHub 官方持续维护。",
+    "insight": "SDD 的 spec → 实现流程与我们“需求→方案→实现”的交付链路同构，可参考其规范模板与阶段划分来统一我们的产物格式。",
+    "image": "images/2026-09-30/github-spec-kit.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Comfy-Org/ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "stars": 135525,
+    "trend": "首日快照：总 135525★，2026-09-30 有提交",
+    "what": "基于节点图的扩散模型（图像/视频生成）工作流引擎，同时提供图形界面与 API 后端。",
+    "why": "13.5 万★、2026-09-30 有提交；节点化工作流是视觉生成领域的事实标准形态，生态持续扩张。",
+    "insight": "其“节点图 + 可编程后端”模式值得做 Agent 编排器时借鉴：复杂流程拆成可复用节点，同时保证代码化导出与版本管理。",
+    "image": "images/2026-09-30/comfy-org-comfyui.jpg"
+  }
+]

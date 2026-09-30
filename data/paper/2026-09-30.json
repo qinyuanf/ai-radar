@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Neuro-Symbolic Computer Use: Learning Reusable Policies for Reliable and Efficient Execution",
+    "title_cn": "神经符号式计算机使用：学习可复用策略",
+    "url": "http://arxiv.org/abs/2609.36927v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36927",
+    "what": "把重复工作流中跨运行稳定的决策（顺序、变量、循环、分支）固化成可执行代码策略，把依赖观察的判断（控件定位、状态检查）留给神经模型；用神经符号策略迭代从单条轨迹起步，靠任务级与步骤级判别器修订策略。OSWorld-Verified 与 ScienceBoard 上 Pass^3 全部最优，比基线 Agent 高 3.6-15.8 分，单次运行成本降低 15-217 倍、延迟降低 3.4-5.1 倍。",
+    "why": "2026-09-29 提交 arXiv（cs.AI）；对“固定流程反复执行”给出成本降 15-217 倍的实测，是当周计算机使用类 Agent 最直接的工程结果之一。",
+    "insight": "对固定的重复流程（日报生成、巡检、数据搬运），别让 Agent 每次重新规划：把稳定决策固化为代码策略、只把依赖观察的判断交给模型，按此重构现有重复型任务可同时降本提稳。"
+  },
+  {
+    "rank": 2,
+    "title": "PrecogUI: Proactive GUI Agents via Pre-cognitive Simulation and Experience Retrieval",
+    "title_cn": "PrecogUI：预认知模拟的主动界面智能体",
+    "url": "http://arxiv.org/abs/2609.36923v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36923",
+    "what": "把界面 Agent 从“反应式执行”改为“预判式决策”：用主动经验池缓存异常与成功模式（状态-动作-结果三元组），用主动模拟执行器预测候选动作导致的下一步界面布局并按可靠性排序动作，由预认知执行控制器融合先验、优先处理可预见的异常并闭环纠错；配套发布带强干扰的长程基准 InterfereBench。",
+    "why": "2026-09-29 提交 arXiv（cs.AI）；与同批的 GUI Agent 信用分配、界面动作预测论文一起，显示“提升长程界面任务的抗干扰能力”是本周论文密集方向。",
+    "insight": "界面自动化长任务的失败多源于意外扰动引发的连锁反应；把历史异常/成功模式做成可检索经验池、动作前先预测界面状态，是可先落地的一层稳定性改造。"
+  },
+  {
+    "rank": 3,
+    "title": "Harness Evolution as Learning: Approximation, Generalization, and Optimization Limits of Self-Improving Personal Agents",
+    "title_cn": "自我改进个人智能体的 harness 极限",
+    "url": "http://arxiv.org/abs/2609.36892v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36892",
+    "what": "研究个人 Agent 的 harness（管理上下文、记忆、工具与执行的周边层）演化规律：从 harness 架构、规模、自演化算法三个维度做基准实验与理论分析，并用近似误差、泛化误差、优化误差解释观测到的能力上限。",
+    "why": "2026-09-29 提交 arXiv（cs.AI）；个人 Agent/数字员工的核心正是 harness 工程，该文系统给出其可学习性边界，对判断“自我改进型 Agent 能做到什么程度”有理论价值。",
+    "insight": "别把自适应全押在“让 Agent 自己进化”上：harness 规模与交互数据有限时自演化有明确上限；工程投入应优先放在固定 harness 设计与显式偏好采集，而非无限增加自迭代轮次。"
+  },
+  {
+    "rank": 4,
+    "title": "CoEM: Empowering Long-Context Reasoning with Commit-on-Evidence Memory",
+    "title_cn": "CoEM：以证据提交式记忆增强长上下文推理",
+    "url": "http://arxiv.org/abs/2609.36935v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36935",
+    "what": "提出“见证据才提交”的记忆机制：在固定记忆预算下，先把可能有用的原文片段保留在待定集，等后续上下文澄清相关性后，由学习到的策略决定提交为记忆事实、继续保留或丢弃，并用冻结验证器确保事实有原文支撑；用步骤级证据奖励加最终答案奖励做强化学习。6400 篇文档规模的长输入上 F1 比最强记忆基线高 10.4-11.4。",
+    "why": "2026-09-29 提交 arXiv（cs.AI，论文同时开源代码）；长上下文记忆的压缩时机是 Agent 记忆系统的关键取舍，该文把“何时压缩”变成了可学习的决策。",
+    "insight": "长上下文不要过早压缩：保留原始证据、等后续上下文确证相关性再提交为记忆，与“早总结早省 token”的常见直觉相反，值得在任务记忆场景做小规模 A/B 验证。"
+  },
+  {
+    "rank": 5,
+    "title": "SCA: Spatial Credit Assignment for Reinforcement Learning of GUI Agents",
+    "title_cn": "SCA：GUI 智能体强化学习的空间信用分配",
+    "url": "http://arxiv.org/abs/2609.36939v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36939",
+    "what": "改进界面 Agent 强化学习的信用分配：用点击坐标的空间信息细化组相对信用——在成功/失败混合组里，用其他样本预测留存样本的奖励并用残差调整信用；当整组全部失败时，按点击位置与标注目标的距离排序；空间信息只用于构造训练更新，部署策略不变。在界面定位与离线动作预测基准上取得最优结果。",
+    "why": "2026-09-29 提交 arXiv（cs.AI）；组相对 RL 训练界面 Agent 时“全失败样本无学习信号”是常见痛点，该文直接针对该问题且不改变部署形态。",
+    "insight": "训练/评测界面 Agent 时，把“点击离目标多远”当作连续信用信号而不是只看成功/失败二值，能改善全失败组的学习；自定义 RL 训练流程可直接复现该思路。"
+  },
+  {
+    "rank": 6,
+    "title": "Chinese-Jev: Bringing System One Model to Chinese-Language Tasks",
+    "title_cn": "Chinese-Jev：面向中文的系统一模型",
+    "url": "http://arxiv.org/abs/2609.36965v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36965",
+    "what": "把 System One（决策型）模型带到中文任务：统一数据处理协议把异构中文标注转成候选选项的概率目标，轻量 encoder-only 骨干学习候选打分，1000 万条通用语料预训练后按医疗、法律、金融分域微调；通用任务准确率比闭源 Jev 高 1.24%、推理提速 20.3 倍，医学域比 Jev 高 4.0%，平均延迟 15 毫秒，INT8 量化后可上手机（约 1 秒/次）。",
+    "why": "2026-09-29 提交 arXiv（cs.CL）；GitHub 上 jev 生态仓库近一周密集爆发，该文把决策模型带到中文，与“System One 决策模型”热度同频。",
+    "insight": "决策层不必用大模型：中文场景可先评估 15 毫秒级小决策模型做选项打分，把大模型留给生成与规划；高 QPS 的判定场景（自动分流、审核初筛）收益最直接。"
+  },
+  {
+    "rank": 7,
+    "title": "Cool the Sampler, Not the Learner: Sampling Temperature Moves the Staleness Cliff of Importance-Corrected GRPO",
+    "title_cn": "冷却采样器而非学习器：采样温度与陈旧悬崖",
+    "url": "http://arxiv.org/abs/2609.36953v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36953",
+    "what": "研究重要度校正 GRPO 中采样器落后学习器多久会崩：在 Qwen2.5-Math-1.5B 与 GSM8K 上发现“悬崖”，每 192 步刷新在约 180 步后严重退化；把采样温度降到 0.8（学习器、参考模型与重要度权重保持温度 1，记录退火分布的采样概率）后所有冷却运行稳定，192 步间隔的冷却采样器最终精度与 96 步未冷却相当（均为 0.857），而单靠降低学习率低 3-7 分。",
+    "why": "2026-09-29 提交 arXiv（cs.LG）；GRPO 是当前主流的强化学习后训练方法，该文给出“采样温度与刷新间隔应一起调”的可操作结论，并标明失效条件。",
+    "insight": "用 GRPO 训练时把采样温度与刷新间隔联动调参：提高采样器陈旧容忍度可减少刷新、省算力，但需先验证 0.8 温度下收敛；超过安全间隔 3 倍时冷却也只会延后崩溃，窗口外不要指望它兜底。"
+  },
+  {
+    "rank": 8,
+    "title": "Dating the Model: Hidden Dates in System Prompts Affect LLM Evaluation",
+    "title_cn": "为模型定日期：系统提示隐藏日期影响评测",
+    "url": "http://arxiv.org/abs/2609.36931v1",
+    "date": "2026-09-29",
+    "source": "arXiv 2609.36931",
+    "what": "发现系统提示中被隐藏注入的当前日期会影响大模型评测：9 个模型、6 个数据集上，仅日期变化就带来最高 6%（选择题）、14%（数学）、7%（代码）与 2.84 BLEU（翻译）的波动，模型排名也会变化；日期效应超过批量大小与数值精度等已知非确定性来源，思维链提示还会放大它。",
+    "why": "2026-09-29 提交 arXiv（cs.CL）；评测可复现性直接决定榜单与选型结论的可信度，该文指出一个此前被忽视、每天都会变化的隐藏变量。",
+    "insight": "跨天对比同一模型的结果不可直接比较：评测脚本应固定或记录系统提示中的日期注入，A/B 实验尽量同日完成或显式对齐该变量，否则差异可能不是模型能力变化。"
+  }
+]

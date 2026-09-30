@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "KKKKhazix/AIHOT",
+    "url": "https://github.com/KKKKhazix/AIHOT",
+    "stars": 3194,
+    "trend": "2026-09-20 后新建，2 天内 3194★",
+    "what": "中文项目，一个“自己找热点、自己写日报”的网站框架：把信源和精选标准换成自己的，就变成任意行业的热点站。",
+    "why": "2026-09-28 新建，2 天内冲到 3194★，说明“自动情报/日报生成”这类应用模板的需求强烈，形态与我们的 ai-radar 任务几乎一致。",
+    "insight": "直接对照它的信源组织与日报生成流程，检查我们 ai-radar 的信源可配置性差距；若它把信源做成配置项，值得沉淀成我们的模板。",
+    "image": "images/2026-09-30/kkkkhazix-aihot.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "kydlikebtc/awesome-jev",
+    "url": "https://github.com/kydlikebtc/awesome-jev",
+    "stars": 586,
+    "trend": "2026-09-20 后新建，8 天内 586★",
+    "what": "把 Jev（TypeSafe AI 的 System One 决策模型）相关的 1207 个公开资源按决策模式索引成清单。",
+    "why": "2026-09-22 新建、8 天 586★；与同期 AnyJev、jev-chat、Jeff 等仓库一起出现，围绕“类型化决策模型”正在形成开发者生态。",
+    "insight": "关注其“按决策模式分类”的做法：若社区已在把决策任务模式化复用，我们的数字员工决策层也可按模式沉淀，而非一任务一实现。",
+    "image": "images/2026-09-30/kydlikebtc-awesome-jev.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "jev-chat/jev-chat-jarvis-mac",
+    "url": "https://github.com/jev-chat/jev-chat-jarvis-mac",
+    "stars": 442,
+    "trend": "2026-09-20 后新建，9 天内 442★",
+    "what": "macOS 聊天悬浮窗助手：屏幕感知加本地小模型判断意图与风险，按话术生成回复候选，全程只读不代发。",
+    "why": "2026-09-21 新建、9 天 442★；是相同产品线移动端（已 6935★）的桌面延伸，快速扩平台说明“聊天副驾”需求真实存在。",
+    "insight": "注意其“纯只读 + 本地小模型做意图/风险分级”的保守设计：桌面助手用本地小模型先判风险再决定是否上云，是合规与体验的折中方案。",
+    "image": "images/2026-09-30/jev-chat-jev-chat-jarvis-mac.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Michael-Jiahao-Zhang/game-the-llm-reviewer",
+    "url": "https://github.com/Michael-Jiahao-Zhang/game-the-llm-reviewer",
+    "stars": 199,
+    "trend": "2026-09-20 后新建，9 天内 199★",
+    "what": "通过“保义改写”对抗大模型审稿偏见的研究工具：不改变论文含义的前提下重写，降低被 LLM 审稿人误拒的概率。",
+    "why": "2026-09-21 新建、199★；随着 LLM 参与同行评审增多，“审稿模型的偏见”成为新问题，这类对抗性验证是早期尝试。",
+    "insight": "反向提示：我们的自动评审/审核类 Agent 若用于真实决策，先做改写鲁棒性测试——同一内容换个说法结论就变，说明评审结论不可信。",
+    "image": "images/2026-09-30/michael-jiahao-zhang-game-the-llm-reviewer.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Simreal-AI/Simreal-MLBench",
+    "url": "https://github.com/Simreal-AI/Simreal-MLBench",
+    "stars": 199,
+    "trend": "2026-09-20 后新建，9 天内 199★",
+    "what": "外部评分的 Agent 机器学习研究基准：60 个任务，用真实竞赛成绩作为评分依据，目前公开预览。",
+    "why": "2026-09-21 新建、199★；让 Agent 自动做机器学习研究是热门方向，此前缺少可复核的外部评分标准。",
+    "insight": "评估“Agent 做研发”的能力时不要只看其自报成功率；借鉴它“用外部真实成绩评分”的设计，为 Agent 任务设计外部可验证的验收信号。",
+    "image": "images/2026-09-30/simreal-ai-simreal-mlbench.jpg"
+  }
+]
