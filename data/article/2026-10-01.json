@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "Gemini 4 Argon",
+    "title_cn": "Gemini 4 Argon：下一代前沿智能",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+    "date": "2026-09-30",
+    "source": "Google 官方博客，HN 966 分 659 讨论",
+    "what": "Google 发布 Gemini 4 Argon，官宣进入前沿智能的下一个时代，是本周与 GPT-6.1 Sol 正面对打的旗舰模型。",
+    "why": "HN 966 分 659 条讨论，发布即登当日全站热榜第一，是十月初最受关注的模型事件。",
+    "insight": "旗舰模型已卷到周更节奏，内部选型别追首发：等一周让第三方评测和价格落地再定基线，避免基座频繁迁移带来的回归成本。",
+    "image": "images/2026-10-01/gemini-4-argon.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Livenerf: Has Opus 5.5 been nerfed yet?",
+    "title_cn": "Livenerf：Opus 5.5 削弱了吗",
+    "url": "https://github.com/ninjahawk/livenerf",
+    "date": "2026-09-29",
+    "source": "HN 882 分 377 讨论，仓库 844★",
+    "what": "社区做的模型发布后能力追踪基准，用固定测试集持续测量 Opus 5.5 等模型上线后有没有被悄悄削弱，仓库昨日仍在更新。",
+    "why": "HN 882 分 377 条讨论，'模型有没有被削'是用户最普遍的疑虑，这个项目把它变成了可复查的测量。",
+    "insight": "依赖外部模型的内部服务要有自己的固定回归集：每次供应商静默更新后跑一遍，把'感觉变笨了'变成有数据的结论，再决定是否切换或锁版本。",
+    "image": "images/2026-10-01/livenerf-has-opus-5-5-been-nerfed-yet.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "You said no MCP",
+    "title_cn": "你说过不要 MCP",
+    "url": "https://earendil.com/posts/you-said-no-mcp/",
+    "date": "2026-09-29",
+    "source": "Earendil 工程备忘，HN 615 分 342 讨论",
+    "what": "Pi 的工程团队复盘：此前公开宣称不支持的 MCP，一年后进了核心——因为 MCP 本身在进化，且它所需的沙箱改造对 Pi 想支持的 Jev 同样有用；他们也承认 MCP 组合性差的问题仍未解决。",
+    "why": "HN 615 分 342 条讨论，是本周 agent 工具生态最有代表性的反悔与反思。",
+    "insight": "对技术选型的'永远不用'要设复核日期而不是一刀切：生态标准会自己进化，拒绝的理由消失时要能低成本改回来。评估 MCP 类协议时重点看组合性与沙箱隔离，而不是站队。"
+  },
+  {
+    "rank": 4,
+    "title": "Disrupting a coordinated model-distillation campaign",
+    "title_cn": "瓦解一场有组织的模型蒸馏攻击",
+    "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+    "date": "2026-09-30",
+    "source": "OpenAI 官方博客",
+    "what": "OpenAI 披露处置了一起协同蒸馏攻击：对手有组织地抽取受保护模型的推理输出来训练自家模型，OpenAI 同步公布了防护加固措施。",
+    "why": "厂商罕见地把蒸馏攻防摆上台面，直接关系所有按 token 计费服务的输出保护策略。",
+    "insight": "批量调用大模型 API 时，输出被下游收集做蒸馏是真实威胁面：对涉及内部知识的回答保留限流与异常模式监控，供应商合同里写明禁止用输出训练。"
+  },
+  {
+    "rank": 5,
+    "title": "DevDay 2026 Recap",
+    "title_cn": "DevDay 2026 大会回顾",
+    "url": "https://openai.com/index/devday-2026-recap",
+    "date": "2026-09-29",
+    "source": "OpenAI 官方博客",
+    "what": "OpenAI 官方汇总 DevDay 2026 的 20 多项公告，覆盖 GPT-6 Astra、ChatGPT、Codex、API 与安全等全线更新。",
+    "why": "一篇文章读完全部公告，是本周工程侧信息密度最高的官方材料。",
+    "insight": "大会公告不等于可用能力：把和我们链路相关的几项（模型、Codex、API 变更）逐条排进验证队列，确认配额、价格和接口兼容后再排期。"
+  },
+  {
+    "rank": 6,
+    "title": "A Privacy Analysis of Web and Mobile Conversational AI Agents",
+    "title_cn": "网页与移动端对话 AI 智能体的隐私分析",
+    "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
+    "date": "2026-09-29",
+    "source": "论文 PDF，HN 422 分 137 讨论",
+    "what": "一篇对网页端与移动端对话式 AI 智能体的隐私风险做系统测量的论文，HN 422 分登上热榜。",
+    "why": "对话类产品的数据采集边界正被逐个量化，HN 高热说明公众与工程社区都在关注。",
+    "insight": "数字员工天然处理高敏感会话，同类审计要主动做：定期核对会话数据流向、留存期限与第三方接口的透传范围，把最小化原则写进数据合同而不只是文档。"
+  },
+  {
+    "rank": 7,
+    "title": "AI needs $6T in annual revenue to justify data centre boom",
+    "title_cn": "数据中心繁荣需要 AI 年入 6 万亿美元",
+    "url": "https://www.thenationalnews.com/future/technology/2026/09/29/ai-industry-needs-to-earn-6-trillion-by-2031-to-justify-data-centres/",
+    "date": "2026-09-29",
+    "source": "The National，HN 219 分 325 讨论",
+    "what": "分析指出 AI 行业要在 2031 年前做到约 6 万亿美元年收入，才能支撑当前的数据中心建设规模，缺口引发热议。",
+    "why": "HN 219 分换来 325 条讨论，资本开支与收入缺口是本周产业侧争论的焦点。",
+    "insight": "基建投入远超收入意味着定价与配额政策随时可能收紧：依赖单一供应商低价档的服务要有备选模型与降级预案，成本预算别按当前价格线性外推。"
+  }
+]

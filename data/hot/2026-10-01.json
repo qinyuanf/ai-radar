@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "stars": 127575,
+    "trend": "首日快照：总 127575★，2026-09-30 有提交",
+    "what": "用大模型加自动化工作流，按主题或关键词一键生成高清短视频，脚本、配音、字幕、素材全流程覆盖。",
+    "why": "12.8 万星体量且昨日仍有提交，是 AI 内容生产方向长期最热的项目之一。",
+    "insight": "营销/培训类视频生产可以整条流水线交给 agent：人只定选题和终审，中间环节全部自动化。做内容型数字员工时直接参考它的流程编排而不是重造。",
+    "image": "images/2026-10-01/harry0703-moneyprinterturbo.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Graphify-Labs/graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "stars": 122820,
+    "trend": "首日快照：总 122820★，2026-09-30 有提交",
+    "what": "把代码库连同文档、SQL schema、配置和 PDF 转成可查询知识图谱，提供 /graphify 技能接进 Claude Code、Cursor、Codex、Gemini CLI；本地确定性 AST 解析，每条边可解释，不依赖向量库。",
+    "why": "今年 4 月建仓已 12.3 万星，是代码理解工具里增长最快的一档，昨日仍在提交。",
+    "insight": "做仓库问答和工单定位时，确定性 AST 图谱加可解释边比纯向量检索更可控——检索结果能追溯到具体依赖边。我们的排查工具链值得加一条图谱索引路线做对照实验。",
+    "image": "images/2026-10-01/graphify-labs-graphify.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 116849,
+    "trend": "首日快照：总 116849★，2026-09-30 有提交",
+    "what": "让 agent 直接使用浏览器完成操作的 Python 框架，是浏览器自动化 agent 事实上的标准库之一。",
+    "why": "11.7 万星且保持日更，浏览器执行仍是数字员工落地的主战场。",
+    "insight": "网页类任务优先复用成熟框架，不要自研驱动层；评估重点放在登录态保持、异常弹窗和风控页面的降级策略上，这些才是生产环境的真正分水岭。",
+    "image": "images/2026-10-01/browser-use-browser-use.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "stars": 109387,
+    "trend": "首日快照：总 109387★，2026-09-29 有提交",
+    "what": "多智能体 LLM 金融交易框架，把分析师、研究员、风控等角色拆成协作的 agent 群体。",
+    "why": "10.9 万星、前天仍有提交，是多角色协作架构在高风险领域最大规模的公开实现。",
+    "insight": "金融域对可解释和可追责要求最苛刻，它的角色拆分与决策留痕方式对我们设计多角色数字员工分工有直接参考价值；高风险场景必须保留人类终审环节。",
+    "image": "images/2026-10-01/tauricresearch-tradingagents.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "stars": 108595,
+    "trend": "首日快照：总 108595★，2026-09-30 有提交",
+    "what": "给编码 agent 用的 skill 加代理，通过把 agent 通信语体压缩成超简表达，砍掉 65% 的 token 消耗。",
+    "why": "10.9 万星、昨日有提交，是本周 token 成本优化话题里最出圈的实现。",
+    "insight": "降 token 不一定换小模型，压缩 agent 内部通信语体是另一条路；适合在我们的高频链路（工单批量排查）做 A/B：先在内部工具调用消息上试，人可见输出保持原文。",
+    "image": "images/2026-10-01/juliusbrussee-caveman.jpg"
+  }
+]

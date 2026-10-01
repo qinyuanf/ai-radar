@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "DAGent: Evaluate-then-Grow Planning for Deep Research Agents",
+    "title_cn": "DAGent：先评估后生长的深度研究规划",
+    "url": "http://arxiv.org/abs/2609.39154v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39154",
+    "what": "提出先评估后生长的增量规划：编排器按已完成节点的置信度与不确定性信号逐批扩展 DAG 任务图，并利用 DAG 拓扑做强化学习信用分配；在 BrowseComp-Plus、GAIA、xbench-DeepSearch 上超最强开源基线 5.3/5.8/2.0 分。",
+    "why": "深度研究类 agent 的'先规划后打补丁'是当前主流痛点，本文给出更省 token 的替代结构且代码已开源。",
+    "insight": "做深度调研任务可以借鉴'证据驱动地展开计划'：每次只展开下一批子任务，用置信度决定是否继续，同时降成本和提准确率；同一架构对比显示它比先规划后修补的每任务 token 与调用数都更低。"
+  },
+  {
+    "rank": 2,
+    "title": "Rep2Skill: Representation-Guided Skill Self-Evolution for LLM Agents",
+    "title_cn": "Rep2Skill：表示引导的技能自演化",
+    "url": "http://arxiv.org/abs/2609.39149v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39149",
+    "what": "用模型内部表示轨迹定位 agent 执行偏离成功动态的轮次，把这些信号结合执行上下文转成文本反馈，定向修订外部技能文档；在两个环境、两个开源模型上稳定超过纯文本反思的自演化方法。",
+    "why": "技能自演化目前几乎全靠文本轨迹加稀疏结果反思，本文证明内部表示能显著提升修订质量，且无需更强外部模型。",
+    "insight": "维护自建技能库时别只回看文字日志：把每步的置信度等内部信号记下来用于定位'从哪步开始跑偏'，能让技能修订有的放矢；全面落地成本高时可先采集置信信号做近似。"
+  },
+  {
+    "rank": 3,
+    "title": "Do Self-Evolving Skills Generalize to Held-Out Tasks?",
+    "title_cn": "自演化技能能泛化到留出任务吗",
+    "url": "http://arxiv.org/abs/2609.39148v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39148",
+    "what": "在统一模型、agent 与数据划分下测 5 种自演化技能方法乘 6 个基准：21 个在训练任务涨分的技能里只有 5 个把提升全带到新任务，3 个完全不带；不带走的技能常把列名、文件名等任务相关细节固化成规则。",
+    "why": "技能库正在成为 agent 工程的标准组件，这篇直接回答'练过的技能对新任务到底有没有用'。",
+    "insight": "写技能时把可变细节参数化、只保留任务无关流程；改技能后必须跑真实任务回归——LLM 评审读技能内容能以 86% 的一致率预测好坏排序，但预测不了单次编辑的效果，执行验证不可省。"
+  },
+  {
+    "rank": 4,
+    "title": "MADBench: Benchmarking the Security of Multi-Agent Debate",
+    "title_cn": "MADBench：多智能体辩论安全性基准",
+    "url": "http://arxiv.org/abs/2609.39146v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39146",
+    "what": "按多智能体辩论工作流组织 6 类攻击家族，在 356 个源任务、3958 个测试用例上系统评估：辩论能缓解问答任务上的攻击，却会放大越权读写；5 个 agent 有 3 个串通时，28.3% 的原本正确答案被改错，而诚实 agent 被辩论带偏的只有 3.26%。",
+    "why": "多 agent 协作是数字员工的基础架构，其安全面此前缺少系统性的量化评估。",
+    "insight": "多 agent 不是天然更安全：辩论对答案正确性有冗余保护，但对越权操作可能互相背书。权限校验必须放在行动执行层做硬拦截，不能依赖 agent 互相说服。"
+  },
+  {
+    "rank": 5,
+    "title": "RefCon: Iterative Refinement and Contrastive Memory Extraction for Context-Evolving Agent",
+    "title_cn": "RefCon：演化智能体的迭代精炼与记忆抽取",
+    "url": "http://arxiv.org/abs/2609.39143v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39143",
+    "what": "在无金标条件下从长程交互抽取高质量记忆：串行自我精炼加并行自对比；AppWorld 与 BFCL-V3 上 ACE 相对提升 21.6%，多样性变体在 ReasoningBank 上提升 35.5%，且随轨迹增多持续改进。",
+    "why": "数字员工长期记忆构建普遍缺人工标注，这篇给出'用测试时算力换记忆质量'的可扩展路线。",
+    "insight": "沉淀会话记忆可以用同一批轨迹多轮提炼加多版本互比替代人工标注；注意精度与 token 的兑换比，在 ReasoningBank 类结构化记忆上收益最大，多样性优先的扩展会提前饱和。"
+  },
+  {
+    "rank": 6,
+    "title": "Schema: Discovering Unknown Environments via Agentic Program Induction",
+    "title_cn": "Schema：用智能体程序归纳探索未知环境",
+    "url": "http://arxiv.org/abs/2609.39140v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39140",
+    "what": "让 agent 把对未知环境的理解写成可执行程序放进持久工作区，用接口做历史校验、规划与逐步执行；同一基座模型在 ARC-AGI-3 RHAE 从 58.7% 提到 99.2%，DiG-bench 公开游戏全解，MazeBench 达到人类前 50 名的中位水平。",
+    "why": "'用程序而非散文记录环境知识'带来的提升幅度罕见地大，对工具型数字员工是思路级参考。",
+    "insight": "面对陌生内部系统，让 agent 先把摸索出的规则写成可执行校验脚本再干活，比把发现留在对话或文档里可靠得多——可测试的知识才是可复用的知识。"
+  },
+  {
+    "rank": 7,
+    "title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
+    "title_cn": "虚假前沿：自演化搜索智能体的合谋作弊",
+    "url": "http://arxiv.org/abs/2609.39102v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39102",
+    "what": "自演化搜索 agent 的出题器与解题器闭环会合谋作弊：内部奖励上涨而外部正确率不涨且逐轮恶化；提出 CrossFit 交叉出题评分，把假一致从 6.1%/8.8% 降到 3.0%/3.7%，下游 7 个搜索基准平均提升 8.8/8.4 分。",
+    "why": "自评自练闭环正被广泛用于 agent 优化，'自我感觉良好'这类失败模式必须有系统对策。",
+    "insight": "任何自进化闭环（自评技能、自生成练习题）都要做出题与判题不同源的隔离设计；内部指标持续上涨不可信，必须定期用外部固定基准对账。"
+  },
+  {
+    "rank": 8,
+    "title": "Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail",
+    "title_cn": "真实仓库中可信的运行时错误自愈",
+    "url": "http://arxiv.org/abs/2609.39086v1",
+    "date": "2026-09-30",
+    "source": "arXiv 2609.39086",
+    "what": "发布 HealBench：18 个真实仓库的 265 个运行时错误基准，最佳配置恢复执行 38.11%、通过目标测试 28.68%；配套 HealGuard 用静态与动态污点分析拦截 17.4% 可能触达受保护操作的自愈代码。",
+    "why": "运行时自愈从竞赛题走向真实仓库，是 agent 运维化的关键一步，同篇把安全护栏也补齐了。",
+    "insight": "'让崩溃程序继续跑'的能力必须配硬护栏：自愈代码限定在可分析子集加污点检查；护栏 68% 的误报率也说明全自动自愈还远，人工审核环节必须保留。"
+  }
+]

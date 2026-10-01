@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "zouyuxuan122/dsh-our-free-model",
+    "url": "https://github.com/zouyuxuan122/dsh-our-free-model",
+    "stars": 512,
+    "trend": "首日快照：总 512★，2026-09-30 有提交（2026-09-24 新建，7 天）",
+    "what": "dsh 编辑器插件，装上后免登录免 API Key 直接使用 Muse Spark 1.3、MiMo V2.6 等前沿模型。",
+    "why": "7 天 512 星，创建一周即冲上本周 AI 新仓增长前列。",
+    "insight": "免费使用前沿模型的需求真实存在，但这类插件与账号安全和平台条款直接冲突；内部工具链严禁引入，值得记下的是它反映的模型访问门槛问题。",
+    "image": "images/2026-10-01/zouyuxuan122-dsh-our-free-model.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "nanaism/yomiyasu",
+    "url": "https://github.com/nanaism/yomiyasu",
+    "stars": 328,
+    "trend": "首日快照：总 328★，2026-09-30 有提交（2026-09-30 新建，1 天）",
+    "what": "一个 Agent Skill：把 AI 生成感明显的文章改写成对人类自然的日语，专治机翻腔。",
+    "why": "当天建仓当天 328 星，是本周技能类项目里起量最快的。",
+    "insight": "'AI 味改写'是 skill 化的典型场景：输入输出明确、规则可枚举。沉淀技能库时优先收这类窄而硬的任务，比大而全的写作助手更容易验证效果。",
+    "image": "images/2026-10-01/nanaism-yomiyasu.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "tswawa/WechatVibe",
+    "url": "https://github.com/tswawa/WechatVibe",
+    "stars": 165,
+    "trend": "首日快照：总 165★，2026-09-29 有提交（2026-09-23 新建，8 天）",
+    "what": "微信聊天记录分析工具，本地跑 Laya 或调 API 模型，做意图识别、情绪感知、人物画像、群聊画像和 MBTI 推测。",
+    "why": "8 天 165 星，中文社交数据分析是持续高需求的场景。",
+    "insight": "画像类分析的边界要警惕：这类工具默认分析他人聊天，合规风险远大于技术难度。做会话分析能力时只处理用户自己授权的数据，并在产品层明示分析范围。",
+    "image": "images/2026-10-01/tswawa-wechatvibe.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "scarletkc/seiso",
+    "url": "https://github.com/scarletkc/seiso",
+    "stars": 155,
+    "trend": "首日快照：总 155★，2026-09-30 有提交（2026-09-27 新建，4 天）",
+    "what": "给 AI 写、人和 agent 读的项目文档定 Markdown 规范的 Rust linter。",
+    "why": "AI 生成文档的质量治理刚刚起步，4 天 155 星说明这个切入点踩中了痛点。",
+    "insight": "'文档是 agent 的接口'开始有专用工具链了；内部文档（方案、排查记录）可以定义类似规范并做检查，保证后续 agent 接手时结构可解析。",
+    "image": "images/2026-10-01/scarletkc-seiso.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Xuanwo/cida",
+    "url": "https://github.com/Xuanwo/cida",
+    "stars": 127,
+    "trend": "首日快照：总 127★，2026-09-30 有提交（2026-09-25 新建，6 天）",
+    "what": "Mac 全局翻译润色工具'辞达'，任意应用里用自选大模型即时翻译和改写文字。",
+    "why": "6 天 127 星，是个人效率工具里少见的 Swift 原生实现，作者在开源存储圈有号召力。",
+    "insight": "'选中即服务'的交互是数字员工能力外溢到系统层的样板：把翻译、润色这类原子能力做成全局快捷入口，比让用户打开完整 agent 应用更贴近真实使用频率。",
+    "image": "images/2026-10-01/xuanwo-cida.jpg"
+  }
+]
