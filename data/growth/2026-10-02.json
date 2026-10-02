@@ -1,0 +1,57 @@
+[
+ {
+  "rank": 1,
+  "repo": "AFK-surf/Comma",
+  "url": "https://github.com/AFK-surf/Comma",
+  "stars": 144,
+  "trend": "2026-09-30 后新建，首日快照 144★，2026-10-01 有提交",
+  "what": "无会话（sessionless）的持续型个人 agent，自称是 Muse、Dots、Instinct、Town 的开源替代。",
+  "why": "09-30 建仓两天即 144★，'常驻型个人 agent'赛道正在被开源化。",
+  "insight": "'sessionless' 是值得跟踪的交互范式：任务状态不依赖单次会话存活。数字员工也应把会话当缓存而非真相源，状态落盘才能可恢复。",
+  "image": "images/2026-10-02/afk-surf-comma.jpg"
+ },
+ {
+  "rank": 2,
+  "repo": "suvamneog/jobradar",
+  "url": "https://github.com/suvamneog/jobradar",
+  "stars": 142,
+  "trend": "2026-09-24 后新建，首日快照 142★，2026-09-30 有提交",
+  "what": "盯公司招聘页的 agent：抓取新职位、按简历打分，发现值得投的岗位就发邮件提醒。",
+  "why": "建仓一周 142★，'监控+评分+触达'的个人自动化 agent 模板正在批量出现。",
+  "insight": "这类'低频高价值监控'是数字员工最容易落地的形态：单一数据源+明确评分标准+异步通知，比通用助理更可控，适合做行业方案样板。",
+  "image": "images/2026-10-02/suvamneog-jobradar.jpg"
+ },
+ {
+  "rank": 3,
+  "repo": "chelinho139/wow-ai",
+  "url": "https://github.com/chelinho139/wow-ai",
+  "stars": 128,
+  "trend": "2026-09-23 后新建，首日快照 128★，2026-09-27 有提交",
+  "what": "在《魔兽世界》里接入 Claude、Codex、Grok、Hermes 等 AI 的插件。",
+  "why": "9 天 128★，agent 正在渗入游戏客户端这类封闭 GUI 场景。",
+  "insight": "游戏 GUI 是 agent 操作边界的好试验场：'读屏+注入输入'的通用操作路线在最严反作弊环境也有人做；做 GUI agent 要先想清楚灰度与封禁风险。",
+  "image": "images/2026-10-02/chelinho139-wow-ai.jpg"
+ },
+ {
+  "rank": 4,
+  "repo": "matank001/clodfarm",
+  "url": "https://github.com/matank001/clodfarm",
+  "stars": 121,
+  "trend": "2026-09-25 后新建，首日快照 121★，2026-10-01 有提交",
+  "what": "一群 Claude Code 组成的'农场'：投入一个任务，自动拆成子 agent 分头开工并控制节奏。",
+  "why": "建仓一周 121★，多 agent 并行分工的工具化刚刚起步。",
+  "insight": "'任务拆分+子 agent 分工'可借鉴到并行开发流程，但要像它一样先做预算与节奏控制，否则并行 agent 的成本不可控。",
+  "image": "images/2026-10-02/matank001-clodfarm.jpg"
+ },
+ {
+  "rank": 5,
+  "repo": "georgeding/Relate",
+  "url": "https://github.com/georgeding/Relate",
+  "stars": 118,
+  "trend": "2026-09-23 后新建，首日快照 118★，2026-09-28 有提交",
+  "what": "自托管的聊天'参谋长'：记住对方说过的话和你答应过的事，跨会话提醒。",
+  "why": "9 天 118★，私人关系记忆类应用在开源侧开始成型。",
+  "insight": "把'承诺/待办'从聊天记录抽出来做结构化记忆，是个人助理差异化的最小切入点；沟通型数字员工可加'我说过要做什么'的显式追踪。",
+  "image": "images/2026-10-02/georgeding-relate.jpg"
+ }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "DAYJOB: A Benchmark for Long-Horizon Professional Work",
+    "title_cn": "DAYJOB：长周期职业工作基准",
+    "url": "https://arxiv.org/abs/2610.01306",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01306",
+    "what": "医疗（50 题）与金融（80 题）从业者构建的 130 道真实职业任务基准：容器化环境、专家二元评分标准（中位数每题约 47-58 条）、agent 法官按交付文件打分，全部达标才通过；单题平均需专家 13.6-16.6 小时。",
+    "why": "10-01 发布，30 个模型配置中最强的 Claude Opus 5.5 通过率仅 24.7%/23.9%，中位数配置接近 0；'一句话需求→自主补全前提'正是数字员工的真实工作形态。",
+    "insight": "验收数字员工可直接借鉴：把模糊需求展开成二元可判定的清单，judge 只对交付物打分；案例显示 agent 会接受与记录矛盾的前提，我们的流程需要加前提校验环节。"
+  },
+  {
+    "rank": 2,
+    "title": "PACE: Provenance-Aware Capability Enforcement for Tool-Using LLM Agents",
+    "title_cn": "PACE：溯源感知的智能体权限管控",
+    "url": "https://arxiv.org/abs/2610.01349",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01349",
+    "what": "在每次工具调用执行前做能力与效果校验的安全框架：用路径约束切断被污染的工具元数据、网页、记忆和技能对下一步调用的影响；8 个 agent 安全基准上 79 个攻击列 62 个取得最低攻击成功率，原生能力损失不超过 3 分。",
+    "why": "工具投毒与间接注入是 agent 上生产的头号风险，10-01 发布并给出可复现的防御-成本曲线（自适应攻击 0/30 成功）。",
+    "insight": "工具调用层可优先落地两件事：调用前按'已认证请求'编译权限做效果校验，对检索内容和工具描述做溯源标记；论文显示安全增益主要来自效果验证而非提示词防御。"
+  },
+  {
+    "rank": 3,
+    "title": "Verify Claims, Not Scores: Evidence-Based Verification of Modular Agents",
+    "title_cn": "验证结论而非总分：模块化 agent 审计",
+    "url": "https://arxiv.org/abs/2610.01348",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01348",
+    "what": "对'规划-执行-自查-修正'型模块化 agent 的逐结论审计协议：每个结论记录证据、四种判定（成立/不成立/未决/未评估）与适用边界；用 oracle 策略与完美组件替换来定位价值损失。",
+    "why": "10-01 发布；它指出总分回答不了'改进是否本可达、哪个组件丢了价值、自查是否可信'，这是做多组件 agent 团队的共同评估盲区。",
+    "insight": "评估数字员工别只看任务完成率：给中间结论留证据链和边界；案例中运行时校验器被绕过而总分无变化，说明校验器本身也必须被审计。"
+  },
+  {
+    "rank": 4,
+    "title": "TRACE: Trajectory Return Attribution and Contrastive Erasure for Multi-Turn Safety",
+    "title_cn": "TRACE：多轮安全的轨迹归因训练",
+    "url": "https://arxiv.org/abs/2610.01323",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01323",
+    "what": "针对'单轮会拒绝、拆成多轮就服从'的渐进攻击，给出多轮风险的理论界与 token 级训练目标：用冻结参考模型与'消融拒绝能力'副本的对比为安全 token 分配优势；5 个开源模型、7 类攻击的 35 个组合全部取得最低攻击成功率，通用能力最多降 1.23 分。",
+    "why": "多轮诱导是安全对齐的已知盲区，10-01 发布的工作把'单轮训练何时能约束多轮风险'条件化，且代码开源。",
+    "insight": "多轮会话的 agent 不能假设单条回复安全就整体安全：评估必须用多轮攻击集；若做安全微调，token 级归因比全句偏好损失更省通用能力。"
+  },
+  {
+    "rank": 5,
+    "title": "Gacha Decoding: Eliciting Diverse Generations Through Instruction Following",
+    "title_cn": "Gacha 解码：指令驱动的多样性生成",
+    "url": "https://arxiv.org/abs/2610.01382",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01382",
+    "what": "推理时多样性方法：把'生成多样结果'当作指令跟随问题，用外部 RNG 工具的随机性规划并实现不同回答模式；同等质量下多样性最高超此前最优 2.4 倍，找到同样多高质量模式所需样本少 11 倍。",
+    "why": "10-01 发布，反证'模型越强采样熵越低'的长期观察：指令跟随能力越强，Gacha 的多样性反而越高。",
+    "insight": "要多样性别只调 temperature：让模型显式'先计划 N 个不同方向再逐个实现'更有效；创意/方案生成类数字员工可直接做 A/B 验证。"
+  },
+  {
+    "rank": 6,
+    "title": "What Wins a Vote? Formatting, Length, and Lexical Diversity in the French Compar:IA LLM Arena",
+    "title_cn": "什么赢得投票：竞技场的格式效应",
+    "url": "https://arxiv.org/abs/2610.01316",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01316",
+    "what": "对 13.7 万张法语 LLM 竞技场决定性投票的文体计量分析：加粗每标准差提升 11% 获胜几率、词汇多样性（MATTR）+16.8%；按格式修正后 116 个模型中 36 个排名变动超过 10 位。",
+    "why": "10-01 发布；所有用人类偏好榜选模型的团队都受影响——展示格式对胜率的影响与模型能力难以区分。",
+    "insight": "内部模型评测要控制呈现格式变量（固定排版规范与长度上限），否则结果混入'排版贿选'；引用公开竞技场排名时应同时看原始榜与修正榜。"
+  },
+  {
+    "rank": 7,
+    "title": "LLM-Driven Multi-Agent Control for Skill-Based Smart Manufacturing",
+    "title_cn": "LLM 多智能体驱动的柔性制造控制",
+    "url": "https://arxiv.org/abs/2610.01364",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01364",
+    "what": "六模块真实工厂仿真中，每个模块配一个 LLM agent 与 MCP 工具服务器（OPC UA 方法调用），agent 间用 MQTT 协作并注入实时状态；三种架构对比 9 个生产挑战：单体与点对点平均解题率 93%，编排式在静默传送带故障上 10/10 通过自主改道。",
+    "why": "10-01 发布，给出'标准 MCP 工具+消息总线+实时状态注入'的可复现参考架构，且全部架构都涌现出故障诊断行为而无显式失败处理逻辑。",
+    "insight": "设备运维类 agent 可直接参考该架构：每设备一 agent+MCP 技能暴露+总线协作；静默故障场景编排式更稳，做监控接管优先这种拓扑。"
+  },
+  {
+    "rank": 8,
+    "title": "Evaluating Biomedical Reranking for LLM-Based Question Answering over Longitudinal Clinical Notes",
+    "title_cn": "临床长病历问答的检索重排评估",
+    "url": "https://arxiv.org/abs/2610.01324",
+    "date": "2026-10-01",
+    "source": "arXiv 2610.01324",
+    "what": "本地 RAG 流水线（PubMedBERT 稠密检索+BM25+加权 RRF+MedCPT 重排）处理 200 名患者长程病历上的 1000 个问答：重排把 Hit@10 从 46.6% 提到 60.6%、MRR 从 0.237 到 0.325，但 Qwen3-8B 答案正确率只从 44.8% 升到 48.6%。",
+    "why": "10-01 发布，量化了一个常被忽略的缺口：检索指标的提升不会等比转化为答案质量。",
+    "insight": "优化 RAG 时把'检索提升'与'答案提升'分开归因：检索涨而答案不涨时优先查生成端（上下文组织、抄写错误），别继续堆检索。"
+  }
+]

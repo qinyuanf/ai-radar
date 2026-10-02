@@ -1,0 +1,85 @@
+[
+ {
+  "rank": 1,
+  "title": "Pi 1.0",
+  "title_cn": "Pi 1.0：极简可扩展的智能体底座",
+  "url": "https://earendil.com/posts/pi-1-0/",
+  "date": "2026-10-01",
+  "source": "Hacker News 744 分 256 讨论",
+  "what": "Earendil 发布 Pi 1.0：一个硬化（hardened）、极简、可扩展的 agent harness，同时推出实验性的 Pi Durable，面向长时间运行的 agentic 应用。",
+  "why": "发布当天 HN 744 分 256 条讨论，是本周 agent 基础设施方向讨论量最大的发布；同团队前作《You said no MCP》刚上过热榜。",
+  "insight": "'硬化+极简'路线与'全家桶'路线正在分叉：做生产级 agent 时把安全加固和功能扩展解耦，先保证最小闭环的可靠性再谈扩展。",
+  "image": "images/2026-10-02/pi-1-0.jpg"
+ },
+ {
+  "rank": 2,
+  "title": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform",
+  "title_cn": "Clef 开源决策模型与 RL 微调平台",
+  "url": "https://blog.cloudflare.com/clef-decision-models/",
+  "date": "2026-10-01",
+  "source": "Cloudflare 官方博客，HN 427 分 159 讨论",
+  "what": "Cloudflare 开源 Clef 与 Clef-flash 两个决策模型，托管在 Workers AI 上做高速分类和 agentic 工作流，同时上线用自有数据做 RL 微调的平台。",
+  "why": "10-01 官方发布即 HN 427 分 159 条讨论；'小模型专职决策+平台化微调'是云厂商下场做 agent 基建的新组合。",
+  "insight": "高频低复杂度判断（路由、评分、是否）不必用大模型：小决策模型+RL 微调可把延迟和成本降一个量级；内部同类决策场景值得评估同款架构。",
+  "image": "images/2026-10-02/introducing-clef-our-open-source-decision-models.jpg"
+ },
+ {
+  "rank": 3,
+  "title": "RIP, vector database",
+  "title_cn": "向量数据库，安息吧",
+  "url": "https://turbopuffer.com/blog/rip-vector-database",
+  "date": "2026-10-01",
+  "source": "Hacker News 274 分 78 讨论",
+  "what": "turbopuffer 重构存储架构：向量索引不再作为一等存储主体，检索转为以对象存储为基础的直接扫描方案。",
+  "why": "10-01 HN 274 分 78 条讨论；turbopuffer 服务多家 AI 公司的向量搜索，此宣言会重新点燃'专用向量库是否必要'的架构争论。",
+  "insight": "RAG 基建别急着上专用向量库：中等数据量下'对象存储+直接扫描/混合检索'可能更省运维；先把召回指标和成本基线测出来再定。",
+  "image": "images/2026-10-02/rip-vector-database.jpg"
+ },
+ {
+  "rank": 4,
+  "title": "SynthID Bio",
+  "title_cn": "SynthID Bio：合成生物学水印",
+  "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+  "date": "2026-09-30",
+  "source": "Google DeepMind 官方博客",
+  "what": "Google DeepMind 发布 SynthID Bio，把 SynthID 水印方法扩展到合成生物学，为 AI 生成的生物序列提供来源识别手段。",
+  "why": "09-30 官方发布，是大模型水印技术首次进入生物序列领域；AI 设计序列的溯源与监管需求正在上升。",
+  "insight": "水印正从文本/图像蔓延到一切生成物：内容生成类数字员工应预留'生成物带出处标识'的接口，发布时加上最便宜，事后补很贵。"
+ },
+ {
+  "rank": 5,
+  "title": "Launch HN: Magnitude (YC S25) – Self-optimizing inference engine for agents",
+  "title_cn": "Magnitude：自优化智能体推理引擎",
+  "url": "https://github.com/magnitudedev/magnitude",
+  "date": "2026-10-01",
+  "source": "Hacker News Launch HN 191 分 96 讨论",
+  "what": "开源推理引擎，针对你的具体硬件编译和调优内核，宣称开源模型运行速度最高比 llama.cpp 快 2 倍，支持 Apple Silicon、NVIDIA、AMD 与纯 CPU。",
+  "why": "YC S25 项目 Launch HN 191 分 96 讨论，仓库 6155★ 且 10-02 仍有提交；本地推理性能是 agent 私有化部署的硬需求。",
+  "insight": "私有化部署 agent 时'按硬件自适应编译'是免费性能：先在常用推理机上跑它的 benchmark，提速真实再考虑替换现有推理层。",
+  "image": "images/2026-10-02/launch-hn-magnitude-yc-s25-self-optimizing-infer.jpg"
+ },
+ {
+  "rank": 6,
+  "title": "FTC is investigating OpenAI, Anthropic and other AI companies over product risks",
+  "title_cn": "FTC 调查 OpenAI 等公司产品风险",
+  "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
+  "date": "2026-09-30",
+  "source": "CNBC，HN 200 分 148 讨论",
+  "what": "据 CNBC 报道，美国 FTC 正就产品风险问题调查 OpenAI、Anthropic 等多家 AI 公司。",
+  "why": "HN 200 分 148 条讨论；监管关注点正从数据合规转向'产品风险'本身，头部厂商的商业模式可能受影响。",
+  "insight": "面向海外的 AI 功能要把'产品风险披露与用户伤害证据'纳入合规清单；agent 的行动日志与拒绝记录要有留存策略，监管问询时才能自证。",
+  "image": "images/2026-10-02/ftc-is-investigating-openai-anthropic-and-other-.jpg"
+ },
+ {
+  "rank": 7,
+  "title": "GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design",
+  "title_cn": "GPT-Synopsys：芯片设计前沿智能",
+  "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+  "date": "2026-09-30",
+  "source": "Synopsys 官方公告，HN 166 分 98 讨论",
+  "what": "OpenAI 与 Synopsys 宣布合作推出 GPT-Synopsys，把前沿模型引入芯片设计流程。",
+  "why": "09-30 官方发布，HN 166 分 98 讨论；继代码、生物之后，EDA 是前沿模型进入的又一个高价值专业领域。",
+  "insight": "垂直工具链（EDA、CAD、仿真）+前沿模型是下一波合作潮：方案商的机会在'工具链知识+模型编排'，单纯模型能力不构成壁垒。",
+  "image": "images/2026-10-02/gpt-synopsys-frontier-intelligence-to-revolution.jpg"
+ }
+]

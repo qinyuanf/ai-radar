@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "f/prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "stars": 171833,
+    "trend": "首日快照：总 171833★，2026-10-01 有提交",
+    "what": "前身是著名的 Awesome ChatGPT Prompts，17 万星级的社区提示词集合，改名 prompts.chat 并支持企业自托管。",
+    "why": "星榜头部少见的'提示词资产'类仓库，171833★ 且 10-01 仍在提交，正在从个人技巧合集向企业自托管产品化。",
+    "insight": "提示词正在变成企业托管资产：做数字员工时把提示词库当一等资产管理（版本、评审、复用），可直接借鉴它'集合+自托管'的组织方式。",
+    "image": "images/2026-10-02/f-prompts-chat.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "stars": 95132,
+    "trend": "首日快照：总 95132★，2026-10-02 有提交",
+    "what": "给所有 agent 提供跨会话持久记忆：捕获会话中发生的一切，用 AI 压缩，再在下次会话注入相关上下文。",
+    "why": "9.5 万星且 10-02 凌晨仍有提交；agent 记忆是当前最热的基建方向，它把'压缩+注入'做成了通用组件。",
+    "insight": "跨会话记忆不必全量存储，拆成'捕获-压缩-按需注入'三段即可覆盖大部分连续性需求；值得对照我们现有 memory 机制做一次效果对比。",
+    "image": "images/2026-10-02/thedotmack-claude-mem.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "stars": 91588,
+    "trend": "首日快照：总 91588★，2026-10-01 有提交",
+    "what": "开源 RAG 引擎，把检索增强生成与 agent 能力融合，提供从文档解析到问答的完整流水线。",
+    "why": "9.2 万星、10-01 仍在提交，是企业级 RAG 自建方案的头部选择，与 Dify、AnythingLLM 同场竞争。",
+    "insight": "它的差异点在深文档解析（表格/版式）；评估 RAG 效果时把解析质量和检索质量分开测，避免把解析问题误判成模型问题。",
+    "image": "images/2026-10-02/infiniflow-ragflow.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "stars": 77888,
+    "trend": "首日快照：总 77888★，2026-09-28 有提交",
+    "what": "从零到一实现类 Claude Code 的微型 agent harness（'Bash is all you need'），教学向的开源实现。",
+    "why": "7.8 万星说明'读源码学 agent 架构'需求旺盛；它把工具循环收敛为一个 Bash 原语，结构极简。",
+    "insight": "验证了一个架构判断：agent harness 的最小闭环就是'模型+Bash 循环'，其余是工程增强。团队内训可直接用它做教材，比读大框架源码快。",
+    "image": "images/2026-10-02/shareai-lab-learn-claude-code.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "headroomlabs-ai/headroom",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "stars": 74246,
+    "trend": "首日快照：总 74246★，2026-10-02 有提交",
+    "what": "在工具输出、日志、文件、RAG chunk 进入 LLM 前做压缩：编码类 agent 省 20% token，JSON 类省 60-95%，答案质量持平。",
+    "why": "7.4 万星且 10-02 仍在提交；上下文成本是 agent 规模化的主要账单，'进模型前压缩'正在变成标准层。",
+    "insight": "我们的工具调用链可做同样的事：给工具输出定义'返回给模型的最小字段集+可展开引用'，优先压缩大 JSON 与日志类输出，成本收益最容易量化。",
+    "image": "images/2026-10-02/headroomlabs-ai-headroom.jpg"
+  }
+]
