@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 154907,
+    "trend": "首日快照：总 154907★，2026-10-05 有提交",
+    "what": "一套给编码智能体用的技能/规则插件（适配 Claude Code、Cursor 等），核心主张是“最好的代码是你压根没写的代码”，让 agent 像“屋里最懒的资深工程师”那样优先复用、克制产出。",
+    "why": "154907★ 且 10-05 仍在提交，是当日热门榜里少见的“改变 agent 编码行为”的规则类仓库；把资深工程师的克制原则固化成可复用 skill/prompt，正踩在 agent-skills 生态爆发的节点上。",
+    "insight": "与其让编码 agent 尽量多产出，不如给它“优先不写/少写”的约束；我们做数字员工交付时可把“先复用已有能力、控制改动范围”写成硬性 skill 注入，减少无谓重构。",
+    "image": "images/2026-10-05/dietrichgebert-ponytail.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "microsoft/generative-ai-for-beginners",
+    "url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "stars": 121003,
+    "trend": "首日快照：总 121003★，2026-10-01 有提交",
+    "what": "微软官方的生成式 AI 入门课程，21 节课从基础到动手构建，配可运行的 Jupyter Notebook 示例。",
+    "why": "121003★ 且 10-01 仍在更新，是体系化学习生成式 AI 的头部开源教材，持续跟随新模型与新范式改版。",
+    "insight": "团队内训或新人上手可直接拿它做骨架，省掉自建课程；选教材时把“是否配可运行 notebook”作为质量硬指标。",
+    "image": "images/2026-10-05/microsoft-generative-ai-for-beginners.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "career-ops-hq/career-ops",
+    "url": "https://github.com/career-ops-hq/career-ops",
+    "stars": 73481,
+    "trend": "首日快照：总 73481★，2026-10-04 有提交",
+    "what": "开源 AI 求职 agent：扫描职位板、按你的简历给每个职位打 1-5 分、生成 ATS 友好简历与求职信、做面试准备与投递追踪；本地跑在编码 CLI（Claude Code、Codex 等）里，人只负责点“提交”。",
+    "why": "73481★ 且 10-04 仍在提交，把“垂直流程 agent + 人保留最终提交权”的形态做成热门开源项目，是 agent 落地真实工作流的样本。",
+    "insight": "它的人机分工值得抄：agent 完成扫描/打分/生成，人保留“提交”这类不可逆动作的最终确认——与我们交付链“关键操作等人确认”的门禁设计一致。",
+    "image": "images/2026-10-05/career-ops-hq-career-ops.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "CherryHQ/cherry-studio",
+    "url": "https://github.com/CherryHQ/cherry-studio",
+    "stars": 52368,
+    "trend": "首日快照：总 52368★，2026-10-05 有提交",
+    "what": "AI 生产力工作台，集成智能对话、自主 agent 与 300+ 助手，统一接入多家前沿大模型。",
+    "why": "52368★ 且 10-05 仍在提交，是桌面端“多模型统一入口 + 自主 agent”的头部开源选择，话题已覆盖 claude-code/codex/deepseek。",
+    "insight": "评估内部 AI 工作台时先看它的多模型接入与助手组织方式；若已能覆盖需求，优先复用而非自研统一入口层。",
+    "image": "images/2026-10-05/cherryhq-cherry-studio.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "zhayujie/CowAgent",
+    "url": "https://github.com/zhayujie/CowAgent",
+    "stars": 47229,
+    "trend": "首日快照：总 47229★，2026-10-04 有提交",
+    "what": "开源个人 AI 助手与 Agent Harness：规划任务、调用工具与技能、靠记忆与知识自我进化，支持多 agent、多模型、多渠道，一行命令安装（chatgpt-on-wechat 的演进）。",
+    "why": "47229★ 且 10-04 仍在提交，是与数字员工形态最贴近的开源 harness 之一——多渠道接入 + 自进化记忆正是我们每天在做的能力。",
+    "insight": "直接对照它的“记忆+知识自进化”实现检查我们 memory 机制的差距；多渠道（微信等）接入层也可参考其抽象，避免每个渠道重写一套。",
+    "image": "images/2026-10-05/zhayujie-cowagent.jpg"
+  }
+]

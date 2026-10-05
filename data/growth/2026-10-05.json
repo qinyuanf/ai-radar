@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "QingYunA/answer-me-with-html",
+    "url": "https://github.com/QingYunA/answer-me-with-html",
+    "stars": 1072,
+    "trend": "2026-10-02 新建，3 天内 1072★，2026-10-04 有提交",
+    "what": "一个 agent 技能（Claude Code/CLI 用），让 AI 用“一页可读的 HTML”回答复杂问题，自带图解与说明排版。",
+    "why": "10-02 新建、3 天冲到 1072★，说明“把 agent 输出做成结构化可读页面”的交付形态需求强烈，与我们生成日报/报告页面的诉求同源。",
+    "insight": "复杂结论用一页 HTML 承载比纯文本更易读；可借鉴其排版模板，把排查报告/交付摘要统一成可读页面而非长文本。",
+    "image": "images/2026-10-05/qingyuna-answer-me-with-html.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Edwardxlai/easyread",
+    "url": "https://github.com/Edwardxlai/easyread",
+    "stars": 781,
+    "trend": "2026-09-30 新建，5 天内 781★，2026-10-04 有提交",
+    "what": "把英文论文读成舒服中文的本地工具：PDF 论文翻译、原文对照、边读边问 AI、文献管理，Electron 桌面应用。",
+    "why": "09-30 新建、5 天 781★，“本地化+原文对照+可问答”的组合切中科研与工程读论文的真实痛点，数据不出本地是卖点。",
+    "insight": "读外文技术文档时“翻译+原文对照+可追问”三件套比单纯机翻有效；做资料消化类工具可照此设计，保留原文以便核对。",
+    "image": "images/2026-10-05/edwardxlai-easyread.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "whirlchat/whirl",
+    "url": "https://github.com/whirlchat/whirl",
+    "stars": 456,
+    "trend": "2026-10-02 新建，3 天内 456★，2026-10-03 有提交",
+    "what": "主打细节的 AI 聊天应用：接入所有顶级模型、真实记忆、活文档（living documents），并可挂载自己的工具。",
+    "why": "10-02 新建、3 天 456★，“真实记忆+活文档”是当前 chat 应用的差异化竞争点，Next.js+Convex 技术栈便于二次开发。",
+    "insight": "“活文档”（随对话持续更新的结构化文档）是记忆的更好载体，呼应今日文章榜“agents 要文档而非记忆”；值得在我们的记忆方案里试点。",
+    "image": "images/2026-10-05/whirlchat-whirl.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Jakeschincariol/replica-skill",
+    "url": "https://github.com/Jakeschincariol/replica-skill",
+    "stars": 384,
+    "trend": "2026-10-03 新建，2 天内 384★，2026-10-03 有提交",
+    "what": "11 个免费 Claude 技能，用来“克隆任意应用”：逆向工程、重建、测 bug，再修掉用户最讨厌的问题，MIT 许可。",
+    "why": "10-03 新建、2 天 384★，把“逆向→重建→测试→改进”打包成可复用 skill 套件，踩中 agent-skills 生态与“用 AI 快速复刻产品”的热度。",
+    "insight": "skill 套件化的思路可借鉴：把一套完整工作流拆成可组合 skill，比单个大 prompt 更易复用和维护。",
+    "image": "images/2026-10-05/jakeschincariol-replica-skill.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "strands-labs/strands-decider",
+    "url": "https://github.com/strands-labs/strands-decider",
+    "stars": 342,
+    "trend": "2026-09-29 新建，6 天内 342★，2026-10-04 有提交",
+    "what": "面向 agentic 工作流的小型快速决策模型（System One）：在选项间做选择或按刻度打分，比 LLM 更快，且每次决策给出校准过的置信度。",
+    "why": "09-29 新建、6 天 342★，由 Strands Agents 团队出品，延续近期“小决策模型/System One”生态（jev、Jeff 等）的密集爆发。",
+    "insight": "高频低难的判定（选哪个工具、是否继续）交给带校准置信度的小决策模型，可显著降延迟与成本；置信度还能直接用作升级/人工介入的触发阈值。",
+    "image": "images/2026-10-05/strands-labs-strands-decider.jpg"
+  }
+]

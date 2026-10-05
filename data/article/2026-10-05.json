@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Kolibri: A Sovereign Open-Weight Model",
+    "title_cn": "Kolibri：主权开放权重模型",
+    "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+    "date": "2026-10-03",
+    "source": "Hacker News 655 分 326 讨论",
+    "what": "德国 Aleph Alpha 发布 Kolibri——一个主权开放权重 MoE 模型，78B 总参数/3B 激活，主打英语与德语、面向受监管行业，采用 Apache 2.0 许可。",
+    "why": "HN 655 分、326 讨论，是当日最热的模型发布；“主权 AI”（数据与模型自主可控）叠加 Apache 2.0 开放权重，直击欧盟受监管行业对合规与自主的诉求。",
+    "insight": "3B 激活的 MoE 意味着低推理成本+可自托管，适合数据不能出域的场景；评估自托管模型时把“激活参数量”而非“总参数量”作为成本主指标。",
+    "image": "images/2026-10-05/kolibri-a-sovereign-open-weight-model.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Strata: Run Qwen 3.8 Flash Next (125B) on consumer hardware",
+    "title_cn": "消费级显卡跑 Qwen3.8 125B",
+    "url": "https://github.com/Niko1221/Strata",
+    "date": "2026-10-04",
+    "source": "Hacker News 611 分 284 讨论",
+    "what": "Strata 是一个本地推理引擎，把 Qwen3.8-Flash-Next（125B）跑在单张 RTX 4090 上、约 100 tokens/s；用 MoE 结构在 GPU/内存/SSD 之间分工协作，数据不出本机。",
+    "why": "HN 611 分、284 讨论，“消费级单卡跑百亿级大模型”直接降低了本地大模型的硬件门槛，是本地化部署的标志性进展。",
+    "insight": "GPU+RAM+SSD 分层承载 MoE 是省显存的关键思路；做本地/私有化 agent 时可据此估算“多大的模型能跑在现有硬件上”，别默认必须上多卡。",
+    "image": "images/2026-10-05/strata-run-qwen-3-8-flash-next-125b-on-consumer-.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "We're going to need default hard budget caps on pretty much everything",
+    "title_cn": "万物都该有默认硬性预算上限",
+    "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+    "date": "2026-10-04",
+    "source": "Hacker News 587 分 297 讨论",
+    "what": "Simon Willison 主张给 AI/云服务设默认硬性预算上限：agent 大幅降低了花钱的摩擦、容易失控烧钱，应当在设定额度后直接切断服务，而不是只给软性警告。",
+    "why": "HN 587 分、297 讨论；随着常驻 agent 与自动化任务普及，“一觉醒来账单爆炸”的风险变真实，硬性上限正从可选项变成必需品。",
+    "insight": "数字员工/自动化任务应默认带预算与调用上限（token、次数、金额）并到限即停，而非仅告警；这是防止 agent 失控的基础护栏，要当默认配置。"
+  },
+  {
+    "rank": 4,
+    "title": "I quit OpenAI because its culture is broken",
+    "title_cn": "我离开 OpenAI：它的文化已崩坏",
+    "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
+    "date": "2026-10-03",
+    "source": "Hacker News 456 分 771 讨论",
+    "what": "一篇自述式报道：一位 OpenAI 安全团队成员离职，指公司文化已“崩坏”（The Guardian 同期报道另一名安全负责人以相同理由离开）。",
+    "why": "HN 456 分但高达 771 讨论（当日讨论最多），反映社区对头部 AI 实验室安全治理与人才流失的强烈关注与分歧。",
+    "insight": "安全治理是 AI 组织的长期风险项；对我们而言别把“安全/合规审查”当可裁撤的成本中心——它是数字员工持续被信任的前提。"
+  },
+  {
+    "rank": 5,
+    "title": "Agents don't need memory, they need documentation",
+    "title_cn": "智能体要的不是记忆，是文档",
+    "url": "https://liao.gg/blog/agents-dont-need-memory",
+    "date": "2026-10-03",
+    "source": "Hacker News 350 分 216 讨论",
+    "what": "作者认为当前 agent 记忆插件失效，根源在于用 RAG 检索孤立片段；主张改用“基于文档的记忆”——用结构化 Markdown 工作区承载上下文，把“构建提示词→遗忘”的循环换成“查阅→构建→更新”。",
+    "why": "HN 350 分、216 讨论，与增长榜 whirl 的“活文档”以及我们数字员工的记忆机制正面对撞，是 agent 记忆路线的重要争论。",
+    "insight": "结构化、可读可改的文档（Markdown 工作区）比向量检索的黑盒记忆更可控可审计；memory 方案可试点“文档式记忆”，让人能直接查阅和修正 agent 记住的东西。"
+  },
+  {
+    "rank": 6,
+    "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+    "title_cn": "用好 Opus 5.5",
+    "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+    "date": "2026-10-03",
+    "source": "Hacker News 231 分 155 讨论",
+    "what": "Anthropic 官方给出 Opus 5.5 实操技巧：给清晰的“完成线”、去掉“think carefully”这类多余指令（模型本就会思考）、用 CLAUDE.md 定义何时自主继续/停止、直接附图而非重打数据（读图更准）。",
+    "why": "HN 231 分、155 讨论，来自官方的编码 agent 实操指南，对每天用 Claude Code 的工程师有即时价值。",
+    "insight": "“用配置文件定义 agent 的自主边界（何时停/何时继续）”正是我们做数字员工门禁的核心；可把审批卡点写进项目级配置，而不是每次口头约束。",
+    "image": "images/2026-10-05/getting-the-most-out-of-opus-5-5-in-claude-and-c.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Pop!_OS bans AI-generated code from much of its codebase",
+    "title_cn": "Pop!_OS 大面积禁用 AI 生成代码",
+    "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/",
+    "date": "2026-10-03",
+    "source": "Hacker News 116 分 166 讨论",
+    "what": "System76 在其 Pop!_OS 的 COSMIC 桌面多个代码库中禁止使用 AI 生成的代码。",
+    "why": "HN 116 分、166 讨论（讨论多于点赞），说明“是否允许 AI 生成代码进入正式代码库”在开源工程界引发真实分歧，是有代表性的政策信号。",
+    "insight": "AI 生成代码的版权/质量/可维护性顾虑正变成明确的团队政策；我们做数字员工交付时应把“AI 写的代码同样要过评审、测试与许可核查”作为硬门禁，而非默认放行。"
+  }
+]
