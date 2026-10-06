@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Remocn/remocn-studio",
+    "url": "https://github.com/Remocn/remocn-studio",
+    "stars": 135,
+    "trend": "2026-10-01 新建，5 天内 135★，2026-10-05 有提交",
+    "what": "macOS 应用：描述你想要的视频，内置编码 agent 把它写成一份真正的 Remotion 工程（动效代码），你边看预览边给批注（打字、点元素、圈时间点），满意后导出 mp4——没有时间线也没有关键帧。",
+    "why": "2026-10-01 新建、5 天内 135★；它把“视频即代码、产物可继续编辑”做成产品，直接绕开生成式视频“不可改、不可控”的痛点，路线与套模板的 AI 剪辑器完全不同。",
+    "insight": "agent 做视觉产出时优先选“代码即产物”（Remotion/HTML/SVG），交付源工程而不是渲染文件；这是让创意产物可迭代、可 diff、可版本化的关键。",
+    "image": "images/2026-10-06/remocn-remocn-studio.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "OmniJev/OneJev",
+    "url": "https://github.com/OmniJev/OneJev",
+    "stars": 126,
+    "trend": "2026-09-27 新建，9 天内 126★，2026-09-30 有提交",
+    "what": "多模态 System One 决策模型（0.8B/4B/9B/27B 四档）：对截图、照片、视频和文本的类型化问题（选择/打分/是否）单次前向返回校准概率，支持 PyTorch 与 llama.cpp GGUF 本地部署。",
+    "why": "2026-09-27 新建、9 天内 126★；jev 系决策模型生态继续扩张，这一支把“小模型单次前向做判定”推进到多模态与本地可跑，恰好对应 GUI agent 每步决策的需求。",
+    "insight": "把 agent 高频低难度判断（下一步点哪、任务是否完成）卸载到本地决策模型，单次前向出校准概率；先做 4B 档小规模验证准确率，再决定是否替换大模型逐步推理。",
+    "image": "images/2026-10-06/omnijev-onejev.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "callstackincubator/codex-mobile-dev-plugin",
+    "url": "https://github.com/callstackincubator/codex-mobile-dev-plugin",
+    "stars": 123,
+    "trend": "2026-09-30 新建，6 天内 123★，2026-10-06 有提交",
+    "what": "Codex 桌面插件：把 iOS 模拟器/真机与安卓设备画面并排串流到聊天旁边，支持点按拖拽操作、界面检视与标注，适配 Expo、React Native、SwiftUI 等移动项目。",
+    "why": "2026-09-30 新建、6 天内 123★，2026-10-06 仍在提交；由 React Native 头部团队 Callstack 出品，是“让 agent 直接看到并操作移动端”的早期工程化实践。",
+    "insight": "移动端自动化下一步是“设备画面进入 agent 上下文”：agent 能看到真机画面并且能点按，才谈得上端到端处理移动任务；评估此类工具时重点看模拟器与真机的覆盖度。",
+    "image": "images/2026-10-06/callstackincubator-codex-mobile-dev-plugin.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Zhou-Yujing114514/deepseek-harness-linux",
+    "url": "https://github.com/Zhou-Yujing114514/deepseek-harness-linux",
+    "stars": 116,
+    "trend": "2026-10-03 新建，3 天内 116★，2026-10-04 有提交",
+    "what": "为 DeepSeek Harness 桌面端补齐 Linux 分发：产出 AppImage、.deb、.tar.gz（x64/arm64），在原生 CI 上构建，让这款 agent 桌面软件在 Linux 上可直接安装使用。",
+    "why": "2026-10-03 新建、3 天内 116★；官方桌面包缺席 Linux 时，社区 3 天内补位，说明“桌面 agent 的多平台分发”是用户真实关注点。",
+    "insight": "想在 Linux 上评估 DeepSeek Harness 一类桌面 agent，可先用这类社区打包；反过来，自研桌面工具时把 Linux 列入首发平台，能低成本吃到这部分用户。",
+    "image": "images/2026-10-06/zhou-yujing114514-deepseek-harness-linux.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ufo-ai/ufo-core",
+    "url": "https://github.com/ufo-ai/ufo-core",
+    "stars": 92,
+    "trend": "2026-09-27 新建，9 天内 92★，2026-10-05 有提交",
+    "what": "开源的团队级 AI Agent 运行时：成员在聊天里给 agent 派活，agent 读文件、跑命令完成任务；可自托管、可使用自己的模型 key，官方托管服务运行的就是这份代码。",
+    "why": "2026-09-27 新建、9 天内 92★ 且持续提交；“聊天派活 + 文件/命令执行 + 自托管”的团队 agent 运行时开始开源，与数字员工基础设施的形态直接同构。",
+    "insight": "对照它的“聊天入口 → 任务执行 → 权限模型”三层设计自查我们的数字员工底座；自托管 + 自带模型 key 是数据敏感团队的硬需求，评估平台时要提前确认。",
+    "image": "images/2026-10-06/ufo-ai-ufo-core.jpg"
+  }
+]
