@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+    "title_cn": "MemPilot：按需整理智能体记忆",
+    "url": "http://arxiv.org/abs/2610.06830v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06830",
+    "what": "针对现有 agent 记忆“查询无关预构建”导致的预处理浪费与关键细节丢失，提出按需多模态记忆整理编排器：运行时决定何时整理、整理什么、整理到什么粒度，把性能、成本、延迟变成可调的权衡项。",
+    "why": "2026-10-05 提交（cs.CL）；agent 记忆正从“全量预处理”转向运行时自适应，此前的工作多绑定特定操作或固定处理流程，这篇给出了统一的编排框架。",
+    "insight": "数字员工的记忆管道可引入按需整理：用户真正问到的信息才值得花成本提炼；把“何时整理、整理什么”从固定管道改成显式决策点，成本和细节保真可以同时改善。"
+  },
+  {
+    "rank": 2,
+    "title": "CLIFT: Conformal Self-Verification for Web Agent Training and Test-Time Scaling",
+    "title_cn": "CLIFT：共形自验证训练智能体",
+    "url": "http://arxiv.org/abs/2610.06829v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06829",
+    "what": "解决 web agent RL 训练的奖励信号难题：二元任务成功太稀疏、前沿模型裁判太贵。CLIFT 让 agent 对自己的执行轨迹回答自然语言验证问题，用组合共形认证器只保留校准合格的问答作为奖励信号，同一机制可用于测试时扩展。",
+    "why": "2026-10-05 提交（cs.CL）；用共形校准替代昂贵的 LLM 裁判，把“自我验证”变成带统计保证的训练信号，是开源 agent 训练降本的关键路径。",
+    "insight": "给内部 agent 任务设计奖励时可借鉴：让 agent 自答“这一步做对了吗”，再用共形校准筛掉不可靠自评；比请大模型当裁判便宜一个量级，且部署时不需要外部模型。"
+  },
+  {
+    "rank": 3,
+    "title": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search",
+    "title_cn": "T-Search：开源多步搜索检索器",
+    "url": "http://arxiv.org/abs/2610.06782v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06782",
+    "what": "开源权重的 agentic 检索器：给定问题与固定语料上的搜索工具，执行有界多轮搜索，返回带简短理由的排序证据块，答案生成留给下游模型；基于 Qwen3.6-35B-A3B，用对抗过滤的合成搜索任务做轮次切片 SFT 后接 GSPO（召回奖励）训练。",
+    "why": "2026-10-05 提交（cs.CL）；在七个英俄基准上取得领先，且检索与生成分离的架构让检索后端和答案生成器都能独立替换，不必绑定重训。",
+    "insight": "RAG 管线里“多轮检索决策”可以单独训练成可替换模块（只管找证据、不管写答案），便于独立评测与升级；检索逻辑绑死在生成模型里是常见的架构债。"
+  },
+  {
+    "rank": 4,
+    "title": "Base Models Can Reason By Taking a Cue From Training Data",
+    "title_cn": "基础模型靠起始提示词推理",
+    "url": "http://arxiv.org/abs/2610.06851v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06851",
+    "what": "训练数据在基础模型响应的起始 token 与后续推理行为之间建立了关联：固定起始提示能大幅提升推理——\".\\n\\nOkay\" 让 Olmo-3-7B 的 MATH-500 pass@1 从 42% 升到 78%，\"Alright,\" 让 Qwen3-14B 从 72% 升到 87%；RL 后训练的部分增益正是来自让这类提示更常出现。",
+    "why": "2026-10-05 提交（cs.LG/cs.AI/cs.CL）；把“RL 增强推理”的机制拆开——很大一部分增益是模型学会了自我提示的起始 token，而非凭空长出新能力，这改写了部分 RL 叙事。",
+    "insight": "评测未调优基础模型时必须固定起始提示（否则结果被提示随机性淹没）；自建推理管线可以显式注入起始提示拿到“免费”增益，对照实验里它应是受控变量而非噪声。"
+  },
+  {
+    "rank": 5,
+    "title": "BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents",
+    "title_cn": "BazaarBench：智能体交易安全基准",
+    "url": "http://arxiv.org/abs/2610.06748v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06748",
+    "what": "模拟 C2C 二手交易市场的安全基准：LLM agent 代替用户挂牌、议价、互评，系统跟踪所有权、商品状态与承诺，结合记录检查与 LLM 判分识别五个交易阶段中的六种失败类型；三个基础市场各跑 30 个模拟日。",
+    "why": "2026-10-05 提交（cs.MA）；agent 开始代替用户做有真实后果的交易决策，“委托安全”（钱、隐私、声誉）第一次有了可系统度量的基准。",
+    "insight": "凡是让 agent 代用户执行有后果的操作（下单、签约、承诺），都应按“失败类型 × 阶段”建检查矩阵；这个基准的六类失败清单可直接当内部 agent 权限设计的负面清单用。"
+  },
+  {
+    "rank": 6,
+    "title": "TasteVal: Measuring the Experimental Research Taste of AI Systems Against Human Experts",
+    "title_cn": "TasteVal：度量 AI 实验研究品味",
+    "url": "http://arxiv.org/abs/2610.06824v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06824",
+    "what": "评测前沿模型实验研究品味的基准：给定研究问题，度量模型迭代设计实验、从结果得出结论的能力，操作化为计算效率——用一半的串行实验算力达到人类专家同等分数才算及格。",
+    "why": "2026-10-05 提交（cs.AI）；“AI 科学家”的评测从结论正确性转向选题与实验设计效率，这是更接近研究本质的度量维度。",
+    "insight": "评估研究/排查类 agent 别只看答案对错，要看“到答案用了几步”；把算力效率写进内部评测，能提前识别出会烧掉预算做无效实验的 agent。"
+  },
+  {
+    "rank": 7,
+    "title": "IdeaLens: Detecting AI Ideas in Long-form Writing",
+    "title_cn": "IdeaLens：检测长文中的 AI 观点",
+    "url": "http://arxiv.org/abs/2610.06778v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06778",
+    "what": "检测文档的“想法”来自人还是 AI（观点来源，与谁执笔无关）：把文档表示为“话语角色 + 内容简述”的大纲以剥离文字层，在 100 万 FineWeb 文档的银标注上训练检测器，使判断聚焦于想法而非文风。",
+    "why": "2026-10-05 提交（cs.CL/cs.AI）；AI 使用政策正从“谁写的字”转向“谁出的主意”，欧盟文本来源规则落地后这类检测需求会真实出现在投稿与合规场景。",
+    "insight": "要保留人类原创性证明，留下人类决策过程记录（草稿、修改历史、讨论）比事后自证可靠；“观点来源检测”会很快成为评审与合规的常规检查项。"
+  },
+  {
+    "rank": 8,
+    "title": "Recursive Video In-Context Learning for Agentic Robot",
+    "title_cn": "智能体机器人的递归视频学习",
+    "url": "http://arxiv.org/abs/2610.06843v1",
+    "date": "2026-10-05",
+    "source": "arXiv 2610.06843",
+    "what": "训练无关方法 RV-ICL：LLM agent 编排冻结的视觉-语言-动作策略时，把人类演示视频转成层级结构递归放入上下文——文本记忆记录“做了什么”，视频保留“怎么做”的接触细节，并按规划或接触阶段动态取帧。",
+    "why": "2026-10-05 提交（cs.RO/cs.AI/cs.CL）；解决“演示视频塞不进上下文、固定关键帧又丢失决定成败的接触细节”这对矛盾，让 agent 看视频学会新任务而不需微调。",
+    "insight": "长视频/长轨迹进上下文前先做“层级化 + 按需取段”压缩，与 agent 记忆的分层设计同构；“何时看哪段”的检索策略比全量压缩更有效，可直接迁移到长会话回放场景。"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "siyuan-note/siyuan",
+    "url": "https://github.com/siyuan-note/siyuan",
+    "stars": 46654,
+    "trend": "首日快照：总 46654★，2026-10-07 有提交",
+    "what": "开源、隐私优先、可自托管的知识工作台：块级编辑与双向链接，产品定位明确是“人与 AI agent 协作的工作空间”。",
+    "why": "46654★ 且今日仍有提交；知识库 + AI agent 是数字员工的记忆底座刚需，思源把 agent 协作直接写进产品定位，且自托管形态回避了云笔记的数据边界问题。",
+    "insight": "选团队知识底座时把“自托管、数据不出域、agent 可读写”当硬指标；云笔记的 agent 集成受租户隔离限制，内部敏感场景优先自托管方案。",
+    "image": "images/2026-10-07/siyuan-note-siyuan.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "esengine/DeepSeek-Reasonix",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "stars": 35742,
+    "trend": "首日快照：总 35742★，2026-10-07 有提交",
+    "what": "单个 Go 二进制的开源编码 agent（MIT）：本地引擎提供四种入口——终端、桌面应用、浏览器、编辑器（ACP 协议），带计划模式、权限管理、工作区沙箱与每回合检查点。",
+    "why": "35742★ 且今日有提交；卖点直指编码 agent 最痛的失控问题：“长自主运行仍然可读、可撤销”，单二进制分发也大幅降低部署门槛。",
+    "insight": "自研 agent 的安全底线可抄它的三件套——沙箱、权限确认、每回合检查点；按回合可回滚比“跑完再确认”更能容忍长任务中途失败，实现成本也不高。",
+    "image": "images/2026-10-07/esengine-deepseek-reasonix.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "stars": 34877,
+    "trend": "首日快照：总 34877★，2026-10-06 有提交",
+    "what": "港大 HKUDS 出品的个人交易 agent：一条命令赋予 agent 完整交易能力，含影子账户、实盘运行器、API/MCP 接入与六语言文档。",
+    "why": "34877★、2026-10-06 更新实盘控制（停止运行器即取消当前分析）；财经 agent 从“看行情”进到“可执行交易”，热度高到出现了假冒代币、官方专门发辟谣的程度。",
+    "insight": "涉真金白银的 agent 必须有影子账户先行 + 明确的停止语义（停止即取消进行中的操作）；高热度 agent 项目要预留官方渠道声明页防冒名，这是新的运营成本。",
+    "image": "images/2026-10-07/hkuds-vibe-trading.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "can1357/oh-my-pi",
+    "url": "https://github.com/can1357/oh-my-pi",
+    "stars": 34481,
+    "trend": "首日快照：总 34481★，2026-10-07 有提交",
+    "what": "IDE 深度接线的编码 agent（Stencil Labs，Pi 的 fork）：60+ 模型供应商、31 个内置工具、14 个 LSP 操作、28 个 DAP 操作，约 8 万行 Rust 核心。",
+    "why": "34481★ 且今日有提交；把 LSP/DAP 原生接进 agent（而不只是读写文件），代表“agent 用 IDE 的眼睛看代码”的路线，上下文质量优于裸文本检索。",
+    "insight": "编码 agent 的 token 效率上限取决于上下文质量：走 LSP 拿符号定义与引用比 grep 文本更准更省，内部工具链值得优先补齐这层，而不是急着换更强的模型。",
+    "image": "images/2026-10-07/can1357-oh-my-pi.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Twigpine/openclaude",
+    "url": "https://github.com/Twigpine/openclaude",
+    "stars": 33664,
+    "trend": "首日快照：总 33664★，2026-10-06 有提交",
+    "what": "开源编码 agent CLI（TypeScript），云端与本地模型通吃：OpenAI 兼容 API、Gemini、GitHub Models、Codex OAuth、Ollama 等后端统一成一套终端工作流，含工具、子 agent、MCP、斜杠命令。",
+    "why": "33664★ 且持续提交；终端编码 agent 赛道继续内卷，“一套 CLI 任意后端 + MCP 生态”已成为标配形态，模型绑定反而成了负资产。",
+    "insight": "agent CLI 的护城河在插件生态（MCP、斜杠命令）而非模型接入数量；内部选型时优先验证 MCP 兼容性与后端切换成本，其余能力各家已基本拉平。",
+    "image": "images/2026-10-07/twigpine-openclaude.jpg"
+  }
+]

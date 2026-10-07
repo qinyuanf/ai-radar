@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Introducing Mistral Large 4",
+    "title_cn": "Mistral Large 4 发布",
+    "url": "https://mistral.ai/news/mistral-large-4/",
+    "date": "2026-10-06",
+    "source": "Hacker News 1588 分 961 讨论",
+    "what": "Mistral 发布 Large 4（代号 Le Chonk）：总参 1 万亿的 MoE、激活 490 亿，自称欧美最强开源模型，权重月底开放；API 即日起可用。",
+    "why": "HN 1588 分、961 条讨论居当日榜首；欧洲正面迎战 DeepSeek/Qwen 领衔的开放权重梯队，但第三方 BenchAlign 目前只给 53.7 分（214 个模型中排 69），“宣称最强”与实测仍有距离。",
+    "insight": "1T 总参/49B 激活意味着可单机托管的开放权重模型进入万亿时代；月底权重放出后值得在编码与 agent 任务实测，GDPR 场景下欧洲模型是中美之外的合规第三选项。"
+  },
+  {
+    "rank": 2,
+    "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+    "title_cn": "ChatGPT 给假漫画加上真签名",
+    "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
+    "date": "2026-10-05",
+    "source": "Hacker News 541 分 403 讨论",
+    "what": "用户用 ChatGPT 生成 New Yorker 风格卡通时，输出带上了真实漫画家的手写签名；被模仿的漫画家公开抗议，事件延伸出版权与商标双重争议。",
+    "why": "HN 541 分、403 条讨论；生成模型把训练数据中高频出现的签名像素“照常生成”（与 Getty 水印同机制），但签名构成对真实作者的虚假署名，比风格模仿更越界。",
+    "insight": "生成类产品需要“署名与水印”输出过滤：检测签名区/水印并清除或标注；发布 AI 生成内容前加一道“是否含他人可识别标识”检查，能挡掉大部分这类公关事故。",
+    "image": "images/2026-10-07/chatgpt-is-adding-real-cartoonists-signatures-to.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Sharing AI progress in mathematics",
+    "title_cn": "分享 AI 在数学上的进展",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+    "date": "2026-10-06",
+    "source": "Hacker News 395 分 322 讨论",
+    "what": "OpenAI 公开数学成果仓库 github.com/openai/math：722 份手稿、372 个结果家族，由未发布的内部模型产出（平均每个结果约 3 小时 ChatGPT Pro 思考算力、全程约 4000 个问题），附 Lean 形式化证明、推理摘要与引用规范。",
+    "why": "HN 395 分、322 条讨论，仓库当天 2189★；这是上月数学成果争议后的正式发布——带形式化验证、保留版本历史，姿态从“抢发”转向与数学社区协商发布。",
+    "insight": "AI 产出的研究成果必须用可验证工件（形式化证明、可复现包）背书，只有结论没有验证会被社区拒收；版本化发布 + 快速纠错承诺是科研类 agent 输出的最低交付标准。"
+  },
+  {
+    "rank": 4,
+    "title": "Meta's Muse is an adorable privacy and security dumpster fire",
+    "title_cn": "Meta Muse 隐私与安全问题成堆",
+    "url": "https://www.techdirt.com/2026/10/06/metas-muse-is-an-adorable-privacy-and-security-dumpster-fire/",
+    "date": "2026-10-06",
+    "source": "Hacker News 365 分 258 讨论",
+    "what": "techdirt 汇总批评 Meta 权限极高的 AI 助手 Muse：9 月下旬曝出一键触发的严重 0-day，随后被指未授权读取用户私信（Meta 否认但事后加强了安全警告），投放广告还刻意隐去 Meta 品牌。",
+    "why": "HN 365 分、258 条讨论；“高权限 + 桌面级访问”的 agent 助手在一个月内集中爆发安全与信任事件，Muse 正成为 agent 隐私问题的标志性反面案例。",
+    "insight": "agent 授权要按“最小权限 + 敏感操作二次确认”设计，全盘桌面访问是事故温床；被曝漏洞后“加强警告”远不如下修默认权限，信任修复成本不在一个量级。"
+  },
+  {
+    "rank": 5,
+    "title": "Dust: Pretraining Transformers Without Backpropagation",
+    "title_cn": "Dust：不用反向传播预训练",
+    "url": "https://qlabs.sh/research/dust",
+    "date": "2026-10-05",
+    "source": "Hacker News 272 分 79 讨论",
+    "what": "首个在 Transformer 预训练上与反向传播有竞争力的零阶方法：在激活空间逐 token 独立扰动（节点扰动），一次前向传播并行评估整个虚拟种群；从 1M token 起，比 SOTA 进化策略 EGGROLL 高效 10^3~10^4 倍。",
+    "why": "HN 272 分、79 条讨论；论文还发现更大模型反而更“种群高效”——243M 参数模型在多数种群规模上胜过小 120 倍的模型，直接挑战“零阶方法无法扩展”的共识。",
+    "insight": "若“算力换无梯度”路线成立，异构与分布式训练多了一个选项：只需前向传播、无需反向梯度同步；自研训练管线应开始跟踪其复现与扩展验证，不必急于跟进。"
+  },
+  {
+    "rank": 6,
+    "title": "OpenTPU – An open-source AI accelerator, developed by AI",
+    "title_cn": "OpenTPU：AI 设计的开源加速器",
+    "url": "https://github.com/FeSens/openTPU",
+    "date": "2026-10-06",
+    "source": "Hacker News 230 分 294 讨论",
+    "what": "单仓库开源 AI 加速器：RTL、ISA、模拟器、编译器、profiler 齐备，设计全程由 AI 生成，已在 Kintex-7 PCIe 卡上实际运行 Qwen3、LFM2.5 与 Qwen3.5。",
+    "why": "HN 230 分、294 条讨论（讨论数反超分数）；“AI 设计芯片”从宣传语变成可上手复现的仓库，2026-09-24 建仓 5 天即获关注，真实硬件上跑通模型是它区别于 PPT 项目的关键。",
+    "insight": "AI 生成复杂工程产物（编译器、模拟器）的可信度锚点是端到端可验证的运行结果；对我们更直接的启示——验证环节的投入产出比高于生成环节，agent 流水线先补验证再扩生成。",
+    "image": "images/2026-10-07/opentpu-an-open-source-ai-accelerator-developed-.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+    "title_cn": "EmbeddingGemma 2 开放多模态嵌入模型",
+    "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+    "date": "2026-10-06",
+    "source": "Hacker News 214 分 29 讨论",
+    "what": "Google 开放多模态嵌入模型 EmbeddingGemma 2：740M 总参（文本 270M、视觉 170M、音频 300M），文本/图像/视频/音频进统一嵌入空间，Apache 2.0 许可。",
+    "why": "HN 214 分、29 条讨论；嵌入模型长期停在纯文本，“中等规模、可本地跑”的多模态统一嵌入一直是空位，这款发布直接补上，且许可对商用友好。",
+    "insight": "本地多模态检索（截图、语音备忘、文档混搜）可直接用它的统一嵌入空间建索引；纯文本场景只加载 270M 文本部分即可，成本远低于调用通用多模态大模型。",
+    "image": "images/2026-10-07/embeddinggemma-2-an-open-lightweight-multimodal-.jpg"
+  }
+]

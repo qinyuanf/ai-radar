@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "xop01/ai_goodpractice",
+    "url": "https://github.com/xop01/ai_goodpractice",
+    "stars": 122,
+    "trend": "2026-10-02 后新建，5 天 122★",
+    "what": "把 AI 整合进日常工作流的完整实践指南，面向新手与有经验用户两层读者，覆盖工具选择与工作流设计。",
+    "why": "2026-10-02 建仓、5 天 122★；纯文档仓库能冲到这个速度，说明“怎么把 AI 真正嵌进工作流”仍有大量未被满足的入门需求。",
+    "insight": "团队内推 AI 工具时，一份按角色分层的入门指南（新手走模板、老手走自定义）比直接发工具清单转化率高；值得内部沉淀同款分层文档。",
+    "image": "images/2026-10-07/xop01-ai-goodpractice.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "longsurf-ai/openchart",
+    "url": "https://github.com/longsurf-ai/openchart",
+    "stars": 86,
+    "trend": "2026-10-05 后新建，2 天 86★",
+    "what": "开源版 TradingView：接入你自己的 AI，图表与数据免费无限制，自托管避开订阅与数据上限制约。",
+    "why": "2026-10-05 建仓、2 天 86★；“专业工具开源平替 + 自带 AI 接口”的组合正在从编辑器、笔记扩展到金融图表这类垂直工具。",
+    "insight": "垂直专业工具的开放平替开始把“AI 接口”当默认能力提供；评估任何自托管工具时可把“能否接自己的模型”作为一等筛选条件，避免数据孤岛。",
+    "image": "images/2026-10-07/longsurf-ai-openchart.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "facebookresearch/swe-sweep",
+    "url": "https://github.com/facebookresearch/swe-sweep",
+    "stars": 57,
+    "trend": "2026-10-01 后新建，6 天 57★",
+    "what": "Meta 官方研究项目与基准：给定真实仓库，agent 必须在不获得任何 bug 类型或位置提示的前提下，自主发现并修复尽可能多的 bug；基于 Harbor 框架，按修复 bug 数取微平均计分。",
+    "why": "2026-10-01 建仓即获官方背书；现有 SWE 基准大多“给定缺陷修”，这个反向设置（自主找 bug）更接近真实维护场景，难度也高一个量级。",
+    "insight": "排查类 agent 的评测应从“给我一个报错我修”升级到“给一个仓库你自己找问题”；内部可先用告警/日志密度做候选定位信号，模拟这个设置做小规模基准。",
+    "image": "images/2026-10-07/facebookresearch-swe-sweep.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "rakesh0x/OpenCardboard",
+    "url": "https://github.com/rakesh0x/OpenCardboard",
+    "stars": 57,
+    "trend": "2026-10-04 后新建，3 天 57★",
+    "what": "本地优先的对话式 AI 视频编辑器：通过对话剪辑自己的素材，视频文件全程不离开本机。",
+    "why": "2026-10-04 建仓、3 天 57★；“素材不出本机”是它区别于云端 AI 视频工具的核心卖点，踩中了内容创作者的隐私顾虑。",
+    "insight": "面向内容创作者的 AI 工具把“本地处理”当隐私卖点已成有效定位；做同类产品时敏感数据（素材、文档）的本地化处理路径值得优先设计。",
+    "image": "images/2026-10-07/rakesh0x-opencardboard.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "pavlenkosa/wayvoice",
+    "url": "https://github.com/pavlenkosa/wayvoice",
+    "stars": 55,
+    "trend": "2026-10-02 后新建，5 天 55★",
+    "what": "Linux/Wayland 桌面的离线语音输入：按热键说话，文字直接出现在当前活动窗口，全程本地运行无需联网。",
+    "why": "2026-10-02 建仓、5 天 55★；桌面级语音输入在 Linux 生态长期缺位，离线方案对配了麦的办公环境是即插即用的效率提升。",
+    "insight": "语音是数字员工最自然的输入通道之一，本地离线方案可绕开云端隐私审查；内部工具若要加语音指令，优先评估本地 whisper 系方案的数据合规优势。",
+    "image": "images/2026-10-07/pavlenkosa-wayvoice.jpg"
+  }
+]
