@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 93262,
+    "trend": "首日快照：总 93262★，2026-10-07 有提交",
+    "what": "给 agent 装“看全网”的眼睛：一个 Python CLI 统一读取与搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书的内容，主打零 API 费用，并提供 MCP 接入，可直接挂到 Claude Code、Cursor 等客户端。",
+    "why": "93262★、8171 fork、2026-10-07 仍有提交，2026-02-24 建仓八个多月做到近 10 万星；它解决的是 agent 落地最脏的一环——各家内容平台没有统一接口、官方 API 收费且限额，社区用“一个 CLI 打平多平台”直接绕开。",
+    "insight": "我们的情报任务正卡在同一处：多个源反爬或收费，每天要靠备用路径凑数据。可参考它把“平台适配”收敛成一层统一 CLI/MCP 接口并对上暴露稳定字段，源失效时只换适配器不改主流程；但要评估合规与稳定性风险，不能把关键链路全押在抓取上。",
+    "image": "images/2026-10-08/panniantong-agent-reach.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "stars": 84924,
+    "trend": "首日快照：总 84924★，2026-10-05 有提交",
+    "what": "面向 LLM 与 agent 的开源爬虫/抓取器：把任意网页转成干净、可直接喂给模型的 Markdown，基于 Playwright 渲染，支持 RAG 场景的结构化抽取，可自托管也可用官方云服务（一个 key 接入）。",
+    "why": "84924★、8803 fork、2026-10-05 有提交；在“agent 联网取数据”这条链上它已是事实标准件之一，自托管与云两种形态同时覆盖了“数据不出域”和“省事”两类需求。",
+    "insight": "需要抓网页正文时优先复用这类成熟件，别自己写 requests + 正则：动态渲染、反爬、正文清洗三件事单靠脚本会反复返工。自托管后要把“抓取失败率、空正文率”做成监控指标，否则上游改版只会表现为 agent 回答质量莫名下降。",
+    "image": "images/2026-10-08/unclecode-crawl4ai.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "netdata/netdata",
+    "url": "https://github.com/netdata/netdata",
+    "stars": 80829,
+    "trend": "首日快照：总 80829★，2026-10-08 有提交",
+    "what": "全栈可观测平台（Go，CNCF 生态）：主机、容器、Kubernetes、数据库与应用指标的秒级采集与可视化，内置告警与异常检测，现以“AI 驱动的可观测”为主打，并提供 MCP 接入。",
+    "why": "80829★、6656 fork、2026-10-08 当天仍有提交；2013 年的老项目靠“把 AI 与 MCP 塞进监控栈”重新进入热榜，而监控数据能被 agent 直接读取，正是它能被自动排查复用的前提。",
+    "insight": "让数字员工做线上排查，最省力的路径是给它一个能查监控的 MCP 接口，而不是让它啃原始日志：指标已聚合、时间窗可指定、返回结构稳定。评估监控方案时把“是否有 MCP 或可编程查询接口”列进选型项。",
+    "image": "images/2026-10-08/netdata-netdata.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Mintplex-Labs/anything-llm",
+    "url": "https://github.com/Mintplex-Labs/anything-llm",
+    "stars": 66799,
+    "trend": "首日快照：总 66799★，2026-10-08 有提交",
+    "what": "本地优先的一体化 agent 平台（JavaScript）：自托管运行 LLM 与 agent，覆盖 RAG（内置向量库）、agent 编排、计算机操作与多模态，桌面端与 Docker 部署均可。",
+    "why": "66799★、7454 fork、2026-10-08 当天有提交；话题标签已从早期的“本地聊天”扩到 agent-harness、agent-orchestration、computer-use，说明它把自己重新定位成“可自托管的 agent 运行平台”。",
+    "insight": "遇到“数据不出域 + 完整 agent 能力”的需求，先用这类开源平台验证可行性再决定自研：向量库、编排、工具调用它已打通，自研同等能力成本很高。选型时重点压测其编排能力上限，避免业务复杂后被迫推倒重来。",
+    "image": "images/2026-10-08/mintplex-labs-anything-llm.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "mem0ai/mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "stars": 66779,
+    "trend": "首日快照：总 66779★，2026-10-07 有提交",
+    "what": "面向 agent 与应用的“记忆层”基础设施（Python）：提供可直接接入的长期记忆能力——记忆的写入、检索、更新与状态管理，定位为生产可用的即插即用组件。",
+    "why": "66779★、7859 fork、2026-10-07 有提交，同时 797 个未关闭 issue 也说明它正被大量真实场景压着跑；“agent 记忆”已从各家自研的私有实现，变成有独立开源组件的一层。",
+    "insight": "记忆要当基础设施做，而不是提示词技巧：区分“稳定偏好与事实”和“临时任务状态”，并给写入配去重与过期机制，否则上下文会被近似重复的条目挤满。可直接对照它的记忆分类与更新策略，检查我们自己的记忆规则有没有缺口。",
+    "image": "images/2026-10-08/mem0ai-mem0.jpg"
+  }
+]

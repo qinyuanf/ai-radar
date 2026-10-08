@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "GPT-6 and Intelligent UI for everyone",
+    "title_cn": "GPT-6 与智能界面向所有人开放",
+    "url": "https://openai.com/index/gpt-6-for-everyone",
+    "date": "2026-10-07",
+    "source": "OpenAI 官方博客 · Hacker News 492 分 259 讨论",
+    "what": "OpenAI 宣布 GPT-6 在 ChatGPT 全球铺开，同时上线 Intelligent UI：回答不再只是文本，而是带可视化内容与可直接操作的交互组件，官方称响应更快。GPT-6 家族含 Sol 与 Luna 两个型号，其中 Luna 已被用作同日公测的 Decisions API 底座。",
+    "why": "官方 10-07 发布，HN 492 分 259 讨论；这是头部助手把“界面”交给模型生成的关键一步——输出形态从纯文本变成可交互应用，前端与模型之间的边界被重新划分。",
+    "insight": "交付类数字员工应把“可交互产物”当成一类输出目标（表单、看板、可点控件），而不只是长文本报告。反过来，解析第三方助手回答的自动化流程要预留纯文本回退，避免回答里混入交互组件后解析失效。"
+  },
+  {
+    "rank": 2,
+    "title": "Claude Haiku 5.5",
+    "title_cn": "Claude Haiku 5.5 发布",
+    "url": "https://www.anthropic.com/claude-haiku-5-5",
+    "date": "2026-10-07",
+    "source": "Hacker News 671 分 336 讨论",
+    "what": "Anthropic 发布 Claude Haiku 5.5，定位其“最便宜、最快”的小模型档：官方页面给出计算机操作基准 OSWorld 72.4%，输入价降到每百万 token 0.10 美元，而上一代 Haiku 4.5 为 1.00 美元。",
+    "why": "HN 671 分、336 讨论，是当天热度最高的模型发布之一；小模型在计算机操作类基准做到 72.4% 的同时输入价降一个数量级，直接改写“agent 该用哪档模型”的成本结构。",
+    "insight": "把步骤明确、重复度高的 agent 子任务（点页面、填表、结构化输出）下沉到 Haiku 档，贵模型只留给规划与判断，能显著压成本。换档前先用自己的真实任务做回归，别直接采信公开基准分。",
+    "image": "images/2026-10-08/claude-haiku-5-5.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Decisions API is in public beta",
+    "title_cn": "决策 API 进入公开测试",
+    "url": "https://developers.openai.com/api/docs/guides/decisions",
+    "date": "2026-10-06",
+    "source": "Hacker News 384 分 222 讨论",
+    "what": "OpenAI 把“让模型做结构化判定”独立成 Decisions API 并开放公测：支持 Predicates（判断是否成立）、Choices（多选一）、Scores（打分）三类问题，由 GPT-6 Luna 驱动，定价每百万 token 0.10 美元、不支持缓存，官方称比走 Responses API 快最多 10 倍。",
+    "why": "HN 384 分、222 讨论；此前这类判定要自己拼提示词再解析 JSON，现在变成一等公民接口，延迟与定价都按“判定”这一具体场景重新设计。",
+    "insight": "我们已有的分类型判定（任务路由、门禁是否通过、内容分级）可直接对齐这套谓词/选择/打分三分类语义，省掉自研协议与解析层。迁移前重点算清“无缓存”的成本：高频重复判定必须自己做结果缓存。"
+  },
+  {
+    "rank": 4,
+    "title": "Strands Decider 2B: a small, open-source, decision model",
+    "title_cn": "Strands Decider 2B：开源决策模型",
+    "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+    "date": "2026-10-07",
+    "source": "Hacker News 275 分 78 讨论",
+    "what": "AWS Strands 团队开源 Strands Decider 2B：以 Qwen3.5-2B 为主干加 LoRA 训练的决策模型，只对候选项做打分与选择、不生成文本，权重发布在 GitHub 与 Hugging Face，本地推理延迟约 115 毫秒。",
+    "why": "HN 275 分、78 讨论；与 OpenAI 的 Decisions API 同一周出现——“判定”这类任务正从通用大模型里被拆出来，一条路走云端专用接口，另一条走可本地部署的小模型。",
+    "insight": "路由、意图识别、门禁检查这类高频小决策，可先试 2B 级本地决策模型（约 115 毫秒、数据不出域、边际成本近零），再与云端判定接口用同一套标注集比一致率与延迟后定档；不要为这类任务默认调用大模型。",
+    "image": "images/2026-10-08/strands-decider-2b-a-small-open-source-decision-.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Docker Agent",
+    "title_cn": "Docker Agent：容器化智能体运行时",
+    "url": "https://github.com/docker/docker-agent",
+    "date": "2026-10-07",
+    "source": "Hacker News 177 分 82 讨论",
+    "what": "Docker 官方开源的 agent 构建与运行时（Go，Apache-2.0，3729★、485 fork，2026-10-07 仍有提交）：用 YAML 定义 agent，支持多 agent 编排、MCP 工具、多家模型供应商与 RAG，以 Docker CLI 插件形式运行。",
+    "why": "HN 177 分、82 讨论；容器厂商把“agent 定义 + 运行时”做成 CLI 插件，意味着 agent 部署开始向“和容器共用一套运维语言”靠拢，隔离与分发直接复用现成基础设施。",
+    "insight": "需要隔离执行的 agent 任务，先评估这类声明式容器运行时能否覆盖（YAML + MCP + 可换模型），比自拼沙箱省事且天然获得镜像分发能力；但 YAML 表达力有限，含人工卡点的长流程仍需工作流引擎承载。"
+  },
+  {
+    "rank": 6,
+    "title": "What is Codemode",
+    "title_cn": "什么是代码模式（Codemode）",
+    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
+    "date": "2026-10-06",
+    "source": "Hacker News 146 分 76 讨论",
+    "what": "作者提出并解释 codemode：不再让模型一次发一个工具调用请求，而是让它编写调用宿主侧 JavaScript 接口的代码来编排工具，从而绕开上下文长度与往返次数的限制；文中给出图像生成、MCP 集成等工作流示例，并指出持久化（中断后难以续跑）与小模型容易混淆是主要代价。",
+    "why": "HN 146 分、76 讨论；工具数量一多，“每个工具一份 schema 塞进上下文”就撑不住，codemode 是目前最实用的替代路线之一，而且作者明确写出了代价，不是只讲好处。",
+    "insight": "工具超过约十几个时，考虑把工具面收敛成“可编程接口 + 代码执行”，让模型写脚本批量调用，能同时省下上下文和往返次数；但必须为中断与重放设计持久化，并给小模型保留纯工具调用的回退路径。",
+    "image": "images/2026-10-08/what-is-codemode.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Advancing computer use with Ironclad",
+    "title_cn": "与 Ironclad 推进计算机操作能力",
+    "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+    "date": "2026-10-06",
+    "source": "OpenAI 官方博客",
+    "what": "OpenAI 与合同管理平台 Ironclad 合作，围绕复杂合同工作流训练与评估 AI agent，用以推进面向专业工作的计算机操作能力（以上为官方博客摘要口径；正文页本机访问被拒，细节未逐条核对）。",
+    "why": "官方 10-06 发布；计算机操作能力正从“通用桌面上截图点按钮”的演示，转向绑定某个垂直业务系统做训练与评估，说明厂商开始按行业流程打磨 agent。",
+    "insight": "评估计算机操作能力要落到具体业务流程上，看步骤成功率与需人工接管的比例，而不是只看通用桌面基准分。选型时直接问供应商“是否在我的业务系统上训练并评估过”，拿不到答案就按未验证处理。"
+  }
+]

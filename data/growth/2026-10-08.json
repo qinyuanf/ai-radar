@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "jiwoochris/artex-ko",
+    "url": "https://github.com/jiwoochris/artex-ko",
+    "stars": 282,
+    "trend": "2026-10-03 新建，5 天内 282★，2026-10-08 有提交",
+    "what": "AI 自主渗透测试框架 ARTEX 的韩语本地化版本（Go，AGPL-3.0，上游为 Autumn-27/ARTEX）：面向攻防两侧，话题标签覆盖渗透测试、蓝队、检测工程与 sigma 规则。",
+    "why": "2026-10-03 建仓，5 天内 282★、122 fork，2026-10-08 仍在提交；fork 数接近星数一半，说明大量人拿它改自己的版本，安全类 agent 框架的本地化与二次开发需求真实存在。",
+    "insight": "安全测试类 agent 的价值在“授权范围内自动化重复动作”，接入前必须把授权边界、目标白名单与操作审批做成代码级硬约束，不能让模型自行扩大范围；防守侧可反过来用它产生的行为特征完善检测规则。",
+    "image": "images/2026-10-08/jiwoochris-artex-ko.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "strands-agents/box",
+    "url": "https://github.com/strands-agents/box",
+    "stars": 84,
+    "trend": "2026-10-02 新建，6 天内 84★，2026-10-08 有提交",
+    "what": "Strands Agents 团队出的 agent 沙箱（Rust）：限制 agent 能执行什么、能读写哪些文件、能访问哪些网络，把操作系统级隔离与默认拒绝的出站策略结合，并支持把凭据注入到 agent 之外、密钥不进模型上下文；当前支持 Apple silicon 上的 macOS，Linux 在计划中。",
+    "why": "2026-10-02 建仓，6 天内 84★，2026-10-08 仍在提交；由官方 agent 框架团队亲自做隔离层，说明“agent 权限治理”正从各家自研走向框架自带的标准件。",
+    "insight": "三条设计可以直接抄：默认拒绝的出站白名单、凭据由外部注入而不交给模型、用操作系统级隔离而不是靠提示词约束。检查我们自己的权限守卫时，要确认这三点都落在代码层，而不是只写在规范文档里。",
+    "image": "images/2026-10-08/strands-agents-box.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "Yamz-Labs/kyojin",
+    "url": "https://github.com/Yamz-Labs/kyojin",
+    "stars": 67,
+    "trend": "2026-10-02 新建，6 天内 67★，2026-10-07 有提交",
+    "what": "面向 AMD Strix Halo（ROCm，gfx1151）的本地推理引擎，基于 ExLlamaV3 构建，目标是在一台 128GB 内存的迷你主机上跑 300B 级 MoE 模型。",
+    "why": "2026-10-02 建仓，6 天内 67★、2026-10-07 有提交；它押的是“大内存消费级设备 + 稀疏 MoE”这条路线——激活参数小，让单机跑千亿级模型变得可想象。",
+    "insight": "评估本地部署先算激活参数与内存带宽，而不是总参数量：MoE 总参数大但激活小，可行性主要由内存容量决定。非 NVIDIA 生态（ROCm）已有可用推理引擎，做数据不出域方案时应纳入备选，别默认只有 CUDA 一条路。",
+    "image": "images/2026-10-08/yamz-labs-kyojin.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Btluo1/ccb",
+    "url": "https://github.com/Btluo1/ccb",
+    "stars": 61,
+    "trend": "2026-10-02 新建，6 天内 61★，2026-10-07 有提交",
+    "what": "AI 编程助手一键配置工具（JavaScript/Electron，Windows）：把 Trae、Qoder、CodeBuddy、WorkBuddy、Cursor、ZCode 等客户端一键接入其统一的 OpenAI 兼容网关，自动写入全部模型、设为默认并启动（仅桌面客户端部分开源）。",
+    "why": "2026-10-02 建仓，6 天内 61★、2026-10-07 有提交；它反映的痛点是“多个编码客户端各自配模型太繁琐”，于是用一层 OpenAI 兼容网关统一供给，客户端只管连。",
+    "insight": "多客户端环境下，把模型供给收敛到一个 OpenAI 兼容网关比逐个客户端配置更好维护：换模型只改一处，成本与调用日志天然集中。但这类工具会写入客户端配置并改默认值，接入前先确认它改了哪些文件、凭据存放在哪。",
+    "image": "images/2026-10-08/btluo1-ccb.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Moris-kr/ai-chatroom",
+    "url": "https://github.com/Moris-kr/ai-chatroom",
+    "stars": 58,
+    "trend": "2026-09-29 新建，9 天内 58★，2026-09-29 有提交",
+    "what": "一个网页群聊，让 Claude、ChatGPT、Grok、Gemini 四家模型在同一房间里自行对话；不调用付费 API，而是复用你本机已登录的各官方 CLI 来驱动，支持英、韩、日三语。",
+    "why": "2026-09-29 建仓当天即 58★、9 fork；“借用已登录 CLI 而不是申请 API key”是它传播的关键——把多模型协作的接入门槛压到零成本。",
+    "insight": "多模型对比评测可借这个思路：让不同模型在同一任务上下文里各自作答并互相质疑，比单模型自评更容易暴露分歧点。但复用登录态 CLI 做自动化有账号与条款风险，生产用途应换成正规 API 或明确授权的账号。",
+    "image": "images/2026-10-08/moris-kr-ai-chatroom.jpg"
+  }
+]
