@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "\"Math 2.0\" will need to value mathematical progress more holistically",
+    "title_cn": "“数学2.0”需要更全面地评估数学进展",
+    "url": "https://mathstodon.xyz/@tao/117395269325940185",
+    "date": "2026-10-08",
+    "source": "Hacker News 590 分 / 627 评论（Terence Tao on Mathstodon）",
+    "what": "菲尔兹奖得主陶哲轩发文主张数学界应建立更全面的进展评估体系，把 AI 参与下的验证、形式化与协作方式纳入“数学进展”的定义。",
+    "why": "Hacker News 590 分 627 评论，与 OpenAI 同周撤回 3 篇数学论文直接呼应，是数学圈对 AI 介入的最高调回应。",
+    "insight": "AI 产出“结果对不对”和“算不算进展”是两回事：数字员工交付同样要区分“验证通过”与“有价值的产出”，评估口径要写进门禁而不是靠模型自己声明。"
+  },
+  {
+    "rank": 2,
+    "title": "Whistle: Speech to Text in 16.9 MB",
+    "title_cn": "Whistle：16.9 MB 的语音转文字",
+    "url": "https://cactuscompute.com/blog/whistle",
+    "date": "2026-10-08",
+    "source": "Hacker News 527 分 / 119 评论",
+    "what": "Whistle 是仅 16.9 MB 的本地语音转文字模型，主打极小体积下的可用识别质量。",
+    "why": "Hacker News 527 分；Whisper 类模型通常数百 MB 起，这个体积能把语音识别塞进极端受限环境。",
+    "insight": "端侧小模型已能覆盖单任务转写的可用线：做语音相关能力先测 20MB 级小模型的及格线，不够再上大模型，成本差一个量级。"
+  },
+  {
+    "rank": 3,
+    "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+    "title_cn": "行业为何对 DeepSeek 4.1 Flash 无动于衷",
+    "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+    "date": "2026-10-07",
+    "source": "Hacker News 411 分 / 345 评论",
+    "what": "博文分析 DeepSeek 4.1 Flash 的发布与定价，认为其能力成本组合对现有商业模式冲击巨大，而市场反应冷淡。",
+    "why": "Hacker News 411 分 345 评论，讨论激烈；DeepSeek 每次定价调整都直接压低行业 API 价格锚。",
+    "insight": "做数字员工成本预算时把 DeepSeek 价当地板价做压力测试：若核心任务在地板价模型上也能过质量线，采购价就有砍半谈判空间。"
+  },
+  {
+    "rank": 4,
+    "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+    "title_cn": "Meta 与微软采取措施限制员工使用 Claude",
+    "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
+    "date": "2026-10-07",
+    "source": "Hacker News 367 分 / 381 评论",
+    "what": "报道称 Meta 与微软开始在内部限制员工使用 Claude，转向自家或合作方模型工具。",
+    "why": "Hacker News 367 分 381 评论；两家都是 Anthropic 重要客户，企业 AI 采购的排他性正变成显性策略。",
+    "insight": "企业内数字员工的模型选型会越来越受公司联盟关系影响：能力评估之外，供应链与合规归属要列为一票否决项。",
+    "image": "images/2026-10-09/meta-and-microsoft-take-steps-to-reduce-employee.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "OpenAI annualised revenues $20B less than previously signalled",
+    "title_cn": "OpenAI 年化收入比此前信号少 200 亿美元",
+    "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+    "date": "2026-10-08",
+    "source": "CNBC，Hacker News 350 分 / 246 评论",
+    "what": "CNBC 报道 OpenAI 年化收入比此前对外释放的信号低约 200 亿美元，涉及与 Nvidia、Oracle、CoreWeave 的算力承诺循环。",
+    "why": "Hacker News 350 分；收入数字直接关系 AI 基建融资链是否可持续，是本周行业最重的数据点。",
+    "insight": "不要把头部厂商的产能承诺当作容量规划的外部假设：数字员工的算力与模型供应要按“供应商可能收缩”预留降级路径。",
+    "image": "images/2026-10-09/openai-annualised-revenues-20b-less-than-previou.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "OpenAI Withdraws 3 Math Papers",
+    "title_cn": "OpenAI 撤回 3 篇数学论文",
+    "url": "https://github.com/openai/math/blob/main/history.md",
+    "date": "2026-10-08",
+    "source": "Hacker News 338 分，推文讨论 544 评论（openai/math 官方记录）",
+    "what": "OpenAI 在其数学项目仓库的 history.md 中确认撤回 3 篇数学论文，官方记录了撤稿原因与时间线。",
+    "why": "Hacker News 338 分、讨论帖 544 评论；头部实验室主动撤稿罕见，且恰逢数学界反思 AI 证明标准。",
+    "insight": "自动化产出科研级结论时，“可撤回的公开更正机制”本身就是产品能力：给数字员工产出建版本与撤回记录，出错时能追溯而不是悄悄改。",
+    "image": "images/2026-10-09/openai-withdraws-3-math-papers.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Disrupting AI-enabled \"false front\" operations",
+    "title_cn": "打击 AI 驱动的“虚假门面”运营",
+    "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+    "date": "2026-10-08",
+    "source": "OpenAI 官方博客，2026-10-08",
+    "what": "OpenAI 公布对一批利用其模型伪装正规业务门面的欺诈运营的封禁与溯源，说明识别手法与处置过程。",
+    "why": "OpenAI 官方 10-08 发布，是继模型蒸馏攻击披露后又一次公开威胁情报行动。",
+    "insight": "agent 正被用来批量制造“看起来正规”的门面内容：外采信源要增加“内容是否 agent 批量生产”的鉴别项，不能只看表面完成度。"
+  }
+]

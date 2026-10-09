@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "LosaLosSantos/aurelio-finance",
+    "url": "https://github.com/LosaLosSantos/aurelio-finance",
+    "stars": 699,
+    "what": "自托管个人财富分析工具：投资组合与净资产跟踪加 AI 洞察，FastAPI + React 技术栈。",
+    "why": "2026-10-06 建仓，3 天 699★。",
+    "insight": "“自托管+本地数据+LLM 洞察”正成为个人财务工具的默认形态；做企业内数据分析工具同样应默认支持私有化部署，数据不出域是第一需求。",
+    "trend": "2026-10-06 后新建，2026-10-09 时 699★",
+    "image": "images/2026-10-09/losalossantos-aurelio-finance.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "nachisama/ai-data-extractor",
+    "url": "https://github.com/nachisama/ai-data-extractor",
+    "stars": 122,
+    "what": "开源提取 AI 编码助手聊天历史的工具，支持 Claude Code、Cursor、Windsurf、Aider、Cline/Roo Code 等。",
+    "why": "2026-10-07 建仓，2 天 122★；各家用法不一的会话存储是普遍痛点。",
+    "insight": "各家 agent 会话记录格式分散且无标准，做数字员工工作回放或审计时值得先抽象一层统一会话 schema，不绑死单家工具的存储。",
+    "trend": "2026-10-07 后新建，2026-10-09 时 122★",
+    "image": "images/2026-10-09/nachisama-ai-data-extractor.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "chenxiachan/paperfold",
+    "url": "https://github.com/chenxiachan/paperfold",
+    "stars": 96,
+    "what": "论文“语义缩放”阅读器：把论文放大成分层视图帮助理解，带翻译与本地优先设计。",
+    "why": "2026-10-04 建仓，5 天 96★；论文日投量大带来的阅读压力是真实需求。",
+    "insight": "“同一份内容按阅读深度分层渲染”值得抄进长文档与长工单阅读场景：先给摘要层，按需展开证据层。",
+    "trend": "2026-10-04 后新建，2026-10-09 时 96★",
+    "image": "images/2026-10-09/chenxiachan-paperfold.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Tejashmakwana/motionmaxxing",
+    "url": "https://github.com/Tejashmakwana/motionmaxxing",
+    "stars": 88,
+    "what": "一个 agent skill，把 AI 生成的粗糙视频“整形”成 motion designer 手感的专业动效。",
+    "why": "2026-10-06 建仓，3 天 88★；“AI slop → 专业感”是当前内容工具的显性痛点。",
+    "insight": "skill 的正确抽象粒度是风格与质量约束而非功能：把审美规则写成可执行清单比换模型更有效，这对沉淀交付质量规则同样适用。",
+    "trend": "2026-10-06 后新建，2026-10-09 时 88★",
+    "image": "images/2026-10-09/tejashmakwana-motionmaxxing.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "nalinbhardwaj/botscent",
+    "url": "https://github.com/nalinbhardwaj/botscent",
+    "stars": 75,
+    "what": "5KB 零依赖的指纹脚本，让网站识别来访的是 AI agent 还是真人、是哪家 agent。",
+    "why": "2026-10-01 建仓，8 天 75★；agent 流量激增让网站侧识别需求急涨。",
+    "insight": "数字员工抓网页会越来越多被这类指纹识别，要预期“被识别”是常态：重要数据源提前准备官方 API 或多通道获取，不假设网页永远可爬。",
+    "trend": "2026-10-01 后新建，2026-10-09 时 75★",
+    "image": "images/2026-10-09/nalinbhardwaj-botscent.jpg"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "stars": 107257,
+    "what": "Google 官方开源的终端 AI agent，把 Gemini 直接带进命令行，同时是 MCP 客户端和服务端，可读写文件、执行命令、自主完成多步编码任务。",
+    "why": "最近一次提交 2026-10-08，10.7 万星，是 GitHub 上最活跃的开源编码 agent 之一，本期 topic:ai 热门榜前列首次进入本榜。",
+    "insight": "做数字员工的命令行入口可直接参考它的 MCP 双端实现；它开源的 system prompt 与工具定义是公开可对照的工程范本。",
+    "trend": "首日快照：总 107257★，2026-10-08 有提交",
+    "image": "images/2026-10-09/google-gemini-gemini-cli.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "datawhalechina/hello-agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "stars": 82067,
+    "what": "Datawhale 出品的中文开源教程《从零开始构建智能体》，从原理到实践覆盖 agent、RAG 与工程落地。",
+    "why": "2025-09 建仓约一年冲到 8.2 万星，最近一次提交 2026-10-08，是中文社区增速最高的 agent 教程。",
+    "insight": "团队新人培训教材可直接选用；它按“原理→实践”组织章节，与我们做内部数字员工文档的拆法一致，可对照查缺。",
+    "trend": "首日快照：总 82067★，2026-10-08 有提交",
+    "image": "images/2026-10-09/datawhalechina-hello-agents.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "run-llama/llama_index",
+    "url": "https://github.com/run-llama/llama_index",
+    "stars": 52445,
+    "what": "LlamaIndex 从 RAG 框架转向“AI 文档处理平台”，提供解析、索引、检索到 agent 的全链路能力。",
+    "why": "5.2 万星且最近一次提交 2026-10-08；官方描述由框架改为平台，说明正在产品化收拢文档处理入口。",
+    "insight": "知识库链路选型若重点是文档解析质量，先试 LlamaIndex 的解析器再考虑自建；它把 parsing/indexing 拆成独立可换层，符合复用优先。",
+    "trend": "首日快照：总 52445★，2026-10-08 有提交",
+    "image": "images/2026-10-09/run-llama-llama-index.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "milvus-io/milvus",
+    "url": "https://github.com/milvus-io/milvus",
+    "stars": 46342,
+    "what": "高性能云原生向量数据库，面向大规模向量近邻搜索，支持分布式部署与 DiskANN 等多种索引。",
+    "why": "最近一次提交 2026-10-08，重新进入 topic:rag 热门榜；“向量库要不要独立部署”的行业争论正把关注度引向它。",
+    "insight": "小规模 RAG 场景优先用 Postgres pgvector 即可；Milvus 适合百万级以上向量再上，按数据规模倒推选型，不为技术栈时髦买单。",
+    "trend": "首日快照：总 46342★，2026-10-08 有提交",
+    "image": "images/2026-10-09/milvus-io-milvus.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "langchain-ai/langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "stars": 42915,
+    "what": "LangChain 官方的 agent 编排框架，以状态图为核心构建可恢复、可中断的长流程 agent。",
+    "why": "4.3 万星、最近一次提交 2026-10-08；话题标签新出现 deepagents 与 enterprise，正在向企业长任务编排加码。",
+    "insight": "多步交付流程本质就是一张可恢复状态图，其 checkpoint/恢复机制可借鉴到交付流程的断点续跑设计。",
+    "trend": "首日快照：总 42915★，2026-10-08 有提交",
+    "image": "images/2026-10-09/langchain-ai-langgraph.jpg"
+  }
+]

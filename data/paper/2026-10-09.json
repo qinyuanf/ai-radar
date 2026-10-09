@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "One Skill Too Many: How Co-Installed Skills Conflict in Coding Agents",
+    "title_cn": "一技多余：共装技能在编码 agent 中的冲突",
+    "url": "https://arxiv.org/abs/2610.11647",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11647",
+    "what": "首个 skill 冲突实证研究：从 20,947 个仓库挖掘 822,109 对相似 skill，312 对确认冲突在 3 个模型上跑 6,368 次；约四分之一已装 skill 与同职责 skill 共存，相似 skill 抢跑后独有核心功能（如禁碰 git）丢失超三分之一。",
+    "why": "arXiv 2026-10-08 提交；skill 生态爆发后共装冲突已普遍存在，且任务完成率不变、只查完成率的基准测不出来。",
+    "insight": "skill 安装清单要做职责唯一性审查；论文证明冲突在首次读取 skill 时就决定，装一个 pre-tool hook 在首次读取处拦截比事后改 prompt 有效。"
+  },
+  {
+    "rank": 2,
+    "title": "SkillContrast: Difference-Guided Text Selection for Agent Skill Reranking",
+    "title_cn": "SkillContrast：面向技能重排的差异引导文本选择",
+    "url": "https://arxiv.org/abs/2610.11650",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11650",
+    "what": "免训练选择器：比较多个候选 skill、保留“差异文本+局部上下文”交给重排器，在 1,235 个请求上比 TF-IDF 多 54-72 次干净命中，模型输入 token 省 51-59%。",
+    "why": "arXiv 2026-10-08 提交，与前一篇 skill 冲突研究同日发布，一个查冲突、一个做精选，正好互补。",
+    "insight": "skill 检索最该写清的是适用条件差异而非共性指令：skill 文档第一段就写“与 X 的区别”，能直接提升被正确召回的概率。"
+  },
+  {
+    "rank": 3,
+    "title": "Harness Evolution Hits a Ceiling: When Weight Training Should Begin",
+    "title_cn": "Harness 演进有其天花板：何时该开始训练权重",
+    "url": "https://arxiv.org/abs/2610.11655",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11655",
+    "what": "用自进化 harness 先提升冻结模型，再把进化轨迹训成 LoRA：Qwen3.5-4B 在 DeepPlanning 上 0.16→0.30，LoRA 叠加后翻倍；失败轨迹按“过程失败/内容失败”分类决定该改 harness 还是训权重。",
+    "why": "arXiv 2026-10-08 提交，跨 8 个模型、6 个家族与两个基准验证，给出“先 harness 后权重”的可操作判据。",
+    "insight": "调数字员工先按失败类型分流：被拦调用、死循环、步数耗尽这类过程失败改流程就能修；产出质量差这类内容失败才需要换模型或微调，顺序反了浪费预算。"
+  },
+  {
+    "rank": 4,
+    "title": "AgentEvolver: System-Wide Self-Evolution Through Task Execution",
+    "title_cn": "AgentEvolver：通过任务执行实现系统级自进化",
+    "url": "https://arxiv.org/abs/2610.11613",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11613",
+    "what": "在底座模型冻结前提下，把 agent 系统拆成 8 类可版本化演进的实体（操作、方法、子 agent、控制流、接口、状态等），任务执行中沉淀可复用能力，SWE-bench Pro 报 82.08% 解决率。",
+    "why": "arXiv 2026-10-08 提交；“干完活顺手变强”的系统能力沉淀是当前 agent 工程最热方向之一。",
+    "insight": "关键设计是“改的组件要接回评估与复用”：沉淀团队记忆或 skill 时，同样要求新改动能被下次任务真正调用并验证，否则只是日记不是能力。"
+  },
+  {
+    "rank": 5,
+    "title": "LTBD: Learnable Trust-Boundary Delimiters for Prompt Injection Defense",
+    "title_cn": "LTBD：可学习信任边界分隔符防御提示注入",
+    "url": "https://arxiv.org/abs/2610.11634",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11634",
+    "what": "不改模型参数，用少量可学习分隔符在输入层显式编码可信指令与不可信外部数据的边界；AlpacaFarm 上攻击成功率 0.00%，自适应攻击下仍保持有效。",
+    "why": "arXiv 2026-10-08 提交；提示注入仍是 agent 落地最大安全缺口，免微调方案可直接集成。",
+    "insight": "数字员工处理网页、工单、上传文件等外部数据时，输入层显式信任边界标记是当前性价比最高的防线；纯 prompt 约束“不听外部指令”已被证明不够。"
+  },
+  {
+    "rank": 6,
+    "title": "TRACE: Diagnosing Verifier Brittleness in Agentic Evaluation",
+    "title_cn": "TRACE：诊断 agent 评估中验证器的脆弱性",
+    "url": "https://arxiv.org/abs/2610.11678",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11678",
+    "what": "把“分数变化”从结论变成可检验诊断：对评估施加定点改动并对比成对运行；仅重命名工具就让脚本 agent 掉 0.250 分（行为完全没变），误导性工具名则让所有 agent 真实掉 0.20-0.44。",
+    "why": "arXiv 2026-10-08 提交；agent 分数普遍被直接当能力读数，这篇给出“先排除测量问题再下结论”的流程，并发现单次运行对照会翻转 15-36% 的结果。",
+    "insight": "看通过率变化先问“评估本身变没变”：工具名、输出格式、评判模型版本都能造成假波动；单次运行对照不可信，关键结论要重复运行。"
+  },
+  {
+    "rank": 7,
+    "title": "DeltaReplay: Task-Relative Memory Reuse for Mobile GUI Agents",
+    "title_cn": "DeltaReplay：面向移动 GUI agent 的任务相对记忆复用",
+    "url": "https://arxiv.org/abs/2610.11707",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11707",
+    "what": "把历史执行轨迹存成“页面为点、动作为边”的转移图，复用时逐步比对当前屏幕，决定照做、换参数做还是交给基础 agent；AndroidWorld 成功率最高提升 10.3 个百分点。",
+    "why": "arXiv 2026-10-08 提交；记忆复用从整条回放进化到步级决策，解决记忆错配反而误导 agent 的问题。",
+    "insight": "流程模板复用也该步级判断而不是整条重放：每个模板步骤带适用条件，执行时逐条校验当前状态，不匹配就降级给模型自主决策。"
+  },
+  {
+    "rank": 8,
+    "title": "DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation",
+    "title_cn": "DIAL-OPD：在线策略蒸馏中用更少 token 学到更多",
+    "url": "https://arxiv.org/abs/2610.11659",
+    "date": "2026-10-08",
+    "source": "arXiv 2610.11659",
+    "what": "发现在线蒸馏只训 40% 的 token 反而胜过全量：用教师与学生概率的对数均值加权，筛掉双方都低概率的高奖励噪声 token，AIME25 Pass@16 从 13.33% 翻倍到 26.67%。",
+    "why": "arXiv 2026-10-08 提交，4 组师生对、7 个数学基准、9 个基线对比；还证明 4B 强教师胜过 8B 普通教师。",
+    "insight": "做模型微调或蒸馏时，训练信号按学习价值筛选比堆量重要；选教师模型先看“在目标任务上是否强”，而不是参数规模。"
+  }
+]
