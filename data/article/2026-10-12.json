@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "Build your own decision model",
+    "title_cn": "自己动手构建决策模型",
+    "url": "https://nishtahir.com/build-your-own-decision-model/",
+    "date": "2026-10-10",
+    "source": "Hacker News 452 分 102 评论（nishtahir.com）",
+    "what": "实操教程：用 Qwen3-1.7B 把输出约束在固定选项 token 上，单次前向就得到带概率的判定；对比通用 LLM 生成结构化输出要逐 token 多趟解码（示例 11 趟）。在 CommonsenseQA 留出样本上准确率 59.4%，快速微调后升到 62.4%；进一步发现模型严重过度自信（自报 0.9-1.0 置信的样本实际只有 70% 正确），用温度缩放（约 3.8）把置信度校准到与准确率对齐，全部脚本开源。",
+    "why": "HN 452 分、102 评论，是周末最高热度技术帖之一；与上周 OpenAI 决策接口公测、Strands 开源 2B 决策模型连成一条线——“高频判定”正从通用大模型里拆出来独立优化，这篇给出了完整的个人复现路径。",
+    "insight": "路由、分级、门禁这类高频小判定可以自建 1-2B 决策模型压成本，但先做两件事：用温度缩放把输出概率校准成真置信度再设阈值（未校准的高置信会骗过所有下游规则），以及用自己的真实任务集测 F1 而不是采信公开分数。"
+  },
+  {
+    "rank": 2,
+    "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+    "title_cn": "Talorys：跑在自己账号里的 AI 助理",
+    "url": "https://github.com/rociiu/talorys",
+    "date": "2026-10-10",
+    "source": "Hacker News 321 分 150 评论（GitHub）",
+    "what": "完全跑在个人 Cloudflare 账号里的开源 AI 助理，一条命令部署：聊天、可查看可编辑的记忆（每轮只把最相关记忆发给模型）、记忆历史（售车这类变更保留旧值等待确认）、任务/笔记/项目、跑在 Durable Object 闹钟上的定时提醒；单用户设计无注册，AI 服务不可用时任务与提醒等基础功能照常工作。",
+    "why": "HN 321 分、150 评论；“代码开源 + 部署在自己的免费云额度里 + 开发者不经手数据”回应了个人 agent 最大的信任顾虑，同时把运行成本压到接近零。",
+    "insight": "个人/团队 agent 的部署按“数据路径”分级评估：跑在自己账号、无第三方数据库、可离线降级，是数据不出域最省力的组合。记忆设计抄两条：每轮只注入最相关条目；变更保留为带时间的历史事实而不是原地覆盖——后者让“改主意”可追溯。",
+    "image": "images/2026-10-12/talorys-a-self-hosted-personal-ai-agent-on-cloud.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "I'm sorry, but you still have to think",
+    "title_cn": "抱歉，你仍然得动脑",
+    "url": "https://itsallaboutthebit.com/i-am-sorry-but-you-still-have-to-think/",
+    "date": "2026-10-11",
+    "source": "Hacker News 319 分 142 评论（itsallaboutthebit.com）",
+    "what": "作者复盘 DHH（Rails 作者）把 Campfire Once 交给 AI 从 Ruby 重写为 Rust、Elixir、Go 的产出：提示词不够具体时，许多设计决策实际是“掷硬币”——向后兼容要不要保、延迟与吞吐怎么取舍、崩溃后丢通知是否可接受，这些没人明说的问题被模型自行拍板，产生了系统性非功能差异与真实缺陷。",
+    "why": "HN 319 分、142 评论；“资深工程师完全不读代码、全权交给 agent”是最接近“不用再动脑”设想的实验，结果清单说明瓶颈不在模型能力，而在没人回答的决定。",
+    "insight": "重写/迁移类任务先做一张隐含决策清单（兼容、性能、失败语义、数据保留）逐条填答案，再让 agent 执行；代码评审重点扫“模型替你拍板的地方”——它们通常不在需求里，也不会在 diff 的显眼处。"
+  },
+  {
+    "rank": 4,
+    "title": "The RAM shortage is bringing back DDR4",
+    "title_cn": "内存短缺让 DDR4 回归",
+    "url": "https://www.theverge.com/games/1009140/ram-shortage-intel-amd-ddr4-comeback",
+    "date": "2026-10-10",
+    "source": "Hacker News 269 分 283 评论（The Verge）",
+    "what": "全球内存涨价潮下 Intel 与 AMD 转向支持老一代内存：Gigabyte 宣布两条主板线将支持 LGA 1700 插槽“即将发布”的处理器，把 2014 年问世的 DDR4 带回装机市场；The Verge 同一专题显示 AI 内存短缺也在推高 SSD 价格。",
+    "why": "HN 269 分、283 评论，10-09 发布；AI 数据中心对内存的胃口以“上一代内存复活、存储一起涨价”的方式传导到消费市场，是算力短缺最直白的硬件侧证据。",
+    "insight": "AI 基建的成本压力会溢出到无关品类：开发机、本地推理设备与 CI 机器的采购预算都要把内存/SSD 涨价计入，别按去年的报价做方案；本地部署的成本评估也应重算“自己买机器”和“用云”的当前比例。",
+    "image": "images/2026-10-12/the-ram-shortage-is-bringing-back-ddr4.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Nvidia in talks to acquire US 'open' model startup Reflection AI",
+    "title_cn": "英伟达洽谈收购开源模型公司 Reflection AI",
+    "url": "https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a",
+    "date": "2026-10-10",
+    "source": "Hacker News 176 分 113 评论（Financial Times）",
+    "what": "据金融时报报道，Nvidia 正洽谈收购或加码投资 Reflection AI——一家它已投资、以开源权重模型为主业的公司，媒体称其估值约 250 亿美元、有“美国的 DeepSeek”之称；若成交易，将是从芯片供应商直接吃到模型层的罕见整合。",
+    "why": "HN 176 分、113 评论；硬件巨头与模型层的垂直整合继续——Nvidia 从“卖铲子”走向持有矿场，开源模型的独立生存空间被进一步压缩，也侧面印证开源权重路线被证明有商业价值。",
+    "insight": "技术栈依赖单一开源模型供应商时要评估所有权风险：被收购后许可证、发布节奏与接口条款都可能变化。选型把“权重可自留 + 许可证宽松”当硬条件，并为关键能力准备第二模型回退——切换演练要真的做一次。"
+  },
+  {
+    "rank": 6,
+    "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
+    "title_cn": "Sophos 用 OpenAI Daybreak 把威胁调查时间缩短 96%",
+    "url": "https://openai.com/index/sophos",
+    "date": "2026-10-09",
+    "source": "OpenAI 官方博客",
+    "what": "官方客户案例：安全厂商 Sophos 用 OpenAI 的 Daybreak 把网络威胁调查时间缩短 96%，并自动化 52% 的 MDR（托管检测响应）案件，官方摘要强调保留人工监督环节。",
+    "why": "官方 10-09 发布；96% 与 52% 是目前“agent 进安全运营”最激进的生产数字之一，而且把“人工监督”写进了摘要——说明自动化边界已成行业默认要求。",
+    "insight": "读这类自动化案例先拆案件构成：问“52% 被自动化的是哪些案件类型、剩余 48% 卡在哪一步”，用自己业务的分布估算现实上限；安全与处置类场景的 agent 必须保留可审计的人工介入点，别拿总平均数字做承诺。"
+  },
+  {
+    "rank": 7,
+    "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+    "title_cn": "Asana 用 GPT-6 把浏览器测试成本压降 76 倍",
+    "url": "https://openai.com/index/asana-browser-agent",
+    "date": "2026-10-09",
+    "source": "OpenAI 官方博客",
+    "what": "官方客户案例：Asana 在 Codex 中借助 GPT-6 系列模型重构浏览器 agent 的测试环节，官方口径称测试成本降低 76 倍、速度提升 5 倍。",
+    "why": "官方 10-09 发布；76 倍不是模型变强带来的，而是把高频测试负载下移到合适档位——成本工程正在成为 agent 产品的核心竞争力，这类数字第一次被厂商拿来当卖点。",
+    "insight": "agent 成本按“调用频次 × 任务难度”分档：高频低难度任务（回归测试、格式校验）用便宜档模型，贵模型只留给规划与疑难分支。做优化时把成本倍率、速度倍率与成功率三个数一起记录，缺一个都会做出错误决策。"
+  }
+]
