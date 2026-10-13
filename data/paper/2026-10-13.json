@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
+    "title_cn": "用世界模型解锁递归自我改进",
+    "url": "http://arxiv.org/abs/2610.13912v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13912",
+    "what": "领域通用的递归自我改进框架：用预测式世界模型选动作与选学习数据，更新后的策略-模型对要过组件与兼容性检查才保留。代码修复成功率从静态校验器的 26.3% 提到 31.2%；GUI 任务平均动作数降 39.4%；实验室规划五个策略版本从 21.80% 到 46.01%。",
+    "why": "给“agent 自我进化”提供了带门控的完整数字链：提升来自世界模型选数据+保留检查，不是简单回放经验。",
+    "insight": "自我进化流水线必须加版本对比与兼容性检查的保留门控；没有门控的经验池会退化成噪声池，改动越积越不可回滚。"
+  },
+  {
+    "rank": 2,
+    "title": "When VLMs Destroy What They Know: Spatial Representations Fall Below Lexical Priors",
+    "title_cn": "VLM 为何丢失自己知道的空间关系",
+    "url": "http://arxiv.org/abs/2610.13910v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13910",
+    "what": "提出 EICS 度量与 CASP-VL 基准（从 Visual Genome 场景图做单概念因果扰动）：VLM 的空间关系在谓词自身 token 上可识别，但经 EOS 或均值聚合成全局表示后消失；即便输出型基准分数不差，空间结构编码也远不如词汇信息可靠。",
+    "why": "解释了截图自动化测试、图表理解里“看得见但总判错”的现象，而且这类失败只看输出评测发现不了。",
+    "insight": "涉及位置/拓扑判断的视觉断言不要让 VLM 直接给结论：强制显式输出关系（bbox、A 在 B 左侧）再用规则校验，不依赖其内部表示。"
+  },
+  {
+    "rank": 3,
+    "title": "RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics",
+    "title_cn": "RATED：按执行可靠性检索智能体工具",
+    "url": "http://arxiv.org/abs/2610.13889v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13889",
+    "what": "语义双塔检索之上加轻量 contextual bandit 重排，用实时执行反馈调候选序，无需重训模型。基于 5172 个真实工具、21 万+查询-工具对的 EcoAgent 基准：MRR 比 ToolLLM 检索器高 52.2%；30% API 故障率下选中坏工具率从 86.2% 降到 2.9%，延迟开销 <1ms。",
+    "why": "MCP/工具市场进入工具失效常态化阶段，语义相关性不再等价于运行时可用性，此文给了零重训的在线方案。",
+    "insight": "给高频使用的 MCP 工具维护按调用成功率的轻量重排（EWMA 即可）：失败即降级不摘除，观察窗口后再恢复。"
+  },
+  {
+    "rank": 4,
+    "title": "X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems",
+    "title_cn": "X-AgentRed：个人智能体跨服务红队",
+    "url": "http://arxiv.org/abs/2610.13886v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13886",
+    "what": "自进化红队框架：分析每个工具的效果、潜在危害与执行前置条件，建“一个工具的效果满足另一个工具前置条件”的有向图，从图采样危害路径实例化为真实场景，再用执行反馈扩 refinement。四个前沿 agent 模型上危害路径发现率是 STAC 的 1.77 倍，工具覆盖 2.99 倍。",
+    "why": "个人 agent 跨服务连工具，风险出在“单步都无害的组合执行”；靠提示 LLM 想坏路径的旧红队法探索面不足。",
+    "insight": "新工具接入评审时按“效果→前置条件”图做跨工具组合枚举（先写后发、先删后通知类），作为单工具越狱测试的补充项。"
+  },
+  {
+    "rank": 5,
+    "title": "Ask Your Advisor: Learning When to Consult Stronger Models in Agentic Systems",
+    "title_cn": "ARIA：学会何时请教更强模型",
+    "url": "http://arxiv.org/abs/2610.13870v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13870",
+    "what": "executor-advisor 架构的元控制器：把工作流节点上的执行证据压成紧凑状态，用 Monte Carlo control 学 SILENT/CONSULT 决策，代价含咨询罚金。SWE-bench Verified、Terminal-Bench 2.1、τ²-bench 上以不到 advisor 模型一半的成本恢复 44–81% 的弱强成功率差距，优于路由/级联/固定提示等十种对照。",
+    "why": "多档模型调度是当下降本主路径，这篇给出“何时升级”可学习、且策略紧凑可审计的证据。",
+    "insight": "数字员工的升级求助策略应由执行证据（报错率、重复尝试数、步数）驱动而非模型自评不确定；单个咨询价格参数可调 trade-off，两个模型都不用重训。"
+  },
+  {
+    "rank": 6,
+    "title": "MC-EvoBench: Auditing Experience-Driven Self-Improvement in Minecraft Agents",
+    "title_cn": "MC-EvoBench：审计智能体经验迁移",
+    "url": "http://arxiv.org/abs/2610.13829v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13829",
+    "what": "受控 Minecraft 基准：19 条固定进化链，任务建为状态图、阶段级环境校验器，源/target 世界重置且只允许声明的一个 agent artifact 跨界；对 no-prior/related/unrelated/shuffled 四种条件在同步预算、五个种子下对比。结果：相关经验没有稳定迁移（区间全含零），controller 与 planner 存在直接能力差。",
+    "why": "“agent 变强了”经常只是带着上一局攒下的资源；该基准把能力变化与资源残留、暴露不均严格分离，是给自我进化叙事的校准。",
+    "insight": "评估技能自进化效果必须配 shuffled 对照组：经验打乱后指标不掉，就不能宣称经验沉淀有效，应如实报告。"
+  },
+  {
+    "rank": 7,
+    "title": "Same Query, Different Answer: Run-to-Run Variance in Semantic Query Processing",
+    "title_cn": "同一查询，不同答案：语义查询的执行间方差",
+    "url": "http://arxiv.org/abs/2610.13823v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13823",
+    "what": "重放 SemBench/LRO-Bench/UDA-Bench 并记录 120 万次模型调用：temperature 0 下 5 次执行中 0.07%–10.2% 的行判定翻转（单任务最高 24%）；行级抖动在计划层指数放大——UDA-Bench 几个百分点的抽取值变化对应约三分之二最终答案不同；LRO-Bench 28 条实现建议中 16 条被单次执行误导。投票能降方差但消不掉。",
+    "why": "直接推翻“跑一次就下结论”的语义查询评测实践，翻转行恰是模型间互不一致的行。",
+    "insight": "任何基于 LLM 行级判定的评测（Mock 数据比对、UI diff 断言）至少 5 次重放并报翻转率；单次结论按噪声处理。"
+  },
+  {
+    "rank": 8,
+    "title": "Can Language Models Learn When to Abstain? Policy Learning and Calibrated Answer Selection",
+    "title_cn": "语言模型能学会何时弃答吗",
+    "url": "http://arxiv.org/abs/2610.13821v1",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13821",
+    "what": "Qwen3-14B 事实问答上比较两条路：训练模型本身 vs 训练独立答案选择器（奖励答对、惩罚答错、允许弃答）。选择器在 TriviaQA 把覆盖率从 20.2% 提到 30.9%、计分答案错误率从 23.0% 降到 14.5%；RL 方案无一致收益；NQ-Open 上选择器仍输给“全弃答”基线。",
+    "why": "“知道自己不知道”是数字员工答复可信的前提，此文同时给出可用（TriviaQA）与不可用（NQ-Open）两侧的硬数据。",
+    "insight": "高风险答复配独立的答复选择/校准层，别指望模型自己学会拒答；跨域部署前按域复测，达不到门槛的域直接降级到人工升级路径。"
+  }
+]

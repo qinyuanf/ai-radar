@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "stars": 159129,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "用 agent 做逆向工程的项目：目标是从应用的外部行为一路逆向到 native 二进制，覆盖 App 行为分析与二进制还原两类场景。",
+    "why": "2026-04-14 建仓，约半年星数到 15.9 万，当日（10-13）仍有提交，是本轮检索到的最高热度话题仓。",
+    "insight": "“先观测行为推断接口语义、再下沉到二进制验证”的路径可以直接套到三方系统联调排查：没有文档时按外部行为建接口画像，比读协议猜测可靠。",
+    "image": "images/2026-10-13/morluto-rea.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Snailclimb/JavaGuide",
+    "url": "https://github.com/Snailclimb/JavaGuide",
+    "stars": 158969,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "Java 面试与后端知识开源书，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发。",
+    "why": "2018 年建仓至今 15.9 万★，10-12 仍在更新；传统后端知识库正在把 AI 应用开发收进正文。",
+    "insight": "给后端同学解释 LLM 集成时可复用其中文章节与术语，不用自己重写一套讲义。",
+    "image": "images/2026-10-13/snailclimb-javaguide.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "stars": 143962,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "汇集各家 AI 编码/助手工具（Claude Code、Cursor、Devin、CodeBuddy 等）的系统提示词与所用模型清单，随泄露与提取持续更新。",
+    "why": "14.4 万★，10-12 有提交；是对标同类产品提示工程最常引用的公开仓库。",
+    "insight": "对比同类 agent 的提示结构可先从这里取粗样本，但转录版有失真，关键约束（工具描述、审批规则）必须在工具实际输出上复核。",
+    "image": "images/2026-10-13/x1xhlol-system-prompts-and-models-of-ai-tools.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "shadcn-ui/ui",
+    "url": "https://github.com/shadcn-ui/ui",
+    "stars": 125439,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "“复制代码进自己仓库”的 React 组件库：可组合、可访问性好，鼓励在其上构建自有组件体系。",
+    "why": "12.5 万★，10-12 有提交；agent 生成的前端页面默认大量落在这套组件上。",
+    "insight": "给 agent 生成 UI 优先用这种源码可改的组件而非封装依赖：减少版本冲突与黑盒升级风险，模型出错时也能直接改组件源码。",
+    "image": "images/2026-10-13/shadcn-ui-ui.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "agentscope-ai/QwenPaw",
+    "url": "https://github.com/agentscope-ai/QwenPaw",
+    "stars": 35632,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "开源个人 AI 助手：一键安装、可部署在本机或云端，支持多聊天渠道接入（AgentScope 系产品）。",
+    "why": "2026-02-24 建仓，7 个多月到 3.56 万★，10-12 有提交。",
+    "insight": "它的多渠道接入与本机/云双部署结构与我们 waker 的 IM channel 形态同构，评估替代或补充渠道方案前值得先读它的渠道抽象层。",
+    "image": "images/2026-10-13/agentscope-ai-qwenpaw.jpg"
+  }
+]

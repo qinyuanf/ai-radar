@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "onehumanbeing/esp32-iphone-agent",
+    "url": "https://github.com/onehumanbeing/esp32-iphone-agent",
+    "stars": 675,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "用 7 美元 ESP32 让 AI 模型操作真实 iPhone：AirPlay 拿屏幕画面，USB HID 做触摸输入，可接任意 OpenAI 兼容视觉模型。",
+    "why": "2026-10-11 建仓两天 675★，是当日新建仓里增速最高的。",
+    "insight": "真机 GUI 测试可以走 AirPlay+HID 物理通道低成本搭建：比模拟器更贴近真实环境，也不用越狱装 agent。",
+    "image": "images/2026-10-13/onehumanbeing-esp32-iphone-agent.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "zhuyansen/new-term-radar",
+    "url": "https://github.com/zhuyansen/new-term-radar",
+    "stars": 575,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "每日抓取 X、Hugging Face、GitHub 等来源上出现的 AI 新名词（新模型、新产品、新仓库名）并聚合成雷达。",
+    "why": "2026-10-12 建仓当天 575★；选题结构与 ai-radar 高度相似（热榜+新建榜）。",
+    "insight": "它覆盖 X/HF 的新模型命名信号是我们 growth 榜没有的源，下一轮可评估把这类“名称级信号”接入作补充。",
+    "image": "images/2026-10-13/zhuyansen-new-term-radar.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "deeplethe/solid-glass",
+    "url": "https://github.com/deeplethe/solid-glass",
+    "stars": 230,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "面向 AI 应用的设计系统：定义材质、物理触感与技术约束三层规范，附组件与 token。",
+    "why": "2026-10-12 建仓一天 230★，少见的专为 AI UI 做的设计系统。",
+    "insight": "agent 产品的 UI 约束（流式输出、可中断、审批弹窗）应沉淀成设计 token 而不是每个页面临时处理，该仓库可进 UI Wiki 候选源。",
+    "image": "images/2026-10-13/deeplethe-solid-glass.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "VinkyDev/vibestart",
+    "url": "https://github.com/VinkyDev/vibestart",
+    "stars": 140,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "全栈 TypeScript 脚手架生成器：自由组合技术栈，产出经 AI coding agent 验证过的项目。",
+    "why": "2026-10-04 建仓，9 天 140★；卖点是“生成即通过 coding agent 验证”。",
+    "insight": "新项目优先选“已被 coding agent 验证”的脚手架，其验证清单（类型检查、lint、冒烟跑通）可复用为我们的 implement 阶段门禁。",
+    "image": "images/2026-10-13/vinkydev-vibestart.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "lawrencewzen/wx-bot",
+    "url": "https://github.com/lawrencewzen/wx-bot",
+    "stars": 122,
+    "trend": "+0 stars/0天（对比 2026-10-13）",
+    "what": "把微信接进个人 AI agent（Grok/Muse/Claude 等），走官方 iLink 接口而非协议逆向。",
+    "why": "2026-10-09 建仓 4 天 122★；钉钉/飞书之后微信渠道开始有官方接法。",
+    "insight": "评估微信渠道时先核 iLink 官方接口的能力边界（群聊、媒体消息、频控），“官方接口”路线比协议侧 hack 可持续。",
+    "image": "images/2026-10-13/lawrencewzen-wx-bot.jpg"
+  }
+]

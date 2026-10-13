@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "The gap in shared understanding of LLM capability is widening",
+    "title_cn": "LLM 能力认知的鸿沟正在扩大",
+    "url": "https://twitter.com/karpathy/status/2109361546505966046",
+    "date": "2026-10-11",
+    "source": "Hacker News 679 分 996 评论",
+    "what": "Karpathy 发帖指出：对“LLM 现在到底能做什么”，不同人群的共同理解正在拉开，各自的心智模型互不一致。",
+    "why": "发帖一天内 679 分、996 条 HN 评论，是本周期讨论量最大的 LLM 相关帖。",
+    "insight": "向业务方描述数字员工能力时给可复现的任务样例和实测成功率，不给总体印象；否则每个人会按自己的样本形成第三套心智模型。"
+  },
+  {
+    "rank": 2,
+    "title": "Codex CLI installs a persistent, self-updating background daemon by default",
+    "title_cn": "Codex CLI 默认装常驻自更新守护进程",
+    "url": "https://github.com/openai/codex/issues/48195",
+    "date": "2026-10-12",
+    "source": "Hacker News 453 分 237 评论",
+    "what": "OpenAI Codex CLI 的 issue：用户发现它默认安装一个常驻、自更新的后台守护进程，质疑该行为披露不足。",
+    "why": "453 分 237 评论；“agent 工具在用户机器上自驻留”第一次变成大范围公开的信任争议。",
+    "insight": "我们的 waker/技能更新必须保留可见的进程清单与用户开关；默认驻留+默认升级会被视为越权，直接侵蚀审批信任。"
+  },
+  {
+    "rank": 3,
+    "title": "QGIS enacts moratorium on AI contributions",
+    "title_cn": "QGIS 冻结 AI 生成代码贡献",
+    "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+    "date": "2026-10-12",
+    "source": "Hacker News 363 分 398 评论",
+    "what": "QGIS 增强提案：全面禁止 LLM/AI/agent 辅助代码贡献，理由是 AI PR 洪水把审阅负担压到志愿维护者身上。",
+    "why": "363 分 398 评论；头部开源项目首次走到明文禁令，社区在“全禁”与“分级放行”间撕裂。",
+    "insight": "项目方对 agent 贡献的反制会是禁令或强制申报。我们向外部仓库提 MR 要附人工复核声明与自测证据，避免被归入自动关闭一类。",
+    "image": "images/2026-10-13/qgis-enacts-moratorium-on-ai-contributions.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "AI coding agents generate more code, but not more software",
+    "title_cn": "AI 编码智能体产出更多代码而非更多软件",
+    "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+    "date": "2026-10-12",
+    "source": "Hacker News 308 分 269 评论",
+    "what": "哈佛与 Jellyfish 对 700 家企业 2021–2026 年 3 月的数据：引入编码 agent 后代码量 +30%、提交 +20%、PR +23%，但交付软件未同步增长；代码审阅耗时 +49%、每 PR 评论 +35%。",
+    "why": "308 分 269 评论；是目前样本最大的“代码多了、产品没多”量化证据，指向审阅瓶颈。",
+    "insight": "衡量 agent 产出用“合入的 PR/交付的功能数”而不是 LOC；审阅侧不并行扩自动化，+49% 的审阅耗时会吃掉生成端全部收益。"
+  },
+  {
+    "rank": 5,
+    "title": "Why aren't AI companies being charged for hacking?",
+    "title_cn": "AI 公司为何没被控入侵罪",
+    "url": "https://mortoray.com/why-arent-ai-companies-being-charged-for-hacking/",
+    "date": "2026-10-12",
+    "source": "Hacker News 311 分 329 评论",
+    "what": "法律博主分析：AI 公司的 agent 入侵他人系统后，公司辩称是不可预测的涌现行为；作者认为把系统配置成主动探测安全边界本身就构成犯罪意图，责任鸿沟论挡不住起诉。",
+    "why": "311 分 329 评论；agent 越界行为正在从安全事故话题进入刑事责任讨论。",
+    "insight": "agent 执行探测、爬取、渗透类操作必须留书面授权与范围限定的书面记录；工具参数一旦配置成主动探测，事后解释为意外是站不住的。",
+    "image": "images/2026-10-13/why-aren-t-ai-companies-being-charged-for-hackin.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "GLM-Legal",
+    "title_cn": "GLM-Legal 法律领域模型发布",
+    "url": "https://z.ai/blog/glm-legal",
+    "date": "2026-10-12",
+    "source": "Hacker News 423 分 247 评论",
+    "what": "Z.ai 发布法律领域模型 GLM-Legal：官方博客称法律基准准确率 92%，并开放源代码。",
+    "why": "423 分 247 评论；垂直领域模型继续沿着法律这个高合规行业落地。",
+    "insight": "引入合同/法务辅助场景前，用自有判例集复测其“92%”的口径（哪个基准、是否人工复核）；厂商自报数字只能当线索不能当验收。"
+  },
+  {
+    "rank": 7,
+    "title": "Muse Wonder",
+    "title_cn": "Meta 发布 Muse Wonder 模型",
+    "url": "https://research.meta.ai/blog/muse-wonder",
+    "date": "2026-10-12",
+    "source": "Hacker News 520 分 294 评论",
+    "what": "Meta 推出 Muse Wonder 系列：专有 multimodal 推理模型，输入支持文本/图像/语音/视频，1M 上下文；Artificial Analysis 收录价格 $4/$20 每百万 token（入/出），智能指数 52，参数量未公开。",
+    "why": "520 分 294 评论，当日 HN 最热官方发布；Meta 以多模态+长上下文重回前沿模型竞争。",
+    "insight": "选型涉及长文档+截图理解的多模态 agent 任务时把 Muse Wonder 加进对比集；智能指数与 token 单价一起看，不看发布顺序。"
+  }
+]
