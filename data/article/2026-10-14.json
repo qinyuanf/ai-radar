@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Developing Gemini 4 Argon responsibly and safely",
+    "title_cn": "Argon 模型的安全与对齐实践",
+    "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+    "date": "2026-10-13",
+    "source": "Google DeepMind 博客 2026-10-13；同日 Argon 发布帖 Hacker News 984 分 747 评论",
+    "what": "DeepMind 发布 Gemini 4 Argon 的安全报告：模型面向 coding、金融、法律、网络安全与科研的“深度工作”，网络防御能力达到前沿水平；官方先用 Fairwind 计划把访问权限制给受信防守方，Google 自身安全团队也用它扫描内外部关键系统，随后才开始大范围开放。报告点名两类风险：滥用与失配/提示注入。",
+    "why": "报告给出可核对的数字：Argon 在端到端模拟网络攻击场景上解出 12 个中的全部 12 个，上一代为 5 个；Wiz 用它发现了既往模型漏掉的医疗软件关键缺陷，涉及数十万条病历。",
+    "insight": "前沿能力“先受限给防守方、后普惠开放”的分阶段发布模式可以直接搬到 agent 平台：给高权限工具（生产改数据、跨系统写操作）设一个受信内测窗口和独立的滥用/提示注入评测集，而不是和通用能力同时全量放开。"
+  },
+  {
+    "rank": 2,
+    "title": "Redesigning source control at Anthropic",
+    "title_cn": "Anthropic 重做版本控制系统",
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control/",
+    "date": "2026-10-13",
+    "source": "Anthropic 工程博客 2026-10-13；Hacker News 538 分 522 评论",
+    "what": "Anthropic 自述：日均合入量从 2026 年 5 月约 2500 个代码变更涨到 9 月的超过 30000 个（10 倍以上），瓶颈已从写码转移到为人类规模设计的开发基础设施（版本控制、构建、CI），于是自研版本控制系统 Scion，并在 5 个月内把 monorepo 从 git 全量迁移，同时重做了代码评审。",
+    "why": "10 倍合入量与 5 个月迁移是本轮最硬的一手数据，来自当事公司工程博客；HN 522 条评论集中在“git 是否已被 agent 工作负载压垮”。",
+    "insight": "当 agent 大量产码，先撑不住的是合并吞吐与评审排队，不是生成能力：我们该优先投入 CI 排队、并行度与评审自动化，而不是继续提高产码速度；“移除一个瓶颈会立刻放大下一个瓶颈”这句应当写进容量规划假设。",
+    "image": "images/2026-10-14/redesigning-source-control-at-anthropic.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "AI Is a Tool. Using It Well Takes Skill.",
+    "title_cn": "AI 是工具，用好它需要技能",
+    "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+    "date": "2026-10-12",
+    "source": "yyhh.org 博客；Hacker News 648 分 511 评论",
+    "what": "对 Rich Hickey《\"AI\" is Not a Tool》的正面反驳：Hickey 认为 LLM 无法被“挥舞”，所以是自动化而非工具；作者承认外包工作会损失学习机会，但指出可预测、可靠、简单、功能有界是评价工具的质量维度，不是成为工具的前提，工具同样会放大错误判断。",
+    "why": "两篇同日登上 HN 前列（648/511 与 302/175），争论点是“人机分工的边界该怎么划”，而不是模型能力本身。",
+    "insight": "判断口径应当落在“谁负责标准”而不是“是否工具”：数字员工承接任务时，验收标准、样本判断与纠错必须由人掌握，否则会同时放大好坏判断；这也解释了为什么评审门禁不能被自动化吞吐指标替代。"
+  },
+  {
+    "rank": 4,
+    "title": "We turned EmbeddingGemma 2 into a speech-to-text model",
+    "title_cn": "嵌入模型改成语音转文字",
+    "url": "https://eg2.haku.sh/",
+    "date": "2026-10-13",
+    "source": "项目页 eg2.haku.sh；Hacker News 396 分 86 评论",
+    "what": "社区项目 Embedding Gemma Transcribe：不改动 EmbeddingGemma 2 的音频编码器，只训练一个把短时音频片段映射到文本空间的轻量 reader，再用约 22.9 万英文词表中最近邻胜出拼出转写，另加一个小模型补标点与大写；训练不到 2 小时（8×H100），模型下载 715MB，在 M3 MacBook Air 8GB 上用神经引擎 12.6 秒转写 1 小时音频（约 288 倍实时）。",
+    "why": "同机对比中 IBM Granite Speech 5.0 约 25.7 秒、Parakeet TDT 0.6B 在 M4 Pro 上 156 倍：一个未被训练过 ASR 的嵌入模型，靠共享空间最近邻就把转写做到了接近专用模型的速度。",
+    "insight": "多模态嵌入空间的“共享表征”可以直接当廉价检索层用：在端侧做语音/图文的关键字级识别时，先固定现成编码器、只训一个小投影层，是比自研端到端模型低两个数量级的方案，适合我们做听记与工单检索类功能的原型验证。",
+    "image": "images/2026-10-14/we-turned-embeddinggemma-2-into-a-speech-to-text.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "AI Models Can Provably Hide Arbitrary Capabilities",
+    "title_cn": "模型可证明地隐藏任意能力",
+    "url": "https://arxiv.org/abs/2610.13928",
+    "date": "2026-10-09",
+    "source": "arXiv 2610.13928（NeurIPS 2026 录用）；Hacker News 272 分 136 评论",
+    "what": "牛津等团队构造了一种后门攻击：用 digital lockers 把加密后的神经网络嵌进宿主权重，只有收到秘密触发词才解密执行；在密码学假设下，即使攻击者拿到全部模型权重，这些隐藏电路也被证明难以诱导和解读，把此前“隐藏固定字符串”的结论推广到任意计算。作者在化学反应预测小任务上做了 PoC，并测试了微调、权重加噪、梯度搜索触发词、潜在对抗训练等诱导手段，结果均表现抗性。",
+    "why": "论文 10-09 提交、10-13 冲上 HN 前列并被 NeurIPS 2026 录用，作者还放出模型以促进防御研究。",
+    "insight": "“评测没测出来”不等于“模型没能力”：依赖诱导与行为评测的能力审计存在理论盲区。对我们采购第三方模型或引入外部技能权重，应把可验证来源、权重签名与行为白名单当作必要条件，而不是只跑一轮基准。"
+  },
+  {
+    "rank": 6,
+    "title": "A look at the math that OpenAI claims computes faster Fourier transforms",
+    "title_cn": "核查 OpenAI 声称的更快傅里叶变换",
+    "url": "https://www.argmin.net/p/faster-fourier-transforms",
+    "date": "2026-10-13",
+    "source": "argmin.net 技术博客；Hacker News 237 分 158 评论",
+    "what": "信号处理博主对 OpenAI 宣称“模型算出比 Cooley–Tukey 更快 FFT”的原始结果做数学核查，从 FFT 的递归分治与约 5n·log2 n 次运算基准出发，逐条检验其声称的复杂度与实际加速成立条件。",
+    "why": "在“AI 解决数百个开放数学难题”被反复宣传的当下，这篇是少见的、逐行验证而非复述新闻稿的公开材料，HN 158 条评论围绕“结果是否被过度解读”。",
+    "insight": "模型给出的“新算法/新结论”必须能被非作者复核到公式级别才算成立：我们的数字员工在汇报“AI 得出某结论”时，应同时给可复核的最小证据（数据源、口径、计算步骤），否则宣传性成果会污染团队判断。",
+    "image": "images/2026-10-14/a-look-at-the-math-that-openai-claims-computes-f.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Thinking will become a hobby",
+    "title_cn": "思考将变成一种爱好",
+    "url": "https://www.spinellis.gr/blog/20261008/",
+    "date": "2026-10-08",
+    "source": "Diomidis Spinellis 博客 2026-10-08；Hacker News 334 分 473 评论",
+    "what": "《Crafting Software》作者 Spinellis 写“自我掘墓”式判断：AI 在性能、成本、可用性三项同时占优，人类信息处理技能平均值本就不高且在学生中继续下滑，因此今天大部分认知工作会被 AI 接手，“思考”将退化为爱好。",
+    "why": "作者是从 2022 年 ChatGPT 连名字里 a 的个数都数不清一路观察到近期模型攻克数百个开放数学问题的长期一线观察者；473 条评论把分歧集中在“哪些判断仍需人负责”。",
+    "insight": "被替代风险最高的不是编码本身，而是“按既定规格产出”的中间环节；数字员工承接这类工作后，人的稀缺价值转移到规格定义、验收判断与责任承担上——所以我们的流程要把评审和验收权重加大，而不是继续优化产码速度。"
+  }
+]

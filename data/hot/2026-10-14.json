@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "stars": 391912,
+    "trend": "+1169 stars/15天（对比 2026-09-29）",
+    "what": "开源个人助理 agent：跑在用户自己机器上，通过 Discord、Slack、Telegram、WhatsApp、iMessage 等 20 多个渠道对话，一个 Gateway 进程即可从单人助理扩到团队共享部署；模型与 agent harness（Claude、Codex、本地模型）做成可替换插件，状态、记忆和凭据都留在本机，由 OpenClaw Foundation（501(c)(3)）托管、无付费版。",
+    "why": "建仓 11 个月已到 39.2 万星、8.2 万 fork，今日（10-14）仍在提交；星数继续居本轮检索首位，是非商用主体运营的最大体量开源 agent 项目。",
+    "insight": "它的“可信网关 + 不可信执行 + 确定性策略”分层，正好对应我们的 waker/技能架构：把渠道接入与会话状态放在 Gateway，把工具执行当不可信外部进程对待并用策略层拦截，比在提示词里约束执行更安全。",
+    "image": "images/2026-10-14/openclaw-openclaw.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 298685,
+    "trend": "+6163 stars/15天（对比 2026-09-29）",
+    "what": "面向编码 agent 的技能框架与开发方法论：用 brainstorm、写计划、子 agent 驱动实现（subagent-driven development）等一组可组合技能，把 SDLC 流程固化成 agent 可加载的 skill。",
+    "why": "15 天内从 292522 涨到 29.87 万星（+6163），topics 直接覆盖 skills、sdlc、subagent-driven-development，是本轮涨幅第二的框架类仓库。",
+    "insight": "把“先头脑风暴出计划、再交给子 agent 实现”做成显式技能而非靠提示词即兴发挥，等价于我们的 SuperHarness 流程；可复用点是技能粒度：一个技能只负责一个阶段，才能被单独审查和替换。",
+    "image": "images/2026-10-14/obra-superpowers.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "stars": 278628,
+    "trend": "+10187 stars/16天（对比 2026-09-28）",
+    "what": "agent harness 性能优化系统：给 Claude Code、Codex、OpenCode、Cursor 等提供 skills、instincts、memory、security 与 research-first 开发流程，以 npm 包（ecc-universal、ecc-agentshield）和 GitHub App 分发，README 明确只允许从官方仓库安装。",
+    "why": "16 天 +10187 星，是本轮绝对增量最大的仓库；且把安全（agentshield）和“只从官方渠道安装”写进 README，说明投毒与仿冒已成为该量级项目的现实风险。",
+    "insight": "我们的自进化技能改的就是同一层（提示、记忆、工作流）。参照 ECC 的做法：技能包必须有可校验来源（仓库+版本+哈希）与独立的安全开关，否则“技能自动更新”会变成供应链入口。",
+    "image": "images/2026-10-14/affaan-m-ecc.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 253503,
+    "trend": "+3990 stars/16天（对比 2026-09-28）",
+    "what": "Nous Research 的自改进 agent：内置学习闭环，从经验生成技能、在使用中改进技能、主动沉淀知识并检索自己的历史对话；提供 stable 与 canary 两个发布通道，原生支持 Windows/Linux/WSL2/Termux，并附带 uv 等打包依赖的签名校验说明。",
+    "why": "16 天 +3990 星至 25.35 万，今日仍有提交；README 专门处理“杀软误报 uv.exe”并给出 GitHub attestation 验证命令，说明其在真实终端环境落地时把可验证性当一等公民。",
+    "insight": "“从经验自动生成技能”必须配套“可验证的二进制来源”：我们的技能与运行时依赖同样应提供 attestation/哈希校验路径，并把它写进排障文档，而不是等用户被杀软拦截后临时找答案。",
+    "image": "images/2026-10-14/nousresearch-hermes-agent.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 207272,
+    "trend": "+1042 stars/15天（对比 2026-09-29）",
+    "what": "fair-code 工作流自动化平台，原生带 AI 能力：可视化编排加自定义代码，支持自托管或云，内置 400 多个集成。",
+    "why": "2019 年建仓的老项目近 15 天仍 +1042 星、今日有提交，说明“确定性工作流 + 少量 LLM 节点”的组合依然是企业侧落地的主流形态。",
+    "insight": "数字员工的多数流程其实不需要自由推理：能用 n8n 式确定性节点编排的部分应固化成工作流，只在需要判断的节点调用模型，成本与可审计性都优于让 agent 全程自由决策。",
+    "image": "images/2026-10-14/n8n-io-n8n.jpg"
+  }
+]
