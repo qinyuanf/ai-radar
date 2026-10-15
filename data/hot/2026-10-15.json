@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 191602,
+    "trend": "+6,036 stars/17天（对比 2026-09-28）",
+    "what": "面向 AI agent 的网页数据层：把任意站点抓取/爬取后转成 LLM 好用的结构化数据（markdown、结构化字段），提供托管 API 与云服务，覆盖抓取、爬虫、搜索与抽取。",
+    "why": "当日接口返回 191602★，10-15 仍有提交；比 2026-09-28 快照增加 6036★，是 agent 取外部信息最常用的一层，星数继续领跑本轮检索。",
+    "insight": "给 agent 补“读外部世界”的能力时优先用现成抓取/抽取层而非自研反爬；但要把“抓到什么算成功”定成可校验的字段契约（缺字段即失败），否则下游 agent 会拿半截网页继续推理。",
+    "image": "images/2026-10-15/firecrawl-firecrawl.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Significant-Gravitas/AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "stars": 187579,
+    "trend": "-17 stars/16天（对比 2026-09-29）",
+    "what": "最早一批自主 agent 项目，现在定位为构建与运行 AI agent 的平台：可编排任务、接入工具、跑自动化，含前端控制台与后端服务。",
+    "why": "当日接口返回 187579★，10-15 有提交；但比 2026-09-29 快照回落 17★，说明这个老牌项目的星数已进入平台期、不再增长。",
+    "insight": "早期 agent 框架星数停滞后，选型要看“维护活跃度与扩展接口”而不是历史星数；把“是否仍在修 bug、发版本”当硬指标，避免拿事实停更的项目做底座。",
+    "image": "images/2026-10-15/significant-gravitas-autogpt.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "ollama/ollama",
+    "url": "https://github.com/ollama/ollama",
+    "stars": 183187,
+    "trend": "+1,314 stars/16天（对比 2026-09-29）",
+    "what": "本机跑大模型的运行时：一条命令拉起 Kimi、GLM、MiniMax、DeepSeek、gpt-oss、Qwen 等开源模型，对外提供兼容 OpenAI 的本地接口。",
+    "why": "当日接口返回 183187★，10-15 有提交，比 2026-09-29 快照 +1314★；数据敏感场景下本地推理仍在被持续采用。",
+    "insight": "本地模型很适合承担 agent 里的“低风险工具调用/离线回归”；但本地适配的模型版本更新慢，评测口径要固定模型与量化版本，不能跨版本比较成功率。",
+    "image": "images/2026-10-15/ollama-ollama.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "stars": 167694,
+    "trend": "+868 stars/15天（对比 2026-09-30）",
+    "what": "Hugging Face 的模型定义与训练/推理框架：覆盖文本、视觉、语音、多模态模型的加载、微调与部署，是开源模型事实上的通用接口层。",
+    "why": "当日接口返回 167694★，10-15 有提交，比 2026-09-30 快照 +868★，仍是开源模型生态的底座。",
+    "insight": "做模型类工件（embedding、分类、rerank）优先走 transformers 统一接口，换模型只改配置；但要锁定库版本与权重 revision，避免上游默认行为变化导致结果漂移。",
+    "image": "images/2026-10-15/huggingface-transformers.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 158497,
+    "trend": "+1,149 stars/17天（对比 2026-09-28）",
+    "what": "开源 LLM 应用开发平台：用可视化方式编排 agentic 工作流与 RAG 管线，接多种模型与工具，支持自托管。",
+    "why": "当日接口返回 158497★，10-15 有提交，比 2026-09-28 快照 +1149★；是“可视化编排 agent 流程”里体量最大的开源选项。",
+    "insight": "评估自研编排还是用平台时，先看它的工作流导出格式能不能被版本化审计；图形化编排好用但难以 diff，关键流程仍应落成可评审的代码/配置。",
+    "image": "images/2026-10-15/langgenius-dify.jpg"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "outcrawlai/scout",
+    "url": "https://github.com/outcrawlai/scout",
+    "stars": 660,
+    "trend": "2026-10-13 建仓，2 天 660★",
+    "what": "开源浏览器 agent（TypeScript，Apache-2.0）：用自然语言指挥浏览器完成任务，可自带模型，也提供厂商云托管版，npm 包名 @outcrawl/scout。",
+    "why": "2026-10-13 建仓、2 天到 660★，是本轮新建仓里星数最高的一个；浏览器 agent 仍是新项目竞争最激烈的方向。",
+    "insight": "选浏览器 agent 先核“失败可观测性”：能否拿到每步截图/DOM 快照与失败原因，这决定它能不能进我们的前端 E2E 流程；只给最终结果的不适合做测试断言。",
+    "image": "images/2026-10-15/outcrawlai-scout.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "datalab-to/indra",
+    "url": "https://github.com/datalab-to/indra",
+    "stars": 236,
+    "trend": "2026-10-13 建仓，2 天 236★",
+    "what": "Datalab 的文档智能模型：在 CPU 上做 OCR，输出行检测、CTC 识别、阅读顺序与 markdown；代码 Apache-2.0、模型 OpenRAIL-M，权重发布在 Hugging Face。",
+    "why": "2026-10-13 建仓 2 天 236★；纯 CPU OCR 对没有 GPU 的批处理管线是低门槛选择。",
+    "insight": "文档类 RAG 的入口质量就是 OCR 质量；先用可复现样本集（表格、双栏、扫描件）对比不同 OCR 的字段级错误再决定是否入库，不要只看宣传的总体准确率。",
+    "image": "images/2026-10-15/datalab-to-indra.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "BlenderGPT3D/blender-ai-addon",
+    "url": "https://github.com/BlenderGPT3D/blender-ai-addon",
+    "stars": 213,
+    "trend": "2026-10-09 建仓，6 天 213★",
+    "what": "Blender 插件，把视口变成与 OpenCode agent 的对话：用文字或参考图描述要建/改的模型，agent 生成 bpy Python 代码并在场景里执行，出错自动把日志回传让 agent 修；插件首次运行自行下载便携版 OpenCode（约 80MB），无需在系统里单独安装。",
+    "why": "2026-10-09 建仓 6 天 213★；把 coding agent 直接接到专业软件的脚本 API 上，是“agent 操作桌面软件”的一个具体形态。",
+    "insight": "“agent 生成脚本 → 宿主执行 → 报错回灌重试”这个闭环可套到任何有脚本接口的工具（Blender/Excel/CAD）；关键是把执行沙箱与回滚做在宿主侧，agent 只产出脚本、不直接改文件。",
+    "image": "images/2026-10-15/blendergpt3d-blender-ai-addon.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "sepehr071/awesome-iran-mcp",
+    "url": "https://github.com/sepehr071/awesome-iran-mcp",
+    "stars": 97,
+    "trend": "2026-10-11 建仓，4 天 97★",
+    "what": "面向伊朗网站的 MCP 服务器合集：19 个非官方 + 1 个官方的波斯语站点 server，共 321 个工具（电商比价、外卖、出行、健康、图书、加密钱包等），可作为 Claude Code 插件，或给 Codex/Cursor 等用的 Agent Skills。",
+    "why": "2026-10-11 建仓 4 天 97★；单个国家的垂直站点能被攒出 300+ 工具，说明 MCP 已成 agent 接外部服务的默认协议。",
+    "insight": "MCP 生态正按“地区/行业”长尾铺开；我们做工具接入时应把每个 server 的权限面（能读什么、能否下单/支付）写进接入评审，只对官方来源才放开写权限。",
+    "image": "images/2026-10-15/sepehr071-awesome-iran-mcp.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "vakandi/opencode-rust",
+    "url": "https://github.com/vakandi/opencode-rust",
+    "stars": 71,
+    "trend": "2026-10-13 建仓，2 天 71★",
+    "what": "OpenCode 的 Rust 重写：CLI、TUI 与 HTTP server 三形态，覆盖会话、工具执行、MCP、LSP 与 TypeScript 插件桥，21 个 crate、571 个测试，无需 Docker 容器即可跑本地 agent。",
+    "why": "2026-10-13 建仓 2 天 71★；把 agent 运行时从 Node 换成 Rust，指向单二进制、低依赖的部署形态。",
+    "insight": "agent 运行时“去 Node 化”能明显降低分发与启动成本；评估这类重写版时先看它是否保留 MCP/LSP 等既有扩展协议，协议不兼容的重写会带来工具层返工。",
+    "image": "images/2026-10-15/vakandi-opencode-rust.jpg"
+  }
+]

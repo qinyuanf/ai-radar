@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Co-Evolving Acting and Forecasting for Language Agents",
+    "title_cn": "动作与预测协同演化的语言智能体",
+    "url": "http://arxiv.org/abs/2610.20597v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20597，cs.AI/cs.LG，Haofei Yu 等 5 人",
+    "what": "针对 agent 长程 rollout 昂贵、传统 agentic RL 只用终端标量奖励的问题，加入第三类“多步动作目标”监督：在成功轨迹上让策略骨干生成后续动作序列，并对每条动作“从历史预测”也做监督，形成时序集成；推理时仍逐步执行、无额外开销。在 ALFWorld、ScienceWorld、WebShop、τ²-bench、AppWorld 五个基准上优于 GRPO/RL 基线，ScienceWorld 上样本效率比 ECHO/GRPO 高至 1.9×/2.0×，且只用单一策略骨干、不需额外模型或推理开销。",
+    "why": "论文 10-14 挂出，同时给“效果更好 + 样本效率更高 + 无推理开销”三组数据，直接针对 agent RL 训练成本这个瓶颈。",
+    "insight": "训练/微调 agent 时，加入中间步骤的预测性监督比只给最终成败奖励更省样本；但必须保证推理期不加模型、不加步数，否则省下的训练成本会转成线上延迟。"
+  },
+  {
+    "rank": 2,
+    "title": "One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness",
+    "title_cn": "同一任务多种接口下的智能体鲁棒性",
+    "url": "http://arxiv.org/abs/2610.20576v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20576，cs.LG/cs.AI/cs.CL，Artin Tajdini 等 3 人",
+    "what": "指出后训练会把 agent 的能力绑死在训练接口上：动作改名、换记法等语义不变的改动就会让它变差，而逐样本独立打分时“接口随机化”只是把依赖扩大到训练分布。提出 Cross-Interface Policy Regularization（CIPR）：用无信息标识符替换动作名，把同一训练样本用两个“等价动作可对齐”的接口呈现，惩罚两种接口下动作分布的 KL 散度。在监督与 RL 后训练中都提升鲁棒性：函数调用场景里留出的接口扰动使后训练 agent 准确率掉近 25%，CIPR 挽回 10.5%，且原接口准确率不降。",
+    "why": "论文 10-14 挂出，给出量化：接口只改个名字就能让 agent 掉近 25% 准确率，这是“换层皮就失灵”的硬数据。",
+    "insight": "工具/接口重构（改工具名、改参数命名）会静默损伤 agent 表现；要么保留别名兼容层，要么在评测里加入“语义等价但改名”的扰动集，把接口变更纳入回归。"
+  },
+  {
+    "rank": 3,
+    "title": "Scaling Discovery Requires Forgetting",
+    "title_cn": "扩大发现需要遗忘",
+    "url": "http://arxiv.org/abs/2610.20563v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20563，cs.AI/cs.CL，Shangyin Tan 等 5 人",
+    "what": "研究用 LLM agent 做自动科研：单 agent 迭代更久、多 agent 并行、并行 agent 互相通信这三种扩规模方式，都会因 agent 累积历史而平台化——各自被自己的过往尝试锚定，改动越来越小。作者提出“遗忘”：周期性丢弃搜索状态（各 agent 会话与候选历史），从当前最优候选重启，可解锁搜索并让同样预算继续前进。在启发式编程、kernel 优化、模型训练四类任务上，比并行 agent 最高提升 15%、比单 agent 最高 39%。",
+    "why": "论文 10-14 挂出，给出“记忆越多反而越差”的可复现数据，是对当前“把历史全塞进上下文”常见做法的直接反例。",
+    "insight": "长任务 agent 的上下文/记忆不是越多越好；给探索型任务设“周期性遗忘 + 从最优解重启”的机制，比无限累积历史更能推进，落地时可对搜索状态做有意的重置并保留最优快照。"
+  },
+  {
+    "rank": 4,
+    "title": "Latent Compaction with Test-Time Training",
+    "title_cn": "测试时训练的潜在压缩",
+    "url": "http://arxiv.org/abs/2610.20582v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20582，cs.CL/cs.LG，Yingfa Chen 等 4 人",
+    "what": "长上下文会放大 KV cache，压缩又必须保住对未见问题的信息。提出 Latent Compaction：通过测试时训练学一个文档专属的紧凑 cache——先用重建重要性、教师注意力与键空间多样性初始化 cache 条目，再拟合注意力输出与 log-normalizer，最后端到端蒸馏整个 cache；模型权重全程冻结，训练只用关于文档的通用提示、不接触下游问答。RULER 上 32× 压缩仍达 96.7% 准确率（KVZip+ 为 40.0%），并能跨模型规模与家族迁移。",
+    "why": "论文 10-14 挂出，给出“32× 压缩下 96.7% vs 40.0%”的大幅差距，直接回应长上下文推理的显存与成本压力。",
+    "insight": "长文档 agent 不必为省显存直接砍上下文；按文档自适应压缩 cache 能保住检索精度，但压缩要针对具体文档做一次适配，适合反复使用同一长文档的场景。"
+  },
+  {
+    "rank": 5,
+    "title": "Player-1: Learning to Play from Synthetic Experience",
+    "title_cn": "从合成经验学习玩游戏",
+    "url": "http://arxiv.org/abs/2610.20584v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20584，cs.CV/cs.AI/cs.HC，Mingyu Ouyang 等 5 人",
+    "what": "面向 computer-use agent 的 post-training 框架 Player-1：动作空间加入相对指针移动、持续输入与组合动作；用 6044 条精选 gameplay 轨迹做监督初始化；再建 Player-1-Gym（16 个围绕共用控制需求的 2D/3D 合成环境），用可程序化验证的奖励与随机化观测/动力学做多环境 PPO 强化学习。结果 Player-1-9B/35B-A3B 在 MineDojo-300 上比各自的 SFT 策略提升 27.8/17.7 个百分点，9B 达 38.33%（最强对照 12.63%），且在 ViZDoom-10 与 GameWorld 上继续超过 SFT。",
+    "why": "论文 10-14 挂出，给出“合成环境 RL 显著超过示范学习”的多环境数据，并证明增益能迁移到训练集之外。",
+    "insight": "想让 agent 学会“操作 GUI”，可以先用低成本合成环境做 RL 再迁移，而不是只堆真实演示；关键是环境要能程序化判定成败，否则合成数据无法自动产出奖励。"
+  },
+  {
+    "rank": 6,
+    "title": "Beyond LLM Judge: Mechanical Verification for Agentic Autoformalization",
+    "title_cn": "用机械校验替代 LLM 裁判",
+    "url": "http://arxiv.org/abs/2610.20573v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20573，cs.LO/cs.AI，Anna Mei 等 2 人",
+    "what": "针对 Lean 形式化（autoformalization）的验证：不只用 LLM 判断忠实性，而是把 LLM 语义审查与机械的数值检查、空真（vacuity）检查结合，给出可核对的反馈并发现 LLM 裁判漏掉的错误。配合 Extract-Verify-Proof 流水线构建了 NIST DLMF 部分形式化的 FLMF 库；在三个带标注数据集上其“接受错误率”为所评估方法中最低，人工复核还发现了现有数据集的翻译与来源缺陷。",
+    "why": "论文 10-14 挂出，用“最低接受错误率”证明：以 LLM 为裁判会放行错误，机械可校验的检查能补上。",
+    "insight": "凡是能用确定的检查（数值、集合、schema、不变量）验证的结果，就不要交给 LLM 当裁判；LLM 只做语义审阅，最终判定走机械校验，才能得到可复核的通过/不通过。"
+  },
+  {
+    "rank": 7,
+    "title": "Your Transformer Is Secretly Elastic",
+    "title_cn": "Transformer 的弹性推理",
+    "url": "http://arxiv.org/abs/2610.20588v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20588，cs.LG/cs.AI，Walter Simoncini 等 4 人",
+    "what": "无需重训练，把预训练 transformer 变成可在线切换计算预算的单模型。作者把“功能单元排序”放松为可微问题：不再只给每个 MLP 块/注意力头一个重要性权重，而是在同一尺度上对所有 MLP 神经元与注意力头联合排序，一次优化覆盖多个稀疏度目标。在 27 个视觉/文本编码器（22M–8B）上，稀疏到 60% 仍平滑退化，优于一次性剪枝基线：把 DINOv3 ViT-H+/16 剪到 50% 稀疏（移除 4.27 亿参数）ImageNet-1k 线性探测准确率只降 0.8%；60% 稀疏时 AugReg ViT-B/16 吞吐最高 ×1.80、单查询延迟降低 1.26×。",
+    "why": "论文 10-14 挂出，给出“剪一半参数只掉 0.8%”与吞吐/延迟双向数据，且模型几分钟即可生成。",
+    "insight": "同一模型按负载弹性调算力可以省成本：给推理服务加一档“低预算/高预算”的稀疏档位，高峰降档、关键请求用全量；替换前用自己的任务集复测退化幅度。"
+  },
+  {
+    "rank": 8,
+    "title": "Recovering Reliable Supervision via Critique-Guided On-Policy Distillation",
+    "title_cn": "用批评引导的在线策略蒸馏",
+    "url": "http://arxiv.org/abs/2610.20572v1",
+    "date": "2026-10-14",
+    "source": "arXiv 2610.20572，cs.LG/cs.AI，Kaixiang Zhao 等 5 人",
+    "what": "指出在线策略蒸馏（OPD）假设“教师能从学生写出的任意前缀走到正确答案”（称可恢复性），但该性质在错误 rollout 上失效——教师会跟着学生的错误走，尽管它认得出这是错的。提出 CriticOPD：让学生先写，教师对错误 rollout 给出批评，学生再据此重写；训练时学生用不带批评的修订版本，评分时把批评作为特权信息交给教师。在两个 Qwen3 学生、六个数学推理基准上改进 OPD，竞赛题上增益最大。",
+    "why": "论文 10-14 挂出，给出“教师明知错却跟着错”的可复现现象，并说明用批评可以修复，且不需要学生端看到批评。",
+    "insight": "用“更强模型当老师”蒸馏小模型时，要对错误路径特判：让学生先自曝错误、由老师就错处批评再修正，比让老师在错误前缀上继续补全更可靠。"
+  }
+]

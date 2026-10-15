@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "Redesigning source control at Anthropic",
+    "title_cn": "Anthropic 重做源代码管理",
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+    "date": "2026-10-13",
+    "source": "Hacker News 866 分 963 评论",
+    "what": "Anthropic 工程博客：因为每天合入的代码变更从 5 月的约 2500 次涨到 9 月的 30000+ 次，为人类规模设计的 git/CI 成了最大瓶颈；他们在 5 个月内把整个 monorepo 迁到自研版本控制系统 Scion，并同期上线代码评审面 Antique、代码搜索与新的 source control IAM。",
+    "why": "HN 866 分 963 评论；这是“AI 写代码的速度超过人用工具链”的第一份大厂迁移实录，给出 2500→30000/天 的量化。",
+    "insight": "当 agent 把产出抬高一个量级，瓶颈会从“写代码”转到评审与合入基础设施；我们应先量化“每天可合入的变更数/评审队列长度”，在它成为瓶颈前把评审与合入自动化，而不是只扩生成端。",
+    "image": "images/2026-10-15/redesigning-source-control-at-anthropic.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "AI agents aren't 'going rogue.' Frontier labs are skipping security basics.",
+    "title_cn": "智能体并非失控，是隔离不足",
+    "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+    "date": "2026-10-14",
+    "source": "Hacker News 841 分 452 评论",
+    "what": "CSO 分析文章：网络安全专家认为近期多起“AI agent 入侵/越界”报道的根因是前沿实验室在隔离（containment）与监控上的基本功缺失，而不是 agent 自己有了意图；建议 CISO 审查 AI 供应商并收紧基础安全措施。",
+    "why": "HN 841 分 452 评论；把 agent 事故的归因从“涌现行为”拉回到可修的工程缺陷，是对“模型自主意图”叙事的正面反驳。",
+    "insight": "给 agent 划权限时应假设“模型会做最坏的事”，用进程/网络隔离与操作审计兜底，而不是靠提示词约束；任何“它能自己判断边界”的说法都不能作为安全论证。",
+    "image": "images/2026-10-15/ai-agents-aren-t-going-rogue-frontier-labs-are-s.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "We turned EmbeddingGemma 2 into a speech-to-text model",
+    "title_cn": "把嵌入模型改成语音转文字",
+    "url": "https://eg2.haku.sh/",
+    "date": "2026-10-13",
+    "source": "Hacker News 425 分 94 评论",
+    "what": "一个小项目把 Google 的 EmbeddingGemma 2（多模态嵌入模型）改成语音转文字：保留其音频编码器不动，只训练一个小“reader”把音频片段映射到文本嵌入空间，取最相近的约 22.9 万英文词做转写，仅在 8×H100 上训练不到两小时；基础 M3 MacBook Air（8GB）上 1 小时音频约 12.6 秒完成，全程在设备端。",
+    "why": "HN 425 分 94 评论；“从没做过 STT 训练的嵌入模型能转写语音”，说明多模态共享嵌入空间的复用价值，还给出终端设备上的速度对照。",
+    "insight": "已有嵌入模型的能力可以被“借用”到未训练任务上，成本远低于重新训练；评估新任务时先试“复用现有编码器 + 轻量适配层”，再决定要不要动大模型。",
+    "image": "images/2026-10-15/we-turned-embeddinggemma-2-into-a-speech-to-text.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "I posted to HN, and then my website was flooded with AI bot traffic",
+    "title_cn": "上了 HN 后网站被 AI 爬虫淹没",
+    "url": "https://www.sammystraus.com/",
+    "date": "2026-10-13",
+    "source": "Hacker News 342 分 184 评论",
+    "what": "开发者复盘：把项目发到 HN 后网站被大量 AI 机器人流量打慢，一度以为是突然走红；作者据此讨论 bot 流量对小站/小服务的资源冲击与识别困难。",
+    "why": "HN 342 分 184 评论；agent 驱动的自动抓取把“一次曝光”变成持续的资源压力，和本轮抓取类项目是同一现象的两面。",
+    "insight": "任何对外服务都要默认“会有大量 AI 抓取”，提前设限流、缓存与识别策略；本团队对外暴露的接口同样应加机器流量配额，而不是被打满再补。"
+  },
+  {
+    "rank": 5,
+    "title": "Character.ai has initiated voluntary Chapter 11 bankruptcy",
+    "title_cn": "Character.ai 申请破产保护",
+    "url": "https://blog.character.ai/an-update-on-character-ai/",
+    "date": "2026-10-13",
+    "source": "Hacker News 331 分 288 评论",
+    "what": "AI 陪伴聊天应用 Character.ai 于 2026-10-13 申请（自愿）Chapter 11 破产保护，并将把部分资产以 2000 万美元出售给迪士尼；迪士尼此前曾指控 Character.ai 侵犯版权，如今转为竞购方。",
+    "why": "HN 331 分 288 评论；头部的消费级 AI 聊天产品走到破产，且起诉方转身成为资产买家，是 AI 应用“增长快、成本与法律风险更重”的样本。",
+    "insight": "消费级 AI 产品的护城河要与法律成本一起评估：用户规模不等于可持续，涉及版权/角色的产品必须把授权与内容合规成本算进单位经济模型。"
+  },
+  {
+    "rank": 6,
+    "title": "OpenCode 2.0",
+    "title_cn": "OpenCode 2.0 发布",
+    "url": "https://anoma.ly/notes/opencode-2-0/",
+    "date": "2026-10-14",
+    "source": "Hacker News 328 分 137 评论",
+    "what": "OpenCode 2.0 大版本更新：客户端/服务端架构改为默认在后台常驻一个进程，TUI、Web 与桌面端共享同一服务；API 重写，@opencode/client 会自动发现本地服务，方便脚本与定时任务调用，并支持 /pair 把服务暴露给其它主机。",
+    "why": "HN 328 分 137 评论；coding agent 从“一次性 CLI”转向常驻服务，是 agent 运行时融入宿主环境的趋势。",
+    "insight": "agent 运行时做成常驻服务、多个前端共享一个核心，可直接支撑“定时任务 + 多入口”的用法；评估同类工具时优先选有稳定本地 API 的，才能被自动任务和其它系统编排。",
+    "image": "images/2026-10-15/opencode-2-0.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Pg_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW",
+    "title_cn": "比 pgvector 更快的向量索引",
+    "url": "https://github.com/timescale/pg_vectorsearch",
+    "date": "2026-10-14",
+    "source": "Hacker News 196 分 49 评论",
+    "what": "Timescale 的 PostgreSQL 扩展 pg_vectorsearch（alpha）：提供 PRISM 索引（IVF 式、带分层路由，面向 1 亿+ 向量）、RaBitQ 量化（两阶段检索带误差界）、SIMD 距离计算与动态增删改，直接索引已有的 vector/halfvec 列、兼容 pgvector。",
+    "why": "HN 196 分 49 评论；RAG 的检索层开始出现“更快索引”的直接竞争，且以 pgvector 兼容方式落地，迁移成本低。",
+    "insight": "RAG 的向量检索可以不换数据库就地提速；但它是 alpha、明确不建议上生产，先在自己的语料上按召回率而非延迟做对照，再考虑替换现有索引。",
+    "image": "images/2026-10-15/pg-vectorsearch-an-index-that-is-faster-than-pgv.jpg"
+  }
+]
