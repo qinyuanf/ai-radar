@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "farion1231/cc-switch",
+    "url": "https://github.com/farion1231/cc-switch",
+    "stars": 144766,
+    "trend": "首日快照：总 144766★，2026-10-15 有提交",
+    "what": "跨平台桌面工具（144.7k★）：把 Claude Code、Codex、OpenCode、OpenClaw、Grok Build、Hermes Agent 等主流编码 agent 收进一个 All-in-One 助手，统一管理它们的配置与切换。",
+    "why": "当日接口返回 144766★、10-15 有提交，且不在近 14 天已推送清单里；编码 agent 的“管理壳”已经长成独立热门品类，体量超过绝大多数单个 agent 本体。",
+    "insight": "团队同时用多个编码 agent 后，配置/密钥/会话散在各工具里是运维隐患；统一管理层能降切换成本，但密钥集中到一处也等于扩大攻击面——接入前先核它把凭证存哪、能否按 agent 隔离。",
+    "image": "images/2026-10-16/farion1231-cc-switch.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "stars": 141893,
+    "trend": "首日快照：总 141893★，2026-10-15 有提交",
+    "what": "开源合集（141.9k★）：100+ 个可直接运行的 AI Agent、Agent Skills 与 RAG 应用示例，Python 为主，持续更新。",
+    "why": "当日接口返回 141893★、20860 forks、10-15 仍有提交；agent 示例类仓库破 14 万★，说明“先跑通一个 agent 再说”仍是最大众的需求。",
+    "insight": "用现成示例对齐选型很快，但示例到生产隔着权限、配额、失败重试三件事；评估时把示例中“模型调用与工具权限”的部分单独拎出来审，不要在业务代码里照抄。",
+    "image": "images/2026-10-16/shubhamsaboo-awesome-llm-apps.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "paperclipai/paperclip",
+    "url": "https://github.com/paperclipai/paperclip",
+    "stars": 102741,
+    "trend": "首日快照：总 102741★，2026-10-16 有提交",
+    "what": "开源应用（102.7k★）：面向工作场景统一管理 agent——编排、技能、治理都在它的话题标签里（agent-orchestration / agent-governance / agent-skills）。",
+    "why": "2026-03-02 建仓，7 个多月冲到 102741★，今天（10-16）仍有提交；“管理 agent 这件事本身”正在成为独立产品位。",
+    "insight": "agent 一多，真正的瓶颈是“谁在跑什么、权限多大、失败算谁的”；先把自己的 agent 资产清单（模型、工具、凭据、预算）列出来，再对照这类管理平台的模型查缺补漏。",
+    "image": "images/2026-10-16/paperclipai-paperclip.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "punkpeye/awesome-mcp-servers",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers",
+    "stars": 96410,
+    "trend": "首日快照：总 96410★，2026-10-15 有提交",
+    "what": "MCP server 合集（96.4k★）：持续收录可接入的 Model Context Protocol 服务端实现，MCP 已成为 agent 接外部工具的事实接口。",
+    "why": "当日接口返回 96410★、17723 forks、10-15 有提交；合集类仓库接近 10 万★，说明“找一个现成 server 接上”是日常动作而非偶发需求。",
+    "insight": "第三方 MCP server 等于把工具执行权交给外部代码；接入前审它的权限边界（能读写什么、凭证去哪），内部把常用 server 做固定版本加白名单，比每次现找安全得多。",
+    "image": "images/2026-10-16/punkpeye-awesome-mcp-servers.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "D4Vinci/Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "stars": 87926,
+    "trend": "首日快照：总 87926★，2026-10-16 有提交",
+    "what": "自适应爬取框架（87.9k★）：从单次请求到大规模爬虫一套接口，“自适应”指元素定位对页面改版有容错，Python 生态。",
+    "why": "当日接口返回 87926★，今天（10-16）仍有提交；给 agent 供数据仍是最热的基础设施方向之一，且这块的头部项目都在往“抗页面改版”上卷。",
+    "insight": "长期数据管线里选择器失效是常态；用带自适应定位的框架能显著降维护频率，但关键字段仍要加“抓到即校验”（缺字段告警），否则抓崩了没人知道。",
+    "image": "images/2026-10-16/d4vinci-scrapling.jpg"
+  }
+]

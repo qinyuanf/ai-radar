@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "thesysdev/open-intelligent-ui",
+    "url": "https://github.com/thesysdev/open-intelligent-ui",
+    "stars": 391,
+    "trend": "2026-10-08 建仓，8 天 391★",
+    "what": "ChatGPT“Intelligent UI”的开源复刻（TypeScript/Next.js，基于 OpenUI）：回答不再是一段文字，而是随内容流式生成交互界面——地图、照片、图表、绘图和可操作的小工具。",
+    "why": "2026-10-08 建仓，8 天 391★；“生成式 UI”正从大厂产品特性变成可自托管的开源实现。",
+    "insight": "生成式 UI 把 agent 输出从文本升级成组件，前端要处理的核心问题变成“信任”——模型生成的交互组件需要类型校验和降级文本方案，否则一个坏组件会让整条回答打不开。",
+    "image": "images/2026-10-16/thesysdev-open-intelligent-ui.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit",
+    "url": "https://github.com/heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit",
+    "stars": 200,
+    "trend": "2026-10-13 建仓，3 天 200★",
+    "what": "跨境电商运营工具箱（Python）：把运营 SOP 拆成 7 个可复用的 AI Agent 工作流，附 Prompt、模板与真实案例，覆盖 Mercado Livre、Shopee 等平台。",
+    "why": "2026-10-13 建仓，3 天 200★、244 forks——fork 数高于星数，说明真的被拿去改；“行业 SOP → agent 工作流”成了新建仓的主流叙事。",
+    "insight": "SOP 拆成工作流，最难的不是写 prompt 而是定义每个环节的完成凭据（哪些字段齐了才算过）；可以借它拆环节的方法，但验收标准必须按自家业务重写。",
+    "image": "images/2026-10-16/heqiangdiao-wq-ai-cross-border-ecommerce-agent-t.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "Kai-Jungsthoefel/SOMA",
+    "url": "https://github.com/Kai-Jungsthoefel/SOMA",
+    "stars": 94,
+    "trend": "2026-10-10 建仓，6 天 94★",
+    "what": "桌面应用：在 CadQuery（Python 参数化 CAD）里和自选 coding agent（Claude Code、Codex、OpenCode 等）协作设计参数化 3D 模型，面向 3D 打印与 FEM 场景。",
+    "why": "2026-10-10 建仓，6 天 94★；“coding agent 进入专业设计软件”又添一个垂直实例——agent 直接生成、修改参数化模型代码。",
+    "insight": "把 agent 嵌进专业工具时，让 agent 写“参数化脚本”（如 CadQuery）比让它直接操作几何体更可版本化、可回滚；这条路径对任何“agent + 专业软件”场景都成立。",
+    "image": "images/2026-10-16/kai-jungsthoefel-soma.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "FeedHive/ai-slop-detector",
+    "url": "https://github.com/FeedHive/ai-slop-detector",
+    "stars": 78,
+    "trend": "2026-10-12 建仓，4 天 78★",
+    "what": "识别“AI 味”写作的检测器：整理 120 个让文字读起来像 AI 生成的特征模式，并附一个 Claude Code / Codex 可用的 agent skill，直接嵌入写作与审稿流程。",
+    "why": "2026-10-12 建仓，4 天 78★；“AI 生成内容的鉴别”开始以 agent skill 形式内置进写作工具链，而不是停在文章讨论层面。",
+    "insight": "反向用它更有价值——把这 120 个模式当“去 AI 味检查表”接进内容生产管线（文案、报告生成后的自检步骤），比自己拍脑袋定风格规则更完整。",
+    "image": "images/2026-10-16/feedhive-ai-slop-detector.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "tony3liu/eido",
+    "url": "https://github.com/tony3liu/eido",
+    "stars": 63,
+    "trend": "2026-10-08 建仓，8 天 63★",
+    "what": "macOS 上的 AI 编码 agent 工作台（Rust，基于 Zed 和 pi）：原生代码编辑与审阅、浏览器与电脑操作（browser use / computer use），带全局 agent 访问控制。",
+    "why": "2026-10-08 建仓，8 天 63★；新建仓里开始出现把“访问控制”做成卖点的 agent 工作台，这是 agent 被允许动真实系统后的必然补课。",
+    "insight": "“全局 agent 访问控制”值得成为接入任何新 agent 工具的必查项：能碰哪些目录、哪些网站、哪些凭据，开工前划清权限域，而不是等出事再补。",
+    "image": "images/2026-10-16/tony3liu-eido.jpg"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Muse Spark Open",
+    "title_cn": "开放权重模型 Muse Spark Open",
+    "url": "https://research.meta.ai/blog/muse-spark-open",
+    "date": "2026-10-15",
+    "source": "Hacker News 609 分 351 评论",
+    "what": "Meta 发布开放权重旗舰模型 Muse Spark Open：MoE 架构、816B 总参数 / 42B 激活、1M 上下文（规格来自第三方汇总页），配套 HuggingFace 权重、vLLM 当天支持；许可为 Muse Model License 而非 Apache 2.0。",
+    "why": "HN 609 分 351 评论当日热帖；开放权重旗舰直接对标闭源前沿，第三方榜单显示其 MCP-Atlas 得分 89.2，高于同榜 Kimi K3（82.3）与 GLM 5.3（84.2）——该榜单为第三方整理，未经我们复测。",
+    "insight": "开放权重 + 1M 上下文让“长文档全量进上下文”有了自托管选项；但许可不是标准开源协议，评估时先读条款再决定能否进生产，别默认“开放权重=随便用”。"
+  },
+  {
+    "rank": 2,
+    "title": "Neural networks are clean",
+    "title_cn": "神经网络是干净的",
+    "url": "https://already-clean.goodfire.com/",
+    "date": "2026-10-15",
+    "source": "Hacker News 499 分 195 评论",
+    "what": "Goodfire 的互动研究文章：用新工具复查早期“神经元多义性”结论，发现很多“多义”是分析工具缺陷造成的假象；现代模型中约 90% 神经元功能单一，真正的机制是递归泛化而不是超大叠加（superposition）。",
+    "why": "HN 499 分 195 评论；“不可解释所以只能黑盒信任”的一个支柱被工具进步推翻，这是可解释性工程路线的正面信号。",
+    "insight": "对 agent 工程的含义：模型内部比想象的更有结构，“用 SAE 类工具做行为审计”路线值得投入；至少做安全评估时别再拿“黑盒不可解释”当不做审计的理由。",
+    "image": "images/2026-10-16/neural-networks-are-clean.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Anthropic's Scion is heavily inspired by Mononoke",
+    "title_cn": "Scion 深受 Mononoke 启发",
+    "url": "https://sunshowers.io/posts/anthropic-mononoke/",
+    "date": "2026-10-14",
+    "source": "Hacker News 416 分 155 评论",
+    "what": "工程博客：作者逐点对比 Anthropic 的分布式代码托管系统 Scion 与 Meta 开源的 Mononoke，认为其核心机制“derived data”与 Mononoke 高度相似，但文档中未提及。",
+    "why": "HN 416 分 155 评论，次日续篇再获 222 分；“AI 大厂自研系统的来源溯源”成了连续两天的公开话题。",
+    "insight": "自研前读一遍开源同类系统的价值被再次证明，但“读了”和“抄了”的分界在文档与致谢；内部类似借鉴场景，把参考系统写进设计文档是成本最低的合规动作。",
+    "image": "images/2026-10-16/anthropic-s-scion-is-heavily-inspired-by-mononok.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "We're releasing Jev 1.14.0 along with experimental features for dreamers",
+    "title_cn": "Jev 1.14.0 发布：带来实验特性",
+    "url": "https://typesafe.ai/blog/jev-1-14",
+    "date": "2026-10-14",
+    "source": "Hacker News 329 分 116 评论",
+    "what": "TypeSafe AI 发布 Jev 1.14.0：定位“软件内决策”的 System One 模型，本版新增图像、box 类型与长上下文等实验特性，官方自述在可靠性与创造力间取舍。",
+    "why": "HN 329 分 116 评论，次日“Jev 遇电车难题”解读文再获 301 分；一个非主流定位（系统级快决策模型）连续两天被讨论，说明 agent 里的“快思考层”有真实需求。",
+    "insight": "把“决策”从“生成”里拆出来是好结构：高频、低创造性的判断交给小快模型，创造性任务才进大模型——能同时压成本、降延迟，值得在工具路由设计里试。"
+  },
+  {
+    "rank": 5,
+    "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+    "title_cn": "为端侧 agent 而生的 LFM2.5",
+    "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+    "date": "2026-10-14",
+    "source": "Hacker News 284 分 76 评论",
+    "what": "Liquid AI 发布 LFM2.5-24B-A2B：总参数 24B、激活仅 2B（MoE），40 层、131K 上下文，面向设备端 agent；官方数据 Apple M5 Max 上 184 tokens/s。",
+    "why": "HN 284 分 76 评论；端侧 agent 的模型底座在变强，“可本地跑”档位持续有新旗舰入场。",
+    "insight": "2B 激活 + 131K 上下文档位意味着离线 agent 原型可以现在自己的笔记本上验证；但设备端速度是理想条件，评估时按自己硬件实测 token/s 再定场景。",
+    "image": "images/2026-10-16/lfm2-5-24b-a2b-built-for-fast-on-device-agents.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Krea 3 – An image model built for editing at scale",
+    "title_cn": "Krea 3：面向大规模编辑的图像模型",
+    "url": "https://www.krea.ai/krea-3",
+    "date": "2026-10-15",
+    "source": "Hacker News 248 分 83 评论",
+    "what": "Krea 发布图像模型 Krea 3，主打“规模化编辑”：支持最多 4 张参考图，第三方整理称其速度比 Nano Banana Pro 快 4 倍。",
+    "why": "HN 248 分 83 评论；图像编辑模型进入拼工程化吞吐的阶段——比的不再是单张质量而是批量编辑的稳定速度。",
+    "insight": "生成类模型选型中“速度 × 批量稳定性”权重在上升；给内容管线选模型时，把“同样 prompt 跑 50 次的一致率”列进对比项，比只看单张样例更接近真实产出。"
+  },
+  {
+    "rank": 7,
+    "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+    "title_cn": "1 万个 agent 连跑 36 小时",
+    "url": "https://openai.com/index/third-moment-research",
+    "date": "2026-10-14",
+    "source": "OpenAI 官方博客 2026-10-14",
+    "what": "OpenAI 官方案例：研究机构 Third Moment Research 用 GPT-6 Astra、GPT-6.1 Sol、Codex 搭建能“连续专注数天、越用越好”的 agent 集群，同时运行 10,000 个 agent、持续 36 小时以上。",
+    "why": "官方博客 10-14 发布，是本周期“agent 规模运营”最具体的一手数字；万级并发 + 多天续航已超出 demo 范畴。",
+    "insight": "万级并发的关键是“每个 agent 的结果可验证”，否则无法自动调度与恢复；做大规模 agent 前，先把单任务验收信号做成机器可判定的，再谈横向扩展。"
+  }
+]
