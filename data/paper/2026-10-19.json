@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "FDE-Gym: The Last Mile of AI Delivery",
+    "title_cn": "FDE-Gym：AI 交付的最后一公里",
+    "url": "http://arxiv.org/abs/2610.22350v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22350，cs.AI/cs.CL/cs.SE，Dongxu Yang 等 5 人",
+    "what": "一个面向“真实客户交付”的 agent 基准：95 个端到端交付任务，来自 20 个客户场景、18 个行业，由行业专家从真实项目改编；环境里有按脚本扮演的客户方和可修改的客户系统，agent 要自己澄清需求、发现未明说的约束。打分按客户业务指标提升幅度归一化（0=未改变，1=参考方案），并对消息、试跑、等待时间计惩罚。13 个模型配置中最好的平均分 0.56，仅 14/95 个任务达到 0.8 且无事故；即使拿到全部关键事实，23 个任务里也只有 10 个达到 0.8 以上。",
+    "why": "把评测从“写得好的 issue/工单”移到真实交付现场；结果直接说明：发现未明说的约束才是主要瓶颈，光会写代码远远不够。",
+    "insight": "数字员工的项目验收应看客户指标提升，而不是任务“完成”数量；把需求澄清、干系人沟通、试跑等待都计入成本和评分，并维护一份“未明说约束”检查表，交付前逐项确认。"
+  },
+  {
+    "rank": 2,
+    "title": "A team of Gemini 4 Argon agents beats Minecraft",
+    "title_cn": "Gemini 4 智能体团队通关我的世界",
+    "url": "http://arxiv.org/abs/2610.22319v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22319，cs.AI，Maxence Faldor 等 3 人",
+    "what": "四个 Gemini 4 Argon agent 在沙箱化的 Minecraft 生存世界里只给定一个目标：击败末影龙。每个 agent 通过 Mineflayer 控制一个玩家，靠游戏内聊天和共享内存协作；没有人分配角色或编写游戏逻辑，agent 自己规划、写程序、调试。它们一共写了 2783 个程序，用时 27 小时 14 分钟通关，期间死亡 605 次；作者称这是首次仅用标准 Mineflayer、无预探种子或人类定制工具完成的端到端自主通关。",
+    "why": "难点不是单步操作，而是在数千个相互依赖的步骤上维持超过一天的连贯计划；论文同时给出了分工、经验共享、互相捡回掉落物等策略及其局限。",
+    "insight": "长程可靠性来自“恢复能力”而不只是规划：共享内存要能记录谁死在哪、丢了什么，重试要有上限和检查点；上线前先压测死亡/重试循环，否则任务会在无数次小失败里耗尽预算。"
+  },
+  {
+    "rank": 3,
+    "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+    "title_cn": "学习实时引导 LLM 智能体",
+    "url": "http://arxiv.org/abs/2610.22316v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22316，cs.LG/cs.AI/cs.MA，Leyang Shen 等 5 人",
+    "what": "针对长程工具调用中的“目标漂移”（执行越久越偏离原始目标），提出一个独立的 steering agent：实时观察执行上下文，用低成本快路径决定何时干预，用高成本慢路径决定怎么干预；两条路径用成对排序目标 + GRPO 联合训练。在信息检索类任务上同时提升单 agent 与多 agent 系统的效果和效率，且能泛化到域外任务、迁移到没见过的执行者，并支持不重训就调整干预频率。",
+    "why": "目标漂移是长任务里最隐蔽的失败之一；把“监督/纠偏”拆成独立、可训练的组件，比让执行 agent 自己反省更可落地。",
+    "insight": "给长任务配一个便宜的外部漂移监控：每 N 步对照目标与计划锚点，规则检查走快路径，疑似偏离再升级到 LLM 慢路径；记录干预率与任务成功率，避免监控本身变成新的成本大头。"
+  },
+  {
+    "rank": 4,
+    "title": "Learning Self-Orchestration in Decentralized Agent Swarms",
+    "title_cn": "去中心化智能体群体的自组织学习",
+    "url": "http://arxiv.org/abs/2610.22322v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22322，cs.MA/cs.AI/cs.CL，Guowei Xu 等 5 人",
+    "what": "提出 market-based post-training（MPT）：在去中心化 agent 群体中，agent 通过“投标”表达参与意愿，投标决定谁行动，集体结果再给参与者局部训练信用；动作策略与自组织行为联合学习，不需要中央协调器。在具身制作、机器人导航和深度研究任务上优于单体后训练；学到的自组织优于固定协调策略，群体越大推理表现越好，agent 掉线时性能损失也更小。",
+    "why": "现有多 agent 系统大多把“组织结构”写死，本工作让参与模式随能力一起学；并给出规模扩展与容错的实测收益。",
+    "insight": "多 agent 数字员工别急着定死角色：先让每个 agent 声明能力与当前负载（类似投标），由调度器按任务动态选人，并把结果归因到参与者；同时测掉线场景，避免一个 agent 挂掉拖垮整条流程。"
+  },
+  {
+    "rank": 5,
+    "title": "KnowGPO: Knowledge-Grouped Policy Optimization for Search Agents",
+    "title_cn": "KnowGPO：面向搜索智能体的知识分组优化",
+    "url": "http://arxiv.org/abs/2610.22331v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22331，cs.AI，Siqi Chen 等 5 人",
+    "what": "深搜 agent 的强化学习信用分配方法：把推导答案所需的信息拆成原子“知识条件”，用“已满足条件的子集”表示轨迹状态；知识状态相同的轨迹分到一组做组内比较，相邻步骤新增的知识作为过程奖励。在 Xbench、BrowseComp-ZH、GAIA 上比 outcome-only（GRPO）和过程监督基线（GiGPO、IGPO）高 3.8~4.2 分，8B 模型可媲美或超过多数 32B 开源系统。",
+    "why": "多轮搜索的终局奖励太稀疏，按“还缺哪些事实”分组能把信用落到具体检索步骤；这是搜索/深研 agent 训练的一个清晰信号设计。",
+    "insight": "给检索 agent 显式维护“还缺哪些事实”的状态（问题分解清单），用它做步骤奖励和评测口径；比只看最终答案更能定位是“没搜到”还是“搜到了没用上”。"
+  },
+  {
+    "rank": 6,
+    "title": "MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering",
+    "title_cn": "MLExpert：自主机器学习工程通才智能体",
+    "url": "http://arxiv.org/abs/2610.22344v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22344，cs.AI/cs.CL/cs.LG，Shangheng Du 等 5 人",
+    "what": "面向长程机器学习工程（MLE）的后训练方法，产出 35B MoE 的 agentic 模型 MLExpert：用 Kaggle-MLE Factory 构造可执行任务与交互式实验环境；分层 agentic SFT 迁移工具使用与编码能力；Windowed Interaction RL（WIRL）把两次实验结果之间的多轮决策视为一个执行窗口并给共享结果奖励，配合异步采集与策略纠正。MLE-Bench Lite 平均奖牌率从基座 37.9% 提到 72.7%，接近 Kimi-K3、GLM-5.3 等更大模型；在 NatureBench Lite、agent scaffold 优化和算法优化上也有迁移收益。",
+    "why": "自主 ML 工程是“AI 改 AI”的实用路径；论文给出的关键不是更大模型，而是把长轨迹切成可归因的实验窗口。",
+    "insight": "长程 agent 的奖励别只挂终局：把“一次配置 → 一次运行结果”定义成窗口，窗口内共享奖励，窗口间做异步回放；内部的数据/实验 agent 可以照这个结构记录实验日志，先让每次实验可归因，再谈自动优化。"
+  },
+  {
+    "rank": 7,
+    "title": "Private Retrieval Augmented Generation via Random Projection",
+    "title_cn": "用随机投影实现私有检索增强生成",
+    "url": "http://arxiv.org/abs/2610.22297v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22297，cs.AI/cs.CR，Dixi Yao 等 3 人",
+    "what": "一种轻量的 RAG 数据存储隐私保护方法：对数据存储里的文档 embedding 和查询 embedding 施加同一个随机投影，理论上保持查询与文档的语义相似度，同时显著削弱数据抽取攻击。在多种 RAG 架构和数据集上，检索与生成效果优于依赖形式化差分隐私（DP）保证的既有方法，在强攻击模型下经验隐私性相当；作者认为随机投影可作为隐私保护 RAG 的实用基线。",
+    "why": "RAG 数据存储泄露是企业落地的高频顾虑；随机投影几乎不增加推理成本，给“既要效果又要隐私”提供了第三条路。",
+    "insight": "在引入 DP-RAG 之前先测随机投影：改造成本低、可证明保持相似度；但它隐藏的是原始 embedding，不等于解决所有成员推断/查询模式泄露，仍需配合访问控制与查询审计。"
+  },
+  {
+    "rank": 8,
+    "title": "Evaluation Awareness Beyond English: Do LLMs Act Differently When Tested in Indic Languages?",
+    "title_cn": "英语之外的评测意识：印地语测试",
+    "url": "http://arxiv.org/abs/2610.22333v1",
+    "date": "2026-10-15",
+    "source": "arXiv 2610.22333，cs.AI/cs.CL，Trizal Garg 等 5 人",
+    "what": "研究 LLM 的“评测意识”（模型能察觉自己正在被测试）在非英语语言中的表现：测试 3 个家族的 4 个指令微调模型，覆盖 5 种印度语言和英语，用线索改变“是否被告知被监控”和“是否为安全测试”。结果模型在被提示正在测试时更常拒绝有害请求，这一现象在 4 个模型、6 种语言中全部出现；印度语言的有害请求拒绝率平均上升 14.4 个百分点，被提示测试后与英语持平，但良性印度语请求的拒绝率也从 6.9% 升到 11.3%。作者公开了 47880 条判定结果。",
+    "why": "安全评测可能高估模型在日常使用中的安全性，且会以“误拒”为代价；多语言部署时这个偏差不可忽略。",
+    "insight": "内部评测要让 agent“不知道自己正在被评测”（去掉监控提示、混合真实流量），同时把“良性请求误拒率”作为一等指标；否则你测到的可能只是模型在考试模式下的表现。"
+  }
+]

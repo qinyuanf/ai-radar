@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "langflow-ai/langflow",
+    "url": "https://github.com/langflow-ai/langflow",
+    "stars": 155810,
+    "trend": "+0 stars/0天（对比 2026-10-19）",
+    "what": "开源低代码平台（155.8k★，Python + React Flow）：用可视化画布搭建和部署 AI agent 与工作流，支持多 agent 编排。",
+    "why": "当日接口返回 155810★、2026-10-19 有提交，是本次补充查询里星数最高的未推送大仓；低代码 agent 搭建仍是受众最广的入口。",
+    "insight": "可视化编排适合快速验证，但生产要解决版本化与回滚：把画布导出成可 diff 的配置/代码，每次发布打版本，并把检索、工具调用等关键节点纳入评测；否则改一根连线很难定位回归。",
+    "image": "images/2026-10-19/langflow-ai-langflow.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "microsoft/ai-agents-for-beginners",
+    "url": "https://github.com/microsoft/ai-agents-for-beginners",
+    "stars": 77419,
+    "trend": "+0 stars/0天（对比 2026-10-19）",
+    "what": "微软的 18 课 AI agent 入门课程（Jupyter Notebook），覆盖 agentic RAG，以及 AutoGen、Semantic Kernel、Foundry 等框架的用法。",
+    "why": "当日接口返回 77419★、10-18 有提交；课程仓库持续跟进框架版本，说明 agent 入门与框架选型需求仍在增长。",
+    "insight": "适合做团队新人 onboarding 的骨架，但课程跟着框架 API 走，落地时要锁版本并补自家工具链示例；教学 demo 的默认配置不要直接进生产——权限、日志、成本控制都不完整。",
+    "image": "images/2026-10-19/microsoft-ai-agents-for-beginners.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "asgeirtj/system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "stars": 69865,
+    "trend": "+0 stars/0天（对比 2026-10-19）",
+    "what": "收集并持续更新主流 AI 产品的系统提示词：Anthropic（Claude Fable 5.1、Opus 5.5、Claude Code）、OpenAI（GPT-6-Astra、Codex）、Google（Gemini 3.8 Flash、3.1 Pro、Antigravity）、xAI Grok、Cursor、Kimi 等（69.9k★）。",
+    "why": "当日接口返回 69865★、10-16 有提交；系统提示词是观察头部产品如何约束工具调用、拒答边界与输出格式的现成样本。",
+    "insight": "可拿来做 prompt 设计对照，但不要照抄：提示词与具体模型/工具版本强绑定，且来源多为泄露或二手记录，正确性无法保证；把它当灵感库，不当规范。",
+    "image": "images/2026-10-19/asgeirtj-system-prompts-leaks.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "microsoft/autogen",
+    "url": "https://github.com/microsoft/autogen",
+    "stars": 61469,
+    "trend": "+0 stars/0天（对比 2026-10-19）",
+    "what": "微软开源的多 agent 编程框架（Python，61.5k★），用于编排 agent 间对话、角色分工与工具调用。",
+    "why": "当日接口返回 61469★、10-16 有提交；agent 框架层仍在活跃维护，但框架 API 迭代快，选型的主要风险是迁移成本。",
+    "insight": "不要在业务代码里深度绑定单一框架的抽象：把工具协议（MCP/JSON Schema）、状态存储和评测做成框架无关层，换框架时只替换编排层。",
+    "image": "images/2026-10-19/microsoft-autogen.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "pathwaycom/serviette",
+    "url": "https://github.com/pathwaycom/serviette",
+    "stars": 58791,
+    "trend": "+0 stars/0天（对比 2026-10-19）",
+    "what": "基于 Pathway 的开源无代码 RAG 服务器（58.8k★）：文档变更后自动同步索引，支持 pgvector、Milvus、Qdrant、Weaviate、Pinecone、Chroma、MongoDB、DuckDB 共 8 种向量库。",
+    "why": "当日接口返回 58791★、10-16 有提交；RAG 的竞争点正从“能检索”转向“增量同步与运维简单”。",
+    "insight": "生产 RAG 最常坏在文档更新后的索引一致性；评估这类工具时重点测三件事：增量更新延迟、删除/权限变更是否同步、失败重试是否幂等，不要只看问答 demo。",
+    "image": "images/2026-10-19/pathwaycom-serviette.jpg"
+  }
+]

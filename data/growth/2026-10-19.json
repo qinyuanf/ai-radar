@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "jwuthri-cloud/Tracely-ai",
+    "url": "https://github.com/jwuthri-cloud/Tracely-ai",
+    "stars": 1026,
+    "trend": "2026-10-11 建仓，8 天 1026★",
+    "what": "面向 AI agent 的 trace-native CI/CD（Python）：采集生产轨迹、给轨迹打分、聚类失败、固化成可回放的回归测试，并在 PR 引入回归时阻断合并；可自托管，底层用 ClickHouse。",
+    "why": "2026-10-11 建仓、8 天 1026★；agent 评测正从离线榜单转向“生产轨迹回归”，这是目前增长最快的方向之一。",
+    "insight": "最实用的切入点是“失败轨迹入库”：把线上失败的工具调用序列连同输入输出冻结成测试，每次改 prompt/模型都回放；先做确定性校验，语义评分只做辅助，避免评测本身不稳定。",
+    "image": "images/2026-10-19/jwuthri-cloud-tracely-ai.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Leonxlnx/earshot",
+    "url": "https://github.com/Leonxlnx/earshot",
+    "stars": 819,
+    "trend": "2026-10-15 建仓，4 天 819★",
+    "what": "给编码 agent 加“耳朵”的开源工具：让 agent 听取、审查并生成声音，走 MCP/Claude Code 集成，纯 CPU 运行。",
+    "why": "2026-10-15 建仓、4 天 819★；多模态反馈从图像扩展到音频，且 CPU-only 降低了接入成本。",
+    "insight": "音频类工具适合做“可听化”验收（静音、爆音、时长），但不要把主观音质判断交给模型；用信号指标做硬门槛，模型只做描述与建议，避免不可复现的评审。",
+    "image": "images/2026-10-19/leonxlnx-earshot.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "i12bp8/decomp.wtf",
+    "url": "https://github.com/i12bp8/decomp.wtf",
+    "stars": 498,
+    "trend": "2026-10-13 建仓，6 天 498★",
+    "what": "本地运行的匹配式反编译 agent（Python）：把自有游戏反编译成 C，要求重新编译后与原二进制逐字节一致，面向 N64/复古游戏逆向。",
+    "why": "2026-10-13 建仓、6 天 498★；“可编译 + 字节一致”是最硬的自动验收信号之一，适合观察 agent 如何围绕确定性验证器迭代。",
+    "insight": "这类任务说明 agent 最适合“有确定性验证器”的闭环：先定义可执行的成功判据（编译通过、字节一致、测试全绿），再让 agent 迭代；内部代码迁移/重构也可照此设计验收，而不是靠人读 diff。",
+    "image": "images/2026-10-19/i12bp8-decomp-wtf.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "reason-machines/reason-network",
+    "url": "https://github.com/reason-machines/reason-network",
+    "stars": 423,
+    "trend": "2026-10-16 建仓，3 天 423★",
+    "what": "面向团队编码 agent 的点对点通信网络（Rust，基于 iroh P2P，MCP 集成），让多个 coding agent 直接互相发消息协作。",
+    "why": "2026-10-16 建仓、3 天 423★；多 agent 协作正从“单编排器”向“agent 之间直接通信”演化。",
+    "insight": "P2P 协作先要解决所有权与冲突：共享文件谁写、消息顺序、重复编辑如何合并；没有这些约束，agent 互聊只会放大冲突。建议先做中心化编排 + 明确文件锁，再考虑 P2P。",
+    "image": "images/2026-10-19/reason-machines-reason-network.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Graphicle-AI/graphicle",
+    "url": "https://github.com/Graphicle-AI/graphicle",
+    "stars": 296,
+    "trend": "2026-10-14 建仓，5 天 296★",
+    "what": "用 Rust 写的代码图谱与记忆服务：为 Claude Code、Codex、Cursor 等 MCP 客户端提供代码结构与关系检索，本地优先。",
+    "why": "2026-10-14 建仓、5 天 296★；coding agent 的上下文工程正从“塞更多文件”转向“按代码图谱取最小相关集”。",
+    "insight": "代码图谱能降低上下文成本，但索引新鲜度是关键：必须绑定 commit 或文件监听，查询结果要能回溯到具体版本；评估时对比“图谱检索 vs grep/全文检索”的 token 消耗与定位准确率。",
+    "image": "images/2026-10-19/graphicle-ai-graphicle.jpg"
+  }
+]
