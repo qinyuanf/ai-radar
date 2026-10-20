@@ -1,0 +1,79 @@
+[
+  {
+    "rank": 1,
+    "title": "Timestral: Mistral's time-series foundation models",
+    "title_cn": "Mistral 发布时间序列基础模型",
+    "url": "https://mistral.ai/news/timestral/",
+    "date": "2026-10-19",
+    "source": "Hacker News 545 分 104 评论（Mistral 官方发布）",
+    "what": "Mistral 发布 Timestral 时间序列基础模型，主打零样本概率预测，即不针对单个数据集训练就能给出概率区间；Hugging Face 上已放出 Timestral-209M（0.2B）。",
+    "why": "HN 545 分 104 评论；时间序列预测是容量、运维与成本预算的通用需求，开源小模型把预测从专用系统变成可嵌入组件。",
+    "insight": "给监控/容量类数字员工接预测时，先用零样本模型做基线，再用历史回测校准区间覆盖率；概率预测要报告校准误差，不能只看点预测的 MAPE。"
+  },
+  {
+    "rank": 2,
+    "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+    "title_cn": "混合推理智能体：隐空间思考，文本交互",
+    "url": "https://arxiv.org/abs/2610.18861",
+    "date": "2026-10-18",
+    "source": "Hacker News 502 分 236 评论（arXiv 2610.18861）",
+    "what": "HybridAgents 在同一个生成过程中于“隐空间推理”和“文本交互”之间动态切换：轻量 HybridLink 负责模式转换，连续工作记忆在多轮间保留无损混合上下文，既保留工具调用能力，又让隐式思考可检查；配套专门的后训练算法。",
+    "why": "HN 502 分 236 评论；纯文本推理贵且慢、纯隐空间推理又不可审计，混合路线试图同时拿效率和可解释性。",
+    "insight": "接入这类模型前先确认“隐式思考转文本”的检查接口与工具调用日志；否则一旦出错，无法定位是推理层还是工具层的问题。"
+  },
+  {
+    "rank": 3,
+    "title": "If you don't run your own LLM proxy, how do you know whats going on?",
+    "title_cn": "不自建 LLM 代理，怎么知道发生了什么",
+    "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
+    "date": "2026-10-18",
+    "source": "Hacker News 292 分 209 评论",
+    "what": "一篇工程实践文章：主张团队自建 LLM 代理，记录请求级 token 用量、延迟、成本与模型/租户维度的时间序列，而不是依赖厂商的汇总面板；文章给出了代理应暴露的指标与据此做决策的方式。",
+    "why": "HN 292 分 209 评论；模型调用已是主要可变成本，没有请求级账本就无法做预算、限流与故障归因。",
+    "insight": "所有模型调用走统一网关：按租户/任务打标签，记录 token、延迟、错误码与重试，做预算告警与降级；日志不要存完整 prompt/回答原文，敏感内容脱敏或只存哈希。"
+  },
+  {
+    "rank": 4,
+    "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
+    "title_cn": "如何应对上线自己看不懂的 AI 代码",
+    "url": "https://news.ycombinator.com/item?id=50151036",
+    "date": "2026-10-19",
+    "source": "Hacker News 258 分 398 评论",
+    "what": "一个 Ask HN 讨论（398 条评论）：工程师普遍在上线自己无法完整解释的 AI 生成代码；讨论集中在评审责任、理解门槛、测试与回滚，以及“能跑就行”和“必须懂”的边界。",
+    "why": "HN 258 分 398 评论，评论数远超分数，说明这是团队普遍焦虑而非个案；它直接影响代码评审与 on-call 责任划分。",
+    "insight": "把“能解释改动”设为合并门槛：作者需说明数据流、失败模式与回滚方式；对 AI 生成的大 diff 强制配对评审与定向测试，on-call 轮值覆盖新模块。"
+  },
+  {
+    "rank": 5,
+    "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+    "title_cn": "Sphinx：上线前考你 AI 代码的钩子",
+    "url": "https://news.ycombinator.com/item?id=50137950",
+    "date": "2026-10-18",
+    "source": "Hacker News 252 分 89 评论（Show HN）",
+    "what": "一个开源的发布前钩子：接入现有编码 agent 工作流，每次推生产前弹出问卷，检查你是否真正理解将要上线的代码，答不出就阻止发布。",
+    "why": "Show HN 252 分 89 评论；它把“理解代码”从口头要求变成可执行的发布门禁，正好回应同期的 Ask HN 讨论。",
+    "insight": "门禁问题应由 diff 自动生成，覆盖失败路径、依赖变更与回滚步骤；但别让它退化成形式化选择题，抽检回答质量，并把答错项反馈到文档与测试。"
+  },
+  {
+    "rank": 6,
+    "title": "Mercury 3: Diffusion at scale",
+    "title_cn": "Mercury 3：扩散模型规模化",
+    "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+    "date": "2026-10-19",
+    "source": "Hacker News 223 分 85 评论（Inception Labs 官方博客）",
+    "what": "Inception Labs 发布扩散式 LLM Mercury 3：称在多项基准上超过 GPT-6 Luna 与 Claude Haiku 5.5，GPU 上约 1068 tokens/s（快 4~8 倍），上下文 1M（前代 260K）；定价每百万输入 0.20 美元、输出 0.70 美元，发布期五折，缓存命中再打一折。",
+    "why": "HN 223 分 85 评论；对语音、实时客服、网页导航这类延迟敏感 agent，吞吐与单价同时变化会直接改变架构选择。",
+    "insight": "先在延迟敏感链路做小流量 A/B：对比首 token 延迟、工具调用正确率与长上下文稳定性，再决定替换；扩散模型输出分布不同，评测集必须覆盖结构化输出与多轮工具调用。"
+  },
+  {
+    "rank": 7,
+    "title": "Advancing coding in low-resource programming languages",
+    "title_cn": "提升低资源编程语言的编码能力",
+    "url": "https://openai.com/index/low-resource-programming-languages",
+    "date": "2026-10-19",
+    "source": "OpenAI 官方博客 2026-10-19",
+    "what": "OpenAI 介绍提升 ChatGPT 在低资源编程语言上的编码能力，并给出覆盖软件工程、SQLite 与 COBOL 迁移的新评测。",
+    "why": "官方 10-19 发布；企业存量系统大量使用 COBOL/SQL 等语言，迁移与维护是 agent 最容易量化收益的场景。",
+    "insight": "用自家遗留代码建小型金标集（含可执行测试），先验证模型在 COBOL/SQL 迁移上的通过率与回滚成本，再决定是否扩大自动化范围；不要用 Python 榜单成绩外推。"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "LiCinCan/blender-ai-mcp-addon",
+    "url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+    "stars": 922,
+    "trend": "2026-10-15 建仓，5 天 922★",
+    "what": "Blender 4.2+ 的 AI 助手插件：可检查场景、创建物体、修改材质、查找资产并执行多步工作流，内置 21 个场景工具的 MCP server，支持 OpenAI、Claude、Gemini、Ollama 等模型与可视化聊天工作区。",
+    "why": "2026-10-15 建仓、5 天 922★；3D 创作工具通过 MCP 接入 agent，说明 MCP 正从代码编辑器扩展到专业软件。",
+    "insight": "专业软件接 agent 的关键是“场景上下文 + 可撤销操作”：先暴露只读查询，再开放写操作并要求确认与撤销；把工具按风险分级，避免一次错误操作毁掉场景。",
+    "image": "images/2026-10-20/licincan-blender-ai-mcp-addon.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "AndreSzymanski15/ai-jailbreaks",
+    "url": "https://github.com/AndreSzymanski15/ai-jailbreaks",
+    "stars": 296,
+    "trend": "2026-10-19 建仓，1 天 296★",
+    "what": "35 条可直接粘贴的越狱提示词与 agent 运行规范集合，覆盖 25 个以上前沿、开源与免费模型，包含系统提示、人格锁定、AGENTS.md 指令与 Ollama Modelfile，定位是安全研究与红队测试。",
+    "why": "2026-10-19 建仓、1 天 296★；这类素材传播快，说明提示注入与指令层级绕过仍是 agent 上线前必须覆盖的攻击面。",
+    "insight": "把这类集合当红队语料，不要当能力：上线前跑一遍，重点测“指令层级/人格覆盖/工具权限绕过”，检查拒绝策略是否会被单个文档或网页内容覆盖。",
+    "image": "images/2026-10-20/andreszymanski15-ai-jailbreaks.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "songshikang0111/awesome-REA-cases",
+    "url": "https://github.com/songshikang0111/awesome-REA-cases",
+    "stars": 286,
+    "trend": "2026-10-12 建仓，8 天 286★",
+    "what": "AI 辅助逆向工程案例库：收录 589 个案例，覆盖旧设备复活、应用重建、游戏保存与隐藏行为分析，基座 REA 通过 CLI 与 MCP 把编码 agent 接到本地逆向工具。",
+    "why": "2026-10-12 建仓、8 天 286★，每天更新 6 次；说明 agent 正在进入需要本地工具链与精确验证的逆向场景。",
+    "insight": "逆向类 agent 的价值在“可验证的中间结果”（内存补丁、CRC 通过、编译一致）；接本地工具时优先只读探测与快照回滚，避免不可逆的刷机/写盘操作。",
+    "image": "images/2026-10-20/songshikang0111-awesome-rea-cases.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "raullenchai/esp32-thinks",
+    "url": "https://github.com/raullenchai/esp32-thinks",
+    "stars": 233,
+    "trend": "2026-10-12 建仓，8 天 233★",
+    "what": "跑在 ESP32-S3 上的个人语音助手固件：唤醒词或旋钮触发，语音识别、对话、TTS 三个端点可分别指向任意 OpenAI 兼容服务，支持中英韩语并流式逐句播报；可接内置 openmuse agent 提供位置、天气与记忆。",
+    "why": "2026-10-12 建仓、8 天 233★；端侧助手把“模型可替换”做成配置项，降低对单一云厂商的锁定。",
+    "insight": "端侧语音 agent 的瓶颈是延迟与断网：唤醒/VAD 放本地，对话与 TTS 设超时与降级，缓存高频回答；隐私敏感场景优先本地 STT/TTS，云端只做短请求。",
+    "image": "images/2026-10-20/raullenchai-esp32-thinks.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "christos-antono/NPCTalk",
+    "url": "https://github.com/christos-antono/NPCTalk",
+    "stars": 181,
+    "trend": "2026-10-15 建仓，5 天 181★",
+    "what": "让游戏 NPC 开口说话的开源工具：用 Fish Audio 做语音，提供 skills 与自托管语音服务，面向 AI 编码 agent，并附带完整的 GTA V 示例。",
+    "why": "2026-10-15 建仓、5 天 181★；游戏 NPC 是 agent 人格设定与长对话记忆的天然试验场。",
+    "insight": "NPC 对话要有记忆边界与内容护栏：按角色限制知识范围，存对话摘要而不是全量上下文，定期评估角色漂移与单位对话成本。",
+    "image": "images/2026-10-20/christos-antono-npctalk.jpg"
+  }
+]

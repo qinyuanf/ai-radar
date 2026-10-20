@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "f/prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "stars": 173588,
+    "trend": "+1,755 stars/18天（对比 2026-10-02）",
+    "what": "社区提示词库（173.6k★，HTML），原名 Awesome ChatGPT Prompts：收集、分享并分类 ChatGPT、Claude 等模型的提示词，免费开源，支持组织自托管以控制隐私。",
+    "why": "当日接口返回 173588★、2026-10-19 有提交；18 天 +1755★，说明提示词作为可复用资产仍有稳定需求。",
+    "insight": "把提示词当代码管理：版本化、配套评测集、记录每次变更的效果；自托管适合内部敏感场景，但社区提示词质量参差，进库前必须用自家任务 A/B，不要直接抄。",
+    "image": "images/2026-10-20/f-prompts-chat.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 168134,
+    "trend": "+13,227 stars/15天（对比 2026-10-05）",
+    "what": "面向编码 agent 的 skill/插件（168.1k★，JavaScript）：让 agent 像“最懒的资深工程师”一样先找现成实现、少写新代码，提供 Claude Code、Cursor 等规则与插件。",
+    "why": "当日接口返回 168134★、2026-10-18 有提交；15 天 +13227★，是本次热门榜增长最快的仓库，直指 agent 过度产出代码的问题。",
+    "insight": "把“先复用、少写代码”做成 agent 的硬约束，并在 PR 模板里要求写明复用了什么、为什么不能复用；同时用 diff 行数与依赖变更做度量，防止“少写”退化成“少测”。",
+    "image": "images/2026-10-20/dietrichgebert-ponytail.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "open-webui/open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "stars": 156205,
+    "trend": "+2,638 stars/20天（对比 2026-09-30）",
+    "what": "自托管的 AI 界面（156.2k★，Python）：统一接入 Ollama 与 OpenAI 兼容接口，提供聊天、知识库、工具与 MCP 支持，可当团队内部模型入口。",
+    "why": "当日接口返回 156205★、2026-10-19 有提交；20 天 +2638★，团队更倾向把模型入口与数据留在自己手里。",
+    "insight": "自托管 UI 的真正成本在网关与权限：模型密钥只留在服务端、按用户做配额与审计；升级前锁版本并备份数据库，避免 UI 升级触发配置迁移。",
+    "image": "images/2026-10-20/open-webui-open-webui.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "stars": 148097,
+    "trend": "+816 stars/20天（对比 2026-09-30）",
+    "what": "面向 agent 工程的开源框架（148.1k★，Python）：提供模型、工具、检索与编排抽象，以及可观测性集成，覆盖从原型到生产的链路。",
+    "why": "当日接口返回 148097★、2026-10-20 仍有提交；但 20 天仅 +816★，增速明显低于新一代 agent skill/轻工具项目，框架层竞争正转向更薄的原语。",
+    "insight": "框架选型别只看生态大小：把工具协议、状态存储、评测做成框架无关层；升级前跑回归，重点检查 callback/中间件行为变化，避免隐藏的 prompt 注入。",
+    "image": "images/2026-10-20/langchain-ai-langchain.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "github/spec-kit",
+    "url": "https://github.com/github/spec-kit",
+    "stars": 141973,
+    "trend": "+2,518 stars/20天（对比 2026-09-30）",
+    "what": "微软的规范驱动开发（SDD）工具包（142.0k★，Python）：从 PRD/规格出发生成计划与任务，再交给 Copilot 等编码 agent 执行。",
+    "why": "当日接口返回 141973★、2026-10-19 有提交；20 天 +2518★，说明“先写规格再让 agent 写码”正在成为团队流程。",
+    "insight": "规格文件必须可验收：每条需求带可执行验收用例与边界条件，生成的计划要能回滚；否则只是把模糊需求换成更长的文档，agent 仍会自由发挥。",
+    "image": "images/2026-10-20/github-spec-kit.jpg"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Bellman Language Models: Solving the Recurring Decisions of LLM Agents",
+    "title_cn": "贝尔曼语言模型：求解智能体的重复决策",
+    "url": "http://arxiv.org/abs/2610.24871v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24871，cs.AI/cs.CL/cs.LG/eess.SY，Adarsh Vatsa 等 2 人",
+    "what": "把 agent 在有限工作流里的决策单独建模：从日志或自跑轨迹读成离散状态，估计各动作的成功概率与成本，解成马尔可夫决策过程；固定状态由控制器直接执行，没见过的状态才交给 LLM，作者称之为 Bellman language model。在 τ²-bench telecom 上，无模型控制器解决 79%；Qwen3.8-27B 从 29% 提到 96%，模型调用减少 93%；Claude Opus 5.5 的调用次数与单任务成本降约 98%，还多解 2 个任务。内容生成型任务（如修 SymPy issue）收益很小。",
+    "why": "agent 工作流里大量决策会重复出现，每次重新推理既贵又不稳定；这篇给出“先统计再决策”的可落地路径，并给出真实基准收益与失效边界。",
+    "insight": "先做状态离散化与轨迹统计，把高频、低风险的决策缓存成规则/控制器，未知状态回退 LLM；上线前必须定义状态特征与回退阈值，避免把分布外输入误判成已知状态；内容生成型任务不要强套。"
+  },
+  {
+    "rank": 2,
+    "title": "The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents",
+    "title_cn": "推理的一像素：一条真实关系即可误导智能体",
+    "url": "http://arxiv.org/abs/2610.24873v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24873，cs.AI/cs.CL/cs.CR/cs.MA，Jinwei Hu 等 4 人",
+    "what": "提出 one-relation attack（ORA）：只针对“证据→结论”之间一条隐含前提，注入一句有来源支撑的限定句，把 agent 推向错误结论。在生物医学推断与漏洞检测的 18 个模型上，best-of-10 攻击平均翻转 54.9%（闭源）和 80.0%（开源）；攻击可迁移，且能通过来源支撑检查；多智能体辩论在平衡压力测试中把团队错误率从 50.0% 抬到 59.5%。",
+    "why": "攻击面不是明显的假信息，而是推理里默认成立的关系；传统“来源可信”过滤挡不住，讨论越多反而可能放大错误。",
+    "insight": "给检索/审阅 agent 增加关系级校验：把结论依赖的隐含前提显式列出并逐条验证，而不是只检查引用是否存在；多 agent 辩论要设独立事实核查角色，否则错误前提会传播得更广。"
+  },
+  {
+    "rank": 3,
+    "title": "The Missing Compliance Class: LLM Graders That Collapse Jailbreak Success, and a Free Check",
+    "title_cn": "缺失的合规类：评分器如何压掉越狱成功率",
+    "url": "http://arxiv.org/abs/2610.24872v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24872，cs.CR/cs.CL/cs.LG，Ruqiya Bin Safi 等 1 人",
+    "what": "固定目标模型、提示与回答，只换评分器：三个 8B/9B 的密集评分器会把合规回答归到相邻的“规避”类，其中一个在 900 条回答里从未给出合规标签。结果越狱成功率的跨评分器差异达 22~25 倍；剔除这三个评分器后仍差 1.7~2.8 倍；逐类标签计数可以零成本暴露这种塌缩。",
+    "why": "越狱论文里的攻击成功率被当成模型属性，但评分器本身就能把结论改一个数量级；这直接威胁安全评测与上线门禁的可信度。",
+    "insight": "安全评测必须报告评分器名称、逐类计数与非拒绝率，不能只报一个成功率；内部门禁至少用两个异构评分器交叉，并抽检合规类样本。"
+  },
+  {
+    "rank": 4,
+    "title": "MisleadQA: Diagnosing LLM Failures under Misleading Context",
+    "title_cn": "MisleadQA：诊断误导性上下文下的失败",
+    "url": "http://arxiv.org/abs/2610.24851v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24851，cs.CL，Hui Wang 等 5 人",
+    "what": "构造 MisleadQA：每题同时给标准上下文、真实但超出范围的上下文（S）和虚假但范围内、支持同一错误答案的上下文（F）。六个开源模型在原本答对的题上，只给 S 有 29.3% 改错，只给 F 有 75.4% 改错；加入标准上下文几乎消除 S 的影响，但 F 仍让 21.0% 的题答错，F 在前时更严重；上下文忠实指令主要靠“弃答”降错，但会拉低有标准上下文时的准确率。",
+    "why": "RAG 评测通常只查“上下文是否真实/相关”，忽略了“是否适用于当前问题（实体、时间、地点）”；企业知识库最容易出现这种真实但错位的文档。",
+    "insight": "检索结果除相关性外还要做适用性判定（实体/时间/地点匹配），评测同时报告答对、被误导、弃答三类比例；忠实指令会抬高弃答率，要用业务可接受的弃答阈值约束。"
+  },
+  {
+    "rank": 5,
+    "title": "Teaching Code Agents to Ask Without Leaking Private Code",
+    "title_cn": "教代码智能体提问而不泄露私有代码",
+    "url": "http://arxiv.org/abs/2610.24824v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24824，cs.AI/cs.SE，Wenjia Jiang 等 5 人",
+    "what": "提出 utility-verified abstraction（UVA）：把本地代码 agent 向云端强模型提问的问题改写成“按角色与类型描述私有实体”，只保留专家需要的技术细节；只有在披露更少私有实体且修复能从同一执行状态复现时才保留该改写。两个基准上训练后 agent 更愿意咨询；仓库级 issue 修复解决率 37.6%（同模型独立工作 25.3%）；问题泄露的私有实体减少 3.7 倍、逐字代码减少 1.4 倍。",
+    "why": "本地 agent 借云端强模型提升能力时，最大障碍是私有代码外泄；简单打码会破坏问题可答性，这项工作要求“可答且少泄露”同时成立。",
+    "insight": "云端咨询走“抽象化提问 + 本地保留上下文”：只发角色/类型/错误现象，不发源码与路径；把“修复可复现”作为改写保留条件，并在出口做实体、路径、代码片段的自动检测。"
+  },
+  {
+    "rank": 6,
+    "title": "Learning to Program Retrievals: Composing Search Primitives via Reinforcement Learning",
+    "title_cn": "学习编写检索程序：用强化学习组合搜索原语",
+    "url": "http://arxiv.org/abs/2610.24854v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24854，cs.CL/cs.IR，Kyuyoung Kim 等 5 人",
+    "what": "Retrieval Program Learning：让策略把搜索原语组合成带局部状态与控制流的可执行程序，而不是固定流水线或单步工具；用语法约束、执行校验的“程序变异”生成子程序的局部变体，转成训练轨迹再蒸馏回策略。开放域 QA 上跨模型规模与域内外基准稳定提升，多跳任务收益最大；4B 模型训练后超过所有 8B 基线；语料级推理取得最高答案 F1 与文档覆盖 F1，同时显著减少上下文消耗与检索轮数。",
+    "why": "多步检索的瓶颈是“检索宽度与上下文成本绑定”以及 RL 奖励稀疏；可编程检索把两者解耦，并给出小模型可用的训练方法。",
+    "insight": "检索 agent 不要只调 top-k：把检索写成可组合程序（先广搜、再过滤、再按需取正文），用执行结果与覆盖度做奖励；程序变异能低成本扩充探索，但必须有语法与执行校验防止无效程序。"
+  },
+  {
+    "rank": 7,
+    "title": "AgentSoV: Virtual Sensing for LLM Multi-Agent Systems via Stream of Variation",
+    "title_cn": "AgentSoV：多智能体系统的虚拟传感",
+    "url": "http://arxiv.org/abs/2610.24845v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24845，cs.MA/eess.SY，Congjing Zhang 等 5 人",
+    "what": "把多智能体系统执行建模成随机动态系统：把异构轨迹映射到诊断阶段，用可观测输出构造虚拟测量，再用状态空间模型学习跨阶段的变化传播；架构上兼容链式、编排式与 DAG 式多智能体系统。无需重跑即可做故障定位、阶段输入影响量化与监控预算下的虚拟传感器布点。",
+    "why": "多 agent 失败归因通常靠事后读文本，难以跨架构比较；这项工作是“把执行当系统来观测”，给可靠性与可观测性提供统一语言。",
+    "insight": "给多 agent 流程埋阶段级指标（输入、输出、延迟、错误类型），先做跨阶段相关性分析定位异常入口，再决定加日志或加监控；不要一上来全量记录 token 级轨迹，先用少量虚拟传感器覆盖关键阶段。"
+  },
+  {
+    "rank": 8,
+    "title": "When LLM-Generated Refactorings Ripple: An Empirical Study of Repository Adoption Readiness",
+    "title_cn": "LLM 重构的涟漪：仓库采纳就绪度实证研究",
+    "url": "http://arxiv.org/abs/2610.24790v1",
+    "date": "2026-10-17",
+    "source": "arXiv 2610.24790，cs.SE/cs.AI，Muhammad Waseem 等 3 人",
+    "what": "对 15 个开源 Java 仓库的 150 个生产文件做 1500 次 LLM 重构尝试（含单提示与 LangGraph 多 agent 两种方式），按局部改动、仓库级结构指标、调用方影响、行为等价与测试证据分级：1455 个完整候选中 93.8% 被判为高契约/依赖风险，仅 8 个满足低风险；106 个（7.3%）检测到至少一个下游调用方被破坏，290 个（19.9%）的行为等价指标为假；65 个有结论的定向测试中 60 个通过，其中 50 个仍属高风险。",
+    "why": "文件级评测会高估重构可用性；这篇用仓库级指标说明“能编译、能过测试”并不等于可以合并。",
+    "insight": "LLM 重构必须做仓库级验证：编译、调用方影响分析、定向测试三者缺一不可；把“行为等价”当可疑指标而不是通行证，合并前要求变更说明与回滚方案。"
+  }
+]
