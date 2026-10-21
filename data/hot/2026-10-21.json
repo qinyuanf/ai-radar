@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Comfy-Org/ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "stars": 140802,
+    "trend": "+5,277 stars/21天（对比 2026-09-30）",
+    "what": "基于节点图的扩散模型工作台（140.8k★，Python）：把模型、采样、后处理拆成可连线的节点，提供 GUI、API 与推理后端，主打本地运行；插件生态覆盖图像、视频等工作流。",
+    "why": "当日接口返回 140802★、2026-10-21 仍有提交；21 天 +5277★，在闭源模型持续更新的情况下，可编排、可私有化的生成工作流依然是刚需。",
+    "insight": "把生成能力做成“可复用工作流 + API”而不是散落脚本：节点图本身就是可版本化的资产；接业务时先固定模型与采样参数，把随机性、显存峰值、队列等待作为 SLA 指标，别让前端直连本地引擎。",
+    "image": "images/2026-10-21/comfy-org-comfyui.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "stars": 133445,
+    "trend": "+5,870 stars/20天（对比 2026-10-01）",
+    "what": "一键生成高清短视频的自动化流程（133.4k★，Python）：输入主题或关键词，串起文案、素材、配音、字幕与 ffmpeg 合成，可替换多家大模型与语音服务。",
+    "why": "当日接口返回 133445★、2026-10-20 有提交；20 天 +5870★，短视频批量生产是 agent 工作流里少见的端到端、可量化场景。",
+    "insight": "这类流水线真正的成本在素材版权与成品审核，不在拼接：把每步产物落盘（文案、配音、字幕、成片）便于回滚和复现；上线前建素材来源与敏感内容校验，否则规模化只会放大风险。",
+    "image": "images/2026-10-21/harry0703-moneyprinterturbo.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "Graphify-Labs/graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "stars": 130290,
+    "trend": "+7,470 stars/20天（对比 2026-10-01）",
+    "what": "把代码库连同文档、SQL schema、配置与 PDF 转成可查询知识图谱的 agent 技能（130.3k★，Python）：代码用 tree-sitter 做本地确定性 AST 解析，每条边标注是源码直读还是推断，不使用向量库。",
+    "why": "当日接口返回 130290★、2026-10-20 有提交；20 天 +7470★，是热门榜增速最快的仓库，押注“图谱检索优于 grep 与向量检索”这条路线。",
+    "insight": "给 agent 做代码检索时先区分结构事实与语义推断：AST、调用关系这类确定性信息不该交给 embedding；图谱方案的价值在可解释的边与路径，接入前用自家仓库验证召回，不要直接替换现有检索。",
+    "image": "images/2026-10-21/graphify-labs-graphify.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "microsoft/generative-ai-for-beginners",
+    "url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "stars": 121758,
+    "trend": "+755 stars/16天（对比 2026-10-05）",
+    "what": "微软的生成式 AI 入门课程（121.8k★，Jupyter Notebook）：21 节课覆盖模型原理、提示工程、RAG、agent 与安全，配套 notebook 与示例代码。",
+    "why": "当日接口返回 121758★、2026-10-20 有提交；16 天仅 +755★，增速明显低于工具类仓库，课程型内容已进入存量维护阶段。",
+    "insight": "内部培训不必从零写课件：以这 21 节课为骨架，替换成自家代码库与业务案例；每节课配一个可运行的最小示例，比看视频更容易转化成工程能力。",
+    "image": "images/2026-10-21/microsoft-generative-ai-for-beginners.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 118673,
+    "trend": "+1,824 stars/20天（对比 2026-10-01）",
+    "what": "浏览器 agent 的开源 Python 库（118.7k★，Python）：让模型通过 CDP 操作真实浏览器完成网页任务，仓库同时提供云端托管的隐蔽浏览器与 agent 接口。",
+    "why": "当日接口返回 118673★、2026-10-20 有提交；20 天 +1824★。大量系统只有网页入口，浏览器 agent 是绕不开的集成层。",
+    "insight": "浏览器 agent 的稳定性取决于可观测与降级：每步留存截图与 DOM 快照，动作失败按“选择器→坐标→人工接管”逐级降级；涉及登录态的操作限定域名与权限，避免 agent 在真实账号里误操作。",
+    "image": "images/2026-10-21/browser-use-browser-use.jpg"
+  }
+]

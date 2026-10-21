@@ -1,0 +1,56 @@
+[
+  {
+    "rank": 1,
+    "repo": "LSPosed/dexsql-release",
+    "url": "https://github.com/LSPosed/dexsql-release",
+    "stars": 206,
+    "trend": "首日快照：2026-10-14 建仓，7 天 206★，2026-10-18 有提交",
+    "what": "给 Android 二进制做 SQL 查询的工具（206★，Python）：直接读 APK/DEX，用 SQL 查类、方法、字符串与调用引用，内置 MCP server 可直连 AI agent，无需打开反编译 GUI。",
+    "why": "2026-10-14 建仓、7 天 206★，已收录进官方 MCP Registry；逆向分析从“人读反编译代码”变成“agent 用 SQL 取结构化结果”。",
+    "insight": "安全与逆向类 agent 的工具接口应返回结构化结果而非整页文本：把签名、字符串、调用关系统一成可查询表，既省 token 又便于组合条件；接入时限定只读权限与样本目录。",
+    "image": "images/2026-10-21/lsposed-dexsql-release.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "MemTensor/MemT-1.0",
+    "url": "https://github.com/MemTensor/MemT-1.0",
+    "stars": 197,
+    "trend": "首日快照：2026-10-19 建仓，2 天 197★，2026-10-20 有提交",
+    "what": "记忆基础模型的官方仓库（197★，Python）：把持久、可演化的记忆做进模型计算，用动态局部记忆与可训练超记忆在推理时不回看原始上下文，团队称 128K 历史下持久状态比全量 KV cache 省约 66 倍存储。",
+    "why": "2026-10-19 建仓、2 天 197★；长期记忆长期靠外部向量库加 RAG 拼装，把记忆做进模型状态是另一条路线，值得照技术报告验证。",
+    "insight": "评估“模型原生记忆”重点测三件事：跨会话事实更新、冲突信息的覆盖顺序、记忆被污染后的清除成本；在省存储的宣称之外，先用自家任务看长上下文准确率是否掉点。",
+    "image": "images/2026-10-21/memtensor-memt-1-0.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "shuyu-labs/transwork",
+    "url": "https://github.com/shuyu-labs/transwork",
+    "stars": 167,
+    "trend": "首日快照：2026-10-14 建仓，7 天 167★，2026-10-15 有提交",
+    "what": "企业级桌面 AI agent 工作台（167★）：用 Docker Compose 私有部署，把技能市场、数字员工、知识库与模型网关放进同一套服务，支持钉钉/企微/飞书单点登录、按角色授权与审计日志，内置 5 席免费授权。",
+    "why": "2026-10-14 建仓、7 天 167★；它把“技能 + 数字员工 + 知识库”做成可私有化交付的组织级套件，和国内团队的落地路径高度重合。",
+    "insight": "企业内 agent 平台的核心是模型网关与按角色下发技能，不是聊天界面：密钥只留服务端、用量按用户与模型预聚合、技能版本化分发；评估时先看审计与席位模型能否对上组织架构。"
+  },
+  {
+    "rank": 4,
+    "repo": "eliasbiondo/antirion",
+    "url": "https://github.com/eliasbiondo/antirion",
+    "stars": 143,
+    "trend": "首日快照：2026-10-17 建仓，4 天 143★，2026-10-18 有提交",
+    "what": "Rust 写的开源 AI 网关（143★）：单个二进制内含管理台，统一路由 OpenAI、Anthropic、Gemini、Bedrock 等供应商，做预算、限流、观测与内容护栏；作者称在 4 vCPU 上额外开销为亚毫秒级。",
+    "why": "2026-10-17 建仓、4 天 143★，直接对标 LiteLLM 与 Bifrost 的性能短板；网关层正从“能用”卷到“低延迟、成本可控”。",
+    "insight": "自建网关的瓶颈常在代理层本身：鉴权、限流、计费放在同一跳，避免重复反序列化；选型时用自己的并发与流式长响应压测，重点看首包延迟与内存增长，而不是只看空载 QPS。",
+    "image": "images/2026-10-21/eliasbiondo-antirion.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ztt0216/MyAgent",
+    "url": "https://github.com/ztt0216/MyAgent",
+    "stars": 70,
+    "trend": "首日快照：2026-10-16 建仓，5 天 70★，2026-10-16 有提交",
+    "what": "从零实现的通用 Agent Runtime（70★，Python）：完整 agent loop、工具权限控制（Plan 模式阻断写操作与 Shell）、SKILL.md 技能体系与自进化、按项目隔离的长期记忆、自研 MCP 客户端、子 agent、会话恢复与上下文压缩。",
+    "why": "2026-10-16 建仓、5 天 70★；星数不高，但把 harness 该有的组件拆得清楚，适合当自建 runtime 的对照清单。",
+    "insight": "自研 harness 先定权限边界：哪些工具在哪种模式下被阻断、失败如何回填、上下文何时折叠；把技能做成可版本化的 SKILL.md 并从使用记录里演化，比把所有能力塞进系统提示更可维护。",
+    "image": "images/2026-10-21/ztt0216-myagent.jpg"
+  }
+]

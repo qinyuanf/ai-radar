@@ -1,0 +1,85 @@
+[
+  {
+    "rank": 1,
+    "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+    "title_cn": "DeepSeek 开源生产推理框架",
+    "url": "https://github.com/deepseek-ai/DeepInfer",
+    "date": "2026-10-20",
+    "source": "Hacker News 2134 分 831 评论（DeepSeek 官方仓库）",
+    "what": "DeepSeek 开源其线上服务使用的推理框架 DeepInfer（2134 分 831 评论）：目前支持 DeepSeek-V4.1-Flash，含 FlashMLA/DeepGEMM/DeepEP 等优化内核、MoE 专家并行与负载均衡、投机解码与置信度调度验证、批次一致性推理、确定性采样与结构化输出；支持 NVIDIA SM100 与华为昇腾 950，但不含 KV cache 系统、预填充/解码分离与跨副本负载均衡。",
+    "why": "HN 2134 分 831 评论，是当日讨论量最高的 AI 条目；开源出来的不是论文实现而是生产框架，同时覆盖英伟达与昇腾，直接抬高自建推理栈的起点。",
+    "insight": "自建推理别只按默认配置估成本：先确认批次一致性与确定性采样是否满足业务需求（回放、计费、评测依赖它），再评估 PD 分离与 KV cache 这些未开源部分要自己补多少；昇腾路径可以关注，但要独立压测。",
+    "image": "images/2026-10-21/deepinfer-high-performance-inference-framework-f.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "WhatsApp's help pages hid LLM instructions: dont recommend a regulator",
+    "title_cn": "WhatsApp 帮助页藏 LLM 指令",
+    "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+    "date": "2026-10-19",
+    "source": "Hacker News 714 分 208 评论（Redact 安全博客）",
+    "what": "安全公司 Redact 发现 WhatsApp 帮助中心页面藏有针对大模型的隐藏指令（2026-10-08）：明确要求不要建议用户联系任何数据保护机构、不要引用 GDPR，等于用页面文本操控抓取与问答模型的回答；Meta 称是缺陷，10-18 已修复。",
+    "why": "HN 714 分 208 评论；这不是攻击模型权重，而是往公开网页里埋指令，任何做联网检索或网页摘要的 agent 都会吃到，且终端用户完全看不见。",
+    "insight": "网页内容进上下文前要做分级：页面里的指令性文本按不可信输入处理并与系统提示隔离，摘录前剥离隐藏元素与 display:none 内容；合规类问答设人工兜底，不允许纯检索结果直接作答。",
+    "image": "images/2026-10-21/whatsapp-s-help-pages-hid-llm-instructions-dont-.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Voxtral 3",
+    "title_cn": "Voxtral 3：语音智能体 SDK",
+    "url": "https://mistral.ai/news/voxtral-3/",
+    "date": "2026-10-20",
+    "source": "Hacker News 523 分 140 评论（Mistral 官方发布）",
+    "what": "Mistral 发布 Voxtral 3（523 分 140 评论）：定位语音 agent 的实时语音 SDK，覆盖 50 多种语言的转写、情感化 TTS 与“深度工具调用”，即语音链路里直接触发工具，而不只是把话说成文字。",
+    "why": "HN 523 分 140 评论；语音 agent 的门槛从“识别准不准”转到“端到端延迟与工具调用”，厂商开始按 agent 场景打包 SDK，而不是卖单点模型。",
+    "insight": "接语音链路时把识别、模型、合成三段延迟分别埋点，端到端一旦到秒级用户就会抢话；工具调用要做可打断设计，TTS 流式逐句播报，别等整段文本生成完再开口。"
+  },
+  {
+    "rank": 4,
+    "title": "MiniMax M3.1 Flash",
+    "title_cn": "MiniMax M3.1 Flash 发布",
+    "url": "https://www.minimax.io/blog/minimax-m31f",
+    "date": "2026-10-19",
+    "source": "Hacker News 510 分 218 评论（MiniMax 官方博客）",
+    "what": "MiniMax 发布 M3.1 Flash（510 分 218 评论）：官方称输出速度 200+ tokens/s，BankerToolBench 76.2 分、CyberGym 82%，定价每百万 token 输入 0.15 美元、输出 0.60 美元，主打工具调用与安全场景下的高吞吐低价。",
+    "why": "HN 510 分 218 评论；这个价位叠上吞吐，直接把多 agent 并行试错的成本压下来，适合作为批处理与小模型路由的候选。",
+    "insight": "便宜模型别只当路由兜底：把工具调用密集、结果可自动校验的批处理任务（抽取、分类、回归跑批）先切过去，用自家通过率而不是榜单分数决定配额，同时保留强模型做失败重试。",
+    "image": "images/2026-10-21/minimax-m3-1-flash.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Publish fake stats, get cited in LLMs",
+    "title_cn": "编造假数据，被大模型引用",
+    "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+    "date": "2026-10-20",
+    "source": "Hacker News 323 分 186 评论（Peec AI 实测）",
+    "what": "一篇实测文章（323 分 186 评论）：作者在 2026-03 上线 stateglobe.com，编造约 5 万条统计数字；数周内 ChatGPT 开始引用该站，7 个月带来 1 万次访问与 330 多条外链。",
+    "why": "HN 323 分 186 评论；它证明检索层缺少来源可信度校验，伪造内容可以低成本进入答案，直接污染依赖搜索的 agent。",
+    "insight": "检索增强要做来源分级：白名单域名权重、发布时间、原始出处可追溯性三件事；数字类结论要求引用可打开的原始报告，无法追溯的数字宁可不答，也不要写进总结。",
+    "image": "images/2026-10-21/publish-fake-stats-get-cited-in-llms.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "How abliterated models can get you pwned",
+    "title_cn": "去审查模型如何让你被入侵",
+    "url": "https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned",
+    "date": "2026-10-19",
+    "source": "Hacker News 229 分 133 评论（ProjectDiscovery 研究）",
+    "what": "ProjectDiscovery 的攻防实验（229 分 133 评论）：用不到 50 美元把 7B 开源模型投毒成后门模型，接入 Codex CLI 后正常请求全部照常回答，一旦出现隐藏触发词就外泄项目凭据；模型里只带一个远程载荷地址，攻击者可随时替换行为。",
+    "why": "HN 229 分 133 评论；去审查权重在开源社区随手可得，而现有评测只看能力不看后门，自托管与微调模型的供应链风险被低估。",
+    "insight": "用第三方权重前先设准入：核对来源与哈希、在隔离环境跑行为测试（含触发词探测）、收窄 agent 的凭据作用域；把模型文件当依赖管理，固定版本并纳入供应链审计。",
+    "image": "images/2026-10-21/how-abliterated-models-can-get-you-pwned.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Google open-sources TorchTPU, a native PyTorch back end for TPUs",
+    "title_cn": "谷歌开源 PyTorch 的 TPU 后端",
+    "url": "https://github.com/google-pytorch/torch_tpu",
+    "date": "2026-10-20",
+    "source": "Hacker News 258 分 63 评论（Google 官方仓库）",
+    "what": "谷歌开源 TorchTPU（258 分 63 评论）：为 TPU 提供 PyTorch 后端，包含 ATen 算子实现、XLA 编译缓存、torch.compile 集成、数据与张量并行示例（Llama、Qwen、ResNet、DLRM 等），已在 PyPI 发布 0.2.0，要求 Python 3.11 以上。",
+    "why": "HN 258 分 63 评论；此前 PyTorch 上 TPU 主要靠第三方插件，官方后端意味着存量代码迁移成本下降，训练与推理的算力议价空间变大。",
+    "insight": "评估 TPU 时先迁移一条非核心训练或推理链路，重点核对不支持的算子与编译缓存命中率；把设备相关代码隔离在一层适配里，避免被单一硬件锁定。",
+    "image": "images/2026-10-21/google-open-sources-torchtpu-a-native-pytorch-ba.jpg"
+  }
+]

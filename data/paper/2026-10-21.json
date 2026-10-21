@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "MMEnterprise-Bench: Evaluating Enterprise Agents over Evolving Multimodal Records",
+    "title_cn": "企业智能体基准：演化中的多模态记录",
+    "url": "http://arxiv.org/abs/2610.27911v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27911，cs.AI，Seohyun Lee 等 5 人",
+    "what": "构建 MMEnterprise-Bench：1613 道题基于模拟协作项目中不断演化的多模态工作记录，分为证据推理、冲突消解、不可回答三类；评测 10 个闭源与开源多模态模型，最强的模型在跨来源或跨时间冲突、以及需要多张图的题上仍然吃力，而加大检索预算或换更大的检索器只提升了证据召回，没有稳定提升答题准确率。",
+    "why": "企业内部资料天生存在多版本、互相修订与图文混排，这类冲突正是数字员工回答问题最容易出错的地方，而“多检索就会变好”的直觉被实测否定。",
+    "insight": "给企业知识 agent 加三件事：版本与时间戳排序、冲突检测（同一问题多个答案时显式标注）、可弃答判定；评测单列冲突题与不可答题，只报总体准确率会掩盖这两类系统性失败。"
+  },
+  {
+    "rank": 2,
+    "title": "COMPASS: Routing via Capability-Oriented Model Profiling with Adaptive Search, Selection, and Tool Use",
+    "title_cn": "COMPASS：按能力画像的智能路由",
+    "url": "http://arxiv.org/abs/2610.27822v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27822，cs.AI，Amin Rezaei 等 2 人",
+    "what": "提出 agentic 路由 COMPASS：让大模型按“路由配方”通过工具收集各模型的性能与成本证据，必要时先看候选回答再选模型，不需要路由专项训练；LLMRouterBench 上以 139.57 美元达到 69.85% 准确率（对比 RLCascadeRouter 的 69.14%/180.22 美元），DeepSWE 五折交叉验证 78.1%/215 美元（最好的单模型 74.1%/500 美元）；模型池扩容只需读入新的评测记录，不必改路由权重或提示。",
+    "why": "模型迭代越来越快，训练专用路由器很快过期；用 agent 自己查证据再路由，把维护成本从反复重训转移到评测数据维护。",
+    "insight": "路由先建两个数据资产：按任务类型记录各模型通过率与单任务成本的能力画像和成本表，路由读表而非拍脑袋；新增模型只补评测记录，不动路由逻辑，并定期核对画像是否过期。"
+  },
+  {
+    "rank": 3,
+    "title": "SAPD: Learning from Agent Experience without Environment Interaction",
+    "title_cn": "SAPD：不与环境交互学智能体经验",
+    "url": "http://arxiv.org/abs/2610.27847v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27847，cs.AI/cs.LG，Juncheng Diao 等 5 人",
+    "what": "提出 Step-Advantage Policy Distillation（SAPD）：把多轮轨迹拆成单步决策上下文做在线策略蒸馏，学生模型在记录的历史条件下生成回答，并用相对步优势信号稳定训练，全程不需要新的环境观测或额外多轮交互；在 ALFWorld、WebShop 与检索问答上均提升，相比监督微调缓解了灾难性遗忘，训练每步至少快 4.7 倍。",
+    "why": "训练 agent 最贵的是可执行环境；能直接复用离线轨迹，意味着已有的线上日志可以变成训练资产，而不只是拿来做分析。",
+    "insight": "把线上轨迹当训练数据前先分三层：成功轨迹、失败但可纠正轨迹、不可用轨迹；按步计算相对优势而不是给整条轨迹打一个分；没有环境回放能力时，优先做蒸馏而不是在线强化学习。"
+  },
+  {
+    "rank": 4,
+    "title": "Privacy-preserving inference on hosted models: a learned input-embedding transform for frozen Qwen3.8-27B",
+    "title_cn": "托管模型推理的隐私保护：输入嵌入变换",
+    "url": "http://arxiv.org/abs/2610.27817v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27817，cs.AI，Mahendra Roopa 等 2 人",
+    "what": "研究让提示词留在客户端：本地完成文本到向量的查表转换，再用一个 5560 万参数的变换网络处理向量后才发往托管方，托管方在冻结的 Qwen3.8-27B 上直接运行变换后的向量，全程拿不到文本与 token id；在 1490 道留出的 MMLU 题上准确率从 82.3% 降到 80.7%（损失 1.5 分），有 30.1% 的内容 token 在最近邻查表下无法还原为原文。",
+    "why": "把私有代码与工单发给云端模型始终是合规卡点；这项研究要求“可用且难以还原”同时成立，并给出了可量化的精度代价与残留泄露率。",
+    "insight": "评估这类方案要看两个数：业务准确率的损失与可还原 token 比例——30% 不可还原不等于安全；接入前用自家敏感文本做还原攻击测试，并把它当纵深防御的一层，不能替代出口脱敏与权限控制。"
+  },
+  {
+    "rank": 5,
+    "title": "LatBridge: Efficient and Stable Model Replacement in Latent-Communication Multi-Agent Systems",
+    "title_cn": "LatBridge：潜空间多智能体的模型替换",
+    "url": "http://arxiv.org/abs/2610.27813v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27813，cs.AI，Jiajun Zhu 等 5 人",
+    "what": "针对用连续隐向量通信的多智能体系统提出 LatBridge：以共享 Bridge 加各自接口组成统一的潜空间通信协议，替换某个 agent 的模型时复用未变接口、为缺失接口选择低秩适配并只训练这部分且所有模型冻结；基础模式直接处理源表示，加速模式不依赖自回归生成来构造目标输入。八种小模型组合下 MATH 平均 14.8%、ALFWorld 下一步动作预测 27.3%。",
+    "why": "多智能体系统必然要换模型（升级、降本、换供应商），而隐向量通信一旦换模型接口就失效；这篇把“可替换性”当成协议问题来处理。",
+    "insight": "多 agent 之间直接传原始隐状态会锁死模型组合：工程上优先用带版本的结构化消息（含 schema 与语义标签）互联，把模型替换写进接口契约并配回归用例，不要依赖某一对模型的隐空间对齐。"
+  },
+  {
+    "rank": 6,
+    "title": "From Tokens to Files: Multi-Granularity Detection and Localization of AI-Involved Code",
+    "title_cn": "从 token 到文件：AI 参与代码的定位",
+    "url": "http://arxiv.org/abs/2610.27863v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27863，cs.SE/cs.CL/cs.LG，Yue Xu 等 4 人",
+    "what": "提出多粒度 AI 代码检测：给冻结的代码模型挂两个低秩适配器（分别训练在机器写与人类写的文件上），用逐 token 对数似然比作为局部证据，再由轻量头按行、按块聚合成文件级判断；内部测试集 11773 个 AI 参与文件对 2541 个人类文件，在 1% 假阳性下宏 F1 达 72.4；外部协写基准 HybridCodeAuthorship 行级 F1 62.5（该基准论文自报最好为 56）；19445 个 2022 年前的人类仓库文件上假阳性率 0.55%~0.81%。",
+    "why": "当大部分代码都有 AI 参与，“这段是谁写的”直接影响评审强度、责任归属与合规审计；文件级打分会被少量 AI 片段稀释，这篇把定位做到行与块。",
+    "insight": "AI 代码治理不要只做“是否 AI 生成”的二元判断：把检测结果当评审信号（AI 参与块加测、加解释要求），并保留人工复核；注意 1% 假阳性在大仓库里仍是成百上千个误报，不能直接用于追责或惩罚。"
+  },
+  {
+    "rank": 7,
+    "title": "Polarity Blindness in LLM Safety: A Systematic Study of Negation, Antonym Substitution, and Adversarial Framing",
+    "title_cn": "极性盲区：否定改写绕过安全护栏",
+    "url": "http://arxiv.org/abs/2610.27908v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27908，cs.CL/cs.AI，Diego Miguel Lozano 等 4 人",
+    "what": "系统研究“极性盲区”：模型在否定、反义词替换等改变语义极性的变换之后识别不出有害意图，同义替换作为保持极性的对照组以排除一般改写的影响；用 260 条提示覆盖 10 个主流模型与英、西、捷三种语言，按 0-5 危害量表评估，最脆弱的模型平均危害分达到 4.12，该现象在不同语系间都存在。",
+    "why": "现有安全评测多测直白的有害请求，而真实绕过往往只要加一个“不要”或换个反义词；这对所有依赖模型自带拒答的 agent 都是结构性风险。",
+    "insight": "安全评测集要加极性变换变体（否定、反义词、双重否定），并按语言分别测；护栏不要只依赖模型拒答，工具侧做参数与权限校验，危险动作执行前二次确认。"
+  },
+  {
+    "rank": 8,
+    "title": "ACE-Compression: An Ability-Centric Evaluation of Compressed Large Language Models",
+    "title_cn": "ACE-Compression：能力中心评测",
+    "url": "http://arxiv.org/abs/2610.27913v1",
+    "date": "2026-10-20",
+    "source": "arXiv 2610.27913，cs.AI/cs.CL，Jiahui Ning 等 5 人",
+    "what": "提出以能力为中心的压缩模型评测框架：不再只看任务分数，而从流程推理与约束执行、知识落地与真实性、社会认知与情感理解、人格保真与风格一致四个维度探测压缩后哪些能力还在；在 6 个开源模型的 35 个以上量化与剪枝检查点上，压缩会重排能力画像——粗粒度、局部、表层能力较稳，细粒度、长尾、依赖上下文的能力脆弱；量化整体比剪枝保留得好，但差距有多大取决于应用需要哪种能力。",
+    "why": "量化部署几乎是本地推理的默认选项，而“平均分掉了几个点”回答不了“我的业务能力是否被砍掉”；这篇把压缩从黑箱准确率变成可诊断的干预。",
+    "insight": "上线量化模型前按业务能力做小评测集（约束遵循、长尾抽取、角色一致性分开测），不要只看通用榜单；同一模型的不同压缩版本固定同一套评测脚本，把细粒度能力列为回归项。"
+  }
+]
