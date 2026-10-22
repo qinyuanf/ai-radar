@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Alejandros17487/ai-jailbreaks",
+    "url": "https://github.com/Alejandros17487/ai-jailbreaks",
+    "stars": 206,
+    "trend": "首日快照：2026-10-21 建仓，1 天 206★，2026-10-21 有提交",
+    "what": "越狱提示词合集（206★）：35 条可直接粘贴的提示，覆盖 25+ 前沿与开源模型，包含系统提示、人格设定、工作区策略与 AGENTS.md 规格。",
+    "why": "2026-10-21 建仓、当天 206★；它把分散在社区里的越狱手法整理成可复现样本，正好可以当安全评测的负样本库。",
+    "insight": "把这类合集纳入红队评测：逐条跑自家 agent 与模型，记录是否越权、是否泄露系统提示；不要在生产环境试，评测结果只用于加固护栏。",
+    "image": "images/2026-10-22/alejandros17487-ai-jailbreaks.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "adexbn/walk-kcal",
+    "url": "https://github.com/adexbn/walk-kcal",
+    "stars": 150,
+    "trend": "首日快照：2026-10-16 建仓，6 天 150★，2026-10-17 有提交",
+    "what": "把步行距离换算成热量额度的吃饭决策工具（150★）：450 kcal 起步、每走 80 米加 4 kcal，按位置列附近餐厅与推荐菜，并逐道标注“吃得下/超了”。",
+    "why": "2026-10-16 建仓、6 天 150★；热量估算按“精确配方→品类中位数→门店类型先验→未知”分层披露误差，还用麦当劳官方营养 MCP 取数。",
+    "insight": "不确定数据的处理方式可以直接抄：每层估计标明来源与误差区间，估不出来就明确“未知”，不要让模型硬编一个数；工具取数优先走官方 MCP。",
+    "image": "images/2026-10-22/adexbn-walk-kcal.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "guolola/SoftJL",
+    "url": "https://github.com/guolola/SoftJL",
+    "stars": 103,
+    "trend": "首日快照：2026-10-15 建仓，7 天 103★，2026-10-21 有提交",
+    "what": "面向课程与毕业设计项目的工程工作台（103★，TypeScript）：把需求、UML、设计、测试与可编辑 Word 文档串起来，自带模型服务、覆盖度检查与变更追踪。",
+    "why": "2026-10-15 建仓、7 天 103★；需求到设计再到测试的追溯链，是企业里最容易断、也最值得 agent 化的一段。",
+    "insight": "文档生成要给每个需求与用例稳定 ID，并维护“需求→设计→测试”的引用关系；改一处能查出影响面，比一次生成多少页更有价值。",
+    "image": "images/2026-10-22/guolola-softjl.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "longsurf-ai/endo",
+    "url": "https://github.com/longsurf-ai/endo",
+    "stars": 97,
+    "trend": "首日快照：2026-10-14 建仓，8 天 97★，2026-10-17 有提交",
+    "what": "把 agent 当积木的“高阶 harness”（97★，TypeScript）：在已有订阅的 agent 之上编排工作流，支持选 agent、best-of-n 等流程，提供 macOS 桌面端。",
+    "why": "2026-10-14 建仓、8 天 97★；单个 agent 的能力趋于同质后，竞争点转向“如何把多个 agent 组合成可复用工作流”。",
+    "insight": "编排层要解耦三件事：agent 运行时、工作流定义、凭证与配额；用订阅账号跑自动化时先核对服务条款与限流，别把产品建立在随时会变的免费额度上。",
+    "image": "images/2026-10-22/longsurf-ai-endo.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "2430816465/campus-knowledge-agent",
+    "url": "https://github.com/2430816465/campus-knowledge-agent",
+    "stars": 74,
+    "trend": "首日快照：2026-10-14 建仓，8 天 74★，2026-10-14 有提交",
+    "what": "校园知识服务 agent（74★，Python）：FastAPI+Qwen3+RAG，覆盖公开通知与附件的采集解析、按年度与学期限定检索、证据溯源与人工审核发布。",
+    "why": "2026-10-14 建仓、8 天 74★；它把“旧政策误用、回答无依据、候选字段当正式政策”这些企业知识库常见问题逐条做成了机制。",
+    "insight": "知识库问答必须带时间范围与版本约束：区分发布日与适用年度，回答附原文证据窗口；未审核字段保持“待核实”状态，不要直接当正式规则答用户。",
+    "image": "images/2026-10-22/2430816465-campus-knowledge-agent.jpg"
+  }
+]

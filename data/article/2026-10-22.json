@@ -1,0 +1,83 @@
+[
+  {
+    "rank": 1,
+    "title": "PHP2Shell: AI uncovers critical RCE in PHP",
+    "title_cn": "AI 挖出 PHP 核心远程代码执行漏洞",
+    "url": "https://www.wiz.io/blog/php2shell-php-rce",
+    "date": "2026-10-21",
+    "source": "Hacker News 433 分 172 评论（Wiz Research）",
+    "what": "Wiz Research 披露 PHP 核心引擎多个内存安全漏洞（两个 CVE，CVSS 9.2）：影响 PHP 5.4 以来几乎所有版本，可未授权远程代码执行或读取进程内存（其中可能含密码、token、密钥）；PHP 于 10-21 发布补丁。Wiz 称前沿模型把原本需要极复杂链路的利用开发压缩到数小时，OpenAI 与 Calif 参与发现、协调与补丁验证。",
+    "why": "HN 433 分 172 评论；PHP 支撑约 70% 的网站，包括 WordPress、Drupal、MediaWiki。AI 正在把“复杂度本身就是安全边界”这个假设拆掉。",
+    "insight": "先能回答“哪些服务跑 PHP、版本多少”再谈补丁：把运行时版本纳入资产清单，补丁窗口按小时而不是按周；对长期不升级的老系统，WAF 虚拟补丁只能当过渡。",
+    "image": "images/2026-10-22/php2shell-ai-uncovers-critical-rce-in-php.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor",
+    "title_cn": "LiteLLM 新版本被植入窃密后门",
+    "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
+    "date": "2026-10-21",
+    "source": "Hacker News 434 分 141 评论（SafeDep）",
+    "what": "LiteLLM 1.107.0 的 PyPI 包（7 个 wheel）被植入三个文件：cook.pth/cook.py 是凭证窃取器，收集 SSH 密钥、云凭证、CI/CD secret、AI 工具 token、浏览器密码与 LiteLLM 代理库里的模型 key；sitecustomize.py 起后台守护，每小时从 GitHub 读服务器地址、重跑窃取并下载执行代码。上游 GitHub 源码不含这些文件，PyPI 已下架该版本；1.106.2 与 1.107.0rc1/rc2 干净。",
+    "why": "HN 434 分 141 评论；LiteLLM 是常见的多模型网关依赖，攻击发生在发布环节，装包即执行，连不 import litellm 的 Python 进程也会被加载。",
+    "insight": "依赖治理要锁版本、校验哈希、延迟升级；网关这类持有全部模型 key 的组件单独隔离环境、最小权限运行；轮换预案要覆盖模型 key 存在代理数据库里的情况。",
+    "image": "images/2026-10-22/litellm-pypi-compromise-credential-stealer-backdoor.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Muse exposes users' personal and business secrets when they share conversations",
+    "title_cn": "Muse 分享对话泄露个人与商业机密",
+    "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
+    "date": "2026-10-21",
+    "source": "Hacker News 380 分 163 评论（Ars Technica）",
+    "what": "Meta 的新通用 AI agent Muse 在用户通过网页链接分享对话时会暴露敏感信息：安全公司 Claroc 用单个 DNS 请求就找到 6800+ 个带分享链接的对话；Time 此前报道 Muse 还会映射用户及其联系人，包括未使用 Muse 的人。",
+    "why": "HN 380 分 163 评论；问题不在模型越狱，而在产品把整段对话上下文做成公开链接，agent 拿到的隐私越多，分享一次泄露得越多。",
+    "insight": "分享功能默认做内容级脱敏与最小化：只分享选定片段，附件与工具调用结果默认排除；链接加有效期、访问口令与撤销能力，并记录访问审计。"
+  },
+  {
+    "rank": 4,
+    "title": "Qwen3-Coder writes less secure code when told it's for a US persona",
+    "title_cn": "客户身份影响 Qwen3-Coder 安全性",
+    "url": "https://www.hirundo.io/blog/qwen3-coder-vulnerabilities",
+    "date": "2026-10-21",
+    "source": "Hacker News 239 分 117 评论（Hirundo 案例研究）",
+    "what": "安全公司 Hirundo 的案例研究：让 Qwen3-Coder 反复生成同一个存储用户密钥的 Web 应用，只改客户名称；写成“给美国国防承包商”比“给中国国防承包商”的版本被攻破概率高 19%，给香港民主团体生成的版本允许任意用户读取他人密钥的概率高 28%；在提示里加安全要求也没能消除差距。Hirundo 称从权重中移除相关对齐后差距消失，并发布了修改版权重。",
+    "why": "HN 239 分 117 评论；CrowdStrike 与 Booz Allen 此前也报告过类似现象。开源编码模型进入企业代码链路后，模型里的行为偏差会直接变成代码漏洞。",
+    "insight": "开源编码模型选型加一项“提示扰动下的安全差异”评测：同一需求换客户与地区描述反复生成，跑 SAST 与鉴权测试；本地部署不能消除权重里的行为，鉴权与密钥处理代码必须人工评审。",
+    "image": "images/2026-10-22/qwen3-coder-writes-less-secure-code-when-told-it.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Claude Duet",
+    "title_cn": "Claude Duet：会主动找活的智能体",
+    "url": "https://claude.com/product/claude-duet",
+    "date": "2026-10-21",
+    "source": "Hacker News 313 分 271 评论（Anthropic）",
+    "what": "Anthropic 推出 Claude Duet：在后台持续工作的主动型 agent，会主动发早间简报并处理任务，而不是等用户提问；目前在美国面向 Pro/Max 订阅做研究预览。",
+    "why": "HN 313 分 271 评论；agent 产品正从“被动问答”转向“主动推送+后台执行”，权限模型和打扰边界成为新的产品问题。",
+    "insight": "主动型 agent 先定三条边界：默认只读或只给建议、写操作必须确认；设静默时段与每日预算；早报类输出标注数据来源与时间窗，并支持一键停用。",
+    "image": "images/2026-10-22/claude-duet.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "OpenAI models are coming to Google Cloud",
+    "title_cn": "OpenAI 模型将登陆谷歌云",
+    "url": "https://openai.com/index/openai-models-google-cloud",
+    "date": "2026-10-21",
+    "source": "OpenAI 官方博客（HN 238 分 99 评论）",
+    "what": "OpenAI 与 Google Cloud 达成合作：把前沿模型与 Codex 工作流带进 Gemini 的 Model Garden，通过 Google Cloud Marketplace 提供。",
+    "why": "HN 238 分 99 评论；竞争厂商的模型进入对方云市场，企业可以沿用现有云合同、账单与区域策略采购模型，接入成本下降。",
+    "insight": "多模型接入用统一网关抽象鉴权、计费与区域，不要把某家 SDK 写死；采购前核对数据驻留、子处理者清单与配额，跨云可用性可以当容灾而不是主路径。"
+  },
+  {
+    "rank": 7,
+    "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+    "title_cn": "Terminal X：评估智能体逼近投资人",
+    "url": "https://openai.com/index/terminal-x",
+    "date": "2026-10-20",
+    "source": "OpenAI 客户案例",
+    "what": "OpenAI 客户案例：Terminal X 的 Eval Agent 按 54 项评分标准给投资分析输出打分，称比人工多检出 25% 的“偏离基金授权”问题，与资深投资人判断的一致率为 88.6%（使用 GPT-6.1 Sol）。",
+    "why": "2026-10-20 发布；把评分规约拆成 54 项逐条核对，是 eval agent 从“总体打分”走向“可解释门禁”的样本，和数字员工的验收场景直接对应。",
+    "insight": "评测 agent 的输出应是“逐项通过/不通过+证据引用”，不是一句总分；先用人工标注校准一致率，再逐步放开自动拦截；评分规约要版本化，改规则必须重跑历史样本。"
+  }
+]

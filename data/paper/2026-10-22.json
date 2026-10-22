@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Harness Scaling for Generalizable Agentic Reinforcement Learning",
+    "title_cn": "执行框架扩展：智能体强化学习泛化",
+    "url": "http://arxiv.org/abs/2610.29458v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29458，cs.LG/cs.AI/cs.CL，Fei Bai 等 8 人",
+    "what": "提出 agentic RL 的“harness 扩展”训练维度：不再只用单一固定 harness，而是构造因子化的 harness 空间，挑选覆盖均衡的子集训练，并在同一任务上做受控变化；在多个基准、模型规模与 RL 算法上，模型对未见白盒配置的泛化提升，也能迁移到未见黑盒 harness，优于用单一复杂黑盒 harness 训练。",
+    "why": "现在 agent 训练与评测大多绑定一套工具和上下文管理，换一个 harness 行为就漂移；这篇把 harness 本身当成可扩展的训练变量。",
+    "insight": "数字员工的行为验证至少准备两套 harness（不同工具集、不同上下文策略）交叉跑，只在单套上调通不算泛化；把 harness 版本写进评测记录，换框架要重跑基线。"
+  },
+  {
+    "rank": 2,
+    "title": "PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents",
+    "title_cn": "预测编码记忆：长期对话智能体",
+    "url": "http://arxiv.org/abs/2610.29467v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29467，cs.AI，Jian Zhong 等 11 人",
+    "what": "把用户记忆建模为带置信度的信念：用 Effective Surprisal 结合语义偏离与矛盾证据，检索不可靠时降权；按两个阈值做三路更新——MAINTAIN 强化被支持的信念、PROFILE 把模糊线索存成低置信假设、CORRECT 软衰减被可靠推翻的事实；在 LoCoMo、LongMemEval-S、PersonaMem-v2 上取得 SOTA，并用新基准 DiMoBench 验证对非平稳变化的适应。",
+    "why": "长期记忆系统常见的两种做法——每轮都追加、或按启发式覆盖——都分不清临时噪声与用户真实变化；这正是数字员工记住用户偏好的难点。",
+    "insight": "记忆写入前加一道“惊奇度”门控：有支持证据才强化，模糊信息进候场区，明确矛盾才衰减旧值；不要把每轮对话直接写进长期记忆，也不要用一条新事实覆盖全部历史。"
+  },
+  {
+    "rank": 3,
+    "title": "BIRD-RL: Scaling Agentic Reinforcement Learning over Stateful Data-Centric Environments",
+    "title_cn": "有状态数据环境中的智能体强化学习",
+    "url": "http://arxiv.org/abs/2610.29426v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29426，cs.LG/cs.CL，Ge Qu 等 9 人",
+    "what": "面向有状态数据环境（SQL 调试）的 agentic RL：四阶段课程交替训练基础推理与轨迹自适应探索，配套轨迹级持久执行基础设施，在复用数据库副本的同时保持轨迹隔离，空间效率提升 12.8 倍；7B/14B 模型在 BIRD-CRITIC-SQLite 上成功率 44.40%/48.00%，接近 Claude-Opus-4.6 Agent 的 48.20%，并能同时训练 SQL 调试与生成。",
+    "why": "工具型 agent RL 框架每跑一条轨迹就要一个数据库容器，成本和串扰都高；这篇证明有状态数据任务可以规模化训练小模型。",
+    "insight": "有状态环境复用必须做轨迹隔离（快照或命名空间），否则跨轨迹污染会让策略更新不稳定；SQL 调试这类数据类内部工具，用 7B/14B 自训已能接近大模型 agent，值得先做评测再决定是否自训。"
+  },
+  {
+    "rank": 4,
+    "title": "DynaWeave: Learning to Adapt through Dynamic Scenario Synthesis",
+    "title_cn": "动态场景合成：让智能体学会适应变化",
+    "url": "http://arxiv.org/abs/2610.29443v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29443，cs.CL，Xuan Yang 等 5 人",
+    "what": "DynaWeave 自动把静态任务改造成可验证的动态场景：生成与任务相关的外部事件（需求变化、环境状态变化、外部信息），用有向无环图表示事件依赖，并在 agent 交互过程中按图激活；动态验证器只修改受已发生事件影响的检查项。用 36 个环境收集 2095 条验证过的轨迹微调 Qwen3.5，CostBench 任务完成率提升 67.34 个百分点，ToolMaze 上超过 Gemini-3.1-Pro-Preview。",
+    "why": "现有 agent 训练环境大多只随 agent 自己的动作变化，而真实环境会被其他用户、服务故障和突发事件改变；不会重规划的 agent 一到线上就露馅。",
+    "insight": "评测里加入“中途变更”用例：任务进行到一半插入需求变更、数据过期或接口失败，观察是否重规划；训练数据可以用事件图注入扰动，而不是只收集静态成功轨迹。"
+  },
+  {
+    "rank": 5,
+    "title": "RegoMender: A Multi-agent Framework for Automated Rego Policy Repair",
+    "title_cn": "多智能体自动修复 Rego 策略",
+    "url": "http://arxiv.org/abs/2610.29456v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29456，cs.SE/cs.AI/cs.PL，Ruijie Zhang 等 8 人",
+    "what": "提出首个 Rego 策略自动修复基准 RegoBench（1159 个真实缺陷）与多智能体框架 RegoMender：通过共享黑板和原子工具协作，动态选择打补丁、重写或回滚；语法与测试语义成功率分别为 82.9% 和 77.9%，比最强基线高 13.4%，在链式修复场景不退化，并泛化到 HCL/SQL，132 个真实 CVE 修复率 86.4%。",
+    "why": "Policy-as-Code 在云原生权限体系里是硬约束，而 Rego 语法严格、声明式语义特殊，通用自动修复方法基本失效；这类工作直接对应权限策略的维护成本。",
+    "insight": "策略修复 agent 要具备“补丁-重写-回滚”三种动作和测试反馈闭环；把策略测试与语法校验设为验收门禁，模型只产出候选，合并前必须全量跑策略用例。"
+  },
+  {
+    "rank": 6,
+    "title": "pplx-embed-v2-late Technical Report",
+    "title_cn": "多语言多模态迟交互嵌入模型",
+    "url": "http://arxiv.org/abs/2610.29523v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29523，cs.IR/cs.CL/cs.LG，Markus Krimmel 等 11 人",
+    "what": "Perplexity 发布 pplx-embed-v2-late：0.6B 与 9B 两个多语言、多模态 late-interaction 嵌入模型，从 18B 教师蒸馏，共享同一嵌入空间，支持非对称部署——9B 建索引、0.6B 低延迟查询；在各自尺寸档的文本、图像与视觉文档检索基准上达到 SOTA，0.6B 在视觉文档检索上可对标数倍大的模型。",
+    "why": "RAG 的索引成本与查询延迟通常被同一个模型绑死；共享空间加非对称部署意味着离线用大模型、线上用小模型，直接改变检索系统的成本结构。",
+    "insight": "检索选型把索引模型与查询模型分开压测：先验证大小模型共享空间的召回损失，再决定是否非对称部署；视觉文档多的场景优先测 late-interaction，不要默认单向量。"
+  },
+  {
+    "rank": 7,
+    "title": "WRDO: Weighted Refusal Direction Optimization in Aligned Language Models",
+    "title_cn": "加权拒答方向优化：加固与恢复",
+    "url": "http://arxiv.org/abs/2610.29555v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29555，cs.LG/cs.CL，Grigoriy Evseev 等 6 人",
+    "what": "提出 WRDO：拒答行为通常由残差流里的单一方向介导，但用有害与无害提示的均值差构造方向会把不同现象混在一起；WRDO 从每条提示的方向库学习聚合权重，构造复合拒答方向。在 3 个开放权重模型、3 个 guard judge 与 HarmBench 外部评测上验证，并测试通用能力影响；同一套优化还能反向用于恢复被 abliterated 模型的拒答行为。",
+    "why": "单方向拒答干预容易被简单的权重或激活操作绕过，而 abliterated 权重在开源社区随手可得；安全对齐需要更强的干预，也需要能修复被去除拒答的模型。",
+    "insight": "安全评测按有害类目分别统计拒答率，不要只看平均值；引入第三方权重前先测是否被 abliterated；方向级干预可作推理侧补丁，但必须同时跑通用能力回归，防止“更安全但更笨”。"
+  },
+  {
+    "rank": 8,
+    "title": "Keeping Time vs. Understanding Time: Neither Alone Explains Temporal Reasoning in LLMs",
+    "title_cn": "守时与懂时：时间推理基准再检验",
+    "url": "http://arxiv.org/abs/2610.29507v1",
+    "date": "2026-10-21",
+    "source": "arXiv 2610.29507，cs.CL/cs.AI，Auss Abbood 等 4 人",
+    "what": "检验“时间算术 vs 时间语义”的二分是否成立：在两个基准族上按同类子集微调，数据集内提升 +6.8 到 +23.1 个百分点，但同模式跨数据集迁移只有 -3.2 到 +1.1；用认知需求评估发现，定量与逻辑推理并非主要驱动，知识才是——当前时间基准更多在奖励模型“记住时间通常怎么运作”。",
+    "why": "日期、时区、有效期是商旅和数字员工的高频硬约束，而基准高分不代表模型真会算时间；这篇直接质疑现有时间推理评测的有效性。",
+    "insight": "时间相关逻辑不要交给模型心算：日期解析、时区换算、有效期比较走代码或工具；自建评测覆盖跨年、闰日、时区与相对时间，并把“知识题”和“计算题”分开统计。"
+  }
+]
