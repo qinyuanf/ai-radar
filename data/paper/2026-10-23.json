@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Post-Audit Mirage: Identifiability Limits of Offline Agent Verification",
+    "title_cn": "审计海市蜃楼：离线验证的极限",
+    "url": "https://arxiv.org/abs/2610.31130v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31130，cs.AI/cs.LG，Aman Behera 等 2 人",
+    "what": "把“离线审计通过 ≠ 上线安全”形式化：构造安全版与有害版 agent 生命周期，让验证方看到的证据完全相同，而独立评分器记录相反的部署结果；证明由此产生的“误判—弃权”权衡，并在授权、调度、共享容量三类环境上做成可执行基准。提出的 IdentifiedRangeMonitor 用新采集的分组有害结果输出部署/搁置/无法判断/无支持四种结论。",
+    "why": "agent 更新越来越依赖离线评测放行；这篇说明离线证据可能对安全与有害版本不可区分，评测通过不能推出部署安全。",
+    "insight": "把“无法判断”作为一等结论写进发布门禁；按用户群与场景分别采集上线后的新结果，不要用旧审计样本外推；稀有群组、小效应、缺观测时默认扩大灰度而不是放行。"
+  },
+  {
+    "rank": 2,
+    "title": "ProductWebBench: Evaluating Website Continuity Beyond Task Completion",
+    "title_cn": "网页连续性：任务完成之外的第二关",
+    "url": "https://arxiv.org/abs/2610.31118v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31118，cs.SE/cs.AI，Jiajun Wu 等 12 人",
+    "what": "提出 ProductWebBench：在真实前端仓库上同评“任务完成 + 网站连续性”——320 个改动任务与 80 个长周期构建任务，评测前冻结仓库快照、分阶段需求、浏览器证据与确定性检查；模拟用户逐阶段放出需求，已通过的检查在后续阶段持续生效。13 个模型 8,737 次运行中，通过全部需求检查的改动任务里仍有 28.2% 挂在连续性检查上。",
+    "why": "前端编码 agent 长期只按“目标做出来没有”打分，而真实改动还有第二重义务：站点其余部分不能坏；28.2% 的失败率说明这个缺口很大。",
+    "insight": "验收把“新增功能检查”和“既有路径回归”分开统计，回归检查一旦启用就不再撤销；需求分阶段放出，每阶段跑全量检查；用浏览器级确定性断言，不要只看截图。"
+  },
+  {
+    "rank": 3,
+    "title": "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs",
+    "title_cn": "把自然语言策略编译成神经符号程序",
+    "url": "https://arxiv.org/abs/2610.31062v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31062，cs.AI/cs.CL，Arnon Mazza 等 2 人",
+    "what": "SCOPE 把自然语言策略编译成可执行的神经符号程序：策略拆成窄的神经谓词，由小模型、确定性抽取器和代码组合执行，面向多轮对话与工具调用轨迹；相比微调护栏模型在复合策略上退化、LLM 评审成本高且不稳定，它按策略本身联合优化。",
+    "why": "agent 的策略执行正从单轮内容审核转向跨多轮、跨工具调用的复合规则，单一评审模型很难同时做到准确、便宜、稳定。",
+    "insight": "策略拆成原子检查加确定性组合：能规则化的用抽取器和代码，语义判断交给小模型；为每条策略写正反用例并按版本回归；评审模型只做窄判定，不承担整条复合规则的最终裁决。"
+  },
+  {
+    "rank": 4,
+    "title": "Learning What to Ask for Tomorrow: Active Preference Acquisition for Long-Term Personalized Web Agents",
+    "title_cn": "长期个性化网页 agent 的偏好获取",
+    "url": "https://arxiv.org/abs/2610.31107v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31107，cs.CL，Yiqi Wang 等 6 人",
+    "what": "研究长期个性化网页 agent 该主动问哪些偏好：把缺失偏好的“前瞻个性化价值”定义为未来任务的期望累计收益减去询问成本与披露风险，在每次交互预算下选题；并刻画“单次收益不足但可跨任务复用”时仍值得问的条件，在订票、购物、日程等任务上评估。",
+    "why": "被动记忆学不到用户从未说过的偏好，而只按当前任务收益提问会浪费复用机会；长期 agent 需要决定“现在问什么”。",
+    "insight": "偏好问题按“预计复用次数×影响面÷打扰成本”排序，设每次交互提问上限；答案存成带来源、置信度与过期时间的结构化偏好，后续任务直接复用；涉及敏感信息先问披露范围。"
+  },
+  {
+    "rank": 5,
+    "title": "Delta N-gram: Forward-Only Continual Writing into a Language Model's Native N-gram Memory",
+    "title_cn": "前向写入模型原生 n-gram 记忆",
+    "url": "https://arxiv.org/abs/2610.31125v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31125，cs.CL/cs.LG，Hao Wu",
+    "what": "Delta N-gram 给模型的哈希 n-gram 表加一条只前向的写入路径：预训练表永不修改，证据写进稀疏补丁 Δ，4.1M 参数写入器为每个（位置、哈希头）事件生成目标与门控，块平均 delta 规则让每行保持旧值与门控目标的凸组合；清空 Δ 即可还原原模型。0.6B 原型第二次写入后仍保留 16/16 事实，在线梯度写入只保留 2–4/16。",
+    "why": "持续更新知识通常要改权重、伤底座且难回滚；可逆的前向写入给“事实更新”提供了另一条路径。",
+    "insight": "事实型更新优先用可回滚的旁路补丁而不是微调；验收要测二次写入后的保留率与旧知识回归；保留“清空补丁即还原”的开关，更新前后都跑同一套问答基线。"
+  },
+  {
+    "rank": 6,
+    "title": "Prompting Strategy Effects Depend on the Judge: A Multilingual Study of LLM-as-a-Judge Robustness",
+    "title_cn": "提示策略效果取决于评审模型",
+    "url": "https://arxiv.org/abs/2610.31172v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31172，cs.CL/cs.AI/cs.LG，Asal Mehrabi 等 3 人",
+    "what": "系统测量 LLM 评审的多语言鲁棒性：9 种提示策略 × 4 个开源评审模型 × 27 种语言 × 4 类任务、13 个数据集，基于金标回答产生超过 100 万条打分，并用人工判断校验。结论是提示策略不可迁移：评审模型的选择比提示策略更重要，同一策略在不同评审模型上效果会反向，低资源语言上稳定性下降。",
+    "why": "思维链、角色设定等提示技巧多只在英文基准上验证过，却被直接用于多语言评审；这篇给出跨评审、跨语言的反例。",
+    "insight": "先固定评审模型再调提示，换模型必须重测策略；多语言场景按语言分别报告稳定性，不要用英文结论外推；评审提示与模型版本一起写进评测记录。"
+  },
+  {
+    "rank": 7,
+    "title": "Mixing Matters: Evidence Position Bias Across Sequence Mixers in Long-Context Question Answering",
+    "title_cn": "长上下文问答里的证据位置偏差",
+    "url": "https://arxiv.org/abs/2610.31135v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31135，cs.CL/cs.AI/cs.LG，Aman Behera 等 3 人",
+    "what": "比较 Transformer、状态空间模型与混合 Mamba 的长上下文位置偏差：把一个金标文档在九个干扰文档间移动，Transformer 表现出状态空间模型没有的“开头优势”，两类模型都偏好靠近末尾的证据；纯 Mamba 与混合 Mamba 的对照方向一致但统计上不确定；换语料只改变整体准确率、不改变曲线形状。",
+    "why": "长上下文模型并不会均匀使用证据，架构差异会改变“证据放哪最有效”；RAG 拼接顺序和评测结论都受影响。",
+    "insight": "先测目标模型的位置偏差曲线再决定上下文排序：关键证据优先放末尾或按模型偏好放边界，不要默认开头最好；换模型、换语料都要重测；把“证据位置”作为评测变量记录。"
+  },
+  {
+    "rank": 8,
+    "title": "Beyond Watching and Searching: Benchmarking Agents for Video-centered Deep Research Reports",
+    "title_cn": "以视频为中心的深度研究报告基准",
+    "url": "https://arxiv.org/abs/2610.31158v1",
+    "date": "2026-10-22",
+    "source": "arXiv 2610.31158，cs.CV/cs.CL，Jiahao Meng 等 7 人",
+    "what": "提出以视频为中心的深度研究任务：给定视频与用户请求，agent 要提出研究问题、检索外部多模态证据、产出可交互报告并链接到相关视频片段；配套基于技能的工作流与 OmniDR-Bench，用“原子评分树”评估——3 个维度、23 个共享方向与任务特定的原子二值标准，分别检查视听接地、多模态证据使用与交互呈现。",
+    "why": "现有深度研究基准大多只看网页文本，视频里的操作步骤与证据无法被定位和核验；这类任务直接对应“看视频写可核查报告”的需求。",
+    "insight": "研究报告的评测用原子二值标准而不是整体打分：每条结论要有证据链接（视频时间戳/网页片段）；把“能否定位原片段”作为硬指标；评测前冻结任务与证据，避免模型用记忆作答。"
+  }
+]

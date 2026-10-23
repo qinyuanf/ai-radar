@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "C4rohan/Lampline",
+    "url": "https://github.com/C4rohan/Lampline",
+    "stars": 163,
+    "trend": "首日快照：2026-10-19 建仓，4 天 163★，2026-10-22 有提交",
+    "what": "开源自托管的电话语音 agent（163★，Python）：可从 Dialogflow CX / CX Agent Studio 迁移，接 20 家模型供应商，用一个 AI 呼叫方对每次改动做通话测试，单次通话约 $0.02–0.17。",
+    "why": "2026-10-19 建仓、4 天 163★；它把“改一版就真打一通电话验证”做成开发流程，直面语音 agent 最难复现的环节。",
+    "insight": "语音 agent 的回归测试要能自动拨号并断言关键槽位（意图、金额、时间、转人工）；通话音频、转写与状态机轨迹一起存档；成本按“每次通话”而不是每 token 评估。",
+    "image": "images/2026-10-23/c4rohan-lampline.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "justxor/deepseek-local-guide-ru",
+    "url": "https://github.com/justxor/deepseek-local-guide-ru",
+    "stars": 133,
+    "trend": "首日快照：2026-10-17 建仓，6 天 133★，2026-10-17 有提交",
+    "what": "俄语 DeepSeek 本地部署全指南（133★，Shell）：覆盖 V4、R1 与蒸馏版在 PC/Mac/服务器上的安装，工具链包括 Ollama、llama.cpp、LM Studio、vLLM、Open WebUI 与 RAG。",
+    "why": "2026-10-17 建仓、6 天 133★；非英语市场的本地部署教程能快速涨星，说明“数据不出内网”的诉求在各地都在增长，而不只是中文社区。",
+    "insight": "本地部署文档按“显存/内存→量化档位→吞吐”给出可执行矩阵，并注明哪些环节会联网；内网场景优先验证离线安装包与模型许可，别让教程默认的下载步骤变成合规漏洞。",
+    "image": "images/2026-10-23/justxor-deepseek-local-guide-ru.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "h9-tec/ai-roadmap-2026",
+    "url": "https://github.com/h9-tec/ai-roadmap-2026",
+    "stars": 116,
+    "trend": "首日快照：2026-10-21 建仓，2 天 116★，2026-10-21 有提交",
+    "what": "2026 版 AI 工程学习路线（116★）：五层结构覆盖基础、LLM 工程、agent、评估与生产，约 25 周，配套可用的免费资源与链接检查脚本。",
+    "why": "2026-10-21 建仓、2 天 116★；把“评估”和“生产”单独列层，而不是只教调模型，说明岗位要求已经从会写提示词转向能交付可验收系统。",
+    "insight": "团队培养按层补缺：先确认评估与可观测能力，再补 agent 编排；学习材料要能落到当前项目的检查项（构建、回归、日志），不要只收藏课程。",
+    "image": "images/2026-10-23/h9-tec-ai-roadmap-2026.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "azrinaldi/gemini-stealth-bridge",
+    "url": "https://github.com/azrinaldi/gemini-stealth-bridge",
+    "stars": 99,
+    "trend": "首日快照：2026-10-16 建仓，7 天 99★，2026-10-22 有提交",
+    "what": "把 Gemini 网页版转成 OpenAI 兼容接口的代理（99★，Go）：用 Google 会话 cookie 认证，不依赖无头 Chrome，支持账号池、按配额故障切换、图片/视频生成、搜索接地与内置 MCP 服务。",
+    "why": "2026-10-16 建仓、7 天 99★；绕开官方 API 计费、直接复用网页额度，技术上有巧思，但也把账号条款与稳定性风险放到了最前面。",
+    "insight": "不要在生产链路依赖非官方接口：额度、协议与风控随时会变；如果必须用，做好账号隔离、配额监控与一键切回官方 API 的开关，并评估服务条款风险。",
+    "image": "images/2026-10-23/azrinaldi-gemini-stealth-bridge.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Umair/stalemap",
+    "url": "https://github.com/Umair/stalemap",
+    "stars": 98,
+    "trend": "首日快照：2026-10-19 建仓，4 天 98★，2026-10-21 有提交",
+    "what": "告诉编码 agent“哪些依赖在训练截止后变了”的工具（98★，TypeScript）：对比项目锁定版本的类型定义、变更日志与升级指南，把改动摘要写进 AGENTS.md/CLAUDE.md，并在每次编辑后结合类型检查给出提示。",
+    "why": "2026-10-19 建仓、4 天 98★；作者做了 66 个任务的预注册盲测，Claude Sonnet 5.5 组通过率 89%，无辅助 68%、仅挂 tsc 钩子 73%。",
+    "insight": "模型知识过期是编码 agent 的确定性问题：把依赖版本与训练截止日期对齐，生成可检索的变更说明并挂在编辑时检查；验收看真实任务通过率，而不是只看模型自称“已了解新 API”。",
+    "image": "images/2026-10-23/umair-stalemap.jpg"
+  }
+]

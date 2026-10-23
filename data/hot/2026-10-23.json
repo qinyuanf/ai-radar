@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "stars": 114419,
+    "trend": "+5,824 stars/22天（对比 2026-10-01）",
+    "what": "让编码 agent 少说少读的 token 压缩工具（114.4k★，Go）：一个 skill 加本地代理，把回答改成电报体、压缩记忆文件、把重复命令折叠成脚本，覆盖 30+ agent；README 称整场会话输入 token 降 33.2%。",
+    "why": "当日接口返回 114419★、2026-10-22 有提交；22 天 +5,824★，并有 Adobe Research 论文与 JetBrains A/B 测试引用。编码 agent 的成本大头在上下文而非生成，这类“改说话方式省 token”已经从梗变成可测量的工程。",
+    "insight": "先量化再压缩：按技能与命令分别统计输入输出 token，只压低信息密度部分（解释、日志、重复脚本），代码与路径保持原样；压缩后跑同一套正确性用例，别用“回答更短”冒充“成本更低”。",
+    "image": "images/2026-10-23/juliusbrussee-caveman.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 101034,
+    "trend": "+7,772 stars/15天（对比 2026-10-08）",
+    "what": "给 agent 装“上网能力”的 CLI 能力层（101.0k★，Python）：统一接入网页、YouTube 字幕、RSS、Twitter、Reddit、B 站、小红书等平台，自带多后端路由与体检命令。",
+    "why": "当日接口返回 101034★、2026-10-20 有提交；15 天 +7,772★。它不重写抓取，而是负责选型、安装、体检与失效切换（例如 B 站风控封掉 yt-dlp 后切到 bili-cli），正对 agent 工具链最容易腐坏的一层。",
+    "insight": "外部平台接入按“首选+备选”双后端设计并做健康检查；登录态、限流、平台条款放在配置层而不是代码里；平台失效时要有可观测的降级路径，避免 agent 静默返回空结果。",
+    "image": "images/2026-10-23/panniantong-agent-reach.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "zhayujie/CowAgent",
+    "url": "https://github.com/zhayujie/CowAgent",
+    "stars": 47511,
+    "trend": "+282 stars/18天（对比 2026-10-05）",
+    "what": "开源自托管个人 AI 助手与 Agent Harness（47.5k★，Python）：会主动规划任务、调用工具与技能、维护三层记忆和知识库，支持多 agent 团队，并接入微信、飞书、钉钉等渠道。",
+    "why": "当日接口返回 47511★、2026-10-22 有提交；18 天 +282★。它把“定时主动执行 + 记忆蒸馏 + 技能自进化”做成了完整参考实现，与数字员工的运行形态高度重合。",
+    "insight": "主动型 agent 先把触发条件、静默时段、失败重试写成显式配置；记忆分上下文/日记/核心三层并按用户隔离；自进化只改技能方法、不改权限与审批边界，所有改动留痕可回滚。",
+    "image": "images/2026-10-23/zhayujie-cowagent.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "siyuan-note/siyuan",
+    "url": "https://github.com/siyuan-note/siyuan",
+    "stars": 46886,
+    "trend": "+232 stars/16天（对比 2026-10-07）",
+    "what": "隐私优先的自托管知识工作空间（46.9k★，TypeScript）：块级引用与双向链接、Markdown 所见即所得、SQL 查询嵌入、开放 API，并加入 AI 写作与问答，定位人与 agent 共同编辑。",
+    "why": "当日接口返回 46886★、2026-10-22 有提交；16 天 +232★。在云端笔记纷纷加 AI 的同时，把数据留在本地、用块级 ID 给 agent 提供稳定锚点，是知识库接 agent 的另一条路线。",
+    "insight": "给 agent 用的知识库要有稳定块 ID 与结构化查询接口（SQL/API），不要只喂整页正文；写入走版本化与冲突检测；自托管方案提前算清索引、备份与升级成本。",
+    "image": "images/2026-10-23/siyuan-note-siyuan.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "codewhale-hq/Codewhale",
+    "url": "https://github.com/codewhale-hq/Codewhale",
+    "stars": 41110,
+    "trend": "+55 stars/17天（对比 2026-10-06）",
+    "what": "Rust 写的终端编码 agent（41.1k★）：内置 40+ 模型供应商、默认 DeepSeek V4.1 Flash，可接本地模型；/receipts 列出改过的文件、跑过的命令与网页/MCP 调用，支持撤销和分级权限。",
+    "why": "当日接口返回 41110★、2026-10-23 仍有提交；17 天 +55★。终端 agent 的竞争点正从“能不能改代码”转向“每次改动能否审计、能否撤回”，它把变更回执与权限模式做成了核心功能。",
+    "insight": "编码 agent 的交付物应带可核对的变更回执（文件、命令、外部调用、审批人）；权限按只读/询问/自动评审/完全放开分级，高风险命令默认人工确认；沙箱与撤销要能在会话结束后复查。",
+    "image": "images/2026-10-23/codewhale-hq-codewhale.jpg"
+  }
+]

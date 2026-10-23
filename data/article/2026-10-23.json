@@ -1,0 +1,83 @@
+[
+  {
+    "rank": 1,
+    "title": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+    "title_cn": "用 360M 模型假装成终端",
+    "url": "https://simedw.com/2026/10/21/world-model-terminal/",
+    "date": "2026-10-22",
+    "source": "Hacker News 504 分 156 评论（simedw）",
+    "what": "把终端当世界模型的实验：作者用 2B token 训练一个 360M 模型，不执行命令，而是根据当前屏幕与输入直接预测下一条终端画面更新；在 ShellBench 上拿到 80/106。",
+    "why": "HN 504 分 156 评论；如果屏幕状态可以由模型预测，终端类 agent 的试错成本与沙箱需求会下降，但目前复杂任务仍会出现记忆丢失与幻觉。",
+    "insight": "短期别把终端世界模型当执行环境：它适合做轨迹预演与界面状态快速验证，真实命令仍要沙箱执行并校验副作用；把“预测画面”和“实际结果”做 diff，可作为 agent 自检信号。",
+    "image": "images/2026-10-23/worldtui-i-trained-a-360m-model-to-pretend-to-be.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Mistral Large 4",
+    "title_cn": "Mistral Large 4：万亿参数旗舰",
+    "url": "https://mistral.ai/news/mistral-large-4/",
+    "date": "2026-10-06",
+    "source": "Hacker News 322 分 102 评论（Mistral）",
+    "what": "Mistral 的新旗舰：1.05T 总参数、52B 激活的 MoE 模型，支持 100 万 token 上下文（预览接口 524K），覆盖 50+ 语言，计划 10 月 31 日前放出权重。",
+    "why": "HN 322 分 102 评论；官方定价 $0.68/$2.09 每百万 token，缓存输入 $0.07。开源权重加百万上下文，把长文档与多语言场景的成本压到新档位。",
+    "insight": "长上下文不等于该塞满：先测有效窗口与位置偏差，再决定切块还是整篇；MoE 模型按激活参数评估吞吐；权重发布后再评估自托管，许可与显存要求先核对。"
+  },
+  {
+    "rank": 3,
+    "title": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+    "title_cn": "NVIDIA 的 agent 安全运行时",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "date": "2026-10-22",
+    "source": "Hacker News 295 分 154 评论（NVIDIA）",
+    "what": "NVIDIA 开源的 agent 运行时：每个 agent 跑在独立沙箱里，内核对文件访问、系统调用和网络连接逐项执行策略；凭证只注入到获批端点；策略变更先用形式化验证检查会放开什么。",
+    "why": "HN 295 分 154 评论；agent 要读文件、装包、调 API，就必须解决“给能力但不给全权”。把策略从提示词搬到内核，是运行层竞争加速的明确信号。",
+    "insight": "权限模型按“资源×动作”声明并默认拒绝；密钥由运行时代理注入，agent 永不见明文；策略变更走形式化/静态检查并留版本；上线前跑“越权尝试”用例验证拦得住。",
+    "image": "images/2026-10-23/openshell-a-safe-private-runtime-for-fleets-of-a.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Patch the Planet: global response coordination as agents uncover vulnerabilities",
+    "title_cn": "让开源漏洞从发现走到修复",
+    "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
+    "date": "2026-10-21",
+    "source": "Hacker News 264 分 183 评论（OpenAI / Trail of Bits）",
+    "what": "OpenAI 与 Trail of Bits 发起的漏洞修复协调计划：把安全研究者、开源维护者与应急响应方连起来，在 agent 批量发现漏洞后，帮助项目从“收到报告”走到“发布补丁”。",
+    "why": "HN 264 分 183 评论；AI 找漏洞的速度已经超过人工修复速度，PHP 核心 RCE 从发现到补丁只用了数天。瓶颈从“发现”转移到“分诊、修复、协调披露”。",
+    "insight": "把“发现—分诊—修复—验证—披露”做成流水线：每个漏洞定负责人与时限，补丁必须有可复现验证；对上游依赖建立联系人清单，别等出事才找维护者。"
+  },
+  {
+    "rank": 5,
+    "title": "Every AI model has the same \"controversial\" take on humans",
+    "title_cn": "各大模型对人类的反直觉看法",
+    "url": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
+    "date": "2026-10-22",
+    "source": "Hacker News 234 分 299 评论（ModelCompare）",
+    "what": "ModelCompare 的一次小实验：对 12 个文本模型提同一个问题“你对人类最反直觉的看法是什么”，每个模型取 3 个回答；35 个有效回答中 29 个认为人类把归属感置于真相之上，7 个模型三次都这么说。",
+    "why": "HN 234 分 299 评论；样本很小（无系统提示、无重试、人工归类、成本 1.54 美元），却引发大量讨论，说明大家在意模型是否在迎合提问者而非表达稳定观点。",
+    "insight": "别把单次生成当模型立场：同一提示多跑几次看方差，换措辞看是否漂移；做用户研究时区分“模型真实倾向”和“被提示词引导的表态”，评测记录写清采样方式。",
+    "image": "images/2026-10-23/every-ai-model-has-the-same-controversial-take-o.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "OpenAI CLI",
+    "title_cn": "OpenAI 官方命令行工具",
+    "url": "https://github.com/openai/openai-cli",
+    "date": "2026-10-22",
+    "source": "Hacker News 230 分 109 评论（OpenAI）",
+    "what": "OpenAI 官方命令行工具：直接调用 REST API，支持图片生成落盘、文件上传下载、批量任务提交与结果查看，适合写进 shell 脚本。",
+    "why": "HN 230 分 109 评论；官方明确把它和 Codex CLI 分工——CLI 调具体接口、Codex 做项目改代码。API 操作脚本化后，日常任务可以脱离自写 SDK 胶水层。",
+    "insight": "把一次性 API 调用改走 CLI 能少维护一层脚本；密钥用环境变量或密钥环，输出默认 JSON 便于管道；批量任务保存 batch id 与结果文件，失败重试按 id 幂等处理。",
+    "image": "images/2026-10-23/openai-cli.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Build more responsive apps with the Decisions API",
+    "title_cn": "用决策接口构建更快响应的应用",
+    "url": "https://openai.com/index/decisions-api",
+    "date": "2026-10-22",
+    "source": "OpenAI 官方博客 2026-10-22",
+    "what": "OpenAI 的决策专用接口：输入文本或图片，返回结构化判断，计费只按输入 token——每百万 $0.10、缓存输入 $0.01，不单独收输出费。",
+    "why": "它把“判断”从聊天补全里拆成独立接口，官方称比标准 GPT-6 Luna 调用快最多 10 倍；当 agent 需要大量二分类/路由判断时，成本结构会明显不同。",
+    "insight": "把高频判断（是否相关、是否越权、走哪条路由）从生成模型里拆出来，用专用接口做；为判断结果定义稳定枚举与置信度，低置信度回退人工或更强模型；缓存公共前缀能进一步降本。"
+  }
+]
