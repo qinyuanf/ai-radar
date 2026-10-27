@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "rddmwmddr/android-ad-cleaner",
+    "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+    "stars": 1957,
+    "trend": "首日快照：2026-10-24 建仓，3 天 1957★，2026-10-25 有提交",
+    "what": "关掉国产安卓机系统广告的工具（1957★，Python）：处理系统内置广告、热搜、资讯推荐与营销推送，不需要 root、可还原，并支持交给 AI 智能体一键执行；主题标注 adb、debloat 及 ColorOS/HyperOS/OriginOS 等定制系统。",
+    "why": "2026-10-24 建仓、3 天 1957★，是本期增长榜星数最高的一条；“adb 批量停用 + 可回滚清单”正好落在“让 agent 操作设备”的边界上，热度来自真实痛点而不是演示。",
+    "insight": "设备侧自动化必须默认可回滚：每条变更记录原值、生成还原脚本、执行前存快照；权限用 adb 受限指令集而不是 root；给 agent 的动作设白名单，禁止它自行组合新命令。",
+    "image": "images/2026-10-27/rddmwmddr-android-ad-cleaner.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "kanaworksai-hue/audio-studio-mcp",
+    "url": "https://github.com/kanaworksai-hue/audio-studio-mcp",
+    "stars": 502,
+    "trend": "首日快照：2026-10-18 建仓，6 天 502★，2026-10-24 有提交",
+    "what": "本地音频生成的 MCP 服务（502★，Python）：Stable Audio 3 在 Apple Silicon（MLX）与 Windows NVIDIA（PyTorch）上本地推理，生成背景音乐与音效，不需要云服务和 API key，Claude Code 等 MCP 客户端可直接调用。",
+    "why": "2026-10-18 建仓、6 天 502★；MCP 覆盖的能力正从“读文件、查数据库”扩展到音视频生成这类重模型场景，说明协议层已经能承载长耗时任务。",
+    "insight": "重能力走 MCP 时把加载时间、显存占用与并发上限写进工具描述，否则 agent 会以为调用是瞬时的；返回体带产物路径与耗时；本地模型版本锁定，不要让 MCP 自动升级依赖。",
+    "image": "images/2026-10-27/kanaworksai-hue-audio-studio-mcp.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "hevnsnt/CVEngine",
+    "url": "https://github.com/hevnsnt/CVEngine",
+    "stars": 385,
+    "trend": "首日快照：2026-10-24 建仓，3 天 385★，2026-10-27 有提交",
+    "what": "AI 优先的外部攻击面评估工具（385★，Python）：持续发现资产、对漏洞做证据化验证，并通过 MCP 接入开发 agent；主题标注 nmap、nuclei 与 bbot。",
+    "why": "2026-10-24 建仓、3 天 385★、2026-10-27 仍在提交；它把“扫描”和“证据化验证”拆成两步，直接回应了 AI 批量扫漏洞之后误报暴涨的问题。",
+    "insight": "扫描结果必须过可利用性验证才进工单，否则误报会淹没修复队列；给 agent 的扫描工具限定目标范围与速率；每次验证留请求/响应证据链，便于人工复核而不是重跑一遍。",
+    "image": "images/2026-10-27/hevnsnt-cvengine.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "huaxialucaicaizi/ai-startup-skills",
+    "url": "https://github.com/huaxialucaicaizi/ai-startup-skills",
+    "stars": 338,
+    "trend": "首日快照：2026-10-22 建仓，4 天 338★，2026-10-26 有提交",
+    "what": "中文 Agent 技能合集（338★，Python）：把创业公司做 AI 产品拆成七步——需求验证、商业计划、政策、路演、获客、定价、注册；主题标注 agent-skills 并适配 Claude Code、Codex、Cursor。",
+    "why": "2026-10-22 建仓、4 天 338★；技能包正在从“个人自用的小工具”变成“成套的方法论交付”，说明 Skill 已经开始承载业务 SOP，而不只是零散脚本。",
+    "insight": "业务 SOP 打包成技能时，每一步都要留“输入前提、产出物、验收标准”三段；跨步骤结论显式传递，别让下游步骤重新推断；把人为决策点标出来，该由人拍板的地方不要让 agent 代定。",
+    "image": "images/2026-10-27/huaxialucaicaizi-ai-startup-skills.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "helloianneo/ian-xhs-carousel",
+    "url": "https://github.com/helloianneo/ian-xhs-carousel",
+    "stars": 270,
+    "trend": "首日快照：2026-10-21 建仓，270★，2026-10-21 有提交",
+    "what": "排版类 Claude Code 技能（270★，HTML）：把文章、案例或笔记排成 3:4 的小红书图文（1080×1440），提供 20 个母版与浅色/深色两套；主题标注 claude-skill、design、xiaohongshu。",
+    "why": "2026-10-21 建仓、270★。本期增长榜还扎堆出现多个“基于官方 MCP 的第三方技能”（麦当劳 MCP 相关项目一周内出现 8 个以上），二次开发已经是最常见的接入方式。",
+    "insight": "视觉类技能要把“母版参数”和“内容”分离：固定尺寸与安全边距，文字长度设上限并自动缩排；产出交给人之前先跑一遍溢出检查，别让中文长文把版式撑坏。",
+    "image": "images/2026-10-27/helloianneo-ian-xhs-carousel.jpg"
+  }
+]

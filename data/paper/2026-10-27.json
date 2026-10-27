@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "FlashScript: Compiling Recurring Agent Workflows into Reusable Neuro-Symbolic Programs",
+    "title_cn": "把重复 agent 流程编译成可复用程序",
+    "url": "https://arxiv.org/abs/2610.33876v1",
+    "date": "2026-10-24",
+    "source": "arXiv 2610.33876，cs.HC/cs.AI/cs.SE，Sadra Sabouri 等 9 人",
+    "what": "把一次成功的 agent 流程编译成“神经符号程序”：动作与数据变换变成代码，实例值变成参数，只有需要判断的地方保留 LLM 调用。在 120 个 WorkBench 分析任务上，编译产物每次运行都发出相同的工具调用，输入 token 约为技能式 agent 的 1/70、耗时约 1/3；任务变成复合版本后，技能式 agent 准确率掉到 23%，编译产物仍保持一致，并泛化到 108 个同类新实例。",
+    "why": "我们大量日常任务是“同一流程换数据”，每轮重新推理既贵又不稳定；这篇给出了可量化的替代路径，并说明非确定性可以被“局部化”而不是消灭。",
+    "insight": "把稳定流程沉淀成“代码骨架 + 少量判断点”，判断点越少越好且各自可单测；验收标准是“同输入多次运行的工具调用与结果一致”，不是单次跑通。"
+  },
+  {
+    "rank": 2,
+    "title": "ReGE: Stronger Agents through Experience Synthesis",
+    "title_cn": "用经验合成让 agent 变强",
+    "url": "https://arxiv.org/abs/2610.33861v1",
+    "date": "2026-10-24",
+    "source": "arXiv 2610.33861，cs.AI，Jiarong Liang 等 6 人",
+    "what": "ReGE 用一次“教练调用”，把多轮尝试的执行记录与产物合成为一份自包含指引，学生 agent 从任务初始状态出发、结合当前观察调整执行。四个基准上 GPT 平均 +9.9 点、Claude +8.8 点；在 BrowseComp-Plus 上，构建指引的 token 比 AggAgent 少 98.2%/95.5%，构建加执行的总 token 降 15.7%/35.4%。",
+    "why": "agent 失败后的经验利用通常是把历史全塞回上下文，既贵又稀释重点；这篇证明“合成一份短指引”更省也更准，并给出了可对比的数字。",
+    "insight": "失败重试前先合成一段“已知事实 + 可用操作 + 已踩的坑”，再重跑；指引要短，联合合成优于直接贴历史；并行 agent 的执行记录可以合并成一份共享指引，而不是各自背着自己的上下文。"
+  },
+  {
+    "rank": 3,
+    "title": "How Do Small Coding Agents Use Code Graphs and Embeddings?",
+    "title_cn": "小模型编码 agent 如何使用代码图",
+    "url": "https://arxiv.org/abs/2610.33958v1",
+    "date": "2026-10-25",
+    "source": "arXiv 2610.33958，cs.SE/cs.CL/cs.LG，Saurav Bellam",
+    "what": "在 SWE-bench Verified 上检验“给编码 agent 加代码图与 embedding 检索”这个前提：79k 次 episode、十个模型。结构化工具把 grep-only 的定位准确率翻倍（Qwen3-8B、Gemma 4 E4B），增益在 1.7–4B 区间达 17–21 点，到 32B 只剩 4–5 点；每多一跳，正确定位的赔率乘 0.50–0.67，图工具只在 0 跳（按名查找）和 1 跳（一次展开）有用，agent 只有 12–14% 的 episode 会连续展开。",
+    "why": "工具增强的收益强依赖模型规模与任务跳数，“给了就变好”是错的；这直接影响小模型 agent 要不要配代码图这类工具。",
+    "insight": "按跳数分层评估工具收益：0–1 跳任务有名称检索就够，深跳任务别指望图工具救场；小模型优先加结构化工具（收益最大），大模型把预算转向验收与重试；记录 agent 是否真的展开跳数，别只看最终分数。"
+  },
+  {
+    "rank": 4,
+    "title": "Why Does Structured Output Fail? An Empirical Study of Prompt-Enforced Pydantic Schemas Across Nine LLMs",
+    "title_cn": "结构化输出为何失败",
+    "url": "https://arxiv.org/abs/2610.33949v1",
+    "date": "2026-10-24",
+    "source": "arXiv 2610.33949，cs.SE/cs.CL/cs.LG，Amit Verma",
+    "what": "对 9 个 OpenAI/Anthropic 模型配置做 3997 次生成，细分 Pydantic schema 校验失败的类别：最常见的是 JSON 被 Markdown 代码块包裹——681 次里有 48% 去掉代码块才能通过，其余还藏着字段超长等违规；相似的总有效率可能掩盖完全不同的失败构成。",
+    "why": "生产管线常用“提示词写 schema + 校验 + 重试”，但只看总有效率会误判改进效果，也说不清该修提示词还是该修校验器。",
+    "insight": "校验失败按类别计数（代码块、长度、枚举、缺字段），不要只记一个失败率；重试前先做确定性修复（剥代码块、按上限截断），能省一轮调用；schema 里能由代码强校验的约束，别写进提示词指望模型自觉遵守。"
+  },
+  {
+    "rank": 5,
+    "title": "Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses",
+    "title_cn": "RAG 投毒防御：排序过、判定不过",
+    "url": "https://arxiv.org/abs/2610.33849v1",
+    "date": "2026-10-24",
+    "source": "arXiv 2610.33849，cs.CR/cs.CL/cs.LG，Pushkal Kumar 等 2 人",
+    "what": "指出查询期过滤器在 RAG 投毒基准上的高检出率来自投毒集的构造方式：PoisonedRAG 的发布代码把目标问题拼在每段投毒文本前面。只删掉这个前缀（0.93 的目标仍能被检索到），RAGuard 的 AUROC 从 0.953 掉到 0.758、漏检率从 0.191 升到 0.763；把医疗投毒补齐到正常长度，TrustRAG 的漏检率从 0.000 变成 0.827。作者据此不主张任何新防御。",
+    "why": "“排序能区分”不等于“判定能区分”，大量防御分数来自评测集泄露的构造痕迹；这篇给出了可复现的拆解方法。",
+    "insight": "评测 RAG 防御时必须报告投毒集构造特征与部署阈值下的误报率；用“删掉构造痕迹”的投毒做对抗测试；上线前在真实语料上测误报，别只信基准 AUROC。"
+  },
+  {
+    "rank": 6,
+    "title": "Continual Learning Exam: Benchmarking Long-Horizon RSI and Experiential Learning in LLM Agents",
+    "title_cn": "agent 持续学习长跑考试",
+    "url": "https://arxiv.org/abs/2610.33956v1",
+    "date": "2026-10-25",
+    "source": "arXiv 2610.33956，cs.LG/cs.AI/cs.CL/cs.CV，Haoyu Zhao 等 19 人",
+    "what": "50 余位领域专家共建的持续学习基准：120 个任务 × 五级阶梯共 600 关，覆盖 12 个领域、89 个职业角色，必须逐级通过才能解锁下一关，由评测 agent 按人工评分标准打分。17 组前沿模型配置中，“失败后给诊断反馈并允许一次修订”中位提升 5.3 点；最好的系统只通过 47.7% 的关卡，仅在 23.3% 的任务上通关五级。",
+    "why": "我们关心 agent 能否“越做越好”，而现有多数评测只看单任务；这个基准把“积累经验”变成可测的分级任务，并给出当前天花板的数字。",
+    "insight": "内部评测加入“同一角色多轮任务”的阶梯，考核跨轮复用而不是单轮正确率；失败后给结构化诊断再重试，是最便宜的提升手段；把“是否重复犯同一个错”单列为指标。"
+  },
+  {
+    "rank": 7,
+    "title": "When Does GEPA Merge Help? A Mechanism-Level Diagnostic",
+    "title_cn": "GEPA 合并何时真的有用",
+    "url": "https://arxiv.org/abs/2610.34027v1",
+    "date": "2026-10-25",
+    "source": "arXiv 2610.34027，cs.CL，Chong Zhao 等 4 人",
+    "what": "追查反思式提示优化器 GEPA 的合并在不同模型上表现相反的原因：扫描九种合并时机与算子配置后，配置得当两个模型都能获益，说明问题在配置敏感而不是算子本身有缺陷；提示层面的静态特征无法预测该不该合并；用行为探针在高风险任务上弃权可以避免大幅回退，但没有稳定超过“不合并”。",
+    "why": "自动合并看起来是免费涨点，实际上对配置与模型都敏感；这决定了提示优化器能不能直接以默认配置进生产。",
+    "insight": "把“何时合并、何时放弃”当配置项扫描，不要用默认值；用行为探针（高风险任务弃权）兜底；验收对比“合并 vs 不合并”，没有稳定收益就不合并。"
+  },
+  {
+    "rank": 8,
+    "title": "OS-Wizard: Scaling Computer-Using Agents to Specialized Software via Knowledge-Guided Exploration",
+    "title_cn": "用教程引导采集电脑操作轨迹",
+    "url": "https://arxiv.org/abs/2610.33907v1",
+    "date": "2026-10-24",
+    "source": "arXiv 2610.33907，cs.AI，Zhoumianze Liu 等 11 人",
+    "what": "OS-Wizard 自动采集电脑操作轨迹：教程引导探索加 GUI 与代码混合的动作空间，树搜索中对关键状态做检查点并回访，采得 10.9K 条轨迹（54.9K 状态-动作样本）；微调开源基座后在专用桌面软件基准上提升 58.2 个百分点到 64.1%，超过报告的人类 59.8%，消融显示代码动作是增益关键。",
+    "why": "专用桌面软件的操作数据极缺，而本周 computer use 正被下放到通用模型，供给端（轨迹数据怎么来）成为新的瓶颈。",
+    "insight": "采集桌面操作数据时，保留“可执行的软件原生命令”而不只是像素点击，消融显示这一项最关键；对关键中间状态做检查点以便回访探索；微调后要在通用桌面任务上回归，确认没有过拟合到单一软件。"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "stars": 103438,
+    "trend": "+8,306 stars/25天（对比 2026-10-02）",
+    "what": "面向 agent 的跨会话记忆层（103.4k★，TypeScript）：把会话中 agent 做过的事记录下来，用 AI 压缩成可检索摘要，再把相关片段注入后续会话；主题标注 ai-memory、ChromaDB 与 Claude Agent SDK 一类客户端。",
+    "why": "当日接口返回 103438★、2026-10-26 仍有提交；25 天 +8,306★，是本期热门榜里同周期涨得最多的一个。上下文持久化过去是各家自己写日志，现在开始收敛成可直接接入的组件。",
+    "insight": "记忆组件要能回答“这条记忆来自哪次会话、什么时候过期”；先按会话切片再摘要，注入预算写死（例如每次 2k token）；验收用“换个会话、同一任务能否一次通过”，而不是只看召回率。",
+    "image": "images/2026-10-27/thedotmack-claude-mem.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "stars": 92919,
+    "trend": "+1,331 stars/25天（对比 2026-10-02）",
+    "what": "开源检索增强引擎（92.9k★，Go）：把 RAG 与 agent 能力合并，定位成给 LLM 的上下文层；主题同时标注 agent harness、agentic retrieval 与 context engine。",
+    "why": "当日接口返回 92919★、2026-10-26 有提交，25 天 +1,331★；同一周期内记忆类仓库 claude-mem 涨了 8,306★，说明注意力正从“检索堆料”转向“检索怎么被 agent 调用”。",
+    "insight": "选引擎先看解析器覆盖（PDF 表格、扫描件、代码块）与增量更新成本，而不是榜单名次；检索质量按“文档类型 × 查询类型”分桶评估；封装一层可替换的检索接口，别让业务代码绑死某个引擎。",
+    "image": "images/2026-10-27/infiniflow-ragflow.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "koala73/worldmonitor",
+    "url": "https://github.com/koala73/worldmonitor",
+    "stars": 89604,
+    "trend": "+1,351 stars/15天（对比 2026-10-12）",
+    "what": "实时情报仪表盘（89.6k★，TypeScript，2026-01 建仓）：把 AI 新闻聚合、地缘政治监测与基础设施跟踪放进一个态势感知界面；主题标注 MCP 与 MCP server，数据可被 agent 调用。",
+    "why": "当日接口返回 89604★、2026-10-26 有提交，15 天 +1,351★。它代表一类新形态：不再是“给 agent 用的工具”，而是“自己就是 agent 的数据源”，通过 MCP 对外暴露。",
+    "insight": "自建情报面板先定数据源可信度分级与过期标记，否则聚合越多噪声越大；把数据以 MCP 工具暴露时，返回体里带采集时间与来源链接，让 agent 自己判断时效而不是盲信。",
+    "image": "images/2026-10-27/koala73-worldmonitor.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "stars": 86331,
+    "trend": "+1,407 stars/19天（对比 2026-10-08）",
+    "what": "面向 LLM 的开源爬虫（86.3k★，Python）：把任意网页转成干净的 Markdown 供 agent 消费，可自托管，也提供带密钥的云服务；主题标注 crawler、data-extraction 与 MCP。",
+    "why": "当日接口返回 86331★、2026-10-26 有提交，19 天 +1,407★。给 agent 供料的第一步——抓取与清洗——仍是需求最稳、也最容易被低估的一层。",
+    "insight": "抓取失败要分清“页面结构变了”和“被反爬拦了”并分别告警；Markdown 清洗规则按站点配置，不要用一套全局规则；需要登录或重 JS 渲染的站点留人工兜底，别让 agent 静默拿到空内容。",
+    "image": "images/2026-10-27/unclecode-crawl4ai.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "headroomlabs-ai/headroom",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "stars": 77937,
+    "trend": "+3,691 stars/25天（对比 2026-10-02）",
+    "what": "给 agent 省 token 的压缩层（77.9k★，Python，2026-01 建仓）：在内容进入模型前压缩工具输出、日志、文件与检索片段；仓库描述称编码 agent 省约 20% token、JSON 类省 60–95% 且答案不变，提供库、代理与 MCP server 三种接入形态。",
+    "why": "当日接口返回 77937★、2026-10-26 有提交，25 天 +3,691★。成本压力下，“上下文压缩”正从各团队自研脚本变成独立组件——和本期热门榜第一名的记忆层正好是同一枚硬币的两面。",
+    "insight": "只压信息密度低的部分（重复日志、缩进、冗余 JSON），代码、路径、ID 原样保留；上线前用同一批任务对比压缩前后答案一致性，并核算省下的 token 是否真能覆盖多出的一跳调用成本。",
+    "image": "images/2026-10-27/headroomlabs-ai-headroom.jpg"
+  }
+]

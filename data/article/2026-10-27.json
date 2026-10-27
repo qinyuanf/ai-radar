@@ -1,0 +1,80 @@
+[
+  {
+    "rank": 1,
+    "title": "Anthropic S-1",
+    "title_cn": "Anthropic 递交 S-1 招股书",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "date": "2026-10-26",
+    "source": "Hacker News 1468 分 1445 评论（SEC EDGAR）",
+    "what": "Anthropic 向美国 SEC 递交的 S-1 文件原文（EDGAR 链接）：这是公司上市前必须公开的经营与财务披露文件，能按统一口径看到它的业务结构。",
+    "why": "HN 1468 分 1445 评论，是本周期热度最高的一条，讨论集中在算力成本与毛利空间；对做 agent 的团队来说，头部厂商的成本结构第一次有了可引用的公开口径。",
+    "insight": "定价谈判前把“每次调用成本/人效”换成可与公开披露对齐的口径；关注披露里的毛利率与长期算力承诺，判断降价空间；把供应商财务风险写进依赖清单，单点依赖要留替代方案。"
+  },
+  {
+    "rank": 2,
+    "title": "GPT-6.1 Terra",
+    "title_cn": "GPT-6.1 Terra 主打电脑操作",
+    "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+    "date": "2026-10-26",
+    "source": "Hacker News 494 分 314 评论（OpenAI 官方发布）",
+    "what": "OpenAI 发布 GPT-6.1 Terra，官方一句话定位是“把快速、可用的电脑操作（computer use）带给所有人”；同日还有多条基于 GPT-6.1 Sol、GPT-6 Astra 的企业集成公告。",
+    "why": "HN 494 分 314 评论；computer use 从专项模型下放到通用模型，意味着“点界面”类任务的调用成本与接入门槛继续下降。",
+    "insight": "电脑操作类任务先做可回滚设计：关键点击前截图、操作后校验界面状态；把“看到什么→点什么”存成可复盘轨迹；高价值操作保留人工确认点，别把任务成功率当唯一指标。"
+  },
+  {
+    "rank": 3,
+    "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+    "title_cn": "大模型价格为何数月降八成",
+    "url": "https://minimaxir.com/2026/10/cheap-llms/",
+    "date": "2026-10-25",
+    "source": "Hacker News 415 分 424 评论（minimaxir.com）",
+    "what": "一篇数据分析文章：统计 OpenAI 与 Anthropic 在数月内把模型价格下调最高约 80%，并逐一追问降价来源——规模效应、竞争压力，还是产品分层后的重新定位。",
+    "why": "HN 415 分 424 评论；和本周 GPT-6.1 Terra 发布、以及“开源权重已足够好用”的讨论同周出现，说明价格竞争还在加速而不是见顶。",
+    "insight": "成本模型按季度重算，不要按年；降价带来的余量优先投入更长上下文与更多校验重试，而不是直接砍预算；对“单任务成本”设阈值告警，避免用量增长吃掉降价红利。"
+  },
+  {
+    "rank": 4,
+    "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+    "title_cn": "十年前 CNN 诊断皮肤癌胜过前沿模型",
+    "url": "https://lynchlab.net/llm-skin-cancer",
+    "date": "2026-10-25",
+    "source": "Hacker News 654 分 269 评论（lynchlab.net）",
+    "what": "一项对比研究：一个十年前架构的 CNN，在皮肤癌诊断任务上优于多个当前前沿大模型；文章给出所用数据与评测方式。",
+    "why": "HN 654 分 269 评论，是本周期技术类讨论里第二热的一条；在小样本、强标注的专用任务上，专用小模型仍可能压过通用大模型。",
+    "insight": "别默认“上大模型”就是解法：先做专用小模型的基线，如果十倍成本换不来明显提升，就退回小模型；评测集要贴近真实分布，不能只用模型训练时见过的公开集。"
+  },
+  {
+    "rank": 5,
+    "title": "The State of Context Engineering",
+    "title_cn": "上下文工程现状",
+    "url": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html",
+    "date": "2026-10-25",
+    "source": "Hacker News 254 分 64 评论（dbreunig.com）",
+    "what": "一篇综述式文章，梳理上下文工程当前的实践：如何组装、压缩与挑选进入模型窗口的内容，以及哪些做法在真实系统里活了下来。",
+    "why": "HN 254 分 64 评论；它和本期热搜的记忆层 claude-mem、压缩层 headroom 指向同一个问题——上下文预算到底该怎么花。",
+    "insight": "把上下文当预算管理：系统提示、工具定义、检索片段、对话历史各设上限并监控占比；优先砍重复内容而不是砍规则；每次调用前记录“注入了什么、多长”，出问题才能归因。",
+    "image": "images/2026-10-27/the-state-of-context-engineering.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Announcing three new discoveries in mathematics, computer science, and physics",
+    "title_cn": "OpenAI 公布三项数理发现",
+    "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+    "date": "2026-10-26",
+    "source": "Hacker News 420 分 157 评论（OpenAI 官方发布）",
+    "what": "OpenAI 公布模型在数学、计算机科学与物理各取得的一项研究结果（Kakeya 猜想、指数时间假设、量子色动力学），并说明外部研究者如何复现与在此基础上继续做。",
+    "why": "HN 420 分 157 评论；同一周“指数时间假设被证伪”的预印本也在热榜讨论，模型参与数学发现开始出现可复核的产出，而不只是通稿。",
+    "insight": "让模型参与研究时，验收标准是“可机器检验的证明、可复现的实验”，不是文风；给模型配检查器（形式化验证、数值复算）；把“提出—检验—反驳”循环自动化，人只审最终结论。"
+  },
+  {
+    "rank": 7,
+    "title": "IBM CEO says open weight models are now good and cheap on-prem",
+    "title_cn": "IBM：开源权重已足够好用便宜",
+    "url": "https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640",
+    "date": "2026-10-26",
+    "source": "Hacker News 415 分 325 评论（The Register）",
+    "what": "The Register 报道 IBM CEO 的判断：开源权重模型已经足够好、也足够便宜，可以在本地或专有环境部署，企业不必再把闭源 API 当唯一选择。",
+    "why": "HN 415 分 325 评论；和同周“前沿模型降价 80%”的讨论互相加强——企业自建与租用的分界线正在移动。",
+    "insight": "按“敏感数据占比 × 调用量”划分自建与租用：涉密、高频走本地开源权重，其余走 API；自建要把运维、显卡折旧、模型升级的人力算进总成本；常备一套评测集，随时比对本地与云端差距。"
+  }
+]
