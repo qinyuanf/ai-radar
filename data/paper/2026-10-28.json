@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces",
+    "title_cn": "记忆按任务角色组织，不按相似度取",
+    "url": "https://arxiv.org/abs/2610.36918v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36918，cs.CL，Mingyu Zhang 等 6 人",
+    "what": "把 agent 记忆重构成“任务导向、角色自适应的工作区”：不再只按与当前问题的相似度取 top-k 当上下文，而是给记忆分配任务角色（直接支撑答案、或连接语义不相似但必要的信息）并联合选取互补记忆，历史先切成局部线程。在 LoCoMo、MemGallery 上四个开源/闭源骨干的 macro-F1 比代表性记忆系统高 2.23–3.14 点；LoCoMo 上 LLM-Judge 分数比 SimpleMem 高 4.07/4.31 点，同时上下文 token 少 12.8%/5.1%。",
+    "why": "我们的数字员工记忆检索也是“相似度 top-k”，这条给出可替换方案，而且是更准且更省 token，不是拿算力换效果。",
+    "insight": "给记忆条目补“在这类任务里扮演什么角色”的标签，检索时先按任务类型筛角色、再在角色内做相似度；验收看同一问题是否引用到“相似度低但必要”的那条记忆。"
+  },
+  {
+    "rank": 2,
+    "title": "Evolving Agent Teams",
+    "title_cn": "让 agent 团队自我重构跳出局部最优",
+    "url": "https://arxiv.org/abs/2610.36848v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36848，cs.AI，Shiyi Cao 等 5 人",
+    "what": "编码 agent 在真实内核优化任务上会收敛到局部最优，作者提出 Evolving Agent Teams：中央 supervisor 诊断当前局部最优并重组团队结构，配持久文件系统（学习文档、演化历史、各团队产物）为重组提供经验。同等 token 预算下优于强基线；放宽预算后从零写出 CUDA kernel，在 FlashInfer-Bench 的 47 个生产负载中 36 个胜出、平均 1.2 倍加速，另在 AMD MI350X（3.01 倍）、NVIDIA B200（3.44 倍）、Apple silicon MoE 服务与机器人操作任务上有增益。",
+    "why": "它把“多 agent 什么时候该换结构”变成显式控制点，而不是让 agent 原地重试；结果在生产级内核上打平甚至超过人工实现。",
+    "insight": "多 agent 编排里加一个“诊断—重组”环节，并把每次重组的理由与结果落盘；判断标准是“新结构是否改变了搜索空间”，否则重组只是换措辞。"
+  },
+  {
+    "rank": 3,
+    "title": "When the Critic Falls Behind: Co-Evolving Rubrics and Harnesses for Continual Agent Self-Improvement",
+    "title_cn": "评分标准要和 harness 一起演化",
+    "url": "https://arxiv.org/abs/2610.36826v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36826，cs.AI，Hao Chen 等 10 人",
+    "what": "提出 RuHarness：让 rubric（行为评分标准）与 agent harness 共同演化——从执行轨迹里持续发现并重估行为准则，优先处理尚未解决的弱项，用它指导定向的 harness 更新，同时保持任务目标不变。在多类 agent 任务和骨干模型上优于 harness 演化基线，在没见过的 held-out 任务上优势更明显。",
+    "why": "现有 harness 自演化用的是静态监督信号，行为弱项会漂移；这条说明评价标准本身也要更新，而泛化收益正来自这里。",
+    "insight": "给数字员工做持续改进时，把“评分表版本”和“harness 版本”一起管理；每轮先重估哪些弱项已解决，避免反复优化已经达标的行为。"
+  },
+  {
+    "rank": 4,
+    "title": "Beyond QASecClaw: Agent Scaling, Verifier Feedback, and Evidence Reliability in Software Assurance",
+    "title_cn": "确定性证据在手时，加 agent 反而更差",
+    "url": "https://arxiv.org/abs/2610.36947v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36947，cs.SE/cs.AI，S M Abdulla Al Mamun 等 3 人",
+    "what": "五项实验（Java 告警控制、OWASP Benchmark、Defects4J、SV-COMP、构造的误导性证据包，共 13,638 次模型请求，主模型 Qwen2.5-Coder-7B）：上下文从 1 增到 50，token 用量涨 49 倍但“不安全放行”没减少；给 SV-COMP 加原始 verifier 反馈后正确判定从 12.7 升到 22.0，错误判定同时从 1 升到 7；确定性基线 JBMC+JVM 给出 26 个正确、6 个未决；构造性范围检查把两类证据包全部判对。",
+    "why": "这是少见的“负结果+强对照”：在已有确定性工具证据的场景堆 agent 和反馈，并不能提升可靠性，还会引入新的错误类型。",
+    "insight": "安全、静态检查类任务先跑确定性工具拿结论，LLM 只做解释与归类；若引入模型反馈，必须同时统计“新增错误数”，只看正确率上升会掩盖回归。"
+  },
+  {
+    "rank": 5,
+    "title": "Do We Need an LLM to Know Why Sources Conflict? Decision Models for Knowledge-Conflict Typing in RAG",
+    "title_cn": "判断来源冲突类型不必用大模型",
+    "url": "https://arxiv.org/abs/2610.36915v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36915，cs.CL/cs.IR，Parv Khatri 等 4 人",
+    "what": "在 CONFLICTS 基准上，用 11 个“决策模型”（单次前向返回固定选项概率，不生成文本）做知识冲突类型分类：准确率 50–67%，其中 10 个达到或超过原论文的 Gemini 2.5 Flash（61.3%），成本低 4–39 倍、延迟低 2.6–6 倍；把最不确定的四分之一转给 Gemini 3.8 Flash（70.0%）做级联，8 个在统计上与它持平，成本只占其 25–37%。另外，把分类体系拆成一组是否题会让所有模型变差。",
+    "why": "多源检索答案不一致是 RAG 和数字员工每天都会遇到的情况，而“为什么冲突”决定该怎么答；这条给了低成本、可落地的分层方案。",
+    "insight": "RAG 里加“冲突类型”这一层，用专门的小决策模型而不是通用大模型；把置信度低的样本上抛做级联，比全量用大模型便宜一个量级。"
+  },
+  {
+    "rank": 6,
+    "title": "RubricAtlas: Mining Type-Level Rubrics from Expert Reports to Evaluate Deep Research Agents",
+    "title_cn": "用专家报告抽 rubric 来评研究报告",
+    "url": "https://arxiv.org/abs/2610.36878v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36878，cs.AI/cs.CL，Delin Wang 等 8 人",
+    "what": "RubricAtlas 从 3,079 份中文金融研报里抽取“研究类型级”的分析要求，覆盖 99 类研究，把细则检查点对应到报告段落，并把完整性判断与论证有效性分开评。实验显示单份参考报告只覆盖本类型约一半的分析问题，换参考报告会改变评分和 agent 排名；10 个 agent 上两条 judge 流水线的检查点一致率 κ=0.71、排名一致性 Kendall τ=0.87，定向删减会降分而填充不会涨分。",
+    "why": "深研类 agent 目前多用 query 级清单评测，难以比较“分析是否全面”；它给出可追溯、可复用的类型级 rubric 构造方法。",
+    "insight": "评测交付物时把“是否覆盖该类型必答问题”和“论证是否成立”拆成两组指标；rubric 从多份专家成品合并抽取，别只照一份样板写。"
+  },
+  {
+    "rank": 7,
+    "title": "GUI-JEPA: Candidate-Conditioned JEPA Latents as a Fast Action Policy for Mobile GUI Agents",
+    "title_cn": "免解码的 GUI agent 动作策略",
+    "url": "https://arxiv.org/abs/2610.36877v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36877，cs.AI/cs.CL/cs.CV，Bingchao Wang 等 8 人",
+    "what": "GUI-JEPA 是首个无解码器的 GUI agent 策略：在预训练 JEPA 编码器的潜空间里，用动作与区域条件化的潜预测器把屏幕潜表示映射成每个候选动作一个潜向量，轻量头一次批量打分选动作，全程不生成 token。同一 GPU 上比同输入的 Qwen2.5-VL-7B agent 快 2.8–4.0 倍，参数量只有 6%，达到其分布内准确率的 86–92%；而且随机初始化的预测器与预训练过的效果相当。",
+    "why": "移动端 GUI agent 的成本和延迟主要花在 token 级解码上；这条证明“选动作”可以完全绕开解码，且不需要额外的世界模型预训练。",
+    "insight": "GUI 自动化里把“决策”和“解释”拆开：决策用小模型在潜空间打分，解释再按需调大模型；这是把端上自动化单步成本压下来的可行路径。"
+  },
+  {
+    "rank": 8,
+    "title": "SetGRPO: Calibrating Grader-Induced Policy Optimization",
+    "title_cn": "校准评分器噪声对 GRPO 更新的影响",
+    "url": "https://arxiv.org/abs/2610.36807v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.36807，cs.LG/cs.AI，Jiale Huang 等 6 人",
+    "what": "rubric 式 RL 用细粒度评分器反馈训练模型，但评分器随机性会改变 GRPO 的组内归一化系数、进而改变更新方向。SetGRPO 为此构造训练系数的联合不确定集、在策略局部更新几何下求最大安全恢复比例，并用风险门控选阈值控制方向反转风险；在覆盖 3 个领域的 10 个开放式基准上，Qwen3.5 与 Llama3.2 两个家族都取得最高 macro 平均。",
+    "why": "用 rubric 或 LLM-as-judge 当奖励已是主流，但多数工作只报分数差，不处理评分器噪声对策略更新的偏置；这条把它形式化并给了有限样本保证。",
+    "insight": "用 LLM 当评分器训练或筛选输出时，先估计评分器随机性（同一样本多次评分），再做保守更新或多次采样投票；否则“效果提升”可能只是评分器噪声被策略利用。"
+  }
+]

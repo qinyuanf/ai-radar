@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Cattmonkey/ChaosIntelligence",
+    "url": "https://github.com/Cattmonkey/ChaosIntelligence",
+    "stars": 202,
+    "trend": "首日快照：2026-10-23 建仓，5 天 202★，2026-10-24 有提交",
+    "what": "把 agent 当函数、把想法写成程序的“agent 原生函数式语言”：带 CLI、Web IDE、目标驱动的 bot 和实时 UI，源码可用但禁止用于训练。",
+    "why": "建仓 5 天 202★；同类“给 agent 写代码”的项目不少，但把函数式语义和 Web IDE 一起给的少见，反映大家开始嫌弃 prompt 不可组合、不可单测。",
+    "insight": "若要把 agent 流程做成可复用资产，先确定可组合单元是“有输入输出契约的函数”而不是 prompt 片段；这决定后续能不能单测、版本化和回滚。",
+    "image": "images/2026-10-28/cattmonkey-chaosintelligence.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "JunWan666/astrbot-for-android",
+    "url": "https://github.com/JunWan666/astrbot-for-android",
+    "stars": 173,
+    "trend": "首日快照：2026-10-26 建仓，2 天 173★，2026-10-27 有提交",
+    "what": "在 Android 手机上本地部署 AstrBot 与 NapCat 的 Kotlin 应用，内置 PRoot Ubuntu 环境、原生管理界面和 WebUI，无需 Root。",
+    "why": "建仓 2 天 173★，把“机器人跑在自己手机上”做成一键安装；个人化部署的需求是真的存在，但要受手机算力和合规约束。",
+    "insight": "手机当 agent 载体时把重活放服务端、端上只做入口和通知；本地部署的真正价值是“数据不出设备”，别指望在手机上跑模型。",
+    "image": "images/2026-10-28/junwan666-astrbot-for-android.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "heterodoxin/AbliteratedOutTheBox",
+    "url": "https://github.com/heterodoxin/AbliteratedOutTheBox",
+    "stars": 155,
+    "trend": "首日快照：2026-10-21 建仓，7 天 155★，2026-10-24 有提交",
+    "what": "llama.cpp 的分支，在推理时就地做 abliteration（消解模型的拒答方向），不改权重文件就能改模型对敏感请求的响应。",
+    "why": "建仓 7 天 155★，把“去审查”从权重手术变成推理开关；这类工具会同时被研究和滥用，企业侧需要提前知道它的存在。",
+    "insight": "工程含义是：开源模型的安全对齐可以在推理层被绕过。自托管模型的团队把护栏放在 harness、工具权限和出网控制上，不要依赖模型自带拒答。",
+    "image": "images/2026-10-28/heterodoxin-abliteratedoutthebox.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "liyupi/dafeiyu-cleaner",
+    "url": "https://github.com/liyupi/dafeiyu-cleaner",
+    "stars": 113,
+    "trend": "首日快照：2026-10-23 建仓，5 天 113★，2026-10-25 有提交",
+    "what": "浏览器插件：识别并清理 B 站评论区里由 DeepSeek 驱动的机器人账号（社区称“大肥鱼”），用离线规则初筛、再调 DeepSeek API 精判，支持空间主页鉴定。",
+    "why": "建仓 5 天 113★，是“用 AI 检测 AI 生成内容”的社区自发工具；中文社区对 AI 水军的反感已经落成具体产品，而不是停留在讨论。",
+    "insight": "UGC 侧的检测要“规则先行、模型复核”：纯模型判断成本高且易误伤，纯规则又跟不上变体；这个两层结构可以直接借鉴到评论、评价类风控。",
+    "image": "images/2026-10-28/liyupi-dafeiyu-cleaner.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "lwh0630/TokenBar",
+    "url": "https://github.com/lwh0630/TokenBar",
+    "stars": 99,
+    "trend": "首日快照：2026-10-24 建仓，4 天 99★，2026-10-26 有提交",
+    "what": "跨平台 AI 配额监控工具（Flutter）：覆盖 Codex、Claude、Cursor 等 48 个服务，Windows、macOS、Linux、Android、iOS 都能跑。",
+    "why": "建仓 4 天 99★，说明多模型并用已是常态，开发者开始需要“额度在哪、还剩多少”的统一视图；这是成本治理最小的工具形态。",
+    "insight": "多模型接入的项目先把配额和成本做成可观测指标（按人、按任务、按模型三档），否则排障时无法区分“模型慢”还是“额度用完被降级”。",
+    "image": "images/2026-10-28/lwh0630-tokenbar.jpg"
+  }
+]

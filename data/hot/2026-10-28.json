@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "stars": 397548,
+    "trend": "+238,419 stars/15天（对比 2026-10-13）",
+    "what": "面向 agent 的逆向工程技能集：从应用行为一路下钻到原生二进制，把逆向拆成可复用的 agent skills，并接进 Claude Code、Codex 这类命令行 agent。",
+    "why": "15 天从 15.9 万涨到 39.8 万★（+23.8 万），是本期涨幅最大的仓库；说明“把专家的具体手艺封装成技能包”比“再训一个模型”更快拿到关注。",
+    "insight": "内部专家的重复动作（读日志、翻二进制、抓包）优先做成 skill 包而不是堆 prompt；验收看“换个人用同一技能能否复现同一结论”，而不是看单次对话是否好看。",
+    "image": "images/2026-10-28/morluto-rea.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "stars": 117344,
+    "trend": "+7,957 stars/27天（对比 2026-10-01）",
+    "what": "多 agent 的金融交易框架：把研究、选股、风控拆成不同角色的 agent，协作产出交易决策，是这类“角色分工型”多 agent 的代表实现。",
+    "why": "27 天 +7,957★，在没有新版本发布的常规周期里仍稳定增长；说明按角色拆分、带明确交接产物的多 agent 结构还有真实使用场景。",
+    "insight": "多 agent 的价值在角色边界和交接产物（研究纪要→决策→风控意见），不在 agent 数量；数字员工流程先把交接产物定义成结构化字段，再决定拆几个角色。",
+    "image": "images/2026-10-28/tauricresearch-tradingagents.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "stars": 79372,
+    "trend": "+1,484 stars/26天（对比 2026-10-02）",
+    "what": "用 Bash 从 0 写一个 nano 版 claude code 式 agent harness：工具调用循环、上下文裁剪、权限控制都自己实现一遍，定位是教学参考。",
+    "why": "26 天 +1,484★，热度不在功能而在“把 harness 讲清楚”；对准备自建 agent 运行时的团队，这是成本最低的一份参考实现。",
+    "insight": "自研 harness 前先照这个把最小循环跑通（工具注册、消息裁剪、失败重试），再评估是否引入重框架；先上框架容易被抽象层锁死，排障时看不到真实请求。",
+    "image": "images/2026-10-28/shareai-lab-learn-claude-code.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "CopilotKit/CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "stars": 38290,
+    "trend": "+525 stars/22天（对比 2026-10-06）",
+    "what": "面向 agent 与生成式 UI 的前端栈：React、Angular、移动端、Slack 都能接，提供对话、前端共享状态和前端工具调用能力。",
+    "why": "22 天 +525★，是少数把“agent 与前端 UI 双向状态同步”做成开源组件的项目；前端接 agent 最常见的同步问题它有现成解法。",
+    "insight": "前端接 agent 时优先复用它的共享状态模型，别自己写轮询；但要先核对它的状态同步协议与自家鉴权、埋点是否冲突，避免为了接 agent 破坏已有上报口径。",
+    "image": "images/2026-10-28/copilotkit-copilotkit.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "agentscope-ai/QwenPaw",
+    "url": "https://github.com/agentscope-ai/QwenPaw",
+    "stars": 36613,
+    "trend": "+981 stars/15天（对比 2026-10-13）",
+    "what": "可自托管的个人 AI 助手（agent harness）：一条命令部署在自己的机器或云上，支持多渠道接入，定位是“开箱即用的个人 agent 运行时”。",
+    "why": "15 天 +981★，在“开箱即用个人 agent”这条线上增速靠前；它代表“直接部署运行时”的路线，与 CopilotKit 这类“自己造轮子”形成对照。",
+    "insight": "评估自托管助手重点看工具权限模型和会话数据落在哪，而不是看技能数量；这两项决定它能不能进企业内网，功能多少可以后补。",
+    "image": "images/2026-10-28/agentscope-ai-qwenpaw.jpg"
+  }
+]
