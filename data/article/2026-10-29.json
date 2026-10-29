@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "Gemini 4 Carbon",
+    "title_cn": "Gemini 4 Carbon 发布",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "date": "2026-10-28",
+    "source": "Hacker News 804 分 661 评论",
+    "what": "谷歌发布 Gemini 4 Carbon，官方定位是当前最强模型，两个主打能力是达到 SOTA 的网络安全能力和长程（long-horizon）任务能力。",
+    "why": "HN 804 分 661 评论，是过去 48 小时讨论最热的 AI 条目；“长程 + 安全”正好对上 agent 落地的两个卡点：任务链一长就失真，工具一多就被注入。",
+    "insight": "选基座模型时把“长程任务完成率”和“被注入后的越权率”分开测，不要用通用榜单替代；同一个模型这两项可能一个涨一个跌。",
+    "image": "images/2026-10-29/gemini-4-carbon.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+    "title_cn": "断网也能用的离线生存助手",
+    "url": "https://www.brangus.io/survival-llm",
+    "date": "2026-10-27",
+    "source": "Hacker News 516 分 194 评论",
+    "what": "免费开源的离线 AI 助手加应急资料库：模型和语料都在本机，内置医疗参考、FEMA/CDC 指南、生存与维修手册、约 93 万篇维基百科；Mac 安装包 212MB、Windows 25MB，答案会列出引用文章并高亮原文段落。",
+    "why": "HN 516 分 194 评论；它把“模型 + 语料 + 引用定位”打包成一个可离线分发的完整应用，本地化 agent 的形态第一次这么具体。",
+    "insight": "端侧和离线场景必须同时带语料和引用定位，否则答案无法验证；参考它 25MB 的 Windows 包——小模型加检索就够覆盖垂直问答，不必塞一个大模型进去。",
+    "image": "images/2026-10-29/survival-llm-ai-assistant-and-emergency-library-.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Wikipedia's Cleanup of AI-Generated Content",
+    "title_cn": "维基百科清理 AI 生成内容",
+    "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
+    "date": "2026-10-27",
+    "source": "Hacker News 499 分 235 评论",
+    "what": "IEEE Spectrum 报道维基百科编辑如何识别和清理 AI 生成文本：AI 文本越来越难分辨，编辑仍靠来源核查、语气特征和编辑历史来判断。",
+    "why": "HN 499 分 235 评论；当 AI 生成内容占比上升，“能不能拿出处”从写作规范问题变成了内容能否留存的问题。",
+    "insight": "对外发布的 AI 内容要保留来源和生成记录；被质疑时能不能拿出处，直接决定内容是否被删。内部知识库同理：先存出处，再存结论。",
+    "image": "images/2026-10-29/wikipedia-s-cleanup-of-ai-generated-content.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Early progress on accelerating drug development with Claude",
+    "title_cn": "Claude 加速药物研发的早期进展",
+    "url": "https://www.anthropic.com/research/early-progress-drug-development",
+    "date": "2026-10-27",
+    "source": "Hacker News 322 分 331 评论",
+    "what": "Anthropic 生命科学团队与 BigHat、BMS、Divergence、Enveda、Generate Biomedicines、The Column Group 六家机构深度合作，并启动自有药物发现项目（含罕见儿童肌营养不良方向），文中同时写了 Claude 能做什么、还需要改什么。",
+    "why": "HN 322 分 331 评论——评论数高于分数，争议集中在“AI 到底贡献了多少”；这是少见的厂商自述配合作方署名的进展汇报，比单纯案例更有可核对性。",
+    "insight": "垂直科研 agent 的评测按阶段产物拆（假设、实验设计、结果解读），别用端到端成功率；引用厂商案例时找合作方的公开产出对照，否则无法区分工具贡献和团队原有能力。",
+    "image": "images/2026-10-29/early-progress-on-accelerating-drug-development-.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+    "title_cn": "用 50 个真实税务任务考 agent",
+    "url": "https://surgehq.ai/blog/dayjob-tax",
+    "date": "2026-10-27",
+    "source": "Hacker News 202 分 126 评论",
+    "what": "Surge AI 的 DAYJOB: Tax 基准：50 个环境、1,789 个文件，要求 agent 从客户初始需求一路做到交付物，过程中要处理不完整的指令、互相冲突的记录，并主动发现客户没提到的问题。",
+    "why": "HN 202 分 126 评论；它把 agent 评测从“答题”改成“交付”，正好补上评测里最缺的一环——真实工作里的输入从来不干净。",
+    "insight": "内部 agent 验收用“脏数据 + 不完整需求 + 交付物”三件套，别用整理好的问答集；评分项里加一条“是否发现了需求方没提的问题”，这是区分助手和同事的关键。",
+    "image": "images/2026-10-29/dayjob-tax-evaluating-ai-agents-on-50-profession.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Securing our frontier model training environment",
+    "title_cn": "如何加固前沿模型训练环境",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+    "date": "2026-10-23",
+    "source": "OpenAI 官方博客（RSS，2026-10-23）",
+    "what": "OpenAI 说明如何加强前沿模型训练与评测环境的隔离与防护，包括离线环境和针对高算力环境的红队演练。",
+    "why": "10-23 发布；训练环境一旦被穿透，损失不可逆，而这类训练侧安全工程细节公开得很少，能直接对照自建环境查缺。",
+    "insight": "自家 agent 跑在真实凭据旁边时，按“训练/评测环境”的标准做网络隔离和离线化；红队要覆盖“agent 拿到工具之后能做什么”，而不只是看模型输出。"
+  },
+  {
+    "rank": 7,
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+    "title_cn": "支撑十亿用户的在线存储扩容",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+    "date": "2026-10-23",
+    "source": "OpenAI 官方博客（RSS，2026-10-23）",
+    "what": "OpenAI 复盘存储平台 Habitat 的扩容：用可靠的多租户、全局缓存和 Azure Cosmos DB，把 ChatGPT 的读取速度做到 12 倍提升。",
+    "why": "10-23 发布，是少见的给出具体倍数、组件和取舍的供给侧工程文；agent 产品的成本曲线最终由这类基础设施决定。",
+    "insight": "多租户和全局缓存是 agent 产品从单团队走向全公司要过的第一道坎：先定租户隔离键和缓存失效策略，再谈扩容；否则规模一上来，串数据和缓存脏读会先出问题。"
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "rank": 1,
+    "repo": "ChannelCooperStart/capri-ai",
+    "url": "https://github.com/ChannelCooperStart/capri-ai",
+    "stars": 385,
+    "trend": "2026-10-27 新建，2 天内 385★（首日快照，最近提交 2026-10-27）",
+    "what": "Windows 桌面 AI agent：一个应用里接 Claude Code、Codex、Antigravity 等助手，用自然语言直接操作桌面，定位是桌面版 JARVIS。",
+    "why": "建仓 2 天 385★，是本期增长榜第一；桌面 agent 的竞争点已经从“谁家 CLI 更强”转向“谁能把多个 CLI 装进同一个宿主”。",
+    "insight": "做内部工具时别急着自研宿主：先确认目标用户已经在用哪个 agent CLI，再决定是接进去还是另起一个；桌面端真正要自研的是动作确认与权限提示这一层。",
+    "image": "images/2026-10-29/channelcooperstart-capri-ai.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "langchain-ai/design-agent",
+    "url": "https://github.com/langchain-ai/design-agent",
+    "stars": 319,
+    "trend": "2026-10-18 新建，11 天内 319★（首日快照，最近提交 2026-10-27）",
+    "what": "LangChain 把内部在用的设计 agent Content Studio 开源：接入品牌规范后部署到团队 Slack，接收附件，产出改尺寸广告、发布短片等成品文件，基于 Deep Agents 构建。",
+    "why": "11 天 319★；官方给出的运营数据是可核对的：8 月以来产出 3,000+ 个素材，作品在 X 上约 450 万浏览，四分之三的请求来自市场部以外。",
+    "insight": "验收 agent 不只看满意度，要看“产出物数量”和“非目标用户的使用占比”；这两个数能证明它是工具而不是演示。交付物要落到文件，不能停在对话里。",
+    "image": "images/2026-10-29/langchain-ai-design-agent.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "kukemc/bili-cli",
+    "url": "https://github.com/kukemc/bili-cli",
+    "stars": 297,
+    "trend": "2026-10-19 新建，10 天内 297★（首日快照，最近提交 2026-10-26）",
+    "what": "给 AI agent 用的哔哩哔哩命令行工具：扫码登录、看视频、评论、私信、发动态、投稿，所有命令统一输出 JSON，方便模型直接解析。",
+    "why": "10 天 297★，10-26 仍有提交；这是“把网页操作改造成 agent 友好 CLI”这一波里比较完整的一个，覆盖了登录态和写操作。",
+    "insight": "给 agent 造工具优先做成 CLI + JSON，而不是让它点网页：命令要幂等、失败要返回结构化错误码、登录态单独存放；写操作（发评论、投稿）必须有显式确认参数。"
+  },
+  {
+    "rank": 4,
+    "repo": "ydflow/Trail",
+    "url": "https://github.com/ydflow/Trail",
+    "stars": 205,
+    "trend": "2026-10-16 新建，13 天内 205★（首日快照，最近提交 2026-10-24）",
+    "what": "研迹 Trail：本地优先的 AI 投研工作台（Electron + TypeScript），连接行情、K 线和深度研究，强调每个判断可追溯、风险可复核。",
+    "why": "13 天 205★；把“本地优先”和“证据可回溯”同时写进产品定位，正好对应高风险决策类 agent 最难被信任的两点。",
+    "insight": "投研、风控这类 agent 的交付物必须带证据链：数据来源、抓取时间、计算过程、结论依据缺一不可；把“可复核”做成数据结构，而不是页面上的一句说明。",
+    "image": "images/2026-10-29/ydflow-trail.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "paraboy-s/mcd-meal-pairing",
+    "url": "https://github.com/paraboy-s/mcd-meal-pairing",
+    "stars": 127,
+    "trend": "2026-10-17 新建，12 天内 127★（首日快照，最近提交 2026-10-22）",
+    "what": "麦当劳配餐决策 Skill：在 1881 种搭配里算出三档最优解并解释为什么排除其他方案，支持控卡、忌口和拼单的 max-min 公平分配；明确“LLM 不参与算钱”。",
+    "why": "12 天 127★；它把“LLM 只负责理解、计算交给确定性代码”这条工程原则讲得最直白，还给了每个数字可追溯的实现。",
+    "insight": "涉及金额和约束优化的 skill，把求解器写成确定性函数，LLM 只负责把口语需求翻译成参数；这样结果可复现、可审计，用户追问“为什么是这个价”时能逐步展开。"
+  }
+]

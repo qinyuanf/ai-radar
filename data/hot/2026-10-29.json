@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "stars": 393299,
+    "trend": "+0 stars/0天（对比 2026-10-29）",
+    "what": "开源个人 AI 助手：跑在自己的机器上，服务端数据自持，从 WhatsApp、Telegram 等任意聊天应用接入，覆盖收件箱、邮件、日历、航班这类日常事务。",
+    "why": "15 天 +1,387★（从 391,912 涨到 393,299），10-29 仍有提交；体量到这个级别后增长变慢，但文档把信任边界、策略即代码、身份与角色、密钥隔离写成一级章节，方向值得看。",
+    "insight": "自建个人助手的权限边界要先于功能设计：把“谁能触发什么工具”写成策略文件、把凭据和状态版本化，再接第二个聊天渠道；渠道越多，越权和串号的风险面按乘法放大。",
+    "image": "images/2026-10-29/openclaw-openclaw.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 307470,
+    "trend": "+0 stars/0天（对比 2026-10-29）",
+    "what": "面向编码 agent 的软件开发方法论：由一组可组合 skills 加一段初始指令组成，让 agent 在开发过程中主动调用这些技能，README 里给了 20 余个宿主的安装方式。",
+    "why": "15 天 +8,785★（从 298,685 涨到 307,470）；同时适配 Claude Code、Codex、Cursor、Gemini CLI、Kimi Code 等宿主，说明“技能包 + 流程约束”正在跨 harness 标准化。",
+    "insight": "技能要能跨宿主复用，靠的是“宿主无关的流程 + 一层薄适配”；写 skill 时先定何时触发、产出什么、怎么验收，再写具体命令，否则换一个 CLI 就得重写一遍。",
+    "image": "images/2026-10-29/obra-superpowers.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "stars": 291787,
+    "trend": "+0 stars/0天（对比 2026-10-29）",
+    "what": "给 agent harness 做性能优化的系统：把技能、直觉式规则、记忆、安全检查和“先调研再动手”的开发流程打包成插件，通过 Claude Code 插件、npm 包和 GitHub App 分发。",
+    "why": "15 天 +13,159★（从 278,628 涨到 291,787），是本期热门榜涨幅最大的仓库；README 反复提示只从官方渠道安装，说明同名仿冒已经在盯这类高星 agent 工具。",
+    "insight": "harness 增强要做成可插拔插件而不是 fork：插件能跟着宿主升级，fork 半年后就没人敢合主干；同时把“官方安装渠道”写进团队规范，高星 agent 工具是供应链投毒的重点目标。",
+    "image": "images/2026-10-29/affaan-m-ecc.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 258085,
+    "trend": "+0 stars/0天（对比 2026-10-29）",
+    "what": "自带学习闭环的 agent：从经验里创建技能、在使用中改进技能、主动持久化知识、检索自己的历史对话，并跨会话积累用户模型；可跑在 5 美元 VPS、GPU 集群或无服务器环境，也能从 Telegram 远程指挥。",
+    "why": "15 天 +4,582★（从 253,503 涨到 258,085），10-29 仍有提交；把“经验→技能”的自我改进写成默认产品能力，而不是论文里的实验设置。",
+    "insight": "数字员工的记忆要分三层做：会话历史可检索、经验能沉淀成技能、用户画像跨会话累积；只做向量检索等于只做了第一层，技能层必须有“生成—验证—回滚”，否则错误经验会被固化。",
+    "image": "images/2026-10-29/nousresearch-hermes-agent.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 208917,
+    "trend": "+0 stars/0天（对比 2026-10-29）",
+    "what": "fair-code 的工作流自动化平台：可视化编排加自定义代码，原生支持 AI 节点，可自托管；大量团队用它把重复流程串成可重跑的自动化。",
+    "why": "15 天 +1,645★（从 207,272 涨到 208,917），10-29 仍有提交；在 agent 满天飞的周期里，确定性工作流引擎的星数仍在稳定上涨。",
+    "insight": "把“判断”交给模型、“执行与重试”交给工作流引擎：模型只输出结构化决策，长流程的幂等、补偿、可观测留在引擎里；这样出问题能定位到具体节点，而不是翻一段对话记录。",
+    "image": "images/2026-10-29/n8n-io-n8n.jpg"
+  }
+]

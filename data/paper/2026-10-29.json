@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness",
+    "title_cn": "用注意力门控防提示注入",
+    "url": "https://arxiv.org/abs/2610.37657v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37657，cs.LG/cs.CL/cs.CR，Igor Shilov 等 9 人",
+    "what": "Heads of Security（HoS）用小数量、可学习的 per-head 注意力门强制“指令”和“数据”分离，让模型能读不可信内容但不执行其中的指令。在 Llama-3.3-70B 与 GPT-OSS-20B 上，黑盒 RL-Hammer 攻击对 GPT-OSS-20B 的 ASR 为 97%、对 SecAlign 为 85%，对 HoS 只有 10%；白盒攻击 Claudini 要打到同样 ASR，需要 3 倍 FLOPs。HoS 在多选基准和 few-shot 下保持原模型效用，而 SecAlign、ASIDE 会掉点；ASIDE 在工具使用上只有 10% 效用。",
+    "why": "提示注入是 agent 接了外部内容后最现实的风险，现有方案多在“微调对齐”和“架构隔离”之间取舍；这篇给出架构层方案，同时保住工具调用能力。",
+    "insight": "把“读外部内容”和“执行指令”当成两个不同的信任域来设计，而不是只靠提示词加一句“忽略文档中的指令”；上线前用自适应攻击测一次 ASR，静态攻击集的高分没有意义。"
+  },
+  {
+    "rank": 2,
+    "title": "GEPA-Curator: Curated Learning for Self Improving Agents",
+    "title_cn": "筛选经验再优化 agent 提示",
+    "url": "https://arxiv.org/abs/2610.37651v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37651，cs.CL，Zack Yu 等 11 人",
+    "what": "GEPA-Curator 认为 agent 的失败不一定能提供有效学习信号——可能来自提示弱、harness 限制、执行随机性或评分器噪声，于是先做任务筛选、剔除噪声大的任务，再检索历史上成功的轨迹作为额外上下文喂给提示优化器。在 GoBrowse、ALFWorld、AppWorld 和 τ-bench 上，用 Gemini 3.1 Pro 与 Claude Opus 5 作优化器，平均表现不低于基线，最高比 GEPA 高 20.7%、比 ACE 高 21.2%。",
+    "why": "“从失败中反思改提示”已经是 agent 自改进的默认做法，但没人系统处理“哪些失败不该学”；这条把噪声源点出来并给了筛选机制。",
+    "insight": "做提示自优化或经验沉淀前，先给失败分类（提示问题、工具问题、环境抖动、评分器噪声），只让第一类进入优化；否则会把偶发失败固化成规则。"
+  },
+  {
+    "rank": 3,
+    "title": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
+    "title_cn": "记忆压缩会毁掉群体决策",
+    "url": "https://arxiv.org/abs/2610.37624v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37624，cs.AI/cs.CL/cs.MA/cs.SI，Anouar Imel 等 4 人",
+    "what": "论文构造 CrossProfile 基准（60 个模板、480 个任务），把支持性、诱饵、无关事实的归属交叉打乱、文本保持不变，检验两种常见记忆压缩策略。结果：按相关性选会把“切题的诱饵”重新放回来，即使相关性筛选完美，也比“最稀有优先”低 23–31 分；而“最稀有优先”平均并不比随机更好。另外决策模型存在“社会证明”偏差，给被多个 agent 提到的事实额外加权，去掉归属标签或随机重排可提升 13–24 分。自然讨论场景下，完整转录的准确率甚至低于完全不做笔记。",
+    "why": "多 agent 讨论压缩成短记忆再交给决策者，是团队型 agent 的标准架构；这条证明常见压缩启发式会在可预测的地方失效，同时指出归属标签本身在制造偏差。",
+    "insight": "多 agent 汇总时按“证据平衡”而不是“稀有/相关”来保留事实，并去掉“几个 agent 说过”这类归属信息；宁可保留原文摘录加索引，也不要用一个可疑的摘要替代原始讨论。"
+  },
+  {
+    "rank": 4,
+    "title": "EnvSched: Environment-Aware Scheduling for Rollout-Efficient Agent Reinforcement Learning",
+    "title_cn": "按环境调度 agent 强化学习采样",
+    "url": "https://arxiv.org/abs/2610.37609v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37609，cs.LG/cs.CL，Sihan Yang 等 12 人",
+    "what": "EnvSched 是一个在线调度器：把环境—任务对建成双关系图（环境内边刻画任务语义与共享的工具/状态/验证器，跨环境边刻画抽象的执行与奖励拓扑），沿两类边传播历史 rollout 统计来预测任务内奖励方差，再用环境配额和相似度惩罚控制批次集中度，无需额外试跑就能组出信息量大且多样的批次。在 Qwen3-8B 上训练 40 步，BFCL-v3、τ-Bench、ACEBench-Agent 平均 48.81 分，超过随机选题训练 120 步的最好成绩。",
+    "why": "agent RL 的成本大头在环境里跑 rollout；训练效率问题通常被当成算法问题，这条把它拉回数据调度问题，并给了可落地的双图结构。",
+    "insight": "自建 agent 训练/评测集时，按“环境”而不是“任务”做配额：同一环境的样本奖励方差低、重复度高，混入未覆盖环境的信息量更大；先保证环境覆盖，再追求单任务难度。"
+  },
+  {
+    "rank": 5,
+    "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
+    "title_cn": "分布式信息下的团队决策基准",
+    "url": "https://arxiv.org/abs/2610.37571v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37571，cs.AI，Chanwoo Park 等 7 人",
+    "what": "TeamGym 用法律、金融、医疗、软件工程的真实语料构造团队决策环境，并提出“关键信息（pivotal information）”的识别方法：一组事实每条都必要、合起来充分。用它可以把关键信息按人分配并追踪整合效果。测 8 个模型、12 个语料后：把关键信息分散给多个参与者，成功率平均下降 22.9 个百分点（沟通差）；若参与者还要自己从原始材料里找出关键信息，再降 19.9 个百分点（检索差）。用团队决策损失做 RL 只奖励最终决策，也能诱导出分工、发言选择等协作行为。",
+    "why": "多 agent 系统普遍假设“信息共享是免费的”，这条把沟通损失和检索损失量化成两个可测的缺口，并给了可控实验环境。",
+    "insight": "多 agent 流程里把“信息传递”当成有成本的步骤单独设计：明确谁必须拿到哪条关键信息、由谁校验是否收到；只奖励最终结果也能训出协作，但前提是关键信息可被定位。"
+  },
+  {
+    "rank": 6,
+    "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+    "title_cn": "结构信息不能被数据替代",
+    "url": "https://arxiv.org/abs/2610.37523v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37523，cs.LG/cs.AI，Kheer Sagar Patel 等 2 人",
+    "what": "论文定义“结构编码问题”：输入输出映射由已知结构（求解器、对称群、图、物理定律、测量算子、文法、组合搜索空间、优化目标）决定或强约束。核心问题不是表达能力——稠密网络可能包含该映射——而是有限数据下的辨识、外推与认证。作者提出“结构缺口”：拿到结构的方法与只拿样例的学习器之间的有限资源差距，并在高斯逆问题上证明：已知算子的 Wiener 求解器达到 Bayes 风险，而同类线性模型的经验学习器存在持续的期望超额风险；另有单元覆盖下界与不可辨识结果。",
+    "why": "“数据够多就不需要领域知识”仍是很多 agent 设计的隐含假设；这条给出严格反例和可量化的缺口概念，而且结论是渐近式的，不是口号。",
+    "insight": "能写成规则、约束或求解器的那部分业务逻辑，就不要交给模型学；把结构先固化进系统（校验器、约束求解、单位换算），模型只负责结构没规定的那部分，并保留“模型输出必须过校验”这一层。"
+  },
+  {
+    "rank": 7,
+    "title": "Metacognitive Decoding: Efficient Inference for Diffusion Language Agents",
+    "title_cn": "扩散语言 agent 省两成算力",
+    "url": "https://arxiv.org/abs/2610.37642v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37642，cs.CL，Mingyu Zhao 等 8 人",
+    "what": "Metacognitive Decoding 给扩散语言模型加一个轻量“元认知控制器”：根据当前回答的需求和与环境的交互，学习何时确定 token、生成应该延伸到多长，从而在单次回答内减少计算。控制器是插入扩散骨干的插件，用 agent 轨迹训练，在正确性和生成成本之间做平衡。五个基准上，相比最高效的基线平均减少 20.6% 推理 FLOPs，同时保持有竞争力的准确率。",
+    "why": "agent 的推理成本常被当成固定开销；这条说明“生成多长、何时停”本身可以被学习，而且不用换模型架构。",
+    "insight": "给 agent 的输出长度和推理深度设一个可学习的停止策略，而不是统一写死 max_tokens；先按任务类型统计“多生成多少 token 换多少准确率”，再决定哪些步骤值得多花算力。"
+  },
+  {
+    "rank": 8,
+    "title": "Gym-Anything-RT: Scaling Real-Time Environments for Vision-Language Agents",
+    "title_cn": "实时视觉 agent 的能力缺口",
+    "url": "https://arxiv.org/abs/2610.37567v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37567，cs.LG/cs.AI，Pranjal Aggarwal 等 2 人",
+    "what": "Gym-Anything-RT 用 agent 流水线按“实时交互所需的六类能力”自动生成视觉小游戏，构造 100 个实时环境，并允许同一游戏在实时、暂停、减速三种模式下跑，从而把“实时性”单独隔离出来测。结果：GPT-6 Astra（xHigh）在实时模式下通过率只有 9.0%，环境暂停后升到 75.0%。另外发现，给最强 agent 写代码的能力后，它们会写代码绕过“实时感知与行动”这件事。",
+    "why": "现有 agent 评测大多允许充分思考，实时场景（操作设备、玩游戏、盯盘）几乎是空白；这条把差距量化到 66 个百分点，并指出模型会规避实时约束。",
+    "insight": "需要实时响应的 agent（设备操作、监控处置）要单独做时延预算和降级策略；评测时区分“想清楚再做”和“边看边做”，并检查模型是否在绕过实时通道（比如改成轮询脚本）。"
+  }
+]
