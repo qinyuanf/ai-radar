@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "shipwords-dev/shipwords",
+    "url": "https://github.com/shipwords-dev/shipwords",
+    "stars": 278,
+    "trend": "2026-10-28 后新建，2 天内 278★",
+    "what": "MIT 框架：共享内核写一次账号、支付、额度与 AI 生成，再按“一个关键词一个站”批量部署 AI 图片/视频站，每站独立域名、数据库与收款账号，跑在 Cloudflare 上。",
+    "why": "建仓两天 278 星，说明“套壳站群”已从零散脚本进化为有工程结构的模板生意。",
+    "insight": "这类“共享内核 + 独立部署”的结构正是数字员工多租户的常见形态；值得抄的是账户与支付共享、数据与域名隔离的边界划分，而不是它的 SEO 玩法。",
+    "image": "images/2026-10-30/shipwords-dev-shipwords.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "jackwener/DeepseekHarness-Android",
+    "url": "https://github.com/jackwener/DeepseekHarness-Android",
+    "stars": 238,
+    "trend": "2026-10-27 后新建，3 天内 238★",
+    "what": "免 root、免 Termux 的安卓 App：把 DeepSeek Harness 引擎内嵌进 App 进程，靠读屏操作其他 App、改系统设置、按时间或条件自动执行任务，可选 Shizuku 授权。",
+    "why": "建仓 3 天 238 星，是手机端 agent 运行时这波里最直接的实现——不 root 也能把自动化落到真机。",
+    "insight": "移动端数字员工的瓶颈是权限而不是模型：读屏 + 无障碍 + Shizuku 这条链路决定它能做什么；设计时默认把支付、密码、验证码做成硬闸门交还给人。",
+    "image": "images/2026-10-30/jackwener-deepseekharness-android.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "ccch1mneyyy/dsh-go",
+    "url": "https://github.com/ccch1mneyyy/dsh-go",
+    "stars": 164,
+    "trend": "2026-10-25 后新建，5 天内 164★",
+    "what": "DeepSeek Harness 的非官方安卓客户端：内置 Linux 环境在手机本地跑 DSH，也能远程接管电脑上的会话；支持中途插话打断、生成分享卡与端到端加密的对话回放链接。",
+    "why": "5 天 164 星，且下周转公测、主仓以 AGPL-3.0 开源，是同一需求下体验做得更完整的一支。",
+    "insight": "同一引擎冒出多个客户端在竞争，说明 agent 的运行位置正从服务器下沉到终端；自有产品要提前设计会话迁移（手机↔电脑接着聊）和敏感操作回传，这两点比多接几个模型更留人。",
+    "image": "images/2026-10-30/ccch1mneyyy-dsh-go.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "jmanico/grim-prompter",
+    "url": "https://github.com/jmanico/grim-prompter",
+    "stars": 163,
+    "trend": "2026-10-28 后新建，2 天内 163★",
+    "what": "给编码 agent 用的威胁建模技能包：36 条架构工作流加 29 条方法与分析提示，把 Claude Code/Codex 指向仓库后，按“信任边界—威胁—现有控制—缓解措施”输出可逐条核对的威胁模型。",
+    "why": "建仓两天 163 星，说明“让 agent 做安全评审”正从零散 prompt 变成可安装的 skill 包。",
+    "insight": "把评审固化成 skill（工作流 + 清单 + 证据要求）远比让模型自由发挥稳定；做内部代码评审 agent 时可直接照它的分节格式，要求每条结论带代码位置。",
+    "image": "images/2026-10-30/jmanico-grim-prompter.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "aa1143/NamiGPT",
+    "url": "https://github.com/aa1143/NamiGPT",
+    "stars": 133,
+    "trend": "2026-10-28 后新建，2 天内 133★",
+    "what": "中文 LLM 入门教程：用 PyTorch 从零手写不到 200 行的 GPT-2，加载 OpenAI 官方权重跑推理，配“猫吃鱼”三词例子与逐格矩阵可视化，并与 HuggingFace 实现逐项对齐测试。",
+    "why": "两天 133 星，说明“亲手写一遍”仍是新人理解 transformer 的最短路径，它把每一步矩阵计算做成了可播放的动图。",
+    "insight": "新人培训可以直接走这条路径（从零实现 + 与官方实现对齐测试），比读论文更快建立“哪一步在算什么”的直觉；那套可视化也适合拿来做内部分享。",
+    "image": "images/2026-10-30/aa1143-namigpt.jpg"
+  }
+]

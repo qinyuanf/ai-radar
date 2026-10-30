@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 196771,
+    "trend": "+5,169 stars/15天（对比 2026-10-15）",
+    "what": "面向 AI agent 的网页取数接口：把任意页面转成干净的 markdown、结构化 JSON 或截图，官方称覆盖 96% 网页（含重 JS 页面）、P95 延迟 3.4 秒，开源可自建，也有托管服务。",
+    "why": "15 天涨 5169 星（191,602→196,771），今天仍有提交——在 agent 的“读网页”这一层，它是增速最快的基础设施型仓库。",
+    "insight": "agent 工具层里的抓取不要自己造：直接接这类 context API，把工程预算留给判断逻辑；若必须自建，优先复用它的 markdown 归一化与反爬/渲染处理，否则 JS 页面会吃掉大半工作量。",
+    "image": "images/2026-10-30/firecrawl-firecrawl.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 159934,
+    "trend": "+1,437 stars/15天（对比 2026-10-15）",
+    "what": "可视化编排 agentic workflow 与 RAG 流水线的平台：多模型接入、工具与知识库管理、可自托管，前端 TypeScript、后端 Python。",
+    "why": "15 天 +1437 星（158,497→159,934）且今天仍在提交，是企业自建 agent 平台里星数最高的开源选项。",
+    "insight": "内部工具型 agent（表单、审批、检索问答）优先用现成编排而不是自研编排层；但要先确认它的工具调用日志与权限模型能否满足审批留痕，否则后期得重写接入层。",
+    "image": "images/2026-10-30/langgenius-dify.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "stars": 37160,
+    "trend": "+2,283 stars/23天（对比 2026-10-07）",
+    "what": "港大数据智能实验室的个人交易 agent：一条命令接上行情、回测与模拟盘，提供 MCP/API 给其他 agent 调用，支持 Binance、AKShare 等数据源。",
+    "why": "23 天 +2283 星（34,877→37,160），且 10-29 的提交集中在模拟盘订单状态机、部分成交、日终结算这类“真钱前必须做对”的细节上。",
+    "insight": "做资金/交易类 agent，把订单状态机（fail-closed 取消、幂等 replay ID、日终结算）当第一等公民，比提示词重要得多；这部分可直接参考它的实现，别自己发明。",
+    "image": "images/2026-10-30/hkuds-vibe-trading.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "can1357/oh-my-pi",
+    "url": "https://github.com/can1357/oh-my-pi",
+    "stars": 37089,
+    "trend": "+2,608 stars/23天（对比 2026-10-07）",
+    "what": "把 IDE 接进模型的终端编码 agent：60+ 模型 provider、31 个内置工具、14 个 LSP 操作与 28 个 DAP 操作，核心约 8 万行 Rust；Pi 的 fork，由 Stencil Labs 维护。",
+    "why": "23 天 +2608 星（34,481→37,089），且这周临时放开 PR 门槛评估社区贡献——项目正从个人作品转成多人协作。",
+    "insight": "LSP/DAP 是编码 agent 与普通 shell agent 的分水岭：能读诊断、能下断点，才能闭环修 bug；自建编码 agent 时优先接 LSP，而不是让模型 grep 着猜。",
+    "image": "images/2026-10-30/can1357-oh-my-pi.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "esengine/DeepSeek-Reasonix",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "stars": 35992,
+    "trend": "+250 stars/23天（对比 2026-10-07）",
+    "what": "开源（MIT）编码 agent，覆盖终端、桌面、浏览器与编辑器：读项目、改文件、跑命令与测试，可选每步确认或在你设定的边界内自主执行，改动可回滚。",
+    "why": "23 天只 +250 星（35,742→35,992），热度已明显放缓，但今天仍有提交，仍是 DeepSeek 系星数最高的本地编码 agent。",
+    "insight": "“边界内自主 + 改动可回滚”是编码 agent 进企业仓库的最小可行配置；选型时先看回滚粒度（文件级还是补丁级），再看模型能力——回滚粒度决定出事时能不能快速止损。",
+    "image": "images/2026-10-30/esengine-deepseek-reasonix.jpg"
+  }
+]

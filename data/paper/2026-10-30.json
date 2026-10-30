@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Understanding the limits of latent world models",
+    "title_cn": "潜世界模型：没有一个真在建模",
+    "url": "https://arxiv.org/abs/2610.37588v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37588，cs.LG/cs.AI，Rodrigo Gonzalez Laiz 等 2 人",
+    "what": "作者把“忠实的世界模型”定义为环境转移映射与学到的潜动力学之间的等变条件，并提出 latent rollout consistency（LRC）度量动作条件下的潜预测；在多个 SOTA 潜世界模型上，没有一个是通过真正建模环境动力学来完成任务的。",
+    "why": "agent 规划越来越依赖世界模型，这篇给出可验证的判据：高任务成功率可能只是记住了轨迹，换环境就崩。",
+    "insight": "用世界模型做规划的产品要加一项 LRC 类检查（潜空间 rollout 与真实转移是否等变），并让评测集包含“换动力学”对照，否则分布外会静默失效。"
+  },
+  {
+    "rank": 2,
+    "title": "Strategyproof Deep Reinforcement Learning for Online Resource Allocation",
+    "title_cn": "在线资源分配的防策略深度 RL",
+    "url": "https://arxiv.org/abs/2610.37504v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37504，cs.MA/cs.AI/cs.GT，Fariba Dehghan 等 4 人",
+    "what": "首个策略防伪（strategyproof）的在线资源分配深度 RL 机制：单调神经网络按构造保证“报更高价不会减少被接受、报更长时长或更大需求不会增加被接受”，配广义临界支付，在需求不确定下同时管效率与真实性。",
+    "why": "多 agent 共享算力与预算时，agent 有动机虚报需求；线性分配规则表达力不够、神经机制设计只有近似激励保证，这篇把两者补上。",
+    "insight": "给多个 agent 分 GPU 或额度时，把“单调性”写进网络结构约束比事后惩罚可靠；再配临界定价，agent 如实报需求变成占优策略，能减少内部博弈。"
+  },
+  {
+    "rank": 3,
+    "title": "When uncertainty quantification fails: structural vulnerabilities and corrections for selective prediction under clinical class imbalance",
+    "title_cn": "类别极不平衡时不确定性会失效",
+    "url": "https://arxiv.org/abs/2610.37561v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37561，cs.LG/cs.AI，Walter Endrizzi 等 7 人",
+    "what": "在临床预后这类严重类别不平衡的任务上，标准不确定性分数不再反映临床模糊度，而变成“是不是少数类”的代理，系统性惩罚少数群体；作者在 56 个合成条件与三个神经退行性疾病队列上给出结构性漏洞分析与修正，维持有界、均衡的风险。",
+    "why": "“低置信度转人工”是 agent 落地的常用安全阀，但它依赖“不确定性=该问人”这个前提；这篇说明前提在长尾场景直接不成立。",
+    "insight": "设计转人工阈值时必须按子群分别校准并报告每群覆盖率：全局指标会把少数群体的兜底率悄悄推到 100% 或 0，看上去合规实际不可用。"
+  },
+  {
+    "rank": 4,
+    "title": "Orthogonal and Parametrized Multi-Attribute Steering of LLMs",
+    "title_cn": "多属性激活引导：正交化解耦",
+    "url": "https://arxiv.org/abs/2610.37517v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37517，cs.LG/cs.AI，Remy Ogasawara 等 7 人",
+    "what": "方法论文：先定位每条 steering 向量最可引导的区间并据此重标定强度，再用参数化引导把激活直接设为目标强度；多属性同时引导会互相干扰，作者用正交化把各属性解耦，使一个行为出现时不带出其他行为。",
+    "why": "激活引导比微调便宜、可即时开关，但“强度含义不统一 + 多属性互相污染”一直是它进不了生产的原因，这篇两件都治。",
+    "insight": "想让 agent 同时“更简洁 + 更严谨”这类多目标，别直接叠加两个向量：先正交化再设目标强度，并在同一批 prompt 上回归验证单属性没被带偏。"
+  },
+  {
+    "rank": 5,
+    "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
+    "title_cn": "LLM 能靠自由探索发现物理定律吗",
+    "url": "https://arxiv.org/abs/2610.37649v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37649，cs.CL/cs.AI/cs.MA，Zhen Yang 等 4 人",
+    "what": "LongChang 框架造出“物理定律被改过”的模拟世界，让 LLM 当探索者自己动手做实验、造工具、提问题，再由独立 LLM agent 生成场景、审工具设计、按改动后的物理规则核对报告；12 个模型参赛，全流程无人介入。",
+    "why": "它把“agent 自主科学发现”从演示变成可自动打分的基准，关键设定是没人告诉你要研究什么。",
+    "insight": "评估 agent 的自主性可以借用这个设计：给一个规则被改动的环境且不给任务描述，看它能否自己提假设、用实验证伪——比多轮问答更能暴露探索策略的缺陷。"
+  },
+  {
+    "rank": 6,
+    "title": "What Improves During Pretraining? Tracking Knowledge Acquisition with Point-in-Time Models",
+    "title_cn": "预训练里到底什么在变好",
+    "url": "https://arxiv.org/abs/2610.37631v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37631，cs.AI，Chang Su 等 4 人",
+    "what": "用不同年份网页快照训练的时间点模型定义 temporal variability score（TVS，条目负对数似然跨模型的变异系数）；在 6 个基准、6 个开源模型族上发现高 TVS 条目后期提升更快，训练结束时在 34/36 个模型-基准组合上反超低 TVS 条目，平均领先 7.3 个百分点。",
+    "why": "说明知识的时间敏感度与学习曲线强相关，直接关系到“模型直接答 vs 必须联网核对”的边界怎么划。",
+    "insight": "可以把“该事实在语料里的时间变异度”当检索触发器：高 TVS 的事实必须联网或检索核对，低 TVS 的稳定知识才让模型直答，这比统一加 RAG 更省成本。"
+  },
+  {
+    "rank": 7,
+    "title": "Multi-State Linear Attention with Generalized Second-Order Routing",
+    "title_cn": "多状态线性注意力的二阶路由",
+    "url": "https://arxiv.org/abs/2610.37645v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37645，cs.CL，Hee Seung Hwang 等 5 人",
+    "what": "针对多状态线性注意力（MSLA）只用 query 与各段 key 的均值对齐、忽略段内分布的问题，MERLIN 跟踪每段 key 的一阶与二阶矩，让 query 同时恢复对齐的均值与方差，做更内容感知的聚合。",
+    "why": "长上下文是 agent 的硬成本项，这类“分段压缩 + 更好路由”的改动直接影响长会话的召回质量与显存占用。",
+    "insight": "自建长上下文记忆时别只存每段均值：保留每段分布特征（均值 + 方差），在段内主题混杂时判断“哪段更相关”会稳得多。"
+  },
+  {
+    "rank": 8,
+    "title": "MuonGS: Pretraining LLMs with Relaxed Weight-Norm Control",
+    "title_cn": "Muon 预训练里的权重范数控制",
+    "url": "https://arxiv.org/abs/2610.37647v1",
+    "date": "2026-10-27",
+    "source": "arXiv 2610.37647，cs.LG/cs.AI/math.OC，Athanasios Glentis 等 3 人",
+    "what": "用“累积有效学习率” C_T=Ση_t/‖W_t‖_F 分析 Muon 全程训练，证明范数有界时相对权重位移可被约束：vanilla Muon 只能对数累积（可能限制探索），MuonW/MuonH 在给定条件下至少线性累积；并给出“范数增长更慢反而累积更快”的结论。",
+    "why": "Muon 类优化器正在被大规模预训练采用，但 weight decay 与范数约束为何有用、该给多少一直缺理论，这篇给了一个可算的标量。",
+    "insight": "调 Muon 时把 ‖W‖ 轨迹当一等指标记录，用 C_T 判断“探索是否被提前锁死”，比只盯 loss 更早发现学习率与衰减配置的问题。"
+  }
+]

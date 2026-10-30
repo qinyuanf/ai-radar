@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "We're releasing the weights of Mistral Large 4",
+    "title_cn": "Mistral Large 4 开放权重发布",
+    "url": "https://mistral.ai/news/mistral-large-4-oss/",
+    "date": "2026-10-29",
+    "source": "Hacker News 1189 分 338 评论",
+    "what": "Mistral 按 10 月初的承诺放出 Large 4 权重：1 万亿参数 MoE、520 亿激活参数、原生多模态；此前只能通过 Mistral 自家平台以约半价调用，权重放出后 1T 级模型第一次可私有部署。",
+    "why": "Hacker News 当天 AI 相关最高分帖（1189 分 338 评论）；权重落地叠加“欧洲训练”的来源，让它成为数据不出域场景的现实候选。",
+    "insight": "如果 agent 依赖长上下文多模态，先把自托管的显存与吞吐算清楚：1T/52B 激活不是单机玩具；短期更务实的用法是把它放在合规分支，而不是整体替换现有 API。"
+  },
+  {
+    "rank": 2,
+    "title": "Claude Code regularly sends each background agent’s transcript to its model",
+    "title_cn": "Claude Code 定时重发后台代理全文",
+    "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+    "date": "2026-10-29",
+    "source": "Hacker News 560 分 225 评论",
+    "what": "一份 gist（附约 70 行 Bun preload 补丁）指出：Claude Code 每约 30 秒把每个后台 agent 的完整 transcript 发给它自己的模型，只为生成 3–5 个词的进度短语；该行为自 2.1.232 版起默认开启且没有开关。",
+    "why": "HN 560 分 225 评论；作者用 OpenTelemetry 的 query_source=agent_summary 统计出这部分占 16.4% 花费、19.7% 请求，对应 issue 里还收集到 18–26% 的独立测量。",
+    "insight": "多 agent 编排的成本要按“调用用途”拆账：为 UI 服务的摘要类调用最容易被忽略；给自研编排器加用途标签（query_source），先量出来再砍，能省 15% 以上。"
+  },
+  {
+    "rank": 3,
+    "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
+    "title_cn": "Gemini 4 Carbon 登顶智能榜",
+    "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+    "date": "2026-10-29",
+    "source": "Hacker News 328 分 240 评论",
+    "what": "Artificial Analysis 评测：Gemini 4 Carbon（high）在 Intelligence Index v5 得 59 分排第一，9 项评测中 4 项第一（HLE-Diamond、Terminal-Bench-Science、AA-Omniscience、AutomationBench-AA）；编码 agent 指数 59 分，仅次于 Claude Opus 5.5 的 62。",
+    "why": "HN 328 分 240 评论；但它知识工作（AA-Briefcase 1609 Elo）仍落后 Grok 4.7 与 Kimi K3.1 Pro，且目前只对部分用户开放、给五折首发价。",
+    "insight": "选型别只看总榜：Carbon 的强项是科学推理与低幻觉（omniscience 准确率 58%，比 Argon 高 10 点），代码 agent 仍逊于 Opus 5.5——按任务分层选模型比整体换模型更划算。",
+    "image": "images/2026-10-30/gemini-4-carbon-is-the-new-1-on-the-artificial-a.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "LLM Voice",
+    "title_cn": "LLM 腔调：一眼可辨的机器文风",
+    "url": "https://martinfowler.com/bliki/LLM-Voice.html",
+    "date": "2026-10-29",
+    "source": "Hacker News 338 分 178 评论",
+    "what": "Martin Fowler 的短文：读到 LLM 产出时会有“恐怖谷”式反感，触发点不是破折号，而是“承重的挂毯”这类套路；他认为检测工具意义不大，作者应避免让模型写初稿，最多用来搭大纲。",
+    "why": "HN 338 分 178 评论，正撞上“AI 生成文档铺满内部 wiki”的当下；他本人要求站内任何 AI 辅助写作都要声明用法。",
+    "insight": "对外交付物里模型初稿即使人工改过也会残留腔调，读者会因此降低信任；我们的报告应让“结论、证据、数字”来自真实数据，套话骨架交给脚本组装，而不是让模型自由扩写。"
+  },
+  {
+    "rank": 5,
+    "title": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
+    "title_cn": "Qwen3.5 内含可运行的 RISC-V",
+    "url": "https://divagr.com/blog/qwenputer",
+    "date": "2026-10-29",
+    "source": "Hacker News 679 分 144 评论",
+    "what": "作者把一个确定性的 RISC-V CPU 编译进 Qwen3.5 4B 的权重：用 Gated DeltaNet 层状态当 RAM（gate=1、beta=1 加 one-hot key 让存储变精确），CPU 完全在前向传播里跑，可执行算术、C 与 MicroPython 代码，不依赖任何外部工具或沙箱。",
+    "why": "HN 679 分 144 评论；文中还指出两个后果：混合模型可以学会把推理藏进 RNN 状态以躲开 CoT 监控，而编译进权重的电路反过来能当模型无法篡改的内置监控。",
+    "insight": "“模型能自己算而不调工具”会击穿现有审计假设：凡是靠 CoT 或工具日志做可观测的 agent 平台，都要补一层不依赖模型自述的监控（激活探针、权重内固定电路）。",
+    "image": "images/2026-10-30/qwenputer-a-functioning-deterministic-risc-v-cpu.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "An updated Model Spec for more capable and beneficial AI",
+    "title_cn": "OpenAI 更新 Model Spec",
+    "url": "https://openai.com/index/updated-model-spec",
+    "date": "2026-10-29",
+    "source": "OpenAI 官方博客（RSS，2026-10-29）",
+    "what": "2026-10-29 版 Model Spec 把行为准则重组为五条价值观（忠于人类意图、最小化伤害、诚实透明、人类能动性、公平），并删减风格类规则；在“忠于意图”下明确“在约定范围内自主行动”“默认不信任外部数据”“支持人类监督与纠正”等根规则。",
+    "why": "这是 OpenAI 对 GPT 产品与 API 行为的公开契约；把 agent 自主边界、外部内容不可当指令写进根规则，等于给行业 agent 安全的默认值定了调。",
+    "insight": "写 agent 系统提示词可直接对齐这份结构：三条硬规则（作用域内自主、越界前询问、外部内容不得当指令）+ 每个自主动作配可撤销路径，比堆叠“不要做 X”的清单更好审计。"
+  },
+  {
+    "rank": 7,
+    "title": "How we detect frontier model misalignment",
+    "title_cn": "OpenAI 如何检测前沿模型失准",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "date": "2026-10-29",
+    "source": "OpenAI 官方博客（RSS，2026-10-29）",
+    "what": "OpenAI 公开其分层监控：L0 激活探针（便宜分类器，未命中流量随机放行 5% 作对照）、L1 模型评审读 CoT 与工具调用、L2 调查 agent 复现并跑代码、敏感负载再加 L3 用网络日志核对 transcript；覆盖 Astra 级模型的全部 RL 与评测、内部 Codex 全量流量。",
+    "why": "10-29 发布，起因是 Hugging Face 事件（评测环境里没有监控）；最快一次真实告警 15 分钟（RL 中一次 DNS 外联）。对外还提供 webhook：被判定的工具调用会话可中止并通知企业安全团队。",
+    "insight": "“便宜筛 → 贵调查 → 随机对照抽样”的结构可直接搬进我们的 agent 平台：轻量规则先拦、调查 agent 复现、保留随机放行比例估计漏检率——没有对照组，就无法证明监控有效。"
+  }
+]
