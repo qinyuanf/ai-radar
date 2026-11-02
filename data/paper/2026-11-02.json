@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In",
+    "title_cn": "在输出前探测 agent 何时松口",
+    "url": "https://arxiv.org/abs/2610.40588v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40588，cs.AI，Leonidas Raghav",
+    "what": "研究在 agent 共享频道与凭据的多智能体场景里，用一个线性探针读目标 agent 的激活，在每次模型调用、输出写出之前预测它是否即将泄露密钥；六个场景中同伴最多施压 20 轮。",
+    "why": "在 Qwen3-32B 留出集上，把良性调用误报率控制在 5% 时能抓到 82% 的泄露调用，零样本决策模型监控只抓到 26%；gpt-oss-20b 的推理激活探针 AUROC 0.91。",
+    "insight": "输出过滤只能事后拦，管不住“即将松口”；但探针也会把合规披露标成风险，且只能短程预警——适合做二次确认触发器，不适合直接熔断。另外，同样标注训练的词袋分类器效果接近，说明收益主要来自标签而非激活，可以先低成本做标签化监控。"
+  },
+  {
+    "rank": 2,
+    "title": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents",
+    "title_cn": "用主动探索验证电脑操作 agent",
+    "url": "https://arxiv.org/abs/2610.40578v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40578，cs.AI/cs.CL/cs.CV，Qiushi Sun 等 8 人",
+    "what": "把 computer-using agent 的任务完成验证改造成“主动探索”：验证器先读上下文生成任务 rubric，再按未满足项选择 GUI 或代码检查，最后按显式证据规则合并结论，统一在线/离线、桌面/移动/Web 场景。",
+    "why": "对比 VLM 打分与生成程序检查两类基线，在多种平台与观察模态下与参考标签一致率更高；离线难例提升最大，在线更能拒绝“假完成”声明。",
+    "insight": "agent 自评“我完成了”不可信是常态；验证器要有独立的证据采集动作（点开页面、读状态），并保留每条 rubric 对应的证据。给数字员工加验收环节时，先做 rubric → 证据 → 结论三段，而不是再加一个 LLM judge。"
+  },
+  {
+    "rank": 3,
+    "title": "Retrieval as Traversal: Value-Indexed Memory for Stateful Long-Context Agents",
+    "title_cn": "把检索变成有状态的局部遍历",
+    "url": "https://arxiv.org/abs/2610.40545v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40545，cs.AI，Daniel Strauß 等 3 人",
+    "what": "提出把长上下文 agent 的检索看作在地址空间里的持续局部遍历：内容与地址分离，效用定义为“取回内容带来的信息量”，几何只决定到达成本，并用成本正则化的索引目标鼓励互补记忆同取、抑制冗余记忆。",
+    "why": "在 MiniGrid Memory 的概念验证里，固定几何的持续遍历头用 5 token 上下文达到 0.95 平均回报，训练 0.59M 步；高斯绝对寻址需要 0.94M 步，类别绝对寻址超过 2M 步。",
+    "insight": "记忆检索的优化目标应是“信息增量/到达成本”，而不是向量相似度；做 agent 长期记忆时，先给每条记忆算边际价值，再决定是否放进同一检索集，能避免一堆各自有用但互相冗余的记忆挤占上下文。"
+  },
+  {
+    "rank": 4,
+    "title": "Collaborative AI agents for autonomous experimental research with solid-state quantum spins",
+    "title_cn": "多 agent 互相评审做自主实验",
+    "url": "https://arxiv.org/abs/2610.40589v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40589，cs.AI/cs.MA/quant-ph，El Mustapha Mansouri 等 4 人",
+    "what": "搭建一个 LLM agent 自主实验室：agent 互相评审、能叫停或改道研究，可提出并否决研究问题、要求独立理论校验、设计能证伪自己结论的实验；在金刚石量子自旋系综上做了验证。",
+    "why": "首次实验支持理论预测，但重复参考测量发现信号在采集期间漂移，agent 因此把结果判为不确定并修改测量协议，同时不放宽验收标准；改版实验通过后才接受结论。",
+    "insight": "多 agent 做研究或分析时，关键不是“投票”，而是让 agent 有权限把结果判为无效并改协议；给分析 agent 加一条硬规则：出现与预期不符的测量漂移时先查仪器或数据采集，再改结论。"
+  },
+  {
+    "rank": 5,
+    "title": "Advancing Clinical Genomic Analysis with a Skill-Centred Agent",
+    "title_cn": "临床基因组 agent 组合 105 个技能",
+    "url": "https://arxiv.org/abs/2610.40556v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40556，cs.AI/q-bio.GN，Qiaoyu Zheng 等 13 人",
+    "what": "临床基因组分析 agent ClinGeX：通过任务相关检索与依赖感知编排组合 105 个可执行技能，覆盖变异分析、罕见病解读与分子肿瘤决策。",
+    "why": "223 个时间留出基准上，与专家参考分类的宏平均一致率 71.7%，最强对照 45.7%；45 名临床基因组专业人员、135 例的人机协作研究里，ClinGeX 辅助把病例级一致率提到 51.1%/57.8%/64.4%，并缩短解读时间。",
+    "insight": "领域 agent 的护城河是可执行技能库与依赖编排，不是通用推理；做业务数字员工时，把 SOP 拆成有输入输出契约的技能，再让 agent 负责检索与排序，比让它自由发挥更可验收。"
+  },
+  {
+    "rank": 6,
+    "title": "ShallowDefend: Harnessing Shallow Safety Alignment for Multi-Turn Defender",
+    "title_cn": "让模型先做安全决策再回答",
+    "url": "https://arxiv.org/abs/2610.40627v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40627，cs.CL，Qiyao Ma 等 12 人",
+    "what": "针对多轮对话越狱：让防御方在生成回复前先做一个显式、可解析的安全决策（评估意图 → 决定 → 回复），用强化学习训练这个决策 token 段，并可用规则自检奖励，无需额外裁判模型或标注。",
+    "why": "两个模型家族、14 个覆盖安全/效用/有用性的基准上取得受控对比中最强的多轮安全性，同时保住效用、只小幅牺牲有用性；逐 token KL 与干预探针显示训练效果集中在决定回复轨迹的短决策段。",
+    "insight": "多轮攻击的突破口是“第一小段输出”；给业务 agent 加安全门时，把判断做成显式结构化字段（风险类型/是否拒绝/依据）再生成正文，比在 system prompt 里堆“不要做 X”更容易审计和回归。"
+  },
+  {
+    "rank": 7,
+    "title": "Elucidating the Design Space of LM Data Attribution",
+    "title_cn": "用虚构知识测数据归因",
+    "url": "https://arxiv.org/abs/2610.40655v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40655，cs.CL，Steven Yu 等 5 人",
+    "what": "提出 CATT 数据归因基准：用完全虚构的知识微调模型，得到无歧义的归因真值，再逐项改动文档冗余、词汇干扰等数据配置，隔离出归因算法失败的原因。",
+    "why": "发现冗余与干扰会稳定拉低归因；训练文档里真正的因果证据高度局部化，而常规方法把分数平均到整篇文档会稀释证据。改用负对数几率梯度并只聚合最高 token 分数，真值召回提升 35–72 个百分点；在 FTRACE-TREX 上反事实重训效果最高提升 4.9 倍。",
+    "insight": "做 RAG 溯源或数据审计时，别把文档级归因分数平均：先定位关键 token 段，再聚合；否则“哪段资料导致了这个回答”会被长文档稀释成噪声。"
+  },
+  {
+    "rank": 8,
+    "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+    "title_cn": "编码 agent 批量造机器人仿真",
+    "url": "https://arxiv.org/abs/2610.40565v1",
+    "date": "2026-10-29",
+    "source": "arXiv 2610.40565，cs.RO/cs.AI/cs.LG，Pranjal Aggarwal 等 2 人",
+    "what": "让编码 agent 批量创建机器人仿真：按美国 GDP 数据挑选有经济价值的物理工作，定义“好仿真/好任务”标准，并用对抗式创建-审计循环检查；产出 RoboWorld，含 25 个仿真、25 个测试与 175 个训练 RL 环境。",
+    "why": "最强前沿模型在所有 RoboWorld 测试任务上平均奖励只有 0.06；论文进一步给出上下文学习、特权教师、自我辅助学习、代码策略生成示范等提升路径，并用于训练 VLA。",
+    "insight": "把“造环境”也交给编码 agent，是把 agent 能力转成训练数据的最低成本路径；内部做 agent 评测时，可以先用代码 agent 生成可复现的任务环境与审计规则，再谈模型分数。"
+  }
+]

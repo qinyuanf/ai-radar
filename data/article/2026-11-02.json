@@ -1,0 +1,83 @@
+[
+  {
+    "rank": 1,
+    "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
+    "title_cn": "5 个小模型组队打平 Fable 5",
+    "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
+    "date": "2026-10-31",
+    "source": "Hacker News 425 分 208 评论",
+    "what": "Memdoor 的 team-solve 工作流用 5 个 Qwen3.8-27B 角色（规划、两个构思、求解、管理、修复）分工解一道题，角色间只通过磁盘文件通信，由样例测试脚本判定成功；作者把过程写成 8 个 YAML，没有代码、也没有绑定模型。",
+    "why": "HN 425 分 208 评论；在 LiveCodeBench Hard 前 10 题 × 5 轮上平均 9.8/10，原作者 harness 9.6、Fable 5 单次调用 8.0；中位 40 分钟、每轮 $0.39，50 轮共 $35.79。作者自己承认样本只有 10 题，9.8 与 9.6 在噪声范围内，完整 100 题上 Fable 5 仍是 92.4。",
+    "insight": "多角色协作的收益要先扣掉“管理者的错误纠正”成本：这次唯一的失分就是 manager 编造了错误反例、让团队改坏了正确程序。把角色间共享状态限制成可 diff 的文件，并让测试脚本而不是管理者拥有最终否决权，是这套方案最值得抄的部分。",
+    "image": "images/2026-11-02/memdoor-a-team-of-5-qwen3-8-27b-models-beats-fab.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Do the math: How we took over ChatGPT accounts",
+    "title_cn": "如何接管 ChatGPT 账号",
+    "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+    "date": "2026-10-31",
+    "source": "Hacker News 357 分 176 评论",
+    "what": "Parameter 披露一条完整利用链：受害者只需打开攻击者分享的链接，就能借 MathLive 的 postMessage 沙箱逃逸与 YouTube JSONP 绕过 CSP 执行任意 JS，从而接管 ChatGPT 账号并导出私有数据；OpenAI 已在 10-26 修复。",
+    "why": "HN 357 分 176 评论；整条链路完全发生在浏览器侧，不需要安装任何东西，说明 agent 产品每引入一个第三方富交互组件，都可能多出一条“打开链接即执行”的入口。",
+    "insight": "任何在 ChatGPT 或浏览器里渲染第三方内容的数字员工，都要按“不可信 iframe + postMessage 来源白名单 + CSP 禁用 JSONP”审计；把“打开链接即执行”的路径列成高危回归用例，而不是等安全团队来扫。"
+  },
+  {
+    "rank": 3,
+    "title": "The AI cost of JavaScript frameworks",
+    "title_cn": "AI 给 JS 框架增加的体积成本",
+    "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
+    "date": "2026-11-01",
+    "source": "Hacker News 294 分 228 评论",
+    "what": "Nolan Lawson 实测让 AI 编码 agent 生成同一类页面时，不同前端框架会多带 0–142 KiB 的 JavaScript：Astro、Hono+htmx 与原生最小，Angular、Next.js 最大。",
+    "why": "HN 294 分 228 评论；agent 倾向选择训练语料里常见的重框架，这笔成本不会出现在 code review 里，而是落到用户首屏与流量上。",
+    "insight": "给编码 agent 的规则里加一条预算：新增依赖前先报预计 gzip 体积，超过阈值必须说明理由；框架选型用真实产物测量，不要用“社区主流”当证据。",
+    "image": "images/2026-11-02/the-ai-cost-of-javascript-frameworks.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Malware uses LLMs to rank victims by how much they're worth",
+    "title_cn": "恶意软件用大模型给受害者估值",
+    "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+    "date": "2026-10-31",
+    "source": "Hacker News 257 分 137 评论",
+    "what": "Talos 分析 VOLTA 窃密木马：偷完凭据、Cookie、钱包后，把受害者画像打包发给 OpenRouter 上的 Claude Opus 4.6，要求按“可变现价值”给资产分级并附 OPSEC 评估；模型拒答时自动切到 Kimi K2、Gemini 2.5 Flash 重试。",
+    "why": "10-31 发布；木马硬编码了三模型 failover，并检查回复里是否出现“I can't / I'm not able”再决定切换，说明攻击者已经把模型拒答当成可工程化绕过的常态，而不是偶发。",
+    "insight": "别把“模型会拒答”当安全边界：对外提供 agent 的团队要做输入侧滥用检测与账号级速率/额度控制；敏感工具调用必须加人工确认，模型输出不能直接触发资金或数据导出。",
+    "image": "images/2026-11-02/malware-uses-llms-to-rank-victims-by-how-much-th.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "GPT-5.6 Sol can beat Factorio on peaceful mode",
+    "title_cn": "GPT-5.6 通关 Factorio",
+    "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
+    "date": "2026-10-31",
+    "source": "Hacker News 176 分 187 评论",
+    "what": "作者让 GPT-5.6 Sol 通过 Python 库玩 Factorio 和平模式，13.5 小时通关；模型能规划产线，但后期扩产仍需人工帮忙把系统连起来。",
+    "why": "HN 176 分 187 评论；13.5 小时的连续任务已经超出“单次对话”的尺度，暴露的是长程 agent 的状态保持与工具编排，而不是单步推理能力。",
+    "insight": "长任务 agent 的关键指标是“多久需要人接手一次”，不是单步正确率；把人工介入点显式记录成事件，才能算出真实自动化率，并找到下一个该补的工具。"
+  },
+  {
+    "rank": 6,
+    "title": "AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy",
+    "title_cn": "50 个 agent 被官僚主义拖垮",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy",
+    "date": "2026-11-01",
+    "source": "Hacker News 149 分 72 评论",
+    "what": "Tom's Hardware 报道：研究者把 50 个 AI agent 放进 Minecraft，要求它们协作建立文明；结果团队陷入“瘫痪性官僚主义”，协调成本随 agent 数量上升，任务失败。",
+    "why": "HN 149 分 72 评论；这是对“多 agent 一定更强”的直接反例，而且失败原因不是模型能力，而是组织与协调机制本身。",
+    "insight": "多 agent 编排先设“协调预算”：限制消息轮次、明确裁决者、把共享状态写成结构化文件；agent 数量超过 5 个时，先证明协调开销低于并行收益，否则单 agent + 工具更稳。",
+    "image": "images/2026-11-02/ai-agent-swarms-in-minecraft-fail-to-build-civil.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Making it easier for websites to express AI training preferences",
+    "title_cn": "网站用 robots.txt 表达训练偏好",
+    "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+    "date": "2026-10-30",
+    "source": "OpenAI 官方博客（RSS，2026-10-30）",
+    "what": "OpenAI 宣布将遵守 robots.txt 中一个共享的 AI 训练偏好信号，让站点用同一份声明向多个参与方表达是否允许用于生成式 AI 训练；具体实现计划在未来几个月落地。",
+    "why": "10-30 发布；这是把“每个厂商一个爬虫 UA”收敛成单一信号的第一步，直接影响 agent 抓取与 RAG 数据管线的合规前提。",
+    "insight": "做网页抓取/RAG 的团队现在就把 robots.txt 解析纳入数据管线：记录抓取时的声明与时间戳，给每个文档打“训练/检索许可”标签，等信号落地后才能证明数据来源合规。"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "sleepy-zone/ai-ref-library-cn",
+    "url": "https://github.com/sleepy-zone/ai-ref-library-cn",
+    "stars": 574,
+    "trend": "2026-10-29 后新建，4 天内 574★",
+    "what": "把三套日文 AI 作图参考素材（脸/姿势/服装）做成中文站：分类标签全译中文、中英双语搜索、一键复制提示词，还能随机组合三库并生成带参考图直链与 curl 取图命令的提示词。",
+    "why": "10-29 建仓，4 天 574★；它解决的是“参考图怎么喂给 agent”——对能联网的 agent 给直链和取图命令，对只能贴图的模型生成 2828×1380 三联图。",
+    "insight": "给视觉 agent 提供参考素材时，优先给可 fetch 的 URL + 明确“先取图再生成”的指令，而不是让模型凭文字描述想象；没有联网能力的模型再退回拼图方案。",
+    "image": "images/2026-11-02/sleepy-zone-ai-ref-library-cn.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Balanov/baiagent-director",
+    "url": "https://github.com/Balanov/baiagent-director",
+    "stars": 305,
+    "trend": "2026-10-28 后新建，5 天内 305★",
+    "what": "本地优先的 AI 商业顾问 Windows 应用：从公司网站、市场证据和本地文档出发，输出带来源的假设、动作、负责人、时间、预算、成功指标与停止条件；支持本地 Qwen 模型，不强制云 API。",
+    "why": "10-28 建仓，5 天 305★；它把“证据、假设、建议”分栏存，并用 observation → mechanism → action → verification 组织因果链，正好对应 agent 交付物最难审计的部分。",
+    "insight": "数字员工输出的建议要强制分三层：观察到的事实（带来源）、推断的机制、建议的动作；再把“停止条件”写成可检查的字段，否则 agent 会无限优化一个没定义成功的任务。",
+    "image": "images/2026-11-02/balanov-baiagent-director.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "tavern-labs-ai/persona-ai-sdk",
+    "url": "https://github.com/tavern-labs-ai/persona-ai-sdk",
+    "stars": 192,
+    "trend": "2026-10-31 后新建，2 天内 192★",
+    "what": "TypeScript 的角色 agent SDK：内置 8 张 persona 卡、持久角色记忆、SQLite 存储，以及 Amazon Bedrock 与 OpenAI Responses API 适配器，目标是把“有记忆的角色”打包成一个依赖。",
+    "why": "10-31 建仓，2 天 192★；它把 persona、记忆和模型适配器收进一个 MIT 包，说明角色类 agent 正在从 prompt 模板变成可复用运行时。",
+    "insight": "角色一致性不要靠每次重写 system prompt：把 persona 卡、记忆读写和模型适配分层，换模型时只换适配器；同时给记忆加 TTL 和删除接口，角色才不会越聊越偏。",
+    "image": "images/2026-11-02/tavern-labs-ai-persona-ai-sdk.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "enmerasoftware/ai-design-check",
+    "url": "https://github.com/enmerasoftware/ai-design-check",
+    "stars": 159,
+    "trend": "2026-10-28 后新建，5 天内 159★",
+    "what": "给 AI 编码 agent 用的界面设计检查器：76 条设计规则、零依赖 CLI、可标记每处问题的 agent skill，覆盖 Web 仪表盘/后台/SaaS 页面以及 SwiftUI、Jetpack Compose；示例中把 266 个问题修到 0。",
+    "why": "10-28 建仓，5 天 159★；它补的是“agent 会写页面但不会判断好不好看”的验收缺口——检查器在修完后还能继续拦住下一次编辑引入的退化。",
+    "insight": "把主观的“设计还原”拆成可执行规则 + 可重复检查，是 agent 交付 UI 的唯一可规模化路径；可以先接它的 76 条规则做 CI 门禁，再逐步换成本团队的设计 token。",
+    "image": "images/2026-11-02/enmerasoftware-ai-design-check.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "gh9ko8y/graphmemory",
+    "url": "https://github.com/gh9ko8y/graphmemory",
+    "stars": 108,
+    "trend": "2026-10-30 后新建，3 天内 108★",
+    "what": "双时态 AI 记忆服务：每条事实同时记录有效时间与写入时间，用六变量衰减、时间梯度、TTL、去重和竞争检索管理长期记忆，底层是 Graphiti 时序知识图谱 + PostgreSQL/pgvector + Redis，内置 MCP server 与 Web 管理台。",
+    "why": "10-30 建仓，3 天 108★；它把“遗忘”做成降级与 TTL 而不是删除，并保留只追加的原文账本，正面回应 agent 记忆最难的两件事：过时信息与可追溯性。",
+    "insight": "记忆系统先设计“什么时候失效”再设计“怎么检索”：给临时状态、动作、事件、偏好分别设 TTL，并把原文账本与抽取后的事实分开存，才能回答“当时到底说了什么”。",
+    "image": "images/2026-11-02/gh9ko8y-graphmemory.jpg"
+  }
+]

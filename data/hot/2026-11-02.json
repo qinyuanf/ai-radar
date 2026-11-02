@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Significant-Gravitas/AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "stars": 187860,
+    "trend": "+281 stars/18天（对比 2026-10-15）",
+    "what": "AutoGPT 已从早期的自主 agent 实验转向产品化的“AI 专家团队”：由协调者 Otto 统一调度，内容、销售、研究等专家按自然语言简报分工，既可用托管版也可自托管，仓库仍是平台源码与文档的统一入口。",
+    "why": "187,860★ 仍是 AI 仓库第一梯队，11-02 还有提交；但 18 天只涨 281★，热度已经从“自主循环”的叙事转移到可交付的专家团队产品，增长曲线明显放缓。",
+    "insight": "做数字员工可以借鉴它的角色拆分：协调者 + 领域专家 + 人类简报，而不是一个万能 agent；评估时先看自托管版的模型调用与权限边界，别被托管试用版的能力演示带走。",
+    "image": "images/2026-11-02/significant-gravitas-autogpt.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "ollama/ollama",
+    "url": "https://github.com/ollama/ollama",
+    "stars": 185604,
+    "trend": "+2,417 stars/18天（对比 2026-10-15）",
+    "what": "本地运行开源大模型的一键工具：一个二进制拉起 Kimi、GLM、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型，提供 Python/JS SDK，并可直接接 Claude Code、OpenCode、Codex、Copilot 等 agent 客户端。",
+    "why": "185,604★，10-31 仍在提交；18 天涨 2,417★，是本轮热门榜里增速最高的基础设施项目——模型迭代越快，本地推理层越需要一个统一入口。",
+    "insight": "把 Ollama 当 agent 的“本地模型插座”可以，但别默认它能替代生产 API：先把目标模型在 32K 上下文、并发 4 以上的吞吐与显存打平，再决定哪些任务降级到本地。",
+    "image": "images/2026-11-02/ollama-ollama.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "stars": 168422,
+    "trend": "+728 stars/18天（对比 2026-10-15）",
+    "what": "Hugging Face 的模型定义与加载框架，统一文本、视觉、音频和多模态模型的推理与训练接口，支持 PyTorch/TF/JAX 等后端；本周期仍在持续更新。",
+    "why": "168,422★，11-02 有提交；18 天涨 728★，增速不高，但仍是模型接入的事实标准——新模型发布后通常几小时内就有 Transformers 实现。",
+    "insight": "自研 agent 的离线评估与回归优先用 Transformers 跑，而不是把线上链路绑死在它上面：它的价值是“换模型不改调用”，不是低延迟推理。",
+    "image": "images/2026-11-02/huggingface-transformers.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "mem0ai/mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "stars": 68244,
+    "trend": "+1,465 stars/25天（对比 2026-10-08）",
+    "what": "面向 AI agent 的记忆层：以可插拔方式为 agent 增加跨会话的长期记忆，支持用户/会话级记忆的写入、检索与更新，定位是生产可用的记忆基础设施。",
+    "why": "68,244★，10-30 有提交；25 天涨 1,465★，在“agent 记忆”赛道里是星数最高的一批，说明团队在集中解决上下文窗口之外的状态问题。",
+    "insight": "记忆不能只做“向量库 + 摘要”：上线前要测三件事——错误记忆如何撤销、跨用户隔离是否可验证、检索命中率随记忆量增长是否衰减；mem0 的接口可先用来做 A/B，不要直接当唯一事实源。",
+    "image": "images/2026-11-02/mem0ai-mem0.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "langchain-ai/langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "stars": 44289,
+    "trend": "+1,374 stars/24天（对比 2026-10-09）",
+    "what": "LangChain 出品的低层 agent 编排框架，用图结构描述有状态、长运行的 agent 流程，提供检查点、人工介入与恢复能力；README 列出的使用方包括 Klarna、Replit、Elastic。",
+    "why": "44,289★，11-02 有提交；24 天涨 1,374★。当 agent 从 demo 进入长任务，断点恢复和状态持久化比 prompt 技巧更决定可用性。",
+    "insight": "如果自研编排器还没有“每步可重放、失败可从检查点续跑”的能力，先照 LangGraph 的图 + checkpoint 模型补这块，而不是继续加工具；它偏底层，别指望它替你解决权限和审计。",
+    "image": "images/2026-11-02/langchain-ai-langgraph.jpg"
+  }
+]
