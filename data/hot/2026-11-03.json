@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "paperclipai/paperclip",
+    "url": "https://github.com/paperclipai/paperclip",
+    "stars": 110404,
+    "trend": "+7,663 stars/18天（对比 2026-10-16）",
+    "what": "把 AI agent 当成团队来管的开源应用：Node.js 服务 + React 界面，可接入 OpenClaw、Claude Code、Codex、Cursor、Gemini CLI 等不同 agent，按目标分工、为每个 agent 选模型与 harness，并统一记录任务、技能、权限、历史和成本。",
+    "why": "110,404★，11-03 仍有提交；10-16 的 102,741★ 到今天是 18 天 +7,663★，是热门榜里增量最大的一个。它的定位从“单个 agent”抬到“组织层”，正好对应团队开始同时跑多个 coding agent 的阶段。",
+    "insight": "数字员工平台要先把组织层和运行时拆开：agent 只负责执行，目标、预算、权限、审计放在上层；否则每换一个 harness 就要重做一遍治理。试用时先验证“按 agent 记成本”和“跨 agent 的任务归属”这两个能力是否真的可用。",
+    "image": "images/2026-11-03/paperclipai-paperclip.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "langflow-ai/langflow",
+    "url": "https://github.com/langflow-ai/langflow",
+    "stars": 156268,
+    "trend": "+458 stars/15天（对比 2026-10-19）",
+    "what": "可视化搭建与部署 AI agent / 工作流的平台：拖拽编排、Python 组件、playground 逐步调试、多 agent 会话与检索，可把流程导出 JSON、部署成 API，或直接发布成 MCP server 供其他客户端调用。",
+    "why": "156,268★ 是今日热门榜最高，但 10-19 的 155,810★ 到现在 15 天只涨 458★，增长已经放缓；11-03 仍在提交，说明项目进入维护与集成期，MCP 导出是它当前最实用的差异点。",
+    "insight": "把它当“编排原型 + 工具暴露层”而不是生产运行时：流程要按代码管理（JSON 进 Git、review、回归），MCP server 暴露前先定好鉴权和工具粒度，别把一个内部流程直接变成所有 agent 都能调的公网工具。",
+    "image": "images/2026-11-03/langflow-ai-langflow.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "punkpeye/awesome-mcp-servers",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers",
+    "stars": 97211,
+    "trend": "+801 stars/18天（对比 2026-10-16）",
+    "what": "MCP server 的索引仓库，按官方/社区、语言、场景等维度收录可接入的 MCP 服务，是给 agent 找工具时最常用的清单之一。",
+    "why": "97,211★，11-02 有提交；10-16 的 96,410★ 到今天是 18 天 +801★。MCP 已经从协议讨论进入“工具目录”阶段，清单的覆盖面和维护频率直接决定 agent 能接到多少现成能力。",
+    "insight": "选工具前先按“读/写、是否需要凭证、能否回滚”给清单里的 server 分级，不要按 star 或分类直接装；团队内部应维护一份只含已审计 server 的白名单，清单只用来发现候选。",
+    "image": "images/2026-11-03/punkpeye-awesome-mcp-servers.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "D4Vinci/Scrapling",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "stars": 92926,
+    "trend": "+5,000 stars/18天（对比 2026-10-16）",
+    "what": "Python 网页抓取框架：静态请求、stealth 浏览器渲染、解析、并发爬取、代理轮换、自动重试、暂停恢复和数据导出放在一套 API 里；同时提供 MCP server 与 Agent Skill，可把整站抓成干净的 Markdown。",
+    "why": "92,926★，11-02 有提交；10-16 的 87,926★ 到今天是 18 天 +5,000★，是热门榜里增速第二。agent 的上游瓶颈越来越集中在“怎么稳定拿到网页数据”，而不是推理本身。",
+    "insight": "给 agent 配网页能力时，用独立抓取层承接会话、代理、重试和反爬，agent 只拿结构化结果；MCP 暴露时加域名白名单和单次抓取预算，避免一个失控的子任务把出口 IP 打黑。",
+    "image": "images/2026-11-03/d4vinci-scrapling.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "cheaper-inference/OmniRoute",
+    "url": "https://github.com/cheaper-inference/OmniRoute",
+    "stars": 83990,
+    "trend": "首日快照：总 83990★，2026-11-03 有提交",
+    "what": "MIT 许可的免费 AI 网关：一个 endpoint 汇聚 375 家 provider（其中 150+ 有免费额度）、1,400+ 模型，按 OpenAI 兼容协议转发；README 估算第三方免费额度合计约每月 16.2 亿 token，并给出池化去重口径。",
+    "why": "83,990★，11-03 有提交，是首次进入榜单；在模型价格和额度频繁变动的阶段，统一入口能显著降低多模型接入与切换成本。",
+    "insight": "免费额度只能当实验和兜底，不能当 SLA：接入前把每个 provider 的限额、数据留存、模型版本固定下来，并在网关侧按任务记录“实际 provider + 成本 + 失败率”，否则路由一变就无法复现结果。",
+    "image": "images/2026-11-03/cheaper-inference-omniroute.jpg"
+  }
+]

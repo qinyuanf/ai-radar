@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Astra can read and write weights to improve Qwen",
+    "title_cn": "Astra 直接读写权重改进 Qwen",
+    "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+    "date": "2026-11-02",
+    "source": "Hacker News 1901 分 602 评论",
+    "what": "MIT CSAIL 的实验：GPT-6 Astra 直接读原始权重就能判断网络训练目标（4 个同结构游戏网络全部答对），还能在不做梯度训练的情况下改写权重——把 Qwen3.5-0.8B 推理循环相关的 0.016% 权重改掉后，MATH-500 从 7.9% 升到 48.1%，IFEval 提升 3 倍。",
+    "why": "11-02 发布，HN 1,901 分 602 评论，是本周期讨论度最高的技术帖；它把“LLM 只能改 prompt/代码”推到“可以直接读写权重”，并公开了全部实验日志。",
+    "insight": "短期别指望用它替代训练：作者自己说受上下文长度和 harness 效率限制，实验集中在 0.8B 级模型。更现实的用法是“读权重做诊断”（找后门、找异常回路），以及用一次性权重编辑做低成本的能力补丁，但必须配独立评测防止连带损伤。",
+    "image": "images/2026-11-03/astra-can-read-and-write-weights-to-improve-qwen.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Qodo builds context into AI code review with Codex",
+    "title_cn": "Qodo 把企业知识接入 Codex",
+    "url": "https://openai.com/index/qodo-codex-plugin",
+    "date": "2026-11-02",
+    "source": "OpenAI 官方博客（RSS，2026-11-02）",
+    "what": "OpenAI 与 Qodo 合作的 Codex 插件：把公司知识库和编码规范带进 Codex，让它在开 PR 之前跨仓库检查改动，重点抓 P0 级问题。",
+    "why": "11-02 官方发布；coding agent 的竞争点正从“补全速度”转向“是否理解组织上下文”，插件化是把私有知识接进 agent 的低侵入方式。",
+    "insight": "给编码 agent 接企业内部知识时，优先做“评审前门禁”而不是“生成时注入”：前者可以用真实缺陷验证召回和误报，后者很难归因。上线前先统计它拦下的 P0 里有多少是真问题，再决定是否阻断合并。"
+  },
+  {
+    "rank": 3,
+    "title": "LifeVal",
+    "title_cn": "LifeVal：衡量 AI 日常任务能力",
+    "url": "https://openai.com/index/lifeval",
+    "date": "2026-11-02",
+    "source": "OpenAI 官方博客（RSS，2026-11-02）",
+    "what": "OpenAI 的日常任务 benchmark：用找托育、管理家庭财务、处理政府表格等真实生活事务，衡量 AI 帮人把事办完的效果，而不是只考单轮问答或代码题。",
+    "why": "11-02 发布；agent 产品的评估正在从“模型能力”转向“任务是否真的完成”，日常生活任务的约束更脏、更接近个人数字员工。",
+    "insight": "做业务 agent 评测时，照这个思路从真实用户旅程抽任务，并把“任务完成”和“用户需求被满足”分开打分；不要用一个总分掩盖某些人群或场景的系统性失败。"
+  },
+  {
+    "rank": 4,
+    "title": "Speeding up planning decisions with AI",
+    "title_cn": "AI 加速英国规划审批",
+    "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+    "date": "2026-10-30",
+    "source": "DeepMind 官方博客（RSS，2026-10-30）",
+    "what": "DeepMind 与英国政府合作的 PlanAssist：自动处理常规规划申请核查，官方称可把住户类申请的评估时间最多缩短 58%，已在多个地方规划部门试用。",
+    "why": "10-30 发布；这是 agent 进入政府审批流程的公开案例，价值不在“全自动”，而在把重复核查从人工流程里切出来。",
+    "insight": "高价值落地往往在后台文书审核，而不是面向用户的聊天入口：设计时保留人工签字、逐条证据和可回退的中间状态，用“周期时间”和“返工率”衡量，而不是用自动化覆盖率。"
+  },
+  {
+    "rank": 5,
+    "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Court Filing",
+    "title_cn": "巴西法院处罚诉讼提示注入",
+    "url": "https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing/",
+    "date": "2026-11-01",
+    "source": "Hacker News 339 分 214 评论",
+    "what": "巴西劳动法院发现两名律师在诉状里用白色文字嵌入提示注入，要求审查 AI 只做表面审查；法院的 AI 检出后对两人处以合计约 1.6 万美元罚款。",
+    "why": "HN 339 分 214 评论；这是提示注入第一次以“诉讼欺诈”形式被法院处罚，说明文档本身就是不可信输入。",
+    "insight": "任何让 agent 读用户上传文档的流程，都要在解析层去掉隐藏文字、超小字号、元数据和注释，并把“文档中出现的指令”当数据而不是命令；法律、合同类场景保留人类责任主体，不能把判断外包给模型。",
+    "image": "images/2026-11-03/brazilian-court-sanctions-lawyers-for-prompt-inj.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
+    "title_cn": "Anthropic 内部 AI 用量超薪酬",
+    "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
+    "date": "2026-11-02",
+    "source": "Hacker News 290 分 238 评论",
+    "what": "Business Insider 根据 Anthropic 修订版 S-1 报道：按对外零售价计算，Anthropic 内部使用的 Claude 价值在 4 月超过月度员工薪酬，到 9 月增长了 250 倍。",
+    "why": "HN 290 分 238 评论；把 token 当“生产资料”而不是福利，说明头部模型公司自己的研发流程已经深度 agent 化。",
+    "insight": "内部推广 agent 时，用“每人每月 AI 成本 / 产出”做预算，而不是统计 token 数；零售价口径会放大感知价值，评估 ROI 时要换成实际结算价，并单独看缓存命中和输入 token 占比。"
+  },
+  {
+    "rank": 7,
+    "title": "Anthropic reports $17B in Q3 revenue, commitments of $895B in revised S-1",
+    "title_cn": "Anthropic 三季度营收 170 亿",
+    "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
+    "date": "2026-11-02",
+    "source": "Hacker News 226 分 264 评论",
+    "what": "Anthropic 修订 S-1：Q3 营收约 170 亿美元，同比增长约 1,127%；前九个月 332.4 亿美元；同时披露未来采购承诺 895.4 亿美元，Q3 运营亏损 5.67 亿美元。",
+    "why": "HN 226 分 264 评论；季度营收是一年前约 12 倍，但算力承诺已经是年化营收的数倍，模型公司的资本结构正在变得像重资产行业。",
+    "insight": "对使用方来说，别把“模型会持续降价”当默认假设：多供应商抽象、可替换的 prompt/工具层、按任务记录实际单价，比押注单家更稳；合同里要留出涨价和停服时的迁移条款。",
+    "image": "images/2026-11-03/anthropic-reports-17b-in-q3-revenue-commitments-.jpg"
+  }
+]

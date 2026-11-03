@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "wangzan101/Mika",
+    "url": "https://github.com/wangzan101/Mika",
+    "stars": 5334,
+    "trend": "2026-10-29 后新建，5 天内 5334★",
+    "what": "安卓端 on-device agent：用无障碍读屏在隐藏的后台屏幕上点按、输入、滚动，像人一样操作任意 App 和网页，不需要逐 App 接 API；官方演示覆盖微信群聊总结、小红书内容抓取、比价加购等。",
+    "why": "10-29 建仓，5 天 5,334★，是增长榜第一；同时有 87 个 open issues，说明需求真实但工程还在早期。",
+    "insight": "手机 GUI agent 的关键设计是“后台屏幕”把 agent 操作和用户前台解耦；做现场类数字员工时，先补三件事：每一步的屏幕证据留存、敏感动作（支付/发送）强制确认、远程急停。",
+    "image": "images/2026-11-03/wangzan101-mika.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "modelflare-ai/AnyModelBot",
+    "url": "https://github.com/modelflare-ai/AnyModelBot",
+    "stars": 1379,
+    "trend": "2026-10-27 后新建，7 天内 1379★",
+    "what": "本地优先的个人 agent 应用（Windows/macOS/Linux）：一个 bot 绑定一套人设、默认模型、工作区和记忆，可从应用内或微信、飞书、Telegram、Slack、Discord 调用；能读写文件、执行命令、操作桌面，越出工作区前先询问，数据与 Key 留在本机。",
+    "why": "10-27 建仓，7 天 1,379★；它把“IM 入口 + 本地工作区 + 多模型”拼成一个常驻 agent，正面覆盖个人数字助手的常见形态。",
+    "insight": "IM 入口降低了使用门槛，但权限边界必须落在工作区而不是对话里：给每个 bot 独立目录、独立密钥、独立审计日志，并把“越界询问”做成不可绕过的策略而不是提示词。",
+    "image": "images/2026-11-03/modelflare-ai-anymodelbot.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "jackwener/DSH-Android",
+    "url": "https://github.com/jackwener/DSH-Android",
+    "stars": 755,
+    "trend": "2026-10-27 后新建，7 天内 755★",
+    "what": "把 DeepSeek Harness 塞进安卓 APK：免 root、免 Termux，用无障碍读屏操作 App，内嵌 Linux 环境可跑 Python，支持按 Wi-Fi/蓝牙/充电/定位/通知触发的定时自动化，也可通过 SSH 连电脑上的 DSH。",
+    "why": "10-27 建仓，7 天 755★；它证明完整 agent 运行时可以落在手机上，且不依赖厂商 API。",
+    "insight": "事件触发 + 本地 harness 适合巡检、值守类任务；上线前要确认触发条件不会重复执行、每次执行有幂等键，并给读屏/改设置这类高权限动作单独开关。",
+    "image": "images/2026-11-03/jackwener-dsh-android.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Balanov/uncut",
+    "url": "https://github.com/Balanov/uncut",
+    "stars": 572,
+    "trend": "2026-11-01 后新建，2 天内 572★",
+    "what": "极简 headless 编码 agent harness：7MB 静态 Go 二进制、4 个工具、纯 stdin/stdout，没有 TUI、遥测、插件、自动重试和上下文压缩；每次调用都发送完整对话，文件和命令输出不截断，超出输出上限直接报错而不是给半截答案；支持追加式 JSONL 会话。",
+    "why": "11-01 建仓，2 天 572★；它是对“静默截断/自动摘要”流行的反向选择，适合 CI 和可复现实验。",
+    "insight": "自动化链路里“失败要响”比“尽量给结果”更重要：把 uncut 这种无损 harness 用做基线，能暴露上下文被压缩后消失的问题；但全量上下文每轮都发，成本会随轮次线性涨，只适合短任务或离线评测。",
+    "image": "images/2026-11-03/balanov-uncut.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "aa1143/NamiAgent",
+    "url": "https://github.com/aa1143/NamiAgent",
+    "stars": 211,
+    "trend": "2026-10-30 后新建，4 天内 211★",
+    "what": "从 100 行最小循环长出来的 Agent 教程 + 可运行实现：11 课依次加工具、权限、上下文管理、Skills、MCP、子 Agent、计划和记忆，每课都有可运行快照；本地网页端能看到每一步和完整上下文，测试用假模型跑，只依赖 openai 一个包。",
+    "why": "10-30 建仓，4 天 211★；它把“agent 内部到底怎么跑”拆成可 diff 的代码，而不是再包一层框架。",
+    "insight": "新人上手和方案评审都可以用它的课程序列做参照：先看 lesson-03 的权限分层和 lesson-04 的上下文策略，再对照我们自己的实现找缺口；假模型测试也适合放进 CI，避免每次回归都烧 token。",
+    "image": "images/2026-11-03/aa1143-namiagent.jpg"
+  }
+]

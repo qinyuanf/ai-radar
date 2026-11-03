@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
+    "title_cn": "潜空间稀疏注意力：超长上下文",
+    "url": "https://arxiv.org/abs/2610.42147v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42147，cs.AI，Ales Kubicek 等 10 人",
+    "what": "把稀疏注意力的 key 在学习到的潜空间里做层次聚类，query 只对簇的层次打分，不再逐 token 打分；给出蒸馏版 D-LSA 和从零训练的 N-LSA 两种形态。",
+    "why": "在 GLM-5.3-FLASH（Qwen3.8-27B）10M token 上下文上，D-LSA 单层 prefill 比原稀疏注意力快 22.7 倍、比全注意力快 72.4 倍，decode 快 4.6/42.5 倍且精度接近；N-LSA 在 128k 训练上每层快 1.6 倍。",
+    "insight": "超长上下文的成本曲线在往下走，但这篇给的是单层加速；评估 agent 日志/代码库级上下文时，要测端到端延迟和长距离召回，别直接拿层内倍数推总成本。"
+  },
+  {
+    "rank": 2,
+    "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
+    "title_cn": "自动演化机器人 agent 控制框架",
+    "url": "https://arxiv.org/abs/2610.42141v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42141，cs.RO/cs.AI/cs.CV，Shengguang Wu 等 6 人",
+    "what": "让编码模型看机器人 rollout、诊断失败，并围绕冻结的策略反复改写 agent harness（何时调策略、何时用视觉工具、何时直接控制机械臂），harness 还会积累持久记忆。",
+    "why": "不更新任何模型权重，在未见场景把成功率从 9.7% 提到 43.3%（4.5 倍），未见任务从 12.7% 提到 40.2%（3.2 倍）；换通用策略时，演化出的 harness 经常超过微调版。",
+    "insight": "agent 的能力上限很大一块在 harness 而不是权重：做业务 agent 时先把控制逻辑、工具调用时机、失败恢复和记忆做成可迭代层，并用留出场景评估 harness 改动，而不是一遇到瓶颈就想微调模型。"
+  },
+  {
+    "rank": 3,
+    "title": "ACCT: Asymmetric Cross-LLM Context Transfer",
+    "title_cn": "跨模型 KV 缓存非对称迁移",
+    "url": "https://arxiv.org/abs/2610.42116v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42116，cs.AI，Yuzhe Liu 等 3 人",
+    "what": "同家族不同规模模型之间的 KV 缓存迁移：Cartographer 找出与 query 相关的上下文 token，Allocator 在共享预算下分配每层每头的保留量，Compiler 把源模型 KV 转成目标模型的稀疏 KV，目标模型不再重算上下文。",
+    "why": "KV 缩减 75% 时效果仍匹配或超过目标模型原推理；19K 上下文下，KV 转换比目标模型重新 prefill 快 6.5–21.2 倍。",
+    "insight": "模型路由/级联（小模型先跑、大模型接管）可以复用已算过的上下文，不必每次重放；落地时先验证跨模型迁移在你自己的任务上不掉点，再决定缓存策略和预算分配。"
+  },
+  {
+    "rank": 4,
+    "title": "SecPO: Principled Adversarial Training for Prompt Injection Security",
+    "title_cn": "面向提示注入的有原则对抗训练",
+    "url": "https://arxiv.org/abs/2610.41998v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.41998，cs.CR/cs.AI，Sizhe Chen 等 5 人",
+    "what": "针对提示注入的安全对齐：用近似“注入不变且保留效用”的理想参考模型构造 SecPO 损失，并用强攻击合成做对抗训练；训练对象是 Qwen3.6-27B。",
+    "why": "在三种自适应攻击下，攻击成功率比 Meta-SecAlign 降低 1.5–14.5 倍，SecPO 损失再比 DPO 降低 2.4–4.6 倍；AgentDojo 的 ASR@800 从 78.8% 降到 8.8%，九个基准上良性效用没有明显下降。",
+    "insight": "提示注入防御不能只靠 system prompt 或输出过滤：要用“强攻击合成 + 对抗训练”把模型本身拉稳，并在 agent 侧保留工具白名单、最小权限和人工确认；论文已开源代码、训练数据和模型，可先做红队复现。"
+  },
+  {
+    "rank": 5,
+    "title": "PersonaChatBench: Evaluating Chat Assistants with Diverse Simulated Users",
+    "title_cn": "用多样模拟用户评测聊天助手",
+    "url": "https://arxiv.org/abs/2610.42060v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42060，cs.CL，Zheyuan Deng 等 31 人",
+    "what": "同一任务配多个模拟用户，每个用户有一张私有 persona 卡（需求、偏好、交互方式不同），用 20 个语言模型、6 个领域分别评任务结果、persona 需求满足度和模拟器保真度。",
+    "why": "结果显示任务表现和需求满足度会随 persona 与领域变化，强任务分数不等于个体需求被满足，模型在不同领域的相对优势也不一致——单用户评测会把这些差异平均掉。",
+    "insight": "给数字员工做评测时，至少按“角色 × 场景”建矩阵，并把任务完成和沟通适配分开打分；否则上线后会出现“指标很好但某类用户一直用不顺”的问题。"
+  },
+  {
+    "rank": 6,
+    "title": "There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+    "title_cn": "循环复用层何时值得多花算力",
+    "url": "https://arxiv.org/abs/2610.42030v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42030，cs.LG/cs.AI，Rhea Sanjay Sukthanker 等 2 人",
+    "what": "研究训练后给模型加循环（重复执行 m/N 层）是否值得：每 token 成本约变为 (N+m)/N，作者在 Qwen3/Qwen3.5 的 0.8B–9B 上，分别与同参数无循环模型、同 FLOPs 最优无循环用法对比。",
+    "why": "只有 0.8B 的循环模型同时赢过两个基线；4B 和 9B 连“同参数无循环”都打不过，而同一基准上 9B 无循环还能比 4B 高最多 13 分，说明不是题目太简单。",
+    "insight": "别把“加循环/加思考步数”当免费的推理增强：先在同等 FLOPs 下对比，再决定是否加；小模型固定参数预算时循环可能划算，大模型更该把算力花在参数或工具上。"
+  },
+  {
+    "rank": 7,
+    "title": "TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents",
+    "title_cn": "以实际执行结果评判贸易谈判",
+    "url": "https://arxiv.org/abs/2610.42004v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.42004，cs.AI，Xiangyu Kong 等 3 人",
+    "what": "多国贸易谈判 benchmark：把对话翻译成具体关税与贸易份额政策，结算时执行产能和网络约束，用经济健康指数（EHI）评结果；配套 TACTIC agent 通过跨回合经验迭代策略，不更新基座权重。",
+    "why": "零样本 CoT 的 PromptLLM 拿到 75% 协议率但 EHI 只有 57.1，TACTIC 是 68.8；20 个连续回合、3 个种子里，TACTIC 的 EHI 从 58.2 升到 73.2，去掉跨回合更新的消融只有 65.2。",
+    "insight": "谈判/采购类 agent 不能只看“是否达成一致”，要看协议执行后的真实收益；把结算反馈写回策略，比单纯加长思维链更有效，也更容易在业务里验证。"
+  },
+  {
+    "rank": 8,
+    "title": "DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention",
+    "title_cn": "门控线性注意力的双轴记忆初始化",
+    "url": "https://arxiv.org/abs/2610.41994v1",
+    "date": "2026-10-30",
+    "source": "arXiv 2610.41994，cs.AI/cs.CL，Zhangchi Feng 等 5 人",
+    "what": "针对门控线性注意力的记忆初始化：按 head 分配几何时间尺度、按层设置低-高-低的输入敏感度，用一小段激活样本校准实现，不增加可训练参数。",
+    "why": "在 GDN、KDA、GDN2、Mamba-2、RWKV-7 上，RULER 风格检索平均提升 5.29–16.71 个百分点，语言建模、常识和 2K 真实检索基本持平。",
+    "insight": "如果自托管线性注意力模型做长上下文检索，先检查初始化再换架构：这类不改参数量的收益很便宜；但它是模型内部指标，落地前要用业务检索集验证，别只看 RULER。"
+  }
+]
