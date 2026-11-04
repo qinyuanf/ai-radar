@@ -1,0 +1,80 @@
+[
+  {
+    "rank": 1,
+    "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+    "title_cn": "Postman 静默装 AI 插件并外传数据",
+    "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+    "date": "2026-11-03",
+    "source": "Hacker News 1017 分 339 评论",
+    "what": "Postman v12.33.4 在 2026-10-24 未征求用户同意就自动安装了 Codex/Claude 相关插件，改动本地配置，并尝试写入可自信任的 hook。issue 里给出了具体版本号、时间线和受影响范围。",
+    "why": "HN 1,017 分 / 339 评论，是过去 48 小时讨论最多的 AI 相关帖。它把“桌面工具悄悄接入 AI 插件”的风险摆上台面：开发者机器上的凭据和 API 数据，是 agent 供应链里最薄的一环。",
+    "insight": "把本地 AI 插件当依赖治理：固定版本、审查安装脚本、禁用自签 hook。给 agent 用的 API key 按项目隔离、可随时撤销，别让一个 IDE 插件顺走全量凭据；升级前先在测试机上看它到底写了哪些配置文件。"
+  },
+  {
+    "rank": 2,
+    "title": "The 'Astra can read and write weights to improve Qwen' post is misleading",
+    "title_cn": "Astra 读写权重提升 Qwen 说法误导",
+    "url": "https://honnibal.dev/blog/astra-read-write-misleading",
+    "date": "2026-11-03",
+    "source": "Hacker News 904 分 191 评论",
+    "what": "针对“某模型只靠观察原始权重就能改进 Qwen”的说法，作者拆开实验过程：实际要用 Python 代码、把模型跑 50 次，只改动了 0.016% 的权重，才把分数从 7.9% 提到 48.1%，并不是“看一眼权重就会改”。",
+    "why": "HN 904 分 / 191 评论；这类“模型自省权重”的表述隔一段时间就出现一次，很容易被当成能力跃迁。它提醒的是：读结论前先看搜索预算和改动比例，这两个数字一给出来，性质就清楚了。",
+    "insight": "评估“自我改进/自进化”类声明时固定三问：允许跑多少次、允许改多少参数、评测集是否与搜索集重叠。回答不了就按普通超参搜索对待，别把它写进技术路线。",
+    "image": "images/2026-11-04/the-astra-can-read-and-write-weights-to-improve-.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Google will turn off search for schools that reject AI",
+    "title_cn": "谷歌将关停拒绝 AI 学校的搜索服务",
+    "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+    "date": "2026-11-03",
+    "source": "Hacker News 557 分 404 评论",
+    "what": "纽约时报 11-03 报道，谷歌将对拒绝采用其 AI 工具的学校关闭搜索服务；HN 讨论集中在教育机构与平台依赖，以及“拒绝 AI”是否构成违约。",
+    "why": "HN 557 分 / 404 评论，是本周期争议最大的 AI 商业话题之一。它体现 AI 采用正在和基础服务绑定，采购谈判里多了一个非技术变量。",
+    "insight": "对内部平台的启示是别把 AI 能力和基础服务捆绑：给业务方留“不用 AI 也能用”的降级路径，否则一次策略调整会连带停掉核心功能，而这种连带关系在架构图上通常看不出来。"
+  },
+  {
+    "rank": 4,
+    "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
+    "title_cn": "OpenAI 疑似静默重开 Codex 训练",
+    "url": "https://news.ycombinator.com/item?id=50352757",
+    "date": "2026-11-03",
+    "source": "Hacker News 433 分 134 评论",
+    "what": "一名开发者发帖称，公司团队一直谨慎关闭 Codex/Claude Code 的数据共享，但同事的设置在被关闭后又重新打开了，怀疑厂商在静默恢复训练数据授权；评论区多人表示遇到过类似情况。",
+    "why": "HN 433 分 / 134 评论。coding agent 直接接触源码和密钥，训练授权是企业采购和合规的硬门槛，这类“设置被改回去”的反馈会直接影响团队能否继续用。",
+    "insight": "不要只依赖厂商控制台开关：客户端侧加配置基线巡检，版本升级后重新核对一次；敏感仓库走企业版或零留存通道。把“数据是否用于训练”写进接入评审项，而不是留在口头约定里。"
+  },
+  {
+    "rank": 5,
+    "title": "Scaling Git at OpenAI",
+    "title_cn": "为 Codex 规模自建 Git 后端",
+    "url": "https://openai.com/index/scaling-git-at-openai/",
+    "date": "2026-11-02",
+    "source": "Hacker News 264 分 179 评论",
+    "what": "OpenAI 介绍为 Codex 规模自建的 Git 兼容后端 Pando：目标是支撑 agent 产生的大量提交与克隆流量，同时让开发者继续用原来的 Git 工作流，不用改习惯。",
+    "why": "HN 264 分 / 179 评论。agent 并行提交把代码托管从“人写代码”的负载模型推到“机器写代码”，这是第一个公开讲这块基础设施的厂商案例，说明瓶颈已经从模型侧挪到工程侧。",
+    "insight": "引入 agent 批量提交前，先估自己托管侧的压力（克隆频率、分支数、单仓体积），给 agent 单独的配额和更严格的分支策略；否则一次批量生成就会把 CI 队列和评审队列一起压垮。"
+  },
+  {
+    "rank": 6,
+    "title": "Nvidia – open-source auto-ontology",
+    "title_cn": "英伟达开源 agent 数据本体层",
+    "url": "https://github.com/NVIDIA/auto-ontology",
+    "date": "2026-11-03",
+    "source": "Hacker News 261 分 123 评论",
+    "what": "英伟达开源 Auto-Ontology（Apache-2.0）：跑在数据库旁边的服务，把元数据编译成本体——业务术语映射到列、经审核的指标 SQL、表间关系；agent 通过本体查询，人在网页或 API 里审核、编辑、认证定义。",
+    "why": "HN 261 分 / 123 评论。它正面回答“agent 做数据分析为什么不可靠”：多数时候不是 SQL 写不好，而是不知道指标口径、不知道数据从哪来、该不该用这张表。",
+    "insight": "企业内 agent 取数时，语义层比提示词更值钱：先把核心指标的定义、口径、责任人沉淀成可审核的本体，再让 agent 只通过本体取数；否则每次交付都要人工复核一遍 SQL，省下的时间又还回去。"
+  },
+  {
+    "rank": 7,
+    "title": "Accelerating engineering for the physical world",
+    "title_cn": "ChatGPT 与 Codex 加速实体工程",
+    "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+    "date": "2026-11-03",
+    "source": "OpenAI 官方博客（RSS，2026-11-03）",
+    "what": "OpenAI 官方文章，讲 ChatGPT 与 Codex 在实体工程工作流里的用法：CAD、PCB 设计、仿真等环节如何被加速，以及工程师实际怎么分工。",
+    "why": "官方博客 11-03 发布。coding agent 的处理对象正从纯软件扩到工程文件与仿真流程，这会同时改变“代码 agent”的边界和背后的工具链。",
+    "insight": "若要让 agent 参与硬件或仿真类工作，先解决文件格式与可验证性：几何、约束、仿真结果都要有自动校验手段，否则 agent 只能产出“看起来对”的设计，评审成本反而更高。"
+  }
+]

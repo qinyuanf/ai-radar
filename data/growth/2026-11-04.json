@@ -1,0 +1,56 @@
+[
+  {
+    "rank": 1,
+    "repo": "deepseek-ai/dsh-superagent-prototype",
+    "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+    "stars": 16848,
+    "trend": "2026-10-31 后新建，4 天内 16848★",
+    "what": "面向单个 GitHub 仓库的“主动型”编码 agent，打包成 DeepSeek Harness 的 bundle：监听 GitHub（可选飞书），被授权的人提需求后它开工作项、在独立会话和独立目录里干活，再回到原对话给结果（例如 PR）；另有网页面板只显示“需要人处理的事”。官方明确标注这是研究原型，不是正式产品。",
+    "why": "10-31 建仓，4 天 16,852★，是增长榜第一；11-03 仍有提交，README 写明“大量工程由 coding agent 自己完成”。它把 agent 从“等你提问”改成“替团队接工单”，和数字员工的工作方式正面重合。",
+    "insight": "值得抄的是它的注意力预算原则：只在被要求或团队规则允许时动作，只在“必须有人处理”或“结果能被用上”时说话。落地时先把工作项模型定死（谁授权、怎么排队、结果回到哪个会话），再谈自动开 PR，否则容易退化成刷屏机器人。",
+    "image": "images/2026-11-04/deepseek-ai-dsh-superagent-prototype.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "SAOS-3624/dsh-see-now",
+    "url": "https://github.com/SAOS-3624/dsh-see-now",
+    "stars": 260,
+    "trend": "2026-11-01 后新建，3 天内 260★",
+    "what": "给 DSH 用的实时视觉插件：把屏幕、摄像头或视频按 0–255 的“变化分”筛帧，只保留画面真的换了或运动攒够量的帧，再把 4~8 帧拼成一张图交给模型；静止画面 20 秒才给一张兜底帧，800×450 一张约 233 token。",
+    "why": "11-01 建仓，3 天 260★；同样是 DeepSeek Harness 生态里长出来的小工具，作者给出可核对的成本口径（对比每 2 秒截全屏的 30 张/分钟）。agent 做“看着屏幕办事”时，token 几乎全花在重复帧上。",
+    "insight": "做屏幕类 agent 时先按变化量筛帧再传图，比买更便宜的模型更有效；实现上要保留“全部帧 + 是否入选”的调试视图，否则筛帧策略出错时你无法判断是模型没看见还是压根没传。"
+  },
+  {
+    "rank": 3,
+    "repo": "andyhuo520/digital-human-koubo",
+    "url": "https://github.com/andyhuo520/digital-human-koubo",
+    "stars": 1758,
+    "trend": "2026-10-26 后新建，9 天内 1758★",
+    "what": "数字人口播视频的 Agent Skill：一张照片加一句话，走“写稿 → Renoise MCP 生成口型数字人 → 修音 → 字幕 → Remotion 包装”的输出成片流程，自带 5 套剪辑风格与 48 个包装组件，可被 Claude Code、Codex 等直接调用。",
+    "why": "10-26 建仓，9 天 1,758★；README 给出可核对的成本样例（27 秒直播广告共耗 482 Renoise credits）。技能包形态正在把“专业成片流程”压缩成一次 agent 调用。",
+    "insight": "这类技能的可复用结构是“外部生成服务 + 确定性合成”两段：生成侧用 MCP 拿素材，合成侧用代码模板保证可重复。内部做视频类数字员工时把配音、字幕、包装拆成能单独重跑的阶段，避免一次失败整条重来。",
+    "image": "images/2026-11-04/andyhuo520-digital-human-koubo.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "KKKKhazix/agent-autoloop",
+    "url": "https://github.com/KKKKhazix/agent-autoloop",
+    "stars": 356,
+    "trend": "2026-11-03 后新建，1 天内 356★",
+    "what": "中文本地自动化中台：零外部依赖的内核负责调度，事件来源、Agent、通知通道（飞书/钉钉/企微/Slack/Discord/桌面）都是可插拔插件；命令行 agent 在后台接活，遇到拿不准的事推卡片找人拍板，可查当天与近 7 天的轮数、token 和费用。",
+    "why": "11-03 建仓当天 356★；一台电脑一条命令就能跑，不用云服务器也不开公网端口。它把“无人值守 + 关键点人工拍板”做成了可安装的工具，正好是数字员工的常见形态。",
+    "insight": "关键在“暂停/恢复”与成本统计：任务挂起时不占进程、不烧 token，恢复时能接回原会话。自建同类能力时先把会话 id、幂等键、每轮成本记全，否则无人值守会变成无人知道。",
+    "image": "images/2026-11-04/kkkkhazix-agent-autoloop.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "wanghao-SunSky/cs329z-chinese",
+    "url": "https://github.com/wanghao-SunSky/cs329z-chinese",
+    "stars": 481,
+    "trend": "2026-10-28 后新建，7 天内 481★",
+    "what": "斯坦福 CS329Z《Engineering AI Agents》的中文教程：19 讲加 4 项实践，覆盖 LLM 基础、RAG、工具调用、记忆、多智能体、评测与安全，提供完整 Markdown 与在线/离线 HTML。",
+    "why": "10-28 建仓，7 天 481★；agent 工程的教学材料开始以“可离线、可检索”的形式出现，适合当团队内部培训的基线，而不是让每个人各看一套博客。",
+    "insight": "用它做新人上手的骨架，但要把课程里的评测章节落到自己的回归集上：课程讲方法，团队真正缺的是“每类 agent 任务的固定评测样本 + 失败归因”，这部分必须自己攒。",
+    "image": "images/2026-11-04/wanghao-sunsky-cs329z-chinese.jpg"
+  }
+]
