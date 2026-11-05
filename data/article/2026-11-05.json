@@ -1,0 +1,83 @@
+[
+  {
+    "rank": 1,
+    "title": "AI is forcing us to pay off 40 years of technical debt",
+    "title_cn": "AI 正在逼我们偿还四十年的技术债",
+    "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+    "date": "2026-11-04",
+    "source": "Hacker News 1056 分 631 评论",
+    "what": "IEEE Spectrum 借 PHP2Shell 事件谈 AI 对安全的影响：两个 PHP 运行时漏洞 CVE-2026-109618 与 CVE-2026-109619 均被评为 9.2 分，可远程执行代码，影响面被描述为约七成网站；漏洞由 AI 工具在 2026 年 8 月协助发现，10 月 20 日公开。文章的论点是 AI 把发现漏洞的成本压到极低，四十年代码库里的旧债必须提前还。",
+    "why": "HN 1056 分、631 条评论，是这两天讨论量最高的 AI 相关帖子。真正改变的不是攻击手法，而是发现速度：防守方过去按季度打补丁，现在要按天。",
+    "insight": "把依赖升级与漏洞响应做成常态流水线，而不是季度项目：锁定运行时版本清单、订阅 CVE 源，用 agent 生成补丁后必须跑测试与灰度。对 agent 平台同样适用——它调用的每个第三方包都是攻击面，先有依赖清单再谈自动修复。",
+    "image": "images/2026-11-05/ai-is-forcing-us-to-pay-off-40-years-of-technica.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+    "title_cn": "本地 27B 模型也能读懂权重",
+    "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+    "date": "2026-11-03",
+    "source": "Hacker News 717 分 208 评论",
+    "what": "Simon Willison 在本地笔记本上跑 Qwen 3.8 27B，只给它一个小网络的原始权重、不给数据也不给代码，让它猜这个网络在玩哪个游戏：结果认出吃豆人、Pong 和打砖块，置信度很高，但每次推理耗时很长。这延续了“权重空间编程”这条线——模型可以直接读写小网络的参数。",
+    "why": "HN 717 分、208 条评论。上周这还是前沿闭源模型的能力展示，这周已经能在消费级硬件上复现，门槛从“有 API”降到“有笔记本”。",
+    "insight": "对可解释性与模型审计有用，但别急着上生产：先用小网络验证模型能否定位到具体神经元或参数，再决定是否拿它做排障。真正能落地的场景是“给定协议和权重，让模型找实现与协议不符之处”，而不是让它从头训练。"
+  },
+  {
+    "rank": 3,
+    "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
+    "title_cn": "Gemini 付费版聊天记录仍用于训练",
+    "url": "https://news.ycombinator.com/item?id=50363461",
+    "date": "2026-11-04",
+    "source": "Hacker News 628 分 163 评论",
+    "what": "HN 用户发帖指出：个人 Google AI 订阅用户的 Gemini 已保存聊天记录可以用于模型训练，且没有提供退出选项；帖子里区分了企业与付费 API 的不同条款。讨论集中在“付了钱为什么还当训练数据”，以及用关闭聊天记录保存来规避。",
+    "why": "HN 628 分、163 条评论，说明数据条款已成为选型因素而不是附录。对企业而言，员工把内部代码和工单粘进个人订阅账号，是比模型能力更现实的风险。",
+    "insight": "给团队定一条硬规则：内部代码、工单、客户数据只进有数据隔离承诺的企业通道，个人订阅账号不得处理生产数据。同时在 agent 侧做输入脱敏与拦截，别把责任全推给供应商开关。"
+  },
+  {
+    "rank": 4,
+    "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
+    "title_cn": "加密固件把 Linux 推理压到三成半",
+    "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+    "date": "2026-11-04",
+    "source": "Hacker News 590 分 271 评论",
+    "what": "实测文章：在 RTX Spark 笔记本上双系统运行 Linux，GPU 频率被加密固件里的功耗表锁在 780MHz，而 Windows 下是 2.2GHz；同一模型吞吐从 65 token/s 掉到 14 token/s，约为 35%。作者判断这是固件策略而不是驱动缺陷，结论是本地推理目前仍以 Windows 或 WSL 为主。",
+    "why": "HN 590 分、271 条评论。想用笔记本级硬件跑本地 agent 的团队不少，这条实测直接否掉了“买硬件加装 Linux”这条最省事的路径，也提醒本地部署的瓶颈常在固件而不在模型。",
+    "insight": "采购本地推理硬件前做三项实测：目标系统下的实际频率、目标模型的 token/s、长时间负载是否降频。把“本地可跑”写进验收标准时带上操作系统与驱动版本，否则换机器或升级固件就复现不了。",
+    "image": "images/2026-11-05/nvidia-rtx-spark-encrypted-firmware-slows-infere.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
+    "title_cn": "Ripple-65B 预览：智能体编程新标杆",
+    "url": "https://www.ricursive.com/ripple",
+    "date": "2026-11-04",
+    "source": "Hacker News 216 分 76 评论",
+    "what": "Ricursive 发布的 65B 稠密模型预览：在 TerminalBench 2.1 上得 80.52 分，自称美国开源权重模型的智能体编程最好成绩；训练用 12T token、成本约 3200 万美元，权重已通过 Hugging Face 等渠道开放。",
+    "why": "HN 216 分、76 条评论。65B 这个尺寸能多卡单机部署，3200 万美元的训练成本则给出了“做到这个水平要花多少钱”的公开标尺，对自建 agent 的团队比闭源榜单更有参考价值。",
+    "insight": "评估开源权重模型时，把评测分数、部署尺寸、许可证、工具调用稳定性放在一起看：先在自己的任务集上测长链路工具调用成功率，再决定是否替换现有模型。训练成本是别人的，推理成本才是你的。",
+    "image": "images/2026-11-05/ripple-65b-preview-u-s-open-weight-sota-on-agent.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Progress on provable inference for large language models",
+    "title_cn": "大模型可证明推理的进展",
+    "url": "https://www.anthropic.com/research/provable-inference",
+    "date": "2026-11-04",
+    "source": "Hacker News 174 分 83 评论",
+    "what": "Anthropic 介绍用 zkSNARK 做可证明推理：对外证明某段输出确实由指定模型生成，而不暴露权重。方案 FlashProve 在 H100 上做到 110 token/s，生成证明的耗时约为标准推理的 70~95 倍；当前支持整数权重贪心解码与固定 1024 token 上下文，给出可靠性、完备性与零知识三条保证。",
+    "why": "HN 174 分、83 条评论。它把“模型来源可验证”从合同条款变成密码学证明；对需要向监管或客户证明“这条结论出自哪个模型、有没有被改过”的场景，这是目前最可行的方向。",
+    "insight": "短期别指望用它做在线服务——70 倍以上的证明开销决定了它适合异步、抽检或事后审计。设计上可以先预留“输出指纹、模型版本、可附证明”三个字段，等成本降下来再切换，而不是重做链路。",
+    "image": "images/2026-11-05/progress-on-provable-inference-for-large-languag.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "A thousand fewer paths to root",
+    "title_cn": "少了一千条通往 root 的路",
+    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+    "date": "2026-11-04",
+    "source": "OpenAI 官方博客（RSS，2026-11-04）｜Hacker News 182 分 56 评论",
+    "what": "OpenAI 介绍一条自主流水线：自动发现、验证并为 Linux 内核中的 948 个本地提权漏洞生成补丁。流程是模型提出候选、在隔离环境里实际复现验证、再生成补丁，官方强调补丁仍需内核维护者评审。",
+    "why": "Hacker News 182 分、56 条评论，同时是官方发布。948 这个量级说明 agent 在“有明确判定标准”的安全研究上已经能批量产出，而不是只做演示。",
+    "insight": "可复用的结构是“生成—复现—补丁”三段闭环：任何 agent 产出都要有可自动复现的验证步骤，否则量越大噪声越大。内部推 agent 修 bug 时，先建可重放的最小复现，再让它生成修复，验收看复现是否由红转绿。"
+  }
+]

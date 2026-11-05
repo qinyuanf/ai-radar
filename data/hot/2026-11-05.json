@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Comfy-Org/ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "stars": 145042,
+    "trend": "+4,240 stars/15天（对比 2026-10-21）",
+    "what": "节点式扩散模型工作台：图形界面、API 与后端一体，把模型加载、采样、后处理串成可复现的图，主打本地推理，支持 FLUX 等主流图像与视频模型。v0.44.0（11-04）新增 Patina 纹理节点与 VEED 配音节点，前端包升到 1.58.1。",
+    "why": "145,042★，10-21 的 140,802★ 到现在 15 天 +4,240★；11-05 仍有提交，几乎每周一个版本。视频生成需求进来之后，它从“出图工具”变成不少团队的素材生产底座，持续接第三方节点说明它在补生态位，而不只是优化推理引擎。",
+    "insight": "把 ComfyUI 当“可版本化的工作流定义”用，而不是当界面用：导出的 workflow JSON 进 Git，模型与节点版本固定，出图参数随需求单存档。接 agent 时只调它的 API，不要让 agent 点界面，否则失败无法复现，单任务成本也没法核算。",
+    "image": "images/2026-11-05/comfy-org-comfyui.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Graphify-Labs/graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "stars": 142465,
+    "trend": "+12,175 stars/15天（对比 2026-10-21）",
+    "what": "把整个项目（代码、文档、PDF、图片、视频）映射成可查询的知识图谱，在 Claude Code、Cursor、Codex 里用 /graphify 直接问。代码部分用 tree-sitter 做确定性 AST 解析，不调 LLM、不出本机；每条边标注 EXTRACTED（源码显式）或 INFERRED（图谱推断），明确不是向量索引、没有 embedding。",
+    "why": "142,465★，15 天 +12,175★，是今日热门榜增量第一；11-03 刚发 v0.9.102，迭代节奏约每天一版。agent 读代码的痛点是 grep 出几十个文件、上下文被塞满，它押的是“结构化查询替代文本搜索”。",
+    "insight": "两条设计值得直接抄：源码显式关系与推断关系分开标注，评审先信前者；代码走确定性解析，只有文档才交给模型。落地先在一两个仓库做只读图查询，用“同一个问题 grep 要读几个文件、图谱要读几个”量化收益，再决定是否接进日常流程。",
+    "image": "images/2026-11-05/graphify-labs-graphify.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 120045,
+    "trend": "+1,372 stars/15天（对比 2026-10-21）",
+    "what": "开源浏览器 agent 库，Python 与 TypeScript 两套，让模型直接操作网页完成预订、填表、过验证码等任务；同时提供云端 stealth 浏览器（0.02 美元/浏览器小时）与托管 agent API，官方称在 Stealth Bench V2 上拿到 90.5%。",
+    "why": "120,045★，15 天 +1,372★，增速比上月明显放缓；最近一版 0.13.14 在 10-26，内容是 Python agent 与集成更新。竞争点已经从“能不能点网页”转到“被反爬识别后还能不能干活”，云端 stealth 是新的收入叙事。",
+    "insight": "浏览器 agent 的失败大多不在模型，而在选择器与登录态：把登录、验证码、风控拆成独立可观测阶段，失败时留截图与 DOM 快照。自建优先用本地库加自己的浏览器池，成本可控；只有目标站点强风控时才考虑云浏览器，并提前确认合规边界。",
+    "image": "images/2026-11-05/browser-use-browser-use.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "bytedance/deer-flow",
+    "url": "https://github.com/bytedance/deer-flow",
+    "stars": 84996,
+    "trend": "+1,295 stars/24天（对比 2026-10-12）",
+    "what": "字节开源的 super agent harness（2.0 为完全重写）：编排子 agent、记忆、沙箱与可扩展技能，处理需要几十分钟的长任务。2.2.0 转向可部署平台：定时任务升级为目标驱动工作流且支持多负责人公平执行，IM 渠道与工作流可跑多 Gateway 实例，扩展平台支持全栈插件，知识检索不绑定供应商并带可验证引用。",
+    "why": "84,996★，10-12 的 83,701★ 到现在 24 天 +1,295★，增速平稳；但 v2.2.0 一个版本合入 1,068 个 PR，还带 fail-closed 默认值、凭证落盘加密和更严格的路径校验——这是从演示往生产运维补课。",
+    "insight": "借鉴它 2.2 的四个方向：多实例网关、权限 fail-closed、凭证加密、可验证引用。内部做长任务 agent 时先把“失败默认拒绝”的边界定死（工具、路径、外发），再谈并行；引用可验证要落到存储层，否则检索增强在审计时无法自证。",
+    "image": "images/2026-11-05/bytedance-deer-flow.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "OpenHands/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "stars": 92668,
+    "trend": "+2,043 stars/24天（对比 2026-10-12）",
+    "what": "开源编码 agent 平台，新版叫 Agent Canvas：本地或自托管运行，能接 OpenHands、Claude Code、Codex、Gemini CLI、OpenCode 等 ACP 兼容 agent，统一管对话、自动化与多后端（Docker、VM、云）。v1.35.0（11-03）补齐 Bitbucket Data Center 仓库、按事件源列事件类型、会话标签持久化。",
+    "why": "92,668★，24 天 +2,043★；11-03 发 v1.35.0，11-05 仍有提交。定位从“一个 agent”变成“多个 agent 的控制台”，这和企业真实情况一致：没人只用一种 agent，问题是怎么统一审计和调度。",
+    "insight": "团队已经混用多种 coding agent 时，优先做统一控制面而不是再选一个更强的：会话、仓库、权限、产物落在同一套标签里，agent 可替换。评估按“换掉某个 agent 要改多少配置”打分，能一键切换的架构才不会被单一供应商锁死。",
+    "image": "images/2026-11-05/openhands-openhands.jpg"
+  }
+]
