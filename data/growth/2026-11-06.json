@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Interactive-Active-AI/NextTransformer",
+    "url": "https://github.com/Interactive-Active-AI/NextTransformer",
+    "stars": 319,
+    "trend": "2026-10-31 后新建，6 天内 319★",
+    "what": "下一代 Transformer 的对照实验框架与基准：把循环深度、稀疏/线性注意力、残差流变体等架构放在同一份数据、同样 49.152B token、同样的理论训练 FLOPs/token 和同样的检查点上比较；10-31 开源时已带 31 个跑完的 run 与 36 张模型卡，并允许 agent 在同一规则下做架构研究。",
+    "why": "10-31 建仓，6 天 319★，是本轮增长榜第一，11-05 仍有提交。架构对比长期缺“算力对齐”的公共基线，它把每个结论都做成可复查的文件记录，还预告 11-14 上线支持自主 agent 研究的 Arena v2。",
+    "insight": "评估任何“新架构更好”的说法，先问三件事：同数据、同 FLOPs、同检查点。我们自己换模型或换检索策略时也该按这个口径做对照，否则提升可能只是因为训练量或上下文长度变了。",
+    "image": "images/2026-11-06/interactive-active-ai-nexttransformer.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "muaaz9329/cheap-ag",
+    "url": "https://github.com/muaaz9329/cheap-ag",
+    "stars": 287,
+    "trend": "2026-10-28 后新建，9 天内 287★",
+    "what": "给 Claude Code / Codex 的成本分层方案：贵的前沿模型只当主工程师拆任务，逐行实现交给便宜模型，由测试决定能不能合入；以 MCP server 形式接入，作者称同功能同提示下 Opus token 减少 63%。",
+    "why": "10-28 建仓，9 天 287★，11-03 有提交。它是这波“用测试当裁判、把实现外包给便宜模型”思路的工程化封装，而且直接挂在两大 CLI 上，说明成本压力已经从选便宜模型走到按角色拆模型。",
+    "insight": "成本优化别只在模型单价上做，先按角色分层：规划与评审用强模型，实现与批量修改用便宜模型，验收必须有可自动执行的测试。没有测试的仓库套这套，只会更快地产生不可信的代码。",
+    "image": "images/2026-11-06/muaaz9329-cheap-ag.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "Sandflow-ai/sand3d",
+    "url": "https://github.com/Sandflow-ai/sand3d",
+    "stars": 274,
+    "trend": "2026-11-03 后新建，3 天内 274★",
+    "what": "面向 LLM 的 Python 3D 建模库：把零件写成短程序（剖面、实体、编辑、框架、关节、装配），跑在 Blender 的 bpy 之上；零件与面按名字寻址而不是算坐标，同一条程序每次生成同样的网格。作者称同一个零件比 Blender Python、CadQuery、FeatureScript 少 2~6 倍 token。",
+    "why": "11-03 建仓，3 天 274★，11-05 有提交。它解决的是模型生成 3D 时“坐标一错全错”的老问题：用命名与程序化构造替代数值计算，让模型只写结构、不算坐标。",
+    "insight": "让模型操作结构化领域（几何、表格、图表、配置）时，先给它一套“按名字寻址 + 确定性构造”的 DSL，而不是让它直接写底层数值。省 token 是次要的，关键是失败可定位、结果可复现。",
+    "image": "images/2026-11-06/sandflow-ai-sand3d.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "hhtower/price-comparison",
+    "url": "https://github.com/hhtower/price-comparison",
+    "stars": 227,
+    "trend": "2026-10-28 后新建，9 天内 227★",
+    "what": "自托管的 AI 订阅与账号比价平台：聚合卡网与发卡站的 ChatGPT/Codex、Claude/Claude Code、Gemini、Grok、Cursor 等报价，覆盖代充、成品号、共享号与兑换码；站内用对话选购，站外提供 MCP 报价服务，返回结果保留来源链接与采集时间。",
+    "why": "10-28 建仓，9 天 227★，11-05 有提交。它把比价同时做成网页导购和 MCP 工具，同一份数据给人一个入口、给 agent 一个入口，是 MCP 落地里比较务实的形态。",
+    "insight": "给 agent 暴露数据服务时，返回体必须带来源链接和采集时间，否则模型无法判断新鲜度、用户也无法复核。另外这类平台聚合的是第三方代充市场，接入前先确认合规与账号风险，不能当官方渠道价格用。",
+    "image": "images/2026-11-06/hhtower-price-comparison.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "peterpoal134/memory-brain",
+    "url": "https://github.com/peterpoal134/memory-brain",
+    "stars": 138,
+    "trend": "2026-10-28 后新建，9 天内 138★",
+    "what": "给聊天机器人补长期记忆与生活层的工程整合（AstrBot 插件加桌面版）：记忆分事件、事实、反思、技能、道理五类，检索走向量加关键词加实体图谱加重要性加新鲜度五路混合，遗忘做衰减、归档、相似合并与冲突检测；人格文件只读，增强内容以带标记的注入块追加。",
+    "why": "10-28 建仓，9 天 138★，11-05 有提交。它不是新算法，而是把记忆、遗忘、情绪、定时这些容易做散的部分收成一套可开关的模块，并明确写了每个模块默认关闭。",
+    "insight": "记忆系统的难点不是存，是“忘”和“冲突”：必须有衰减、相似合并和冲突检测，否则旧偏好会一直压过新事实。注入人格时用带标记的块、可整块替换，别拼接字符串，否则改一次配置就清不干净。另外它用 CC BY-NC-SA 许可，商用要先取得授权。",
+    "image": "images/2026-11-06/peterpoal134-memory-brain.jpg"
+  }
+]

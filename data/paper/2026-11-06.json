@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "SpecCompact: Accelerating LLM Agent Context Compaction with Slot-Parallel Semantic Speculative Verification",
+    "title_cn": "槽位并行的智能体上下文压缩",
+    "url": "http://arxiv.org/abs/2611.06876v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06876，cs.CL，Yulu An 等 3 人",
+    "what": "针对 agent 上下文压缩慢的问题：作者观察到结构化摘要的各个槽位可以独立生成，于是让小模型并行起草槽位、大模型逐行校验并修复被拒内容，再用更新后的槽位前缀继续起草，配合系统级优化压缩单次耗时，同时保住信息量。",
+    "why": "上下文压缩的成本直接进了 agent 每轮循环的时延。把“大模型串行总结”换成“小模型并行 + 大模型校验”，是在摘要这种结构化任务上把串行瓶颈改造成可并行的可行路径。",
+    "insight": "我们的会话摘要可以照这个拆：先定义固定槽位（目标、约束、已完成、待办、证据），让便宜模型并行填，强模型只审关键槽位。压缩质量用“压缩后能否答对原问题”来评，不要用摘要像不像来评。"
+  },
+  {
+    "rank": 2,
+    "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
+    "title_cn": "逐轮采样扩展智能体能力",
+    "url": "http://arxiv.org/abs/2611.06868v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06868，cs.AI，Jalaj Bhandari 等 8 人",
+    "what": "在长周期任务上评估“逐轮 Best-of-N”：每回合由生成模型产出 N 个候选动作，再由选择模型挑一个执行，两者都是现成开放权重模型；作者要验证的是现成模型能否胜任“比较候选动作”这一步。",
+    "why": "推理期扩展以往多用在单次回答，这条把它搬进 agent 的每个回合。如果选动作的能力可以外挂，就不必为提升长任务表现去微调主模型。",
+    "insight": "先测选择器的质量再上 N：如果模型在两三个候选动作之间都选不准，加大 N 只会放大错误。低成本做法是用真实轨迹离线回放，比较 N=1、2、4 的成功率与成本，再决定是否引入第二个模型。"
+  },
+  {
+    "rank": 3,
+    "title": "Task-Efficient Agent Evaluation Using Cached Traces",
+    "title_cn": "用缓存轨迹做高效智能体评测",
+    "url": "http://arxiv.org/abs/2611.06803v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06803，cs.AI，Ben Johnson 等 2 人",
+    "what": "提出用轨迹做高效基准：把每次 agent 执行的完整轨迹用 LLM 抽成结构化摘要、再编码成向量，用少量已评测系统的轨迹预测新系统在全量基准上的表现。相比只看最终对错，轨迹里包含更多关于能力的信息。",
+    "why": "agent 评测贵在跑完整任务，多数团队的回归只能挑几个用例。用轨迹表示做小样本外推，是把评测成本降下来的可行方向。",
+    "insight": "把每次运行的轨迹存下来（每步动作、工具返回、失败点），这是比最终对错更值钱的资产；做回归时用它挑最有区分度的任务，而不是随机抽样。前提是轨迹要脱敏并结构化，否则既不可比也不合规。"
+  },
+  {
+    "rank": 4,
+    "title": "A Framework for Context Enrichment and Selective Robustness in LLM Social Agents",
+    "title_cn": "上下文变丰富不等于更稳健",
+    "url": "http://arxiv.org/abs/2611.06914v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06914，cs.MA，Mattia Greiche 等 3 人",
+    "what": "研究 LLM 社会模拟 agent 的脆弱性：提示做同义改写就会显著改变 agent 行为。作者提出可控制地度量“上下文丰富度”与“稳健性”的框架，用来检验一个常见假设——给 agent 更多背景信息能否降低这种脆弱性。",
+    "why": "这类脆弱性直接决定模拟类应用能否作为决策依据：如果换个说法结论就变，评测结果不可信。论文把丰富度和稳健性定义成可对照的量，才有可能回答“加背景有没有用”。",
+    "insight": "上线前做同义改写测试：同一任务的提示换三种说法跑一遍，看结论是否一致。不一致说明提示里有不必要的敏感表达，别急着加更多背景材料——信息量不等于稳定性。"
+  },
+  {
+    "rank": 5,
+    "title": "Before You Continue: Evaluating Time-Sensitive Safety Awareness in Conversational Assistants",
+    "title_cn": "助手对时间约束的敏感度",
+    "url": "http://arxiv.org/abs/2611.06839v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06839，cs.CL，Peidi Dong 等 8 人",
+    "what": "提出 TASC 基准，测助手能否在后续对话里主动沿用时间约束：共 3,418 条输入（128 个模板）加 33 个场景，用来区分“算得出经过时间”和“会按时间信息调整建议”两种能力，覆盖 13 个模型。",
+    "why": "用户很少每次都重复说“这班飞机是下午的”。助手若丢掉时间约束，给出的建议看起来合理但已经过期，这类错误在客服、行程和排班里代价很高。",
+    "insight": "时间约束要进结构化状态，而不是留在对话历史里等模型自己想起来：每个任务显式维护关键时间点与过期标记，回答前做一次规则校验。评测时把“约束是否被沿用”单独计分，不要只看最终答案对不对。"
+  },
+  {
+    "rank": 6,
+    "title": "CompressionBench: How can your coding agents compress LLMs?",
+    "title_cn": "编码智能体能自主压缩大模型吗",
+    "url": "http://arxiv.org/abs/2611.06858v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06858，cs.AI，Xinrui Zhong 等 9 人",
+    "what": "把压缩一个 LLM 做成给编码 agent 的终端任务：输入源检查点、存储上限、推理环境和时间预算，agent 自己选算法、做实验、产出压缩权重与可执行推理代码，用困惑度反馈指导搜索，最终由独立验证检查模型是否可用；在六个 agent 与六种模型规模上比较。",
+    "why": "这是“AI 改进 AI 基础设施”的可测版本：不问 agent 会不会写代码，而问它能否在明确预算下交付可验证的工程产物，对判断 agent 的自主研究能力很关键。",
+    "insight": "给 agent 派任务时把验收契约写死：输入、预算、可执行产物、独立验证方式。凡是能用一条命令验证的任务就该交给 agent 全自动跑；验证不了的任务，先补验证再谈自动化。"
+  },
+  {
+    "rank": 7,
+    "title": "ServerBench: How can your coding agents design specialized LLM serving systems?",
+    "title_cn": "编码智能体设计推理服务",
+    "url": "http://arxiv.org/abs/2611.06841v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06841，cs.AI，Xinrui Zhong 等 8 人",
+    "what": "让编码 agent 设计完整的 LLM 推理服务系统：在会话依赖、延迟约束和正确性要求下同时做实现与运维决策，目标函数是每美元 GPU 成本换来的、满足延迟的 token 价值；用有状态回放保留会话依赖并做独立验证，覆盖 11 个编码模型与三种部署形态。",
+    "why": "它把 agent 的产出从“能跑的代码”推到“能省钱的服务”，目标函数直接是美元效率，这比通过率更接近工程现实。",
+    "insight": "评估 agent 交付的系统要用业务目标函数而不是“跑通了”：单位成本、P95 延迟、错误率一起看。我们自己验收 agent 产出的服务时，也应把这三项写进验收单，否则“能跑”会掩盖“很贵”。"
+  },
+  {
+    "rank": 8,
+    "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+    "title_cn": "端到端物理研究智能体基准",
+    "url": "http://arxiv.org/abs/2611.06910v1",
+    "date": "2026-11-04",
+    "source": "arXiv 2611.06910，cs.AI，Bingran You 等 72 人",
+    "what": "端到端物理研究基准：42 位物理学家按自己的研究出了 56 个任务，覆盖理论、计算、实验物理九个方向；每个任务要求 agent 查文献、写研究计划、做实验与计算、产出结构化结果和论文式稿件，评分结合确定性校验与专家评分表。",
+    "why": "现有物理基准多考固定题目或给定答案的复现，这条第一次把研究质量和正确性一起评。专家出题加专家评分表的形式，让“看起来像研究”和“真的做了研究”能区分开。",
+    "insight": "复杂任务的验收表要由领域专家写、并与自动校验并用：自动项保证可复现，专家项防止形式正确但没洞见。我们的长链任务也可以拆成硬校验加人工评分两层。"
+  }
+]
