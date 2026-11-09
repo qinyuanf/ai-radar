@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+    "title_cn": "「不再询问」让密码进了公开仓库",
+    "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+    "date": "2026-11-07",
+    "source": "Hacker News 584 分 396 评论",
+    "what": "Apiiro 的研究：Claude Code 的 “Don’t Ask Again” 会把用户批准过的命令（含命令里的密码、密钥）写进项目内的 .claude/settings.local.json；这个文件只被加进全局 gitignore、没加进仓库 .gitignore，换机器或新克隆时会像普通文件一样被提交。研究统计到 1,122 个公开仓库文件受影响，追踪的 1,105 个仓库里有 539 个是该文件被 Claude 参与提交的 commit 改过。",
+    "why": "Hacker News 584 分 396 评论（11-07）。讨论集中在两点：泄露不是“点一下按钮”造成的，而是“本地权限配置进仓库”这条链；以及闭源 harness 的默认行为难以审计。",
+    "insight": "把 agent 的本地配置目录写进仓库 .gitignore（不只是全局），并在 CI 加扫描规则拦截 .claude/settings*.json 和含 secret 形状的命令行。权限记忆别存原始命令文本，只存命令模板。"
+  },
+  {
+    "rank": 2,
+    "title": "The Components of Agent Memory",
+    "title_cn": "agent 记忆的组成部分",
+    "url": "https://www.anthropic.com/research/components-of-agent-memory",
+    "date": "2026-11-07",
+    "source": "Hacker News 174 分 99 评论",
+    "what": "Anthropic 复盘 agent 记忆：把会话中的经验写成记忆笔记，再用“做梦”（空闲时回放日志）纠正错误笔记、生成 wiki 索引。实验里 Opus 5 首次跑通“答错→提假设→验证→写成规则”的闭环；Pokémon 中 Sonnet 3.7 写了 413 个文件、225 个目录只拿到 1 枚徽章，Fable 5 只写 9 个文件加 1 个 global.md 就拿到 4 枚。35 万文件、4.2 亿 token 的内部语料上，dreaming 从 2 轮扩到 128 轮，25 题得分从 13% 升到 48%；wiki 加搜索把 54% 提到 61%，每题省约 2 万 token。",
+    "why": "Hacker News 174 分 99 评论（11-07）。它给的是可复现的数字，而不是“记忆很重要”的结论：少写、写规则、定期回放纠错，比堆更多记忆文件有效。",
+    "insight": "记忆按“会过期的事实”和“可复用规则”分开：屏幕上能读到的事实不要存；每条记忆带“结论 + 依据 + 何时失效”三字段；定时用原始日志回放校正，而不是只追加。",
+    "image": "images/2026-11-09/the-components-of-agent-memory.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Agent memory needs its OpenTelemetry moment",
+    "title_cn": "agent 记忆缺少统一格式",
+    "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+    "date": "2026-11-08",
+    "source": "Hacker News 175 分 103 评论",
+    "what": "一篇倡议文：机器上同时存在 AGENTS.md/CLAUDE.md、.cursor/rules、/memories 目录、Copilot 的仓库事实、memory MCP 的 JSONL 知识图等五六种记忆格式，彼此读不了对方的。作者主张照 2019 年 OpenTracing/OpenCensus 合并成 OpenTelemetry 的路子，先约定数据模型、语义约定、协议与参考实现四层，再让各家在存储和查询上竞争。",
+    "why": "Hacker News 175 分 103 评论（11-08）。MCP 与 AGENTS.md 都已归 Linux Foundation 的 Agentic AI Foundation，标准化有了中立的落点，时机比半年前好。",
+    "insight": "内部记忆格式现在就按“可导出 + 带来源 + 带 TTL”设计，别绑死某个工具私有 schema。可迁移的最小单元是内容、来源引用、写入时间、适用范围，四样缺一不可。"
+  },
+  {
+    "rank": 4,
+    "title": "Goodbye Claude, hello Pi",
+    "title_cn": "告别 Claude Code，转投 Pi",
+    "url": "https://caleb.software/posts/claude-to-pi.html",
+    "date": "2026-11-08",
+    "source": "Hacker News 699 分 430 评论",
+    "what": "一位长期 Claude Code 用户的迁移复盘：今年 Claude Code 发了 244 个版本，其中超过 3/4 改动了系统提示词或工具描述；多标签 session 与 IDE 选区联动、GUI 扩展缺 slash 命令、子 agent 输出混进主线程等问题长期没修，作者因此把主力 harness 换成更小的 Pi。",
+    "why": "Hacker News 699 分 430 评论（11-08），本期讨论最多的一条。“功能越加越多、提示词频繁变动”直接影响可复现性，这是团队用 agent 时最容易被忽略的成本。",
+    "insight": "把 agent 版本和系统提示词纳入锁定项：记录每次升级的 prompt/tool 描述 diff，关键任务固定版本，升级前跑回归用例。否则行为漂移会被误判成模型能力变化。"
+  },
+  {
+    "rank": 5,
+    "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+    "title_cn": "高盛叫停交易员使用 Claude Code",
+    "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+    "date": "2026-11-08",
+    "source": "Hacker News 591 分 356 评论",
+    "what": "据 Hacker News 讨论引用的 Bloomberg 报道，高盛限制交易员与投行人员使用 Claude Code。讨论多指向合规与信息隔离：交易台不适合运行使用者读不懂、又未经审查的代码。",
+    "why": "Hacker News 591 分 356 评论（11-08）。它代表一类正在发生的企业侧收紧：不是模型不好用，而是“谁有资格让 agent 改生产环境”。",
+    "insight": "agent 的写权限按“能否 review”分级：能读懂并复核的人才给写权限，其余只给只读或沙箱。受监管场景里，agent 产出的代码走和人工代码同一套评审门禁。"
+  },
+  {
+    "rank": 6,
+    "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+    "title_cn": "284B 模型跑在 64GB 内存",
+    "url": "https://github.com/synchopate/llama-modchip",
+    "date": "2026-11-08",
+    "source": "Hacker News 362 分 153 评论",
+    "what": "一个 CPU 优先的推理实现：把 DeepSeek-V4 的 284B MoE（激活 13.17B）量化到 1.71 bpw、约 56.6 GiB，在 16–64 GB 内存、0 张 GPU 上跑。README 给出 256K 上下文峰值 57.6 GiB、16 核 Zen 5 上 284B prefill 44.36 tok/s，30B MoE 解码 25–111.6 tok/s。",
+    "why": "Hacker News 362 分 153 评论（11-08）。MoE 每次只激活一小部分参数，让“大模型跑在小内存”第一次有了能看的吞吐数字，而不是只跑得动。",
+    "insight": "本地模型选型把生成速率和内存峰值一起测，别只看参数量。离线或隐私场景下，MoE 加低比特量化已经能撑批处理型任务；交互式仍要算 prefill 成本。",
+    "image": "images/2026-11-09/llama-modchip-284b-deepseek-on-64gb-ram-no-gpu.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Measuring how AI agents handle everyday wet-lab science",
+    "title_cn": "衡量 agent 做湿实验的基准",
+    "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+    "date": "2026-11-06",
+    "source": "OpenAI 官方博客（RSS，2026-11-06）",
+    "what": "OpenAI 发布 BioBasicsBench：100 个任务的基准，测 agent 能否读懂原始实验数据、完成湿实验室里的日常科研操作，而不是只答选择题。",
+    "why": "2026-11-06 官方发布。和 Terminal-Bench、WebsiteBench 放在一起看，评测正在从“知识问答”转向“在真实环境里把事做完”。",
+    "insight": "自建 agent 评测时任务要带“原始输入 + 可执行环境 + 客观判定”，三者缺一就退化成问答。先做 20 条高质量任务，比 200 条靠人打分的任务更能指导迭代。"
+  }
+]

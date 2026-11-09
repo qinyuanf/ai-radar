@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "zaxiu88888/issue-rag",
+    "url": "https://github.com/zaxiu88888/issue-rag",
+    "stars": 161,
+    "trend": "2026-11-01 后新建，8 天内 161★",
+    "what": "面向真实开源仓库 issue 的 RAG 问答系统，重点在评测本身：在 vitejs/vite 的 5,473 篇语料上用 95 条人工复核问题对比闭卷与检索，检索把判对比例从 8.4% 提到 64.2%，并审计了判分器（换判分模型、同模型跑两遍、换 rubric、30 条人工盲评）。",
+    "why": "2026-11-01 新建，8 天内 161★。四种检索配置之间最大差距只有 0.03，落在判分器自身噪声 0.005–0.026 附近，等于说很多“方案 A 比 B 好”的结论站不住。",
+    "insight": "做 RAG 评测先测判分器噪声：同一模型跑两遍看分数波动，波动大于方案差距就别下结论。报告写区间和边界，别写一个最好看的单点数字。",
+    "image": "images/2026-11-09/zaxiu88888-issue-rag.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "TIGER-AI-Lab/WebsiteBench",
+    "url": "https://github.com/TIGER-AI-Lab/WebsiteBench",
+    "stars": 134,
+    "trend": "2026-11-04 后新建，5 天内 134★",
+    "what": "让 agent 通过浏览器探索一个生产级网站，再反向工程出外观与行为尽量一致的全栈版本；含 70 个网站、46,916 条隐藏测试用例，数据放在 Hugging Face 与 Harbor Hub，配排行榜和论文。",
+    "why": "2026-11-04 新建，5 天 134★。它把“agent 能不能真的把页面做出来”变成可自动判分的任务，而不是靠人看截图说像不像。",
+    "insight": "前端产出用隐藏用例验收，而不是截图比对：先把关键交互拆成可执行断言，agent 每轮改完就跑。这能挡住“看着对了但行为错了”的交付。",
+    "image": "images/2026-11-09/tiger-ai-lab-websitebench.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "glincker/awesome-selfhosted-ai",
+    "url": "https://github.com/glincker/awesome-selfhosted-ai",
+    "stars": 117,
+    "trend": "2026-10-31 后新建，9 天内 117★",
+    "what": "自托管 AI 项目清单：309 个项目分 20 类（本地模型、Chat UI、编码助手、MCP、RAG、可观测与评测等），每周用 GitHub API 跑健康检查，归档、删除或一年无提交的项目自动移进 UNMAINTAINED。",
+    "why": "2026-10-31 新建，9 天 117★。308/309 在近 90 天有活动，合计 10.7M 星；清单自带淘汰机制，比一次性 awesome list 可信。",
+    "insight": "内部选型清单也该挂自动健康检查（最后提交、是否归档、license），否则半年后一半链接是死的。把“过期”做成定时任务，而不是靠人复查。",
+    "image": "images/2026-11-09/glincker-awesome-selfhosted-ai.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "RapidSailorFreeze/studsmith",
+    "url": "https://github.com/RapidSailorFreeze/studsmith",
+    "stars": 95,
+    "trend": "2026-11-08 后新建，1 天内 95★",
+    "what": "Windows 上的 Roblox Studio AI agent：用自然语言描述要什么，agent 写 Luau 脚本、在 Studio 里搭场景，并解释改了什么。支持应用前先 review diff，以及“改—跑—报错—修”的 playtest 循环时间线。",
+    "why": "2026-11-08 新建，1 天 95★，建仓当天就有提交。它把“diff 审阅 + 自动试玩”做成默认交互，而不是可选插件。",
+    "insight": "面向非工程用户的 agent，默认交互就该是“先给 diff 再落盘 + 自动跑一遍验证”，把不可逆操作挡在确认之后。用户没能力判断改坏了什么，这一步不能省。",
+    "image": "images/2026-11-09/rapidsailorfreeze-studsmith.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "vixhal-baraiya/qwenFS",
+    "url": "https://github.com/vixhal-baraiya/qwenFS",
+    "stars": 94,
+    "trend": "2026-11-02 后新建，7 天内 94★",
+    "what": "实验性模型：把文件系统直接编译进 Qwen3.5-2B 的权重——在 Qwen 原有 24 层前加 8 层 transformer，这 8 层不训练、权重全部由构造确定；模型用普通 tool call 读写文件，电路在生成 token 时直接给出工具返回。",
+    "why": "2026-11-02 新建，7 天 94★。它把“工具调用”从外部循环搬进权重内部，是研究 agent 能力能否内化的一个极端样本，也顺带证明了小模型可以被结构补强。",
+    "insight": "短期别指望这条路替代外部工具链，但可以借鉴它的观测思路：把工具调用与返回固定成可预测的 token 形态，缓存、审计、错误定位都会容易得多。",
+    "image": "images/2026-11-09/vixhal-baraiya-qwenfs.jpg"
+  }
+]
