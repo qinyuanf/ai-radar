@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "CPU-ARC: Agentic Reasoning Caching for on-CPU Reasoning Reuse",
+    "title_cn": "把推理过程缓存成可执行程序",
+    "url": "http://arxiv.org/abs/2611.09891",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09891",
+    "what": "NVIDIA 等机构作者提出 agentic reasoning caching：把 LLM 的推理轨迹编译成可在 CPU 上执行的推理缓存（ARC），新问题直接复用已验证的执行路径，少让模型参与。在数学与科学难任务上与前沿模型打平，调用成本低 16–291 倍，且可持续训练、抗输入扰动。",
+    "why": "11-06 提交。它把“模型再想一遍”换成“跑一遍已验证程序”，砍掉的正是当前 agent 成本结构里最大的一块重复推理。",
+    "insight": "适合落在稳定、重复、可验证的任务上（格式转换、固定口径计算、固定流程查询）：先把成功轨迹固化成脚本，再让模型只处理脚本跑不通的异常分支，比单纯提高缓存命中率更彻底。"
+  },
+  {
+    "rank": 2,
+    "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+    "title_cn": "并行小队比一个大团队更划算",
+    "url": "http://arxiv.org/abs/2611.09798",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09798",
+    "what": "在可自动验证的任务上比较两种测试时扩展：Best-of-N 独立采样很快饱和，单个大协作团队随规模增长也停止提升；作者改为并行采样多个 10 人小队、取最佳小队结果。用 27B 模型和 100 个 agent 的预算，10 人小队在 12 个长周期任务中 10 个胜过并行独立 agent，在跑过的 4 个大团队任务上全部胜出；等美元成本下有一半任务超过前沿模型。",
+    "why": "11-06 提交。结论不是“多开 agent 就强”，而是组织结构决定扩展曲线，这直接决定多 agent 任务该怎么拆。",
+    "insight": "多 agent 编排优先做“多个小队的锦标赛”，而不是把一个大团队越拼越大：队内保留协作、队间只比结果，验证器要能独立打分。"
+  },
+  {
+    "rank": 3,
+    "title": "When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents",
+    "title_cn": "过期的 AGENTS.md 会持续收费",
+    "url": "http://arxiv.org/abs/2611.09802",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09802",
+    "what": "研究 AGENTS.md / CLAUDE.md 这类“每个会话都会读”的仓库指令文件过期后的代价：以三个真实开源仓库里过期的指令为样本（测试命令、代码位置、新增组件流程），让 agent 在保持过期、改正路径、直接删除三种条件下完成 22 个维护任务。",
+    "why": "11-06 提交。多数评测只看任务成功率，看不到过期指令在每次会话里重复付出的成本，而这正是维护 AGENTS.md 时最容易忽略的隐性债务。",
+    "insight": "把指令文件当代码管理：路径和命令进 CI 校验（文件不存在或命令失败就报错），改目录结构时同步改指令，评测里加一项“指令准确性”。"
+  },
+  {
+    "rank": 4,
+    "title": "MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory",
+    "title_cn": "agent 记忆投毒有了基准",
+    "url": "http://arxiv.org/abs/2611.09721",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09721",
+    "what": "作者发布 MemoryDojo：155 条跨会话长任务轨迹、覆盖四个领域、支持五种记忆系统，用来追踪一条被投毒的指令如何在记忆里存活、被检索、并在后续会话生效。结果显示所有记忆系统都可被投毒，下游影响差异很大；作者还提出针对记忆的投毒优化方法。",
+    "why": "11-06 提交。agent 开始跨会话记忆后，“某次会话里看到的恶意指令”会变成长期后门，这是记忆功能上线前必须回答的问题。",
+    "insight": "记忆写入必须区分“用户事实”和“指令”：来自网页或工具输出的文本不应直接变成后续会话的系统指令；写入前打来源标记，检索时按来源降权，并保留可回滚的记忆版本。"
+  },
+  {
+    "rank": 5,
+    "title": "Compaction, decay and reinforcement in a two-tier conversational memory: a paired evaluation against retrieval-augmented generation",
+    "title_cn": "记忆压缩比原文检索省 token",
+    "url": "http://arxiv.org/abs/2611.09807",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09807",
+    "what": "在 LoCoMo 上做配对比较：一臂保留原始对话用 RAG 检索，另一臂把每轮压缩成原子事实再检索，同窗口、同存储、同生成器与裁判，对 512 个分歧问题做 McNemar 检验。压缩记忆在四类可比问题上以 71.4% 对 64.6% 领先 6.8 个点（p=5.5e-08），prompt token 少 34%；加入对抗集后优势降到 2.0 且不再显著，因为答案对原文措辞敏感。",
+    "why": "11-06 提交。它给的是“压缩记忆什么时候有效”的边界，而不是笼统地说哪种记忆更好。",
+    "insight": "需要精确引用原文的场景（合规、合同、报错原文）保留原文检索；需要长期跟踪状态的场景（偏好、进度、结论）用压缩事实，能省三分之一上下文。"
+  },
+  {
+    "rank": 6,
+    "title": "Intent-Aware Caching for Efficient LLM Serving",
+    "title_cn": "按用户意图决定缓存淘汰",
+    "url": "http://arxiv.org/abs/2611.09715",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09715",
+    "what": "作者观察到多轮对话的前缀缓存能否复用，取决于“这轮会不会继续、下一轮多快来”，而不同用户意图的续聊概率和间隔差别明显；据此提出 IAC，一个在线淘汰策略：按意图给请求分类，从近期服务日志学习轻量复用统计，用来指导缓存淘汰。",
+    "why": "11-06 提交。前缀缓存命中率直接决定多轮 agent 的延迟和成本，而主流淘汰策略基本只看最近使用时间。",
+    "insight": "在网关层做前缀缓存时，可以把“意图”作为特征参与淘汰决策而不是统一 LRU；先在日志里验证不同意图的续聊分布，再决定分桶粒度。"
+  },
+  {
+    "rank": 7,
+    "title": "What to Delegate, What to Preserve: Human Preferences for Agentic AI Across Everyday Life and Work",
+    "title_cn": "人愿意把什么交给 agent",
+    "url": "http://arxiv.org/abs/2611.09730",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09730",
+    "what": "对 289 名有 AI 使用经验的美国成年人做场景调查，覆盖九个生活领域的 45 个用例，每人每个领域评估一个场景。结果显示自动化偏好随领域差异很大：信任、希望 AI 主导、此前用过同类任务、预期省钱会提高委托意愿，而“会减少个人成就感”会降低意愿；开放回答普遍支持“有边界的自主”。",
+    "why": "11-06 提交。数字员工要落地，产品设计得先知道用户在哪些环节愿意放手、哪些必须保留最终决定权。",
+    "insight": "把“执行、协作、审批”拆成可配置的三档，而不是一个开关：默认让人保留最终确认权，再按任务风险和用户历史逐步放开。"
+  },
+  {
+    "rank": 8,
+    "title": "On the Reliability of Majority-Vote Pseudo-Labels in Test-Time Reinforcement Learning",
+    "title_cn": "自训练伪标签投票并不可靠",
+    "url": "http://arxiv.org/abs/2611.09872",
+    "date": "2026-11-06",
+    "source": "arXiv 2611.09872",
+    "what": "分析测试时强化学习（TTRL）里多数投票伪标签的可靠性，把误差分解为总体多数偏差和有限采样波动；提出 PC-Dr.DPO，按观测到的投票可靠性对同一提示内的样本做稳健重加权，并用缓存机制减少在线适应中的遗忘，在六个数学任务上验证。",
+    "why": "11-06 提交。用模型自己的多数投票当监督信号是“无标注自进化”的主流做法，这篇说明它的偏差不可识别，只能缓解采样波动。",
+    "insight": "让 agent 自我改进时不要把多数投票当金标准：至少保留一个外部可验证信号（单测、检索命中、形式化检查），并对投票分歧大的样本降低更新权重。"
+  }
+]

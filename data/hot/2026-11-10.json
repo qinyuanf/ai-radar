@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "rasbt/LLMs-from-scratch",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "stars": 108112,
+    "trend": "首日快照：总 108,112★，2026-11-09 有提交",
+    "what": "《Build a Large Language Model (From Scratch)》的官方配套代码：用 PyTorch 从零实现一个 GPT 类模型，从分词、注意力、预训练一路做到指令微调，并支持加载更大预训练权重再做微调，每一章对应书里的一步。",
+    "why": "108,112★，11-09 仍有提交。十万星级的教育型仓库不少，但把“从零训练到可用小模型”的完整链路公开成可运行代码的仍然很少，它长期是这条路径的默认入口。",
+    "insight": "做内部 agent 培训时可以直接借它的章节顺序当最小训练营，但别当生产模板：它面向教学，模型规模只有百万级参数，工程化部分（数据管线、评测、部署）都不在里面。",
+    "image": "images/2026-11-10/rasbt-llms-from-scratch.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "asgeirtj/system_prompts_leaks",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "stars": 71088,
+    "trend": "+1,223 stars/22天（对比 2026-10-19）",
+    "what": "汇总 ChatGPT、Claude、Gemini 等主流聊天机器人，以及 Claude Code、OpenAI Codex、Google Antigravity、Cursor、Perplexity 等 30 多个产品的系统提示词，标注版本、自 2025 年 5 月起持续更新，并每天跟进新版本。",
+    "why": "71,088★，22 天涨 1,223★（10-19 为 69,865★），11-09 有提交。对做 agent 的人来说，这是少有的能横向看到各厂商“指令层”如何演化的公开样本。",
+    "insight": "把它当对照集而不是模板：对比同一产品跨版本的提示词差异，能看出厂商在哪些约束上反复加补丁（工具调用、拒答边界、身份设定），这些正是自己写系统提示词时最容易漏的地方。",
+    "image": "images/2026-11-10/asgeirtj-system-prompts-leaks.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "lyogavin/airllm",
+    "url": "https://github.com/lyogavin/airllm",
+    "stars": 42069,
+    "trend": "首日快照：总 42,069★，2026-11-09 有提交",
+    "what": "用逐层加载权重的方式压显存，不做量化、蒸馏或剪枝：官方称单张 4GB 显卡可跑 70B，Kimi K3（2.8T）在 4GB 以下、DeepSeek-V3（671B）约 12GB，还能在 6GB 显存下训练 125B 模型。",
+    "why": "42,069★，11-09 有提交，README 这轮把上限从“跑 70B”抬到 2.8T 开源模型。显存仍是自建推理最大的成本项，这种“用时间换显存”的做法直接降低了硬件门槛。",
+    "insight": "它换掉的是吞吐：逐层换入换出会让推理慢几个数量级，适合离线批处理、评测回归和本地调试，不适合在线低延迟服务。要做私有化演示或验证大模型效果，这是最省卡的路径。",
+    "image": "images/2026-11-10/lyogavin-airllm.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Tencent/WeKnora",
+    "url": "https://github.com/Tencent/WeKnora",
+    "stars": 37009,
+    "trend": "首日快照：总 37,009★，2026-11-09 有提交",
+    "what": "腾讯开源的企业文档知识框架（v0.9.0）：同一批知识库上同时提供 RAG 检索、多步 agent 任务和 wiki 组织三种模式；agent 的 skill 跑在 Docker / E2B / Cube 沙箱里，带交互终端和图形桌面，可接管用户自己的浏览器，也能逐个启用外部 MCP 服务。",
+    "why": "37,009★，11-09 有提交。它把“企业知识库 + agent 执行环境 + 沙箱”打包成可自部署的产品，正好对上做知识型数字员工时最费工的三块基础设施。",
+    "insight": "更值得拆的是它的沙箱与会话持久化设计：把工具执行放进独立沙箱、按会话保活，比在业务服务进程里直接跑工具更容易做权限隔离；评估时优先看这块，而不是检索效果。",
+    "image": "images/2026-11-10/tencent-weknora.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Twigpine/openclaude",
+    "url": "https://github.com/Twigpine/openclaude",
+    "stars": 34309,
+    "trend": "首日快照：总 34,309★，2026-11-10 有提交",
+    "what": "开源的编码 agent 命令行工具，主打“跑在任何地方、接任何后端”：支持 OpenAI 兼容接口、Gemini、GitHub Models、Codex OAuth、Ollama 等，仓库 2026-04 建，TypeScript 实现。",
+    "why": "34,309★，11-10 当天仍有提交，是今天仍在活跃迭代的编码 agent 客户端。多后端适配是它区别于各家官方 CLI 的核心卖点。",
+    "insight": "想验证“同一套工具调用协议换模型后表现差多少”，用这种多后端 CLI 比自己写适配层快；但多后端意味着能力对齐只能取最小公分母，生产接入要按后端分别做能力探测。",
+    "image": "images/2026-11-10/twigpine-openclaude.jpg"
+  }
+]

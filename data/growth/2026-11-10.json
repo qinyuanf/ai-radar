@@ -1,0 +1,56 @@
+[
+  {
+    "rank": 1,
+    "repo": "mrhlaingbwardev/agentic-hacking-skills",
+    "url": "https://github.com/mrhlaingbwardev/agentic-hacking-skills",
+    "stars": 350,
+    "trend": "2026-11-01 后新建，9 天内 350★",
+    "what": "一本《Agentic Hacking》电子书的附赠仓库：28 个 SKILL.md 模板、一个 web 渗透测试 agent、自建 MCP server（wsl-security-tools）和 OpenCode 配置；安装方式是把自己的 agent 指向仓库链接，让它自行下载到对应目录。",
+    "why": "11-01 新建，9 天内 350★。README 甚至建议挑推理能力弱的模型，因为“Deep reasoning 模型会拒绝安全类请求”，这暴露出技能包和模型安全策略之间的直接冲突。",
+    "insight": "它示范了“技能包以仓库形态分发、由 agent 自安装”的路径；也说明技能分发必须解决来源与用途审核，内部做技能市场前要先有签名和范围控制。",
+    "image": "images/2026-11-10/mrhlaingbwardev-agentic-hacking-skills.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "aa1143/NamiDSH",
+    "url": "https://github.com/aa1143/NamiDSH",
+    "stars": 189,
+    "trend": "2026-11-05 后新建，5 天内 189★",
+    "what": "用约一千行 TypeScript 复刻 DeepSeek Harness 的核心架构：迷你 Cordis 插件内核 + 迷你 DSH + 网页端 agent，配套一张可视化架构图和拆机文章。",
+    "why": "11-05 新建，5 天 189★。大厂 harness 的内部结构一直不透明，这种“可读版复刻”是把架构讲清楚的最快方式，也说明 DSH 的插件模型已经形成可被复现的公共认知。",
+    "insight": "想搞懂“一切皆插件”的 agent runtime，直接读它的插件注册与生命周期实现，比读文档快；但它是教学实现，缺并发、持久化和权限层，不要拿来做生产基线。"
+  },
+  {
+    "rank": 3,
+    "repo": "RUC-NLPIR/CoworkOS",
+    "url": "https://github.com/RUC-NLPIR/CoworkOS",
+    "stars": 148,
+    "trend": "2026-11-03 后新建，7 天内 148★",
+    "what": "RUC-NLPIR 开源的协作式 agent harness，面向长周期、human-in-the-loop 任务：主 agent 定计划，Coordinator Runtime 派发子任务并跟踪生命周期，可选 subagent 执行；产物覆盖代码、研究、文档、PPT、CAD、Blender 等，长任务保留状态和日志、可跨会话恢复。",
+    "why": "11-03 新建，7 天 148★。它把“长任务的状态、恢复、人工介入”当一等公民，而这正是数字员工最难自研的部分。",
+    "insight": "重点看三层运行时（主 agent / 协调器 / 子 agent）怎么切分职责：把调度和执行分开，长任务才能既不丢上下文，又能在局部失败时只重跑那一段。",
+    "image": "images/2026-11-10/ruc-nlpir-coworkos.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "DKKD13/dsh-finance",
+    "url": "https://github.com/DKKD13/dsh-finance",
+    "stars": 126,
+    "trend": "2026-11-01 后新建，9 天内 126★",
+    "what": "个人开发者做的 DeepSeek Harness 第三方插件（0.1.0 预览版）：把行情、研究 skill、资料库、多空观点和模拟基金放进同一工作台，内置 38 个可注册 skill，持仓与净值由统一的纸面账本计算。",
+    "why": "11-01 新建，9 天 126★。这是 DSH 生态里少见的完整业务插件，说明 harness 的插件协议已经能承载一个垂直业务从研究到结算的全流程。",
+    "insight": "它的分层值得参考：skill 管流程、资料库管证据、账本管结算，三层解耦。做垂直数字员工时按这三层拆，比把所有逻辑塞进一个提示词更容易验收。",
+    "image": "images/2026-11-10/dkkd13-dsh-finance.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "YT-Proteus-bot/MineAgent",
+    "url": "https://github.com/YT-Proteus-bot/MineAgent",
+    "stars": 112,
+    "trend": "2026-11-05 后新建，5 天内 112★",
+    "what": "本地运行的前后端项目：在浏览器画布上拖节点、连线、写代码、配模型，点“保存”把画布编译成一个可独立运行的 Python agent 项目，点“运行”在本机真实执行并逐 token 回显、高亮当前节点；内置 33 个推理模式模板。",
+    "why": "11-05 新建，6 天 112★（11-06 有提交）。它把“可视化编排”落在“编译出标准 Python 工程”上，而不是把流程锁在平台里，这个取舍很少见。",
+    "insight": "编排产物是普通代码，就能进 git、能做 code review、能脱离平台运行。做内部低代码 agent 平台时，“导出即工程”比“运行时托管”更容易被研发接受。",
+    "image": "images/2026-11-10/yt-proteus-bot-mineagent.jpg"
+  }
+]

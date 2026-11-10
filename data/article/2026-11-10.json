@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "Claude Fable 5.2 and Mythos 5.2",
+    "title_cn": "Fable 与 Mythos 升级 5.2",
+    "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "date": "2026-11-09",
+    "source": "Hacker News 940 分 567 评论",
+    "what": "Anthropic 同日发布 Claude Fable 5.2 和 Mythos 5.2，两者是同一底层模型：Fable 面向所有用户，带网络与生物安全防护；Mythos 只对通过验证计划的安全、生医研究机构开放。输出速度比 5.1 快最多 30%，价格下调到每百万 token 输入 8 美元、输出 40 美元，可选快速模式再快 2.5 倍（16/80 美元）。",
+    "why": "HN 940 分 567 评论（11-09），Artificial Analysis 给出的智能指数 65 是当前最高；官方预发布测试里它 30 小时形式化了费马大定理证明，还从零设计出三个可工作的电子器件。这一代同时降价，说明前沿模型也开始拼性价比。",
+    "insight": "官方给的用法很明确：日常编码用 Opus 5.5，硬问题才切 Fable，还能让 Fable 当 advisor 或 orchestrator 反向调度小模型。做 agent 就按这个层级设计路由，别所有任务都上最贵的模型。",
+    "image": "images/2026-11-10/claude-fable-5-2-and-mythos-5-2.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Google Gemini routes personal Drive files and emails to human annotators",
+    "title_cn": "Gemini 私人文件被送人工审核",
+    "url": "https://github.com/thisisme6598/gemini_files/",
+    "date": "2026-11-09",
+    "source": "Hacker News 388 分 100 评论",
+    "what": "仓库整理：Google 2023 年上线 Workspace 扩展时承诺 Gmail、Docs、Drive 的私人内容“不会被人工审核看到”，现在帮助文档 16836988 和 10 月 16 日修改过的原博客都明确承认，已连接的 Drive 与邮件会进入人工审核流程，并提醒审核员看到的“可能就是这个邮件或文件”。作者测试称，即使不显式 @Drive/@Gmail，后台对话也会自动送入管线，且抓取是概率性的。",
+    "why": "HN 388 分 100 评论（11-09）。这不是模型能力问题，而是产品承诺被改写：企业采购 AI 助手时，“数据会不会被人看到”已经从条款细节变成必须逐条核对的项。",
+    "insight": "给数字员工接企业数据前，把“是否进入人工审核或训练管线”列为选型硬指标，并对着帮助文档核而不是营销页；自己的检索链路也要能回答“这份内容会被谁看到”。",
+    "image": "images/2026-11-10/google-gemini-routes-personal-drive-files-and-em.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "ChatGPT Desktop forwards your SSH agent to remote machines",
+    "title_cn": "ChatGPT 桌面转发 SSH 代理",
+    "url": "https://news.ycombinator.com/item?id=50422628",
+    "date": "2026-11-09",
+    "source": "Hacker News 205 分 71 评论",
+    "what": "HN 讨论指出，ChatGPT 桌面端会把你本地的 SSH agent 转发到远端执行环境，远端运行的 agent 因此能用你的本地密钥完成认证，例如直接 push 到你私有的 GitHub 仓库；讨论里贴了 OpenAI Codex 仓库的相关 PR 讨论（#28131）作为证据。",
+    "why": "HN 205 分 71 评论（11-09）。为了省掉每次输密码的摩擦，客户端把最敏感的能力（签名）交给了远端进程，这是 agent 工具链里典型的便利性压过安全边界。",
+    "insight": "远程执行环境不该继承开发机的长期密钥：给每个任务签发短期、限定仓库与分支的凭据，或改用每次需要确认的硬件密钥；至少要把“谁在什么时候用了这把钥匙”变成可审计事件。"
+  },
+  {
+    "rank": 4,
+    "title": "I'm Not Convinced The AI Bubble Exists",
+    "title_cn": "我不认为 AI 泡沫存在",
+    "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
+    "date": "2026-11-08",
+    "source": "Hacker News 541 分 934 评论",
+    "what": "作者逐条反驳“AI 泡沫论”：AI 公司已承诺约 3 万亿美元支出、已花约 1.9 万亿，但主要是建数据中心的一次性资本开支；按 Anthropic 的 S-1，每 1 美元算力能换回 2.08 美元收入，且已覆盖算力与基建投入合计。文章也承认复杂的债务结构不透明，是泡沫论最有力的论据。",
+    "why": "HN 541 分 934 评论（11-08），是本周期争议最大的讨论。它把“花得多”和“单位经济不成立”拆成两件事，正好对应我们做成本模型时对模型价格的假设。",
+    "insight": "对我们的意义不在宏观判断，而在成本假设：如果推理毛利确实为正，API 价格会继续下行、算力更集中；做预算时应按“单价逐年下降”设情景，而不是拿当前单价线性外推。"
+  },
+  {
+    "rank": 5,
+    "title": "How I'm fighting the AI Brain Fry",
+    "title_cn": "我怎么对抗 AI 带来的脑力过载",
+    "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
+    "date": "2026-11-08",
+    "source": "Hacker News 303 分 208 评论",
+    "what": "作者把同时开十几个 Claude Code / Codex 会话导致的状态混乱拆成“排序”和“上下文”两个问题：任务队列放在 git 里，每个工单是仓库中的一个 Markdown 文件，看板状态是可提交的快照；agent 按周期处理看板（研究、构建、跑测试、验证部署），自己不能决定的事全部进一个“owner inbox”，再用从 git 重建的页面做人工评审。",
+    "why": "HN 303 分 208 评论（11-08）。这是本周期少见的、把“一个人管多个 agent”落到具体工程结构的实践，而不是泛泛的效率建议。",
+    "insight": "可以直接搬的结论：任务状态、决策点和产出都放进版本库，人随时能从文件恢复上下文；生产部署这类不可逆动作留给人工，agent 只做可验证的前半段。"
+  },
+  {
+    "rank": 6,
+    "title": "Introducing Images 2.6",
+    "title_cn": "OpenAI 发布 Images 2.6",
+    "url": "https://openai.com/index/introducing-images-2-6",
+    "date": "2026-11-04",
+    "source": "OpenAI 官方发布（2026-11-04）",
+    "what": "OpenAI 发布图像模型 Images 2.6，官方说明带来更快的图像生成、GIF 生成、更精确的编辑，以及新的 API 控制项，覆盖 ChatGPT、Codex 和 API 三个入口。",
+    "why": "官方发布（11-04），而且这次是同时铺到 Codex 和 API：生成与编辑图片正在变成编码 agent 可以直接调用的一等工具，不再只是聊天里的附属功能。",
+    "insight": "给 agent 加视觉产出时，优先用 API 的结构化控制项而不是自然语言描述，结果才可复现；GIF 与编辑能力适合做演示物料，但成品仍要人工过一遍版权与品牌口径。"
+  },
+  {
+    "rank": 7,
+    "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+    "title_cn": "OpenAI 的模型任务中央管控台",
+    "url": "https://openai.com/index/control-room",
+    "date": "2026-11-09",
+    "source": "OpenAI 官方发布（2026-11-09）",
+    "what": "OpenAI 介绍其研究基础设施里的 Control Room：集中追踪模型工作负载，并在出现安全或安保问题时快速停止它们。",
+    "why": "官方发布（11-09），和 ChatGPT Enterprise 上架 AWS Marketplace 是同一天。当一个组织同时跑大量训练和推理任务时，“能多快停掉一个失控任务”和“能跑多快”同等重要，这类能力开始被公开讲，说明 agent 规模化的运维问题已经显性化。",
+    "insight": "我们跑批量 agent 任务也需要等价能力：每个任务有唯一标识、资源归属可查、能按批次或租户一键熔断。先把 kill switch 做出来，再谈扩量。"
+  }
+]
