@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Shubhamsaboo/awesome-llm-apps",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "stars": 144377,
+    "trend": "+0 stars/0天（对比 2026-11-11）",
+    "what": "100+ 个可直接跑的开源 AI agent、agent skill 与 RAG 应用合集，覆盖 Claude、Gemini、GPT、DeepSeek、Qwen 等模型，Apache-2.0，可以克隆即用。",
+    "why": "144,377★，11-10 仍有提交，26 天涨 2,484★。它不是又一个框架，而是成品模板库——在 agent 从 demo 走向落地的阶段，能跑的示例工程比文档更能决定团队起步速度。",
+    "insight": "做原型时先用同类模板对齐\"最小可运行形态\"，再换成自己的工具与数据；但不要把它当架构。里面多数是单文件 demo，缺鉴权、限流、可观测与失败重试，直接上线第二周就开始还债。",
+    "image": "images/2026-11-11/shubhamsaboo-awesome-llm-apps.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "stars": 115844,
+    "trend": "+0 stars/0天（对比 2026-11-11）",
+    "what": "给编码 agent 用的跨会话记忆层：记录会话过程，用模型压缩成结构化记忆，再在后续会话里按相关性注入；兼容 Claude Code、OpenClaw 等宿主。",
+    "why": "115,844★，15 天涨 12,406★，11-11 仍在提交。同期 arXiv 上 HiVe-Mem、MaxIM 等记忆系统论文集中出现，说明\"上下文窗口不够用\"已经是共识问题。",
+    "insight": "记忆层的难点不是存，而是\"取什么、以什么形态塞回去\"。自建时分三层存：摘要、原始工具输出、关键文件 diff，检索后按任务类型挑证据形态；压成一个摘要会丢细节，全量注入会污染上下文。",
+    "image": "images/2026-11-11/thedotmack-claude-mem.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "stars": 93975,
+    "trend": "+0 stars/0天（对比 2026-11-11）",
+    "what": "从 RAG 引擎扩展成\"agent 原生数据库\"：文档解析、切片、混合检索、agentic 检索与上下文管理打通，Go 实现，可接多种向量库与模型。",
+    "why": "93,975★，15 天涨 1,056★，11-10 有提交。它把自我定位从\"RAG 工具\"改成\"上下文基础设施\"，正对应 agent 需要长期、可治理知识底座的变化。",
+    "insight": "已有检索服务的团队别整体替换；先单独对比它的解析与切片质量、以及 agentic 检索（多轮改写再召回）的效果。RAG 效果差八成死在解析和切片，不在向量库选型。",
+    "image": "images/2026-11-11/infiniflow-ragflow.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "stars": 87194,
+    "trend": "+0 stars/0天（对比 2026-11-11）",
+    "what": "面向 AI agent 的网页抓取与结构化抽取工具，把页面转成干净 Markdown，支持抽取 JSON 与实时搜索；仓库本身是驱动其云服务的 Apache-2.0 爬虫，可自托管（Python/Docker），也提供 MCP 接入。",
+    "why": "87,194★，11-10 有提交。这次 README 主推\"云服务 + 每月 1000 免费额度\"，说明抓取层正从开源库变成按量计费的基础设施。",
+    "insight": "agent 做网页任务时，抓取失败率往往比模型能力更早成为瓶颈。自托管要自己扛反爬、代理与浏览器渲染，用托管要算单页成本与合规边界。把它当可替换的取数层，别把业务逻辑写进抓取脚本。",
+    "image": "images/2026-11-11/unclecode-crawl4ai.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "headroomlabs-ai/headroom",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "stars": 79320,
+    "trend": "+0 stars/0天（对比 2026-11-11）",
+    "what": "上下文压缩层：在工具输出、日志、文件和 RAG 片段进入模型前先压缩。README 示例把 55,957 token 的 agent 提示压到 24,340 token 再发送，并保留关键行原文；提供库、代理、MCP server 三种接入形态。",
+    "why": "79,320★，15 天涨 1,383★，11-10 有提交。它与今天 HN 上\"亚马逊用决策模型替掉 Sonnet 省 98% 成本\"的案例同向：token 成本已经是能直接动手砍的工程项。",
+    "insight": "压缩前先定\"哪些行不许动\"的白名单（错误码、堆栈、订单号、ID），压缩后再断言这些行逐字存在。只按比例砍 token、不做保真校验，等于把排查线索一起删掉。",
+    "image": "images/2026-11-11/headroomlabs-ai-headroom.jpg"
+  }
+]

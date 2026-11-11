@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+    "title_cn": "亚马逊用决策模型替掉大模型省 98% 成本",
+    "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+    "date": "2026-11-10",
+    "source": "Hacker News 686 分 242 评论",
+    "what": "亚马逊内部工单系统把分类用的 Claude Sonnet 4.6 换成 Strands Decider（Gemma 4 的 E4B 决策模型）：模型只输出 20 个标签的概率与置信度，不生成文本。单票成本从 0.0222 美元降到约 0.0005 美元，单次调用 4215ms 降到 897ms。",
+    "why": "11-10 的 HN 热帖，686 分 242 评论。这是把\"生成式调用\"降级成\"判别式调用\"的完整生产案例：单票 token 从 6724 降到 2010，Lambda 平均时长降 74%，一年省数百万美元。",
+    "insight": "先盘点自己 agent 里哪些调用其实只是\"从固定集合里挑一个\"——分类、路由、打标、是否重试。这类调用换成小模型打分，成本能降一到两个数量级；但要像他们一样用三档开关灰度（旧模型/并行双跑/新模型），并固定 JSON key 顺序，否则概率会漂。",
+    "image": "images/2026-11-11/amazon-saves-millions-by-replacing-sonnet-4-6-wi.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "AlphaProof Code",
+    "title_cn": "形式化验证 Signal 协议代码",
+    "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "date": "2026-11-10",
+    "source": "Hacker News 577 分 177 评论",
+    "what": "DeepMind 用多模型 agent 框架 AlphaProof Code 对 Signal 协议的真实代码做形式化验证：人机共同把安全目标写成数学规范，Gemini Carbon 驱动的 agent 生成 600 多万行 Lean 证明，agent 自查后只把约 1% 的代码交给人工复核。",
+    "why": "11-10 发布，HN 577 分 177 评论。官方称这是首次对广泛部署的密码协议实现做代码级形式化验证（不论用不用 AI），整个验证四周完成，而这类工作历史上要专家团队做数年。",
+    "insight": "核心链路的强保证可以借这个思路：先写清\"要证明什么性质\"，再让 agent 生成证明草稿，人只审 agent 标出的可疑点。前提是有可机检的形式化语言；没有就先补规范，别急着让 agent 写证明。"
+  },
+  {
+    "rank": 3,
+    "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+    "title_cn": "Fable 5.2 智能指数登顶榜单",
+    "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+    "date": "2026-11-09",
+    "source": "Hacker News 372 分 268 评论",
+    "what": "Artificial Analysis 给 Claude Fable 5.2（max 档）的智能指数是 65，在其收录的 74 个模型里排第一；同一张表里首 token 时间 230 秒、每任务成本 26.54 美元、输出速度 103 tok/s，成本与速度都接近榜尾。",
+    "why": "11-09 起 HN 讨论 372 分 268 评论。榜单把\"最强\"和\"最贵最慢\"放进同一张表，正好说明模型选型已经不能只看分数。",
+    "insight": "别把榜首模型设成默认。按任务分层：规划与硬问题用高价模型，执行和格式化用便宜模型，每层设预算与超时。230 秒首 token 的延迟，对交互式 agent 基本不可接受。",
+    "image": "images/2026-11-11/claude-fable-5-2-scores-65-on-artificial-analysi.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "AI usage generates a fragile codebase",
+    "title_cn": "AI 写代码正在制造脆弱的代码库",
+    "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+    "date": "2026-11-10",
+    "source": "Hacker News 371 分 401 评论",
+    "what": "一位工程师总结 AI 生成代码的四个脆弱点：测试写得浅（大量 get/set 与已覆盖路径）、代码过度复杂、人越来越看不懂、提交快到评审跟不上；并给出事故变多、故障恢复变慢等可观察征兆。",
+    "why": "11-07 发布、11-10 在 HN 上 371 分 401 评论，是当天讨论最激烈的工程话题之一。它的价值在于把\"AI 提效\"的账算到了维护期。",
+    "insight": "把可维护性写进 agent 的完成定义：新增测试必须覆盖至少一条此前未覆盖的失败路径，PR 超过阈值必须拆分，关键模块要求作者能口述数据流。否则速度红利会在半年后以事故形式还回来。",
+    "image": "images/2026-11-11/ai-usage-generates-a-fragile-codebase.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Gemini 4 Carbon is now available",
+    "title_cn": "Gemini 4 Carbon 正式发布",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+    "date": "2026-11-10",
+    "source": "Hacker News 273 分 149 评论",
+    "what": "Google 发布 Gemini 4 Carbon，向开发者、企业与消费者开放；官方称在 CursorBench 4.0、Perplexity WANDR、Zapier AutomationBench 上排第一，单位任务成本比次优外部模型低一半以上，并在 Antigravity 中预览 /swarm 多 agent 协同。",
+    "why": "11-10 发布，HN 273 分 149 评论。两周前它先通过 Fairwind 计划给安全防御方使用，这次才全面开放，官方把网络安全能力与长周期 agent 工作流作为主要卖点。",
+    "insight": "/swarm 这类\"一句提示拉起一组 agent\"的能力，评估重点不是能否跑通，而是子任务边界、共享状态与失败回收。先在自己的任务集上测\"并行后的总成本与总时延\"，再决定是否替换串行编排。",
+    "image": "images/2026-11-11/gemini-4-carbon-is-now-available.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+    "title_cn": "给编码 agent 补现代 Web 规范",
+    "url": "https://github.com/GoogleChrome/modern-web-guidance",
+    "date": "2026-11-10",
+    "source": "Hacker News 255 分 75 评论",
+    "what": "Chrome 团队维护的一组 agent skills：把 Web 平台能力、最佳实践与浏览器兼容数据直接塞进编码 agent，让它别再用十年前的模式；仓库同时给出 Claude、Codex、Cursor、Grok、Gemini、Kimi 的插件清单。",
+    "why": "11-10 的 Show HN，255 分 75 评论，仓库已有 216 次提交。模型的知识截止时间决定了它默认写旧写法，这类\"规范外挂\"是成本很低的纠偏手段。",
+    "insight": "内部也可以把框架规范、目录约定、禁用 API 做成同类 skill 挂到 agent 上，比每次对话重复交代可靠；但要带版本和评审流程，否则规范过期后会稳定地教错。",
+    "image": "images/2026-11-11/show-hn-get-your-coding-agent-off-2019-javascrip.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "CodeRabbit scales agentic software development and ships 20x more",
+    "title_cn": "CodeRabbit 交付量提升 20 倍",
+    "url": "https://openai.com/index/coderabbit-codex-daybreak",
+    "date": "2026-11-09",
+    "source": "OpenAI 官方博客（RSS，2026-11-09）",
+    "what": "OpenAI 官方客户案例：CodeRabbit 用 OpenAI 模型治理和校验 AI 生成的代码，并用 Codex 承担开发工作，官方称同一工程团队的交付量提升到 20 倍。",
+    "why": "11-09 发布。它代表一类正在成型的做法——用 AI 评审去兜住 AI 生成，把\"信任\"做成流水线里的独立环节，而不是全靠人肉 review。",
+    "insight": "引入 AI 评审时，先要求它能说出\"哪一行、依据哪条规则\"，并统计误报率；只给结论不给证据的评审很快会被团队忽略。评审规则要和代码规范同源，否则两套标准互相打架。"
+  }
+]

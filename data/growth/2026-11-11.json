@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Dodaios/ste80-humanizer",
+    "url": "https://github.com/Dodaios/ste80-humanizer",
+    "stars": 308,
+    "trend": "2026-11-09 后新建，2 天内 308★",
+    "what": "一个 agent skill：按维基\"AI 写作痕迹\"清单去掉 26 种典型腔调，再把句子重写向 ASD-STE100 简化技术英语靠拢 80%，用于技术文档与对外文案。",
+    "why": "11-09 建仓，两天 308★，11-10 仍在提交。它把\"去 AI 味\"从主观偏好变成可执行的规则集，正好卡在 agent 批量写文档的当下。",
+    "insight": "对外文档、错误提示这类给人读的文本可以引入同类规则做二次改写；但简化英语会牺牲精确度，接口约定、法律条款、安全说明不要过这一层。",
+    "image": "images/2026-11-11/dodaios-ste80-humanizer.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "bookleme/bookleme",
+    "url": "https://github.com/bookleme/bookleme",
+    "stars": 106,
+    "trend": "2026-11-09 后新建，2 天内 106★",
+    "what": "把一本书编译成可安装的 agent skill：双引擎抽取书里的\"工作方式\"，带可插拔体裁插件，并对生成内容做逐字忠实度回验；支持 PDF/EPUB/DOCX/MD 等格式，零第三方依赖。",
+    "why": "11-09 建仓，两天 106★。它抓住的点很实际——书里值钱的是作者的提问顺序与判断条件，而不是结论，只有忠实还原方法才值得复用。",
+    "insight": "内部做\"方法论 skill\"时可借用它的忠实度回验：要求每条规则能指回原文位置，抽查不上就删。没有出处的方法论 skill 一旦跑偏，很难被发现。",
+    "image": "images/2026-11-11/bookleme-bookleme.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "0x45dd/pwner",
+    "url": "https://github.com/0x45dd/pwner",
+    "stars": 81,
+    "trend": "2026-11-02 后新建，9 天内 81★",
+    "what": "一个可对话的 agent 化网络渗透测试工具，Python 实现、走 PyPI 发布，AGPL-3.0；内置授权范围与安全模型说明，覆盖扫描、会话交互与报告输出。",
+    "why": "11-02 建仓，9 天 81★，11-05 仍有提交。安全测试是 agent 落地最快的场景之一：目标明确、结果可验证，而且天然要求\"操作前先授权\"。",
+    "insight": "给内部 agent 设计高危动作可照这个做法：把\"授权范围\"做成运行时可校验的对象，而不是写在提示词里；越界动作直接拒绝，所有执行留痕，事后可复算。",
+    "image": "images/2026-11-11/0x45dd-pwner.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "cacheMon/PrefixSim",
+    "url": "https://github.com/cacheMon/PrefixSim",
+    "stars": 72,
+    "trend": "2026-11-04 后新建，7 天内 72★",
+    "what": "LLM 推理 KV 前缀缓存的模拟器：回放真实请求轨迹比较淘汰策略，评估口径是\"省下的 prefill 算力占比\"，而不只是块命中率。",
+    "why": "11-04 建仓，7 天 72★。它给出的实测很说明问题：按命中率看 s3fifo（0.6209）优于 lru（0.6107），但按算力节省看 random_compute（0.6378）反超。",
+    "insight": "做缓存或复用优化时，指标要对齐真实成本（算力/延迟/钱），别用命中率自我安慰；上线前先用轨迹模拟对比策略，比在生产上灰度试错便宜得多。",
+    "image": "images/2026-11-11/cachemon-prefixsim.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "bytedance/axion1_0",
+    "url": "https://github.com/bytedance/axion1_0",
+    "stars": 68,
+    "trend": "2026-11-02 后新建，9 天内 68★",
+    "what": "公开一套 agent 基础模型训练方案：以\"高质量数据 + 简单训练配方\"为核心，两阶段 SFT + RL，不做中间训练与 DPO，同时放出训练数据与 35B 复现模型。",
+    "why": "11-02 建仓，9 天 68★。把结论押在数据质量上，还把数据和配方一起公开，这种可复现姿态比单纯刷榜更有参考价值。",
+    "insight": "内部微调 agent 模型时，先问\"数据够不够干净、覆盖够不够全\"，再考虑加训练阶段；每加一个阶段都要有对照实验，否则只是在给自己增加不可解释的变量。",
+    "image": "images/2026-11-11/bytedance-axion1-0.jpg"
+  }
+]

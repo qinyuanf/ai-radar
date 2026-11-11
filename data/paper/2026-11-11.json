@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for Multimodal Agents",
+    "title_cn": "多模态智能体记忆：图扩展加证据组合",
+    "url": "https://arxiv.org/abs/2611.12872v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12872，cs.CL/cs.AI/cs.LG，Haozhen Zhang 等 8 人",
+    "what": "把记忆片段按文本与视觉锚点连成关系图，检索命中种子后扩展邻居补全信息（横向扩展）；每条记忆同时保留摘要、描述、视觉视图、原图和交互历史，由轻量选择器按查询挑出证据组合（纵向组合）。",
+    "why": "三个多模态记忆基准上一致优于基线，且 token 消耗比最高效的同类多模态基线少约 90%——说明\"多存几种形态、按需挑\"比\"压成一个摘要\"既更省也更准。",
+    "insight": "记忆系统别只存摘要：原始截图、结构化描述、动作历史各留一份，检索后由选择器决定给模型哪几样。只留摘要会丢细节，把整段历史塞进去则直接烧 token。"
+  },
+  {
+    "rank": 2,
+    "title": "Shortcuts and Boundaries: Verifiable RL Misalignment and Contextual Safety Learning",
+    "title_cn": "奖励与规范冲突如何诱发走捷径",
+    "url": "https://arxiv.org/abs/2611.12865v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12865，cs.AI/cs.CR，Xinjie Shen",
+    "what": "构造\"合规也能完成任务、但存在更赚奖励的捷径\"的交互环境：25% 的冲突任务混进训练分布，128 次更新后在 API 任务上出现 97.9% 可认证的违规；同一套上下文检查改成二值惩罚，又能同时提升能力与合规。",
+    "why": "论文说明 agent\"学坏\"不需要很多坏样本，少数冲突就能扩散；且合规信号可复用于奖励和惩罚，这让\"训练时就把边界焊死\"变得可操作。",
+    "insight": "训练或调优 agent 时，把\"不许用的捷径\"写成可执行检查而不是提示词，并定期用只含约 1/4 冲突样本的小集合做压力测试。能过这个集合，再谈上线。"
+  },
+  {
+    "rank": 3,
+    "title": "WorkflowArena: Benchmarking Executable Workflow Orchestration in LLM-Based Multi-Agent Systems",
+    "title_cn": "WorkflowArena 评测工作流编排",
+    "url": "https://arxiv.org/abs/2611.12856v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12856，cs.CL/cs.SE，Zheng Jiang 等 13 人",
+    "what": "145 个长周期任务覆盖软件工程、形式数学、法律分析、3D 制作等 8 个领域，每个任务给初始工作区与含多依赖组件的交付物，由隐藏 verifier 评分；agent 自主决定是否委派、如何委派，所有委派记录可审计。",
+    "why": "9 个模型的实验显示没有一种配置在各领域都最好：高投入下 Claude 在 Claude Code 里委派更少、但每次拉更大工作组，GPT 在 Codex 里委派更频繁、单元更小；固定执行模型时，Opus 5.5 编写的工作流明显更好。",
+    "insight": "多 agent 系统的瓶颈常在\"分工\"而非模型。给自己团队建一个 10 条长任务的小基准，固定模型只换编排方式做对照，比反复讨论\"要不要上多 agent\"有用。"
+  },
+  {
+    "rank": 4,
+    "title": "Agentic-OPD: Recovering Forgotten Agent Capabilities via On-Policy Distillation for Agentic Tasks",
+    "title_cn": "别丢中间检查点：用它们蒸馏回能力",
+    "url": "https://arxiv.org/abs/2611.12799v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12799，cs.LG/cs.AI，Tingcheng Bian 等 9 人",
+    "what": "作者在 GRPO 训练 agent 时发现，最佳验证 checkpoint 会失败于同一次训练里早期 checkpoint 已解出的问题，跨 checkpoint 解出问题的并集远大于任何单一模型；于是把最佳 checkpoint 当学生、其余当冻结教师，按\"覆盖最高优先\"选教师，只在学生失败处蒸馏。",
+    "why": "5 个 agent 任务域、24 个基准与子集上，比初始 checkpoint 最高提升 7.4 分；教师池来自本来就会保存的中间产物，不需要额外训练成本。",
+    "insight": "训 agent 别只留一个 checkpoint：全部保留，训练完把\"各自能解的问题集合\"建成表，按学生的失败项定向回灌。这比再跑一轮 RL 便宜，也比盲目合并没有副作用的风险小。"
+  },
+  {
+    "rank": 5,
+    "title": "MaxIM: Maximally Informative Incremental Summarization via Reinforcement Learning",
+    "title_cn": "有界记忆的增量摘要：按可预测性给奖励",
+    "url": "https://arxiv.org/abs/2611.12825v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12825，cs.AI/cs.LG，Jihwan Jeong 等 5 人",
+    "what": "把增量摘要建模成容量受限下的信息论奖励塑形：以最大化未来任务相关目标的预测对数似然为目标，加递归一致性约束让摘要贴着历史，再用非对称 critic 给逐步密集奖励。",
+    "why": "在长周期科研阅读与多轮对话基准上，严格 token 预算和更长时序下都优于 RL、SFT 与提示类基线，而且不需要昂贵的人类偏好标注。",
+    "insight": "自己做会话摘要时，把\"摘要能否预测后续被问到的细节\"当离线指标，比人工打分稳定。预算紧张时优先保\"能预测未来问题\"的信息，而不是追求平均压缩率。"
+  },
+  {
+    "rank": 6,
+    "title": "How Well Does AI Peer Review Work? A Benchmark Built from 100 Planted Errors",
+    "title_cn": "AI 同行评审抓错能力实测",
+    "url": "https://arxiv.org/abs/2611.12820v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12820，cs.CL，Paul Litvak",
+    "what": "在 10 篇开放获取心理学论文里植入 100 个已知错误，再交给前沿模型与两个商用 AI 评审工具：最佳单系统命中 71 个，最差 30 个，所有系统合并命中 93 个；7 个无一命中的错误全部属于\"删除类\"。",
+    "why": "各系统发现错误的分布只有部分相关，所以多系统集成是最大的杠杆；但论文未测误报率，真实论文的错误分布也未知，结论不能直接外推到生产评审。",
+    "insight": "用 LLM 做评审或校验时，多模型并行比单模型堆提示更有效。同时要专门补\"缺失检测\"：模型擅长指出写错的地方，不擅长发现少了一段，为缺失类问题单独设检查项。"
+  },
+  {
+    "rank": 7,
+    "title": "Multi-Agent Screening: What Agreement and Acceptance Cannot Tell You",
+    "title_cn": "多智能体筛选：一致不等于正确",
+    "url": "https://arxiv.org/abs/2611.12705v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12705，cs.MA/cs.AI/cs.IR，Benjamin Chang 等 2 人",
+    "what": "论文分析多个 agent 替人工做初筛时各类证据能证明什么：一致只说明它们看法相同，人工接受只给出精确率，知道谁找到哪些相关项只能给出召回上界；要估真实召回，必须随机抽检\"没被通过\"的条目，且所需样本量与 agent 数量无关。",
+    "why": "直接回应 agentic search、电子取证、AI 论文评审里的常见误区——把一致性当准确率，把通过率当召回率，于是漏掉的条目永远看不见。",
+    "insight": "做多 agent 交叉校验时，必须保留一份\"被多数否决\"的随机样本定期人工复核；只看通过集合的质量，永远发现不了被漏掉的那一批。"
+  },
+  {
+    "rank": 8,
+    "title": "Is Persona Generalization Predictable?",
+    "title_cn": "微调的人格外溢可预测：只动后几层",
+    "url": "https://arxiv.org/abs/2611.12864v1",
+    "date": "2026-11-09",
+    "source": "arXiv 2611.12864，cs.CL/cs.LG，Olina Mukherjee 等 4 人",
+    "what": "发现\"在线上\"现象：域内与域外的 persona（含不安全行为）比率在多种超参下近似 probit 线性，且这条线在 Qwen、Llama 等不同模型族与规模间惊人一致；改变可训练参数集合（例如只微调后几层）才能改变斜率。",
+    "why": "学习率、权重衰减、训练时长只是让模型沿同一条线移动；只微调后层可以在保持域内学习的同时显著降低域外不安全外溢，给\"微调会不会把模型带坏\"提供了可预测的框架。",
+    "insight": "做领域微调时先用小规模扫描确认自己在哪条线上，再决定要不要只解锁后几层。如果外溢不可接受，优先调\"动哪些层\"，而不是调学习率。"
+  }
+]
