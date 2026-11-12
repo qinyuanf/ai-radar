@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "JosssphZhou/poki",
+    "url": "https://github.com/JosssphZhou/poki",
+    "stars": 978,
+    "trend": "2026-11-05 后新建，7 天内 978★",
+    "what": "让 agent 直接操作真实 iPhone 的本地 MCP 服务：iOS 27 及以上走系统原生服务，iOS 18~26 走 XCTest 会话，不需要越狱或额外硬件；装好后 agent 能像人一样点按、输入、走完一整个 App 流程。",
+    "why": "11-05 建仓，7 天 978★，11-11 仍在提交。移动端一直是 agent 自动化的盲区，这是把\"手机操作\"接进 MCP 的一条实用路径。",
+    "insight": "移动端自动化优先复用系统原生或无障碍接口，别一上来就搞图像坐标点击；签名过期（免费苹果账号 7 天）与设备信任这类运维细节要提前写进流程，否则 demo 第二天就跑不起来。",
+    "image": "images/2026-11-12/josssphzhou-poki.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "kubai087/kubai-icons",
+    "url": "https://github.com/kubai087/kubai-icons",
+    "stars": 740,
+    "trend": "2026-11-03 后新建，9 天内 740★",
+    "what": "一个画图标的 agent skill：给出产品后，由 agent 按同一套规则画出所需图标；仓库另附 2800+ 个用它画出来的开源图标，覆盖 React、Vue、Web Components 与静态 SVG，MIT 许可。",
+    "why": "11-03 建仓，9 天 740★，11-11 仍有提交。它把\"视觉一致性\"变成 skill 里的规则与自检，而不是靠设计师逐个返工。",
+    "insight": "做设计资产类 skill 时，把风格约束和生成后自检写进同一份规则：尺寸网格、线宽、圆角、命名都要可机检；只给风格描述不给自检，产出会随对话漂移。",
+    "image": "images/2026-11-12/kubai087-kubai-icons.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "dabingfy-dot/solo-to-team-skills",
+    "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+    "stars": 663,
+    "trend": "2026-11-07 后新建，5 天内 663★",
+    "what": "一套\"一人带 AI 团队\"的中文协作技能包：四支技能加模板与脱敏案例，核心是把\"派活、收成果、核证据、判验收\"做成登记行，并写明在 Codex、Cursor、千问办公等各宿主怎么装、怎么叫。",
+    "why": "11-07 建仓即 663★。它是目前少见的把\"多 agent 协作\"落在流程表格而不是框架代码上的做法，作者也如实标注了 v0.9 草稿状态和各宿主的有限验证范围。",
+    "insight": "多 agent 协作第一版不需要平台，一张\"待收/已收/已验收\"的登记表就能暴露\"派出去没人接\"的活；先把责任与证据口径定死，再考虑上编排系统。",
+    "image": "images/2026-11-12/dabingfy-dot-solo-to-team-skills.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "FrigadeHQ/yogurt",
+    "url": "https://github.com/FrigadeHQ/yogurt",
+    "stars": 414,
+    "trend": "2026-11-10 后新建，2 天内 414★",
+    "what": "开源的私有 AI 会议纪要工具：不加机器人进会议，直接在本地录制并转写，支持 macOS 14.4+、Windows 10 2004+ 与 Ubuntu 22.04+，MIT 许可。",
+    "why": "11-10 建仓，两天 414★。会议纪要是最容易被\"数据不出本地\"说服的场景，而机器人入会一直是采购与合规的阻力点。",
+    "insight": "做会议类 agent 时，\"不入会\"能显著降低合规阻力，但要自己解决系统音频捕获、回声消除与说话人分离；先把这三项做成可测指标，再谈摘要质量。",
+    "image": "images/2026-11-12/frigadehq-yogurt.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "shanselman/sandbox-mcp",
+    "url": "https://github.com/shanselman/sandbox-mcp",
+    "stars": 412,
+    "trend": "2026-11-06 后新建，6 天内 412★",
+    "what": "给 agent 一台一次性 Windows 11 真机：启动、部署应用、驱动 UI、抓崩溃、留存证据、销毁，全程约 40~50 秒；提供 CLI `sbx` 与可选 MCP 适配层。",
+    "why": "11-06 建仓，6 天 412★，11-12 仍有提交。真实 Windows 环境是桌面应用测试最缺的一环，容器很难模拟 UI 与系统行为。",
+    "insight": "桌面端 agent 验证可以用\"一次性真机\"替代长期维护的测试机：把\"启动到销毁\"做成幂等操作，日志、截图、崩溃转储在销毁前必须落盘；镜像与网络要隔离，别把测试机接进生产网段。",
+    "image": "images/2026-11-12/shanselman-sandbox-mcp.jpg"
+  }
+]

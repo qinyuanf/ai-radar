@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "stars": 452825,
+    "trend": "+55,277 stars/15天（对比 2026-10-28）",
+    "what": "一个做逆向工程的 MCP 服务：从应用行为一路分析到原生二进制，覆盖二进制、应用与运行时行为，以 npm 包 rea-agents 发布，同时提供配套 agent skill。",
+    "why": "452,825★，11-11 仍有提交；对比 10-28 的 397,548★，15 天涨 55,277★，是当前增长最快的大仓之一。它把\"看一个功能是怎么实现的\"这类高门槛工作做成了 agent 可调用的能力。",
+    "insight": "逆向类 agent 的可用性取决于\"证据能否落到具体地址或符号\"。接入时要求每次结论附上反汇编偏移、调用栈或抓包记录，并默认只读分析；没有证据链的\"它大概是这样\"，在逆向场景等于没做。",
+    "image": "images/2026-11-12/morluto-rea.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "google-gemini/gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "stars": 108781,
+    "trend": "首日快照：总 108781★，2026-11-12 有提交",
+    "what": "Gemini 官方开源的终端 agent：把 Gemini 模型接进命令行，支持 MCP 客户端，能在终端里读写文件、执行命令、跑多步任务。",
+    "why": "108,781★，11-12 仍有提交。终端 agent 已是各家标配入口，它的意义是把模型能力变成可脚本化、可进 CI 的工程件，而不是只能待在对话框里。",
+    "insight": "把终端 agent 纳入工程规范，先定三件事：允许写哪些目录、命令白名单、失败怎么回滚。能跑通不等于能放手，默认拒绝危险命令比事后审计便宜得多。",
+    "image": "images/2026-11-12/google-gemini-gemini-cli.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "debpalash/VoiceStudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "stars": 108372,
+    "trend": "首日快照：总 108372★，2026-11-12 有提交",
+    "what": "本地运行的 AI 语音工作台，对标 ElevenLabs：支持声音克隆、用文字描述生成音色、视频配音、听写、转写与旁白，覆盖 646 种语言，模型可自选，笔记本、服务器、手机与平板都能跑。",
+    "why": "108,372★，11-12 仍有提交。语音是最容易被\"私有数据 + 本地化\"推动的模态，它把原本按字符计费的云端能力搬到本地硬件上。",
+    "insight": "做语音 agent 时把 TTS/ASR 当可替换组件：先用本地模型跑通链路与延迟预算，再按语种覆盖和音质决定是否上云；同时把声音克隆的授权与留痕做进流程，别让用户声音变成不可追溯的资产。",
+    "image": "images/2026-11-12/debpalash-voicestudio.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "pbakaus/impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "stars": 108324,
+    "trend": "首日快照：总 108324★，2026-11-12 有提交",
+    "what": "给编码 agent 用的\"设计词汇\"技能包：用 polish、bolder 等指令调方向，用 critique、audit 做评审，专门拦 AI 生成页面里那套千篇一律的默认样式；一条 npx 命令安装，支持 Claude Code、Cursor、Codex、Gemini CLI、Qoder 等 20 多个宿主。",
+    "why": "108,324★，11-12 仍有提交。它说明\"agent 的品味\"正在被做成可安装的规则包，而不是靠写更长的提示词。",
+    "insight": "团队可以把设计规范、组件库约定、禁用样式做成同类 skill，让 agent 生成时就遵守；关键是规则要可评审、可版本化，否则规范一更新，旧 skill 会稳定地教错。",
+    "image": "images/2026-11-12/pbakaus-impeccable.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "rtk-ai/rtk",
+    "url": "https://github.com/rtk-ai/rtk",
+    "stars": 86258,
+    "trend": "首日快照：总 86258★，2026-11-12 有提交",
+    "what": "面向编码 agent 的命令输出压缩层：测试、diff、日志、构建结果在进入模型前先压缩，覆盖 100+ 命令、单次 25ms 以内、无需配置；`rtk gain` 可以看省了多少，另有可共享的 pipeline 配置。",
+    "why": "86,258★，11-12 仍有提交。官方称命令输出最多减少 90%，社区 pipeline 在作者基准里把总成本再降 20.2%——token 成本已经是能直接动手砍的工程项。",
+    "insight": "上压缩前先定\"不许动的行\"白名单（错误码、堆栈首行、文件路径、ID），压缩后断言这些行逐字存在；只按比例砍 token、不做保真校验，等于把排查线索一起删掉。",
+    "image": "images/2026-11-12/rtk-ai-rtk.jpg"
+  }
+]

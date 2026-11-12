@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "My AI agents found an unmapped Maya site?",
+    "title_cn": "我的 AI 智能体发现一处玛雅遗址？",
+    "url": "https://pietromiotti.com/latest/maya-site",
+    "date": "2026-11-11",
+    "source": "Hacker News 923 分 336 评论",
+    "what": "作者用 AI 智能体分析 NASA 的 lidar 数据，在墨西哥找到一处未登记在当地官方名录里的玛雅遗址，从冒出念头到收到墨西哥政府正式回复不到 72 小时。",
+    "why": "11-11 的 HN 热帖，923 分 336 评论。作者随后更新：这处遗址其实已被 Estrada-Belli 等人 2025 年测绘过，智能体查文献时漏了，所以属于\"重新发现\"——价值在端到端周转时间，而不在新发现本身。",
+    "insight": "数据密集型筛查可以交给 agent，但流程里必须有一步强制\"先查文献与官方名录\"，否则会把已知结论当新发现；把\"拿到可验证的官方回执\"当这类工作流的验收指标，比报告写得多漂亮更有意义。",
+    "image": "images/2026-11-12/my-ai-agents-found-an-unmapped-maya-site.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+    "title_cn": "美联航禁止 AI 智能体代为订机票",
+    "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+    "date": "2026-11-11",
+    "source": "Hacker News 352 分 334 评论",
+    "what": "美联航 11-11 宣布禁止第三方 AI 智能体代替旅客订票，理由是安全风险、以及这类操作可能违反联邦规定；要完成订票，智能体需要拿到支付凭证等敏感个人信息。",
+    "why": "HN 352 分 334 评论。这是航司第一次用平台规则把\"代订 agent\"明确挡在门外，与当下 Meta Muse、OpenAI dots 这类代办型 agent 的扩张正面相撞。",
+    "insight": "做代订/代办类 agent，最先要解决的不是能力而是责任与凭证边界：用受限支付令牌替代用户账号密码，把下单动作限定在可审计接口上。否则平台一条规则就能让整条链路失效。",
+    "image": "images/2026-11-12/united-airlines-bans-ai-agents-from-booking-flig.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Apple has new Mac app coming to make running local AI models easy",
+    "title_cn": "苹果新 Mac 应用简化本地 AI 模型运行",
+    "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
+    "date": "2026-11-10",
+    "source": "Hacker News 516 分 525 评论",
+    "what": "泄露信息显示苹果正在做一个叫 Harbor 的 Mac 应用：把 Mac 变成私有 AI 推理服务，在 Apple 芯片上跑开放权重模型，可通过 Thunderbolt 5 把多台 Mac 的统一内存池化，支持更大模型与更高并发，配置号称几分钟完成。",
+    "why": "HN 516 分 525 评论（11-10），是当天讨论最热的一条。它把\"本地推理集群\"从极客手工活变成系统自带能力，会直接影响私有化部署的成本结构。",
+    "insight": "私有化场景可以开始按\"多机内存池化\"做容量规划，而不是只买单机大显存；但真正要写进验收用例的是模型分片、并发调度与降级——单机故障时集群还能不能继续服务。",
+    "image": "images/2026-11-12/apple-has-new-mac-app-coming-to-make-running-loc.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Tracking Anthropic-discovered vulnerabilities",
+    "title_cn": "追踪 Anthropic 发现的漏洞",
+    "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
+    "date": "2026-11-10",
+    "source": "Hacker News 447 分 218 评论",
+    "what": "VulnCheck 追踪 Anthropic Glasswing 项目发现的漏洞：共 442 个 CVE，只占全年漏洞总量的 0.5%，其中仅 2 个在野被利用；curl 等项目把不少报告判为无效。",
+    "why": "HN 447 分 218 评论。它把\"AI 挖漏洞\"的产出与真实风险分开计量：报告数量不等于可利用性，误报还会消耗维护者的时间。",
+    "insight": "引入 AI 安全扫描时，验收指标要用\"确认有效的漏洞数、在野可利用数、修复率\"，而不是提交报告条数；先在自己仓库跑一轮，统计无效报告占比，再决定是否接入对外披露流程。"
+  },
+  {
+    "rank": 5,
+    "title": "Gemini Decisions API",
+    "title_cn": "Gemini 决策 API",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+    "date": "2026-11-11",
+    "source": "Hacker News 262 分 81 评论",
+    "what": "Google 发布 Gemini Decisions API：用 Gemini Decision 模型输出带置信度的结构化决策（如 JSON），走 Google Cloud 与 Vertex AI，主打低延迟的实时场景。",
+    "why": "HN 262 分 81 评论（11-11）加官方博客。它把\"模型只做决策、不做长文本生成\"产品化，正好对上企业里大量分类、路由、审核类调用。",
+    "insight": "分类、审核、路由这类\"从固定集合里选一个\"的调用，优先评估专用决策接口而不是通用对话模型：核对置信度是否校准、能否显式拒答、结构化输出 schema 是否稳定，再决定是否替换现有提示词方案。",
+    "image": "images/2026-11-12/gemini-decisions-api.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Claude Whiteboards, Claude Sheets, and Claude Data",
+    "title_cn": "Claude 白板、表格与数据",
+    "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+    "date": "2026-11-10",
+    "source": "Hacker News 281 分 216 评论",
+    "what": "Anthropic 上线 Claude 白板与 Claude 表格（beta），并把原 Claude Dashboards 转为正式版 Claude Data：白板供团队与 Claude 一起头脑风暴，表格由 Claude 与用户共同编辑，Data 提供数据故事、认证查询与实时共享，所有付费计划可用。",
+    "why": "HN 281 分 216 评论（11-10）。这是把 agent 产出留在对话产品内部、而不是导出到别的工具的路线，与 Office、Google Workspace 的 agent 化正面竞争。",
+    "insight": "内部做 agent 产物管理可以借鉴\"产物留在原地、协作者直接续写\"：把中间结果做成可共享对象（白板、表格、看板），而不是每次重新生成一份文档；同时必须解决版本与权限，否则多人同时改会互相覆盖。",
+    "image": "images/2026-11-12/claude-whiteboards-claude-sheets-and-claude-data.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Introducing Businesses in ChatGPT",
+    "title_cn": "ChatGPT 推出商家功能",
+    "url": "https://openai.com/index/introducing-businesses-chatgpt",
+    "date": "2026-11-10",
+    "source": "OpenAI 官方博客（RSS，2026-11-10）",
+    "what": "OpenAI 在 ChatGPT 里上线面向商家的功能：商家可以维护自己的业务信息、查看自己在 ChatGPT 中的呈现情况，并把用户的兴趣转化为行动。",
+    "why": "11-10 官方发布。它意味着 ChatGPT 开始承载\"商家主页 + 曝光数据 + 转化入口\"，对话之外的商业入口正在成形。",
+    "insight": "如果业务依赖用户在对话里找到你，就把\"商家信息结构化\"当成新的 SEO：字段完整、口径一致、可被引用；同时尽早接曝光与转化数据，否则无法判断 agent 渠道的真实贡献。"
+  }
+]

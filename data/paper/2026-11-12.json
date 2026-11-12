@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
+    "title_cn": "把工具型 agent 蒸馏成无规划器工作流",
+    "url": "https://arxiv.org/abs/2611.14492v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14492，cs.AI/cs.LG/cs.MA，Kaiyuan Hou 等 9 人",
+    "what": "把 SOP 加少量已记录的 agent 运行日志转成可复用工作流：从 agent 每次调工具时写下的理由里抽出该步的条件，跨运行合并成紧凑规则文档，再编译成\"由代码而不是 LLM 选下一步\"的可执行流程，规则文档还能编译到不同编排平台。",
+    "why": "在自家生产平台的 79 条流程上验证。业务自动化里同一个 SOP 反复跑，\"每次运行都调模型选步\"的延迟与成本正是规模化的天花板，这条路径等于把成本前移到一次编译。",
+    "insight": "高频稳定的 SOP 应该\"先跑 agent 收集轨迹，再蒸馏成确定性流程\"，模型只留在规则覆盖不到的分支；蒸馏时以\"代码选步\"为目标，别把提示词原样搬进流程，那只是换个地方付 token。"
+  },
+  {
+    "rank": 2,
+    "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
+    "title_cn": "企业分析 agent 的评测框架对比",
+    "url": "https://arxiv.org/abs/2611.14493v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14493，cs.AI/cs.CL/cs.LG/cs.SE，Howard Zhang 等 6 人",
+    "what": "用冻结的执行轨迹对比三种评测范式（基于轨迹的 LLM 评判、纯文本 LLM 评判加红队、确定性启发式），对象是两个企业分析 agent：先测评测器自身的稳定性（97% 的配置达标），再在 72 个已知风险用例上测检出，轨迹式方案 F1=0.90，纯文本方案召回相当但误报多 5 倍。",
+    "why": "企业里 agent 上线最缺的不是能力而是\"评测器是否可信\"。这篇把评测框架本身当被测对象，给出了稳定性与检出率的量化口径。",
+    "insight": "选评测方案时先测\"同一输入重复评分的稳定性\"，再测已知缺陷的检出率与误报率；有条件就用执行轨迹做评判依据，纯文本评判的高误报会逼团队直接忽略告警。"
+  },
+  {
+    "rank": 3,
+    "title": "When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents",
+    "title_cn": "agent 何时该记住：证伪门控自我进化",
+    "url": "https://arxiv.org/abs/2611.14326v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14326，cs.AI/cs.LG，Runxuan Tang 等 7 人",
+    "what": "把每条经验写成带前置条件、行为变更、预期效果与验证器的结构化假设，只在临时状态里应用，经过目标迁移、主动证伪与历史回归三类探针测试后，再按实测收益与风险决定提交、修正或拒绝。",
+    "why": "它正面回答\"agent 什么时候才该把一次成功写进长期记忆\"——局部成功不等于可复用且安全的知识；在网页、App、工具调用与长期记忆基准上都有稳定提升。",
+    "insight": "给记忆写入加门禁：新经验先小范围试用，跑一组\"会不会把以前能做的做坏\"的回归用例，通过才落库。不设门禁的记忆层跑久了会积累互相冲突的规则。"
+  },
+  {
+    "rank": 4,
+    "title": "ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces",
+    "title_cn": "ARE-bench：真实工作区研究能力评测",
+    "url": "https://arxiv.org/abs/2611.14364v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14364，cs.CL，Jiahang Lin 等 27 人",
+    "what": "用真实研究者的会话与工作区构造 75 个任务，覆盖 7 个研究阶段、33 项要求、150 项子要求，考察 agent 能否在\"有历史决策、有未完成文件\"的项目里继续推进，而不是在干净工作区里做一道独立题。",
+    "why": "现有研究 agent 基准多是自包含任务，分数高但在真实项目里交付不可靠；这个基准把\"尊重先前决定、识别过期版本\"直接变成评分点。",
+    "insight": "评估自己的 agent 时，用真实项目快照而不是清洗过的样例：故意保留旧版本文件、失败尝试与历史决定，看它会不会覆盖别人正在改的东西——这比再加 100 道标准题更能预测上线表现。"
+  },
+  {
+    "rank": 5,
+    "title": "CLADE: Category-Level Answering from Deficient Evidence in Retrieval-Augmented Language Models",
+    "title_cn": "证据粒度不够时 RAG 会强行作答",
+    "url": "https://arxiv.org/abs/2611.14355v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14355，cs.AI，S M Rayeed 等 3 人",
+    "what": "定义\"可解决的证据不足\"：检索到的段落准确相关，但粒度比问题粗（问具体疾病，段落只到疾病大类），模型会直接作答而不是澄清或继续检索；作者用领域本体把大类映射到候选集，识别并处理这类情况。",
+    "why": "RAG 系统里最危险的错误不是答不出，而是\"看起来答了\"。这类粗粒度证据在生物医学等专业问答里很常见，却被已有的\"上下文是否充分\"研究当成普通不足。",
+    "insight": "RAG 校验要加\"粒度检查\"：答案粒度与问题粒度不一致时，先在本体或字典里展开候选再回答；同时把\"拒答/继续检索\"做成显式动作，而不是让模型自由发挥。"
+  },
+  {
+    "rank": 6,
+    "title": "FERN: Cross-Benchmark Table Retrieval for Text-to-SQL with Frozen Retrievers and Learned Ranking",
+    "title_cn": "不做生成式 LLM 的表检索方案",
+    "url": "https://arxiv.org/abs/2611.14477v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14477，cs.IR/cs.CL，Arjun Rao 等 2 人",
+    "what": "用三个冻结检索器融合出 100 个候选表、每个候选抽最多 120 个特征，再用 LightGBM 排序，完全不用生成式 LLM 做表选择；在未参与训练的 Spider 上，候选池召回已追平 RASL 在 15 表时的公开结果，完整@5 从 83.9% 提到 95.6%。",
+    "why": "对照方案是用 Claude 3.5 抽关键词再选表。结果说明\"检索 + 特征排序\"在选表这一环可以打到 LLM 方案的水平，而成本与延迟远低于调用大模型。",
+    "insight": "做 Text-to-SQL 选表时先建廉价特征排序基线（表名/描述/列名匹配、历史查询共现），把大模型留给真正需要语义推理的环节；先量化\"LLM 选表比特征排序多带来多少准确率\"，再决定付不付这个成本。"
+  },
+  {
+    "rank": 7,
+    "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
+    "title_cn": "二十问式研究构思评测",
+    "url": "https://arxiv.org/abs/2611.14487v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14487，cs.AI，Muhan Gao 等 6 人",
+    "what": "把研究构思改造成\"二十问\"游戏：只给论文的研究问题，模型通过最多 100 个是/否问题复现论文核心想法，语料取 200 篇 ICML 2026 论文，从而把\"构思\"与\"执行\"分离。",
+    "why": "六个主流模型上，几乎所有进展都发生在前 30 个问题内，之后普遍停滞——说明当前模型的探索能力在早期就用完了，问题质量远比问题数量关键。",
+    "insight": "用 agent 做方案探索时，把预算压在前 20~30 次高信息量提问上，并要求每次提问能排除一类假设；单纯增加轮次不会提升效果，只会放大成本。"
+  },
+  {
+    "rank": 8,
+    "title": "AI Isn't Getting Dumber, We're Getting Pickier: Rising Standards in Human Evaluation of Large Language Models",
+    "title_cn": "不是模型变笨，是评价标准在提高",
+    "url": "https://arxiv.org/abs/2611.14333v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14333，cs.HC/cs.AI/cs.CL/cs.CY，Zihan Chen 等 3 人",
+    "what": "在 Chatbot Arena 上分析 2023-05 至 2024-08 的 126 万次盲评，只看版本固定的模型对：同一对模型\"都不好\"的票每月上升 1.71 个百分点（均值 17.1%），14 对跨年可比的模型全部上升，从 15.5% 到 23.3%；而强弱排序没有趋势变化。",
+    "why": "这解释了\"AI 越来越笨\"的体感：模型没变，是人的标准在提高。对做产品的人来说，满意度下降不一定能归因到模型退化。",
+    "insight": "做效果回归时，别把\"用户满意度是否下降\"当唯一信号，要把\"同一批固定用例的通过率\"和\"用户标准漂移\"分开测；否则会把体验设计问题误判成模型退化。"
+  }
+]
