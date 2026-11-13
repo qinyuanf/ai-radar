@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "agentes-chat/agentes-chat",
+    "url": "https://github.com/agentes-chat/agentes-chat",
+    "stars": 1184,
+    "trend": "2026-11-09 后新建，4 天内 1184★",
+    "what": "开源自托管的团队聊天工具，定位 Slack 替代：频道和私信里人和 AI agent 一起工作，agent 可跑在 Claude、ChatGPT/Codex、Gemini 或 Grok 上，带 MCP 工具和自己的计算机。",
+    "why": "2026-11-09 后新建，4 天内 1,185★，11-13 仍在提交。把“agent 作为同事”做成通讯录里的一个成员，是本期最直接的组织形态实验。",
+    "insight": "如果 agent 要进群，第一件事是把权限边界写成群规：能读哪些频道、能替谁发消息、被 @ 时要不要人工确认。缺这三条，agent 会以团队名义做出没人授权的动作。",
+    "image": "images/2026-11-13/agentes-chat-agentes-chat.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "ZSeven-W/dsh-game-studio",
+    "url": "https://github.com/ZSeven-W/dsh-game-studio",
+    "stars": 529,
+    "trend": "2026-11-05 后新建，8 天内 529★",
+    "what": "用一句话描述就生成可玩小游戏的工具：跑在 DeepSeek Harness 侧边栏里，可替换 AI 生成的美术资源，一键发布到 GitHub Pages 或 Cloudflare。",
+    "why": "2026-11-05 后新建，8 天 529★。它把“生成→试玩→换素材→发布”压进一个侧边栏，是 harness 生态里少见的端到端产品化尝试。",
+    "insight": "生成类工具的价值不在生成质量，而在失败后的可编辑性：产物能不能拆开改、能不能换素材重跑。做内部生成工具时，先把产物结构和二次编辑入口定下来。",
+    "image": "images/2026-11-13/zseven-w-dsh-game-studio.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "yucezerey/turkish-anti-ai-skill",
+    "url": "https://github.com/yucezerey/turkish-anti-ai-skill",
+    "stars": 308,
+    "trend": "2026-11-05 后新建，8 天内 308★",
+    "what": "土耳其语的“去 AI 味”技能包：识别并清理 AI slop、翻译腔句式和 TDK（土耳其语言协会）用词错误，以 Agent Skill 与 humanizer 的形式分发。",
+    "why": "2026-11-05 后新建，6 天 308★。单语种的文风清理能单独成为一个技能，说明“语言本地化”正在被拆成可安装的规则包。",
+    "insight": "文风规则适合做成技能而不是塞进提示词：可版本化，也能对同一批文本回归测试。中文场景同理，把禁用表达、术语表、句式偏好写成可校验的规则，别让模型每次临场发挥。",
+    "image": "images/2026-11-13/yucezerey-turkish-anti-ai-skill.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "imsai-sh/fish-pocket",
+    "url": "https://github.com/imsai-sh/fish-pocket",
+    "stars": 231,
+    "trend": "2026-11-05 后新建，8 天内 231★",
+    "what": "DeepSeek Harness 的 iOS 原生客户端：在 iPhone 和 iPad 上本机运行，界面全原生，不需要连电脑或服务器。",
+    "why": "2026-11-05 后新建，7 天 231★，11-12 仍在提交。端侧 harness 开始出现原生客户端，本地模型的使用场景从电脑扩到手机。",
+    "insight": "端侧 agent 的瓶颈是内存和发热：先把上下文长度、模型体积、单次会话时长做成可配置预算，再谈功能。手机上真正跑不动的往往不是模型，而是没做预算的上下文。",
+    "image": "images/2026-11-13/imsai-sh-fish-pocket.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "onlyreadai/onlyread",
+    "url": "https://github.com/onlyreadai/onlyread",
+    "stars": 87,
+    "trend": "2026-11-05 后新建，8 天内 87★",
+    "what": "给浏览器 agent 装“只读开关”的 Chrome 扩展：在发送、发布、编辑、删除这类写操作离开浏览器之前直接拦下，话题标签覆盖 agent-security、computer-use。",
+    "why": "2026-11-05 后新建，8 天 87★，11-12 仍在提交。computer-use 类 agent 越来越多，但“只读浏览”这种更安全的默认模式此前缺少现成实现。",
+    "insight": "给 agent 上浏览能力时，默认应该是只读，写操作按域名与动作白名单逐条开。拦在浏览器出口比拦在提示词里可靠——提示词会被绕过，网络出口不会。",
+    "image": "images/2026-11-13/onlyreadai-onlyread.jpg"
+  }
+]

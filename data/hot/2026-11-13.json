@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "openclaw/openclaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "stars": 394411,
+    "trend": "+1,112 stars/15天（对比 2026-10-29）",
+    "what": "一个开源的个人 AI 助手运行时，用 TypeScript 实现，主打跨操作系统与平台运行、数据自己保管（own-your-data）；仓库已有 8.2 万个 fork。",
+    "why": "394,411★，11-13 仍有提交；对比 10-29 的 393,299★，15 天涨 1,112★。体量到这个级别后增长主要来自 fork 与二次开发，而不是新增关注。",
+    "insight": "助手型项目过了三十万星，真正的工程价值在部署形态：先确认它把哪些状态放在本地、哪些放云端，再决定能不能托管企业数据。只看 README 判断不了数据边界，要读它的存储与同步实现。",
+    "image": "images/2026-11-13/openclaw-openclaw.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "stars": 302029,
+    "trend": "+10,242 stars/15天（对比 2026-10-29）",
+    "what": "面向编码 agent 的性能优化层，给 Claude Code、Codex、Opencode、Cursor 等宿主补上技能、直觉（instincts）、记忆、安全与研究优先的开发流程，话题标签含 MCP。",
+    "why": "302,030★，9 个月内从零到三十万；对比 10-29 的 291,787★，15 天涨 10,243★，是本期涨幅最大的大仓。",
+    "insight": "给 agent 加能力正在从写提示词转向可安装的运行时层（技能 + 记忆 + 安全钩子）。评估这类项目时先看状态存在哪、能否审计和回滚，再谈能力：能力越强，越需要一个随时能关掉的开关。",
+    "image": "images/2026-11-13/affaan-m-ecc.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "NousResearch/hermes-agent",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 262978,
+    "trend": "+4,893 stars/15天（对比 2026-10-29）",
+    "what": "Nous Research 的通用 agent 框架，Python 实现，主打“随你一起成长”——把交互经验沉淀成可复用能力，仓库带官方站点与 5.9 万 fork。",
+    "why": "262,978★，11-13 仍有提交，15 天涨 4,893★。相比只做单轮任务的框架，它押注的是长期记忆与能力累积。",
+    "insight": "会成长的 agent 要能回答三个问题：成长物存在哪、怎么评估有没有变好、怎么回退到上一版。没有版本化和评测集的自我改进，等于把线上行为交给不可复现的状态。",
+    "image": "images/2026-11-13/nousresearch-hermes-agent.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "n8n-io/n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 210333,
+    "trend": "+1,416 stars/15天（对比 2026-10-29）",
+    "what": "公平代码（fair-code）的工作流自动化平台，可视化编排加自定义代码，400 多个集成，可自托管或上云；话题标签里同时挂着 MCP 客户端与服务端。",
+    "why": "210,333★，11-12 有提交，15 天涨 1,416★。它把 MCP 双向接进自动化平台：agent 既能调用既有系统，也能被既有工作流当成一个节点调用。",
+    "insight": "企业落地 agent，最省事的路径常常不是新写编排，而是让 agent 成为一个可被调用的节点。选平台时优先确认它有没有幂等、重试和失败告警，否则 agent 的不确定性会被放大到整条流程。",
+    "image": "images/2026-11-13/n8n-io-n8n.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "agentscope-ai/QwenPaw",
+    "url": "https://github.com/agentscope-ai/QwenPaw",
+    "stars": 37665,
+    "trend": "+1,052 stars/16天（对比 2026-10-28）",
+    "what": "可自托管或云部署的个人 AI 助手，能接入多个聊天应用，能力以可扩展插件形式提供；话题标签含 agent-harness、loop-engineering、skills。",
+    "why": "37,665★，11-12 有提交；9 个月做到 3.7 万星，16 天涨 1,052★。它属于“把 agent 装进日常聊天入口”这条路线里比较完整的开源实现。",
+    "insight": "把助手放进聊天应用，代价是接入面变宽：每个入口都有自己的身份、权限和消息格式。上线前先定一份入口适配清单（身份怎么映射、越权怎么拒、消息怎么幂等），比先堆功能更省返工。",
+    "image": "images/2026-11-13/agentscope-ai-qwenpaw.jpg"
+  }
+]

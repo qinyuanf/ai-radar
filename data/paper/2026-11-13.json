@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations",
+    "title_cn": "把单点假设换成对比解释集",
+    "url": "https://arxiv.org/abs/2611.14514v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14514，cs.AI/cs.CL/cs.LG，Ziang Liu 等 4 人",
+    "what": "提出 Contrastive Discovery：把 agent 的假设从单个命题改造成“一个科学问题 + 互斥且穷尽的候选解释集”，每次实验按证据如何重新分配整组解释的置信度来打分，置信度收敛到某一解释时判定问题解决；六个领域中，单点方法里置信度变化最大的候选有 89% 只是“被否定”，换成对比集后同一批证据有 73% 能落到具体替代解释上，同等实验预算下解决的问题多 67%。",
+    "why": "11-10 提交。它点出 agent 做研究时的结构性缺陷：只测 h 与 ¬h，证据否掉 h 之后并不知道该信什么，已经采集的证据被浪费。",
+    "insight": "做诊断类 agent 时，让它提假设阶段就给出 2~3 个互斥成因，并按“哪个成因的解释力被改变”设计下一步取证。只判断“是/不是”，会把排查变成反复否证。"
+  },
+  {
+    "rank": 2,
+    "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
+    "title_cn": "让 AI 给强化学习自动搭脚手架",
+    "url": "https://arxiv.org/abs/2611.14515v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14515，cs.LG/cs.CL，Zijian Zhang 等 7 人",
+    "what": "AutoScaffold 用一个冻结的教师模型定期查看学生模型的训练经验，诊断瓶颈并设计两类脚手架：跨任务共享的策略、针对单道难题的提示，随学生变强自动减少支持，评测时完全撤掉；在 ALFWorld、检索式问答、数学推理、GPU kernel 生成四个域上，撤掉脚手架后仍比对应 RL 基线高 7.2 个点（成功率）、4.0 个点（问答平均 exact match）、最多 5.0 个点（写出比 PyTorch 参考更快的正确 kernel）。",
+    "why": "11-10 提交。强化学习的结果奖励把一次尝试压成一个数字，大量过程信息被浪费；这篇把“过程信息→训练提示”这一步自动化，且不需要人工按域设计。",
+    "insight": "如果 agent 靠结果奖励训练或评测，别丢掉过程：把失败轨迹交给更强的模型做归因，产出“这类任务的共同坑”和“这道题的具体提示”，比直接调奖励函数更容易定位问题。注意脚手架要在评测时撤掉，否则测到的是提示不是能力。"
+  },
+  {
+    "rank": 3,
+    "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy Awareness and Hardware Abilities",
+    "title_cn": "用 agent 自动适配端侧推理引擎",
+    "url": "https://arxiv.org/abs/2611.14356v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14356，cs.OS/cs.AI/cs.CL/cs.SE，Zhengxiang Huang 等 9 人",
+    "what": "EngineAgent 把“让新模型跑在端侧推理引擎上”交给 agent：先构建带层级的引擎索引（抽象层与跨层依赖），并用已支持的模型预验证各后端（CPU/GPU/NPU）的构建、执行与调试流程；接新模型时由 builder 协调跨层改动、auditor 检查完整性并在真机验证中迭代调试。12 个任务、3 个移动端模型、4 组引擎—后端组合上端到端成功率 75%，最强编码 agent 基线为 33.3%。",
+    "why": "11-10 提交。端侧适配的难点不是写代码，而是跨层依赖（转换、构图、算子、后端）和主机—设备两侧的故障诊断，通用编码 agent 恰好缺这层结构知识。",
+    "insight": "把领域知识从模型能力里拆出来，做成可复用的索引（层级 + 依赖 + 已验证的调试流程），再接 agent。通用 agent 在跨层任务上失败，往往不是模型不够强，而是没人告诉它层与层怎么咬合。"
+  },
+  {
+    "rank": 4,
+    "title": "When does text encoding matter for language modeling?",
+    "title_cn": "文本编码何时真正影响语言模型",
+    "url": "https://arxiv.org/abs/2611.14459v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14459，cs.CL，Eugene Jang 等 3 人",
+    "what": "系统比较 UTF-8 与多种编码策略（其他 Unicode 方案、语言专用编码、自定义编码）对字节级语言模型的影响，并提出混合编码 Aether（目标语言用专用编码、其余回退 UTF-8）；结论是中文、韩文这类单字信息密度高的语言从压缩编码中显著受益，格鲁吉亚文、泰米尔文等几乎不受影响，因此编码应当按语言分别设计。",
+    "why": "11-10 提交。UTF-8 变长编码带来的多语言不平等长期被默认接受，这篇给出了“哪些语言吃亏、吃多少”的对照实验。",
+    "insight": "做多语言 agent 时，分词和编码不是实现细节：中文场景下 token 效率直接决定上下文预算和成本。评估新模型时按目标语言单独测 token/字符比与长文截断率，别只看英文基准。"
+  },
+  {
+    "rank": 5,
+    "title": "REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding",
+    "title_cn": "直接优化投机解码的接受长度",
+    "url": "https://arxiv.org/abs/2611.14399v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14399，cs.LG/cs.CL，Yu Tian",
+    "what": "指出已有的块级投机解码训练目标只是期望接受长度（EAL）的近似：对后续接受度取平均的分支与实际被接受令牌选中的路径不一致，会产生协方差偏差甚至让梯度方向反掉；据此推导 REAL 损失，用路径权重做无偏估计、用 Rao-Blackwell 化降方差。在 Qwen3.6-35B-A3B 与 Domino drafter 上，9 个任务子集、5 个随机种子均优于 WTV、VSD、DBLast 与静态基线，且只改训练损失，不动草稿模型结构与推理流程。",
+    "why": "11-10 提交。投机解码的加速比由接受长度决定，而先前目标函数与真实指标存在系统性偏差——这种“指标写错了”的问题比调参更值得先修。",
+    "insight": "做推理加速先确认训练目标和线上指标是不是同一个量：投机解码看接受长度、缓存看命中率、批处理看吞吐。目标写成近似式，收益会在真实流量里打折，甚至方向相反。"
+  },
+  {
+    "rank": 6,
+    "title": "Earlybird: Predictive Streaming Speech Recognition in 29M Parameters",
+    "title_cn": "2900 万参数的预测式流式识别",
+    "url": "https://arxiv.org/abs/2611.14421v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14421，cs.SD/cs.CL/eess.AS，Sahil Mahendrakar",
+    "what": "Earlybird 是 29M 参数（4bit 下 16.8MB）的流式语音识别模型：训练时用随机截断（包括截在单词中间）的音频，要求它把“到此刻应该说完的词”完整输出，并额外猜后两个词；在有声书上中位词比说话人说完提前 90ms 预测正确，而现有流式模型要晚 90~400ms，六个测试集上均为最早，正在说的词其置信度校准误差（ECE）为 3.7~5.5。",
+    "why": "11-10 提交。语音 agent 的响应延迟有一大块来自“等词说完”，这篇把这段等待变成可压缩项，模型还小到能放进端侧。",
+    "insight": "做语音 agent 时把识别拆成两路：“已说完的词”和“正在说的词”。后者用较低置信度先触发检索或预取，前者到达后再确认，首响能提前约 100ms，而且不必等 ASR 终稿。"
+  },
+  {
+    "rank": 7,
+    "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
+    "title_cn": "不确定的步骤才升到高精度",
+    "url": "https://arxiv.org/abs/2611.14418v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14418，cs.AI，Mohammed Nayeem Khan 等 3 人",
+    "what": "研究按需分配权重精度：权重存 8bit，解码时先用高 4 位，只有低精度输出看起来不确定（熵超阈值或前二名差距过小）才用 8bit 重算这一步。在 Qwen3-0.6B、GSM8K 上回放 36,724 步，低精度输出的熵对 argmax 翻转的区分度 AUC 为 0.93；给定 15% 的升精度预算，熵门控抓住 78% 的翻转、margin 门控 94%；150 道实测题里门控得分 62.7%，只用掉全高精度 0.87 的权重字节。",
+    "why": "11-10 提交。端侧推理的瓶颈是内存带宽，固定精度意味着每一步都付同样的字节成本；这篇用“哪一步值得多读几位”来分配预算。",
+    "insight": "本地小模型可以用不确定性门控省带宽：先跑低精度，熵或 top-2 差距超阈值再重算。但要先确认场景对“偶发错一步”不敏感——它换来的是平均成本下降，不是单步绝对正确。"
+  },
+  {
+    "rank": 8,
+    "title": "Two Communities, One Problem: Branch-and-Bound vs. A* for Resource-Constrained Project Scheduling",
+    "title_cn": "分支定界与 A* 谁更适合项目调度",
+    "url": "https://arxiv.org/abs/2611.14426v1",
+    "date": "2026-11-10",
+    "source": "arXiv 2611.14426，math.OC/cs.AI，Izack Cohen 等 5 人",
+    "what": "在资源受限项目调度（RCPSP）上统一比较运筹学的分支定界与 AI 的 A*：先建立混合整数规划、状态-动作与时序 Petri 网三种表示之间的关系，再用相同的下界与最佳优先节点选择，隔离搜索机制本身的影响。480 个基准实例上图搜索版 A* 明显优于所比较的分支定界变体，配合剪枝后 480 个全部证明最优（最佳优先分支定界在同样时间与内存限制下为 445 个）；深度优先分支定界内存更省，超时也能给出可行解。",
+    "why": "11-10 提交。两个社区各用各的方法解同一个问题，少有在同等条件下正面对比；结论把差异指向“等价状态的重复检测”。",
+    "insight": "给 agent 做任务规划时，先做状态去重再谈搜索算法：同一进度经不同决策序列到达时合并，往往比换更聪明的启发式更有效。超时风险高的场景，保留一条“先给可行解”的深度优先路径。"
+  }
+]

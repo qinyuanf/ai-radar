@@ -1,0 +1,84 @@
+[
+  {
+    "rank": 1,
+    "title": "Anthropic launches roadshow for proposed initial public offering",
+    "title_cn": "Anthropic 启动 IPO 路演",
+    "url": "https://www.anthropic.com/news/roadshow-launch",
+    "date": "2026-11-10",
+    "source": "Anthropic 官方公告；HN 816 分 803 评论",
+    "what": "Anthropic 启动 IPO 路演：拟发行 8.25 亿股 A 类普通股，其中 8.01 亿股由公司发行、2,365 万股来自老股东，发行价区间 70~78 美元，拟以代码 ANT 登陆纳斯达克全球精选市场。",
+    "why": "官方 11-10 公告，11-12 在 HN 拿到 816 分、803 条评论，是本期讨论最热的条目。模型公司开始按公开市场定价，采购方的议价对象从此多了一层财务约束。",
+    "insight": "把供应商的财务与合规状态纳入选型：IPO 后成本结构、毛利和披露口径都会更透明，长期合作的续约与涨价风险可以提前量化。只比单 token 价格，会低估真实切换成本。",
+    "image": "images/2026-11-13/anthropic-launches-roadshow-for-proposed-initial.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Introducing Gemini 4 Hydrogen for Agentic Workflows",
+    "title_cn": "Hydrogen：面向 agent 工作流",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "date": "2026-11-12",
+    "source": "Google 官方博客；HN 460 分 296 评论",
+    "what": "Google 发布 Gemini 4 Hydrogen，标题直接写明面向 agentic workflows；11-12 同步在 Antigravity 上线，与更强的 Gemini 4 Carbon 组成可动态切换的 Orchestrator。",
+    "why": "发布当天在 HN 拿到 460 分、296 条评论。同一周 Google 先用 Carbon 打重任务、再用 Hydrogen 补日常循环，说明厂商开始按“任务阶段”而不是“任务难度”切分模型。",
+    "insight": "选模型时按 agent 的阶段分层：探索与规划用强模型，写码和跑测试用便宜快的模型，卡住再交回强模型。前提是状态能在两者之间无损传递，否则每切换一次就丢一次上下文。",
+    "image": "images/2026-11-13/introducing-gemini-4-hydrogen-for-agentic-workfl.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Gemini 4 Hydrogen and Orchestrator",
+    "title_cn": "Antigravity 的动态模型编排",
+    "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+    "date": "2026-11-12",
+    "source": "Google Antigravity 官方博客；HN 296 分 72 评论",
+    "what": "Antigravity 上线 Orchestrator：在单条任务轨迹里让 Carbon 与 Hydrogen 双向交接——Carbon 先只读探索、列计划并标注重新规划的触发点，Hydrogen 接手改代码跑测试，卡住再交回 Carbon 修计划。",
+    "why": "官方 11-12 博文，HN 296 分。它明确反对静态模型路由（按首个提示猜难度、整单走一个模型），理由是 agent 越跑越长，不同阶段需要的复杂度本来就不同。",
+    "insight": "不要只按首轮提示路由模型。给长任务设“阶段—模型”映射，并为交接定义契约：当前计划、已完成步骤、失败证据、重规划触发条件。交接没有契约，换模型就等于重新开始。",
+    "image": "images/2026-11-13/gemini-4-hydrogen-and-orchestrator.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "I'm making LLMs work on small and old devices",
+    "title_cn": "让大模型在老设备上跑起来",
+    "url": "https://github.com/hyperionaidev/smolmaxxing/",
+    "date": "2026-11-12",
+    "source": "Hacker News 278 分 93 评论；GitHub hyperionaidev/smolmaxxing",
+    "what": "一个实测项目：在约 1GB 可用内存的设备上跑尽可能大的模型。小米电视盒子跑 Qwen3.5-2B 达 7.7 tok/s，越狱的 2013 款 iPad Air 跑 1-bit 的 Bonsai-1.7B 达 24~26 tok/s；两台设备都只驻留部分专家、其余按需从闪存读取，从而跑起 8B/16B 的 MoE。",
+    "why": "11-12 上 HN，278 分、93 条评论。所有数字都在设备上实测而不是论文估算，端侧推理的真实可用区间第一次有公开基线可对照。",
+    "insight": "做端侧 agent 先算三道账：内存能驻留多少参数、闪存带宽能撑多少 tok/s、上下文翻倍会让速度掉多少。这三项不达标时，功能清单越长越不可用。",
+    "image": "images/2026-11-13/i-m-making-llms-work-on-small-and-old-devices.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Atuin Threads: All your agent sessions on every machine",
+    "title_cn": "把 agent 会话做成交叉可搜索历史",
+    "url": "https://blog.atuin.sh/threads-agent-sessions/",
+    "date": "2026-11-11",
+    "source": "Atuin 官方博客；HN 233 分 83 评论",
+    "what": "Atuin 18.24 起提供 Threads：把散落在不同机器、不同 agent（Claude Code、Codex 等）里的会话统一索引，可跨机搜索、在另一台机器上恢复，或把会话 fork 到另一个 harness 继续跑。",
+    "why": "11-11 发布，HN 233 分。它把 shell 历史的思路搬到 agent 会话上：会话里存的不只是命令，还有意图和试错过程，而这正是过去最容易丢掉的部分。",
+    "insight": "会话记录是可复用的工程资产：把“目标—尝试—结论”落成结构化归档，比留一屏聊天记录有用得多。上生产前先定保留期和脱敏规则，别让会话历史变成凭证泄漏的入口。"
+  },
+  {
+    "rank": 6,
+    "title": "Faster Retrieval for Better, More Efficient RAG",
+    "title_cn": "用学到的路由加速 RAG 检索",
+    "url": "https://machinelearning.apple.com/research/faster-retrieval",
+    "date": "2026-11-05",
+    "source": "Apple 机器学习研究（ICML 2026 论文）；HN 232 分 38 评论",
+    "what": "Apple 的 ICML 2026 论文：针对最大内积检索（MIPS），为固定键库离线训练一个小神经网络，学习把查询路由到最可能的匹配附近，而不是穷举全部键或只依赖通用聚类索引；论文指出 RAG 里查询短、键长，两者分布差异大，通用索引的前提并不成立。",
+    "why": "论文 11-05 发布，11-11 在 HN 拿到 232 分。它把“查询分布”当成可学习的先验，直接指向通用向量索引在 RAG 场景里的性能浪费。",
+    "insight": "RAG 检索优化先看查询分布：采样线上真实问题，离线训练或至少调参路由层，比换更大的向量库更划算。评估时同时看召回率和单次检索延迟，只看其一会掩盖真正的瓶颈。",
+    "image": "images/2026-11-13/faster-retrieval-for-better-more-efficient-rag.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Can a Linear Program Do Weight-Space Programming?",
+    "title_cn": "线性规划能否替代权重空间编程",
+    "url": "https://nathan.rs/posts/weight-space-lp/",
+    "date": "2026-11-09",
+    "source": "nathan.rs 技术博客；HN 292 分 46 评论",
+    "what": "对 MIT CSAIL 的权重空间编程实验做拆解与复现：Astra 花约 8 小时、28 次前向传播挑出要改的权重，把 Qwen3.5-0.8B 的 MATH-500 从 7.9% 提到 48.1%；作者认为其中大部分搜索其实在解一个线性规划，两次 LP 求解（各约 1 分钟）就能达到同样效果，改动权重只有原来的 1/8。",
+    "why": "11-09 发布、11-11 上 HN（292 分、46 条评论）。它把“用大模型改小模型权重”从玄学操作压成可计算的问题，并指出真正被修好的是思考循环——基线 93% 的回答撞到 32k token 上限仍不给答案。",
+    "insight": "遇到小模型“想个不停却不给答案”，先判是不是思考循环，再考虑微调：这类失败常是极少量权重或提示约束的问题，一次结构化搜索（或 LP）往往比全参微调便宜两个数量级。"
+  }
+]
