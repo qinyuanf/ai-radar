@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "deepseek-ai/chat-demo",
+    "url": "https://github.com/deepseek-ai/chat-demo",
+    "stars": 3049,
+    "trend": "2026-11-12 后新建，4 天内 3049★（首日快照）",
+    "what": "DeepSeek 官方发的静态聊天 demo：浏览器直连 API，不需要后端；可在线试用，也能下载压缩包双击 index.html 本地运行，填 API key 即用。",
+    "why": "11-12 建仓，4 天 3,049★、596 个 fork。官方把“无后端接入”从 SDK 文档下沉成可运行页面，等于给了最短的上手路径。",
+    "insight": "无后端直连只适合 demo 和内部试用：key 放在前端等于公开，生产必须加自己的网关做鉴权与配额。评估任何第三方模型，先用它量“最快多久跑通一次对话”。",
+    "image": "images/2026-11-16/deepseek-ai-chat-demo.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "apex-compute/ANR",
+    "url": "https://github.com/apex-compute/ANR",
+    "stars": 2219,
+    "trend": "2026-11-11 后新建，5 天内 2219★（首日快照）",
+    "what": "Apex Compute 的神经渲染套件：帧生成（ANR FG）已公测，超分与光线重建即将公测；仓库里目前发布的是安装包和 nr-record 录制对比工具，源码标注“coming soon”。",
+    "why": "11-11 建仓，5 天 2,219★。它用“闭源分发 + 开源对比工具”的组合切入游戏渲染，直接对标 DLSS、FSR、XeSS，热度高但可验证的东西还少。",
+    "insight": "这类先发包后开源的项目，拿 star 当成熟度会误判。真要评估，只用它的 nr-record 采集自己游戏的输入做横向比帧生成质量，别指望现在能读实现。",
+    "image": "images/2026-11-16/apex-compute-anr.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "HybridRobotics/supermimic",
+    "url": "https://github.com/HybridRobotics/supermimic",
+    "stars": 1560,
+    "trend": "2026-11-10 后新建，6 天内 1560★（首日快照）",
+    "what": "人形机器人全身运动跟踪：用一个可微分世界模型训练跟踪器，基于 mjlab 仿真，提供 G1 机器人的广义坐标与最大坐标两套任务，论文与项目页齐全。",
+    "why": "11-10 建仓，6 天 1,560★、109 个 fork。人形控制开始从手工奖励工程转向“世界模型 + 可微仿真”的路线。",
+    "insight": "要做具身 agent，这套代码的价值在“可微世界模型 + 策略”的训练闭环，而不是人形本体。先把仿真里的两个任务 ID 跑通，再估算迁移到自己本体的成本。",
+    "image": "images/2026-11-16/hybridrobotics-supermimic.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "hitkeeen/blender-ai-mcp-addon",
+    "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+    "stars": 1222,
+    "trend": "2026-11-12 后新建，4 天内 1222★（首日快照）",
+    "what": "Blender 的 AI 助手插件兼 MCP server：能读场景、建对象、改材质、找素材，支持多步工作流和可视化对话面板，要求 Blender 4.2 以上。",
+    "why": "11-12 建仓，4 天 1,223★。3D 工具通过 MCP 暴露给模型，是“agent 操作专业软件”里最容易验证效果的一类场景。",
+    "insight": "风险在写操作不可逆：接入前先确认有没有 dry-run 和撤销路径。自己做垂直工具 agent 时，可以照它的工具粒度（读场景、改材质、找素材分开）设计权限。",
+    "image": "images/2026-11-16/hitkeeen-blender-ai-mcp-addon.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "tommy0103/blackhole",
+    "url": "https://github.com/tommy0103/blackhole",
+    "stars": 109,
+    "trend": "2026-11-08 后新建，8 天内 109★（首日快照）",
+    "what": "用纯 Bash 启动器把 Claude Code 关进 Linux 容器（macOS 走 Colima，Linux/WSL2 用 Docker）：只挂载当前项目目录，登录卷跨会话保留，WSL2 支持剪贴板与仅代理网络。",
+    "why": "11-08 建仓，8 天 109★、15 个 fork。它抓住一个具体痛点：直接在宿主机跑 claude，会把 ~/.ssh、云凭据、Docker socket 和环境指纹一起交给 agent。",
+    "insight": "给 agent 开放本地执行，最小可行的隔离就是“只挂工作目录 + 容器内跑”。它证明不需要复杂沙箱，一个替换命令的 Bash 启动器就能挡住大部分越权读取。",
+    "image": "images/2026-11-16/tommy0103-blackhole.jpg"
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "rank": 1,
+    "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+    "title_cn": "英伟达被指向AI初创输血买卡制造稀缺",
+    "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+    "date": "2026-11-14",
+    "source": "TechPowerUp 转述《华尔街日报》报道；HN 1099 分 647 评论",
+    "what": "据《华尔街日报》报道，英伟达被指用“循环融资”制造稀缺：一边给小型云服务商和 AI 初创注资（包括与 OpenAI 讨论的 2,500 亿美元级交易），一边让这些钱回流买自家 GPU，同时消化台积电的过剩产能；报道称 CFO 曾要求收缩这类融资，被黄仁勋驳回。",
+    "why": "HN 1,099 分、647 条评论，是本期讨论最热的一条。同一周还有一篇“循环融资抬高 GPU 价格”的报道（444 分），采购方开始把供应商的财务动作当成成本风险来读。",
+    "insight": "把“供应商是否在给客户融资”纳入采购判断：当上游用投资换订单，议价信号会失真，续约价和现货价的差不能当成真实供需。做容量规划时用自己的实际用量增速，而不是厂商公布的订单额。",
+    "image": "images/2026-11-16/nvidia-allegedly-engineered-scarcity-by-funding-.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "All AI-generated code should be Open Source",
+    "title_cn": "AI 生成代码都该开源的理由",
+    "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+    "date": "2026-11-15",
+    "source": "作者 Jakub T. Jankiewicz 博客；HN 1080 分 590 评论",
+    "what": "作者主张纯 AI 生成的代码应以开源许可或 CC0 释放，理由两条：模型是在未经许可抓取的开源代码与 CC 协议问答上训练出来的；纯 AI 产物没有人类作者，按“猴子自拍”判例不享版权，而各国规则又不一致，统一开源最省事。",
+    "why": "HN 1,080 分、590 条评论，11-15 登榜。它把 AI 代码合规从“许可证扫描”推到更前面：如果生成物本身不该有版权，企业的代码资产口径要重写。",
+    "insight": "内部要提前定规则：agent 产物进仓库时标注生成来源和人工改动比例。延续“生成即不享版权”的严格口径，能少掉将来被要求开放源码时的返工，但也意味着不能把生成代码当护城河。",
+    "image": "images/2026-11-16/all-ai-generated-code-should-be-open-source.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Lovable apps expose passport details and more than 200K private messages",
+    "title_cn": "Lovable 生成的应用泄露护照与私信",
+    "url": "https://www.crissyfield.de/research/lovable-en/",
+    "date": "2026-11-14",
+    "source": "Crissy Field GmbH 与 Handelsblatt 联合调查；HN 974 分 371 评论",
+    "what": "安全公司 Crissy Field 扫描 2025-12 至 2026-09 期间的 159,041 个 Lovable 项目，其中 34,545 个用了 Supabase；24,664 个网站在未登录状态下直接下发数据库记录，追加只读请求后发现 7,403 个站（30%）的表里有邮箱，另有护照信息和逾 20 万条私信可读。",
+    "why": "HN 974 分、371 条评论。“一句话描述就出应用”把建站门槛降到零，却把数据权限的门槛留给了不懂安全的用户，这类泄露会随 AI 建站普及而规模化。",
+    "insight": "任何“AI 直接生成后端”的方案，必须默认打开数据库行级权限并做成上线检查。面向非技术用户的产品，安全默认值比功能更重要：可读性检查应该是发布门禁，而不是写在条款里。",
+    "image": "images/2026-11-16/lovable-apps-expose-passport-details-and-more-th.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Ggml v1.0.0",
+    "title_cn": "ggml 发布 1.0 版本",
+    "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+    "date": "2026-11-14",
+    "source": "ggml 官方 GitHub Release（11-13 发布）；HN 416 分 68 评论",
+    "what": "llama.cpp 的底层张量库 ggml 发布 1.0.0：清理废弃 API、移除 DIAG_MASK 系列算子并把 RPC 协议升到 v9（不兼容旧对端），新增 YaRN 截断控制和 FP8 支持，同时补上 CUDA/Metal 少行量化矩阵乘、MoE 融合、Vulkan prefill FlashAttention、SYCL 设备侧 MoE 调度等后端优化。",
+    "why": "HN 416 分。1.0 意味着这个被大量本地推理工具依赖的底层库开始承诺 API 稳定；RPC 协议不兼容则意味着跨版本混跑会直接失败。",
+    "insight": "依赖 ggml 的推理服务按“版本锁死 + 灰度”处理：API 稳定了，但 RPC v9 与旧节点不互通，滚动升级会出现新旧节点通信失败。升级前先确认集群里没有混版本节点。",
+    "image": "images/2026-11-16/ggml-v1-0-0.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Serving GLM-5.3 at 607.8 tok/s across two Nvidia DGX stations with vLLM",
+    "title_cn": "两台 GB300 跑 GLM-5.3 实测",
+    "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
+    "date": "2026-11-14",
+    "source": "NVIDIA 开发者博客；HN 144 分 69 评论",
+    "what": "NVIDIA 给出 GLM-5.3 NVFP4 的双机部署实测：753B 总参数、每 token 激活 40B，单台 GB300 只有 252GB HBM3e 装不下约 464GB 权重，于是用两台 DGX Station 经 ConnectX-8 RDMA 做 TP=2，再配合多 token 预测做投机解码；并发 16 时输出吞吐 607.8 tok/s，并发 32 时首 token 899ms、单请求延迟 453.5 秒。",
+    "why": "HN 144 分、69 条评论。它给出“单机装不下、双机才够”的具体数字，是评估自建大模型推理时少见的公开基线。",
+    "insight": "大模型自建的第一道算术是权重能否装进显存：753B 的 NVFP4 权重约 464GB，直接越过单机 252GB。先算这一关，再谈吞吐——607 tok/s 是并发 16 的数字，低并发下单位成本会明显变差。",
+    "image": "images/2026-11-16/serving-glm-5-3-at-607-8-tok-s-across-two-nvidia.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Introducing ChatGPT Wallet",
+    "title_cn": "ChatGPT 钱包让 agent 代付",
+    "url": "https://openai.com/index/introducing-chatgpt-wallet",
+    "date": "2026-11-13",
+    "source": "OpenAI 官方公告",
+    "what": "OpenAI 发布 ChatGPT Wallet：让 ChatGPT Work、Codex 和 dots 里的 agent 在用户批准的前提下完成购买，沿用用户已有卡片的保护机制。",
+    "why": "官方 11-13 公告。这是“agent 能花钱”从概念走到产品的一步：授权、限额、卡片保护由平台接管，agent 只负责发起交易。",
+    "insight": "做 agent 支付时，把“谁批准、单笔上限、事后可撤销”三件事做成硬约束，别让模型自己判断金额是否合理。上线前先跑通拒付和撤销路径，比跑通成功路径更重要。"
+  },
+  {
+    "rank": 7,
+    "title": "Understanding Positional Embeddings in Modern LLMs",
+    "title_cn": "现代 LLM 位置编码梳理",
+    "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+    "date": "2026-11-15",
+    "source": "Sebastian Raschka 博客；HN 202 分 27 评论",
+    "what": "Sebastian Raschka 系统梳理位置编码：GPT-2 的可学习绝对嵌入、原始 Transformer 正弦编码、RoPE、部分 RoPE、完全不用显式编码的 NoPE，以及可学习相对位置偏置；结论是 RoPE 仍是主流，但趋势转向混合架构（部分层用 NoPE）。",
+    "why": "11-15 发布，HN 202 分。长上下文模型的改造多发生在位置编码这一层，这篇把各方案取舍讲清了，适合作为改造前的底稿。",
+    "insight": "要延长上下文或改架构，先在位置编码层做消融：部分层换 NoPE 往往比整体换方案风险小。评估第三方模型时，看它位置编码的实现细节，比看标称上下文长度更能预测长文表现。",
+    "image": "images/2026-11-16/understanding-positional-embeddings-in-modern-ll.jpg"
+  }
+]

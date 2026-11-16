@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon",
+    "title_cn": "Mac 上 GPU agent 的执行沙箱",
+    "url": "https://arxiv.org/abs/2611.17294v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17294，cs.LG/cs.AI/cs.CL/cs.DC，Haozhe Wang 等 8 人",
+    "what": "给在 Mac 上写 Metal kernel 的 coding agent 做的执行环境：每个实例独立的受限文件访问、原生命令执行，并跨多台 Mac 做命令级调度——并行命令同跑，串行命令每节点一个执行槽，等待中的命令可迁到空闲机器再把结果送回原 agent；4 台 Mac mini M4 在集中负载下命令吞吐提升 1.68~2.05 倍。",
+    "why": "11-12 提交。agent 跑 GPU 任务时大部分时间在等编译和执行，GPU 空转；它把“等待”当成可调度资源，而不是让 agent 干等。",
+    "insight": "给 agent 做执行环境，别只做隔离还要做队列：把串行与并行命令分类，允许长任务迁移，设备利用率才能从三成级别提上去。这套调度逻辑与芯片无关，可以搬到 GPU 集群。"
+  },
+  {
+    "rank": 2,
+    "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+    "title_cn": "给编码 agent 的记忆算成本",
+    "url": "https://arxiv.org/abs/2611.17316v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17316，cs.AI/cs.CL/cs.SE，Peiwen Li 等 9 人",
+    "what": "面向“同一仓库连续任务”的记忆框架：写记忆时并不知道下一个任务是什么，于是用前瞻估值比较“带/不带某段轨迹”跑下一任务的结果，把记忆收敛到锚点（仓库位置与可执行检查）上；再用 on-policy 估计记忆带来的额外价值，只把功劳记到真正用到锚点的步骤上。",
+    "why": "11-12 提交。多数 agent 记忆方案只问“存什么”，它把读写记忆本身的成本放进目标函数，而这正是长会话 agent 里被忽略的一项。",
+    "insight": "记忆不是越多越好：先定义锚点（文件位置 + 可验证检查），再按“这段记忆是否真的改变了下一次执行”决定保留。没有可执行检查作锚的记忆，通常只是把上下文撑大。"
+  },
+  {
+    "rank": 3,
+    "title": "Cited but Unused: Parametric Provenance in Retrieval-Augmented Generation",
+    "title_cn": "RAG 引用来源并不可靠",
+    "url": "https://arxiv.org/abs/2611.17161v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17161，cs.AI，Tanzeel Abbas 等 3 人",
+    "what": "用“反事实替换”检验 RAG 引用的真实来源：把检索段落里的事实换成假版本再问一次，看答案是否跟随。结果是 1.2%~15.7% 的可引用断言其实来自模型参数记忆而不是检索内容，同一模型族内越大比例越高；标准 NLI 校验的判别力与随机猜测无异。",
+    "why": "11-12 提交。它说明“答案带了引用”不等于“答案来自引用”，而现有自动校验方法检测不出来。",
+    "insight": "RAG 评估要加反事实替换这一项：改掉检索里的事实，答案必须跟着变。做引用展示时把“引用”和“证据”分开——用户看到链接不代表内容真被用上。"
+  },
+  {
+    "rank": 4,
+    "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+    "title_cn": "小模型 agent 的注入防御",
+    "url": "https://arxiv.org/abs/2611.17115v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17115，cs.AI/cs.CL/cs.CR，Zimo Xu 等 3 人",
+    "what": "先验证“让小模型自己写安全策略”走不通：15 个开源模型里 13 个（1.7B~12B）写出的策略、依赖图、约束在 11~14 个模型上可被绕过，CaMeL 式程序最高 68% 的回合跑不起来。CapLite 改为从工具 schema 推导策略，在任何工具结果被读取前先提交写操作，且只有用户请求里明确出现过的接收方、金额、对象、目的地才允许写入；13,935 个被攻击的 AgentDojo 回合无一成功。",
+    "why": "11-12 提交。主流“让模型写安全制品再执行”的防御思路，在小模型上被系统性证伪。",
+    "insight": "安全策略不要交给被保护的模型去写，能力弱的部署尤其如此。可执行的做法是把策略锚在工具 schema 和用户原文上，写操作先落定再读取——这条对小模型同样成立。"
+  },
+  {
+    "rank": 5,
+    "title": "Ballad: Bandit-Based LLM Routing for Automated Heuristic Discovery",
+    "title_cn": "用老虎机算法挑 LLM 做搜索",
+    "url": "https://arxiv.org/abs/2611.17241v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17241，cs.AI，Samidha Verma 等 3 人",
+    "what": "在自动启发式发现（AHD）里先打破“更强更贵的模型一定更好”的假设：多个 NP 难组合优化问题上，大模型没有稳定优势。Ballad 把“每一步调用哪个模型”建模成在线 bandit，考虑模型收益非平稳且相互纠缠（一个模型的输出会成为后续调用的上下文），在 frontier 与开源模型混合池里自适应选择。",
+    "why": "11-12 提交。多数 agent 系统把模型选择写死在配置里，而搜索过程中最优模型会漂移。",
+    "insight": "多模型系统里，“路由”应该是按步骤在线更新的决策，不是静态权重表。上线前先测一件事：同一任务的前 10 步与后 10 步，最优模型是否相同——不同就说明需要动态路由。"
+  },
+  {
+    "rank": 6,
+    "title": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents",
+    "title_cn": "糟糕的演员也能当好老师",
+    "url": "https://arxiv.org/abs/2611.17167v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17167，cs.AI/cs.CL，Haochen Liu 等 10 人",
+    "what": "比较三个决策模型与三个通用 LLM 在 ALFWorld/WebShop 上作为执行者、评委、教师的表现：作为执行者时六个模型都会被更容易的子目标带偏；但看完整轨迹做评委时，同一个模型能正确给“通向必要子目标”的步骤记功，问“这一步是否有帮助”比问“任务会不会成功”更能区分有用动作；用 JEV 当教师做 GRPO，把 Qwen2.5-1.5B 在 ALFWorld 从 72.8% 提到 82.9%、WebShop 从 56.8% 提到 71.4%。",
+    "why": "11-12 提交。它把“模型能力”拆成三种角色，说明选模型做评委和做执行者的标准不一样。",
+    "insight": "训练和评估别用同一个模型同一个问法：执行差的模型仍可作为步骤级评委提供奖励。构造奖励时问“这一步有没有推进必要条件”，比问“任务能否成功”稳定得多。"
+  },
+  {
+    "rank": 7,
+    "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
+    "title_cn": "输出格式决定静默错误率",
+    "url": "https://arxiv.org/abs/2611.17169v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17169，cs.CL/cs.LG，Umar Ahmed 等 5 人",
+    "what": "在 PIZZA 语义解析基准上，用 LoRA 微调两个亚十亿模型（Qwen3.5-0.8B、LFM2.5-350M），比较同一目标树的六种无损编码（44.3 到 10.9 token/单）。300 次运行（5 种训练集规模 × 5 个种子）显示：单纯缩短长度从不带来提升，但“用日常词写出目标”准确率最高（Qwen 87.5% 对原生 s-表达式 85.8%），token 少 4.1 倍，静默错误率降 2.3 倍（Qwen）和 1.8 倍（LFM2）。",
+    "why": "11-12 提交。小模型输出结构合法但内容错时下游无从察觉；它证明输出格式这个“自由设计项”直接影响静默错误率。",
+    "insight": "给小模型定输出格式时优先用自然语言词而不是压缩符号，即使 token 更多也值得——长度不是瓶颈，检测得出的错误才是。上线前用“格式合法 + 语义正确”双指标验收。"
+  },
+  {
+    "rank": 8,
+    "title": "Negative-Only Policy Optimization for One-Sided Verifiable Rewards",
+    "title_cn": "只有负例可验时的 RL 训练",
+    "url": "https://arxiv.org/abs/2611.17287v1",
+    "date": "2026-11-12",
+    "source": "arXiv 2611.17287，cs.LG/cs.CL，Jiacheng Xu 等 5 人",
+    "what": "提出“单侧可验证”设定：只有失败能被可靠判定，通过检查的样本可能只是没被证伪。NOPO 把“已验证通过”当未标注样本，只用可信负例更新策略，配合参照相对的负向抑制损失与按未被证伪比例缩放更新的组级适配器；在单元测试、约束检查、LLM 自评三类验证器上，pass@k 均优于基线。",
+    "why": "11-12 提交。多数场景拿不到完备 verifier——测试能证明错，不能证明对；标准 RLVR 会把“碰巧通过部分检查”的捷径奖励出来。",
+    "insight": "用测试做奖励时，只惩罚失败比奖励通过更安全：通过只说明“没被抓到”。若必须用正向信号，先补一条“是否绕过检查”的审计，否则训练会奖励作弊路径。"
+  }
+]

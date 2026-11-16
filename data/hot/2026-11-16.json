@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 202076,
+    "trend": "+5,305 stars/17天（对比 2026-10-30）",
+    "what": "面向 AI agent 的网页数据 API：抓取、搜索、点击交互三合一，官方称覆盖 96% 的网站（含 JS 重渲染页），P95 延迟 3.4 秒，输出统一成 markdown、结构化 JSON 或截图，也能把 PDF、DOCX 转成干净文本。",
+    "why": "202,076★，11-16 仍在提交；对比 10-30 的 196,771★，17 天净增 5,305★。它已经从零散爬虫脚本变成 agent 的“上下文接口”这一层基础设施。",
+    "insight": "给 agent 供网页内容时，把代理轮换、渲染、限速外包出去比自己维护划算；但要把 P95 3.4 秒当成硬约束——实时对话里同步抓页面会把首字延迟拖到不可接受，必须做预抓取和缓存层。",
+    "image": "images/2026-11-16/firecrawl-firecrawl.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 161220,
+    "trend": "+1,286 stars/17天（对比 2026-10-30）",
+    "what": "开源的 agentic 工作流与 RAG 平台：可视化编排流程、接数百种模型与工具、自带应用发布和运行观测，Python 实现，可完全自托管。",
+    "why": "161,220★，11-16 仍有提交，17 天涨 1,286★。增速降到日均约 76★，说明它进入企业内网自托管的存量使用阶段，而不是被新用户拉起来。",
+    "insight": "评估 Dify 重点不是画布好不好用，而是它把运行状态存在哪、流程定义能否版本化导出、执行日志能否外接。自托管版升级路径不清的项目，最后都卡在版本迁移上。",
+    "image": "images/2026-11-16/langgenius-dify.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "shareAI-lab/learn-claude-code",
+    "url": "https://github.com/shareAI-lab/learn-claude-code",
+    "stars": 80447,
+    "trend": "+1,075 stars/19天（对比 2026-10-28）",
+    "what": "教学型仓库：用原子 bash 工具从零拼出一个类 Claude Code 的 agent harness，主张“能力来自模型训练，产品 = 模型 + harness”，配中英日三语讲解。",
+    "why": "80,447★，11-15 有提交；19 天涨 1,075★。团队开始自研 coding agent 之后，它把 harness 拆成能读懂的最小实现，成了现成的内部培训材料。",
+    "insight": "想自研 agent 框架，先照它把“工具调用循环 + 上下文裁剪 + 权限边界”写出最小可跑版本，再去比对商业实现。跳过这步直接上框架，会看不懂框架为什么这样设计。",
+    "image": "images/2026-11-16/shareai-lab-learn-claude-code.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "can1357/oh-my-pi",
+    "url": "https://github.com/can1357/oh-my-pi",
+    "stars": 39119,
+    "trend": "+2,030 stars/17天（对比 2026-10-30）",
+    "what": "用 TypeScript + Rust 写的终端 coding agent（TUI），把 IDE 能力接进终端：多模型提供商、MCP、Bun 运行时，2025-12-31 建仓，已有 4,474 个 fork。",
+    "why": "39,119★，11-16 仍在提交；对比 10-30 的 37,089★，17 天涨 2,030★，是本周期热门榜里增速最快的新生代项目。",
+    "insight": "它说明 coding agent 的差异点在终端里的“编辑—验证”闭环，而不是模型本身：看它怎么把 lint 与测试结果自动回灌给模型，比从零接一遍工具更省事。选型时先验证它能否跑通你仓库的验证命令。",
+    "image": "images/2026-11-16/can1357-oh-my-pi.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "CopilotKit/CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "stars": 38716,
+    "trend": "+426 stars/19天（对比 2026-10-28）",
+    "what": "agent 前端栈：React、Angular、移动端、Slack 的对话与生成式 UI 组件，也是 AG-UI 协议（agent 与前端之间的事件流协议）的发起方，2023-06 建仓。",
+    "why": "38,716★，11-15 有提交，19 天涨 426★。增长平缓但稳，说明需求集中在“把 agent 接进已有产品界面”这条长尾上。",
+    "insight": "前端接 agent 要先定协议再选库：AG-UI 这类事件流协议决定卡片、工具调用、状态同步怎么走。协议选错，后面换 UI 库等于重写整条链路。",
+    "image": "images/2026-11-16/copilotkit-copilotkit.jpg"
+  }
+]
