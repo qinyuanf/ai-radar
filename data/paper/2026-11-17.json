@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "ModHarness-RL: Recasting Harnesses as Learnable and Evolving Programs for Agentic RL",
+    "title_cn": "把智能体框架重写为可学习程序",
+    "url": "http://arxiv.org/abs/2611.18533v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18533（cs.AI）",
+    "what": "把 agent 的 harness（决定模型看到什么历史、何时给什么提示的外壳）从手写固定结构改成随训练演化的程序：交互记录成结构化 State，Compression 程序负责把历史压进上下文，Steering 程序在行为偏离时给指导，训练中用近期轨迹提出候选程序。",
+    "why": "主流 agentic RL 都在固定 harness 下训练，但有效 harness 依赖领域、数据与模型，且应随模型能力变化。这篇把“框架本身”纳入优化对象。",
+    "insight": "做数字员工时，别把“上下文怎么裁、什么时候提醒”写死在代码里：先参数化并记录每次裁剪/干预的效果，再做 A/B，最后才是自动搜索。"
+  },
+  {
+    "rank": 2,
+    "title": "Can Mechanistic Interpretability Help Explain LLM Agent Failures? A Case Study on Web Element Hallucination",
+    "title_cn": "机制可解释性能解释智能体失败吗",
+    "url": "http://arxiv.org/abs/2611.18514v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18514（cs.AI）",
+    "what": "用机制可解释性工具分析 web agent 的“元素幻觉”（点了页面上不存在的按钮）：在 Qwen2.5-7B-Instruct 与真实网站交互时，用最后一个 prompt token 训练线性探针可在生成前预测幻觉（AUC 0.80），沿探针方向干预能纠正 85% 的幻觉，但会破坏 7% 的正常动作。",
+    "why": "agent 失败分析长期停留在“看日志猜原因”，这篇给出生成前的可测量信号，也诚实指出探针只解释了部分原因。",
+    "insight": "别指望可解释性直接修好 agent：可用的做法是把探针当“生成前风险分”，高风险时降级为只读或要求确认。纠正率与误伤率必须一起看，85%/7% 这个组合要按业务容错取舍。"
+  },
+  {
+    "rank": 3,
+    "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
+    "title_cn": "验证器判断能否穿过抽象边界",
+    "url": "http://arxiv.org/abs/2611.18471v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18471（cs.CL）",
+    "what": "提出“验证传输”测试：把同一条 agent 执行轨迹分别以原始、抽象（工具组合/委派边界）、恢复三种视图呈现给验证器，在任务、轨迹、结果、标注与标准都不变的前提下测判断是否稳定，覆盖 4 个 agent 评测基准、7 个验证器骨干。",
+    "why": "部署中的 agent 系统会给验证器看压缩或重组后的历史，而验证器可靠性通常只在单一表示下测过。",
+    "insight": "如果评测用 LLM 当裁判，必须测“换一种轨迹表示结论还成立吗”。把原始轨迹与压缩视图的判定差异做成回归指标，差异大的样本人工复核，否则线上失败会被系统性漏判。"
+  },
+  {
+    "rank": 4,
+    "title": "TradeGauntlet: Evaluating Compliance Controls for Autonomous Trading Agents",
+    "title_cn": "自主交易智能体的合规管控评测",
+    "url": "http://arxiv.org/abs/2611.18493v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18493（cs.MA）",
+    "what": "可回放的限价订单簿模拟器，把交易 agent 的合规控制拆成检测、阻断、执行成本三层；在 1,680 个会话里跑 Claude Haiku 5.5 与 Sonnet 5.5，发现所有行为告警都来自自成交，加“拒绝自成交”闸门后归零，但聚合闸门让 Sonnet 的双边成交减少约 15%；还搜索出可绕过规则的拆单排程。",
+    "why": "交易 agent 是“零告警不等于合规”的典型场景，规则可被策略性规避。",
+    "insight": "任何自动执行类 agent 的合规测试都要加“对抗搜索”：用程序搜索找绕过路径，而不是只看模型跑出来的告警数。控制项要同时报“拦住多少坏动作”和“误伤多少好动作”。"
+  },
+  {
+    "rank": 5,
+    "title": "ARCHER: From Rationale Imitation to Executable Reasoning in Small Language Models",
+    "title_cn": "让小模型产出可执行可审计的推理",
+    "url": "http://arxiv.org/abs/2611.18494v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18494（cs.AI）",
+    "what": "两阶段训练小模型做可执行推理：先把自由 chain-of-thought 编译成带类型的动作轨迹（推理步骤、计算器调用、确定性运行时观测、校验动作、最终答案），再用强化学习优化这个工具接地策略。",
+    "why": "小模型在需要分解与精确计算的任务上不可靠；把监督目标从“模仿解释文本”换成“学习可执行策略”更可验证。",
+    "insight": "内部 agent 做数值类任务（报价、对账、额度计算）时，别让模型口算：强制把计算交给工具，并要求模型输出带校验步骤的动作轨迹，错误才能定位到具体一步。"
+  },
+  {
+    "rank": 6,
+    "title": "WeightBench: Evaluating Language Models as Weight-Space Programmers",
+    "title_cn": "语言模型直接改权重的基准测试",
+    "url": "http://arxiv.org/abs/2611.18553v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18553（cs.LG）",
+    "what": "评估语言模型“直接操作另一个网络权重”的能力（Weight-Space Programming）：42 个任务、5 条赛道（读权重、修权重、写权重、识别不可行的编辑、无数据压缩），被操作网络从 2K 参数控制策略到 7B 语言模型。",
+    "why": "前沿 agent 已能在不运行网络的情况下读懂小网络并写出可用控制策略，但能力边界没有系统测量。",
+    "insight": "对 agent 工程的现实意义是“模型可以当模型的调试器”：先用它读小模型/小策略的行为并生成修复，跑通后再上大模型。但“能改权重”不是万能，压缩与不可行编辑才是真正的成本边界。"
+  },
+  {
+    "rank": 7,
+    "title": "VelServe: Taming Decode Jitters in LLM Inference with Tail-Calibrated Scheduling",
+    "title_cn": "按尾延迟校准的 LLM 推理调度",
+    "url": "http://arxiv.org/abs/2611.18392v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18392（cs.AI）",
+    "what": "针对 LLM 推理的 decode 抖动：聚合与分离式服务里单次超时会让整批请求变慢，长回答跨数百步，罕见 overrun 造成大量 SLO 违约；VelServe 用自身迭代延迟的实测尾部分位数校准每步携带的 prefill 工作量。",
+    "why": "流式与软实时应用要求稳定的 token 到达间隔，而不是平均延迟达标。",
+    "insight": "自建推理时，SLO 要按 token 间隔（TBT）的尾部分位定，不要只看平均吞吐，调度器要留抖动预算。对外提供 agent 服务时，把“首 token 时间”和“token 间隔 P99”分开监控。"
+  },
+  {
+    "rank": 8,
+    "title": "Vision-Language-Action Models: A Life-Cycle Survey of Design, Training and Deployment",
+    "title_cn": "视觉-语言-动作模型全生命周期综述",
+    "url": "http://arxiv.org/abs/2611.18372v1",
+    "date": "2026-11-13",
+    "source": "arXiv 2611.18372（cs.RO）",
+    "what": "视觉-语言-动作模型综述：覆盖 2022-12 到 2026-10 的 88 项工作，按设计（输入与记忆、架构）、训练、部署三条主线、七个维度梳理，涵盖操作、导航、人形控制、世界动作模型与评测。",
+    "why": "不到四年从 RT-2 走到单卡微调的开源模型与能进陌生家庭的闭源通用体，领域开始需要一张统一地图。",
+    "insight": "做具身/多模态 agent 时先按它的七个维度盘点自己缺哪块：多数团队缺的是“记忆与评测”，不是模型。评测要有真实环境回放，纯仿真分数不可迁移。"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "rank": 1,
+    "title": "Qwen4-Max: Your New Teammate Has Arrived",
+    "title_cn": "Qwen4-Max：新队友已就位",
+    "url": "https://qwen.ai/blog?id=qwen4-max",
+    "date": "2026-11-16",
+    "source": "Qwen 官方博客；HN 853 分 470 评论",
+    "what": "阿里发布 Qwen4-Max：MoE 总参数 2.4T、每 token 激活 71B，1M token 上下文、最大输出 262k，API 定价 1.50/4.50 美元每百万 token，未开放权重，走 QwenCloud API 与 Token Plan；官方定位是编码、办公与长程任务。",
+    "why": "HN 853 分、470 条评论，是本期最热的一条。前沿模型继续走“闭源 + 大上下文”，同时把每百万 token 价格压到个位数美元，直接改变自建与调用云端的成本对比。",
+    "insight": "1M 上下文不等于该把整库塞进去：长上下文下注意力衰减仍要自己验证。把长上下文当兜底，主路径仍用检索 + 结构化上下文，并按新价格重算一次“自建 vs API”的盈亏线。"
+  },
+  {
+    "rank": 2,
+    "title": "Advancing computer-use agents for healthcare teams",
+    "title_cn": "面向医疗团队的计算机使用智能体",
+    "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+    "date": "2026-11-16",
+    "source": "OpenAI 官方发布 2026-11-16",
+    "what": "OpenAI 面向 ChatGPT for Healthcare 客户推出 computer-use agents：让模型在医疗软件里代为操作界面完成任务；同时上线改进的临床问答，以及可跨多家医疗软件工作的 healthcare plugins，并改进临床搜索。",
+    "why": "官方 11-16 发布。computer-use 从演示走向受监管行业，意味着“agent 代操作既有系统”开始进入真实合同场景，而不是实验室 demo。",
+    "insight": "医疗场景的关键不是能不能点，而是留痕与最小权限：自己做类似能力时，把每次点击、读取的字段、提交内容都落审计日志，写操作设人工确认点。接口优先，computer-use 只当没有 API 时的兜底。"
+  },
+  {
+    "rank": 3,
+    "title": "Our first phase of embedded assessments",
+    "title_cn": "首阶段嵌入式模型评估",
+    "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+    "date": "2026-11-16",
+    "source": "OpenAI 官方发布；CNBC 2026-11-16 报道",
+    "what": "OpenAI 宣布首阶段“嵌入式评估”：与 Apollo Research、METR、Transluce、Goodfire 四家独立机构签约，让它们深入内部系统，分别对模型行为、防护措施与监控做试点评估。",
+    "why": "11-16 发布，CNBC 同日报道；此前 OpenAI 曾洽谈以逾 50 亿美元收购可解释性公司 Goodfire 未成。外部评估从“交报告”变成“进内部”，是模型治理结构的变化。",
+    "insight": "企业内部模型/agent 验收可以照这个结构：评估方与开发方分开，指标写进发布门禁，并要求评估方能读真实运行数据而不是只看 demo。没有独立评估的“安全说明”只是自证。"
+  },
+  {
+    "rank": 4,
+    "title": "Broadening access to AI for scientists",
+    "title_cn": "扩大科研人员的 AI 使用范围",
+    "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+    "date": "2026-11-16",
+    "source": "OpenAI 官方发布 2026-11-16",
+    "what": "OpenAI 扩大 ChatGPT for Academic Researchers 计划，向全球 20 万名科研人员免费开放前沿模型；同日还发布科学博客和“科学家如何使用 ChatGPT”的调研（覆盖 1,800+ 名科研人员）。",
+    "why": "11-16 发布。用免费额度换使用数据与生态绑定，是模型厂商在科研场景抢标准的典型打法。",
+    "insight": "对做科研工具/agent 的团队，这意味着用户对“AI 能读论文、能算、能写代码”的预期会被拉高；差异化要放在数据与流程（可复现实验、引用校验），而不是模型本身。"
+  },
+  {
+    "rank": 5,
+    "title": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+    "title_cn": "Win11 在采集你用了哪些编码智能体",
+    "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+    "date": "2026-11-16",
+    "source": "xusheng.dev；HN 196 分 96 评论",
+    "what": "作者发现 Windows 11 通过 ETW 遥测记录本机用了哪些编码 agent（Copilot、Claude、Codex 等 CLI）和开发工具（Python、GCC 等），默认开启，关闭“发送可选诊断数据”可停。",
+    "why": "HN 196 分、96 条评论。开发者“我在用什么 agent”本身成了被采集的行为数据，这与 agent 进企业内网后的合规边界直接相关。",
+    "insight": "企业推 coding agent 前先查终端遥测策略：agent 的使用频率、工具链甚至命令行可能被操作系统采集。内网敏感项目应把“诊断数据级别”写进基线镜像，而不是让每个人自己去关。",
+    "image": "images/2026-11-17/windows-11-is-collecting-data-on-which-coding-ag.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Interpreting claims that a theorem is correct because it was checked in Lean",
+    "title_cn": "Lean 检查通过就等于定理正确吗",
+    "url": "https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/",
+    "date": "2026-11-12",
+    "source": "Xena Project 博客；HN 285 分 131 评论",
+    "what": "作者拆解“定理已被 Lean 检查通过”：必须同时确认语句与原命题一致、代码真的编译、证明没利用内核漏洞、PDF 与 Lean 逻辑一致；文中举了 OpenAI 论文里 Lean 代码只证中间结论、Anthropic FLT 证明因内存吃紧难以本地编译的例子。",
+    "why": "HN 285 分、131 条评论。AI 生成数学证明越来越多，“形式化验证通过”正在变成新的营销话术。",
+    "insight": "这条对所有“让 agent 自证正确”的设计都成立：测试通过、类型检查通过、形式化检查通过，都只证明你检查的那件事。给 agent 设验收时写清“检查的是什么命题”，否则会出现证了更弱的结论却宣称主定理成立。"
+  },
+  {
+    "rank": 7,
+    "title": "Software is breaking down at a systemic level",
+    "title_cn": "软件正在系统性崩坏",
+    "url": "https://www.breck-mckye.com/blog/2026/11/software-is-breaking-down-at-a-systemic-level/",
+    "date": "2026-11-16",
+    "source": "Breck McKye 博客；HN 336 分 214 评论",
+    "what": "作者认为软件正系统性崩坏，AI 既是原因也是症状：云与开源把依赖链越拉越长，AI 生成让“局部合理、整体不兼容”的代码加速堆积，工程师逐渐失去对系统的整体控制。",
+    "why": "HN 336 分、214 条评论。当 agent 开始大规模写代码，这类“复杂性失控”的判断会直接影响团队要不要放开自动合并。",
+    "insight": "对 agent 工程的直接含义：自动生成的代码必须配可执行的系统级验证（集成测试、契约测试、运行时回归），局部单测通过不够。宁可让 agent 提交慢一点，也别让它把看不见的耦合写进主干。"
+  }
+]

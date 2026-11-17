@@ -1,0 +1,45 @@
+[
+  {
+    "rank": 1,
+    "repo": "SparkofSpike/Brain4Agent",
+    "url": "https://github.com/SparkofSpike/Brain4Agent",
+    "stars": 169,
+    "trend": "2026-11-08 后新建，9 天内 169★（首日快照）",
+    "what": "面向 agent 的长期记忆模块，CJK 优先：整库落在一个 SQLite 文件里，检索用 BM25 字符 bigram，核心路径不调用模型，返回“语料里缺哪些词”的证据而不是置信分；带 MCP 接口，可选 jieba 词典把 hit@1 从 0.875 提到 0.950。",
+    "why": "11-08 建仓，5 天 169★、25 fork。中文/日文/韩文记忆检索长期被英文 tokenizer 拖累，它把“无模型、可解释、单文件”做成默认。",
+    "insight": "给数字员工加记忆，先用 BM25 + 证据回传的方案做基线，比直接上向量库更容易定位“为什么没召回”；等语料过十万条再考虑嵌入，别一开始就引入模型依赖。",
+    "image": "images/2026-11-17/sparkofspike-brain4agent.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "8hjkkwikl8/ai-portfolio",
+    "url": "https://github.com/8hjkkwikl8/ai-portfolio",
+    "stars": 105,
+    "trend": "2026-11-11 后新建，6 天内 105★（首日快照）",
+    "what": "三个可离线运行的 AI 工程样例：可追溯 RAG（字符区间回放到原文、逐句引用校验、金标评测）、提示词版本与可复现评测、受守护的只读 NL2SQL；127 个自动化测试，一条命令复现全部指标。",
+    "why": "11-11 建仓，2 天 105★。它把“RAG 要能回溯到原文、评测要能复现”写成可跑的代码，而不是 PPT。",
+    "insight": "评估候选人的 AI 工程能力，直接看他能不能跑通 verify_all.py 并解释指标口径；团队内部也可以照它的引用校验设计，把“无引用回答”直接判失败。"
+  },
+  {
+    "rank": 3,
+    "repo": "Timaga/noda-local-ai-notes",
+    "url": "https://github.com/Timaga/noda-local-ai-notes",
+    "stars": 104,
+    "trend": "2026-11-13 后新建，4 天内 104★（首日快照）",
+    "what": "Windows 本地优先的 AI 笔记应用：Markdown 文件即库，本地模型（GGUF）做标题/标签建议、语义检索和带引用的问答，配知识图谱与按项目隔离的索引；源码可见但为禁止商用许可。",
+    "why": "11-13 建仓，1 天 104★。个人知识库 + 本地推理是“隐私敏感场景 agent”最容易验证的形态。",
+    "insight": "它把“按项目隔离索引与聊天历史”做成默认，这点值得抄：多项目共用一套记忆会串味。另外禁止商用许可意味着不能直接进企业产品，只能参考设计。",
+    "image": "images/2026-11-17/timaga-noda-local-ai-notes.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Domush/antigravity-plugin-context-mode",
+    "url": "https://github.com/Domush/antigravity-plugin-context-mode",
+    "stars": 51,
+    "trend": "2026-11-14 后新建，3 天内 51★（首日快照）",
+    "what": "给 Google Antigravity App 写的本地插件：把终端输出、构建日志和超大文件挡在对话历史之外，只回传摘要，声称每轮省 90%+ token，避免“agent 失忆”。",
+    "why": "11-14 建仓，2 天 51★。上下文工程正从“写更长的 system prompt”转向“在工具层做压缩”，这是本周最具体的一个实现。",
+    "insight": "自己接 agent 工具时别把原始日志直接塞回模型：在工具返回层做截断 + 摘要 + 可回查句柄。评估时用同一任务对比“原始输出 vs 压缩输出”的成功率，而不是只看省了多少 token。",
+    "image": "images/2026-11-17/domush-antigravity-plugin-context-mode.jpg"
+  }
+]

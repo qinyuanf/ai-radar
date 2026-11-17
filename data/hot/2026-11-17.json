@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Significant-Gravitas/AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "stars": 188063,
+    "trend": "+203 stars/15天（对比 2026-11-02）",
+    "what": "最早的自主 agent 项目，现已演进成可视化 agent 构建平台：用积木式 block 拼流程、接工具与触发器，支持自托管，Python + Next.js 实现。",
+    "why": "188,063★，仍是 GitHub 星数最高的 agent 项目，11-17 有提交；但对比 11-02 的 187,860★，15 天只涨 203★，说明它已从“新范式代表”变成存量平台。",
+    "insight": "它的价值现在是“agent 平台该有哪些积木”的参考清单（触发器、工具、记忆、循环控制），不是拿来直接用。自托管前先确认执行隔离与凭据管理，别把生产 key 交给自由编排的 agent。",
+    "image": "images/2026-11-17/significant-gravitas-autogpt.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "ollama/ollama",
+    "url": "https://github.com/ollama/ollama",
+    "stars": 187271,
+    "trend": "+1,667 stars/15天（对比 2026-11-02）",
+    "what": "本地跑大模型的一键运行时：一条命令拉起 Kimi、GLM、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型，自带 OpenAI 兼容 API、模型拉取与量化格式，Go 实现。",
+    "why": "187,271★，11-16 仍有提交；对比 11-02 的 185,604★，15 天净增 1,667★。增速稳定，说明本地/私有化推理是持续需求而不是一波热度。",
+    "insight": "内部 agent 联调时先把模型接成 Ollama 的 OpenAI 兼容端点，换云端只改 base_url 和 key，避免代码绑死某家 SDK。但要实测本机 tok/s：小模型与前沿模型在工具调用准确率上的差距是数量级的。",
+    "image": "images/2026-11-17/ollama-ollama.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "stars": 169084,
+    "trend": "+662 stars/15天（对比 2026-11-02）",
+    "what": "Hugging Face 的模型定义与训练/推理框架：统一几千个开源模型（文本、视觉、音频、多模态）的加载、分词与 Trainer 接口，是多数开源模型发布时的默认支持库。",
+    "why": "169,084★，11-17 仍有提交；15 天涨 662★。大模型迭代到第四代后，它仍是“新模型先在这里能跑”的事实标准。",
+    "insight": "选型时看新模型有没有 transformers 实现，比看论文指标更能判断能不能一周内落地；但生产别直接用 pipeline，显存、批处理与量化要自己控。",
+    "image": "images/2026-11-17/huggingface-transformers.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "HKUDS/Vibe-Trading",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "stars": 38389,
+    "trend": "+1,229 stars/18天（对比 2026-10-30）",
+    "what": "港大数据智能实验室的个人交易 agent：一条命令把行情、回测、下单能力接给 LLM，Python 实现，提供 API/MCP server；2026-04 建仓，README 标注在 backtesting 话题按星数排第 1。",
+    "why": "38,389★、6,248 fork，11-16 仍在提交；对比 10-30 的 37,160★，18 天涨 1,229★。金融是 agent 落地最快的垂直场景之一，也是出错代价最高的。",
+    "insight": "做垂直 agent 可照它的分层：数据、回测、执行各自独立成工具，LLM 只做编排。反过来，任何让模型直接触发真实下单的设计都要加金额与频率硬闸门，别把风控交给提示词。",
+    "image": "images/2026-11-17/hkuds-vibe-trading.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "esengine/DeepSeek-Reasonix",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "stars": 36109,
+    "trend": "+117 stars/18天（对比 2026-10-30）",
+    "what": "Go + TypeScript 写的终端 coding agent（同时有桌面、浏览器、编辑器形态）：读项目、改文件、跑命令和测试，支持逐步确认或限定范围内自主执行，改动可回滚，MIT 许可。",
+    "why": "36,109★、2,572 fork，但 README 在 11-12 标注项目停止维护，最终版 v2.61.0（对比 10-30 的 35,992★，停更前 18 天只涨 117★）。一个三万六千星的主流 coding agent 停更，是本周最值得注意的信号。",
+    "insight": "选 coding agent 时把“维护状态与许可证”当硬指标：这类工具的生命周期可能短于企业内部使用周期。接入前确认能否锁版本、离线安装、自己接管补丁，别把工程流程压在单一作者的项目上。",
+    "image": "images/2026-11-17/esengine-deepseek-reasonix.jpg"
+  }
+]
