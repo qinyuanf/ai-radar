@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "datawhalechina/hello-agents",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "stars": 87244,
+    "trend": "首日快照：总 87,244★，2026-11-13 有提交",
+    "what": "Datawhale 的中文开源教程《从零开始构建智能体》，从智能体原理讲到实践，配套在线书与章节代码，覆盖工具调用、记忆、多智能体等主题。",
+    "why": "87,244★，是 GitHub 上星数最高的中文 agent 教程之一，11-13 仍有提交；说明中文读者对“系统学一遍 agent”的需求远大于对某个框架的需求。",
+    "insight": "适合当团队新人 onboarding 的骨架，但教程代码不是生产范式：挑工具调用、记忆、规划三章对照我们自己的 skill 路由与状态机，缺的能力补到内部文档，而不是照抄实现。",
+    "image": "images/2026-11-18/datawhalechina-hello-agents.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "mem0ai/mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "stars": 69137,
+    "trend": "+893 stars/16天（对比 2026-11-02）",
+    "what": "面向 agent 的记忆层：以 add/search 接口给应用挂持久记忆，支持接入不同向量库与图存储，主打“drop-in”替换。",
+    "why": "69,137★，对比 11-02 的 68,244★ 涨 893★/16 天，11-17 有提交；agent 记忆正从演示片段变成独立基础设施。",
+    "insight": "记忆层要单独评估写入质量和过期策略，而不是只看召回率：对数字员工应加写入白名单、来源标记与 TTL，避免把一次性对话沉淀成长期“事实”。",
+    "image": "images/2026-11-18/mem0ai-mem0.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "langchain-ai/langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "stars": 45082,
+    "trend": "+793 stars/16天（对比 2026-11-02）",
+    "what": "低层 agent 编排框架：用图结构描述有状态、长时运行的工作流，提供检查点、中断恢复与人机协同能力，README 称 Klarna、Replit、Elastic 等在使用。",
+    "why": "45,082★，16 天涨 793★，11-18 仍有提交；它把“长任务不丢状态”做成了框架级能力，而不是业务自己拼。",
+    "insight": "数字员工的长任务恢复可以直接借鉴它的 checkpoint + 中断点模型；但业务状态机仍应留在业务侧，框架只负责执行轨迹，二者边界先划清再落地。",
+    "image": "images/2026-11-18/langchain-ai-langgraph.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "HKUDS/LightRAG",
+    "url": "https://github.com/HKUDS/LightRAG",
+    "stars": 40750,
+    "trend": "首日快照：总 40,750★，2026-11-17 有提交",
+    "what": "EMNLP 2025 的轻量图增强 RAG：先抽实体与关系构图，再结合向量检索做多跳问答，强调实现简单、索引与查询都快。",
+    "why": "40,750★，11-17 有提交；RAG 的主流路线正从“切片+向量”转向“结构+检索”，图索引成为可落地的中间形态。",
+    "insight": "对审批规则、制度条款这类多跳语料，图索引比纯向量更容易回答“哪条规则覆盖哪个场景”；但要先压测实体抽取成本与更新时的一致性，否则索引会先腐坏。",
+    "image": "images/2026-11-18/hkuds-lightrag.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "VectifyAI/PageIndex",
+    "url": "https://github.com/VectifyAI/PageIndex",
+    "stars": 40458,
+    "trend": "首日快照：总 40,458★，2026-11-17 有提交",
+    "what": "无向量、无切片的推理式 RAG：把长文档组织成层级目录树，让模型像人翻目录一样定位章节再作答，官方称文档问答可省约 97% token。",
+    "why": "40,458★，11-17 有提交；它给出了与向量检索正交的路线——不靠相似度，靠结构推理。",
+    "insight": "适合合同、制度、说明书这类层级清晰的长文档；接入前量化两个成本：建树的一次性离线成本，以及每次提问的多次模型调用延迟。",
+    "image": "images/2026-11-18/vectifyai-pageindex.jpg"
+  }
+]

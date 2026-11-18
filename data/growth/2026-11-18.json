@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "sybil-solutions/inference-optimisation-skill",
+    "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+    "stars": 930,
+    "trend": "2026-11-16 后新建，2 天内 930★（首日快照）",
+    "what": "一个 agent 技能包，把“本地 LLM 推理提速”做成可执行方法论：覆盖 decode、投机解码、prefill、KV cache、启动时间与首 token 延迟，要求在长上下文稳定性检查下逐项爬坡。",
+    "why": "2026-11-16 新建，2 天内 930★、82 fork；它封装的不是参数清单，而是“先算理论上限、一次只改一项、交错对照测量”的调优流程。",
+    "insight": "可直接把这套流程搬进我们自己的推理服务调优：先建基线与理论上限，再逐项改并用交错对照排除环境噪声，最后以长上下文检索作为发布门禁。",
+    "image": "images/2026-11-18/sybil-solutions-inference-optimisation-skill.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "ysunyang4/Nexus",
+    "url": "https://github.com/ysunyang4/Nexus",
+    "stars": 375,
+    "trend": "2026-11-13 后新建，5 天内 375★（首日快照）",
+    "what": "把网页版 AI（ChatGPT、DeepSeek 等）接到本机的控制面：通过带鉴权的 MCP 隧道暴露 332 个本地工具，让远端模型能读写文件、执行构建与调试，覆盖 Windows/macOS/Linux。",
+    "why": "2026-11-13 新建，5 天 375★、65 fork；反映“没有 API 也想让强模型操作本地环境”的真实需求。",
+    "insight": "这类桥接的价值在工具面治理：332 个工具全开等于把本机交出去，接入时应按任务裁剪工具集、加命令白名单与审计日志，再谈效率。",
+    "image": "images/2026-11-18/ysunyang4-nexus.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "pktq/lasik",
+    "url": "https://github.com/pktq/lasik",
+    "stars": 136,
+    "trend": "2026-11-09 后新建，9 天内 136★（首日快照）",
+    "what": "针对“防 agent 读码”加固（BLA）的静态反混淆 CLI 与 MCP server：按行为而不是名字识别保护层并剥离，让 coding agent 与分析工具能读到真实代码，官方称已修复 BLA 3.2.2 的 59/63 个保护。",
+    "why": "2026-11-09 新建，9 天 136★；出现“专门阻止 agent 读代码”的加固，说明代码可见性已成为 agent 工具链的一等约束。",
+    "insight": "评估第三方混淆产物或受保护构建时，要把“agent 能否读到真实代码”单列为风险项；反混淆结果必须人工复核，不能直接作为修改依据。",
+    "image": "images/2026-11-18/pktq-lasik.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Tthanh2k6/turbo-browser-mcp",
+    "url": "https://github.com/Tthanh2k6/turbo-browser-mcp",
+    "stars": 130,
+    "trend": "2026-11-14 后新建，4 天内 130★（首日快照）",
+    "what": "基于 Playwright 的浏览器自动化 MCP server，只有 11 个工具但每次调用做更多事：一次填完整张表单、只返回增量快照、批量执行动作；默认拦截 Submit/Pay 等最终提交按钮，把最后一击留给人。",
+    "why": "2026-11-14 新建，4 天 130★，11-18 仍有提交；直接针对 agent 浏览器操作的轮次与 token 成本。",
+    "insight": "“提交类按钮默认拦截、由人确认”的设计可以直接搬到我们涉及下单/支付的 agent 工具：默认安全，显式放开，而不是默认全权。",
+    "image": "images/2026-11-18/tthanh2k6-turbo-browser-mcp.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ferhatcore/claude-codex-project-os",
+    "url": "https://github.com/ferhatcore/claude-codex-project-os",
+    "stars": 90,
+    "trend": "2026-11-11 后新建，7 天内 90★（首日快照）",
+    "what": "用 Markdown 文件给 Claude Code 与 Codex 搭项目协作流程：PM 记录任务与验收标准并请求批准，Developer 实现，QA 独立跑检查，交接单让新会话接着干；两个客户端共用同一套文件。",
+    "why": "2026-11-11 新建，7 天 90★、9 个 issue；它把多 agent 协作落成可版本化的文件协议，而不是口头约定。",
+    "insight": "可借鉴“角色分离 + 明确审批点 + 每次交接留状态文件”的结构来改造我们的任务文档；但项目仍早期，先小范围试点，不要作为流程唯一依赖。",
+    "image": "images/2026-11-18/ferhatcore-claude-codex-project-os.jpg"
+  }
+]

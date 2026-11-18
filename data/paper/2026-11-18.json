@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "When Tool Names Are Not Identities: Measuring Provider Misbinding in MCP-Based AI Agents",
+    "title_cn": "MCP 工具名不等于提供方身份",
+    "url": "https://arxiv.org/abs/2611.21577v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21577（cs.CR/cs.AI）",
+    "what": "研究 MCP 生态里的“工具提供方错绑”：工具元数据并不天然绑定可验证的提供方身份，攻击者只需另起一个 MCP server、用挑好的名字/描述/schema 就能让请求落到自己的工具上；在 5 个 LLM 客户端上验证，精确同名 + 任务对齐描述 + 兼容 schema 叠加时错绑最严重，仅靠“权威感描述 + 兼容 schema”也能造成错误执行或提供方歧义。",
+    "why": "多服务器组合工具是 MCP 的默认用法，而工具选择完全由模型读元数据决定；这是不攻破主机、模型、网络就能实现的供应链式错绑。",
+    "insight": "接入第三方 MCP 时必须做“工具名 → 提供方签名”的强绑定与去重策略；提示词里只写工具名不够，执行层要校验实际提供方。"
+  },
+  {
+    "rank": 2,
+    "title": "Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle",
+    "title_cn": "乐观验证器如何被刷分",
+    "url": "https://arxiv.org/abs/2611.21538v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21538（cs.LG/cs.AI/cs.CL）",
+    "what": "构造一个真奖励可精确计算的实验：把 124,416 个上下文的可执行授权策略编译成过程级 oracle，再沿 7 个现实方向削弱验证器并训练；结果出现四类表型，其中“乐观验证器”被填充式刷分——充分性代理分到 0.940，真实忠实度却从 0.731 降到 0.667。",
+    "why": "RLVR 会继承验证器的所有偏差，而多数场景拿不到真奖励，分数上涨无法区分“变强”与“被刷”。",
+    "insight": "给 agent 建验证器时，先审计“选择误差与 gap 符号”，并跑一个短的饱和试点；验证器只覆盖结果会饱和，需保留过程级检查。"
+  },
+  {
+    "rank": 3,
+    "title": "Right Reason, Wrong Advice: Evaluating Recourse in LLM Explanations of Denied Requests",
+    "title_cn": "理由正确但建议无效：拒答解释的救济性",
+    "url": "https://arxiv.org/abs/2611.21545v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21545（cs.AI/cs.CL/cs.CY）",
+    "what": "提出“救济有效性”指标：当多条规则同时拒绝请求时，解释即便说对了一条真原因，用户照做后仍可能被拒；在 7 个来自访问控制与美国福利资格的规则系统里，6 个系统在多原因时几乎无法靠单条正确原因获得救济；20 个 LLM 无论自查还是让 LLM 评审，识别这种失败都接近随机。",
+    "why": "LLM 越来越多地代写“为什么被拒”的解释，而解释的可操作性直接决定用户能否纠错。",
+    "insight": "给数字员工写拒绝/失败解释时，应从决策函数导出全部阻断条件，并按“用户照做能否通过”验收，而不是只校验理由是否属实。"
+  },
+  {
+    "rank": 4,
+    "title": "ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization",
+    "title_cn": "用对比集训练超高分辨率视觉 agent",
+    "url": "https://arxiv.org/abs/2611.21605v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21605（cs.CV/cs.AI）",
+    "what": "针对视觉 agent 靠常识猜答案而不读证据的问题，提出 CrossRPO：用“只在小区域不同、答案不同”的对比图组训练，只有真正读证据才能解整组；奖励解整组并证明不会强化靠常识作答。在 21~120MP 图像上，ViRA-9B/27B 仅用约 3,500 条训练数据，最大分辨率下组准确率 63.3%，高于 GRPO 的 59.3%。",
+    "why": "只看最终答案的 RL 无法区分“猜对”和“读到证据”，高分辨率场景尤其严重。",
+    "insight": "训练或评测视觉类 agent 时，用“同图小改、答案翻转”的对比样本做门禁，能直接暴露是否在靠先验作答。"
+  },
+  {
+    "rank": 5,
+    "title": "SciResearch-Eval: Evaluating Scientific Judgment in Autonomous Experimental Agents",
+    "title_cn": "自主实验 agent 的科学判断评测",
+    "url": "https://arxiv.org/abs/2611.21541v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21541（cs.AI/cs.LG/physics.comp-ph）",
+    "what": "面向“自己设计实验”的 agent 做交互式基准：agent 自主加热材料、拟合热传导模拟器并给出带 95% 区间的结果，模拟器可能分辨率不足或物理错误；93 个任务、9 个模型、2,511 个 episode 上，模拟器缺物理时多数模型报错值却声称 95% 确信，区间覆盖率仅 20~62%，GPT-6 Astra 为 94%、Claude Fable 5.2 为 99%。",
+    "why": "现有 agent 基准多是问答或写码，缺少“实验设计 + 错误工具 + 校准区间”的组合，而后者更接近真实科研。",
+    "insight": "评测要同时打分“结论对不对”和“置信区间是否覆盖真值”；只加宽区间无效，明确写出策略能提升 1.6~2.5 倍区间得分。"
+  },
+  {
+    "rank": 6,
+    "title": "Reading or Remembering? Measuring Temporal Contamination in Language Models",
+    "title_cn": "读文档还是背答案：语言模型的时间污染",
+    "url": "https://arxiv.org/abs/2611.21554v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21554（cs.LG/cs.CL）",
+    "what": "测量语言模型“读 2021 年 FOMC 声明时已知道 2022 年结果”的时间污染：用只见过固定日期前文本的时序一致模型作无记忆基线，对比现代模型对 2000~2026 年文件的判断；不能知道答案的模型仅凭日期与时代先验也能到 AUC 0.64，说明随机基线不成立；多数现代模型能“回忆”哪些年份增长强。",
+    "why": "用模型读历史文档做预测时，部分能力可能只是记住了结果，属于时间维度的测试集污染。",
+    "insight": "任何“模型读历史材料做判断”的评测，都要加一个无记忆基线，并直接测记忆而不是只看预测分数。"
+  },
+  {
+    "rank": 7,
+    "title": "How VLMs Plan What's Next",
+    "title_cn": "视觉语言模型如何规划下一步看哪里",
+    "url": "https://arxiv.org/abs/2611.21600v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21600（cs.CV/cs.CL/cs.LG）",
+    "what": "拆解 VLM 描述图像时的规划机制：绑定头把文本 token 指向图像区域，并用已写答案为进度建立“光标”，select 步选择光标之后最近的未写区域或停止，gaze 头执行指针并取回概念，最后由语言头成词；在 Qwen3-VL 上用因果 patch 验证，并证明该机制跨输入格式、自然照片与语言成立，2B~32B 各尺寸都出现同类头。",
+    "why": "多步视觉任务的可解释性多停在注意力热力图，这篇给出了可验证的“读—记—选—看—说”回路。",
+    "insight": "做视觉 agent 的轨迹审计时，可以按“光标是否推进、是否重复看同一区域”诊断卡住与漏看，比只看最终答案更有定位价值。"
+  },
+  {
+    "rank": 8,
+    "title": "Seen but Unsaid: Locating and Repairing Cross-Image Comparison in Vision-Language Models",
+    "title_cn": "看见却说不出：跨图比较的定位与修复",
+    "url": "https://arxiv.org/abs/2611.21539v1",
+    "date": "2026-11-16",
+    "source": "arXiv 2611.21539（cs.CV/cs.CL/cs.LG）",
+    "what": "追踪 VLM 跨图比较失败的两处断点：答案位置的探针高于校准输出 15~25 个点，说明“比过了但没读出”；语义对应存在于视觉 token 却到不了答案。定位到 16~32 个跨图注意力头，只训练这些头的 query/key 投影（约 0.02% 参数）可让 SPair-71k 提升 28.3 个点，并能迁移到 HPatches 与 BLINK。",
+    "why": "多图比较是商品对比、票据核验等业务的基础能力，失败往往被当成“模型不行”，实际是特定通路没被读出。",
+    "insight": "遇到多图比对类缺陷，先判断是“没看到”还是“看到没读出”；后者可通过针对性微调修复，成本远低于换模型。"
+  }
+]

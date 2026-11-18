@@ -1,0 +1,80 @@
+[
+  {
+    "rank": 1,
+    "title": "Introducing GPT-6.2 Astra and Sol",
+    "title_cn": "GPT-6.2 Astra 与 Sol 发布",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+    "date": "2026-11-17",
+    "source": "OpenAI 官方发布；HN 1075 分 689 评论",
+    "what": "OpenAI 发布 GPT-6.2 的两档模型 Astra 与 Sol，官方称在专业输出、编程、computer use 与效率上提升、成本更低，覆盖 ChatGPT Work、Codex 与 API。",
+    "why": "HN 当日最高讨论（1075 分/689 评论）；官方同时强调 computer use 与单位成本，直接指向 agent 工作流而不是聊天。",
+    "insight": "升级前用自有任务集对比 Astra/Sol 的工具调用稳定性与“每完成一次任务的成本”，榜单分数不能替代；涉及 computer use 的场景先做权限沙箱。"
+  },
+  {
+    "rank": 2,
+    "title": "MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices",
+    "title_cn": "微软 MAI Code 2：低成本日常编码",
+    "url": "https://microsoft.ai/news/introducing-mai-code-2-and-code-2-flash/",
+    "date": "2026-11-17",
+    "source": "Microsoft AI 官方博客；HN 285 分 134 评论",
+    "what": "微软发布两款日常企业编码模型：MAI Code 2 面向生产化修改、深度调试、多文件与仓库级推理，Code 2 Flash 面向代码解释、局部修改等高频任务；官方称四项基准均值上 Code 2 达 GPT-6.1 Sol 的 98% 性能、40% 成本，达 Claude Opus 5.5 的 96%、5% 成本，已进 GitHub Copilot。",
+    "why": "把 frontier 级编码能力压到 5% 价格，HN 285 分/134 评论；企业编码 agent 的边际成本结构会被改写。",
+    "insight": "按任务分层路由：代码解释、局部修复、批量重构走 Flash 类模型；高难设计与跨仓改造留给强模型。先测“合并率”而不只是通过率。"
+  },
+  {
+    "rank": 3,
+    "title": "How the Claude Code team thinks about verification",
+    "title_cn": "Claude Code 团队如何做验证",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "date": "2026-11-16",
+    "source": "claude.dev（Anthropic）；HN 262 分 205 评论",
+    "what": "Anthropic 工程师总结 Claude Code 团队的验证方法：优先投资 E2E、property、differential 三类测试；验证意味着真的把改动跑起来；断言检查脚本不能被被检查的改动修改；失败三轮交给人类；提交带上验证标记，门禁先观察后强制。",
+    "why": "该团队约 90% 代码由 Claude 编写和评审，文中给出内部数据：独立 grader 按 rubric 检查最多提升 10 个点任务成功率。",
+    "insight": "三条可直接落地：把 verify skill 放进仓库并压测到稳定；门禁先 observe 记录误杀再 enforce；审查规则放在改动碰不到的分支，防止“改测试让自己过”。",
+    "image": "images/2026-11-18/how-the-claude-code-team-thinks-about-verificati.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Introducing FrontierHarness Eval v1.1",
+    "title_cn": "前沿 Harness 评测：模型与外壳要配对",
+    "url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+    "date": "2026-11-17",
+    "source": "Runta 博客；HN 335 分 115 评论",
+    "what": "用 83B token、27,280 次 agent 运行，把 22 个 harness 配置 × 5 个模型 × 62 个终端任务跑成榜单：换模型时最优 harness 也会变，同一模型下最贵与最便宜 harness 的每任务成本差 1.8~5 倍；决定成本的是步骤数，不是 prompt 大小或工具数。",
+    "why": "HN 335 分/115 评论；首次把“harness”当独立变量量化，并指出 64.5% 的推理成本花在没通过的任务上。",
+    "insight": "选型按“每个通过任务的成本”比较，而不是单看通过率；优化优先砍步骤数（合并动作、减少往返），并给失败任务加早停检查。"
+  },
+  {
+    "rank": 5,
+    "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+    "title_cn": "英伟达停披新加坡销售额",
+    "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+    "date": "2026-11-17",
+    "source": "FT 报道；HN 387 分 187 评论",
+    "what": "FT 报道称，英伟达在营收达到 1040 亿美元时停止单独披露新加坡销售额。",
+    "why": "新加坡是 AI 芯片转口与数据中心采购的关键节点，HN 387 分/187 评论；披露口径变化让收入的地理分布更难核对。",
+    "insight": "做算力采购与供应商评估时，以最终使用地和实际交付为准，不要依赖开票地口径；跨境采购的合规审查要把转口路径纳入。"
+  },
+  {
+    "rank": 6,
+    "title": "Science at the Frontier: How scientists use ChatGPT",
+    "title_cn": "1800 名科学家如何使用 ChatGPT",
+    "url": "https://openai.com/index/science-at-the-frontier",
+    "date": "2026-11-16",
+    "source": "OpenAI 官方发布 2026-11-16",
+    "what": "OpenAI 基于 1,800 多名科学家的调研，描述他们在研究中使用 ChatGPT 的日常流程、自报的效率变化，以及对 AI 参与发现的预期。",
+    "why": "官方首次给出规模化科研使用画像；科研是高价值、长链路场景，能反推 agent 的真实需求点。",
+    "insight": "科研类 agent 的高价值在文献梳理、实验设计与代码复现，不在“替人下结论”；产品化时把引用可追溯与结果可复现放在首位。"
+  },
+  {
+    "rank": 7,
+    "title": "Astra for Law leads in legal intelligence",
+    "title_cn": "Astra 法律版登顶法律智能评测",
+    "url": "https://openai.com/index/astra-law-6-2",
+    "date": "2026-11-17",
+    "source": "OpenAI 官方发布 2026-11-17",
+    "what": "OpenAI 发布面向法律的 Astra for Law，称在覆盖 24 个法律领域的发布评测中排名第一，ChatGPT Enterprise 客户可申请使用。",
+    "why": "垂直模型开始以“领域评测第一”作为发布方式；法律是高价值、强合规场景，对错误容忍度低。",
+    "insight": "垂类 agent 的竞争点转向领域评测与责任边界：接入前确认评测集构造、拒答策略与人工复核点，别把“评测第一”当业务正确。"
+  }
+]
