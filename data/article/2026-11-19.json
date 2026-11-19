@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Introducing GPT-6.2 Astra and Sol",
+    "title_cn": "GPT-6.2 Astra 与 Sol 发布",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "date": "2026-11-17",
+    "source": "OpenAI 官方博客，Hacker News 1337 分 / 851 评论",
+    "what": "OpenAI 发布 GPT-6.2 的两个型号：Astra 与 Sol。API 定价 Astra 为每百万输入 8 美元、输出 40 美元、缓存输入 0.40 美元，Sol 为 2/10/0.10 美元；Astra 相比上一代 GPT-6 Astra 输入输出价格降 20%，缓存输入折扣 60%。随附系统卡显示 Astra 在拒绝校正后得分为 61.93%，略低于 GPT-6 的 63.11%。",
+    "why": "发布当晚 HN 1337 分、851 条讨论，是本周期热度最高的模型发布；同时 Sol 把同级能力价格压到 2/10 美元，直接影响 agent 的日常运行成本。",
+    "insight": "做 agent 时按任务分层：高频、可校验的步骤走 Sol，复杂规划与难例走 Astra，并把缓存输入命中率作为优化指标——缓存价差是 20 倍量级。"
+  },
+  {
+    "rank": 2,
+    "title": "Introducing Gemini 4 Neon",
+    "title_cn": "Gemini 4 Neon 正式发布",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+    "date": "2026-11-18",
+    "source": "Google DeepMind 官方博客，Hacker News 422 分 / 403 评论",
+    "what": "Gemini 4 Neon 定位“前沿智能 + 快速端到端完成”，定价每百万输入 3 美元、缓存输入 0.15 美元（95% 折扣）、输出 15 美元，上下文 100 万 token。官方给出 AA Intelligence Index 61 分（第 3）、Vals Index 第 2（70.9%）、Terminal-Bench 4.1 65.2%；并称在 Antigravity harness 下 SWE-sweep 从 mini-SWE harness 的 12.8% 提升到 39.0%。",
+    "why": "11-18 发布，与 GPT-6.2 同周对垒；官方自己给出的“同一模型换 harness 分数三倍”数据，正好印证本周期另一个热点——harness 已成为与模型同等重要的变量。",
+    "insight": "评估新模型时别只跑裸模型：要在我们自己的 harness 上测，因为官方数据显示同一模型换 harness 能从 12.8% 变 39.0%；选型结论必须绑定 harness 版本。"
+  },
+  {
+    "rank": 3,
+    "title": "Seven new world-class models at scalable price-performance",
+    "title_cn": "微软一次发布七款模型，主打性价比",
+    "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+    "date": "2026-11-17",
+    "source": "Microsoft AI 官方博客（Ignite 2026），Hacker News 447 分 / 310 评论",
+    "what": "Microsoft MAI 在 Ignite 2026 一次发布七款模型与配套能力：MAI Code 2 宣称达到 GPT-6.1 Sol 98% 的编码质量、价格约 40%，相对 Opus 5.5 是 96% 性能、5% 价格；MAI Code 2 Flash 对标 GPT-6 Luna 与 Haiku 5.5 分别 65%/20% 价格；另有 MAI Image 2.7、MAI Realtime 1（每音频分钟 0.01 美元起）、Cyber 2 Flash、Decision 1.1 与 MAI Licensed Weights（模型权重可授权自持）。",
+    "why": "447 分讨论，核心不是单个模型多强，而是“够用 + 便宜”：企业 agent 要 7×24 跑，价格与吞吐比榜单分数更关键。",
+    "insight": "如果 agent 批量跑日常编码/审阅任务，可以用价格档模型做第一层筛选，复杂决策再升级到前沿模型；同时把“模型可在自有环境运行”纳入合规评估，Licensed Weights 这类形态会影响数据边界设计。"
+  },
+  {
+    "rank": 4,
+    "title": "Introducing FrontierHarness Eval v1.1",
+    "title_cn": "智能体外壳评测 v1.1：换模型也要换壳",
+    "url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+    "date": "2026-11-17",
+    "source": "Runta 官方博客，Hacker News 417 分 / 130 评论",
+    "what": "用 83B token、27,280 次 agent 运行，评测 22 个 harness 配置 × 5 个开源模型 × 62 个终端任务。结论：同一模型下最贵与最便宜的 harness 每任务成本相差 1.8~5.0 倍；成本排名随模型大幅变化，Codex CLI 在 GLM-5.3 下排第 1、在 Kimi-K3 下排第 16；决定成本的主因是步数而不是提示长度或工具数量；64.5% 的成本花在没通过的运行上，失败运行中 68%~82% 是以“自信的最终答案”结束。",
+    "why": "11-17 发布、417 分讨论，是迄今规模最大的 harness 横评（v1.0 的 76 倍），把“换模型要不要换 harness”从经验变成了可量化结论。",
+    "insight": "优化 agent 成本要盯步数：每步都会重发上下文，减少无效探索比压缩提示更有效。另外，失败运行的“自信收尾”说明需要在收尾前加一道自检/验证，否则 64.5% 的失败成本无法回收。",
+    "image": "images/2026-11-19/introducing-frontierharness-eval-v1-1.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "How the Claude Code team thinks about verification",
+    "title_cn": "Claude Code 团队如何做验证",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "date": "2026-11-16",
+    "source": "claude.dev（Anthropic）工程博客，Hacker News 291 分 / 230 评论",
+    "what": "Anthropic 披露 Claude Code 团队约 90% 代码由 Claude 编写与评审，并总结验证体系：优先端到端测试，其次属性测试与差分测试；用 verify skill 让 agent 自己把改动跑起来；失败三轮后交人；评审规则放在变更不能修改的分支上；39 条可靠性检查按 diff 触发；新门禁先以 observe 模式上线再转 enforce。",
+    "why": "11-16 发布、230 条讨论。它回答的是 agent 规模化后最现实的问题：怎么让几十个 agent 并行而不被评审卡死。",
+    "insight": "可直接落地三件事：给 agent 配一个 verify skill（起服务、跑 E2E、留证据）；评审规则独立于被评审代码；新检查先 observe 后 enforce。我们的交付流程可以照这个顺序改造。",
+    "image": "images/2026-11-19/how-the-claude-code-team-thinks-about-verificati.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "AI Agents Ask Better Questions Than KPMG Accountants in Landmark Audit Trial",
+    "title_cn": "KPMG 审计试验：AI 代理提的问题更好",
+    "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+    "date": "2026-11-18",
+    "source": "European Business Magazine，Hacker News 350 分 / 160 评论",
+    "what": "KPMG UK 的 Project Exponential 用 100 多个 AI agent 对一家 FTSE 250 公司的财报做审计试验：agent 分工收集资料、分析数据、写初步结论并提出下一步，覆盖完整审计流程而非单点辅助；据 FT 报道，agent 在若干问题上比常规审计团队钻得更深、提出了人没提的问题。试验中一名审计师仍需介入纠正 agent 对监管要求与文档的错配；项目将扩展到最多 20 个大型审计，但尚未成熟到大规模铺开。",
+    "why": "11-18 报道，350 分、160 条讨论。这是专业服务领域少见的“agent 承担完整流程”公开案例，同时暴露了监管映射这类高价值失败点。",
+    "insight": "把 agent 放进合规/审计类流程时，先把“规则-文档映射”做成可核验的结构化步骤并保留人工复核点；agent 擅长发现异常与追问，但监管口径匹配必须能追溯依据，否则错误会被包装成可信结论。",
+    "image": "images/2026-11-19/ai-agents-ask-better-questions-than-kpmg-account.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+    "title_cn": "哈佛研究：AI 编码把瓶颈推到代码评审",
+    "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+    "date": "2026-10-13",
+    "source": "ComplexDiscovery（哈佛研究报道），Hacker News 319 分 / 440 评论",
+    "what": "哈佛研究基于工程数据发现：引入 AI coding agent 后代码产出提升约 30%，但完成的工作量没有可测量的增长，代码通过评审的耗时增加 49%。也就是说收益被下游评审环节吸收，瓶颈从写代码转移到了评审与集成。",
+    "why": "HN 今天 319 分、440 条评论重新热议；它和本周期 Anthropic、Runta 的结论互相印证——agent 时代的约束在验证与评审，而不是生成。",
+    "insight": "评估 agent 收益时要测“端到端交付周期”而不是代码行数或 PR 数；如果评审是瓶颈，投入应优先放在自动验证、变更分级和小步提交，而不是继续提高生成速度。"
+  }
+]

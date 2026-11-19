@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "ruvnet/ruflo",
+    "url": "https://github.com/ruvnet/ruflo",
+    "stars": 82058,
+    "trend": "首日快照：总 82,058★，2026-11-18 有提交",
+    "what": "自称“最早的 agent harness”，用 TypeScript 编排多智能体蜂群、并行工作流与会话式 AI 系统，内置自适应记忆、自学习、向量 RAG，并提供 Claude Code / Codex 等宿主插件。",
+    "why": "82,058★，11-18 仍有提交。当多数人还在比较单个 coding agent 时，它把“多智能体 + 记忆 + 宿主插件”做成了一个可直接部署的组合，是本周期未见过的仓库里星数最高的之一。",
+    "insight": "可以只借鉴它的三层结构：宿主适配层（同一套 agent 挂到 Claude Code/Codex）、编排层（任务拆给多个角色）、记忆层（向量 + 结构化记忆）。对照这三层看我们的 skill 路由与子 agent 协作缺什么，不必引入整套 TS 运行时。",
+    "image": "images/2026-11-19/ruvnet-ruflo.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "sickn33/agentic-awesome-skills",
+    "url": "https://github.com/sickn33/agentic-awesome-skills",
+    "stars": 49963,
+    "trend": "首日快照：总 49,963★，2026-11-19 有提交",
+    "what": "面向 Claude Code、Codex、Cursor、Gemini CLI 的技能库，收录 2,955+ 个可复用 agent skill；自带 AAS Core 做本地目录发现、由 agent 自主选择技能并预览执行计划，提供 CLI、MCP 与插件三种接入。",
+    "why": "49,963★，11-19 仍在提交。它把“技能数量”和“技能检索、选择、预览”一起做成基础设施，说明 skill 生态正从散落 prompt 转向可发现、可编排。",
+    "insight": "值得抄的是检索与选择流程：本地目录发现 → agent 按任务选 skill → 预览执行计划。我们技能变多后同样需要机器可读的技能清单与选择规则，否则模型只能靠描述碰运气。",
+    "image": "images/2026-11-19/sickn33-agentic-awesome-skills.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "trycua/cua",
+    "url": "https://github.com/trycua/cua",
+    "stars": 32617,
+    "trend": "首日快照：总 32,617★，2026-11-18 有提交",
+    "what": "computer-use 智能体的基础设施：跨 macOS/Windows 的开源驱动与沙箱，配合基准测试与数据生成管线，用于训练、评测桌面操作类 agent。",
+    "why": "32,617★，11-18 有提交。computer-use 从演示走向工程化，卡点已经变成“可复现的沙箱 + 可度量的基准”，这个仓库补的正是这一层。",
+    "insight": "要做桌面或浏览器操作自动化，先评估它现成的沙箱与基准，而不是自己造虚拟机；同时把“失败可回放”写进验收条件——没有录制重放的 computer-use 结果，无法判断问题出在模型还是环境。",
+    "image": "images/2026-11-19/trycua-cua.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "oraios/serena",
+    "url": "https://github.com/oraios/serena",
+    "stars": 31514,
+    "trend": "首日快照：总 31,514★，2026-11-18 有提交",
+    "what": "给 coding agent 用的 MCP 工具包：通过 language server 提供语义检索、符号级定位与编辑，让 agent 按语义改代码，而不是整文件读写。",
+    "why": "31,514★，11-18 有提交。agent 改代码的规模变大后，“按符号检索与编辑”比“全文塞进上下文”更省 token 也更稳，这个项目的热度反映的正是这个转向。",
+    "insight": "代码类 agent 应优先接 LSP 类语义接口做定位与改写，把读文件/写文件限制在必要范围；能用符号寻址的地方不要用全文搜索，否则上下文和误改成本都会被放大。",
+    "image": "images/2026-11-19/oraios-serena.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "QwenLM/qwen-code",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "stars": 30765,
+    "trend": "首日快照：总 30,765★，2026-11-19 有提交",
+    "what": "Qwen 官方开源的终端 AI 编码 agent，TypeScript 实现，支持 MCP，可直接在命令行里读写代码并执行工具。",
+    "why": "30,765★，11-19 仍提交。主流模型厂商都在补齐自己的 CLI coding agent，终端 agent 已经成为模型落地的标准形态，与 Claude Code、Codex 正面竞争。",
+    "insight": "选终端 agent 别只看模型分数：核对 MCP 工具集、权限确认方式和可观测性（日志/trace）。同一模型在不同 harness 上成本能差几倍，接入前先用自家任务做小样本对比。",
+    "image": "images/2026-11-19/qwenlm-qwen-code.jpg"
+  }
+]

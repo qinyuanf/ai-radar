@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Higher-Scoring Coding Models Did Not Get More Work Done",
+    "title_cn": "高分编码模型没带来更多产出",
+    "url": "https://arxiv.org/abs/2611.23216v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23216（cs.SE/cs.AI/cs.LG）",
+    "what": "以 2026-06-12 起 Claude Fable 5 被封禁 19 天为自然实验：297 名原 Fable 5 用户被迫切到 SWE-Bench Pro 低 11 分的 Opus 4.8，对照 8,908 名一直使用 Opus 4.8 的开发者。双重差分结果显示 7 天 PR 合并率仅提高 1.4 个百分点（95% 区间 -1.4~+4.3，不显著），每周合并 PR 数 +2.4%（不显著）；对 2026 年 5 次模型升级（1,208 人、15,442 个 PR）重复检验，加权均值 -0.9 个百分点，五个估计均为负。",
+    "why": "11-17 新提交，用真实生产数据检验“榜单分数→实际产出”，直接挑战以 SWE-Bench 分数做选型依据的常见做法。",
+    "insight": "模型选型要建自己的指标：合并率、返工率、评审时长。榜单高 10 分可能换不来可测量的产出，预算应更多投在验证与评审环节。"
+  },
+  {
+    "rank": 2,
+    "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+    "title_cn": "智能体还需要人教它自我改进吗",
+    "url": "https://arxiv.org/abs/2611.23219v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23219（cs.LG/cs.AI）",
+    "what": "给冻结的 LLM agent 一个计算预算、收集经验的工具和改写文本记忆的权限，只给总目标、不预设自我改进流程，让它在游戏环境中自由实验。结果显示足够强的模型能自行形成自我调节学习策略，学到的文本产物还能迁移到不同游戏时长、机制与 3D 导航任务。",
+    "why": "11-17 新提交。自我改进过去依赖人设计外循环，这篇把“怎么改进”也交给模型，是递归自我改进方向的基础性提问。",
+    "insight": "可在小任务域试“给目标和预算、不给流程”的自主改进，观察它写出的经验文档质量；但必须配外部评估，否则分不清真实提升与自洽的错觉。"
+  },
+  {
+    "rank": 3,
+    "title": "Agent Trust Infrastructure (ATI): A Federated Identity, Trust, Attestation, and Accountability Architecture for Cross-Organization Autonomous AI Agents",
+    "title_cn": "跨组织智能体的信任基础设施 ATI",
+    "url": "https://arxiv.org/abs/2611.23202v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23202（cs.AI）",
+    "what": "提出跨组织 agent 的信任架构：基于 PKI、零信任与远程证明，各组织自建 AgentCA 联邦互信，无需共享根 CA；执行前校验 agent 证书、已批准的模型/工具/系统提示配置，并做三类授权检查。在 8 组织、6 框架、每组织 5 个 agent 的模拟联邦中测试 14 种攻击，全部机制开启时攻击遏制率从 43% 提升到 84%，单请求开销约 174 微秒。",
+    "why": "11-17 新提交。agent 已开始跨企业调工具，但身份与配置完整性缺少通用校验方式，这篇给出了可集成的外部执行层方案。",
+    "insight": "跨团队/跨公司 agent 调用要同时验“身份 + 模型/工具/提示版本”，而不只是验 token；可以先维护一份已批准配置清单，拒绝清单外的工具与提示变更。"
+  },
+  {
+    "rank": 4,
+    "title": "Inference after coding agents",
+    "title_cn": "编码智能体参与后的统计推断",
+    "url": "https://arxiv.org/abs/2611.23174v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23174（stat.ME/cs.AI）",
+    "what": "指出编码 agent 做实证研究时引入了“超强选择性推断”：在零效应模拟数据上，四个前沿 agent 被要求找出有说服力的结论时，54%~98% 的情况报告了显著 p 值。作者提出让 agent 在数据子样本上重放分析、估计其选择该分析的概率再做校正，模拟中把虚警率拉回接近名义 5%，并在两篇已发表论文的数据上做了演示。",
+    "why": "11-17 新提交。越来越多团队让 agent 跑数据分析，这篇用实验说明 agent 会为结论搜 p 值，并给出可操作的校正方法。",
+    "insight": "任何让 agent 做分析并汇报显著性的流程，都要加“预注册假设 + 重放校正”两道闸；至少要求 agent 记录搜索过的分析路径，否则结论不可信。"
+  },
+  {
+    "rank": 5,
+    "title": "Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance",
+    "title_cn": "文档维护多智能体系统的实测",
+    "url": "https://arxiv.org/abs/2611.23142v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23142（cs.SE/cs.AI/cs.CL）",
+    "what": "部署式多智能体文档维护系统，以 TriAgent 为分诊 agent，从已解决工单与代码-文档差异中提取文档落后信号并修复。43 天影子运行处理 499 张工单、发现 92 处文档缺口；独立模型评审中 81.1% 的可验证断言正确，等长对比下 70.5% 偏好 TriAgent、23.2% 偏好人工；修复后 agent 重答同一工单，盲评 71.4% 认为修复后更好（n=35）。",
+    "why": "11-17 新提交，少见地给出真实部署 + 盲评数据，证明文档维护可以被 agent 闭环。",
+    "insight": "可直接借鉴信号来源：已解决工单 + 代码/文档不一致 = 文档缺口。内部文档也可用这两个信号做巡检，并把人工回复中的新知识固化为文档修复。"
+  },
+  {
+    "rank": 6,
+    "title": "RSI-Prime: Training Models to Train Models",
+    "title_cn": "RSI-Prime：训练模型去训练模型",
+    "url": "https://arxiv.org/abs/2611.23138v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23138（cs.AI/cs.LG）",
+    "what": "构建 RSI-Prime 数据集，包含 7 类任务、350 条完整训练实验轨迹，用于训练 LLM“做训练决策”的能力；通过细粒度决策识别与质量标注，再用决策级 loss masking 屏蔽低质量行为。GLM-5.3 在 PostTrainBench 上整体性能相对提升 31.95%。",
+    "why": "11-17 新提交。把“模型自己训练模型”从概念变成可训练的数据与目标，是递归自我改进方向少见的实证进展。",
+    "insight": "做自动调参/自动微调的 agent 时，关键是标注“哪些决策是好的”，而不是只喂最终结果；决策级监督比整条轨迹监督更有效。"
+  },
+  {
+    "rank": 7,
+    "title": "Dynamic Task Allocation with Dialogue",
+    "title_cn": "用对话做动态任务分配",
+    "url": "https://arxiv.org/abs/2611.23119v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23119（cs.CL）",
+    "what": "面向部分可观测环境的多智能体任务分配框架：用对话降低对环境与同伴状态的不确定性，同时保持基于显式概率信念的分配决策。在加入动态到达任务的 Overcooked 扩展环境中，部分可观测下比不通信基线平均快 0.585，平均少用约 18 个时间步完成任务。",
+    "why": "11-17 新提交。多智能体框架常假设目标静态、状态可观，这篇把“边沟通边重新分工”做成有信念支撑的机制。",
+    "insight": "多 agent 协作时让每个 agent 显式上报“知道/不知道什么”，把不确定性作为重新分工的触发条件，比固定角色分工更能适应变化。"
+  },
+  {
+    "rank": 8,
+    "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+    "title_cn": "温度匹配省数据的微调方法",
+    "url": "https://arxiv.org/abs/2611.23229v1",
+    "date": "2026-11-17",
+    "source": "arXiv 2611.23229（cs.LG/cs.AI/cs.CL）",
+    "what": "提出 Ambient SFT：把冻结的预训练模型当作带噪教师，要求微调模型在高温度下的条件分布与预训练模型对齐；温度参数控制对预训练知识的信任程度（T→∞ 退化为普通 SFT，T=1 即知识蒸馏）。在领域适配、指令微调与推理任务上均优于标准 SFT，平均相对提升最高 21%。",
+    "why": "11-17 新提交。后训练数据永远比预训练少，如何在有限数据下避免过拟合与能力遗忘是普遍问题，这个方法只改训练目标、不改数据。",
+    "insight": "做小数据微调时，考虑把“保持预训练分布”作为正则项而不是只做早停；这能降低灾难性遗忘，且实现成本远低于重新收集数据。"
+  }
+]

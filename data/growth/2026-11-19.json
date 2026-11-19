@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "haziqahmedqasmi/PeakCut",
+    "url": "https://github.com/haziqahmedqasmi/PeakCut",
+    "stars": 1090,
+    "trend": "2026-11-14 后新建，3 天内 1,090★，2026-11-17 有提交",
+    "what": "自托管的 AI 视频切片工具：接自己的模型 key，把长视频和直播流自动剪成短视频片段，MIT 协议。",
+    "why": "建仓 3 天到 1,090★，说明“自带 key + 自托管”的垂类 agent 工具仍有强需求，用户不愿把素材交给闭源服务。",
+    "insight": "做内容类 agent 时，把“模型可替换（BYO key）”和“数据不出本地”当默认设计，比堆功能更容易获得早期采用；切片类任务的关键在转写质量与选段策略，不在界面。",
+    "image": "images/2026-11-19/haziqahmedqasmi-peakcut.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "alexeyw/lot-map",
+    "url": "https://github.com/alexeyw/lot-map",
+    "stars": 1008,
+    "trend": "2026-11-09 后新建，10 天内 1,008★，2026-11-19 有提交",
+    "what": "在对话窗口旁画一张实时地图，把 Claude Code 的工具调用、模型步骤、hooks、skills 与子 agent 以动画方式点亮，纯本地运行，支持 7 种语言。",
+    "why": "10 天到 1,008★，11-19 仍在更新。agent 可观测性正从日志表格转向可视化回放，开发者需要“看见”agent 在做什么才敢并行多个任务。",
+    "insight": "给数字员工做运行可视化时，可照它的事件粒度：工具调用、模型步骤、hook、skill、子 agent 五类事件分开画。事件模型定清楚后，日志、回放和审计可以共用一套数据。",
+    "image": "images/2026-11-19/alexeyw-lot-map.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "n4ze3m/tiny-voca",
+    "url": "https://github.com/n4ze3m/tiny-voca",
+    "stars": 747,
+    "trend": "2026-11-14 后新建，5 天内 747★，2026-11-18 有提交",
+    "what": "从零训练的 450 万参数、双音色英文 TTS 模型，可通过 ONNX 在本地推理，Apache-2.0 协议。",
+    "why": "5 天 747★。450 万参数级别的语音模型意味着端侧可跑，语音交互不再必须依赖云端 TTS。",
+    "insight": "离线/本地化场景的语音播报可以先评估这类小模型做兜底：参数小、协议宽松；但它是英文双音色，中文与多语种效果必须自行验证，不要直接假定能替换云服务。",
+    "image": "images/2026-11-19/n4ze3m-tiny-voca.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "mit-han-lab/pear",
+    "url": "https://github.com/mit-han-lab/pear",
+    "stars": 676,
+    "trend": "2026-11-13 后新建，6 天内 676★，2026-11-18 有提交",
+    "what": "MIT HAN Lab 的方法与代码：先在仿真中训练推理模型，让模型学会原生调用真实机器人，再把能力迁移到实体设备。",
+    "why": "6 天 676★，来自以高效推理与端侧优化著称的 MIT HAN Lab，把“推理模型 + 仿真 + 真机迁移”串成一条可复用的路线。",
+    "insight": "若要让 agent 操作实体设备，仿真里先训、真机少样本迁移是成本最低的路径；对我们的启发是：工具调用能力可以在模拟环境里把失败样本和反馈做厚，再上真实系统。",
+    "image": "images/2026-11-19/mit-han-lab-pear.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "boringmarketer/boring-marketing-skills",
+    "url": "https://github.com/boringmarketer/boring-marketing-skills",
+    "stars": 662,
+    "trend": "2026-11-16 后新建，1 天内 662★，2026-11-17 有提交",
+    "what": "32 个免费营销 skill：调研、定位、文案、落地页、SEO、AI 搜索优化、投放、邮件与内容，另含本地商家专用包，MIT 协议。",
+    "why": "建仓 1 天 662★。垂类 skill 开始以“成套、可安装”的形式出现，而不是零散 prompt 集合。",
+    "insight": "垂类 skill 更适合按环节拆成可组合的原子技能，每个写清输入输出；我们做业务 skill 时可以照这个粒度拆（调研/写作/投放），避免做成一个万能大 prompt。",
+    "image": "images/2026-11-19/boringmarketer-boring-marketing-skills.jpg"
+  }
+]
