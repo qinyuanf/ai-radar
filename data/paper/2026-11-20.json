@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Agentic Harness Engineering Beta: Requirement-Centered Evolution of Agent Harnesses",
+    "title_cn": "以需求为中心的 agent 框架演化",
+    "url": "https://arxiv.org/abs/2611.24924",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24924（cs.SE/cs.AI）",
+    "what": "提出 AHE-Beta：用真实工程实践驱动 harness 演化——让模拟用户以 issue 形式提出显式与隐式需求，由多角色（而非单一演化 agent）据此改进 harness 并验证，避免只针对基准刷分导致的窄补丁与局部最优。",
+    "why": "11-18 新论文；现有 harness 演化只看基准分数、忽略隐式需求，正是我们做数字员工时“分数涨了但不好用”的根因。",
+    "insight": "优化 agent 别只盯基准分：把用户提出的真实问题当作需求输入，让改进走“需求→改动→验证”的闭环。单 agent 自改容易过拟合，多角色评审更稳。"
+  },
+  {
+    "rank": 2,
+    "title": "Kaer: Security-Aware Replanning for Multi-Agent Systems",
+    "title_cn": "多智能体系统的安全重规划",
+    "url": "https://arxiv.org/abs/2611.24839",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24839（cs.MA/cs.LG）",
+    "what": "指出编排式多智能体在“动态重规划”阶段的漏洞：恶意 agent 可在反馈里夹带指令劫持重规划；提出 Kaer，把不可信 agent 反馈与规划器隔离，实现安全感知的重规划。",
+    "why": "11-18 新论文；现有防御只做单工具访问控制或静态策略，重规划阶段是空白，而多 agent 协作恰恰最依赖重规划。",
+    "insight": "多 agent 系统里“反馈”就是新的攻击面：agent 输出回到编排器前要做隔离与清洗，重规划决策不能直接吃子 agent 的自由文本。给协作加“反馈不可信”的默认假设。"
+  },
+  {
+    "rank": 3,
+    "title": "Can Programs Replace LLM Judges? Executable Program Judges for Scalable and Efficient Relevance Labeling",
+    "title_cn": "程序化判定能否替代 LLM 裁判",
+    "url": "https://arxiv.org/abs/2611.24849",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24849（cs.IR/cs.CL）",
+    "what": "提出 ExecJudges：让前沿 LLM 把评估准则写成可执行程序，用词法匹配与标准 NLP 库对每个主题做相关性标注，替代逐文档调用 LLM 裁判，得到更快、可检查、可复现的判定。",
+    "why": "11-18 新论文；LLM-as-judge 每次调用昂贵且难复现，把“准则”编译成程序是降本与提可解释性的直接办法。",
+    "insight": "评测能规则化的部分就别用模型：把评估标准写成可执行判定，只对边界样例回退到 LLM，既省钱又能复查。我们的 agent 评测也应“程序判定优先、模型判定兜底”。"
+  },
+  {
+    "rank": 4,
+    "title": "Knowing What You Know: A Trait Theory of Reviewer Value in Human-AI Cognitive Systems",
+    "title_cn": "人机协作评审的价值：元认知校准",
+    "url": "https://arxiv.org/abs/2611.24932",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24932（cs.AI/cs.CE/cs.HC）",
+    "what": "提出“评审者价值”的特质理论：强模型 + 人复核同一决策时，人的价值取决于元认知校准（置信与正确性是否对齐），而非活跃度、速度、同意率或资历；校准会在行为遥测里留痕，但单看痕迹会混淆“老练专家”与“自信新手”。",
+    "why": "11-18 新论文；它把“人在回路还有没有用”从口号变成可测量命题，直接关系到我们评审门禁怎么设计。",
+    "insight": "评审门禁不该只看“有人点了通过”：应记录评审者的置信与实际正确率，优先把决策交给校准好的人，而不是最活跃的人，并区分“快速低修改”到底是专家还是盲目自信。"
+  },
+  {
+    "rank": 5,
+    "title": "Vibe-Trading: Towards Agent-Native Trading",
+    "title_cn": "面向 agent 原生的交易框架",
+    "url": "https://arxiv.org/abs/2611.24845",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24845（cs.AI/cs.CL/cs.MA）",
+    "what": "提出面向 agent 原生的交易框架与工作台：统一市场研究、金融数据、状态与执行，强调 agent 产出必须绑定正确的时间、数据快照与执行上下文，解决动态环境下状态难以保持可靠的问题。",
+    "why": "11-18 新论文；多数 agent 围绕静态工作流构建、环境一变就丢状态，交易这种强时变场景把这个问题放大到极致。",
+    "insight": "长任务可靠性取决于“状态与上下文绑定”：让每一步结论都挂上时间戳与数据快照，环境变化时能判断是否失效。这对订单、审批这类时变业务同样适用——别让 agent 用过期上下文下结论。"
+  },
+  {
+    "rank": 6,
+    "title": "Choosing What to Observe: Budget-Paired Counterfactual Audits for Credible Evaluation of Visual Agents",
+    "title_cn": "视觉 agent 的可信评测：反事实审计",
+    "url": "https://arxiv.org/abs/2611.24867",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24867（cs.AI）",
+    "what": "提出“预算配对的对照审计”评测协议：固定公开证据与区域绑定，只扰动剩余观察预算或任务参数，把观测历史赋予精确的延续价值，从而把准确率损失拆成“逐步获取损失”与“终止决策损失”，区分规划能力与固定启发式。",
+    "why": "11-18 新论文；视觉 agent 的准确率把“看哪里、如何适应、何时停”混在一起，无法定位失败原因；该协议能把三者拆开测。",
+    "insight": "评测要能归因：把“选取信息 / 适应 / 何时停止”分开打分，才知道该改检索、改策略还是改停止条件。做多步 agent 评测时同样应做“只改一个变量”的对照，避免总分掩盖短板。"
+  },
+  {
+    "rank": 7,
+    "title": "Jailbreak Detection on Large Language Models via Contrastive Prototype Structures",
+    "title_cn": "用对比原型结构检测越狱",
+    "url": "https://arxiv.org/abs/2611.24936",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24936（cs.CL）",
+    "what": "提出 JDPI：用二分类安全标签构建有害/良性原型，按相对原型距离做越狱检测，只依赖二分类标签适配编码器，无需额外训练下游分类器，所需标注比分类器基线更少。",
+    "why": "11-18 新论文；越狱检测若依赖大量标注或独立分类器成本高，用对比表征 + 原型的轻量方案更适合产线部署。",
+    "insight": "安全过滤用“原型距离”这类轻量方法就能做第一道闸，不必一上来就训大分类器。可作为数字员工输入侧的低成本越狱/有害指令拦截，再对边界样本回退到更强检查。"
+  },
+  {
+    "rank": 8,
+    "title": "Mapping the AI Supply Chain: Dependencies, Vulnerabilities, and Market Concentration in the AI Ecosystem",
+    "title_cn": "AI 供应链的依赖与集中度测绘",
+    "url": "https://arxiv.org/abs/2611.24927",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24927（cs.CY/cs.AI）",
+    "what": "测绘 AI 供应链中跨层的组织网络（模型、数据、算力、资本、人才等贡献方），讨论集中度、卡点、级联失效与责任碎片化等风险，并给出映射方法管线。",
+    "why": "11-18 新论文；AI 系统跨多家组织构建，层间关系却少有记录，识别卡点与连锁风险对选型与容灾有直接价值。",
+    "insight": "选型要做“依赖体检”：不仅看某个模型/组件本身，还要看它背后的数据、算力与供应商集中度；对关键链路准备替代方案与降级路径，避免单点卡点导致整体失效。"
+  }
+]

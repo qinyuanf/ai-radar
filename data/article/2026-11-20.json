@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Anthropic's Nasdaq debut",
+    "title_cn": "Anthropic 纳斯达克上市首日",
+    "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+    "date": "2026-11-19",
+    "source": "路透社，Hacker News 895 分 / 1768 评论",
+    "what": "路透社报道 Anthropic 在纳斯达克上市首日的表现，把这家前沿模型公司的估值与其商业前景，连同 AI 行业的“承诺与风险”一并置于华尔街的审视之下。",
+    "why": "HN 895 分、1,768 条讨论，是本周期热度最高的行业事件之一；头部模型公司进入公开市场，意味着 AI 竞争开始接受二级市场的定价与披露约束。",
+    "insight": "模型公司上市会把单位经济、留存与毛利摊到台面上。做 agent 选型时可关注它的定价与成本趋势；更要盯 API 价格与稳定性会不会因财报压力调整，提前准备替代与降级方案。"
+  },
+  {
+    "rank": 2,
+    "title": "Claude solves two open problems in the physics of black holes",
+    "title_cn": "Claude 解决黑洞物理两个开放问题",
+    "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+    "date": "2026-11-17",
+    "source": "Anthropic Research，Hacker News 375 分 / 175 评论",
+    "what": "Claude Fable 5.2 解决了两个理论物理开放问题：一是完成物理学家 2003 年提出、一直未解完的 Hawking-Page 相变弱耦合计算，证明该相变是突变的；二是用谱曲线方法求出 modular bootstrap 中最轻黑洞质量上限的精确最优值 Λ≈9.1266。工作由一组 Claude 子代理并行完成，结果经 Lean 形式化验证，并由物理学家复核。",
+    "why": "11-17 发布，HN 375 分；这是少数“多代理自主跑数周、产出可形式化验证成果”的公开案例，直接关系到 agent 做长周期研究任务的可行性。",
+    "insight": "关键不在模型多聪明，而在流程：子代理分工、相互独立复算、Lean 形式化校验、人工终审。做研究与高可信任务时，应把“独立复算 + 形式化/机器校验 + 人工抽查”写进 agent 验收链，而不是只信一次输出。",
+    "image": "images/2026-11-20/claude-solves-two-open-problems-in-the-physics-o.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Inside the Codex sandbox",
+    "title_cn": "深入 Codex 沙箱：命令如何被约束",
+    "url": "https://openai.com/index/inside-the-codex-sandbox",
+    "date": "2026-11-18",
+    "source": "OpenAI 官方博客，2026-11-18",
+    "what": "OpenAI 介绍 Codex 如何在 macOS、Linux、Windows 上执行命令，同时对文件系统访问与网络出站施加用户可控的限制，即 coding agent 的运行沙箱设计。",
+    "why": "11-18 发布；coding agent 要真正落地，卡点已从“会不会写”转向“敢不敢让它在本机执行”，沙箱是这条链路的必备底座。",
+    "insight": "给 agent 开命令执行就必须同时给三层约束：文件读写白名单、网络出站限制、可回放的执行日志。照这套边界设计数字员工的执行环境，默认拒绝越界而不是事后补救。"
+  },
+  {
+    "rank": 4,
+    "title": "Research acceleration: The jagged frontier",
+    "title_cn": "研究加速的锯齿边界",
+    "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+    "date": "2026-11-18",
+    "source": "OpenAI 官方博客，2026-11-18",
+    "what": "OpenAI 评估 coding agent 在加速 AI 研究上的表现：哪些环节明显提速、哪些仍然吃力，并讨论这种不均衡对“递归自我改进”意味着什么。",
+    "why": "11-18 发布；它给的是“能力有锯齿、并非全面替代”的实测视角，比笼统的“AI 做科研”更有参考价值。",
+    "insight": "引入 agent 做研发时先画能力边界：把已验证高效的环节（脚手架、检索、样板代码）自动化，把仍不稳定的环节留人；用“任务类型 × 成功率”矩阵替代单一总体评分来决定放权范围。"
+  },
+  {
+    "rank": 5,
+    "title": "Energy-Based Reasoners: Your Recurrent Reasoner Should Be an Energy-Based Model",
+    "title_cn": "能量基推理器：递归推理应是能量模型",
+    "url": "https://energy-based-reasoners.github.io/",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.08977，Hacker News 315 分 / 57 评论",
+    "what": "提出 Energy-Based Reasoners (EBR)：在潜在推理状态上学一个能量函数，把循环更新表述为能量梯度下降，能量同时用于打分、修正与停止。仅 1.8M 参数即在 Sudoku-Extreme 达 99.9%（自适应停止下比次优模型少约 345× 推理算力），并在多解基准上保持近 100% 单样本正确率。",
+    "why": "11 月新论文、HN 315 分；它给出“用能量信号决定何时停止推理”的具体机制，直接针对当前推理模型算力浪费的问题。",
+    "insight": "推理成本的一大来源是“不知道何时该停”。EBR 的自适应停止可迁移到 agent：给每步一个可度量的“离目标距离/置信”信号，据此早停与选择候选，而不是固定步数跑满。",
+    "image": "images/2026-11-20/energy-based-reasoners-your-recurrent-reasoner-s.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Genie 4 is now available",
+    "title_cn": "Genie 4 世界模型开放",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+    "date": "2026-11-18",
+    "source": "Google DeepMind 博客，Hacker News 287 分 / 182 评论",
+    "what": "Google DeepMind 通过 Project Genie 向符合条件的 Google AI Ultra 订阅者开放新一代 Genie 4 世界模型，用于创建可交互的生成式环境与体验。",
+    "why": "11-18 发布、HN 287 分；世界模型从演示走向订阅制产品，是“可交互环境生成”这条线的重要节点。",
+    "insight": "世界模型对 agent 的意义是“便宜的模拟环境”，可用于训练、评测需要与环境交互的 agent（如操作类任务）。短期不必自建，但应把它纳入 agent 评测环境候选，重点看可控性与可复现性。",
+    "image": "images/2026-11-20/genie-4-is-now-available.jpg"
+  },
+  {
+    "rank": 7,
+    "title": "LLM assisted reverse engineering",
+    "title_cn": "LLM 辅助逆向工程",
+    "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
+    "date": "2026-11-18",
+    "source": "Slow Chronicle，Hacker News 296 分 / 76 评论",
+    "what": "介绍用 LLM 辅助逆向工程：让模型帮助理解二进制与混淆代码的结构与意图，把过去高度依赖专家经验的逆向工作部分自动化。",
+    "why": "11-18、HN 296 分；逆向是“agent 读不懂真实代码”的典型场景，这类实践说明 LLM 正扩展到低可读性的代码分析。",
+    "insight": "评估第三方或混淆产物时，可让 agent 先做结构梳理与假设，再由人验证；关键结论必须有可复查证据（符号、调用、字符串），不能把模型的“看起来像”当结论。"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "rank": 1,
+    "repo": "fendouai/ViralForge",
+    "url": "https://github.com/fendouai/ViralForge",
+    "stars": 383,
+    "trend": "2026-11-11 后新建，9 天内 383★（首日快照），2026-11-18 有提交",
+    "what": "面向短视频的 agent 原生工作台：一键复刻爆款短视频，把视频钩子与脚本拆成“Viral DNA”报告，再批量产出多条变体，TypeScript 实现。",
+    "why": "2026-11-11 新建，9 天 383★、13 fork，11-18 仍提交；“复刻爆款 + 批量变体”是内容类 agent 需求最集中的方向。",
+    "insight": "内容 agent 的护城河在“拆解维度”而非生成：把爆款拆成可复用的钩子、节奏、镜头模板，再让模型填充，比端到端生成更可控、更省 token。这套思路也能迁移到营销文案与活动素材。",
+    "image": "images/2026-11-20/fendouai-viralforge.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "JuneYaooo/rea-toon",
+    "url": "https://github.com/JuneYaooo/rea-toon",
+    "stars": 283,
+    "trend": "2026-11-14 后新建，6 天内 283★（首日快照），2026-11-18 有提交",
+    "what": "用 AI 拆解学习短剧的中文工具：分析一部短剧为什么火、剧本怎么组织、每一镜怎么拍，输出结构化拆解，Python 实现。",
+    "why": "2026-11-14 新建，6 天 283★、50 fork，11-18 提交；fork 数远高于同量级仓库，说明开发者想二次定制拆解流程。",
+    "insight": "短剧拆解本质是把非结构化视频变成结构化剧本/分镜数据。做内容辅助 agent 时，应把产出落成可编辑的剧本与分镜表，而不是一段总结，后续才能驱动生成与复用。",
+    "image": "images/2026-11-20/juneyaooo-rea-toon.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "ysunyang4/webagent",
+    "url": "https://github.com/ysunyang4/webagent",
+    "stars": 168,
+    "trend": "2026-11-11 后新建，9 天内 168★（首日快照），2026-11-19 有提交",
+    "what": "浏览器扩展，把 ChatGPT、Gemini、DeepSeek 等网页版 AI 聊天经 Nexus 接到本地 MCP 工具，让网页 AI 也能调用本机能力。",
+    "why": "2026-11-11 新建，9 天 168★、42 fork，11-19 提交；它是 Nexus 的配套端，反映“让没有 API 的网页模型操作本地环境”的持续需求。",
+    "insight": "MCP 桥接的价值全在工具面治理：把本机能力经 MCP 暴露给外部模型时，要按任务裁剪工具、加命令白名单与审计、默认最小权限，否则等于把本机交出去。"
+  },
+  {
+    "rank": 4,
+    "repo": "spacesky-cell/TwinFix",
+    "url": "https://github.com/spacesky-cell/TwinFix",
+    "stars": 137,
+    "trend": "2026-11-13 后新建，7 天内 137★（首日快照），2026-11-13 有提交",
+    "what": "故障修复 agent：在一套一次性“孪生环境”里自动复现、诊断并修复 bug，把调试过程放在可丢弃的隔离环境而非生产，Python 实现。",
+    "why": "2026-11-13 新建，7 天 137★；它把“先复现、再修复、后隔离”的工程习惯固化成 agent 流程，正对上 agent 改代码不可信的风险。",
+    "insight": "让 agent 修 bug 的前提是“可复现的隔离环境 + 修复后回归”。可直接借鉴“一次性孪生环境”做验证沙箱，把复现用例作为发布门禁，避免 agent 直接动生产代码。",
+    "image": "images/2026-11-20/spacesky-cell-twinfix.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "HyunSeob/iphone-cli",
+    "url": "https://github.com/HyunSeob/iphone-cli",
+    "stars": 111,
+    "trend": "2026-11-10 后新建，10 天内 111★（首日快照），2026-11-19 有提交",
+    "what": "用 Rust 实现的 CLI，让 AI agent 通过 iOS 无障碍树读取并操作真实 iPhone 上的任意 App，绕开 XCUITest、WebDriverAgent 与 Xcode 签名。",
+    "why": "2026-11-10 新建，10 天 111★、23 fork，11-19 提交；把 computer-use 从桌面/浏览器推进到真机移动端，是这一波 agent 操作能力的新边界。",
+    "insight": "移动端自动化长期卡在签名与测试框架，用无障碍树读操作真机是更轻的路线，适合做移动 App 的 agent 验收或回归。接入时先明确“只读取证”与“可写操作”的边界，并对登录、支付等敏感页加人工确认。",
+    "image": "images/2026-11-20/hyunseob-iphone-cli.jpg"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "github/spec-kit",
+    "url": "https://github.com/github/spec-kit",
+    "stars": 150704,
+    "trend": "+4,022 stars/16天（对比 2026-11-04）",
+    "what": "GitHub 官方的“规范驱动开发”(SDD) 工具包：把需求、规格、计划、任务拆成可版本化的 Markdown 工件，配套 CLI 与 AI 助手模板，让 coding agent 按 SDD 流程实现，面向 Copilot 等宿主。",
+    "why": "150,704★，16 天涨约 4,022★，11-19 仍提交；当 agent 直接写代码的返工与不可控成为痛点，“先写规格再编码”正被做成标准工具链。",
+    "insight": "把 spec/plan/tasks 当作 agent 的输入契约，比让它自由发挥更可控。可借鉴其工件分层：在需求交付里把验收标准前置成可机读的 spec，再让模型按 spec 实现，减少返工。",
+    "image": "images/2026-11-20/github-spec-kit.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Graphify-Labs/graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "stars": 150667,
+    "trend": "+8,202 stars/15天（对比 2026-11-05）",
+    "what": "把整个代码库连同文档、SQL schema、配置与 PDF 解析成可查询知识图谱的 skill，供 Claude Code、Cursor、Codex、Gemini CLI 使用；主打本地确定性 AST 解析，不依赖向量库。",
+    "why": "150,667★，15 天涨约 8,202★（本批增幅最大），11-19 提交；它用“确定性 AST 图谱”替代“全文塞上下文”，正对上大仓库 agent 改代码的成本与精度问题。",
+    "insight": "对大型代码库，给 agent 一张结构化代码地图（符号、调用、表结构）通常比扩大上下文更省更准。评估它能否接入我们的仓库检索时，重点看增量更新与 AST 覆盖率，而不是图谱可视化。",
+    "image": "images/2026-11-20/graphify-labs-graphify.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "langchain-ai/langchain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "stars": 149929,
+    "trend": "+956 stars/16天（对比 2026-11-04）",
+    "what": "定位为“agent 工程平台”的综合框架，提供模型、工具、记忆、检索的抽象与编排，生态覆盖 Python 与 JS，并向下衍生出 deepagents 等更上层的封装。",
+    "why": "149,929★，16 天涨约 956★，11-20 仍有提交；框架层趋于稳定，增量转向可观测、状态管理与评测等 agent 工程化能力，说明“会拼 LLM 调用”已不再是卖点。",
+    "insight": "直接套框架容易把业务状态绑死在框架抽象上。建议只在工具协议、追踪、评测这些横切面借鉴它的接口设计，业务流程仍用自有状态机，避免升级时被动。",
+    "image": "images/2026-11-20/langchain-ai-langchain.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "TauricResearch/TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "stars": 123182,
+    "trend": "+5,838 stars/23天（对比 2026-10-28）",
+    "what": "多智能体 LLM 金融交易框架：把研究员、交易员、风控等拆成不同角色 agent，按分工协作并带辩论式复核产出交易决策，附带回测流程。",
+    "why": "123,182★，23 天涨约 5,838★，11-17 提交；它把“角色分工 + 相互质询”做成可复用范式，热度说明结构化多 agent 协作比单 agent 更被认可。",
+    "insight": "多 agent 的关键不是数量而是“角色边界 + 冲突裁决”。可借鉴它的辩论/复核环节做代码评审或排查的第二意见，但最终决策必须有可追溯证据链，避免多个 agent 互相附和。",
+    "image": "images/2026-11-20/tauricresearch-tradingagents.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 121527,
+    "trend": "+1,482 stars/15天（对比 2026-11-05）",
+    "what": "开源 Python 浏览器智能体库：让 LLM 通过 CDP 驱动真实浏览器完成点击、填表、取数等操作，同时提供托管云浏览器与 agent API。",
+    "why": "121,527★，15 天涨约 1,482★，11-19 提交；浏览器操作仍是 agent 落地最广的场景，社区持续把它当作“能真正跑起来”的默认选择。",
+    "insight": "做网页/后台自动化优先复用它而不是自研 driver；但对提交、支付、删除等不可逆操作要默认拦截并留人工确认，同时保留操作快照/录像，否则出错无法复盘。",
+    "image": "images/2026-11-20/browser-use-browser-use.jpg"
+  }
+]
