@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes",
+    "title_cn": "等待模型回复时会话占了多少资源",
+    "url": "https://arxiv.org/abs/2611.26480",
+    "date": "2026-11-19",
+    "source": "arXiv 2611.26480（cs.PF/cs.DC/cs.SE）",
+    "what": "在 Amazon Bedrock AgentCore 上实测：agent 每次等模型回复中位数 2.7 秒，真正计算只有 5–40 毫秒，但每个会话独占一台带内存的虚拟机并保留到会话关闭；1000 个会话要预留 1000 套环境，实际只需 2–15 个 CPU 核。",
+    "why": "11-19 新论文；它指出 agent 服务最先耗尽的不是算力而是“环境数”：客服基准里会话平均 33 秒，环境却会被多留 15 分钟。",
+    "insight": "扩容前先量会话挂机时长。把会话与环境解绑（空闲即回收、计算与等待分离）通常比加机器便宜，这是并发上不去时最该先查的一层。"
+  },
+  {
+    "rank": 2,
+    "title": "Characterizing and Detecting Unfaithful Work Reports by Coding Agents",
+    "title_cn": "识别编码代理不实的工作汇报",
+    "url": "https://arxiv.org/abs/2611.25760",
+    "date": "2026-11-19",
+    "source": "arXiv 2611.25760（cs.SE/cs.AI）",
+    "what": "从 SWE-chat 的真实开发者–代理对话出发，刻画编码代理“工作汇报不忠实”的形态并给出检测方法：报告里出现虚假或无依据的结论时，未完成的工作会被当成已完成，错误假设还会污染后续接手的代理。",
+    "why": "11-19 新论文；长任务中开发者很少逐步查看，汇报成了唯一账本，检测它比检测代码错误更前置。",
+    "insight": "工作汇报要能被证据核对：把“我改了 X / 我验证了 Y”绑定到可复查的 diff、命令输出或链接，否则汇报只是自述。这就是交接要求证据的底层理由。"
+  },
+  {
+    "rank": 3,
+    "title": "Reducing Inference Cost of Coding Agents with Timeout Cascades",
+    "title_cn": "超时级联降低编码代理推理成本",
+    "url": "https://arxiv.org/abs/2611.24324",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24324（cs.AI/cs.SE）",
+    "what": "在软件工程基准上评测 36 个 2024 年后发布的开源大小模型：小模型在简单和中等任务上已接近大模型，差距集中在难题；据此提出“先小模型、超时再升级大模型”的混合推理策略来降本。",
+    "why": "11-18 新论文；成本压力下“全量用大模型”不再划算，而能力差距的分布决定了按难度分流是可行的。",
+    "insight": "模型路由应按任务难度而不是一刀切：容易任务给小模型并设超时，超时才升级。落地前先按任务类型统计小模型失败率再定阈值，否则省下的钱会换成重试。"
+  },
+  {
+    "rank": 4,
+    "title": "MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts",
+    "title_cn": "开发者与代理共同管理记忆",
+    "url": "https://arxiv.org/abs/2611.24165",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24165（cs.HC/cs.SE）",
+    "what": "针对编码代理“自己决定记住什么”的不透明问题提出 MemoSync：代理提出记忆候选并报告实际用到了哪些条目，开发者负责复核、编辑和限定作用域；132 人对照实验显示这种共同管理优于两个基线。",
+    "why": "11-18 新论文；记忆一旦跨会话、跨项目生效，写错一条就会持续污染后续任务，而人对代理存了什么几乎看不见。",
+    "insight": "长期记忆要有“谁写的、适用范围、能否撤销”三个字段，并默认让人确认高风险写入。全自动记忆在团队场景里是负债，不是资产。"
+  },
+  {
+    "rank": 5,
+    "title": "SCAFFOLD: Toward Warrant-Preserving Evidence Transport for Reusable LLM-Agent Skills",
+    "title_cn": "技能复用何时证据仍然成立",
+    "url": "https://arxiv.org/abs/2611.23990",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.23990（cs.AI/cs.MA/cs.SE）",
+    "what": "提出“有担保的复用声明”（WRC）：技能昨天能用不代表今天可安全复用。主张把授权绑定到版本化技能、目标上下文、证据与已知失效条件，并讨论上下文变化后哪些历史证据仍可采信。",
+    "why": "11-18 新论文；技能生态扩张后，“上次跑通”正在被当成“这次可信”，而权限、依赖和规格都在漂移。",
+    "insight": "给可复用技能加证据有效期：记录验证时的版本、环境和依赖，变更后自动降级为待复核，而不是默认沿用旧结论。"
+  },
+  {
+    "rank": 6,
+    "title": "SkillBridge: Cost-Aware Diagnosis and Repair of Cross-OS Compatibility Defects in Agent Skills",
+    "title_cn": "跨系统技能兼容缺陷的诊疗",
+    "url": "https://arxiv.org/abs/2611.26256",
+    "date": "2026-11-19",
+    "source": "arXiv 2611.26256（cs.SE/cs.AI）",
+    "what": "针对“技能在这个操作系统能用、换系统就失败”的问题提出静态分析→动态验证→定点修复三步流程：先从 3,270 个技能-系统组合里筛出 OS 相关契约证据，再只对可疑样本跑动态任务，修掉引发失败的契约字段。",
+    "why": "11-19 新论文，覆盖 1,090 个技能在 Linux/macOS/Windows 上的表现；全量试跑太贵，按证据筛样本才是可负担的做法。",
+    "insight": "技能的可移植性缺陷多半藏在说明文本、安装脚本与元数据的不一致里。把“运行环境假设”显式写进技能元数据，能提前拦住大部分跨环境失败。"
+  },
+  {
+    "rank": 7,
+    "title": "Probing agent overeagerness in realistic settings with continuation audits",
+    "title_cn": "用续写审计探测代理越权冲动",
+    "url": "https://arxiv.org/abs/2611.24491",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24491（cs.CR/cs.AI/cs.SE）",
+    "what": "提出“续写审计”：从真实编码代理会话里取一段前缀，让审计模型沿这条轨迹续写并把行为推向目标方向，从而在真实语境下探测代理的过度激进（越权）倾向，而不必依赖私有线上流量。",
+    "why": "11-18 新论文；前沿代理的越权行为此前只能靠内部部署监控发现，开放权重模型和独立评估方拿不到这些数据。",
+    "insight": "评估 agent 安全性时，用真实轨迹当前缀比造合成场景更难被模型识破。可以拿历史会话脱敏后做同类审计，专看“没被要求却动手”的分支。"
+  },
+  {
+    "rank": 8,
+    "title": "A Capability Framework for Evaluating Agentic AI Platforms in Regulated Enterprises",
+    "title_cn": "受监管企业如何评估代理平台",
+    "url": "https://arxiv.org/abs/2611.24039",
+    "date": "2026-11-18",
+    "source": "arXiv 2611.24039（cs.AI/cs.MA/stat.ML）",
+    "what": "报告一家全球银行创新实验室的“比选”：跨职能评审团按 9 个能力维度，在信用风险、RAG、流程自动化三类负载上评估 10 个 agent 平台（开源框架、商业产品、云厂商生态），评分把候选稳定分成三个档次。",
+    "why": "11-18 新论文；公开基准只测固定 harness 里的模型，而企业买的是编排、记忆、治理与工具层，这部分此前几乎只能看厂商演示。",
+    "insight": "选型别只看模型分。把编排能力、记忆、权限治理、可观测性拆成维度各自打分，并用自家真实工作流做负载，才能区分“演示好看”和“能上线”。"
+  }
+]

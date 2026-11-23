@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "bookwjitchieni1986/blender-ai-mcp-addon",
+    "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+    "stars": 2748,
+    "trend": "2026-11-19 后新建，4 天内 2,748★（首日快照），2026-11-22 有提交",
+    "what": "Blender 的 AI 助手插件兼 MCP 服务端：能检查场景对象、建模、改材质、找资产、跑多步工作流，带可视化聊天窗口与任务看板，可接云端模型或本地 Ollama。",
+    "why": "2026-11-19 新建，4 天 2,748★、38 fork，11-22 仍提交；3D 工具链是最难被 agent 触及的 GUI 场景之一，它用 MCP 把场景状态暴露给了模型。",
+    "insight": "让 agent 操作 GUI 软件的关键不是截图点击，而是把应用内部状态（场景树、对象属性）做成结构化工具。MCP 在这里承担了“应用内 API”的角色。",
+    "image": "images/2026-11-23/bookwjitchieni1986-blender-ai-mcp-addon.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "mankidev/antialgorithm",
+    "url": "https://github.com/mankidev/antialgorithm",
+    "stars": 709,
+    "trend": "2026-11-14 后新建，9 天内 709★（首日快照），2026-11-20 有提交",
+    "what": "一个创意类 agent 技能：先让模型说出它第一反应的“最平庸选项”，再依据项目上下文给出偏离理由，用于起名、故事、海报、UI。README 用 6 次同提示对照展示效果差异。",
+    "why": "2026-11-14 新建，9 天 709★，11-20 有提交；它把“反套路”变成可复用的提示流程，而不是靠模型随机性碰运气。",
+    "insight": "先用一次显式采样暴露模型的众数答案，再要求差异化，是改写文案/命名时低成本可用的技巧；比加一句“请更有创意”有效得多。",
+    "image": "images/2026-11-23/mankidev-antialgorithm.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "pierridotite/mobile-agent-testers",
+    "url": "https://github.com/pierridotite/mobile-agent-testers",
+    "stars": 562,
+    "trend": "2026-11-16 后新建，7 天内 562★（首日快照），2026-11-23 有提交",
+    "what": "在 GitHub Actions 免费 runner 上并行跑 20 个 Claude Code 代理，各自操作一台 iOS 模拟器或 Android 模拟器，按人设（小屏 + 瑞典语 + 最大字号、Pixel 7 放大 200%、阿语从右到左等）像新用户一样用 App，输出带截图的缺陷报告。",
+    "why": "2026-11-16 新建，7 天 562★、60 fork，11-23 仍提交；单台设备成本约 $0.15–0.55，把移动端探索测试的边际成本压到了可以日常跑。",
+    "insight": "把“人设 × 设备”做成矩阵，是让 agent 测试覆盖真实用户差异的可行办法。我们的页面验收可先固定几组字号/语言/RTL 组合，再谈自动化。",
+    "image": "images/2026-11-23/pierridotite-mobile-agent-testers.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "diego3g/craft",
+    "url": "https://github.com/diego3g/craft",
+    "stars": 422,
+    "trend": "2026-11-15 后新建，8 天内 422★（首日快照），2026-11-21 有提交",
+    "what": "面向 AI 代理的 UI 设计技能：先写简短设计简报，列出屏幕所有状态，复用设计系统组件，展示前自查，适配 Paper、pen.dev、Figma 或纯 HTML，可用于 Claude Code、Codex、Cursor 等。",
+    "why": "2026-11-15 新建，8 天 422★，11-21 有提交；它教给模型的是“设计流程”而非“设计稿”，正好补上 agent 出页面时最缺的状态覆盖。",
+    "insight": "要求代理先枚举页面全部状态（空/加载/错误/长文本）再动手，能显著减少返工；这条可以直接写进前端需求交付的验收清单。",
+    "image": "images/2026-11-23/diego3g-craft.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ThreatDefence/agentic-attack-detections",
+    "url": "https://github.com/ThreatDefence/agentic-attack-detections",
+    "stars": 398,
+    "trend": "2026-11-20 后新建，3 天内 398★（首日快照），2026-11-23 有提交",
+    "what": "面向安全团队的检测规则库：覆盖 ARTEX、Cairn、PentAGI、HexStrike、Strix、Agent Zero 等 9 个“把入侵交给 AI 代理”的攻击框架，提供 516 条带来源的 IOC 以及 KQL、Sigma、Suricata、Zeek、YARA、STIX 规则。",
+    "why": "2026-11-20 新建，3 天 398★、85 fork，11-23 仍提交；agent 攻击框架开始规模化，防守方需要按工具指纹而非单条告警来匹配。",
+    "insight": "自建 agent 平台要预留可观测性：记录工具调用与出站网络，才能在出现异常代理行为时按行为模式检测，而不是只靠应用日志事后翻。",
+    "image": "images/2026-11-23/threatdefence-agentic-attack-detections.jpg"
+  }
+]

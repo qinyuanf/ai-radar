@@ -1,0 +1,83 @@
+[
+  {
+    "rank": 1,
+    "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+    "title_cn": "Anthropic 2028 年靠天然气供电",
+    "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+    "date": "2026-11-16",
+    "source": "Better Data Center Project（案例研究），Hacker News 883 分 / 894 评论",
+    "what": "该机构按 Anthropic 已签约的 15GW 算力逐个机房追溯供电来源，估算 2028 年其约 87% 电力来自天然气、11% 来自煤，全年可能排放 3200 万吨二氧化碳；其公开的可再生能源承诺只落在挪威和加拿大。",
+    "why": "HN 883 分 / 894 条讨论，是本周期争议最大的 AI 议题之一；报告还统计了 177GW 计划中的自建燃气（BYOP）容量，说明 AI 扩张正在绕开电网直接锁定化石能源。",
+    "insight": "推理成本之外还有电力与碳约束：给 agent 选模型和部署区域时，把区域电网结构与供应商能源承诺纳入评估，长期可能比每百万 token 单价更影响可持续性。",
+    "image": "images/2026-11-23/87-of-the-anthropic-power-will-come-from-gas-and.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "How OpenAI's Performance Factory keeps ChatGPT fast",
+    "title_cn": "Codex 驱动的性能自动修复工厂",
+    "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+    "date": "2026-11-19",
+    "source": "OpenAI 官方博客（工程），2026-11-19",
+    "what": "OpenAI 介绍 Performance Factory：由任务服务、派发循环、云端 Codex 和订阅机制四部分组成，把“告警→定位根因→修复性能回归”做成自动工作流，并用对抗式评审加固诊断结论。",
+    "why": "11-19 官方工程博客；这是把 coding agent 用在自家生产性能治理上的完整案例，附“保护工程师注意力”和“评估 agent 改动”两条经验。",
+    "insight": "可以直接照搬它的形状：把周期性告警变成任务队列，让 agent 先出根因假设，再由另一个角色对抗式复核，最后才允许改代码。单人自证容易把相关性当成因果。"
+  },
+  {
+    "rank": 3,
+    "title": "Data Processing Incidents on Inference Providers",
+    "title_cn": "推理服务商数据事件与零留存收紧",
+    "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+    "date": "2026-11-22",
+    "source": "OpenRouter 官方公告，Hacker News 279 分 / 97 评论",
+    "what": "OpenRouter 通报：安全研究者发现部分推理服务商存在数据被泄露或未遵守数据政策的证据。平台已下架 3 家供应商、把 125 个端点移出零数据留存（ZDR）名单、通知受影响客户，并开始常态化复测网络路径。",
+    "why": "HN 279 分；这把“模型供应商的数据政策”从合同条款变成了可被第三方技术验证的对象，多供应商路由的合规风险第一次被量化。",
+    "insight": "做企业 agent 时，“走哪个供应商”就是数据边界。要么自建直连并审计出站网络，要么把 ZDR 资格当硬门槛，别只看价格和延迟。",
+    "image": "images/2026-11-23/data-processing-incidents-on-inference-providers.jpg"
+  },
+  {
+    "rank": 4,
+    "title": "Combatting adversarial distillation",
+    "title_cn": "OpenAI 如何对抗对抗性蒸馏",
+    "url": "https://openai.com/index/combatting-adversarial-distillation",
+    "date": "2026-11-20",
+    "source": "OpenAI 官方博客，2026-11-20",
+    "what": "OpenAI 说明对抗性蒸馏的风险：攻击者用前沿模型的输出训练出能力相近、却没有同等防护的模型。应对方式是训练、检测、执法多层组合，并特别强调保护精确推理轨迹以防网络能力被提取。",
+    "why": "官方在 11-20 公开这套口径，并把“推理轨迹保护”单列，说明能力提取已经从模型权重扩展到思维链文本。",
+    "insight": "如果自建 agent 依赖第三方模型，别把带完整推理链的日志外泄或长期留存；反过来，自研 agent 的轨迹若含敏感上下文，也应脱敏后再落库。"
+  },
+  {
+    "rank": 5,
+    "title": "Inkling-2-Mini in 5.4 GB Memory",
+    "title_cn": "小模型压进 5.4GB 内存",
+    "url": "https://github.com/ShinMegamiBoson/lookatmyquant",
+    "date": "2026-11-21",
+    "source": "GitHub 项目 lookatmyquant，Hacker News 582 分 / 137 评论",
+    "what": "一个量化编译器：先测量每块权重被压缩时对输出的伤害，再按预算分配编码。同尺寸下把 Gemma 4 E2B 的 GGUF 做到比 Q4_K_M 低 12 倍 KL；第二版把 Qwen3.5-4B 压到 1.23GB（2.3 bit/权重），540 道数学题答对 330 道（原模型 359）。",
+    "why": "HN 582 分，11-23 项目仍在提交；约 34 美元 GPU 时间做后训练量化，就能让 4B 级模型在消费级内存里跑，本地推理的可用性明显提升。",
+    "insight": "本地/边缘跑 agent 时，量化配方比模型选择更影响质量。评估自建推理要看 KL 与任务准确率双指标，别只看文件大小和 bit 数。",
+    "image": "images/2026-11-23/inkling-2-mini-in-5-4-gb-memory.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Perplexity and Intelligence",
+    "title_cn": "用困惑度评估模型能力进展",
+    "url": "https://openai.com/index/perplexity-and-intelligence",
+    "date": "2026-11-22",
+    "source": "OpenAI 官方博客，Hacker News 478 分 / 333 评论",
+    "what": "OpenAI 撰文讨论如何用困惑度（perplexity）衡量模型进展，主张它可以作为开发者评估新兴能力的共同口径，同时解释为什么单一指标只能回答一部分问题。",
+    "why": "HN 478 分 / 333 条讨论；在基准纷纷饱和、榜单公信力下滑的当下，重新讨论“低成本、可复现的指标”很有现实意义。",
+    "insight": "困惑度便宜、可离线复算，适合当回归看门狗，但替代不了任务级评测。上线门禁应是“任务通过率为主 + 困惑度/损失为辅”，两者一起看。"
+  },
+  {
+    "rank": 7,
+    "title": "Show HN: I built a game where you are an LLM's subagent",
+    "title_cn": "你是 AI 代理子任务里的那个打工人",
+    "url": "https://github.com/gulivan/worker755",
+    "date": "2026-11-22",
+    "source": "GitHub worker755，Hacker News 269 分 / 62 评论",
+    "what": "浏览器游戏：由真实 LLM（Claude、GPT、Gemini、DeepSeek 等）扮演一个按编排器思路搭起来的“经理”，它给你派 90 秒限时任务，只收到你的汇报和命令记录，然后核查、纠正、写事故报告，最后给你写绩效评语。",
+    "why": "HN 269 分；作者把 orchestrator 的任务队列、只读工具、spawn subagent 原样复刻成游戏机制，是理解“代理怎么看子代理”的直观样本。",
+    "insight": "它暴露了编排器的真实判据：只看汇报与轨迹，不看过程。这说明工作汇报的可信度就是协作接口——子代理汇报应强制附可复核证据，而不是结论自述。",
+    "image": "images/2026-11-23/show-hn-i-built-a-game-where-you-are-an-llm-s-su.jpg"
+  }
+]

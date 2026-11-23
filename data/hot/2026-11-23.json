@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 196903,
+    "trend": "+13,142 stars/19天（对比 2026-11-04）",
+    "what": "一个让 AI 代理“像公司里最懒的资深工程师那样思考”的编码技能：能不写就不写，但校验、错误处理、安全与可访问性一项不许省。官方基准里同一代理装上后代码量 -53%、耗时 -41%、token -45%、成本 -26%，98% 的风险逻辑带测试（未装时 68%）。",
+    "why": "196,903★，19 天涨 13,142★，11-22 仍有提交；39 个任务（含真实 FastAPI + React 仓库）在 Opus 5.5 上各跑 5 轮的对照数据，把“少写代码”从口号变成了可测量的结论。",
+    "insight": "省 token 的正确目标是“只写任务需要的代码”，不是砍校验和错误处理。可以在编码链路里引入这类最小实现约束，同时用测试覆盖率守住底线，否则省下的成本会直接换成线上缺陷。",
+    "image": "images/2026-11-23/dietrichgebert-ponytail.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "bojieli/ai-agent-book",
+    "url": "https://github.com/bojieli/ai-agent-book",
+    "stars": 59176,
+    "trend": "首日快照：总 59,176★，2026-11-23 有提交",
+    "what": "《深入理解 AI Agent：设计原理与工程实践》的开源主仓库：10 章正文、PDF/EPUB、109 个配套实验，核心公式是“Agent = LLM + 上下文 + 工具”，书稿已从 1.4 升级到 3.0 并重排章节。",
+    "why": "59,176★、6,947 fork，11-23 仍在更新；中文原创且带可跑实验的 agent 系统工程书很少，3.0 版把“交互：观察与动作空间扩展”单独立章，正好对应多模态工具调用这条线。",
+    "insight": "把“上下文 + 工具”当第一性设计对象。新人培养或方案评审时用它的实验章节做统一口径，比零散博客省对齐成本，也更容易冻结成团队的验收清单。",
+    "image": "images/2026-11-23/bojieli-ai-agent-book.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "career-ops-hq/career-ops",
+    "url": "https://github.com/career-ops-hq/career-ops",
+    "stars": 84228,
+    "trend": "+3,750 stars/17天（对比 2026-11-06）",
+    "what": "开源的 AI 求职代理：扫描招聘网站、按简历给每个岗位 1-5 打分、生成 ATS 友好的简历与求职信、准备面试。作者自述用它在 740 个岗位里筛出 68 个投递、拿到 12 次面试。",
+    "why": "84,228★、15,415 fork，800+ 贡献者，11-22 仍有提交；它把“多步业务流程 + 打分器 + 产物生成”在个人场景跑通，是 agent 产品化的一条清晰样板。",
+    "insight": "可复用的是结构而不是领域：先做规则化打分（1-5），再让模型只负责生成材料。打分与生成分离，结果可解释、可回滚，比端到端“帮我找工作”稳得多。",
+    "image": "images/2026-11-23/career-ops-hq-career-ops.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "hugohe3/ppt-master",
+    "url": "https://github.com/hugohe3/ppt-master",
+    "stars": 79292,
+    "trend": "+5,337 stars/17天（对比 2026-11-06）",
+    "what": "把文档或主题直接生成原生 PowerPoint 的 agent：输出真实形状、转场与动画、数据图表和表格，还能用演讲者备注生成配音，输入支持 PDF、DOCX 和网页。",
+    "why": "79,292★、6,176 fork，11-20 有提交；“生成原生可编辑文件”比生成图片版幻灯片难得多，这类交付型 agent 正在变成办公场景的刚需。",
+    "insight": "交付物的可编辑性决定 agent 能否进真实流程。做文档类数字员工时优先输出原生格式（pptx/docx）而不是截图或 HTML，人工后续修改成本最低。",
+    "image": "images/2026-11-23/hugohe3-ppt-master.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "HKUDS/nanobot",
+    "url": "https://github.com/HKUDS/nanobot",
+    "stars": 50275,
+    "trend": "+410 stars/17天（对比 2026-11-06）",
+    "what": "Python 写的轻量自托管个人 agent：自带 WebUI 与终端 TUI，可接 15+ 聊天应用（Telegram、Slack、飞书、微信等），能读图片/PDF/Office、连 MCP、做长期记忆与定时任务。",
+    "why": "50,275★、8,760 fork，11-22 有提交；它把“记忆 + 定时任务 + 多 IM 接入”打包成单进程，是数字员工运行时的一个现实参照。",
+    "insight": "多 IM 接入 + 定时任务 + 记忆是最小可用数字员工的骨架。可对照它的分层（通道适配 / 工具 / 记忆 / 调度）检查自研方案里哪一层还在临时拼装。",
+    "image": "images/2026-11-23/hkuds-nanobot.jpg"
+  }
+]
