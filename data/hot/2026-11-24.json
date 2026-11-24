@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "Comfy-Org/ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "stars": 148296,
+    "trend": "+3,254 stars/19天（对比 2026-11-05）",
+    "what": "基于节点图的扩散模型前端与后端：把采样、模型加载、条件控制、图像/视频后处理拆成可连线节点，既能本地跑也能当 API 服务。仓库自述为“最快的本地推理引擎”，11-24 仍有提交。",
+    "why": "148,296★，19 天涨 3,254★；它已经从文生图工具长成多模态生成本地工作流平台，新模型（视频、音频）往往先在这里出可跑节点。",
+    "insight": "节点图是把多步生成流程变成可复用、可版本化资产的通用做法。做多步 agent 工作流时，用显式图结构表达步骤与依赖，比把逻辑塞进一段 prompt 更好调试与替换。",
+    "image": "images/2026-11-24/comfy-org-comfyui.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "harry0703/MoneyPrinterTurbo",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "stars": 145247,
+    "trend": "+5,449 stars/18天（对比 2026-11-06）",
+    "what": "输入一个主题或关键词，自动完成文案、素材匹配、配音与字幕，输出高清竖版短视频的 Python 项目，内置 Web 界面和多套视频模板。",
+    "why": "145,247★，18 天涨 5,449★，11-23 有提交；短视频是内容型 agent 里需求最直的场景，这类“一键出成片”项目持续吸星。",
+    "insight": "内容生产 agent 的价值在流水线编排：文案、检索、TTS、合成拆成独立可换的环节，任何一环换模型都不影响整体。自研时先冻结中间产物格式。",
+    "image": "images/2026-11-24/harry0703-moneyprinterturbo.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "stars": 122427,
+    "trend": "+4,040 stars/15天（对比 2026-11-09）",
+    "what": "一个“少说废话”的编码代理技能加本地代理：压缩模型回复和工具输出的体积，但保留每段原文可还原，目标是同样的任务花更少 token。",
+    "why": "122,427★，15 天涨 4,040★，11-23 有提交；token 成本是 agent 规模化最直接的账，压缩输出的思路正在从 prompt 技巧变成独立工具层。",
+    "insight": "压缩必须可逆才有工程价值：只压展示与传递层、保留原始可回查，避免为了省 token 丢掉后续排查需要的证据。",
+    "image": "images/2026-11-24/juliusbrussee-caveman.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Panniantong/Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 114269,
+    "trend": "+3,946 stars/15天（对比 2026-11-09）",
+    "what": "给 AI agent 用的联网读取命令行：用一套 CLI 读取和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等平台，自述零 API 费用。",
+    "why": "114,269★，15 天涨 3,946★，11-22 有提交；agent 缺的往往不是推理而是可稳定获取的外部数据，多平台统一接入能省掉大量适配工作。",
+    "insight": "外部数据接入应该收敛成一层统一工具接口（搜索/读取/分页/限流），上层 agent 不关心平台差异；但要先确认各平台的抓取合规边界，别把不稳定通道放进生产主链路。",
+    "image": "images/2026-11-24/panniantong-agent-reach.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "stars": 74008,
+    "trend": "+6,392 stars/18天（对比 2026-11-06）",
+    "what": "LLM 驱动的多市场股票分析系统：聚合多源行情与实时新闻，生成决策看板并自动推送，支持零成本定时运行。",
+    "why": "74,008★，18 天涨 6,392★，是本期涨幅最大的热门仓，11-23 有提交；它把“取数—分析—出结论—定时推送”整条链路跑通，是个人版投研 agent 的完整样板。",
+    "insight": "定时取数 + 规则打分 + 模型解读 + 主动推送，是数字员工最典型的一条骨架。照搬结构时把“结论可追溯”做进去：每条判断都要能回到对应数据快照。",
+    "image": "images/2026-11-24/zhulinsen-daily-stock-analysis.jpg"
+  }
+]

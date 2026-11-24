@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "erkamyaman/rust-anything",
+    "url": "https://github.com/erkamyaman/rust-anything",
+    "stars": 8749,
+    "trend": "2026-11-16 后新建，8 天内 8,749★（首日快照），2026-11-23 有提交",
+    "what": "用编码代理把已有应用一块一块改写成 Rust，每一步都对照原实现录制的行为做校验，覆盖 CLI、HTTP 服务和库，支持从 TypeScript 等语言迁移。",
+    "why": "11-16 建仓，8 天 8,749★、710 fork、72 个 issue，11-23 仍在提交；把“行为录制 + 增量迁移”做成可执行流程，正好补上重写类任务最缺的回归保障。",
+    "insight": "大规模重构的关键不是让模型写代码，而是先冻结原实现的输入输出作为对照基准。任何“整体重写”类 agent 任务都应该先产出可回放的行为样本。",
+    "image": "images/2026-11-24/erkamyaman-rust-anything.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "EL4CTEO/fast-anything",
+    "url": "https://github.com/EL4CTEO/fast-anything",
+    "stars": 3147,
+    "trend": "2026-11-21 后新建，3 天内 3,147★（首日快照），2026-11-24 有提交",
+    "what": "和“全量改写成 Rust”相反的路线：先对 Python/Node/Ruby 做性能剖析，只把最慢的 5% 用编码代理移植成 Rust，再证明行为和原来一致。提供 Claude Code 插件与 MCP server，覆盖十余种语言。",
+    "why": "11-21 建仓，3 天 3,147★；它直接在 README 里反驳同期更火的 rust-anything，说明“局部优化 + 等价性验证”正在成为性能类 agent 任务的主流口径。",
+    "insight": "性能优化要有基线数据闭环：先测出热点，再改，再用同一套基准证明没退化。没有前后对比数据的速度提升一律视为未验证。",
+    "image": "images/2026-11-24/el4cteo-fast-anything.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "INK-Q/agy-fast",
+    "url": "https://github.com/INK-Q/agy-fast",
+    "stars": 791,
+    "trend": "2026-11-19 后新建，5 天内 791★（首日快照），2026-11-23 有提交",
+    "what": "面向 Google Antigravity（CLI/桌面/IDE）的 MCP 加速插件，自述在不影响功能的前提下减少约 34% 的 LLM 轮次、31% 的 token 配额消耗和 40% 的上行流量。",
+    "why": "11-19 建仓，5 天 791★；Antigravity 生态刚起步就出现专职优化插件的需求，说明“上下文与轮次成本”已成为 IDE agent 的实际痛点。",
+    "insight": "减少轮次比减少单次 token 更有效：先合并可并行的工具调用、缓存稳定的上下文片段，再考虑压缩文本。优化数字员工时按调用次数做统计，不要只看单次长度。",
+    "image": "images/2026-11-24/ink-q-agy-fast.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "w01fb0ss/PiBot",
+    "url": "https://github.com/w01fb0ss/PiBot",
+    "stars": 506,
+    "trend": "2026-11-21 后新建，3 天内 506★（首日快照），2026-11-23 有提交",
+    "what": "本地优先的桌面多 agent 团队：支持多 agent 群聊协作、操作电脑与浏览器、接入 MCP，带定时例程和人工审批，覆盖 macOS/Windows/Linux。",
+    "why": "11-21 建仓，3 天 506★、71 fork，仓库体积约 53MB，说明不是空壳；它把“多 agent + 审批 + 例程”装进本地客户端，是数字员工桌面形态的一种实现。",
+    "insight": "多 agent 协作要有明确的角色与审批边界，否则只是把单 agent 的错误放大。落地时先固定“谁可以自主、哪些动作必须人批”，再谈协作效率。",
+    "image": "images/2026-11-24/w01fb0ss-pibot.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "erkamyaman/safe-anything",
+    "url": "https://github.com/erkamyaman/safe-anything",
+    "stars": 495,
+    "trend": "2026-11-22 后新建，2 天内 495★（首日快照），2026-11-23 有提交",
+    "what": "纯 Rust 实现的漏洞扫描器，覆盖 XSS、SQL 注入、泄露密钥、依赖 CVE，并把 AI agent 的配置与接入面也纳入检查范围，10 小时拿到 495★。",
+    "why": "11-22 建仓，2 天 495★；把“AI agent 自身配置”当成攻击面来扫，回应了 agent 权限过宽、密钥散落这类新风险。",
+    "insight": "agent 上线前应该像扫代码一样扫配置：工具权限、可访问目录、注入的密钥、外呼域名。把这类检查放进交付流水线，比事后审计便宜得多。",
+    "image": "images/2026-11-24/erkamyaman-safe-anything.jpg"
+  }
+]

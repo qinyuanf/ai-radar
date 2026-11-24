@@ -1,0 +1,81 @@
+[
+  {
+    "rank": 1,
+    "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
+    "title_cn": "GLM-5.4：首个循环架构模型",
+    "url": "https://z.ai/blog/glm-5.4",
+    "date": "2026-11-23",
+    "source": "Z.ai 官方博客，Hacker News 1049 分 / 345 评论",
+    "what": "智谱发布 GLM-5.4，称其为首个基于 Loop Transformer 架构的旗舰模型，主打通用编码能力，已上线 Z.ai 的 coding plan；官方博客重点讲架构，未同步给出基准分数、模型卡或演示。",
+    "why": "HN 1049 分 / 345 条讨论，最热的一类质疑就是“没有 benchmark 是不是分数不好看”；博客还提到模型容易陷入过长的“marathon thinking”，社区则猜测反蒸馏让开源模型的发布节奏变慢。",
+    "insight": "模型选型不能只看架构叙事。没有可复现基准的新版本，先在自己的任务集上做小样本对照，再决定是否替换生产链路；长思考倾向要单独测延迟与 token 成本。",
+    "image": "images/2026-11-24/glm-5-4-toward-generalized-coding-with-our-first.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "Dario is hyping the dangers so OSS models are illegal and he stays in control",
+    "title_cn": "LeCun 指控闭源方借安全论压制开源",
+    "url": "https://twitter.com/ylecun/status/2124550037912920090",
+    "date": "2026-11-23",
+    "source": "Yann LeCun 在 X 的发文，Hacker News 1137 分 / 632 评论",
+    "what": "Yann LeCun 公开指控 Dario Amodei 夸大 AI 危险，目的是让开源模型变成非法、从而维持闭源方的控制权。讨论里支持与反对都很激烈：一方认为“真信会毁灭人类就不会继续开发”，另一方认为应该按证据讨论风险而不是揣测动机。",
+    "why": "HN 1137 分 / 632 条评论，是本周期争议最大的行业话题；评论还牵出 Anthropic 博客里的开源权重滥用场景与 2026 年 Hugging Face 事件，安全叙事正在直接影响开源模型的政策空间。",
+    "insight": "做技术选型时把“政策与合规风险”当成一条独立评估维度：同一能力在开源与闭源两条路上，长期可用性、成本与合规成本可能完全不同，不能只比当期效果。"
+  },
+  {
+    "rank": 3,
+    "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+    "title_cn": "用 Unsloth 在家搭本地 AI",
+    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+    "date": "2026-11-22",
+    "source": "GPU Partner 博客，Hacker News 743 分 / 297 评论",
+    "what": "一份面向新手的本地部署教程：在 Windows 上用 Unsloth Desktop 加载量化模型，设置上下文长度并打开局域网访问，硬件就绪后 10–15 分钟可跑通；8–12GB 显存可跑 9B–12B 模型，32GB（作者用 RTX 5090）可跑 27B–35B。",
+    "why": "HN 743 分 / 297 条讨论，反映出对云厂商限流、涨价与隐私的疲劳；教程作者明确说是为了摆脱“整天盯着用量上限”。",
+    "insight": "敏感数据或高频调用的场景，本地小模型是可行的兜底方案。评估时按“显存决定可跑规模”先算硬件账，再决定哪些任务下沉到本地、哪些仍走云端。"
+  },
+  {
+    "rank": 4,
+    "title": "Anthropic announces closing of initial public offering",
+    "title_cn": "Anthropic 上市募资 935 亿",
+    "url": "https://www.anthropic.com/news/ipo-close",
+    "date": "2026-11-20",
+    "source": "Anthropic 官方公告",
+    "what": "Anthropic 11-20 宣布完成 IPO：共发行 11.27 亿股 A 类普通股、每股 83 美元（含承销商超额配售 1.47 亿股），总募资约 935 亿美元，公司实收约 916 亿；同时向 AMD、Broadcom、Google、Micron、微软、NVIDIA、台积电私募发行 3.13 亿股 N 类股，约 260 亿美元。股票 11-19 起以代码 ANT 在纳斯达克交易。",
+    "why": "这是 AI 公司迄今最大规模的上市之一；官方页面还挂着 5 月 650 亿美元 H 轮、9650 亿美元投后估值，资本结构变化会直接影响其算力承诺与长期定价。",
+    "insight": "选模型供应商时把财务与算力可持续性纳入评估：上市后的毛利压力、与芯片厂商的绑定关系，都会传导到 API 价格和配额策略，长期项目要有可替换方案。",
+    "image": "images/2026-11-24/anthropic-announces-closing-of-initial-public-of.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Can AI help scientists identify promising drug candidates?",
+    "title_cn": "药物化学的多目标取舍评测",
+    "url": "https://openai.com/index/introducing-medchembench",
+    "date": "2026-11-20",
+    "source": "OpenAI 官方博客（研究发布）",
+    "what": "OpenAI 发布 MedChemBench：99 道题取自 117 篇论文与专利、覆盖 761 个分子结构，考分子结构重建、基于实验证据的科学推理、化合物排序选择和性质预测。xhigh 推理下 GPT-6.2 Astra 得 84.5%，GPT-6 Astra 83.3%，GPT-6.1 Sol 82.0%，GPT-5.6 Sol 只有 58.2%。",
+    "why": "药物化学的核心难点是多目标取舍——对靶点更强不等于更容易吸收或更稳定；这类“同时预测多个相互冲突的性质”的评测，比单点问答更接近真实研发。",
+    "insight": "给领域 agent 做评测时，把“取舍”显式建模：让模型同时输出多个相互制约的指标并说明理由，比只问一个最终答案更能暴露能力边界。"
+  },
+  {
+    "rank": 6,
+    "title": "OpenAI and Cisco introduce Shirudo",
+    "title_cn": "Shirudo：给运行中系统打补丁前的盾",
+    "url": "https://openai.com/index/introducing-shirudo",
+    "date": "2026-11-23",
+    "source": "OpenAI 官方博客（安全）",
+    "what": "OpenAI 与 Cisco 开源 Linux 运行时 Shirudo，用 eBPF 在正式补丁上线前给运行中的服务加临时“盾”。受控测试里，Codex 生成的一个 shield 拦住了针对运行中 Elasticsearch 的 Java4Shell 攻击且无需重启；shield 需加密签名、经 eBPF 校验器检查，并用 TPM 留下加载/移除记录。",
+    "why": "打补丁和验证往往要几天到几周，而完全阻断某个系统调用会把服务打挂；Shirudo 试图在“拦住漏洞行为”和“放行正常请求”之间做可验证的取舍。",
+    "insight": "漏洞响应可以把临时缓解做成可回滚、可审计的产出物（签名+验证器+硬件记录），而不是靠人改配置。让 agent 生成缓解策略时，必须配同等级别的验证闭环。"
+  },
+  {
+    "rank": 7,
+    "title": "Advancing chip design with OpenAI models",
+    "title_cn": "用模型改芯片电路：已上硅验证",
+    "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+    "date": "2026-11-18",
+    "source": "OpenAI 官方博客（研究发布）",
+    "what": "OpenAI 披露模型参与自研推理芯片 Jalapeño 的设计：向量单元标准单元面积约降 13%、矩阵单元约降 10%，改动已通过流片验证；与 AMD 合作在旗舰 GPU IP 上相对强优化基线最高提升 14%，相当于把约一年进展压缩到 5 个月内，AMD 已把部分改动送交制造。模型能改写 SystemVerilog RTL，并用 Synopsys 工具验证行为等价，另在两个开源 RISC-V 核上逐代评测。",
+    "why": "这是“AI 优化 AI 基础设施”的闭环证据，而且有硅片与第三方流片背书；它把“模型能写 RTL”从演示推进到生产设计文件。",
+    "insight": "让模型做优化必须绑定等价性验证和面积/时序约束，否则收益不可信。把“改写→仿真验证→PPA 评估”做成流水线，是这类任务可复用的最小闭环。"
+  }
+]
