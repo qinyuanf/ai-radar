@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "VP ≠ VNP over every field",
+    "title_cn": "任意域上 VP 不等于 VNP",
+    "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp",
+    "date": "2026-11-23",
+    "source": "anthropics/formal-math（Lean 4 形式化仓库），Hacker News 357 分 / 331 评论",
+    "what": "Anthropic 公布一项计算复杂性结果及其 Lean 4 形式化：对任意域，哈密顿回路多项式（以及特征不等于 2 时的积和式）的电路需要超过 m^(c(log m)^(1/3)) 个门，从而 VP 是 VNP 的真子集、VNP 不在 VP 的闭包内；论文与形式化均由 AI 模型完成，仓库明确写明尚无人类数学家检查证明，也不解决 P vs NP。",
+    "why": "11-23 上榜，HN 357 分 / 331 条讨论；这是把“AI 产出的重大数学结果”第一次以可机器检查的形式公开，同时暴露出“证明被 Lean 检查”与“命题确实有意义”之间的空白。",
+    "insight": "对 agent 工程，这给出一个可复用的验证分层：机器内核只保证推导正确，不保证命题是想要的那个。高价值 agent 产物应同时提供“形式化命题 + 人类可读对照表 + 独立复核人”，三者缺一都不能算已验证。"
+  },
+  {
+    "rank": 2,
+    "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+    "title_cn": "GPT-6 模型展现内在蛋白质设计能力",
+    "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+    "date": "2026-11-24",
+    "source": "OpenAI 研究发布，2026-11-24",
+    "what": "OpenAI 发布预印本，称 GPT-6 系列不调用专门的生物模型、只靠推理与通用代码工具就能设计新的蛋白质结构与氨基酸序列；内部模型在 14 项蛋白质任务中的多数上不弱于专用模型，但与 Onava 的湿实验只验证了 5 个靶点各至少 1 个候选出现结合证据，完整结构预测仍是明显短板。",
+    "why": "11-24 官方发布；它把“通用模型 + 代码工具替代专用模型流水线”从演示推进到湿实验，但实验规模很小，且序列生成与候选筛选仍借助专用模型。",
+    "insight": "通用模型接管专业流水线时，先界定它替代的是哪一段：这里替代的是结构设计与推理，序列生成和筛选仍靠专用工具。评估时要按环节拆指标，别用端到端成功案例掩盖单点短板。"
+  },
+  {
+    "rank": 3,
+    "title": "How iFood scales coding agents across 15,000 repositories",
+    "title_cn": "iFood 如何把编码智能体铺到上万仓库",
+    "url": "https://openai.com/business/customer-stories/ifood",
+    "date": "2026-11-24",
+    "source": "OpenAI 客户案例（iFood），2026-11-24",
+    "what": "iFood 建了一个内部“远程智能体平台”：通过 REST API 提交任务，平台在隔离沙箱里执行编码 agent，最后以合并请求返回结果。平台已完成 2.5 万多次运行、消耗 270 多亿 token，平均每次运行成本 0.04 美元；首个用户是安全团队，用它在 1.5 万个仓库里修有漏洞的依赖，修复准确率翻倍以上。",
+    "why": "11-24 官方案例；它把“编码 agent 规模化”的瓶颈说清楚了：不是模型不够聪明，而是缺少统一的执行运行时、确定性的前后置步骤和自动判定任务是否完成的手段。",
+    "insight": "复制这条路径的关键是三件事：用确定性步骤包住 agent 执行（克隆、装技能、建分支在前，提 MR、产物归档在后）；用结构化输出契约判定成败；把单次成本压到可批量调用。没有这三样，agent 只能停在演示。"
+  },
+  {
+    "rank": 4,
+    "title": "LLM agents work for their parent companies, not for you",
+    "title_cn": "大模型智能体为母公司服务，不是为你",
+    "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+    "date": "2026-11-01",
+    "source": "Michael Harley 博客，Hacker News 904 分 / 380 评论",
+    "what": "作者用 Claude Code 写了一个从 Instagram 找歌并跳转 Bandcamp 购买的小技能；Bandcamp 加验证后模型拒绝绕过，但同一技能中从 YouTube 下载歌曲的分支却照常工作。作者据此认为前沿模型的行为边界由母公司利益决定，而不是由用户利益决定。",
+    "why": "11-24 在 HN 拿到 904 分 / 380 条评论，说明“agent 到底替谁优化”已成为使用者的普遍不安；讨论里也提到本地模型与开源权重是现实替代。",
+    "insight": "把供应商策略当成 agent 的一层外部约束来设计：关键决策链路要有可替换的模型适配层，并把“允许/禁止动作”写成显式策略而不是依赖模型自觉。对数字员工，涉及资金、版权与合规的动作尤其不能只靠模型判断。",
+    "image": "images/2026-11-25/llm-agents-work-for-their-parent-companies-not-f.jpg"
+  },
+  {
+    "rank": 5,
+    "title": "Introducing Ternary Bonsai 2.5 27B: Powering Agentic Coding and Private Knowledge Work",
+    "title_cn": "Bonsai 2.5 27B：本地智能体升级",
+    "url": "https://prismml.com/news/bonsai-2-5-27b",
+    "date": "2026-11-24",
+    "source": "PrismML 官方博客，Hacker News 328 分 / 110 评论",
+    "what": "PrismML 发布三值量化模型 Bonsai 2.5 27B，基于 Qwen3.8 27B，保持 5.9GB 体积，主打多轮工具调用与多步任务；官方数据 SWE-bench Verified 75.6（基座 80.6）、Terminal-Bench 2.1 60.1（基座 70.8）、AppWorld 90.5（基座 93.2），H100 上 291 tokens/s、RTX 4090 上 204 tokens/s，Apache-2.0。",
+    "why": "11-24 发布并在 HN 获 328 分；它把 27B 级模型的 agent 能力压进 5.9GB，让本地私有知识场景第一次有“够用且跑得动”的选项。",
+    "insight": "评估小体积模型要看任务链而非单点分数：Bonsai 2.5 在 AppWorld 已接近基座，但 Terminal-Bench 仍差 10 个点。把“多轮工具调用成功率、失败后恢复率、单任务 token 成本”作为选型三项，比看综合榜更可靠。",
+    "image": "images/2026-11-25/introducing-ternary-bonsai-2-5-27b-powering-agen.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Yes, 17m lines of Lean is a lot",
+    "title_cn": "1700 万行 Lean 证明确实很多",
+    "url": "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+    "date": "2026-11-22",
+    "source": "micjm 博客，Hacker News 273 分 / 357 评论",
+    "what": "作者统计 Lean 证明的规模：Mathlib 里 259 个著名定理的依赖多在 10 万到 120 万行之间，整个 Mathlib 约 240 万行；而 AI 生成的费马大定理形式化约 2700 万行，是人工 FLT 项目（约 6 万行）的 450 倍，另有项目达到 8800 万行。作者还披露用 Agent Duel 做资料检索与绘图。",
+    "why": "11-22 发布，HN 273 分 / 357 条讨论；它给出一个冷静的尺子：AI 形式化证明的“行数”远超人类项目，但行数不等于洞见，很多内容是脚本生成的检查。",
+    "insight": "用代码量衡量 agent 产出会严重失真。评估形式化或大型生成任务时，应区分手写核心、脚本生成与样板，并统计“可复用的引理/模块”而非总行数。"
+  },
+  {
+    "rank": 7,
+    "title": "Tidal bans AI-generated music",
+    "title_cn": "Tidal 禁止 AI 生成音乐",
+    "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+    "date": "2026-11-24",
+    "source": "Variety，Hacker News 317 分 / 303 评论",
+    "what": "音乐流媒体 Tidal 宣布禁止 AI 生成的音乐进入平台，成为又一家对生成式内容设限的分发渠道；报道未给出技术识别方案，讨论集中在版权归属与平台责任。",
+    "why": "11-24 上榜，HN 317 分 / 303 条评论；生成式内容正在从“能不能做”转向“渠道允不允许发”，平台规则开始反向塑造模型产品的形态。",
+    "insight": "做内容生成类 agent 时，渠道政策是硬约束而不是上线后再补的合规项。产品设计阶段就要确定发布渠道、标注方式与申诉路径，并准备可追溯的生成记录。",
+    "image": "images/2026-11-25/tidal-bans-ai-generated-music.jpg"
+  }
+]

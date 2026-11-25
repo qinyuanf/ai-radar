@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 325842,
+    "trend": "+18,372 stars/27天（对比 2026-10-29）",
+    "what": "给编码智能体用的一套完整软件开发方法论：由可组合的 skills 加初始指令组成，接入 Claude Code、Codex、Cursor、Gemini CLI、Kimi Code 等十余种客户端后，智能体先追问目标再动手，按固定流程做计划、实现与验证。",
+    "why": "325,842★，27 天涨 18,372★，11-24 仍有提交；它是本期最热仓库，也是“把方法论做成可分发技能包”最直接的样本——同一套 skills 跨十几个编码客户端复用。",
+    "insight": "技能要能跨宿主复用，就得把“何时触发、按什么顺序做、失败怎么回退”写成显式流程，而不是塞进一段系统提示。我们做数字员工技能时同样应让技能自带阶段划分与验收点。",
+    "image": "images/2026-11-25/obra-superpowers.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "f/prompts.chat",
+    "url": "https://github.com/f/prompts.chat",
+    "stars": 178448,
+    "trend": "+2,713 stars/21天（对比 2026-11-04）",
+    "what": "全球最大的开源提示词库（前身 Awesome ChatGPT Prompts）：按角色与任务收集提示词，提供网站检索与收藏，并支持企业自托管以保留完整隐私。",
+    "why": "178,448★，21 天涨 2,713★，11-24 有提交；提示词资产仍在从散落文档收敛成可检索、可自托管的库，企业自托管是这次更新的重点。",
+    "insight": "提示词不是一次性文本，应版本化管理并带适用模型与场景标签；内部使用时优先自托管，避免把业务语境贴到公共站点。",
+    "image": "images/2026-11-25/f-prompts-chat.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "open-webui/open-webui",
+    "url": "https://github.com/open-webui/open-webui",
+    "stars": 159459,
+    "trend": "+1,765 stars/21天（对比 2026-11-04）",
+    "what": "可完全离线自托管的多模型聊天平台：接 Ollama 本地模型或 OpenAI 兼容 API，内置 RAG、MCP 工具接入与多用户管理，前端用 Svelte。",
+    "why": "159,459★，21 天涨 1,765★，11-25 仍有提交；企业想给员工统一 AI 入口时，这类“模型 + 检索 + 工具权限”一体的自托管面板是低门槛选项。",
+    "insight": "给内部员工开放 AI 能力，先把身份、可用模型清单与工具白名单收敛到一层网关；自托管的意义不只是数据不出域，更是把调用与权限变成可审计的配置。",
+    "image": "images/2026-11-25/open-webui-open-webui.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "run-llama/llama_index",
+    "url": "https://github.com/run-llama/llama_index",
+    "stars": 52995,
+    "trend": "首日快照：总 52,995★，2026-11-20 有提交",
+    "what": "面向文档处理与 agent 的 Python 框架：把文档解析、索引、检索、工具调用和多 agent 编排拆成可组合模块，当前定位是“AI 的文档处理平台”。",
+    "why": "52,995★，11-20 有提交、1,547 个开放 issue；文档型 agent 的工程重心已经从“怎么调模型”转向“怎么把非结构化文档稳定变成可检索、可引用的数据”。",
+    "insight": "文档 agent 的瓶颈通常在解析与检索质量，而不是编排花样。先冻结 chunk 规则、元数据字段与引用回链格式，再换模型或换框架，返工成本才可控。",
+    "image": "images/2026-11-25/run-llama-llama-index.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "zhayujie/CowAgent",
+    "url": "https://github.com/zhayujie/CowAgent",
+    "stars": 48061,
+    "trend": "+220 stars/16天（对比 2026-11-09）",
+    "what": "开源个人 AI 助理与 Agent Harness：规划任务、调用工具与技能，靠记忆和知识自进化，支持多 agent、多模型、多渠道接入，提供一行安装。",
+    "why": "48,061★，11-24 有提交；它把“harness”这个词放进了产品定位——模型之外的任务规划、技能加载、记忆写入与渠道适配正在独立成层。",
+    "insight": "Agent Harness 的价值在模型之上：把规划、技能注册、记忆读写、渠道适配四件事的接口先定清楚，换模型或换端时只替换适配器，不动业务技能。",
+    "image": "images/2026-11-25/zhayujie-cowagent.jpg"
+  }
+]

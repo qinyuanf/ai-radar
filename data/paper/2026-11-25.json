@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Language Models Steer on Injected Uncertainty Tokens, but Fail to Self-Monitor In Situ",
+    "title_cn": "模型能按不确定性标记转向，却不会自查",
+    "url": "https://arxiv.org/abs/2611.31228",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31228（cs.AI）",
+    "what": "在 4 个开源模型、15,200 次数学基准尝试中定位 2,017 个推理错误并做 27,568 次反事实续写：模型自报的逐步置信度几乎无法区分错误步与正确步（同位置 AUROC 0.500–0.561），首次出错处置信仍高达 95.1%–99.9%；但外部注入 10% 低置信标签可让后续纠正提升 3.7–22.5 点，误注入到正确步骤则会让解题率下降最多 22.8 点。",
+    "why": "11-23 新论文；“让模型边推理边报置信度”是 agent 自纠的常见做法，这项实验说明瓶颈在错误检测而不是修复能力。",
+    "insight": "不要用模型自报置信度触发回退。把校验放在外部：对关键步骤用独立校验器或规则打分，只对可疑步骤注入“再想想”，避免把正确推理一起推翻。"
+  },
+  {
+    "rank": 2,
+    "title": "ToolSmith: An Automatic Tool-Generation Framework for Multimodal Search Agents",
+    "title_cn": "ToolSmith：让检索智能体自己长工具",
+    "url": "https://arxiv.org/abs/2611.31198",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31198（cs.CL/cs.AI/cs.CV）",
+    "what": "ToolSmith 在精简的基础工具库之上自动生成并复用新模块：从已有部件拼出新工具，遇到新查询类型与失败模式时扩充工具库。在 3 个域内多模态检索基准与 10 个域外基准上，各类规模的已部署 agent 均优于固定工具库，且骨干模型越大收益越明显。",
+    "why": "11-23 新论文；手写工具库是检索 agent 的维护瓶颈，自动扩工具把“改代码”变成“改工具集”，更贴近长期运行的数字员工。",
+    "insight": "工具集应当可增长、可回滚：每次新增工具都记录触发条件、输入输出契约与失败率，达到阈值再进主链路；否则自动生成的工具会变成新的不可解释层。"
+  },
+  {
+    "rank": 3,
+    "title": "Know When to Abstain: Conformal Confidence Estimation for Text-to-SQL",
+    "title_cn": "Text-to-SQL 何时该拒答",
+    "url": "https://arxiv.org/abs/2611.31190",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31190（cs.AI/q-fin.CP）",
+    "what": "把 Text-to-SQL 置信度估计拆成“生成 + 校验”：生成模型写并执行查询，另一个评论模型判断查询与结果，再与自报置信、token 不确定性和 SQL 结构特征融合。在 Spider 上不拒答时 22.6% 查询错误；给定 15% 风险预算，系统平均接受 52.4% 查询、实际错误 9.1%，AUARC 0.899；迁移到 BIRD 时置信度仍有信息量（AUROC 0.72），但风险保证不迁移。",
+    "why": "11-23 新论文；Text-to-SQL 的失败常是“能执行但答错问题”，这类静默错误正是数据分析 agent 最危险的部分。",
+    "insight": "拒答/转人工要有统计保证，而不是拍一个阈值。跨数据集或跨库时校准会失效，必须在新分布上重新校准；把“接受率—错误率”作为上线指标，而不是只看准确率。"
+  },
+  {
+    "rank": 4,
+    "title": "CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting",
+    "title_cn": "拆解检索智能体的强化学习增益",
+    "url": "https://arxiv.org/abs/2611.31185",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31185（cs.IR/cs.AI/cs.CL）",
+    "what": "让 RL 后的检索 agent 与 RL 前的初始策略在同一条轨迹上协作，各自控制四个互斥角色（中间推理、检索或作答决策、查询生成、答案抽取），穷举 16 种角色分配并用 Shapley 值分解总增益。在 Search-R1 系列上，查询生成贡献始终不超过总增益的 15%；增益主要由 RL 前的答案有效性、检索保留率、模型规模与固定检索预算决定，模型越大收益越向答案抽取转移。",
+    "why": "11-23 新论文；检索 agent 常被默认“优化查询生成”，这项归因说明收益可能主要来自答案格式与检索保留。",
+    "insight": "优化检索 agent 前先做角色级消融：固定预算下分别替换查询生成、作答决策与答案抽取，确认瓶颈在哪一段。否则容易把预算花在贡献最小的环节。"
+  },
+  {
+    "rank": 5,
+    "title": "Preflight: Agentic Last-Mile Verification for AI Software Supply Chains",
+    "title_cn": "Preflight：按程序验证依赖的真实行为",
+    "url": "https://arxiv.org/abs/2611.31110",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31110（cs.AI/cs.CR）",
+    "what": "Preflight 针对 Python 依赖做“程序作用域”的预执行验证：抽取应用实际引用的符号，迭代合成并校验函数级 harness，在受限环境执行依赖、记录行为指纹，并与历史版本对比。在 4 起真实供应链事件、5 种应用上下文与 100 个正常包上，4 个上下文判恶意、LiteLLM 客户端上下文判清白，100 个正常包零误报；消融显示仅做 import 探测会完全漏掉恶意行为。",
+    "why": "11-23 新论文；依赖投毒越来越多，传统来源校验与静态扫描无法回答“这个版本在我的程序里会做什么”。",
+    "insight": "供应链检查要按“你的程序实际调用到的符号”生成 harness，import 级扫描会漏。把行为指纹与历史版本对比纳入 CI，能在升级时发现静默行为变化。"
+  },
+  {
+    "rank": 6,
+    "title": "LiveLoRA: Exact KV Cache Migration Across LoRA Updates for LLM Agents",
+    "title_cn": "LiveLoRA：适配器热更新不必重放历史",
+    "url": "https://arxiv.org/abs/2611.31105",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31105（cs.AI）",
+    "what": "LiveLoRA 通过冻结底层解码块与固定 K/V 适配器下投影，让每个 token 的基投影与低秩坐标在不同适配器版本间保持一致；运行时重建候选 K/V、用最后一层重算最新 token，并把新适配器、缓存与下一 token logits 一起提交。在 Qwen2.5-3B 上，32 个 8K token 会话的中位发布加速为全量重放的 68.98 倍，解码额外开销约 4.8%。",
+    "why": "11-23 新论文；长期运行的 agent 会话会在适配器更新时被迫重放全部历史，成本随会话数线性增长。",
+    "insight": "需要热更新模型能力的长会话系统，应把“缓存可迁移”作为运行时约束来设计：冻结底层、固定投影，并验证迁移后与全量重放的等价性。否则每次更新都要付一遍历史重放成本。"
+  },
+  {
+    "rank": 7,
+    "title": "When Does Overriding the Majority Vote Help?",
+    "title_cn": "什么时候该推翻多数投票",
+    "url": "https://arxiv.org/abs/2611.31165",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31165（cs.AI）",
+    "what": "在 150 道竞赛数学题上，以 16 次采样的多数投票为基线，比较额外推理、执行程序与跨模型推理三类“推翻”手段。投票错误时，正确答案往往根本不在原候选里；同模型额外推理很少触发推翻；执行程序在各阈值下纠正的错误都多于引入的错误；跨模型推翻未能稳定超过单独使用更准的模型。",
+    "why": "11-23 新论文；多数投票 + 复核是常见 agent 兜底方案，但“复核”到底该由谁做、何时做，长期缺少数据。",
+    "insight": "多数投票错时，先扩大候选多样性或引入可执行验证，而不是让同模型再想一遍。把“执行程序校验”作为首选复核手段，跨模型投票只在能证明其边际收益时使用。"
+  },
+  {
+    "rank": 8,
+    "title": "Reducing Order Sensitivity in Decision Models",
+    "title_cn": "决策模型要消除选项顺序敏感",
+    "url": "https://arxiv.org/abs/2611.31174",
+    "date": "2026-11-23",
+    "source": "arXiv 2611.31174（cs.AI）",
+    "what": "在 10 个开源与闭源决策模型上，选项顺序会显著改变预测，选项越多越严重，并会在多步决策中累积。比较 8 种缓解方法后，tree attention 把选项作为共享上下文中的并行分支处理，训练时使用可匹配基线平均准确率；不重训直接套用也能消除顺序敏感，仅损失 1.1 个百分点。",
+    "why": "11-23 新论文；agent 里的排序、选择、路由越来越多交给决策模型，顺序敏感会让同一输入产生不同动作。",
+    "insight": "把“顺序不变性”加入决策模型的验收项：同一组选项打乱多次，结果应一致。tree attention 是低成本修复，但上线前要在自己的选项分布上复测准确率损失。"
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "rank": 1,
+    "repo": "XinaTian/MROffice",
+    "url": "https://github.com/XinaTian/MROffice",
+    "stars": 3823,
+    "trend": "2026-11-10 后新建，15 天内 3,823★，2026-11-24 有提交",
+    "what": "浏览器里的 AI 办公套件编辑器：文档、表格、演示、PDF 与代码五类编辑器，内置 Copilot 与 MCP server，自述对标 Microsoft Office，并支持嵌入第三方应用。",
+    "why": "11-10 建仓，15 天 3,823★、413 fork；它把“Office 文件格式 + Copilot + MCP”打包成可嵌入编辑器，说明办公场景正在成为 agent 的直接落点。",
+    "insight": "文档类 agent 的护城河是文件格式兼容与可审阅的改动预览。接入时要求“先给 diff 预览再写入”，并保留一次撤销，才能把模型错误控制在可回滚范围。",
+    "image": "images/2026-11-25/xinatian-mroffice.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "sous-labs/songe",
+    "url": "https://github.com/sous-labs/songe",
+    "stars": 679,
+    "trend": "2026-11-20 后新建，5 天内 679★，2026-11-25 有提交",
+    "what": "用本机闲置算力训练个人模型的引擎：在你通过 opencode、pi 等客户端正常使用时，记录每次动作后的工具结果、报错与你的下一条消息，把这些轨迹当作训练信号在本地更新模型。",
+    "why": "11-20 建仓，5 天 679★；它把 agent 运行轨迹直接变成训练数据，绕开人工标注，是个人化 agent 的一条新路径。",
+    "insight": "轨迹即数据：每次工具调用后的结果、报错与用户反馈都应结构化落库，既可用于评估也可用于后续微调。但要先做脱敏与采样，否则噪声和隐私会同时放大。",
+    "image": "images/2026-11-25/sous-labs-songe.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "jackson-cmd/risk-aware-trading-agents",
+    "url": "https://github.com/jackson-cmd/risk-aware-trading-agents",
+    "stars": 477,
+    "trend": "2026-11-12 后新建，13 天内 477★，2026-11-25 有提交",
+    "what": "LLM 交易 agent 的基准与排行榜：新闻按发布分钟回放、下一开盘成交，覆盖 2020 崩盘、2022 熊市与 2026 三个冻结市场；Llama、GPT、Claude、Gemini 各跑三个种子，并分别按训练截止前后计分。",
+    "why": "11-12 建仓，13 天 477★、83 fork；它直指 agent 评测最常见的作弊源——前视偏差：按日历日对齐新闻，会让收盘后才发布的头条被当成当日已知信息。",
+    "insight": "任何带时间序列的 agent 评测，都要按“信息在当时是否可见”重建时间线。把数据快照与知识截止写进评测协议，否则不同模型的分数无法比较。"
+  },
+  {
+    "rank": 4,
+    "repo": "logitcai/tinybrain",
+    "url": "https://github.com/logitcai/tinybrain",
+    "stars": 467,
+    "trend": "2026-11-13 后新建，12 天内 467★，2026-11-23 有提交",
+    "what": "从零训练的中文优先小语言模型项目：开放 60B token 数据集与 tokenizer，模型用 mHC + Engram + MoE，覆盖预训练到强化学习全流程，纯 PyTorch 实现。",
+    "why": "11-13 建仓，12 天 467★；中文开源项目里少见地把数据、分词器、模型结构与训练脚本一起放出，可作为可复现的小模型基线。",
+    "insight": "复现实验的价值取决于数据与分词器是否一起开放。评估第三方模型时先看数据配比与清洗脚本，单看结构说明不足以判断能力来源。"
+  },
+  {
+    "rank": 5,
+    "repo": "google-deepmind/robotics-antigravity-plugin",
+    "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+    "stars": 260,
+    "trend": "2026-11-16 后新建，9 天内 260★，2026-11-20 有提交",
+    "what": "DeepMind 官方的机器人技能插件：把空间推理、多模态感知与代码生成接进实时控制回路，agent 写控制器、先在 MuJoCo 仿真验证，再把同一份代码放到真机机械臂上跑。",
+    "why": "11-16 建仓，9 天 260★，Apache-2.0；官方把“仿真先行 + 同一控制器上真机”做成可复用技能包，说明 skills 这套抽象正从写代码扩展到物理执行。",
+    "insight": "物理类 agent 必须先仿真后真机，且两端共用同一份控制器代码。把“仿真验证通过”设成上真机的前置门禁，别靠人工目测动作是否正常。",
+    "image": "images/2026-11-25/google-deepmind-robotics-antigravity-plugin.jpg"
+  }
+]
