@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "qianyiai/kurocat",
+    "url": "https://github.com/qianyiai/kurocat",
+    "stars": 982,
+    "trend": "2026-11-21 后新建，5 天内 982★（首日快照），2026-11-26 有提交",
+    "what": "开源桌面打字小猫（Bongo Cat 替代）：Tauri v2 + Rust 实现透明置顶窗口、OBS 透明源与 6 款猫咪皮肤，支持“AI 捏猫”定制与输密码防偷窥（仓库另标 MCP），覆盖 Windows/macOS/Linux/Android。",
+    "why": "11-21 建仓，5 天 982★，11-26 仍有提交；桌面宠物这个品类靠“可爱 + 跨端 + 可定制”持续出圈，同期还有同名项目（chanke17/KuroCat）在涨。",
+    "insight": "这类小工具的工程价值在模板：Tauri 小体积跨端 + 透明悬浮窗 + 本地生成皮肤，可以作为“桌面侧数字员工挂件”的技术选型参考。定制能力走 MCP 而不是硬编码，换皮肤不用改客户端。",
+    "image": "images/2026-11-26/qianyiai-kurocat.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "Developing-Gamer/agent-sim",
+    "url": "https://github.com/Developing-Gamer/agent-sim",
+    "stars": 598,
+    "trend": "2026-11-21 后新建，5 天内 598★（首日快照），2026-11-25 有提交",
+    "what": "在 Linux 上给 AI agent 提供 iOS 模拟器能力（x86Sim 的 agent 层）：让 agent 驱动 iOS 应用，用于移动端自动化与测试。",
+    "why": "11-21 建仓，5 天 598★，11-25 有提交；移动端 agent 自动化的卡点一直是“没有 Mac 就跑不了 iOS 模拟器”，它直接把这一层补上。",
+    "insight": "要把移动端 E2E 交给 agent，先解决设备/模拟器层与稳定的元素定位，再谈用例生成。x86 Linux 上跑模拟器能去掉 Mac 依赖，但真机行为差异仍需单独回归，别用模拟器结果替代真机验收。",
+    "image": "images/2026-11-26/developing-gamer-agent-sim.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "JimLiu/open-artifact",
+    "url": "https://github.com/JimLiu/open-artifact",
+    "stars": 548,
+    "trend": "2026-11-17 后新建，9 天内 548★（首日快照），2026-11-26 有提交",
+    "what": "与 agent/模型无关的开源 artifacts 工作区：幻灯片、UI 设计、设计系统、白板、表格、仪表盘、文档与动效都以纯文件保存在本地，可编辑、评论与导出。",
+    "why": "11-17 建仓，9 天 548★，11-26 有提交；它把 Claude Artifacts 那套“对话产出可继续编辑的文件”做成了不绑定厂商的本地格式。",
+    "insight": "让 agent 产出“可继续编辑的纯文件”比产出截图或 HTML 片段更有复用价值：格式要能被 diff、能版本化，才能进代码评审与回滚流程。选型时优先看导出格式是否开放。",
+    "image": "images/2026-11-26/jimliu-open-artifact.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "hovocope135-tech/DSH-projects",
+    "url": "https://github.com/hovocope135-tech/DSH-projects",
+    "stars": 489,
+    "trend": "2026-11-17 后新建，9 天内 489★（首日快照），2026-11-23 有提交",
+    "what": "DeepSeek Harness 的开源插件：一句话给出目标，它先追问不清楚的点，再把任务拆开并行执行，最后把完成的工作交回，自述在探索“人与 AI 的最佳协作方式”。",
+    "why": "11-17 建仓，9 天 489★，11-23 有提交；它把“澄清前置 + 并行执行”做成了可安装的插件，而不是停留在提示词技巧。",
+    "insight": "需求澄清前置能显著减少返工：把“缺什么信息、谁来补、补完才开工”写成 harness 的固定第一步。并行执行只用于互不依赖的子任务，否则冲突和重复劳动会互相抵消。",
+    "image": "images/2026-11-26/hovocope135-tech-dsh-projects.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "jackson-cmd/claude-multi-desktop",
+    "url": "https://github.com/jackson-cmd/claude-multi-desktop",
+    "stars": 432,
+    "trend": "2026-11-16 后新建，10 天内 432★（首日快照），2026-11-25 有提交",
+    "what": "在 Mac 上同时运行多个 Claude Desktop 账号的脚本：独立登录、自定义图标、共享一套 Claude Code 配置，并让不同账号的会话互相发消息。",
+    "why": "11-16 建仓，10 天 432★，11-25 有提交；多账号并行在桌面端仍需靠脚本绕过单实例限制，说明这是真实且未被满足的需求。",
+    "insight": "这暴露了真实诉求：同一台机器要同时跑多个租户/多个账号的会话。正规做法是在网关层做多租户隔离、配额与审计，而不是堆客户端实例；临时脚本可以救急，不能进生产流程。",
+    "image": "images/2026-11-26/jackson-cmd-claude-multi-desktop.jpg"
+  }
+]

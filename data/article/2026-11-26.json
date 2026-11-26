@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "The matrix multiplication exponent is nine fourths",
+    "title_cn": "矩阵乘法指数确为 9/4",
+    "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+    "date": "2026-11-24",
+    "source": "openai/math 预印本，Hacker News 1,025 分 / 576 评论",
+    "what": "OpenAI 发布预印本，证明矩阵乘法指数 ω 的下界为 9/4，与 10 月 6 日那批结果给出的上界吻合，从而确定 ω=9/4；同批还发布有限傅里叶变换门数为 N(log N)^{1/2+o(1)} 的结果（同样含匹配下界）。这是 1969 年 Strassen 打开的问题第一次得到确切答案。",
+    "why": "11-24 发布，HN 1,025 分 / 576 条讨论；冲击不在结论本身，而在“AI 能证明 9/4 这种下界”——此前学界普遍相信 ω=2，也没有人预期下界证明会这么快出现。",
+    "insight": "对 agent 工程，值得学的是交付形态：预印本直接进 GitHub 仓库、不依赖公关稿。高风险产出要同时具备可机器检查的证明与人可读的对照说明，两者缺一都不能当作已验证。",
+    "image": "images/2026-11-26/the-matrix-multiplication-exponent-is-nine-fourt.jpg"
+  },
+  {
+    "rank": 2,
+    "title": "HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT",
+    "title_cn": "天啊天啊天啊天啊",
+    "url": "https://scottaaronson.blog/?p=10379",
+    "date": "2026-11-25",
+    "source": "Shtetl-Optimized（Scott Aaronson 博客），Hacker News 876 分 / 720 评论",
+    "what": "Aaronson 记录 11 月下旬一周内接连出现的结果：Anthropic 的黎曼猜想证明、VP≠VNP、ω=9/4 与 FFT 门数下界。他的判断是 AI 产出的证明已从“个案”变成“整片大陆”，人类可能需要数年才能完全读懂，并称 P≠NP 可能不远。",
+    "why": "11-25 发布，HN 876 分 / 720 条讨论；这是圈内人对“AI 做数学”节奏的一手判断，也划了边界：关于加密被攻破的传闻，他明确表示未经证实不转述。",
+    "insight": "当产出速度超过人类理解速度，瓶颈就变成验收：先要能形式化检查，再要能被人读懂。给 agent 设“可验证 + 可解释”双门槛，比追模型能力更紧迫；同时把未经证实的“突破”挡在决策链之外。",
+    "image": "images/2026-11-26/holy-shit-holy-shit-holy-shit-holy-shit.jpg"
+  },
+  {
+    "rank": 3,
+    "title": "Finding faster quantum algorithms with agents and formal verification",
+    "title_cn": "用智能体与形式化验证寻找更快量子算法",
+    "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+    "date": "2026-11-23",
+    "source": "Google DeepMind 官方博客，2026-11-23",
+    "what": "DeepMind 用 agent 团队加形式化验证改进量子算法，目标场景是聚变与化学相关的量子计算任务；agent 负责提出与改写候选算法，形式化验证负责确认正确性。",
+    "why": "11-23 官方发布；这是“agent 提方案 + 形式化验证兜底”在科学计算里的落地样本，与同周 OpenAI 的数学预印本形成同一套模式，说明它正在成为标准配方。",
+    "insight": "高价值 agent 任务的通用结构正在成型：agent 负责搜索与改写，验证器负责守门。没有验证器的领域，先补验证器再上 agent；否则只是把错误放大得更快。"
+  },
+  {
+    "rank": 4,
+    "title": "Searching for distant planets with Astra",
+    "title_cn": "用 Codex 和 Astra 搜寻系外行星",
+    "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+    "date": "2026-11-24",
+    "source": "OpenAI 官方博客，2026-11-24",
+    "what": "OpenAI 介绍两位业余天文学家的实验：一人用 Codex 分析 NASA Kepler 望远镜约 10 万颗恒星的观测数据，另一人用 Astra 分析 TESS 约 1,900 万颗恒星的数据，各自找出系外行星候选信号；SETI 研究所独立复算命中其中两个信号，TESS 团队接手一个候选做进一步分析。",
+    "why": "11-24 官方发布；重点不是“AI 发现行星”，而是业余者用通用模型加公开数据完成了过去需要专业管线的工作，并主动交给专业机构复核。",
+    "insight": "让 agent 做科研辅助，关键是结论可被独立复算：保留数据来源、检索脚本与筛选阈值，别人才能验证。把复算入口做进产物，比多给几张漂亮图更有说服力。"
+  },
+  {
+    "rank": 5,
+    "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+    "title_cn": "手写与素描的生成式 Transformer",
+    "url": "https://greydanus.github.io/2026/11/12/pengpt/",
+    "date": "2026-11-12",
+    "source": "Sam Greydanus 个人博客，Hacker News 392 分 / 77 评论",
+    "what": "两个小 transformer：6M 参数模型能写印刷体与连笔字，并能从某人几个词的字迹模仿其手写；54M 参数模型按文本提示作画。两者共用一个 tokenizer（十个符号加合并计数）。作者自述投入约为 80% 数据、15% 速度、5% 架构。",
+    "why": "11-12 发布、11-25 登上 HN（392 分 / 77 评论）；它是“Bitter Lesson”式的样本：小模型加规模合适的数据，胜过精巧架构，而且拆解分析给出了可复现的原因。",
+    "insight": "做垂直能力时先把数据表示与采集管线做到极致，再谈模型结构；tokenizer 设计（离散笔画 + 合并）往往决定上限。评估要区分“能生成”与“可控生成”，后者才对应可用性。"
+  },
+  {
+    "rank": 6,
+    "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+    "title_cn": "被指蒸馏，如何自证清白",
+    "url": "https://news.ycombinator.com/item?id=50630809",
+    "date": "2026-11-24",
+    "source": "Hacker News 讨论，440 分 / 338 评论",
+    "what": "一位创业者称被 Anthropic 指控用其 API 做模型蒸馏，限 24 小时内自证清白。他表示公司并不训练自有模型，唯一可疑用法是每次修改 AI 配置都会跑的自动化回归基准。讨论集中在如何在不破坏用户隐私的前提下举证。",
+    "why": "11-24 上榜，440 分 / 338 条讨论；它暴露了 API 条款里“自动化评测算不算蒸馏”的灰区，以及厂商单方面判定时举证责任倒置的现实风险。",
+    "insight": "用第三方模型做自动化评测要留证据链：请求频率与用途说明、基准脚本版本、结果留存。关键业务不要只依赖单一供应商，合同层面把“判定依据与申诉流程”写清楚，技术上准备可切换的模型清单。"
+  },
+  {
+    "rank": 7,
+    "title": "Latency doesn't lie: Jev is (probably) Qwen3.5-35B-A3B",
+    "title_cn": "Jev 疑似 Qwen3.5-35B-A3B",
+    "url": "https://modaic.dev/blog/latency-doesnt-lie",
+    "date": "2026-11-25",
+    "source": "Modaic 博客，Hacker News 212 分 / 59 评论",
+    "what": "Modaic 通过自报身份、tokenizer 行为与吞吐测试推断：未公开底座的产品 Jev（TypeSafe）大概率是 Qwen3.5-35B-A3B 的微调版本。文章标题即结论——“延迟不会说谎”。",
+    "why": "11-25 上榜，212 分 / 59 条讨论；模型指纹鉴别正在成为选型与合规的常规动作，尤其是上游不愿公开底座时。",
+    "insight": "选第三方模型服务时不要只看宣传：用 tokenizer 行为、吞吐曲线、固定 prompt 的自报身份做交叉验证，并记录版本号。上游静默换模型会让历史评测失真，所以基线要能重跑。",
+    "image": "images/2026-11-26/latency-doesn-t-lie-jev-is-probably-qwen3-5-35b-.jpg"
+  }
+]

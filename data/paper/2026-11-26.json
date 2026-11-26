@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "Delegent: A Multi-Agent Harness That Reduces Cost without Sacrificing Performance",
+    "title_cn": "多智能体框架把杂活交给小模型",
+    "url": "https://arxiv.org/abs/2611.33098",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33098（cs.AI/cs.IR）",
+    "what": "基于 Claude Code 的 agent harness：前沿模型始终主导任务，但把查代码、跑测试、检索语料等简单子任务交给本地小模型（27B FP8，甚至 2B）执行；不训练路由或级联模型。长程编码的前沿成本降低 67%、agentic 搜索降低 59%，任务成功率不降；2B 小模型也能把编码成本降 66%。",
+    "why": "11-24 新论文；成本优化常被理解成“换小模型跑整个任务”，这里证明“主模型不动、只下放子任务”也能省约 2/3，且实现简单。",
+    "insight": "先按子任务难度拆分再谈模型路由：把“哪些子任务可下放”写成显式规则，主模型保留对结果的复核。这比训练 router 更容易维护，也便于按失败案例逐条收紧。"
+  },
+  {
+    "rank": 2,
+    "title": "Leto: Utility-Centric Agent Memory",
+    "title_cn": "以效用为中心的智能体记忆",
+    "url": "https://arxiv.org/abs/2611.33005",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33005（cs.CL）",
+    "what": "把 agent 记忆按“对未来请求的效用”而非“对过去的保真”来设计：保留原始对话索引，请求到来时用 memory replay 预判并补充上下文，再用回应结果回灌调整选择。在 PrefEval 上准确率比最强基线高 16.3 个百分点，PERMA 任务完成高 3.1 分；长程任务上增益随链深增大。",
+    "why": "11-24 新论文；多数记忆系统在比“记得准不准”，但记忆的价值是“让下一次回答更好”。这个视角把评估从检索指标拉回任务指标。",
+    "insight": "记忆评估要绑任务完成率与准确率，而不是检索命中率。保留原始消息加索引，别只存摘要，否则中间证据会丢；回灌机制可以先从“按结果给记忆打标”做起。"
+  },
+  {
+    "rank": 3,
+    "title": "SAG-Mem-1.0 Technical Report",
+    "title_cn": "对话记忆保留原文并按需扩展检索",
+    "url": "https://arxiv.org/abs/2611.33124",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33124（cs.CL/cs.IR）",
+    "what": "长对话记忆框架：把完整消息切成不重叠块，不做 LLM 抽取或摘要；查询时先用 BM25 取候选，证据评估器挑出有用块，再用块内词法线索做第二轮检索；相对时间按日历解读但保留原表述。LoCoMo 83.08、LongMemEval 80.20 均为第一，后者领先最强基线 7.2 分；Lite 版 77.09/77.20，成本更低、延迟更低。",
+    "why": "11-24 新论文；它用“不建摘要、纯词法 + 两轮检索”打赢更复杂的记忆结构，说明构造成本未必换来收益。",
+    "insight": "先试最笨的方案：原文分块 + BM25 + 一轮证据引导的二次检索，把省下的推理成本花在证据评估器上。时间表达要保留原文并附日历换算，避免“上周三”被模型改写错。"
+  },
+  {
+    "rank": 4,
+    "title": "RecordRoute: Auditing Agent Failures with Localization-Guided Diagnosis",
+    "title_cn": "用定位引导诊断审计智能体失败",
+    "url": "https://arxiv.org/abs/2611.33022",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33022（cs.AI）",
+    "what": "审计 agent 失败的方法：把每条记录编码为词与字符特征，在轨迹内做比较排序，选出“最早的决定性一步”，再用这一步的文本与元数据预测错误模式。在 Who&When Pro 上四项指标均超 StepFinder 与 ASCon；固定责任人/步骤后，局部诊断联合准确率 77.47%，全轨迹诊断 69.28%。",
+    "why": "11-24 新论文；agent 失败复盘目前多靠人翻日志，定位与归因分两步做会丢上下文。这项结果说明“先定位、再只看那一步做归因”更准也更省。",
+    "insight": "失败审计应固定输出三件事：责任方（哪个 agent 或工具）、最早决定性步骤、错误类型。日志要保留每步输入输出与元数据，否则定位算法没有输入。可先把这套结构用在我们自己的执行记录上。"
+  },
+  {
+    "rank": 5,
+    "title": "CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies",
+    "title_cn": "只靠动作轨迹蒸馏长程策略",
+    "url": "https://arxiv.org/abs/2611.33148",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33148（cs.CL）",
+    "what": "只用教师模型的动作蒸馏长程策略：学生训练时推理块留空，靠 KL 约束防漂移；空推理块学到的策略在开启思考时仍能迁移（作者称 cross-format transfer）。蒸馏 Qwen3.6-27B 把 Qwen3-4B 在 AppWorld 从 7% 提到 18%，加 CoT-proxies 到 35%；蒸馏 GPT-5.6 Luna 可见输出把 Qwen3-4B 提到 48%、SWE-bench Verified 从 3% 到 28%。",
+    "why": "11-24 新论文；闭源教师不暴露思维链，过去只能模仿最终答案，现在证明动作轨迹加简短推理摘要就足以迁移长程能力。",
+    "insight": "想从闭源模型学能力，重点采集“状态—动作—结果”轨迹而不是解释文本；代理摘要（CoT-proxies）性价比最高。蒸馏前先固定评测环境，避免把教师的环境差异一起学进来。"
+  },
+  {
+    "rank": 6,
+    "title": "A Bias in Disguise: Tiny Gradient Edits Stop a Small Language Model's Thinking Loops and Complement a Frontier Model's Weight Edit",
+    "title_cn": "微小梯度编辑止住小模型思考循环",
+    "url": "https://arxiv.org/abs/2611.33133",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33133（cs.LG/cs.CL）",
+    "what": "给 Qwen3.5-0.8B 做无梯度、仅改极少量权重的修复：只用模型自己答对的数学题，修改梯度最大的 140~139,750 个权重，单卡 2~9 分钟把 4k token 预算下 thinking 模式 MATH-500 从 15.4% 提到 39.0~45.5%；50 个训练样本就够，随机位置只有 16.3%。改动集中在无 bias 模型前三层最接近常量的通道，等价于在残差流加三个固定向量。与 GPT-6 Astra 的权重编辑互补，叠加后在 32k 预算下达到 62.2%。",
+    "why": "11-24 新论文；它给“权重编辑”补上了梯度基线，说明小模型“想不完”可能只是少数通道的常数偏移，而不是能力不足。",
+    "insight": "小模型思考死循环先试低成本干预：用几十条自己的正确样本，只改梯度最大的一小部分权重，再按不同 token 预算评测——不同预算下优劣会反转，别只测一个预算就下结论。"
+  },
+  {
+    "rank": 7,
+    "title": "Auditing the Judge: Human-Derived Bias Discovery, Quantification, and Mitigation in LLM Judges",
+    "title_cn": "用人类偏好审计 LLM 评审偏见",
+    "url": "https://arxiv.org/abs/2611.33065",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33065（cs.AI/cs.LG）",
+    "what": "HUB-J 框架：用人类与 LLM 评审不一致的案例自动发现可解释的偏见因子，用一致案例做受控扰动来量化偏见强度，再用无训练的回归校正削弱偏见影响。实验能发现已知与新的偏见因子、区分模型易感度，并稳定减少由偏见导致的判断翻转。",
+    "why": "11-24 新论文；LLM-as-judge 已经进入训练与评测管线，评审偏见会直接变成优化目标，而多数团队仍只靠人工抽查。",
+    "insight": "用模型当评审要定期做“人机不一致”抽样：把不一致当信号挖掘偏见因子，而不是当噪声丢掉；上线前量化每个因子的影响再做校正，换更强的评审模型并不能消除偏见。"
+  },
+  {
+    "rank": 8,
+    "title": "Latent Merger: Latent-Space Composition of Hypernetwork-Generated LoRAs",
+    "title_cn": "在潜空间合并超网络生成的 LoRA",
+    "url": "https://arxiv.org/abs/2611.33048",
+    "date": "2026-11-24",
+    "source": "arXiv 2611.33048（cs.LG/cs.CL）",
+    "what": "研究超网络一次前向生成的 LoRA 如何合并：这类 LoRA 光谱更集中、跨文档对齐更强，与直接微调的 LoRA（弥散、近似正交）几何不同；因此在超网络中间潜空间合并、再用冻结的解码头还原，比权重空间与因子空间合并更稳，且保持单个固定秩适配器。",
+    "why": "11-24 新论文；流式场景下每篇文档存一个 LoRA 不可持续，合并策略直接决定知识注入的存储与推理成本。",
+    "insight": "需要动态注入知识的系统，按生成机制选择合并空间：超网络产物在潜空间合并，普通微调适配器仍用权重或因子空间。合并后要在固定秩预算下复测任务指标，别只看参数相似度。"
+  }
+]

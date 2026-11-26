@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "unslothai/unsloth",
+    "url": "https://github.com/unslothai/unsloth",
+    "stars": 80257,
+    "trend": "首日快照：总 80,257★，2026-11-26 有提交",
+    "what": "本地运行与训练 LLM、扩散模型的一体化界面与内核：支持 GGUF、MLX 两种格式，模型清单覆盖 Qwen3.8、DeepSeek-V4.1、MiniMax-H3、Gemma 4、FLUX 等新模型。",
+    "why": "80,257★，11-26 仍有提交；新模型发布后它通常第一时间跟进适配，本期清单里 Qwen3.8 与 DeepSeek-V4.1 都是近期版本。开源训练/推理栈已经跟上了闭源的发布节奏。",
+    "insight": "需要领域微调时，先把“数据格式、显存预算、评测集”三件事固定下来，训练框架可替换。不要绑定单一 UI：脚本要可复现（种子、依赖版本、数据 hash），否则换机器就复现不出结果。",
+    "image": "images/2026-11-26/unslothai-unsloth.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "HKUDS/DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "stars": 62792,
+    "trend": "首日快照：总 62,792★，2026-11-24 有提交",
+    "what": "港大数据智能实验室做的“终身个性化辅导”多智能体系统：CLI 工具 + 多 agent 协作 + RAG 与深度检索，配套 deeptutor.info 站点，面向持续学习场景。",
+    "why": "62,792★，2025-12-28 建仓、11-24 仍提交，约 11 个月冲到 6.2 万星；教学是少数在真实用户侧跑通“多轮 + 长期跟踪”的 agent 场景，热度说明它被当作产品而不是 demo。",
+    "insight": "个性化辅导的工程核心是“学习者状态”持久化：把每次问答的对错、掌握度、偏好落成可检索档案，再让检索决定下一步教什么。只做套壳问答的系统，第二周就会重复讲同样的内容。",
+    "image": "images/2026-11-26/hkuds-deeptutor.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "alibaba/open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "stars": 56373,
+    "trend": "首日快照：总 56,373★，2026-11-25 有提交",
+    "what": "阿里开源的代码评审工具：确定性流水线 + LLM Agent 的混合架构，输出行级评论，内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，兼容 OpenAI 与 Anthropic 接口。",
+    "why": "56,373★，2026-05-18 建仓、11-25 仍有提交，半年 5.6 万星；它把“规则引擎兜住确定性缺陷、模型负责语义问题”的分工写进了产品，而不是全交给模型。",
+    "insight": "代码评审 agent 不要只靠模型：先用静态规则吃掉可判定的缺陷，再让模型处理需要上下文的语义问题，并强制评论能定位到行。它的规则集可以直接对照成我们的 review 检查单。",
+    "image": "images/2026-11-26/alibaba-open-code-review.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "AstrBotDevs/AstrBot",
+    "url": "https://github.com/AstrBotDevs/AstrBot",
+    "stars": 47510,
+    "trend": "首日快照：总 47,510★，2026-11-25 有提交",
+    "what": "多 IM 渠道接入的 AI Agent 助手与开发框架：统一接入多个聊天平台、多家 LLM、插件与 MCP，自述可作为 openclaw 的替代方案。",
+    "why": "47,510★，11-25 仍有提交、1,274 个开放 issue；企业里“一个人同时对接多个聊天渠道”的需求把这个框架推到 4.7 万星，插件生态已经在自增长。",
+    "insight": "多渠道路由是数字员工的基础设施：把渠道适配、身份映射、消息幂等、审计四件事抽成独立层，业务技能只处理归一化后的事件。它的插件/MCP 拆分可以当作参考结构。",
+    "image": "images/2026-11-26/astrbotdevs-astrbot.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "codewhale-hq/Codewhale",
+    "url": "https://github.com/codewhale-hq/Codewhale",
+    "stars": 41210,
+    "trend": "+51 stars/17天（对比 2026-11-09）",
+    "what": "Rust 写的开源编码 agent，覆盖终端、Web 与桌面三端：支持任意模型、多 agent 编队、MCP 与插件、操作系统级沙箱，并为每次会话保留可回执的记录。",
+    "why": "41,210★，2026-01-19 建仓、11-26 仍有提交；对比 2026-11-09 的 41,159★ 只涨 51★，热度已从爆发转入平稳，但“Rust + OS 沙箱 + 会话回执”的组合仍不多见。",
+    "insight": "编码 agent 的差异化在运行时约束而不是模型：沙箱边界、每步可回放的会话回执、模型可替换，这三项决定它能不能进企业内网。做内部 agent 时优先补这三项，模型可以后换。",
+    "image": "images/2026-11-26/codewhale-hq-codewhale.jpg"
+  }
+]
