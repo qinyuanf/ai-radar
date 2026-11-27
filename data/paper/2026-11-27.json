@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "title": "How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches",
+    "title_cn": "编码智能体多改了多少无用代码",
+    "url": "https://arxiv.org/abs/2611.34875",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34875（cs.SE/cs.AI）",
+    "what": "提出 Delta Residue Attribution（DRA）：回放 agent 轨迹，把最终补丁的每个代码单元追溯到写入它的那一步，逐个回滚并重跑任务测试，判定该单元是否必要。对 18 个前沿模型在 SWE-bench Verified（6,728 条）与 DeepSWE（932 条）共 7,660 条已解决轨迹做分析，并用同一方法给开发者补丁打分。",
+    "why": "11-25 新论文；“agent 补丁比人大”一直被当成过度编辑，但没人量化多出来的有没有用。结论是 agent 代码的必要性并不比开发者差（0.887 对 0.864；DeepSWE 0.797 对 0.785），SWE-bench 上多余编辑 61% 是测试、13% 是文档；平均仍有 11% 的代码单元不必要，其中 89% 会改变行为。",
+    "insight": "评审 agent 产物别只看 diff 大小：先按测试/文档/代码分类，再对代码单元判必要性。自动裁剪可以用“回滚单元 + 跑测试”，但只用可见测试时召回 67%、精度 46%（89% 的补丁仍能通过），说明裁剪要保守，剩下的交给人。"
+  },
+  {
+    "rank": 2,
+    "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+    "title_cn": "深研智能体的知识覆盖度基准",
+    "url": "https://arxiv.org/abs/2611.34852",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34852（cs.CL/cs.AI）",
+    "what": "以“结构化知识覆盖”为核心评分的深度研究基准：从 Wikipedia 构建本地知识树，用采样子图生成研究问题与证据化 rubric（每条 rubric 对应树上一个关系），agent 只拿到研究问题。含 24 个领域 144 个案例、44,102 条 rubric；广度看主要研究方向、深度看知识链，几何平均为总覆盖。16 个深度研究 agent 中表现最好的 57.04%。",
+    "why": "11-25 新论文；现有基准多评“报告写得好不好”，它评“该覆盖的方向覆盖了没有、挖到多深”；rubric 判定与人工标注一致性高，不同指标配置下排名稳定。",
+    "insight": "评估深研类 agent，先把“应该覆盖哪些知识点”显式成 rubric，再让它写报告，否则只能评文风。数字员工的任务说明书里就该带这样的覆盖清单，验收时逐条打勾。"
+  },
+  {
+    "rank": 3,
+    "title": "When Every Rollout Fails: Splicing Learner-Conditioned Options into Long-Horizon Agent RL",
+    "title_cn": "全失败分组下的长程智能体 RL",
+    "url": "https://arxiv.org/abs/2611.34777",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34777（cs.LG/cs.AI/cs.CL）",
+    "what": "针对长程 agent 任务中“整组 rollout 全失败、组内奖励没有差异”导致 GRPO 拿不到梯度的困境，提出 SPLICE：在当前策略的失败轨迹上选拼接点，由提案模型生成若干有界操作选项，用重复续跑估计价值，把正收益选项转成 return 加权的局部目标，再拟合当前策略。",
+    "why": "11-25 新论文；在 SWE-bench Verified 与 BrowseComp-Plus 两类任务、两个策略族上均优于 GRPO 和全轨迹引导，比 GRPO 高 2.8~9.8 个百分点；初始失败的 SWE 任务“毕业率”提升 10.8 个百分点，且比整条教师轨迹更省算力。",
+    "insight": "训练长程 agent 不必等“完整正确轨迹”：从失败轨迹中段切出局部目标更划算。落地时把“拼接点选择”和“价值估计”分开评测，否则分不清是提案模型强，还是策略真的改对了。"
+  },
+  {
+    "rank": 4,
+    "title": "Knowledge-Base Gradient Descent: Self-Structuring Learning through Question Answering",
+    "title_cn": "用问答反向优化知识库结构",
+    "url": "https://arxiv.org/abs/2611.34841",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34841（cs.AI/cs.LG）",
+    "what": "研究“自结构化学习”：让问答对驱动持久知识库的结构（图 schema 或链接文档组织）。KBGD 每轮诊断期望答案与当前知识库回答的差异，提出一个结构编辑、重建知识库，损失下降才采纳；把编辑概率上的损失变化当导数，联合编辑作为单个候选评估。Schema Descent 是它在图 schema 上的实例。",
+    "why": "11-25 新论文；在大文档（论文合集）上，更新后的知识卡与 schema 在留出问题上平均 Answer F1 都高于初始结构，schema 在每个文档上都有增益；但人工问题上 schema 升、卡片降——结构会过拟合它学到的题型。",
+    "insight": "知识库结构应该被评测驱动地改，而不是一次设计定终身。但要在“学习用的题型”和“真实用户问题”两侧都留测试集，否则结构只对训练题型变好。这条直接适用于我们自己的知识库与检索配置。"
+  },
+  {
+    "rank": 5,
+    "title": "Attack Policy Selection can Mislead Monitor Evaluators",
+    "title_cn": "攻击策略选择会误导监控评估",
+    "url": "https://arxiv.org/abs/2611.34934",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34934（cs.LG/cs.AI）",
+    "what": "以一款已退役的 OpenAI 监控器为案例，检验“拿攻击策略生成的轨迹当危险行为代理”来评估监控器是否可靠。结果显示假阴性率对攻击策略的生成方式与优化强度高度敏感：同一 RL 方法在不同优化水平下从 0.5% 到 20.8%，不同方法在各自最佳水平下从 6.4% 到 23.0%；所有攻击只针对代理监控器开发，却能迁移到留出的 GPT-5.4 目标监控器。",
+    "why": "11-25 新论文；它点出监控评估的系统性陷阱：只用基础攻击方法测试，会得到“监控器很强”的假信心；代理轨迹里的可见痕迹（比如讨论一个监控器看不到的 side task）本身就会影响判定。",
+    "insight": "安全类评估要报告“攻击策略空间”，而不是一个假阴性率。我们做 agent 权限与审计同理：只测已知越权路径没有意义，要说明覆盖了哪些攻击面、哪些没测，以及为什么代理足够保守。"
+  },
+  {
+    "rank": 6,
+    "title": "Tokenisation is not in APX",
+    "title_cn": "分词问题不属于 APX",
+    "url": "https://arxiv.org/abs/2611.34938",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34938（cs.CL/cs.LG）",
+    "what": "证明除非 P=NP，不存在多项式时间算法能找到目标值在最优常数倍以内的分词器，即分词不在 APX 类；对直接式与自底向上分词、压缩或 unigram 似然目标、二元及以上字母表都成立。进一步证明即使在一元字母表上，直接分词也是 APX-hard，因而不存在多项式时间近似方案。",
+    "why": "11-25 新论文；分词器是每个 LLM 的第一道工序，工程上一直靠 BPE 等启发式，这篇给了“为什么没有更好的通用近似算法”的理论边界。",
+    "insight": "别期待“最优分词器”这种通用方案，工程上继续用启发式加面向任务的评测（压缩率、下游指标、多语言覆盖）来选型。再看到“我们找到了最优 tokenizer”的说法，先要它给出问题定义与近似比。"
+  },
+  {
+    "rank": 7,
+    "title": "Mixture-of-Loops Transformer",
+    "title_cn": "循环混合注意力的 Transformer",
+    "url": "https://arxiv.org/abs/2611.34923",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34923（cs.LG/cs.CL）",
+    "what": "研究循环 Transformer 相邻循环之间“传什么”：MoLT 用 Mixture-of-Loops Attention 把 KV 当作跨深度与循环选择性复用的记忆。MoLT-R 保留残差流、跨循环读局部 KV；MoLT-KV 从 embedding 重启、读本轮局部 KV 加前一轮记忆 KV，从而去掉同位置的跨循环依赖，配合 loop forcing 支持单次遍历解码；U 形 U-MoLT 把记忆构建与预测读出分开，跳过无用的解码遍历而不改预测。",
+    "why": "11-25 新论文；400B token 预训练中，U-MoLT 在 700M/1.5B dense 与 3B MoE 上优于 OLMo3：700M 交叉熵 token 效率 1.7 倍，3B MoE 十域困惑度改善 0.75、十任务准确率 +2.1 个百分点；推理时 MoL-Hybrid-2 与未循环 OLMo3 延迟相当（996.6 对 1,000.6 ms）。",
+    "insight": "“用更深换能力”之外还有“用循环换能力”，关键是把循环间传递物定义清楚（残差流还是 KV）并让训练可并行。选型先看同延迟下的质量，而不是只看参数效率。"
+  },
+  {
+    "rank": 8,
+    "title": "μ-Bench: Benchmarking Multi-User Task Completion in Shared Interaction Voice Agents",
+    "title_cn": "共享空间多用户语音智能体基准",
+    "url": "https://arxiv.org/abs/2611.34920",
+    "date": "2026-11-25",
+    "source": "arXiv 2611.34920（cs.CL/cs.AI）",
+    "what": "面向“共享物理空间里的多用户语音 agent”的基准：模拟参与者各有独立目标、知识与权限，会随 agent 的语音和工具结果实时反应；20 个领域 100 个场景，变化人数、声学与追问，共 800 例（408 带工具、392 无工具）。联合任务成功要求所有用户目标、隐私边界与终态同时成立，Pure 版还禁止未授权工具调用；ATC 诊断把失败定位到归属、串线或协调。13 个语音 agent 中闭源最强 62.24%（无工具）/65.44%（带工具），开源权重模型均低于 20%，主要差在多轮归属与串线。",
+    "why": "11-25 新论文；现有评测多是单用户单轮，这个把“多人、有权限、会插话”作为一等条件，并给出可复核的会话级判定。",
+    "insight": "多用户场景（会议室、客服现场、家庭）的 agent 必须显式建模“谁在说、以谁的权限执行、答案给谁听”。先做归属与串线的诊断，再谈能力；人数一多联合成功率稳定下降，容量规划要按人数做。"
+  }
+]

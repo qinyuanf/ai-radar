@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "alesha-pro/llm.asm",
+    "url": "https://github.com/alesha-pro/llm.asm",
+    "stars": 1552,
+    "trend": "2026-11-25 后新建，2 天内 1,552★（首日快照），2026-11-25 有提交",
+    "what": "纯 x86-64 NASM 汇编实现的极小 LLM 工具集：Qwen3-0.6B 推理 12KB、可引导裸机 OS 22KB、从零训练的 Mini-GPT 加 Braille 终端界面 32KB，零 C、零 libc、零依赖。",
+    "why": "11-25 建仓，2 天 1,552★，17 个开放 issue；它把“跑一个 LLM 到底需要多少软件栈”压到几十 KB，是可读的教学样本，也让“模型推理没那么神秘”这件事有了具体代码。",
+    "insight": "想搞清推理内核（量化、KV 布局、SIMD）读这种极小实现比读框架快得多；但它没有并发与安全边界，不能上生产。可以拿它当“最小可运行规格”，对照大框架查行为差异与数值误差。",
+    "image": "images/2026-11-27/alesha-pro-llm-asm.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "piomin/ai-software-factory",
+    "url": "https://github.com/piomin/ai-software-factory",
+    "stars": 221,
+    "trend": "2026-11-18 后新建，9 天内 221★（首日快照），2026-11-24 有提交",
+    "what": "把“AI 软件工厂”做成可部署的仓库：在 Kubernetes/OpenShift 上用 Tekton 编排流水线、vLLM 提供模型服务，串起 Claude Code、OpenCode 这类编码 agent 的执行。",
+    "why": "11-18 建仓，10 天 221★，11-24 有提交；编码 agent 进入团队基础设施的形态正在从“本地脚本”变成“流水线中的一步”，这个仓库给出了一套可抄的骨架。",
+    "insight": "落地时先把三件事定义清楚：每步产物（补丁、报告、测试结果）、失败重试策略、人工闸门放在哪。模型服务与执行隔离交给 K8s/配额，别让 agent 直接持有生产凭据。",
+    "image": "images/2026-11-27/piomin-ai-software-factory.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "w1ccc/sap-data-mcp",
+    "url": "https://github.com/w1ccc/sap-data-mcp",
+    "stars": 177,
+    "trend": "2026-11-20 后新建，7 天内 177★（首日快照），2026-11-24 有提交",
+    "what": "让 AI 助手查询 SAP S/4HANA 的只读 MCP 服务器：走 RFC/BAPI、私有云 OData 与公有云已发布 API 三条通道，每次调用留审计，凭据留在本地。",
+    "why": "11-20 建仓，一周 177★，11-24 有提交；企业核心系统接 agent，真正的门槛不是“能查”，而是只读、可审计、凭据不出本地。",
+    "insight": "接 ERP/内部系统给 agent，照这三件套设计：只读账号、逐调用审计、凭据放本地或密钥服务而不是提示词。优先用厂商“已发布 API”而不是直读内部表，升级时才不会打断 agent。",
+    "image": "images/2026-11-27/w1ccc-sap-data-mcp.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "Haruhi764/OmniCAD-Skill",
+    "url": "https://github.com/Haruhi764/OmniCAD-Skill",
+    "stars": 174,
+    "trend": "2026-11-19 后新建，8 天内 174★（首日快照），2026-11-26 有提交",
+    "what": "面向 2D CAD 的 agent skill：以证据驱动的方式绘制与质检，产出可编辑的 DXF、AutoCAD DWG 与 PDF，而不是只给一张效果图。",
+    "why": "11-19 建仓，8 天 174★，11-26 有提交；agent skill 正从文本、代码扩到工程图纸，且强调“可继续编辑 + 可校验”的产物形态。",
+    "insight": "让 agent 产出可编辑工程文件，必须配套校验：几何约束、图层规范、单位与比例。生成后自动回读检查，比人工肉眼看图可靠；这类强格式场景，skill 里应内置格式往返测试。",
+    "image": "images/2026-11-27/haruhi764-omnicad-skill.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "Echoxiawan/Astra",
+    "url": "https://github.com/Echoxiawan/Astra",
+    "stars": 81,
+    "trend": "2026-11-18 后新建，9 天内 81★（首日快照），2026-11-23 有提交",
+    "what": "开源的移动端 UI 自动化测试 agent：用自然语言写用例，AI 在 Android/iOS 真机上通过 Appium 执行，跑通后生成可独立运行的 pytest + Appium 脚本。",
+    "why": "11-18 建仓，5 天 81★，11-23 有提交；它把“自然语言用例 → 真机执行 → 回吐可维护脚本”连成闭环，重点在最后一步：产物能脱离 AI 运行。",
+    "insight": "移动端 agent 测试的价值在“产物可迁移”：AI 只负责探索与生成，回归跑纯脚本，成本可控、结果稳定。元素定位不稳仍是主要失败源，先做稳定的定位抽象，再扩大用例生成。",
+    "image": "images/2026-11-27/echoxiawan-astra.jpg"
+  }
+]

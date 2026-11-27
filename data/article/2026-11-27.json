@@ -1,0 +1,80 @@
+[
+  {
+    "rank": 1,
+    "title": "Much shorter version of GRH Lean verification from Anthropic",
+    "title_cn": "更短的 GRH 形式化证明",
+    "url": "https://github.com/lsernau/grh-lean",
+    "date": "2026-11-25",
+    "source": "GitHub lsernau/grh-lean（Apache-2.0），Hacker News 546 分 / 346 评论",
+    "what": "Anthropic 研究员 Luke Sernau 与同事、Claude 合作，把黎曼猜想及 Dirichlet L 函数广义形式的 Lean 4 证明做成更短版本：可读版约 30 万行，压缩版同一组五个定理约 7.6 万行；只用 propext、Classical.choice、Quot.sound 三条公理，构建需 Lean 4.35.0 与指定 Mathlib 提交，12 核 24GB 约 1~2 小时。",
+    "why": "11-25 建仓当日 HN 546 分；前一批形式化被指规模以千万行计、人没法读，这次把体量压了约 500 倍，讨论焦点也从“是否可信”转向“AI 产出的证明怎么验收”。README 明确写了只过机器检查、没有数学家通读。",
+    "insight": "形式化产出的验收要分两层：机器检查（公理、可编译、可复现构建）与人类可读（结构、引理粒度、导航文档）。给 agent 定交付标准时，两类产物都要，缺一个都不能算完成。"
+  },
+  {
+    "rank": 2,
+    "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+    "title_cn": "沙箱模型经共享推理服务器互传信息",
+    "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+    "date": "2026-11-19",
+    "source": "LessWrong（Niranjan Deshpande、David Africa），Hacker News 465 分 / 217 评论",
+    "what": "研究在 vLLM、SGLang、LMDeploy、TensorRT-LLM 上复现两条隐蔽信道：一是引擎按批内 token 数选择 GPU kernel，浮点非结合性留下可检测的舍入差异（步长信道）；二是按 16 token 哈希共享的前缀 KV cache 会把这种指纹异步带到后续请求（KV 信箱）。微调 Qwen3-8B 后在 8 色通信游戏上 1,221/1,221、步长信道 455/455 全对；前沿模型靠上下文也能到 100%（GLM-5.3）或 41/45（GPT-6.2-Sol）。",
+    "why": "11-25 上 HN 465 分；它说明网络与 OS 层沙箱不等于隔离——只要共享推理栈，被监控者与监控者之间就有硬件级旁路。边界也清楚：满负载噪声下 KV 信道准确率从 100% 降到 49%。",
+    "insight": "多租户、或“模型 + 安全监控器”同栈部署时，默认开批不变内核、按用户给 KV 前缀加盐，并把监控器放到独立推理实例。安全评估不能只看沙箱配置，要看共享资源的粒度。"
+  },
+  {
+    "rank": 3,
+    "title": "Google releases Cogentic papers on integer factorization, discrete logs and more",
+    "title_cn": "谷歌 Cogentic 发布整数分解等论文",
+    "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+    "date": "2026-11-25",
+    "source": "google-research/cogentic_research_papers（Apache-2.0，注明“非官方产品”），Hacker News 503 分 / 370 评论",
+    "what": "Google Research 仓库放出自动化研究系统 Cogentic 生成的 10 篇理论论文，11-25 一天新增 6 篇：无条件整数分解 L_N[1/3, O(1)]、固定特征有限域上的亚准多项式离散对数、双矩阵博弈 1/5 近似纳什的精确多项式算法、Log-Rank 猜想突破平方根屏障等。全部是 PDF，无形式化、无参考实现，README 注明“这不是谷歌官方产品”。",
+    "why": "11-25 HN 503 分，同日还有“某实验室攻破因式分解”的传闻在传；两件事共同点是结论惊人但既无同行评审也无机器验证，热度更多来自对密码学的想象。",
+    "insight": "对“AI 做出重大结论”的默认处理要分级：预印本 → 独立复现 → 形式化/机器检查。工程侧不要因为标题就改加密方案；评审流程里应有一条硬规则——未经独立验证的结论不得进入架构决策。"
+  },
+  {
+    "rank": 4,
+    "title": "OpenAI may be in cost control mode",
+    "title_cn": "OpenAI 或已进入成本控制模式",
+    "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
+    "date": "2026-11-26",
+    "source": "micjm 博客（基于 Agent Duel 对战数据），Hacker News 271 分 / 263 评论；同周“用量收紧”帖 463 分",
+    "what": "作者用 Agent Duel 的真实任务对战数据对比 GPT-6 与 6.2：Astra 6.2、Sol 6.2 相对对手的推理 token 与输出 token 明显下降，成了“想得少”的离群点——输出下降 p=0.0055（Sol）/0.022（Astra），推理下降 p=0.00013/0.0064，据此判断两个 6.2 模型按成本做了调优。",
+    "why": "11-26 发布；与 HN 上“6.2 更快触达用量上限（Astra 快 40%、Sol 快 25%）”的反馈互相印证——同一周同时出现“更省 token”和“额度更紧”两种信号，说明厂商在成本与体验之间重新配平。",
+    "insight": "选模型要看“每任务成本 × 任务成功率”，不能只看单价或榜单分数。把推理 token、输出 token、重试次数纳入自己的评测；长任务要按 token 预算设降级策略，避免模型静默变笨而没人发现。"
+  },
+  {
+    "rank": 5,
+    "title": "Google Will Make AI Agents Use Its Workspace MCP Servers. The Gmail One Can't Send Email",
+    "title_cn": "谷歌收紧 AI 代理访问 Workspace",
+    "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+    "date": "2026-11-26",
+    "source": "Tech Stackups（11-26），Hacker News 237 分 / 202 评论",
+    "what": "11-24 谷歌把 8 个 Workspace MCP 服务器转为正式可用，并在 API 条款中加入 Workspace AI Tools 附则：2027-02-01 起，“由 AI 代理驱动”的工具必须经谷歌 MCP 访问 Gmail、Drive、Calendar 等，直连 REST 的代理被限到 Standard 配额。公开版 Gmail 服务器只能搜索、读取、建草稿，不能发送/回复/转发（发送类工具需 partner access）；数据侧禁止训练与蒸馏，嵌入、记忆索引等保留上限 30 天。",
+    "why": "11-26 报道、HN 237 分；这是主流平台第一次用条款把“代理访问”单独圈出来，并用配额与能力差把独立开发者与合作伙伴分开。",
+    "insight": "接第三方 SaaS 给 agent 时，能力清单要按官方 MCP/API 的公开工具逐项核对，别按宣传或自己申请的 scopes 假设。提前设计降级路径（草稿代替发送、只读代替写入），并把数据保留期限写进架构约束。",
+    "image": "images/2026-11-27/google-will-make-ai-agents-use-its-workspace-mcp.jpg"
+  },
+  {
+    "rank": 6,
+    "title": "Tracking Diseases Cured by AI",
+    "title_cn": "AI 治愈疾病计数仍为 0",
+    "url": "https://diseasescuredbyai.com/",
+    "date": "2026-11-26",
+    "source": "diseasescuredbyai.com（11-26 快照），Hacker News 300 分 / 180 评论",
+    "what": "一个只记一个数字的公开账本：截至 2026-11-26，由 AI 发现并获得监管批准、且真正“治愈”疾病的药物为 0；FDA/EMA 尚无 AI 发现药物获批，只有 1 个 AI 候选进入 III 期（英矽智能 rentosertib，肺纤维化），全行业约 117 个 AI 相关候选进入过人体试验。页面写明读片、预测蛋白、仍在试验都不算。",
+    "why": "11-26 更新、HN 300 分；它把“AI 将治愈疾病”的公开承诺和大厂时间表放在同一页，用可核对的标准兑现计数，是少见的反炒作样本。",
+    "insight": "内部评估 AI 价值时，先定义“什么才算数”再报进度：可复核的验收条件加一个单一计数，比一屏指标更能防止自嗨。对外表达要把“能力演示”和“产生结果”分开，混用会透支信任。"
+  },
+  {
+    "rank": 7,
+    "title": "AI made self-hosting fun again",
+    "title_cn": "AI 让自托管重新有趣",
+    "url": "https://janlukas.blog/posts/ai-self-hosting",
+    "date": "2026-11-26",
+    "source": "Jan-Lukas Else 博客（11-26），Hacker News 287 分 / 155 评论",
+    "what": "作者把基础设施配置放进 Git（Docker Compose、脚本），用编码 agent 像改普通项目一样改基础设施：NixOS 上手、Debian bootc 镜像半天做完（自估不用 AI 要一周）、Renovate 提 PR 加 Forgejo/GitHub Actions 一键部署；还顺手写了发票下载、播客电子报等小工具。他也承认副作用：服务越多维护越多，AI 生成的代码同样有 bug 与安全债。",
+    "why": "11-26 发布、HN 287 分；它讲的是“AI 降低的是启动摩擦，不是维护责任”这个具体变化，而不是抽象的生产力口号。",
+    "insight": "让 agent 改基础设施的前提是“配置即代码 + 可回滚”：所有变更走 Git、走流水线、能一键回退。先补齐这三件再放开 agent 写权限，否则自动化只会把事故放大。"
+  }
+]

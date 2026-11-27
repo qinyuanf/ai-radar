@@ -1,0 +1,57 @@
+[
+  {
+    "rank": 1,
+    "repo": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "stars": 479816,
+    "trend": "+26,991 stars/15天（对比 2026-11-12）",
+    "what": "把逆向工程做成 agent 可调用的一套 MCP 工具：可分析原生二进制、JavaScript/Electron 应用、.NET 程序集与网站，挖掘实现后给出证据与局限；原生分析可接本机已有的 Hopper、Ghidra、IDA、Kuna，也能用 CLI 直接跑。",
+    "why": "452,825★（11-12）→ 479,816★，15 天 +26,991★，11-27 仍有提交；把“看懂别人怎么实现”这种高门槛工作拆成工具面，并强调结果要带证据，是它区别于普通套壳的关键。",
+    "insight": "给 agent 接分析类工具时，输出必须自带证据与不确定性；逆向/取证场景默认本地运行，样本不出机器。用 MCP + 配套 workflow skill 注册，比在提示词里教步骤更可复用、更好审计。",
+    "image": "images/2026-11-27/morluto-rea.jpg"
+  },
+  {
+    "rank": 2,
+    "repo": "farion1231/cc-switch",
+    "url": "https://github.com/farion1231/cc-switch",
+    "stars": 157430,
+    "trend": "首日快照：总 157,430★，2026-11-26 有提交",
+    "what": "Tauri 2 写的跨平台桌面管理器，统一管 Claude Code、Claude Desktop、Codex、Gemini CLI、OpenCode、OpenClaw、Kimi Code 等十余种 agent 客户端的 API 供应商切换、MCP、Skills 与提示词，不用手改 JSON/TOML/YAML。",
+    "why": "157,430★，11-26 有提交；一个人同时开多个 agent 客户端、来回切供应商已是常态，这类“配置面统一管理”的工具因此快速出圈。README 里也挂了不少 API 中转商赞助，工具本身与赞助方要分开看。",
+    "insight": "它解决的是“配置单一事实源”问题：各家 CLI 的配置格式不同，收敛成一个 schema 再渲染，比每人手改文件可靠。团队内部也该有这层，并顺带做密钥托管与操作审计；第三方中转的合规与密钥风险要单独评估。",
+    "image": "images/2026-11-27/farion1231-cc-switch.jpg"
+  },
+  {
+    "rank": 3,
+    "repo": "thedotmack/claude-mem",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "stars": 120005,
+    "trend": "+4,161 stars/16天（对比 2026-11-11）",
+    "what": "给编码 agent 配一个“旁路记录员”：在它工作时持续摘录要点，下次会话先给一段短索引，需要细节再按需检索。支持 Claude Code、Codex、Cursor、OpenCode 等十多种 agent，数据默认存在本机 ~/.claude-mem，云端同步需主动开启。",
+    "why": "115,844★（11-11）→ 120,005★，16 天 +4,161★，11-26 有提交；跨会话记忆从论文走向装机量十万级的插件，做法是把记忆放在主对话之外。",
+    "insight": "记忆要分层：会话内靠上下文，跨会话靠索引 + 按需检索。旁路记录避免污染主对话的 token；本地存储 + 可选同步是默认安全位。引入前先确认订阅制记录服务的计费与数据边界。",
+    "image": "images/2026-11-27/thedotmack-claude-mem.jpg"
+  },
+  {
+    "rank": 4,
+    "repo": "paperclipai/paperclip",
+    "url": "https://github.com/paperclipai/paperclip",
+    "stars": 117395,
+    "trend": "+6,991 stars/24天（对比 2026-11-03）",
+    "what": "Node.js 服务 + React 界面的 agent 团队编排器：先定业务目标，再“雇佣”一串不同供应商的 agent（OpenClaw、Claude Code、Codex、Cursor、Gemini CLI 等），用组织架构、预算、权限与目标对齐来管理，工作与花费在一个面板里看。",
+    "why": "110,404★（11-03）→ 117,395★，24 天 +6,991★，11-26 有提交；它把“管理 agent”做成任务管理器而不是聊天窗，落点是预算与审计。",
+    "insight": "多 agent 系统的必需品是“组织与账本”：任务归属、预算上限、权限边界、审计日志四张表先设计好，再谈编排；否则规模一上去就无法判断钱花在哪、谁批准了什么。",
+    "image": "images/2026-11-27/paperclipai-paperclip.jpg"
+  },
+  {
+    "rank": 5,
+    "repo": "vllm-project/vllm",
+    "url": "https://github.com/vllm-project/vllm",
+    "stars": 97648,
+    "trend": "首日快照：总 97,648★，2026-11-27 有提交",
+    "what": "高吞吐、省显存的 LLM 推理与服务引擎：连续批处理、PagedAttention 分页 KV cache、前缀缓存等都被做成默认可选项，是自建推理与 agent 后端最常见的底座之一。",
+    "why": "97,648★，11-27 仍有提交；本周两件事把它推回讨论中心——OpenAI 6.2 被数据指为“省 token 降本”，以及一篇论文证明共享推理栈的批处理与 KV 前缀缓存会形成跨租户隐蔽信道。",
+    "insight": "自建推理把“批不变内核（batch-invariant kernels）”和“按用户隔离/加盐前缀缓存”列为默认项：多租户下共享前缀缓存既是性能红利也是侧信道。评测要固定批大小与并发，否则同一 prompt 的结果不可复现。",
+    "image": "images/2026-11-27/vllm-project-vllm.jpg"
+  }
+]
